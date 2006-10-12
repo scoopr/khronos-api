@@ -138,7 +138,7 @@ passthru: #ifndef GLEXT_64_TYPES_DEFINED
 passthru: /* This code block is duplicated in glext.h, so must be protected */
 passthru: #define GLEXT_64_TYPES_DEFINED
 passthru: /* Define int32_t, int64_t, and uint64_t types for UST/MSC */
-passthru: /* (as used in the GLX_OML_sync_control extension). */
+passthru: /* (as used in the GL_EXT_timer_query extension). */
 passthru: #if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
 passthru: #include <inttypes.h>
 passthru: #elif defined(__sun__)
@@ -162,6 +162,10 @@ passthru: typedef long long int int64_t;
 passthru: typedef unsigned long long int uint64_t;
 passthru: #elif defined(WIN32) && defined(__GNUC__)
 passthru: #include <stdint.h>
+passthru: #elif defined(WIN32)
+passthru: typedef __int32 int32_t;
+passthru: typedef __int64 int64_t;
+passthru: typedef unsigned __int64 uint64_t;
 passthru: #else
 passthru: #include <inttypes.h>     /* Fallback option */
 passthru: #endif

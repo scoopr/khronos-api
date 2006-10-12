@@ -3162,7 +3162,7 @@ typedef unsigned short GLhalfNV;
 /* This code block is duplicated in glext.h, so must be protected */
 #define GLEXT_64_TYPES_DEFINED
 /* Define int32_t, int64_t, and uint64_t types for UST/MSC */
-/* (as used in the GLX_OML_sync_control extension). */
+/* (as used in the GL_EXT_timer_query extension). */
 #if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
 #include <inttypes.h>
 #elif defined(__sun__)
@@ -3186,6 +3186,10 @@ typedef long long int int64_t;
 typedef unsigned long long int uint64_t;
 #elif defined(WIN32) && defined(__GNUC__)
 #include <stdint.h>
+#elif defined(WIN32)
+typedef __int32 int32_t;
+typedef __int64 int64_t;
+typedef unsigned __int64 uint64_t;
 #else
 #include <inttypes.h>     /* Fallback option */
 #endif
