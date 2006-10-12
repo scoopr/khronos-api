@@ -52,9 +52,9 @@ extern "C" {
 /*************************************************************/
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glext.h last updated 2006/08/30 */
+/* glext.h last updated 2006/10/11 */
 /* Current version at http://www.opengl.org/registry/ */
-#define GL_GLEXT_VERSION 34
+#define GL_GLEXT_VERSION 35
 
 #ifndef GL_VERSION_1_2
 #define GL_UNSIGNED_BYTE_3_3_2            0x8032
