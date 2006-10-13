@@ -5431,12 +5431,12 @@ SGIX_subsample enum:
 # EXT_framebuffer_object enum: (additional; see below)
 #	FRAMEBUFFER_BINDING_EXT				= 0x8CA6
 #	RENDERBUFFER_BINDING_EXT			= 0x8CA7
-# EXT_framebuffer_blit
+# EXT_framebuffer_blit enum:
 #	READ_FRAMEBUFFER_EXT				= 0x8CA8
 #	DRAW_FRAMEBUFFER_EXT				= 0x8CA9
 #	READ_FRAMEBUFFER_BINDING_EXT			= GL_FRAMEBUFFER_BINDING_EXT
 #	DRAW_FRAMEBUFFER_BINDING_EXT			= 0x8CAA
-# EXT_framebuffer_multisample
+# EXT_framebuffer_multisample enum:
 #	RENDERBUFFER_SAMPLES_EXT			= 0x8CAB
 
 # ARB_future_use: 0x8CAC-08CAF
@@ -5504,7 +5504,10 @@ SGIX_subsample enum:
 #	RENDERBUFFER_ALPHA_SIZE_EXT			= 0x8D53
 #	RENDERBUFFER_DEPTH_SIZE_EXT			= 0x8D54
 #	RENDERBUFFER_STENCIL_SIZE_EXT			= 0x8D55
-# 0x8D56-0x8D5F reserved for additional FBO enums
+# EXT_framebuffer_multisample enum: (additional; see above)
+# Added 2006/10/10 in revision #6b of the extension.
+#	MAX_SAMPLES_EXT					= 0x8D57
+# 0x8D56,0x8D58-0x8D5F reserved for additional FBO enums
 
 ###############################################################################
 

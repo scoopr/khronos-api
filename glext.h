@@ -3104,6 +3104,7 @@ extern "C" {
 
 #ifndef GL_EXT_framebuffer_multisample
 #define GL_RENDERBUFFER_SAMPLES_EXT       0x8CAB
+#define GL_MAX_SAMPLES_EXT                0x8D57
 #endif
 
 #ifndef GL_MESAX_texture_stack
