@@ -3122,6 +3122,11 @@ extern "C" {
 #ifndef GL_EXT_gpu_program_parameters
 #endif
 
+#ifndef GL_APPLE_flush_buffer_range
+#define GL_BUFFER_SERIALIZED_MODIFY_APPLE 0x8A12
+#define GL_BUFFER_FLUSHING_UNMAP_APPLE    0x8A13
+#endif
+
 
 /*************************************************************/
 
@@ -6685,6 +6690,16 @@ GLAPI void APIENTRY glProgramLocalParameters4fvEXT (GLenum, GLuint, GLsizei, con
 #endif /* GL_GLEXT_PROTOTYPES */
 typedef void (APIENTRYP PFNGLPROGRAMENVPARAMETERS4FVEXTPROC) (GLenum target, GLuint index, GLsizei count, const GLfloat *params);
 typedef void (APIENTRYP PFNGLPROGRAMLOCALPARAMETERS4FVEXTPROC) (GLenum target, GLuint index, GLsizei count, const GLfloat *params);
+#endif
+
+#ifndef GL_APPLE_flush_buffer_range
+#define GL_APPLE_flush_buffer_range 1
+#ifdef GL_GLEXT_PROTOTYPES
+GLAPI void APIENTRY glBufferParameteriAPPLE (GLenum, GLenum, GLint);
+GLAPI void APIENTRY glFlushMappedBufferRangeAPPLE (GLenum, GLintptr, GLsizeiptr);
+#endif /* GL_GLEXT_PROTOTYPES */
+typedef void (APIENTRYP PFNGLBUFFERPARAMETERIAPPLEPROC) (GLenum target, GLenum pname, GLint param);
+typedef void (APIENTRYP PFNGLFLUSHMAPPEDBUFFERRANGEAPPLEPROC) (GLenum target, GLintptr offset, GLsizeiptr size);
 #endif
 
 

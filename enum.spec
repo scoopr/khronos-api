@@ -5195,7 +5195,11 @@ SGIX_subsample enum:
 #	DRAW_PIXELS_APPLE				= 0x8A0A
 #	FENCE_APPLE					= 0x8A0B
 
-# APPLE_future_use: 0x8A10-0x8A7F
+# APPLE_flush_buffer_range enum:
+#	BUFFER_SERIALIZED_MODIFY_APPLE			= 0x8A12
+#	BUFFER_FLUSHING_UNMAP_APPLE			= 0x8A13
+
+# APPLE_future_use: 0x8A0C-0x8A11, 0x8A14-0x8A7F
 
 ###############################################################################
 

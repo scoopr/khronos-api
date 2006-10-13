@@ -4096,3 +4096,9 @@ EXT_timer_query enum:
 # Extension #320
 EXT_gpu_program_parameters enum:
 
+###############################################################################
+
+# Extension #321
+APPLE_flush_buffer_range enum:
+	BUFFER_SERIALIZED_MODIFY_APPLE			= 0x8A12
+	BUFFER_FLUSHING_UNMAP_APPLE			= 0x8A13
