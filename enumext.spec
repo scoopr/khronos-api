@@ -4072,6 +4072,7 @@ EXT_framebuffer_blit enum:
 # Extension #317
 EXT_framebuffer_multisample enum:
 	RENDERBUFFER_SAMPLES_EXT			= 0x8CAB
+	FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT		= 0x8D56
 	MAX_SAMPLES_EXT					= 0x8D57
 
 ###############################################################################

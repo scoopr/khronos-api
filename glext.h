@@ -3104,6 +3104,7 @@ extern "C" {
 
 #ifndef GL_EXT_framebuffer_multisample
 #define GL_RENDERBUFFER_SAMPLES_EXT       0x8CAB
+#define GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT 0x8D56
 #define GL_MAX_SAMPLES_EXT                0x8D57
 #endif
 

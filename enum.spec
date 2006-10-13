@@ -5506,8 +5506,9 @@ SGIX_subsample enum:
 #	RENDERBUFFER_STENCIL_SIZE_EXT			= 0x8D55
 # EXT_framebuffer_multisample enum: (additional; see above)
 # Added 2006/10/10 in revision #6b of the extension.
+#	FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT		= 0x8D56
 #	MAX_SAMPLES_EXT					= 0x8D57
-# 0x8D56,0x8D58-0x8D5F reserved for additional FBO enums
+# 0x8D58-0x8D5F reserved for additional FBO enums
 
 ###############################################################################
 
