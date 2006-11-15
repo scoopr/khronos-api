@@ -5537,12 +5537,20 @@ SGIX_subsample enum:
 # NV_future_use: 0x8E10-0x8E8F
 
 ###############################################################################
+
+# QNX: 0x8E90-0x8E9F
+# https://cvs.khronos.org/bugzilla/show_bug.cgi?id=696
+# For GL_QNX_texture_tiling, GL_QNX_complex_polygon, GL_QNX_stippled_lines
+
+# QNX_future_use: 0x8E90-0x8E9F
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x8E90-0xFFFF
+# Any_vendor_future_use: 0x8EA0-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the
