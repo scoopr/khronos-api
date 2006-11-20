@@ -160,9 +160,9 @@ passthru: #elif defined(__UNIXOS2__) || defined(__SOL64__)
 passthru: typedef long int int32_t;
 passthru: typedef long long int int64_t;
 passthru: typedef unsigned long long int uint64_t;
-passthru: #elif defined(WIN32) && defined(__GNUC__)
+passthru: #elif defined(_WIN32) && defined(__GNUC__)
 passthru: #include <stdint.h>
-passthru: #elif defined(WIN32)
+passthru: #elif defined(_WIN32)
 passthru: typedef __int32 int32_t;
 passthru: typedef __int64 int64_t;
 passthru: typedef unsigned __int64 uint64_t;

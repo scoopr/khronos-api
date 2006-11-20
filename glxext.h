@@ -52,9 +52,9 @@ extern "C" {
 /*************************************************************/
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glxext.h last updated 2006/10/11 */
+/* glxext.h last updated 2006/11/20 */
 /* Current version at http://www.opengl.org/registry/ */
-#define GLX_GLXEXT_VERSION 15
+#define GLX_GLXEXT_VERSION 16
 
 #ifndef GLX_VERSION_1_3
 #define GLX_WINDOW_BIT                     0x00000001
@@ -366,9 +366,9 @@ typedef unsigned long long int uint64_t;
 typedef long int int32_t;
 typedef long long int int64_t;
 typedef unsigned long long int uint64_t;
-#elif defined(WIN32) && defined(__GNUC__)
+#elif defined(_WIN32) && defined(__GNUC__)
 #include <stdint.h>
-#elif defined(WIN32)
+#elif defined(_WIN32)
 typedef __int32 int32_t;
 typedef __int64 int64_t;
 typedef unsigned __int64 uint64_t;
