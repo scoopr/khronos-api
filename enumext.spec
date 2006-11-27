@@ -17,9 +17,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glext.h last updated 2006/11/20 */
+passthru: /* glext.h last updated 2006/11/27 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GL_GLEXT_VERSION 37
+passthru: #define GL_GLEXT_VERSION 38
 
 ###############################################################################
 #
@@ -3967,7 +3967,8 @@ EXT_framebuffer_object enum:
 	FRAMEBUFFER_COMPLETE_EXT			= 0x8CD5
 	FRAMEBUFFER_INCOMPLETE_ATTACHMENT_EXT		= 0x8CD6
 	FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_EXT	= 0x8CD7
-	FRAMEBUFFER_INCOMPLETE_DUPLICATE_ATTACHMENT_EXT = 0x8CD8
+## Removed 2005/09/26 in revision #117 of the extension:
+##	  FRAMEBUFFER_INCOMPLETE_DUPLICATE_ATTACHMENT_EXT = 0x8CD8
 	FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT		= 0x8CD9
 	FRAMEBUFFER_INCOMPLETE_FORMATS_EXT		= 0x8CDA
 	FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_EXT		= 0x8CDB
