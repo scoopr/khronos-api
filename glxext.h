@@ -52,9 +52,9 @@ extern "C" {
 /*************************************************************/
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glxext.h last updated 2006/11/20 */
+/* glxext.h last updated 2007/02/09 */
 /* Current version at http://www.opengl.org/registry/ */
-#define GLX_GLXEXT_VERSION 16
+#define GLX_GLXEXT_VERSION 17
 
 #ifndef GLX_VERSION_1_3
 #define GLX_WINDOW_BIT                     0x00000001
@@ -305,6 +305,15 @@ extern "C" {
 #endif
 
 #ifndef GLX_MESA_agp_offset
+#endif
+
+#ifndef GLX_EXT_fbconfig_packed_float
+#define GLX_RGBA_UNSIGNED_FLOAT_TYPE_EXT   0x20B1
+#define GLX_RGBA_UNSIGNED_FLOAT_BIT_EXT    0x00000008
+#endif
+
+#ifndef GLX_EXT_framebuffer_sRGB
+#define GLX_FRAMEBUFFER_SRGB_CAPABLE_EXT   0x20B2
 #endif
 
 
@@ -718,6 +727,14 @@ typedef int ( * PFNGLXQUERYHYPERPIPEATTRIBSGIXPROC) (Display *dpy, int timeSlice
 extern unsigned int glXGetAGPOffsetMESA (const void *);
 #endif /* GLX_GLXEXT_PROTOTYPES */
 typedef unsigned int ( * PFNGLXGETAGPOFFSETMESAPROC) (const void *pointer);
+#endif
+
+#ifndef GLX_EXT_fbconfig_packed_float
+#define GLX_EXT_fbconfig_packed_float 1
+#endif
+
+#ifndef GLX_EXT_framebuffer_sRGB
+#define GLX_EXT_framebuffer_sRGB 1
 #endif
 
 

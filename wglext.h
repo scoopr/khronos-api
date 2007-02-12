@@ -52,9 +52,9 @@ extern "C" {
 /*************************************************************/
 
 /* Header file version number */
-/* wglext.h last updated 2006/08/17 */
+/* wglext.h last updated 2007/02/09 */
 /* Current version at http://www.opengl.org/registry/ */
-#define WGL_WGLEXT_VERSION 8
+#define WGL_WGLEXT_VERSION 9
 
 #ifndef WGL_ARB_buffer_region
 #define WGL_FRONT_COLOR_BUFFER_BIT_ARB 0x00000001
@@ -324,6 +324,14 @@ extern "C" {
 #define WGL_STEREO_EMITTER_DISABLE_3DL 0x2056
 #define WGL_STEREO_POLARITY_NORMAL_3DL 0x2057
 #define WGL_STEREO_POLARITY_INVERT_3DL 0x2058
+#endif
+
+#ifndef WGL_EXT_pixel_format_packed_float
+#define WGL_TYPE_RGBA_UNSIGNED_FLOAT_EXT 0x20A8
+#endif
+
+#ifndef WGL_EXT_framebuffer_sRGB
+#define WGL_FRAMEBUFFER_SRGB_CAPABLE_EXT 0x20A9
 #endif
 
 
@@ -628,6 +636,14 @@ typedef BOOL (WINAPI * PFNWGLQUERYFRAMETRACKINGI3DPROC) (DWORD *pFrameCount, DWO
 
 #ifndef WGL_NV_float_buffer
 #define WGL_NV_float_buffer 1
+#endif
+
+#ifndef WGL_EXT_pixel_format_packed_float
+#define WGL_EXT_pixel_format_packed_float 1
+#endif
+
+#ifndef WGL_EXT_framebuffer_sRGB
+#define WGL_EXT_framebuffer_sRGB 1
 #endif
 
 
