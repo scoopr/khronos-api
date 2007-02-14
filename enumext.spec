@@ -4411,3 +4411,7 @@ EXT_texture_integer enum:
 	LUMINANCE_INTEGER_EXT				= 0x8D9C
 	LUMINANCE_ALPHA_INTEGER_EXT			= 0x8D9D
 	RGBA_INTEGER_MODE_EXT				= 0x8D9E
+
+###############################################################################
+
+# Extension #344 - GLX_EXT_texture_from_pixmap

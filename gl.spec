@@ -21973,4 +21973,9 @@ ClearColorIuiEXT(red, green, blue, alpha)
 	glsflags	ignore
 	glxflags	ignore
 
+###############################################################################
+#
+# Extension #344 - GLX_EXT_texture_from_pixmap
+#
+###############################################################################
 
