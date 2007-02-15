@@ -9902,7 +9902,7 @@ ClampColorARB(target, clamp)
 	category	ARB_color_buffer_float
 	version		1.5
 	extension
-	glxropcode	?
+	glxropcode	234
 	glxflags	ignore
 	glsopcode	?
 	offset		?
