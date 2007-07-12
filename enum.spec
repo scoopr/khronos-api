@@ -5860,7 +5860,7 @@ SGIX_subsample enum:
 ###############################################################################
 
 # NEC:	  104000-104999
-# Compaq: 105000-105999
+# Compaq: 105000-105999 (Compaq was acquired by HP)
 # KPC:	  106000-106999 (Kubota is out of business)
 # PGI:	  107000-107999 (Portable was acquired by Template Graphics)
 # E&S:	  108000-108999
