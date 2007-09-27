@@ -5820,12 +5820,21 @@ SGIX_subsample enum:
 # Imagination Tech.: 0x8EA0-0x8EAF
 
 ###############################################################################
+
+# Khronos OpenGL ES WG: 0x8EB0-0x8EBF
+# Assigned for Affie on 2007/07/20
+
+###############################################################################
+
+# Vincent: 0x8EC0-0x8ECF
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x8EB0-0xFFFF
+# Any_vendor_future_use: 0x8ED0-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the
