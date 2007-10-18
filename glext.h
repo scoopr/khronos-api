@@ -3379,6 +3379,9 @@ extern "C" {
 #define GL_RGBA_INTEGER_MODE_EXT          0x8D9E
 #endif
 
+#ifndef GL_GREMEDY_frame_terminator
+#endif
+
 
 /*************************************************************/
 
@@ -7250,6 +7253,14 @@ typedef void (APIENTRYP PFNGLGETTEXPARAMETERIIVEXTPROC) (GLenum target, GLenum p
 typedef void (APIENTRYP PFNGLGETTEXPARAMETERIUIVEXTPROC) (GLenum target, GLenum pname, GLuint *params);
 typedef void (APIENTRYP PFNGLCLEARCOLORIIEXTPROC) (GLint red, GLint green, GLint blue, GLint alpha);
 typedef void (APIENTRYP PFNGLCLEARCOLORIUIEXTPROC) (GLuint red, GLuint green, GLuint blue, GLuint alpha);
+#endif
+
+#ifndef GL_GREMEDY_frame_terminator
+#define GL_GREMEDY_frame_terminator 1
+#ifdef GL_GLEXT_PROTOTYPES
+GLAPI void APIENTRY glFrameTerminatorGREMEDY (void);
+#endif /* GL_GLEXT_PROTOTYPES */
+typedef void (APIENTRYP PFNGLFRAMETERMINATORGREMEDYPROC) (void);
 #endif
 
 
