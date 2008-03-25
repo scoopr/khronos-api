@@ -46,9 +46,9 @@ extern "C" {
 /*************************************************************/
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glext.h last updated 2007/02/12 */
+/* glext.h last updated 2008/03/24 */
 /* Current version at http://www.opengl.org/registry/ */
-#define GL_GLEXT_VERSION 39
+#define GL_GLEXT_VERSION 40
 
 #ifndef GL_VERSION_1_2
 #define GL_UNSIGNED_BYTE_3_3_2            0x8032
@@ -3091,8 +3091,8 @@ extern "C" {
 #ifndef GL_EXT_framebuffer_blit
 #define GL_READ_FRAMEBUFFER_EXT           0x8CA8
 #define GL_DRAW_FRAMEBUFFER_EXT           0x8CA9
-#define GL_READ_FRAMEBUFFER_BINDING_EXT   GL_FRAMEBUFFER_BINDING_EXT
-#define GL_DRAW_FRAMEBUFFER_BINDING_EXT   0x8CAA
+#define GL_DRAW_FRAMEBUFFER_BINDING_EXT   GL_FRAMEBUFFER_BINDING_EXT
+#define GL_READ_FRAMEBUFFER_BINDING_EXT   0x8CAA
 #endif
 
 #ifndef GL_EXT_framebuffer_multisample
