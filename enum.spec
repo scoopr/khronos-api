@@ -5558,7 +5558,13 @@ SGIX_subsample enum:
 #	RENDERBUFFER_SAMPLES_EXT			= 0x8CAB
 #	RENDERBUFFER_COVERAGE_SAMPLES_NV		= 0x8CAB
 
-# ARB_future_use: 0x8CAC-08CAF
+# ARB_depth_buffer_float enum:
+# All enums except external format are incompatible with NV_depth_buffer_float
+#	DEPTH_COMPONENT32F_ARB				= 0x8CAC
+#	DEPTH32F_STENCIL8_ARB				= 0x8CAD
+#	DEPTH_BUFFER_FLOAT_MODE_ARB			= 0x8CAE
+
+# ARB_future_use: 0x8CAF
 
 ###############################################################################
 
@@ -5716,9 +5722,11 @@ SGIX_subsample enum:
 # NV_future_use: 0x8DAA
 
 # NV_depth_buffer_float enum:
+# ARB_depth_buffer_float enum: (additional; see above; some values different from NV)
 #	DEPTH_COMPONENT32F_NV				= 0x8DAB
 #	DEPTH32F_STENCIL8_NV				= 0x8DAC
 #	FLOAT_32_UNSIGNED_INT_24_8_REV_NV		= 0x8DAD
+#	FLOAT_32_UNSIGNED_INT_24_8_REV_ARB		= 0x8DAD
 #	DEPTH_BUFFER_FLOAT_MODE_NV			= 0x8DAF
 
 # NV_future_use: 0x8DB0-0x8DB8
@@ -5834,12 +5842,17 @@ SGIX_subsample enum:
 # Assigned for Pat Brown (Khronos bug 3191)
 
 ###############################################################################
+
+# 3Dlabs: 0x8F50-0x8F5F
+# Assigned for Jon Kennedy (Khronos public bug 75)
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x8F50-0xFFFF
+# Any_vendor_future_use: 0x8F60-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the
