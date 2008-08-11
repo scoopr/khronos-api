@@ -38,12 +38,12 @@ param:		retval retained
 dlflags:	notlistable handcode
 glxflags:	client-intercept client-handcode server-handcode EXT SGI ignore ARB
 vectorequiv:	*
-category:	display-list drawing drawing-control feedback framebuf misc modeling pixel-op pixel-rw state-req xform 1_1 VERSION_1_2 VERSION_1_3 VERSION_1_4 VERSION_1_5 VERSION_2_0 VERSION_2_1 ATI_element_array ATI_envmap_bumpmap ATI_fragment_shader ATI_pn_triangles ATI_vertex_array_object ATI_vertex_streams EXT_blend_color EXT_blend_minmax EXT_convolution EXT_copy_texture EXT_histogram EXT_polygon_offset EXT_subtexture EXT_texture3D EXT_texture_object EXT_vertex_array EXT_vertex_shader SGIS_detail_texture SGIS_multisample SGIS_pixel_texture ARB_point_parameters EXT_point_parameters SGIS_point_parameters SGIS_sharpen_texture SGIS_texture4D SGIS_texture_filter4 SGIX_async SGIX_flush_raster SGIX_fragment_lighting SGIX_framezoom SGIX_igloo_interface SGIX_instruments SGIX_list_priority SGIX_pixel_texture SGIX_polynomial_ffd SGIX_reference_plane SGIX_sprite SGIX_tag_sample_buffer SGI_color_table ARB_multitexture ARB_multisample ARB_texture_compression ARB_transpose_matrix ARB_vertex_blend ARB_matrix_palette EXT_compiled_vertex_array EXT_cull_vertex EXT_index_func EXT_index_material EXT_draw_range_elements EXT_vertex_weighting INGR_blend_func_separate NV_evaluators NV_fence NV_occlusion_query NV_point_sprite NV_register_combiners NV_register_combiners2 NV_vertex_array_range NV_vertex_program NV_vertex_program1_1_dcc MESA_resize_buffers MESA_window_pos PGI_misc_hints EXT_fog_coord EXT_blend_func_separate EXT_color_subtable EXT_coordinate_frame EXT_light_texture EXT_multi_draw_arrays EXT_paletted_texture EXT_pixel_transform EXT_secondary_color EXT_texture_perturb_normal HP_image_transform IBM_multimode_draw_arrays IBM_vertex_array_lists INTEL_parallel_arrays SUNX_constant_data SUN_global_alpha SUN_mesh_array SUN_triangle_list SUN_vertex 3DFX_tbuffer EXT_multisample SGIS_fog_function SGIS_texture_color_mask ARB_window_pos EXT_stencil_two_side EXT_depth_bounds_test EXT_blend_equation_separate ARB_vertex_program ARB_fragment_program ARB_vertex_buffer_object ARB_occlusion_query ARB_shader_objects ARB_vertex_shader ARB_fragment_shader S3_s3tc ATI_draw_buffers ATI_texture_env_combine3 ATI_texture_float NV_float_buffer NV_fragment_program NV_half_float NV_pixel_data_range NV_primitive_restart NV_texture_expand_normal NV_texture_expand_normal NV_vertex_program2 APPLE_element_array APPLE_fence APPLE_vertex_array_object APPLE_vertex_array_range ATI_draw_buffers NV_fragment_program NV_half_float NV_pixel_data_range NV_primitive_restart ATI_map_object_buffer ATI_separate_stencil ATI_vertex_attrib_array_object ARB_draw_buffers ARB_texture_rectangle ARB_color_buffer_float EXT_framebuffer_object GREMEDY_string_marker EXT_stencil_clear_tag EXT_framebuffer_blit EXT_framebuffer_multisample MESAX_texture_stack EXT_timer_query EXT_gpu_program_parameters APPLE_flush_buffer_range NV_gpu_program4 NV_geometry_program4 EXT_geometry_shader4 NV_vertex_program4 EXT_gpu_shader4 EXT_draw_instanced EXT_texture_buffer_object NV_depth_buffer_float NV_framebuffer_multisample_coverage NV_parameter_buffer_object EXT_draw_buffers2 NV_transform_feedback EXT_bindable_uniform EXT_texture_integer GREMEDY_frame_terminator
+category:	display-list drawing drawing-control feedback framebuf misc modeling pixel-op pixel-rw state-req xform 1_1 VERSION_1_2 VERSION_1_3 VERSION_1_4 VERSION_1_5 VERSION_2_0 VERSION_2_1 VERSION_3_0 ATI_element_array ATI_envmap_bumpmap ATI_fragment_shader ATI_pn_triangles ATI_vertex_array_object ATI_vertex_streams EXT_blend_color EXT_blend_minmax EXT_convolution EXT_copy_texture EXT_histogram EXT_polygon_offset EXT_subtexture EXT_texture3D EXT_texture_object EXT_vertex_array EXT_vertex_shader SGIS_detail_texture SGIS_multisample SGIS_pixel_texture ARB_point_parameters EXT_point_parameters SGIS_point_parameters SGIS_sharpen_texture SGIS_texture4D SGIS_texture_filter4 SGIX_async SGIX_flush_raster SGIX_fragment_lighting SGIX_framezoom SGIX_igloo_interface SGIX_instruments SGIX_list_priority SGIX_pixel_texture SGIX_polynomial_ffd SGIX_reference_plane SGIX_sprite SGIX_tag_sample_buffer SGI_color_table ARB_multitexture ARB_multisample ARB_texture_compression ARB_transpose_matrix ARB_vertex_blend ARB_matrix_palette EXT_compiled_vertex_array EXT_cull_vertex EXT_index_func EXT_index_material EXT_draw_range_elements EXT_vertex_weighting INGR_blend_func_separate NV_evaluators NV_fence NV_occlusion_query NV_point_sprite NV_register_combiners NV_register_combiners2 NV_vertex_array_range NV_vertex_program NV_vertex_program1_1_dcc MESA_resize_buffers MESA_window_pos PGI_misc_hints EXT_fog_coord EXT_blend_func_separate EXT_color_subtable EXT_coordinate_frame EXT_light_texture EXT_multi_draw_arrays EXT_paletted_texture EXT_pixel_transform EXT_secondary_color EXT_texture_perturb_normal HP_image_transform IBM_multimode_draw_arrays IBM_vertex_array_lists INTEL_parallel_arrays SUNX_constant_data SUN_global_alpha SUN_mesh_array SUN_triangle_list SUN_vertex 3DFX_tbuffer EXT_multisample SGIS_fog_function SGIS_texture_color_mask ARB_window_pos EXT_stencil_two_side EXT_depth_bounds_test EXT_blend_equation_separate ARB_vertex_program ARB_fragment_program ARB_vertex_buffer_object ARB_occlusion_query ARB_shader_objects ARB_vertex_shader ARB_fragment_shader S3_s3tc ATI_draw_buffers ATI_texture_env_combine3 ATI_texture_float NV_float_buffer NV_fragment_program NV_half_float NV_pixel_data_range NV_primitive_restart NV_texture_expand_normal NV_texture_expand_normal NV_vertex_program2 APPLE_element_array APPLE_fence APPLE_vertex_array_object APPLE_vertex_array_range ATI_draw_buffers NV_fragment_program NV_half_float NV_pixel_data_range NV_primitive_restart ATI_map_object_buffer ATI_separate_stencil ATI_vertex_attrib_array_object ARB_draw_buffers ARB_texture_rectangle ARB_color_buffer_float EXT_framebuffer_object GREMEDY_string_marker EXT_stencil_clear_tag EXT_framebuffer_blit EXT_framebuffer_multisample MESAX_texture_stack EXT_timer_query EXT_gpu_program_parameters APPLE_flush_buffer_range NV_gpu_program4 NV_geometry_program4 EXT_geometry_shader4 NV_vertex_program4 EXT_gpu_shader4 EXT_draw_instanced EXT_texture_buffer_object NV_depth_buffer_float NV_framebuffer_multisample_coverage NV_parameter_buffer_object EXT_draw_buffers2 NV_transform_feedback EXT_bindable_uniform EXT_texture_integer GREMEDY_frame_terminator NV_conditional_render NV_present_video EXT_transform_feedback ARB_depth_buffer_float ARB_draw_instanced ARB_framebuffer_object ARB_framebuffer_sRGB ARB_geometry_shader4 ARB_half_float_vertex ARB_instanced_arrays ARB_map_buffer_range ARB_texture_buffer_object ARB_texture_compression_rgtc ARB_texture_rg ARB_vertex_array_object
 
 # categories for extensions with no functions - need not be included now
 #   ARB_texture_env_add ARB_texture_cube_map ARB_texture_border_clamp ARB_shading_language_100 ARB_texture_non_power_of_two ARB_point_sprite ARB_half_float_pixel ARB_texture_float ARB_pixel_buffer_object EXT_abgr EXT_texture SGI_color_matrix SGI_texture_color_table EXT_cmyka EXT_packed_pixels SGIS_texture_lod EXT_rescale_normal EXT_misc_attribute SGIS_generate_mipmap SGIX_clipmap SGIX_shadow SGIS_texture_edge_clamp SGIS_texture_border_clamp EXT_blend_subtract EXT_blend_logic_op SGIX_async_histogram SGIX_async_pixel SGIX_interlace SGIX_pixel_tiles SGIX_texture_select SGIX_texture_multi_buffer SGIX_texture_scale_bias SGIX_depth_texture SGIX_fog_offset HP_convolution_border_modes SGIX_texture_add_env PGI_vertex_hints EXT_clip_volume_hint SGIX_ir_instrument1 SGIX_calligraphic_fragment SGIX_texture_lod_bias SGIX_shadow_ambient EXT_index_texture EXT_index_array_formats SGIX_ycrcb IBM_rasterpos_clip HP_texture_lighting WIN_phong_shading WIN_specular_fog SGIX_blend_alpha_minmax EXT_bgra HP_occlusion_test EXT_pixel_transform_color_table EXT_shared_texture_palette EXT_separate_specular_color EXT_texture_env REND_screen_coordinates EXT_texture_env_combine APPLE_specular_vector APPLE_transform_hint SGIX_fog_scale INGR_color_clamp INGR_interlace_read EXT_stencil_wrap EXT_422_pixels NV_texgen_reflection SUN_convolution_border_modes SUN_slice_accum EXT_texture_env_add EXT_texture_lod_bias EXT_texture_filter_anisotropic NV_light_max_exponent NV_fog_distance NV_texgen_emboss NV_blend_square NV_texture_env_combine4 NV_packed_depth_stencil NV_texture_compression_vtc NV_texture_rectangle NV_texture_shader NV_texture_shader2 NV_vertex_array_range2 IBM_cull_vertex SGIX_subsample SGIX_ycrcba SGIX_ycrcb_subsample SGIX_depth_pass_instrument 3DFX_texture_compression_FXT1 3DFX_multisample SGIX_vertex_preclip SGIX_convolution_accuracy SGIX_resample SGIX_scalebias_hint SGIX_texture_coordinate_clamp EXT_shadow_funcs MESA_pack_invert MESA_ycbcr_texture EXT_packed_float EXT_texture_array EXT_texture_compression_latc EXT_texture_compression_rgtc EXT_texture_shared_exponent NV_fragment_program4 EXT_framebuffer_sRGB NV_geometry_shader4
 
-version:	1.0 1.1 1.2 1.3 1.4 1.5 2.0 2.1
+version:	1.0 1.1 1.2 1.3 1.4 1.5 2.0 2.1 3.0
 glxsingle:	*
 glxropcode:	*
 glxvendorpriv:	*
@@ -138,16 +138,16 @@ passthru: typedef unsigned short GLhalfNV;
 passthru: #endif
 passthru:
 passthru: #ifndef GLEXT_64_TYPES_DEFINED
-passthru: /* This code block is duplicated in glext.h, so must be protected */
+passthru: /* This code block is duplicated in glxext.h, so must be protected */
 passthru: #define GLEXT_64_TYPES_DEFINED
 passthru: /* Define int32_t, int64_t, and uint64_t types for UST/MSC */
 passthru: /* (as used in the GL_EXT_timer_query extension). */
 passthru: #if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
 passthru: #include <inttypes.h>
-passthru: #elif defined(__sun__)
+passthru: #elif defined(__sun__) || defined(__digital__)
 passthru: #include <inttypes.h>
 passthru: #if defined(__STDC__)
-passthru: #if defined(__arch64__)
+passthru: #if defined(__arch64__) || defined(_LP64)
 passthru: typedef long int int64_t;
 passthru: typedef unsigned long int uint64_t;
 passthru: #else
@@ -155,7 +155,7 @@ passthru: typedef long long int int64_t;
 passthru: typedef unsigned long long int uint64_t;
 passthru: #endif /* __arch64__ */
 passthru: #endif /* __STDC__ */
-passthru: #elif defined( __VMS )
+passthru: #elif defined( __VMS ) || defined(__sgi)
 passthru: #include <inttypes.h>
 passthru: #elif defined(__SCO__) || defined(__USLC__)
 passthru: #include <stdint.h>
@@ -7126,6 +7126,17 @@ UniformMatrix4x3fv(location, count, transpose, value)
 	offset		?
 
 
+###############################################################################
+###############################################################################
+#
+# OpenGL 3.0 commands
+#
+###############################################################################
+###############################################################################
+
+# TBD
+newcategory: VERSION_3_0
+
 
 ###############################################################################
 ###############################################################################
@@ -9936,6 +9947,177 @@ newcategory: ARB_texture_float
 
 # (none)
 newcategory: ARB_pixel_buffer_object
+
+###############################################################################
+#
+# ARB Extension #43
+# ARB_depth_buffer_float commands
+#
+###############################################################################
+
+# (none)
+newcategory: ARB_depth_buffer_float
+
+###############################################################################
+#
+# ARB Extension #44
+# ARB_draw_instanced commands
+#
+###############################################################################
+
+# TBD
+newcategory: ARB_draw_instanced
+#   void DrawArraysInstancedARB(enum mode, int first, sizei count,
+#	    sizei primcount);
+#   void DrawElementsInstancedARB(enum mode, sizei count, enum type,
+#	    const void *indices, sizei primcount);
+
+###############################################################################
+#
+# ARB Extension #45
+# ARB_framebuffer_object commands
+#
+###############################################################################
+
+# TBD
+newcategory: ARB_framebuffer_object
+#   boolean IsRenderbuffer(uint renderbuffer);
+#   void BindRenderbuffer(enum target, uint renderbuffer);
+#   void DeleteRenderbuffers(sizei n, const uint *renderbuffers);
+#   void GenRenderbuffers(sizei n, uint *renderbuffers);
+#   void RenderbufferStorage(enum target, enum internalformat,
+#			     sizei width, sizei height);
+#   void RenderbufferStorageMultisample(enum target, sizei samples,
+#					enum internalformat,
+#					sizei width, sizei height);
+#   void GetRenderbufferParameteriv(enum target, enum pname, int *params);
+#   boolean IsFramebuffer(uint framebuffer);
+#   void BindFramebuffer(enum target, uint framebuffer);
+#   void DeleteFramebuffers(sizei n, const uint *framebuffers);
+#   void GenFramebuffers(sizei n, uint *framebuffers);
+#   enum CheckFramebufferStatus(enum target);
+#   void FramebufferTexture1D(enum target, enum attachment,
+#			      enum textarget, uint texture, int level);
+#   void FramebufferTexture2D(enum target, enum attachment,
+#			      enum textarget, uint texture, int level);
+#   void FramebufferTexture3D(enum target, enum attachment,
+#			      enum textarget, uint texture,
+#			      int level, int layer);
+#   void FramebufferTexturLayer(enum target,enum attachment,
+#				 uint texture,int level,int layer);
+#   void FramebufferRenderbuffer(enum target, enum attachment,
+#				 enum renderbuffertarget, uint renderbuffer);
+#   void GetFramebufferAttachmentParameteriv(enum target, enum attachment,
+#					     enum pname, int *params);
+#   void BlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1,
+#			 int dstX0, int dstY0, int dstX1, int dstY1,
+#			 bitfield mask, enum filter);
+#   void GenerateMipmap(enum target);
+
+###############################################################################
+#
+# ARB Extension #46
+# ARB_framebuffer_sRGB commands
+#
+###############################################################################
+
+# (none)
+newcategory: ARB_framebuffer_sRGB
+
+###############################################################################
+#
+# ARB Extension #47
+# ARB_geometry_shader4 commands
+#
+###############################################################################
+
+# TBD
+newcategory: ARB_geometry_shader4
+#   void ProgramParameteriARB(uint program, enum pname, int value);
+#   void FramebufferTextureARB(enum target, enum attachment,
+#			       uint texture, int level);
+#   void FramebufferTextureLayerARB(enum target, enum attachment,
+#				    uint texture, int level, int layer);
+#   void FramebufferTextureFaceARB(enum target, enum attachment,
+#				   uint texture, int level, enum face);
+
+###############################################################################
+#
+# ARB Extension #48
+# ARB_half_float_vertex commands
+#
+###############################################################################
+
+# (none)
+newcategory: ARB_half_float_vertex
+
+###############################################################################
+#
+# ARB Extension #49
+# ARB_instanced_arrays commands
+#
+###############################################################################
+
+# TBD
+newcategory: ARB_instanced_arrays
+#   void VertexAttribDivisorARB(uint index, uint divisor);
+
+###############################################################################
+#
+# ARB Extension #50
+# ARB_map_buffer_range commands
+#
+###############################################################################
+
+# TBD
+newcategory: ARB_map_buffer_range
+#   void *MapBufferRange(enum target, intptr offset, sizeiptr length, bitfield access);
+#   void FlushMappedBufferRange(enum target, intptr offset, sizeiptr length);
+
+###############################################################################
+#
+# ARB Extension #51
+# ARB_texture_buffer_object commands
+#
+###############################################################################
+
+# TBD
+newcategory: ARB_texture_buffer_object
+#   void TexBufferARB(enum target, enum internalformat, uint buffer);
+
+###############################################################################
+#
+# ARB Extension #52
+# ARB_texture_compression_rgtc commands
+#
+###############################################################################
+
+# (none)
+newcategory: ARB_texture_compression_rgtc
+
+###############################################################################
+#
+# ARB Extension #53
+# ARB_texture_rg commands
+#
+###############################################################################
+
+# (none)
+newcategory: ARB_texture_rg
+
+###############################################################################
+#
+# ARB Extension #54
+# ARB_vertex_array_object commands
+#
+###############################################################################
+
+# TBD
+newcategory: ARB_vertex_array_object
+#   void BindVertexArray(uint array);
+#   void DeleteVertexArrays(sizei n, const uint *arrays);
+#   void GenVertexArrays(sizei n, uint *arrays);
+#   boolean IsVertexArray(uint array);
 
 
 ###############################################################################
@@ -21995,3 +22177,72 @@ FrameTerminatorGREMEDY()
 	glxflags	ignore
 	offset		?
 
+###############################################################################
+#
+# Extension #346
+# NV_conditional_render commands
+#
+###############################################################################
+
+# TBD
+newcategory: NV_conditional_render
+
+#    void BeginConditionalRenderNV(uint id, enum mode);
+#    void EndConditionalRenderNV(void);
+
+###############################################################################
+#
+# Extension #347
+# NV_present_video commands
+#
+###############################################################################
+
+# TBD
+newcategory: NV_present_video
+
+#    void PresentFrameKeyedNV(uint video_slot, uint64EXT minPresentTime,
+#			      uint beginPresentTimeId, uint
+#			      presentDurationId, enum type, enum target0,
+#			      uint fill0, uint key0, enum target1, uint
+#			      fill1, uint key1);
+#
+#    void PresentFrameDualFillNV(uint video_slot, uint64EXT
+#				 minPresentTime, uint beginPresentTimeId,
+#				 uint presentDurationId, enum type, enum
+#				 target0, uint fill0, enum target1, uint
+#				 fill1, enum target2, uint fill2, enum
+#				 target3, uint fill3);
+#
+#    void GetVideoivNV(uint video_slot, enum pname, int *params);
+#    void GetVideouivNV(uint video_slot, enum pname, uint *params);
+#    void GetVideoi64vNV(uint video_slot, enum pname, int64EXT *params);
+#    void GetVideoui64vNV(uint video_slot, enum pname, uint64EXT *params);
+#    void VideoParameterivNV(uint video_slot, enum pname, const int *params);
+
+###############################################################################
+#
+# Extension #348 - GLX_NV_video_out
+# Extension #349 - WGL_NV_video_out
+# Extension #350 - GLX_NV_swap_group
+# Extension #351 - WGL_NV_swap_group
+#
+###############################################################################
+
+###############################################################################
+#
+# Extension #352
+# EXT_transform_feedback commands
+#
+###############################################################################
+
+# TBD
+newcategory: EXT_transform_feedback
+#   void BindBufferRangeEXT(enum target, uint index, uint buffer, intptr offset, sizeiptr size);
+#   void BindBufferOffsetEXT(enum target, uint index, uint buffer, intptr offset);
+#   void BindBufferBaseEXT(enum target, uint index, uint buffer);
+#   void BeginTransformFeedbackEXT(enum primitiveMode);
+#   void EndTransformFeedbackEXT(void);
+#   void TransformFeedbackVaryingsEXT(uint program, sizei count, const char **varyings, enum bufferMode);
+#   void GetTransformFeedbackVaryingEXT(uint program, uint index, sizei bufSize, sizei *length, sizei *size, enum *type, char *name);
+#   void GetIntegerIndexedvEXT(enum param, uint index, int *values);
+#   void GetBooleanIndexedvEXT(enum param, uint index, boolean *values);
