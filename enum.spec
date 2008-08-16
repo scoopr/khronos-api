@@ -6214,12 +6214,17 @@ SGIX_subsample enum:
 # Assigned for Jon Kennedy (Khronos public bug 75)
 
 ###############################################################################
+
+# ARM: 0x8F60-0x8F6F
+# Assigned for Remi Pedersen (Khronos bug 3745)
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x8F60-0xFFFF
+# Any_vendor_future_use: 0x8F70-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the
