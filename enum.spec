@@ -4056,9 +4056,12 @@ SGIX_subsample enum:
 #	TEXTURE_RANGE_POINTER_APPLE			= 0x85B8
 
 # APPLE_ycbcr_422 enum:
+# MESA_ycbcr_texture enum: (additional; see below)
 #	YCBCR_422_APPLE					= 0x85B9
 #	UNSIGNED_SHORT_8_8_APPLE			= 0x85BA
+#	UNSIGNED_SHORT_8_8_MESA				= 0x85BA
 #	UNSIGNED_SHORT_8_8_REV_APPLE			= 0x85BB
+#	UNSIGNED_SHORT_8_8_REV_MESA			= 0x85BB
 
 # MESA_ycbcr_texture enum: (separate; see below)
 #	UNSIGNED_SHORT_8_8_MESA				= 0x85BA
@@ -4497,7 +4500,26 @@ SGIX_subsample enum:
 
 # MESA: 0x8750-0x875F
 
-# MESA_future_use: 0x8750-0x8757
+# MESA_packed_depth_stencil enum:
+#	DEPTH_STENCIL_MESA				= 0x8750
+#	UNSIGNED_INT_24_8_MESA				= 0x8751
+#	UNSIGNED_INT_8_24_REV_MESA			= 0x8752
+#	UNSIGNED_SHORT_15_1_MESA			= 0x8753
+#	UNSIGNED_SHORT_1_15_REV_MESA			= 0x8754
+
+# MESA_trace enum:
+#	TRACE_ALL_BITS_MESA				= 0xFFFF
+#	TRACE_OPERATIONS_BIT_MESA			= 0x0001
+#	TRACE_PRIMITIVES_BIT_MESA			= 0x0002
+#	TRACE_ARRAYS_BIT_MESA				= 0x0004
+#	TRACE_TEXTURES_BIT_MESA				= 0x0008
+#	TRACE_PIXELS_BIT_MESA				= 0x0010
+#	TRACE_ERRORS_BIT_MESA				= 0x0020
+#	TRACE_MASK_MESA					= 0x8755
+#	TRACE_NAME_MESA					= 0x8756
+
+# MESA_ycbcr_texture enum:
+#	YCBCR_MESA					= 0x8757
 
 # MESA_pack_invert enum:
 #	PACK_INVERT_MESA				= 0x8758
@@ -4509,6 +4531,12 @@ SGIX_subsample enum:
 #	PROXY_TEXTURE_2D_STACK_MESAX			= 0x875C
 #	TEXTURE_1D_STACK_BINDING_MESAX			= 0x875D
 #	TEXTURE_2D_STACK_BINDING_MESAX			= 0x875E
+
+# MESA_shader_debug enum:
+#	DEBUG_OBJECT_MESA				= 0x8759
+#	DEBUG_PRINT_MESA				= 0x875A
+#	DEBUG_ASSERT_MESA				= 0x875B
+
 
 # MESA_future_use: 0x875F
 
@@ -5546,6 +5574,17 @@ SGIX_subsample enum:
 ###############################################################################
 
 # Mesa: 0x8BB0-0x8BBF
+#   Probably one of the two 0x8BB4 enums should be 0x8BB5, but the
+#   extension spec is not complete in any event.
+# MESA_program_debug enum:
+#	FRAGMENT_PROGRAM_POSITION_MESA			= 0x8BB0
+#	FRAGMENT_PROGRAM_CALLBACK_MESA			= 0x8BB1
+#	FRAGMENT_PROGRAM_CALLBACK_FUNC_MESA		= 0x8BB2
+#	FRAGMENT_PROGRAM_CALLBACK_DATA_MESA		= 0x8BB3
+#	VERTEX_PROGRAM_CALLBACK_MESA			= 0x8BB4
+#	VERTEX_PROGRAM_POSITION_MESA			= 0x8BB4
+#	VERTEX_PROGRAM_CALLBACK_FUNC_MESA		= 0x8BB6
+#	VERTEX_PROGRAM_CALLBACK_DATA_MESA		= 0x8BB7
 
 ###############################################################################
 
@@ -5785,8 +5824,6 @@ SGIX_subsample enum:
 # All enums except external format are incompatible with NV_depth_buffer_float
 #	DEPTH_COMPONENT32F				= 0x8CAC
 #	DEPTH32F_STENCIL8				= 0x8CAD
-# This is not in 3.0 and maybe shouldn't be in ARB_depth_buffer_float, TBD
-#	DEPTH_BUFFER_FLOAT_MODE_ARB			= 0x8CAE
 
 # ARB_future_use: 0x8CAF
 
@@ -6180,7 +6217,12 @@ SGIX_subsample enum:
 #	PRESENT_TIME_NV					= 0x8E2A
 #	PRESENT_DURATION_NV				= 0x8E2B
 
-# NV_future_use: 0x8E2C-0x8E8F
+# NV_future_use: 0x8E2C
+
+# EXT_direct_state_access enum:
+#	PROGRAM_MATRIX_EXT				= 0x8E2D
+#	TRANSPOSE_PROGRAM_MATRIX_EXT			= 0x8E2E
+#	PROGRAM_MATRIX_STACK_DEPTH_EXT			= 0x8E2F
 
 ###############################################################################
 

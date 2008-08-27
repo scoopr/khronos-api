@@ -196,7 +196,7 @@ StencilFunction,*,*,		    GLenum,*,*
 StencilFaceDirection,*,*,	    GLenum,*,*
 StencilOp,*,*,			    GLenum,*,*
 StencilValue,*,*,		    GLint,*,*
-String,*,*,			    GLstring,*,*
+String,*,*,			    const GLubyte *,*,*
 StringName,*,*,			    GLenum,*,*
 TangentPointerTypeEXT,*,*,	    GLenum,*,*
 TessCallback,*,*,		    GLenum,*,*
@@ -282,6 +282,7 @@ Half16NV,*,*,			    GLhalfNV,*,*
 # NV_pixel_data_range
 PixelDataRangeTargetNV,*,*,	    GLenum,*,*
 # Generic types for as-yet-unspecified enums
+TypeEnum,*,*,			    GLenum,*,*
 GLenum,*,*,			    GLenum,*,*
 handleARB,*,*,			    GLhandleARB,*,*
 charARB,*,*,			    GLcharARB,*,*
@@ -289,3 +290,24 @@ charPointerARB,*,*,		    GLcharARB*,*,*
 # EXT_timer_query
 Int64EXT,*,*,			    GLint64EXT,*,*
 UInt64EXT,*,*,			    GLuint64EXT,*,*
+# EXT_direct_state_access
+FramebufferAttachment,*,*,	    GLenum,*,*
+FramebufferAttachmentParameterName,*,*, GLenum,*,*
+Framebuffer,*,*,		    GLuint,*,*
+FramebufferStatus,*,*,		    GLenum,*,*
+FramebufferTarget,*,*,		    GLenum,*,*
+GetFramebufferParameter,*,*,	    GLenum,*,*
+Intptr,*,*,			    GLintptr,*,*
+ProgramFormat,*,*,		    GLenum,*,*
+ProgramProperty,*,*,		    GLenum,*,*
+ProgramStringProperty,*,*,	    GLenum,*,*
+ProgramTarget,*,*,		    GLenum,*,*
+Renderbuffer,*,*,		    GLuint,*,*
+RenderbufferParameterName,*,*,	    GLenum,*,*
+Sizeiptr,*,*,			    GLsizeiptr,*,*
+TextureInternalFormat,*,*,	    GLenum,*,*
+VertexBufferObjectAccess,*,*,	    GLenum,*,*
+VertexBufferObjectParameter,*,*,    GLenum,*,*
+VertexBufferObjectUsage,*,*,	    GLenum,*,*
+# ARB_map_buffer_range
+BufferAccessMask,*,*,		    GLbitfield,*,*

@@ -17,9 +17,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glext.h last updated 2008/08/10 */
+passthru: /* glext.h last updated 2008/08/16 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GL_GLEXT_VERSION 41
+passthru: #define GL_GLEXT_VERSION 42
 
 ###############################################################################
 #
@@ -504,11 +504,6 @@ VERSION_3_0 enum:
 	MINOR_VERSION					= 0x821C
 	NUM_EXTENSIONS					= 0x821D
 	CONTEXT_FLAGS					= 0x821E
-# Removed - replaced by per-attachment framebuffer queries
-##	  COLOR_COMPONENT_TYPE				  = 0x821F
-##	  COLOR_ENCODING_TYPE				  = 0x8220
-##	  DEPTH_COMPONENT_TYPE				  = 0x8221
-##	  TEXTURE_SHARED_TYPE				  = 0x8222
 	DEPTH_BUFFER					= 0x8223
 	STENCIL_BUFFER					= 0x8224
 	COMPRESSED_RED					= 0x8225
@@ -605,6 +600,132 @@ VERSION_3_0 enum:
 	QUERY_NO_WAIT					= 0x8E14
 	QUERY_BY_REGION_WAIT				= 0x8E15
 	QUERY_BY_REGION_NO_WAIT				= 0x8E16
+passthru: /* Reuse tokens from ARB_depth_buffer_float */
+	use ARB_depth_buffer_float	    DEPTH_COMPONENT32F
+	use ARB_depth_buffer_float	    DEPTH32F_STENCIL8
+	use ARB_depth_buffer_float	    FLOAT_32_UNSIGNED_INT_24_8_REV
+passthru: /* Reuse tokens from ARB_framebuffer_object */
+	use ARB_framebuffer_object	    INVALID_FRAMEBUFFER_OPERATION
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_RED_SIZE
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_GREEN_SIZE
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_BLUE_SIZE
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE
+	use ARB_framebuffer_object	    FRAMEBUFFER_DEFAULT
+	use ARB_framebuffer_object	    FRAMEBUFFER_UNDEFINED
+	use ARB_framebuffer_object	    DEPTH_STENCIL_ATTACHMENT
+	use ARB_framebuffer_object	    INDEX
+	use ARB_framebuffer_object	    MAX_RENDERBUFFER_SIZE
+	use ARB_framebuffer_object	    DEPTH_STENCIL
+	use ARB_framebuffer_object	    UNSIGNED_INT_24_8
+	use ARB_framebuffer_object	    DEPTH24_STENCIL8
+	use ARB_framebuffer_object	    TEXTURE_STENCIL_SIZE
+	use ARB_framebuffer_object	    TEXTURE_RED_TYPE
+	use ARB_framebuffer_object	    TEXTURE_GREEN_TYPE
+	use ARB_framebuffer_object	    TEXTURE_BLUE_TYPE
+	use ARB_framebuffer_object	    TEXTURE_ALPHA_TYPE
+	use ARB_framebuffer_object	    TEXTURE_LUMINANCE_TYPE
+	use ARB_framebuffer_object	    TEXTURE_INTENSITY_TYPE
+	use ARB_framebuffer_object	    TEXTURE_DEPTH_TYPE
+	use ARB_framebuffer_object	    UNSIGNED_NORMALIZED
+	use ARB_framebuffer_object	    FRAMEBUFFER_BINDING
+	use ARB_framebuffer_object	    DRAW_FRAMEBUFFER_BINDING
+	use ARB_framebuffer_object	    RENDERBUFFER_BINDING
+	use ARB_framebuffer_object	    READ_FRAMEBUFFER
+	use ARB_framebuffer_object	    DRAW_FRAMEBUFFER
+	use ARB_framebuffer_object	    READ_FRAMEBUFFER_BINDING
+	use ARB_framebuffer_object	    RENDERBUFFER_SAMPLES
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_OBJECT_NAME
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER
+	use ARB_framebuffer_object	    FRAMEBUFFER_COMPLETE
+	use ARB_framebuffer_object	    FRAMEBUFFER_INCOMPLETE_ATTACHMENT
+	use ARB_framebuffer_object	    FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT
+	use ARB_framebuffer_object	    FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER
+	use ARB_framebuffer_object	    FRAMEBUFFER_INCOMPLETE_READ_BUFFER
+	use ARB_framebuffer_object	    FRAMEBUFFER_UNSUPPORTED
+	use ARB_framebuffer_object	    MAX_COLOR_ATTACHMENTS
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT0
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT1
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT2
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT3
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT4
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT5
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT6
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT7
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT8
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT9
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT10
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT11
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT12
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT13
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT14
+	use ARB_framebuffer_object	    COLOR_ATTACHMENT15
+	use ARB_framebuffer_object	    DEPTH_ATTACHMENT
+	use ARB_framebuffer_object	    STENCIL_ATTACHMENT
+	use ARB_framebuffer_object	    FRAMEBUFFER
+	use ARB_framebuffer_object	    RENDERBUFFER
+	use ARB_framebuffer_object	    RENDERBUFFER_WIDTH
+	use ARB_framebuffer_object	    RENDERBUFFER_HEIGHT
+	use ARB_framebuffer_object	    RENDERBUFFER_INTERNAL_FORMAT
+	use ARB_framebuffer_object	    STENCIL_INDEX1
+	use ARB_framebuffer_object	    STENCIL_INDEX4
+	use ARB_framebuffer_object	    STENCIL_INDEX8
+	use ARB_framebuffer_object	    STENCIL_INDEX16
+	use ARB_framebuffer_object	    RENDERBUFFER_RED_SIZE
+	use ARB_framebuffer_object	    RENDERBUFFER_GREEN_SIZE
+	use ARB_framebuffer_object	    RENDERBUFFER_BLUE_SIZE
+	use ARB_framebuffer_object	    RENDERBUFFER_ALPHA_SIZE
+	use ARB_framebuffer_object	    RENDERBUFFER_DEPTH_SIZE
+	use ARB_framebuffer_object	    RENDERBUFFER_STENCIL_SIZE
+	use ARB_framebuffer_object	    FRAMEBUFFER_INCOMPLETE_MULTISAMPLE
+	use ARB_framebuffer_object	    MAX_SAMPLES
+passthru: /* Reuse tokens from ARB_framebuffer_sRGB */
+	use ARB_framebuffer_sRGB	    FRAMEBUFFER_SRGB
+passthru: /* Reuse tokens from ARB_half_float_vertex */
+	use ARB_half_float_vertex	    HALF_FLOAT
+passthru: /* Reuse tokens from ARB_map_buffer_range */
+	use ARB_map_buffer_range	    MAP_READ_BIT
+	use ARB_map_buffer_range	    MAP_WRITE_BIT
+	use ARB_map_buffer_range	    MAP_INVALIDATE_RANGE_BIT
+	use ARB_map_buffer_range	    MAP_INVALIDATE_BUFFER_BIT
+	use ARB_map_buffer_range	    MAP_FLUSH_EXPLICIT_BIT
+	use ARB_map_buffer_range	    MAP_UNSYNCHRONIZED_BIT
+passthru: /* Reuse tokens from ARB_texture_compression_rgtc */
+	use ARB_texture_compression_rgtc    COMPRESSED_RED_RGTC1
+	use ARB_texture_compression_rgtc    COMPRESSED_SIGNED_RED_RGTC1
+	use ARB_texture_compression_rgtc    COMPRESSED_RG_RGTC2
+	use ARB_texture_compression_rgtc    COMPRESSED_SIGNED_RG_RGTC2
+passthru: /* Reuse tokens from ARB_texture_rg */
+	use ARB_texture_rg		    RG
+	use ARB_texture_rg		    RG_INTEGER
+	use ARB_texture_rg		    R8
+	use ARB_texture_rg		    R16
+	use ARB_texture_rg		    RG8
+	use ARB_texture_rg		    RG16
+	use ARB_texture_rg		    R16F
+	use ARB_texture_rg		    R32F
+	use ARB_texture_rg		    RG16F
+	use ARB_texture_rg		    RG32F
+	use ARB_texture_rg		    R8I
+	use ARB_texture_rg		    R8UI
+	use ARB_texture_rg		    R16I
+	use ARB_texture_rg		    R16UI
+	use ARB_texture_rg		    R32I
+	use ARB_texture_rg		    R32UI
+	use ARB_texture_rg		    RG8I
+	use ARB_texture_rg		    RG8UI
+	use ARB_texture_rg		    RG16I
+	use ARB_texture_rg		    RG16UI
+	use ARB_texture_rg		    RG32I
+	use ARB_texture_rg		    RG32UI
+passthru: /* Reuse tokens from ARB_vertex_array_object */
+	use ARB_vertex_array_object	    VERTEX_ARRAY_BINDING
 
 
 ###############################################################################
@@ -1292,8 +1413,6 @@ ARB_depth_buffer_float enum:
 	DEPTH_COMPONENT32F				= 0x8CAC
 	DEPTH32F_STENCIL8				= 0x8CAD
 	FLOAT_32_UNSIGNED_INT_24_8_REV			= 0x8DAD
-# This is not in 3.0 and maybe shouldn't be in ARB_depth_buffer_float, TBD
-#	DEPTH_BUFFER_FLOAT_MODE_ARB			= 0x8CAE
 
 ###############################################################################
 
@@ -1414,10 +1533,8 @@ ARB_geometry_shader4 enum:
 	MAX_GEOMETRY_UNIFORM_COMPONENTS_ARB		= 0x8DDF
 	MAX_GEOMETRY_OUTPUT_VERTICES_ARB		= 0x8DE0
 	MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_ARB	= 0x8DE1
-# Already in OpenGL 3.0
-#	 MAX_VARYING_COMPONENTS				 = GL_MAX_VARYING_FLOATS
-# Already in ARB_framebuffer_object
-#	 FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER		 = 0x8CD4
+	use VERSION_3_0			    MAX_VARYING_COMPONENTS
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER
 
 ###############################################################################
 
@@ -2476,7 +2593,7 @@ EXT_light_texture enum:
 	TEXTURE_LIGHT_EXT				= 0x8350 # 1 I
 	TEXTURE_MATERIAL_FACE_EXT			= 0x8351 # 1 I
 	TEXTURE_MATERIAL_PARAMETER_EXT			= 0x8352 # 1 I
-	use EXT_fog_coord FRAGMENT_DEPTH_EXT
+	use EXT_fog_coord		    FRAGMENT_DEPTH_EXT
 
 ###############################################################################
 
@@ -3018,11 +3135,11 @@ NV_register_combiners enum:
 	COMBINER5_NV					= 0x8555
 	COMBINER6_NV					= 0x8556
 	COMBINER7_NV					= 0x8557
-	use ARB_multitexture TEXTURE0_ARB
-	use ARB_multitexture TEXTURE1_ARB
-	use BlendingFactorDest ZERO
-	use DrawBufferMode NONE
-	use GetPName FOG
+	use ARB_multitexture		    TEXTURE0_ARB
+	use ARB_multitexture		    TEXTURE1_ARB
+	use BlendingFactorDest		    ZERO
+	use DrawBufferMode		    NONE
+	use GetPName			    FOG
 
 ###############################################################################
 
@@ -3031,7 +3148,7 @@ NV_fog_distance enum:
 	FOG_DISTANCE_MODE_NV				= 0x855A
 	EYE_RADIAL_NV					= 0x855B
 	EYE_PLANE_ABSOLUTE_NV				= 0x855C
-	use TextureGenParameter EYE_PLANE
+	use TextureGenParameter		    EYE_PLANE
 
 ###############################################################################
 
@@ -4268,14 +4385,14 @@ NV_fragment_program2 enum:
 
 # Extension #305
 NV_vertex_program2_option enum:
-	use NV_fragment_program2 MAX_PROGRAM_EXEC_INSTRUCTIONS_NV
-	use NV_fragment_program2 MAX_PROGRAM_CALL_DEPTH_NV
+	use NV_fragment_program2	    MAX_PROGRAM_EXEC_INSTRUCTIONS_NV
+	use NV_fragment_program2	    MAX_PROGRAM_CALL_DEPTH_NV
 
 ###############################################################################
 
 # Extension #306
 NV_vertex_program3 enum:
-	use ARB_vertex_shader MAX_VERTEX_TEXTURE_IMAGE_UNITS_ARB
+	use ARB_vertex_shader		    MAX_VERTEX_TEXTURE_IMAGE_UNITS_ARB
 
 ###############################################################################
 
@@ -4477,25 +4594,25 @@ NV_geometry_program4 enum:
 # Extension #324
 EXT_geometry_shader4 enum:
 	GEOMETRY_SHADER_EXT				= 0x8DD9
-	use NV_geometry_program4 GEOMETRY_VERTICES_OUT_EXT
-	use NV_geometry_program4 GEOMETRY_INPUT_TYPE_EXT
-	use NV_geometry_program4 GEOMETRY_OUTPUT_TYPE_EXT
-	use NV_geometry_program4 MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_EXT
+	use NV_geometry_program4	    GEOMETRY_VERTICES_OUT_EXT
+	use NV_geometry_program4	    GEOMETRY_INPUT_TYPE_EXT
+	use NV_geometry_program4	    GEOMETRY_OUTPUT_TYPE_EXT
+	use NV_geometry_program4	    MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_EXT
 	MAX_GEOMETRY_VARYING_COMPONENTS_EXT		= 0x8DDD
 	MAX_VERTEX_VARYING_COMPONENTS_EXT		= 0x8DDE
 	MAX_VARYING_COMPONENTS_EXT			= 0x8B4B
 	MAX_GEOMETRY_UNIFORM_COMPONENTS_EXT		= 0x8DDF
 	MAX_GEOMETRY_OUTPUT_VERTICES_EXT		= 0x8DE0
 	MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_EXT	= 0x8DE1
-	use NV_geometry_program4 LINES_ADJACENCY_EXT
-	use NV_geometry_program4 LINE_STRIP_ADJACENCY_EXT
-	use NV_geometry_program4 TRIANGLES_ADJACENCY_EXT
-	use NV_geometry_program4 TRIANGLE_STRIP_ADJACENCY_EXT
-	use NV_geometry_program4 FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT
-	use NV_geometry_program4 FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_EXT
-	use NV_geometry_program4 FRAMEBUFFER_ATTACHMENT_LAYERED_EXT
-	use NV_geometry_program4 FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT
-	use NV_geometry_program4 PROGRAM_POINT_SIZE_EXT
+	use NV_geometry_program4	    LINES_ADJACENCY_EXT
+	use NV_geometry_program4	    LINE_STRIP_ADJACENCY_EXT
+	use NV_geometry_program4	    TRIANGLES_ADJACENCY_EXT
+	use NV_geometry_program4	    TRIANGLE_STRIP_ADJACENCY_EXT
+	use NV_geometry_program4	    FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT
+	use NV_geometry_program4	    FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_EXT
+	use NV_geometry_program4	    FRAMEBUFFER_ATTACHMENT_LAYERED_EXT
+	use NV_geometry_program4	    FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT
+	use NV_geometry_program4	    PROGRAM_POINT_SIZE_EXT
 
 ###############################################################################
 
@@ -4559,7 +4676,7 @@ EXT_texture_array enum:
 	TEXTURE_BINDING_2D_ARRAY_EXT			= 0x8C1D
 	MAX_ARRAY_TEXTURE_LAYERS_EXT			= 0x88FF
 	COMPARE_REF_DEPTH_TO_TEXTURE_EXT		= 0x884E
-	use NV_geometry_program4 FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT
+	use NV_geometry_program4	    FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT
 
 ###############################################################################
 
@@ -4800,3 +4917,25 @@ EXT_transform_feedback enum:
       TRANSFORM_FEEDBACK_VARYINGS_EXT			= 0x8C83
       TRANSFORM_FEEDBACK_BUFFER_MODE_EXT		= 0x8C7F
       TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH_EXT		= 0x8C76
+
+###############################################################################
+#
+# Extension #353
+# EXT_direct_state_access commands
+#
+###############################################################################
+
+EXT_direct_state_access enum:
+	PROGRAM_MATRIX_EXT				= 0x8E2D
+	TRANSPOSE_PROGRAM_MATRIX_EXT			= 0x8E2E
+	PROGRAM_MATRIX_STACK_DEPTH_EXT			= 0x8E2F
+
+###############################################################################
+#
+# Extension #354
+# EXT_vertex_array_bgra commands
+#
+###############################################################################
+
+EXT_vertex_array_bgra enum:
+	use VERSION_1_2			    BGRA
