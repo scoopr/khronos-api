@@ -8,7 +8,7 @@
 
 required-props:
 param:		retval retained
-category:	wgl ARB_buffer_region ARB_extensions_string ARB_pixel_format ARB_make_current_read ARB_pbuffer ARB_render_texture ARB_pixel_format_float EXT_display_color_table EXT_extensions_string EXT_make_current_read EXT_pbuffer EXT_pixel_format EXT_swap_control OML_sync_control I3D_digital_video_control I3D_gamma I3D_genlock I3D_image_buffer I3D_swap_frame_lock I3D_swap_frame_usage NV_vertex_array_range 3DL_stereo_control NV_swap_group NV_video_out NV_present_video ARB_create_context
+category:	wgl ARB_buffer_region ARB_extensions_string ARB_pixel_format ARB_make_current_read ARB_pbuffer ARB_render_texture ARB_pixel_format_float EXT_display_color_table EXT_extensions_string EXT_make_current_read EXT_pbuffer EXT_pixel_format EXT_swap_control OML_sync_control I3D_digital_video_control I3D_gamma I3D_genlock I3D_image_buffer I3D_swap_frame_lock I3D_swap_frame_usage NV_vertex_array_range 3DL_stereo_control NV_swap_group NV_video_out NV_present_video ARB_create_context NV_gpu_affinity
 # required-props in wgl.spec (which is not used for anything):
 # dlflags:	  notlistable handcode
 # wglflags:	  client-handcode server-handcode non-dispatch
@@ -31,6 +31,18 @@ passthru: DECLARE_HANDLE(HVIDEOOUTPUTDEVICENV);
 passthru: #endif
 passthru: #ifndef WGL_NV_video_out
 passthru: DECLARE_HANDLE(HPVIDEODEV);
+passthru: #endif
+passthru: #ifndef WGL_NV_gpu_affinity
+passthru: DECLARE_HANDLE(HPGPUNV);
+passthru: DECLARE_HANDLE(HGPUNV);
+passthru:
+passthru: typedef struct _GPU_DEVICE {
+passthru:     DWORD  cb;
+passthru:     CHAR   DeviceName[32];
+passthru:     CHAR   DeviceString[128];
+passthru:     DWORD  Flags;
+passthru:     RECT   rcVirtualScreen;
+passthru: } GPU_DEVICE, *PGPU_DEVICE;
 passthru: #endif
 passthru:
 
@@ -783,14 +795,25 @@ newcategory: EXT_framebuffer_sRGB
 #
 ###############################################################################
 
-# TBD
-newcategory: NV_present_video
-#   int wglEnumerateVideoDevicesNV(HDC hDc,
-#				   HVIDEOOUTPUTDEVICENV *phDeviceList);
-#   BOOL wglBindVideoDeviceNV(HDC hDc, unsigned int uVideoSlot,
-#			      HVIDEOOUTPUTDEVICENV hVideoDevice,
-#			      const int *piAttribList);
-#   BOOL wglQueryCurrentContextNV(int iAttribute, int *piValue);
+EnumerateVideoDevicesNV(hDC, phDeviceList)
+	return		int
+	param		hDC		HDC in value
+	param		phDeviceList	HVIDEOOUTPUTDEVICENV out array
+	category	NV_present_video
+
+BindVideoDeviceNV(hDC, uVideoSlot, hVideoDevice, piAttribList)
+	return		BOOL
+	param		hDC		HDC in value
+	param		uVideoSlot	uint in value
+	param		hVideoDevice	HVIDEOOUTPUTDEVICENV in value
+	param		piAttribList	int in array [COMPSIZE()]
+	category	NV_present_video
+
+QueryCurrentContextNV(iAttribute, piValue)
+	return		BOOL
+	param		iAttribute	int in value
+	param		piValue		int out array [COMPSIZE()]
+	category	NV_present_video
 
 ###############################################################################
 #
@@ -800,24 +823,45 @@ newcategory: NV_present_video
 ###############################################################################
 
 # TBD
-newcategory: NV_video_out
-#    BOOL wglGetVideoDeviceNV(HDC hDC, int numDevices,
-#			      HPVIDEODEV *hVideoDevice);
-#
-#    BOOL wglReleaseVideoDeviceNV(HPVIDEODEV hVideoDevice);
-#
-#    BOOL wglBindVideoImageNV (HPVIDEODEV hVideoDevice,
-#			       HPBUFFERARB hPbuffer, int iVideoBuffer);
-#
-#    BOOL wglReleaseVideoImageNV (HPBUFFERARB hPbuffer, int iVideoBuffer);
-#
-#    BOOL wglSendPbufferToVideoNV (HPBUFFERARB hPbuffer, int iBufferType,
-#				   unsigned long *pulCounterPbuffer,
-#				   BOOL bBlock);
-#
-#    BOOL wglGetVideoInfoNV (HPVIDEODEV hpVideoDevice,
-#			     unsigned long *pulCounterOutputPbuffer,
-#			     unsigned long *pulCounterOutputVideo);
+GetVideoDeviceNV(hDC, numDevices, hVideoDevice)
+	return		BOOL
+	param		hDC		HDC in value
+	param		numDevices	int in value
+	param		hVideoDevice	HPVIDEODEV out reference
+	category	NV_video_out
+
+ReleaseVideoDeviceNV(hVideoDevice)
+	return		BOOL
+	param		hVideoDevice	HPVIDEODEV in value
+	category	NV_video_out
+
+BindVideoImageNV(hVideoDevice, hPbuffer, iVideoBuffer)
+	return		BOOL
+	param		hVideoDevice	HPVIDEODEV in value
+	param		hPbuffer	HPBUFFERARB in value
+	param		iVideoBuffer	int in value
+	category	NV_video_out
+
+ReleaseVideoImageNV(hPbuffer, iVideoBuffer)
+	return		BOOL
+	param		hPbuffer	HPBUFFERARB in value
+	param		iVideoBuffer	int in value
+	category	NV_video_out
+
+SendPbufferToVideoNV(hPbuffer, iBufferType, pulCounterPbuffer, bBlock)
+	return		BOOL
+	param		hPbuffer	HPBUFFERARB in value
+	param		iBufferType	int in value
+	param		pulCounterPbuffer   ulong out reference
+	param		bBlock		BOOL in value
+	category	NV_video_out
+
+GetVideoInfoNV(hpVideoDevice, pulCounterOutputPbuffer, pulCounterOutputVideo)
+	return		BOOL
+	param		hpVideoDevice	HPVIDEODEV in value
+	param		pulCounterOutputPbuffer ulong out reference
+	param		pulCounterOutputVideo	ulong out reference
+	category	NV_video_out
 
 ###############################################################################
 #
@@ -826,11 +870,76 @@ newcategory: NV_video_out
 #
 ###############################################################################
 
-# TBD
-newcategory: NV_swap_group
-#   BOOL wglJoinSwapGroupNV(HDC hDC, GLuint group);
-#   BOOL wglBindSwapBarrierNV(GLuint group, GLuint barrier);
-#   BOOL wglQuerySwapGroupNV(HDC hDC, GLuint *group); GLuint *barrier);
-#   BOOL wglQueryMaxSwapGroupsNV(HDC hDC, GLuint *maxGroups, GLuint *maxBarriers);
-#   BOOL wglQueryFrameCountNV(HDC hDC, GLuint *count);
-#   BOOL wglResetFrameCountNV(HDC hDC);
+JoinSwapGroupNV(hDC, group)
+	return		BOOL
+	param		hDC		HDC in value
+	param		group		GLuint in value
+	category	NV_swap_group
+
+BindSwapBarrierNV(group, barrier)
+	return		BOOL
+	param		group		GLuint in value
+	param		barrier		GLuint in value
+	category	NV_swap_group
+
+QuerySwapGroupNV(hDC, group, barrier)
+	return		BOOL
+	param		hDC		HDC in value
+	param		group		GLuint out reference
+	param		barrier		GLuint out reference
+	category	NV_swap_group
+
+QueryMaxSwapGroupsNV(hDC, maxGroups, maxBarriers)
+	return		BOOL
+	param		hDC		HDC in value
+	param		maxGroups	GLuint out reference
+	param		maxBarriers	GLuint out reference
+	category	NV_swap_group
+
+QueryFrameCountNV(hDC, count)
+	return		BOOL
+	param		hDC		HDC in value
+	param		count		GLuint out reference
+	category	NV_swap_group
+
+ResetFrameCountNV(hDC)
+	return		BOOL
+	param		hDC		HDC in value
+	category	NV_swap_group
+
+###############################################################################
+#
+# Extension #355
+# WGL_NV_gpu_affinity commands
+#
+###############################################################################
+
+EnumGpusNV(iGpuIndex, phGpu)
+	return		BOOL
+	param		iGpuIndex	UINT in value
+	param		phGpu		HGPUNV out reference
+	category	NV_gpu_affinity
+
+EnumGpuDevicesNV(hGpu, iDeviceIndex, lpGpuDevice)
+	return		BOOL
+	param		hGpu		HGPUNV in value
+	param		iDeviceIndex	UINT in value
+	param		lpGpuDevice	PGPU_DEVICE in value
+	category	NV_gpu_affinity
+
+CreateAffinityDCNV(phGpuList)
+	return		HDC
+	param		phGpuList	HGPUNV in array [COMPSIZE()]
+	category	NV_gpu_affinity
+
+EnumGpusFromAffinityDCNV(hAffinityDC, iGpuIndex, hGpu)
+	return		BOOL
+	param		hAffinityDC	HDC in value
+	param		iGpuIndex	UINT in value
+	param		hGpu		HGPUNV out reference
+	category	NV_gpu_affinity
+
+DeleteDCNV(hdc)
+	return		BOOL
+	param		hdc		HDC in value
+	category	NV_gpu_affinity

@@ -23,9 +23,9 @@
 
 passthru:
 passthru: /* Header file version number */
-passthru: /* wglext.h last updated 2008/08/10 */
+passthru: /* wglext.h last updated 2008/10/07 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define WGL_WGLEXT_VERSION 10
+passthru: #define WGL_WGLEXT_VERSION 11
 
 ###############################################################################
 #
@@ -418,3 +418,10 @@ WGL_NV_video_out enum:
 # No new tokens
 # Extension #351
 WGL_NV_swap_group enum:
+
+###############################################################################
+
+# Extension #355
+WGL_NV_gpu_affinity enum:
+	WGL_ERROR_INCOMPATIBLE_AFFINITY_MASKS_NV	= 0x20D0
+	WGL_ERROR_MISSING_AFFINITY_MASK_NV		= 0x20D1
