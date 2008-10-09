@@ -7803,9 +7803,10 @@ GetTexParameterIuiv(target, pname, params)
 
 # New commands in OpenGL 3.0
 
-ClearBufferiv(buffer, value)
+ClearBufferiv(buffer, drawbuffer, value)
 	return		void
 	param		buffer		GLenum in value
+	param		drawbuffer	DrawBufferName in value
 	param		value		Int32 in array [COMPSIZE(buffer)]
 	category	VERSION_3_0
 	version		3.0
@@ -7814,9 +7815,10 @@ ClearBufferiv(buffer, value)
 	glsflags	ignore
 	glxflags	ignore
 
-ClearBufferuiv(buffer, value)
+ClearBufferuiv(buffer, drawbuffer, value)
 	return		void
 	param		buffer		GLenum in value
+	param		drawbuffer	DrawBufferName in value
 	param		value		UInt32 in array [COMPSIZE(buffer)]
 	category	VERSION_3_0
 	version		3.0
@@ -7825,9 +7827,10 @@ ClearBufferuiv(buffer, value)
 	glsflags	ignore
 	glxflags	ignore
 
-ClearBufferfv(buffer, value)
+ClearBufferfv(buffer, drawbuffer, value)
 	return		void
 	param		buffer		GLenum in value
+	param		drawbuffer	DrawBufferName in value
 	param		value		Float32 in array [COMPSIZE(buffer)]
 	category	VERSION_3_0
 	version		3.0
@@ -7836,9 +7839,10 @@ ClearBufferfv(buffer, value)
 	glsflags	ignore
 	glxflags	ignore
 
-ClearBufferfi(buffer, depth, stencil)
+ClearBufferfi(buffer, drawbuffer, depth, stencil)
 	return		void
 	param		buffer		GLenum in value
+	param		drawbuffer	DrawBufferName in value
 	param		depth		Float32 in value
 	param		stencil		Int32 in value
 	category	VERSION_3_0

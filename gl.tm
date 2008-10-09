@@ -66,6 +66,7 @@ CullFaceMode,*,*,		    GLenum,*,*
 CullParameterEXT,*,*,		    GLenum,*,*
 DepthFunction,*,*,		    GLenum,*,*
 DrawBufferMode,*,*,		    GLenum,*,*
+DrawBufferName,*,*,		    GLint,*,*
 DrawElementsType,*,*,		    GLenum,*,*
 ElementPointerTypeATI,*,*,	    GLenum,*,*
 EnableCap,*,*,			    GLenum,*,*
