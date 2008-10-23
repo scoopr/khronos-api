@@ -22,9 +22,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glxext.h last updated 2008/08/10 */
+passthru: /* glxext.h last updated 2008/10/22 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GLX_GLXEXT_VERSION 20
+passthru: #define GLX_GLXEXT_VERSION 21
 
 ###############################################################################
 #
@@ -440,22 +440,22 @@ EXT_texture_from_pixmap enum:
 
 # Extension #347
 NV_present_video enum:
-	GLX_NUM_VIDEO_SLOTS_NV				= 0x20F0
+	NUM_VIDEO_SLOTS_NV				= 0x20F0
 
 ###############################################################################
 
 # Extension #348
 NV_video_out enum:
-	GLX_VIDEO_OUT_COLOR_NV				= 0x20C3
-	GLX_VIDEO_OUT_ALPHA_NV				= 0x20C4
-	GLX_VIDEO_OUT_DEPTH_NV				= 0x20C5
-	GLX_VIDEO_OUT_COLOR_AND_ALPHA_NV		= 0x20C6
-	GLX_VIDEO_OUT_COLOR_AND_DEPTH_NV		= 0x20C7
-	GLX_VIDEO_OUT_FRAME_NV				= 0x20C8
-	GLX_VIDEO_OUT_FIELD_1_NV			= 0x20C9
-	GLX_VIDEO_OUT_FIELD_2_NV			= 0x20CA
-	GLX_VIDEO_OUT_STACKED_FIELDS_1_2_NV		= 0x20CB
-	GLX_VIDEO_OUT_STACKED_FIELDS_2_1_NV		= 0x20CC
+	VIDEO_OUT_COLOR_NV				= 0x20C3
+	VIDEO_OUT_ALPHA_NV				= 0x20C4
+	VIDEO_OUT_DEPTH_NV				= 0x20C5
+	VIDEO_OUT_COLOR_AND_ALPHA_NV			= 0x20C6
+	VIDEO_OUT_COLOR_AND_DEPTH_NV			= 0x20C7
+	VIDEO_OUT_FRAME_NV				= 0x20C8
+	VIDEO_OUT_FIELD_1_NV				= 0x20C9
+	VIDEO_OUT_FIELD_2_NV				= 0x20CA
+	VIDEO_OUT_STACKED_FIELDS_1_2_NV			= 0x20CB
+	VIDEO_OUT_STACKED_FIELDS_2_1_NV			= 0x20CC
 
 ###############################################################################
 
@@ -463,3 +463,14 @@ NV_video_out enum:
 # Extension #350
 NV_swap_group enum:
 
+###############################################################################
+
+# Extension #356
+ARB_create_context enum:
+	CONTEXT_DEBUG_BIT_ARB				= 0x00000001
+	CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x00000002
+	CONTEXT_MAJOR_VERSION_ARB			= 0x2091
+	CONTEXT_MINOR_VERSION_ARB			= 0x2092
+	CONTEXT_FLAGS_ARB				= 0x2094
+
+###############################################################################

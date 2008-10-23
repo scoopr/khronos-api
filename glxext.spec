@@ -11,7 +11,7 @@ param:		retval retained
 glxflags:	client-handcode client-intercept server-handcode
 glxvendorglx:	*
 vectorequiv:	*
-category:	VERSION_1_3 VERSION_1_4 ARB_get_proc_address ARB_multisample ARB_fbconfig_float EXT_import_context SGIX_dmbuffer SGIX_fbconfig SGIX_pbuffer SGIX_swap_barrier SGIX_swap_group SGIX_video_resize SGIX_video_source SGI_cushion SGI_make_current_read SGI_swap_control SGI_video_sync SUN_get_transparent_index MESA_agp_offset MESA_copy_sub_buffer MESA_pixmap_colormap MESA_release_buffers MESA_set_3dfx_mode SGIX_visual_select_group OML_sync_control SGIX_hyperpipe EXT_texture_from_pixmap NV_swap_group NV_video_out NV_present_video
+category:	VERSION_1_3 VERSION_1_4 ARB_get_proc_address ARB_multisample ARB_fbconfig_float EXT_import_context SGIX_dmbuffer SGIX_fbconfig SGIX_pbuffer SGIX_swap_barrier SGIX_swap_group SGIX_video_resize SGIX_video_source SGI_cushion SGI_make_current_read SGI_swap_control SGI_video_sync SUN_get_transparent_index MESA_agp_offset MESA_copy_sub_buffer MESA_pixmap_colormap MESA_release_buffers MESA_set_3dfx_mode SGIX_visual_select_group OML_sync_control SGIX_hyperpipe EXT_texture_from_pixmap NV_swap_group NV_video_out NV_present_video ARB_create_context
 glxopcode:	*
 
 #
@@ -1108,3 +1108,20 @@ newcategory: NV_swap_group
 #   Bool glXQueryMaxSwapGroupsNV(Display *dpy, int screen, GLuint *maxGroups, GLuint *maxBarriers);
 #   Bool glXQueryFrameCountNV(Display *dpy, int screen, GLuint *count);
 #   Bool glXResetFrameCountNV(Display *dpy, int screen);
+
+###############################################################################
+#
+# Extension #356
+# ARB_create_context commands
+#
+###############################################################################
+
+CreateContextAttribsARB(dpy, config, share_context, direct, attrib_list)
+	return		GLXContext
+	param		dpy		Display out reference
+	param		config		GLXFBConfig in value
+	param		share_context	GLXContext in value
+	param		direct		Bool in value
+	param		attrib_list	int in reference
+	category	ARB_create_context
+	glxflags	client-handcode client-intercept server-handcode

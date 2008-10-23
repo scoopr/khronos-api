@@ -239,6 +239,18 @@ GLXAttribute enum:
 
 ###############################################################################
 
+# ARB: 0x2070-0x209F (shared with WGL)
+
+# Also includes a bitmask
+# ARB_create_context enum:
+	GLX_CONTEXT_DEBUG_BIT_ARB			= 0x00000001
+	GLX_CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x00000002
+	GLX_CONTEXT_MAJOR_VERSION_ARB			= 0x2091
+	GLX_CONTEXT_MINOR_VERSION_ARB			= 0x2092
+	GLX_CONTEXT_FLAGS_ARB				= 0x2094
+
+###############################################################################
+
 # NVIDIA: 0x20A0 - 0x219F (shared with WGL)
 
 # NV_float_buffer enum:
