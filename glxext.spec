@@ -303,6 +303,25 @@ newcategory: ARB_fbconfig_float
 
 ###############################################################################
 #
+# ARB Extension #56
+# ARB_create_context commands
+#
+###############################################################################
+
+CreateContextAttribsARB(dpy, config, share_context, direct, attrib_list)
+	return		GLXContext
+	param		dpy		Display out reference
+	param		config		GLXFBConfig in value
+	param		share_context	GLXContext in value
+	param		direct		Bool in value
+	param		attrib_list	int in reference
+	category	ARB_create_context
+	glxflags	client-handcode client-intercept server-handcode
+	glxopcode	34
+
+
+###############################################################################
+#
 # Extension #25
 # SGIS_multisample commands
 #
@@ -1108,20 +1127,3 @@ newcategory: NV_swap_group
 #   Bool glXQueryMaxSwapGroupsNV(Display *dpy, int screen, GLuint *maxGroups, GLuint *maxBarriers);
 #   Bool glXQueryFrameCountNV(Display *dpy, int screen, GLuint *count);
 #   Bool glXResetFrameCountNV(Display *dpy, int screen);
-
-###############################################################################
-#
-# Extension #356
-# ARB_create_context commands
-#
-###############################################################################
-
-CreateContextAttribsARB(dpy, config, share_context, direct, attrib_list)
-	return		GLXContext
-	param		dpy		Display out reference
-	param		config		GLXFBConfig in value
-	param		share_context	GLXContext in value
-	param		direct		Bool in value
-	param		attrib_list	int in reference
-	category	ARB_create_context
-	glxflags	client-handcode client-intercept server-handcode

@@ -126,6 +126,15 @@ ARB_fbconfig_float enum:
 	RGBA_FLOAT_TYPE_ARB				= 0x20B9
 	RGBA_FLOAT_BIT_ARB				= 0x00000004
 
+###############################################################################
+
+# ARB Extension #56
+ARB_create_context enum:
+	CONTEXT_DEBUG_BIT_ARB				= 0x00000001
+	CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x00000002
+	CONTEXT_MAJOR_VERSION_ARB			= 0x2091
+	CONTEXT_MINOR_VERSION_ARB			= 0x2092
+	CONTEXT_FLAGS_ARB				= 0x2094
 
 ###############################################################################
 #
@@ -462,15 +471,5 @@ NV_video_out enum:
 # No new tokens
 # Extension #350
 NV_swap_group enum:
-
-###############################################################################
-
-# Extension #356
-ARB_create_context enum:
-	CONTEXT_DEBUG_BIT_ARB				= 0x00000001
-	CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x00000002
-	CONTEXT_MAJOR_VERSION_ARB			= 0x2091
-	CONTEXT_MINOR_VERSION_ARB			= 0x2092
-	CONTEXT_FLAGS_ARB				= 0x2094
 
 ###############################################################################
