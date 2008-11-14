@@ -312,3 +312,6 @@ VertexBufferObjectParameter,*,*,    GLenum,*,*
 VertexBufferObjectUsage,*,*,	    GLenum,*,*
 # ARB_map_buffer_range
 BufferAccessMask,*,*,		    GLbitfield,*,*
+# NV_explicit_multisample
+GetMultisamplePNameNV,*,*,	    GLenum,*,*
+SampleMaskNV,*,*,		    GLbitfield,*,*

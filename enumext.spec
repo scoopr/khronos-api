@@ -17,9 +17,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glext.h last updated 2008/10/09 */
+passthru: /* glext.h last updated 2008/11/14 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GL_GLEXT_VERSION 43
+passthru: #define GL_GLEXT_VERSION 44
 
 ###############################################################################
 #
@@ -4919,23 +4919,53 @@ EXT_transform_feedback enum:
       TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH_EXT		= 0x8C76
 
 ###############################################################################
-#
-# Extension #353
-# EXT_direct_state_access commands
-#
-###############################################################################
 
+# Extension #353
 EXT_direct_state_access enum:
 	PROGRAM_MATRIX_EXT				= 0x8E2D
 	TRANSPOSE_PROGRAM_MATRIX_EXT			= 0x8E2E
 	PROGRAM_MATRIX_STACK_DEPTH_EXT			= 0x8E2F
 
 ###############################################################################
-#
-# Extension #354
-# EXT_vertex_array_bgra commands
-#
-###############################################################################
 
+# Extension #354
 EXT_vertex_array_bgra enum:
 	use VERSION_1_2			    BGRA
+
+###############################################################################
+
+# Extension #355 - WGL_NV_gpu_affinity
+
+###############################################################################
+
+# Extension #356
+EXT_texture_swizzle enum:
+	TEXTURE_SWIZZLE_R_EXT				= 0x8E42
+	TEXTURE_SWIZZLE_G_EXT				= 0x8E43
+	TEXTURE_SWIZZLE_B_EXT				= 0x8E44
+	TEXTURE_SWIZZLE_A_EXT				= 0x8E45
+	TEXTURE_SWIZZLE_RGBA_EXT			= 0x8E46
+
+###############################################################################
+
+# Extension #357
+NV_explicit_multisample enum:
+	SAMPLE_POSITION_NV				= 0x8E50
+	SAMPLE_MASK_NV					= 0x8E51
+	SAMPLE_MASK_VALUE_NV				= 0x8E52
+	TEXTURE_BINDING_RENDERBUFFER_NV			= 0x8E53
+	TEXTURE_RENDERBUFFER_DATA_STORE_BINDING_NV	= 0x8E54
+	MAX_SAMPLE_MASK_WORDS_NV			= 0x8E59
+	TEXTURE_RENDERBUFFER_NV				= 0x8E55
+	SAMPLER_RENDERBUFFER_NV				= 0x8E56
+	INT_SAMPLER_RENDERBUFFER_NV			= 0x8E57
+	UNSIGNED_INT_SAMPLER_RENDERBUFFER_NV		= 0x8E58
+
+###############################################################################
+
+# Extension #358
+NV_transform_feedback2 enum:
+      TRANSFORM_FEEDBACK_NV				= 0x8E22
+      TRANSFORM_FEEDBACK_BUFFER_PAUSED_NV		= 0x8E23
+      TRANSFORM_FEEDBACK_BUFFER_ACTIVE_NV		= 0x8E24
+      TRANSFORM_FEEDBACK_BINDING_NV			= 0x8E25
