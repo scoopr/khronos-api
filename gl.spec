@@ -26540,13 +26540,13 @@ GetPerfMonitorGroupsAMD(numGroups, groupsSize, groups)
 	glsopcode	?
 	offset		?
 
-GetPerfMonitorCountersAMD(group, numCounters, maxActiveCounters, countersSize, counters)
+GetPerfMonitorCountersAMD(group, numCounters, maxActiveCounters, counterSize, counters)
 	return		void
 	param		group		UInt32 in value
 	param		numCounters	Int32 out array [1]
 	param		maxActiveCounters Int32 out array [1]
-	param		countersSize	SizeI in value
-	param		counters	UInt32 out array [countersSize]
+	param		counterSize	SizeI in value
+	param		counters	UInt32 out array [counterSize]
 	category	AMD_performance_monitor
 	dlflags		notlistable
 	version		1.2
@@ -26609,7 +26609,7 @@ GetPerfMonitorCounterInfoAMD(group, counter, pname, data)
 GenPerfMonitorsAMD(n, monitors)
 	return		void
 	param		n		SizeI in value
-	param		monitors	UInt32 in array [n]
+	param		monitors	UInt32 out array [n]
 	category	AMD_performance_monitor
 	version		1.2
 	extension
@@ -26618,10 +26618,11 @@ GenPerfMonitorsAMD(n, monitors)
 	glsopcode	?
 	offset		?
 
+# 'monitors' is actually in, not out, but extension spec doesn't use const
 DeletePerfMonitorsAMD(n, monitors)
 	return		void
 	param		n		SizeI in value
-	param		monitors	UInt32 in array [n]
+	param		monitors	UInt32 out array [n]
 	category	AMD_performance_monitor
 	version		1.2
 	extension
@@ -26630,13 +26631,14 @@ DeletePerfMonitorsAMD(n, monitors)
 	glsopcode	?
 	offset		?
 
+# 'counterList' is actually in, not out, but extension spec doesn't use const
 SelectPerfMonitorCountersAMD(monitor, enable, group, numCounters, counterList)
 	return		void
 	param		monitor		UInt32 in value
 	param		enable		Boolean in value
 	param		group		UInt32 in value
 	param		numCounters	Int32 in value
-	param		counterList	UInt32 in array [numCounters]
+	param		counterList	UInt32 out array [numCounters]
 	category	AMD_performance_monitor
 	version		1.2
 	extension

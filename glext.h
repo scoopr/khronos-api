@@ -8495,21 +8495,21 @@ GLAPI void APIENTRY glGetPerfMonitorCountersAMD (GLuint, GLint *, GLint *, GLsiz
 GLAPI void APIENTRY glGetPerfMonitorGroupStringAMD (GLuint, GLsizei, GLsizei *, GLchar *);
 GLAPI void APIENTRY glGetPerfMonitorCounterStringAMD (GLuint, GLuint, GLsizei, GLsizei *, GLchar *);
 GLAPI void APIENTRY glGetPerfMonitorCounterInfoAMD (GLuint, GLuint, GLenum, void *);
-GLAPI void APIENTRY glGenPerfMonitorsAMD (GLsizei, const GLuint *);
-GLAPI void APIENTRY glDeletePerfMonitorsAMD (GLsizei, const GLuint *);
-GLAPI void APIENTRY glSelectPerfMonitorCountersAMD (GLuint, GLboolean, GLuint, GLint, const GLuint *);
+GLAPI void APIENTRY glGenPerfMonitorsAMD (GLsizei, GLuint *);
+GLAPI void APIENTRY glDeletePerfMonitorsAMD (GLsizei, GLuint *);
+GLAPI void APIENTRY glSelectPerfMonitorCountersAMD (GLuint, GLboolean, GLuint, GLint, GLuint *);
 GLAPI void APIENTRY glBeginPerfMonitorAMD (GLuint);
 GLAPI void APIENTRY glEndPerfMonitorAMD (GLuint);
 GLAPI void APIENTRY glGetPerfMonitorCounterDataAMD (GLuint, GLenum, GLsizei, GLuint *, GLint *);
 #endif /* GL_GLEXT_PROTOTYPES */
 typedef void (APIENTRYP PFNGLGETPERFMONITORGROUPSAMDPROC) (GLint *numGroups, GLsizei groupsSize, GLuint *groups);
-typedef void (APIENTRYP PFNGLGETPERFMONITORCOUNTERSAMDPROC) (GLuint group, GLint *numCounters, GLint *maxActiveCounters, GLsizei countersSize, GLuint *counters);
+typedef void (APIENTRYP PFNGLGETPERFMONITORCOUNTERSAMDPROC) (GLuint group, GLint *numCounters, GLint *maxActiveCounters, GLsizei counterSize, GLuint *counters);
 typedef void (APIENTRYP PFNGLGETPERFMONITORGROUPSTRINGAMDPROC) (GLuint group, GLsizei bufSize, GLsizei *length, GLchar *groupString);
 typedef void (APIENTRYP PFNGLGETPERFMONITORCOUNTERSTRINGAMDPROC) (GLuint group, GLuint counter, GLsizei bufSize, GLsizei *length, GLchar *counterString);
 typedef void (APIENTRYP PFNGLGETPERFMONITORCOUNTERINFOAMDPROC) (GLuint group, GLuint counter, GLenum pname, void *data);
-typedef void (APIENTRYP PFNGLGENPERFMONITORSAMDPROC) (GLsizei n, const GLuint *monitors);
-typedef void (APIENTRYP PFNGLDELETEPERFMONITORSAMDPROC) (GLsizei n, const GLuint *monitors);
-typedef void (APIENTRYP PFNGLSELECTPERFMONITORCOUNTERSAMDPROC) (GLuint monitor, GLboolean enable, GLuint group, GLint numCounters, const GLuint *counterList);
+typedef void (APIENTRYP PFNGLGENPERFMONITORSAMDPROC) (GLsizei n, GLuint *monitors);
+typedef void (APIENTRYP PFNGLDELETEPERFMONITORSAMDPROC) (GLsizei n, GLuint *monitors);
+typedef void (APIENTRYP PFNGLSELECTPERFMONITORCOUNTERSAMDPROC) (GLuint monitor, GLboolean enable, GLuint group, GLint numCounters, GLuint *counterList);
 typedef void (APIENTRYP PFNGLBEGINPERFMONITORAMDPROC) (GLuint monitor);
 typedef void (APIENTRYP PFNGLENDPERFMONITORAMDPROC) (GLuint monitor);
 typedef void (APIENTRYP PFNGLGETPERFMONITORCOUNTERDATAAMDPROC) (GLuint monitor, GLenum pname, GLsizei dataSize, GLuint *data, GLint *bytesWritten);
