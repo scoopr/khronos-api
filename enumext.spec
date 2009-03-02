@@ -730,6 +730,16 @@ passthru: /* Reuse tokens from ARB_vertex_array_object */
 
 ###############################################################################
 #
+# OpenGL 3.1 enums
+#
+###############################################################################
+
+# TBD
+# VERSION_3_1 enum:
+
+
+###############################################################################
+#
 # ARB extensions, in ARB extension order
 #
 ###############################################################################
@@ -4965,7 +4975,27 @@ NV_explicit_multisample enum:
 
 # Extension #358
 NV_transform_feedback2 enum:
-      TRANSFORM_FEEDBACK_NV				= 0x8E22
-      TRANSFORM_FEEDBACK_BUFFER_PAUSED_NV		= 0x8E23
-      TRANSFORM_FEEDBACK_BUFFER_ACTIVE_NV		= 0x8E24
-      TRANSFORM_FEEDBACK_BINDING_NV			= 0x8E25
+	TRANSFORM_FEEDBACK_NV				= 0x8E22
+	TRANSFORM_FEEDBACK_BUFFER_PAUSED_NV		= 0x8E23
+	TRANSFORM_FEEDBACK_BUFFER_ACTIVE_NV		= 0x8E24
+	TRANSFORM_FEEDBACK_BINDING_NV			= 0x8E25
+
+###############################################################################
+
+# Extension #359
+ATI_meminfo enum:
+	VBO_FREE_MEMORY_ATI				= 0x87FB
+	TEXTURE_FREE_MEMORY_ATI				= 0x87FC
+	RENDERBUFFER_FREE_MEMORY_ATI			= 0x87FD
+
+###############################################################################
+
+# Extension #360
+AMD_performance_monitor enum:
+	COUNTER_TYPE_AMD				= 0x8BC0
+	COUNTER_RANGE_AMD				= 0x8BC1
+	UNSIGNED_INT64_AMD				= 0x8BC2
+	PERCENTAGE_AMD					= 0x8BC3
+	PERFMON_RESULT_AVAILABLE_AMD			= 0x8BC4
+	PERFMON_RESULT_SIZE_AMD				= 0x8BC5
+	PERFMON_RESULT_AMD				= 0x8BC6

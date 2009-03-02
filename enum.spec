@@ -98,6 +98,7 @@ Extensions define:
 	VERSION_2_0					= 1
 	VERSION_2_1					= 1
 	VERSION_3_0					= 1
+	VERSION_3_1					= 1
 	ARB_imaging					= 1
 	EXT_abgr					= 1
 	EXT_blend_color					= 1
@@ -4719,7 +4720,14 @@ SGIX_subsample enum:
 #	PN_TRIANGLES_NORMAL_MODE_LINEAR_ATI		= 0x87F7
 #	PN_TRIANGLES_NORMAL_MODE_QUADRATIC_ATI		= 0x87F8
 
-# ATI_future_use: 0x87F9-0x87FF
+# ATI_future_use: 0x87F9-0x87FA
+
+# ATI_meminfo enum:
+#	VBO_FREE_MEMORY_ATI				= 0x87FB
+#	TEXTURE_FREE_MEMORY_ATI				= 0x87FC
+#	RENDERBUFFER_FREE_MEMORY_ATI			= 0x87FD
+
+# ATI_future_use: 0x87FE-0x87FF
 
 # VERSION_2_0 enum: (Promoted for OpenGL 2.0)
 # ATI_separate_stencil enum:
@@ -5590,6 +5598,15 @@ SGIX_subsample enum:
 
 # ATI: 0x8BC0-0x8BFF
 
+# AMD_performance_monitor enum:
+#	COUNTER_TYPE_AMD				= 0x8BC0
+#	COUNTER_RANGE_AMD				= 0x8BC1
+#	UNSIGNED_INT64_AMD				= 0x8BC2
+#	PERCENTAGE_AMD					= 0x8BC3
+#	PERFMON_RESULT_AVAILABLE_AMD			= 0x8BC4
+#	PERFMON_RESULT_SIZE_AMD				= 0x8BC5
+#	PERFMON_RESULT_AMD				= 0x8BC6
+
 ###############################################################################
 
 # Imagination Tech.: 0x8C00-0x8C0F
@@ -6302,12 +6319,42 @@ SGIX_subsample enum:
 # Assigned for Mike Weiblen (Khronos public bug 91)
 
 ###############################################################################
+
+# OpenGL ARB: 0x8F90-0x8F9F (SNORM textures, 3.1 primitive restart server state)
+# VERSION_3_1 enum:
+#	  RED_SNORM					  = 0x8F90    # 3.1
+#	  RG_SNORM					  = 0x8F91    # 3.1
+#	  RGB_SNORM					  = 0x8F92    # 3.1
+#	  RGBA_SNORM					  = 0x8F93    # 3.1
+#	  R8_SNORM					  = 0x8F94    # 3.1
+#	  RG8_SNORM					  = 0x8F95    # 3.1
+#	  RGB8_SNORM					  = 0x8F96    # 3.1
+#	  RGBA8_SNORM					  = 0x8F97    # 3.1
+#	  R16_SNORM					  = 0x8F98    # 3.1
+#	  RG16_SNORM					  = 0x8F99    # 3.1
+#	  RGB16_SNORM					  = 0x8F9A    # 3.1
+#	  RGBA16_SNORM					  = 0x8F9B    # 3.1
+#	  SIGNED_NORMALIZED				  = 0x8F9C    # 3.1
+#	  PRIMITIVE_RESTART				  = 0x8F9D    # Different from NV_primitive_restart value
+#	  PRIMITIVE_RESTART_INDEX			  = 0x8F9E    # Different from NV_primitive_restart value
+
+###############################################################################
+
+# Qualcomm: 0x8FA0-0x8FBF
+# Assigned for Maurice Ribble (Khronos bug 4512)
+
+###############################################################################
+
+# Vivante: 0x8FC0-0x8FDF
+# Assigned for Frido Garritsen	(Khronos bug 4526)
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x8F90-0xFFFF
+# Any_vendor_future_use: 0x8FE0-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the
