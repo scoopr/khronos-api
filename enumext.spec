@@ -17,9 +17,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glext.h last updated 2008/11/14 */
+passthru: /* glext.h last updated 2009/03/02 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GL_GLEXT_VERSION 44
+passthru: #define GL_GLEXT_VERSION 45
 
 ###############################################################################
 #
