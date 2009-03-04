@@ -1,8 +1,11 @@
 BOOL,*,*,	    BOOL,*,*
 DWORD,*,*,	    DWORD,*,*
 FLOAT,*,*,	    FLOAT,*,*
+GLbitfield,*,*,     GLbitfield,*,*
 GLboolean,*,*,	    GLboolean,*,*
+GLenum,*,*,	    GLenum,*,*
 GLfloat,*,*,	    GLfloat,*,*
+GLint,*,*,	    GLint,*,*
 GLsizei,*,*,	    GLsizei,*,*
 GLuint,*,*,	    GLuint,*,*
 GLushort,*,*,	    GLushort,*,*
@@ -15,6 +18,7 @@ HPBUFFEREXT,*,*,    HPBUFFEREXT,*,*
 HPVIDEODEV,*,*,     HPVIDEODEV,*,*
 HPGPUNV,*,*,	    HPGPUNV,*,*
 HVIDEOOUTPUTDEVICENV,*,*,   HVIDEOOUTPUTDEVICENV,*,*
+INT,*,*,	    INT,*,*
 INT32,*,*,	    INT32,*,*
 INT64,*,*,	    INT64,*,*
 LPVOID,*,*,	    LPVOID,*,*

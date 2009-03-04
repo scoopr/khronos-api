@@ -8,7 +8,7 @@
 
 required-props:
 param:		retval retained
-category:	wgl ARB_buffer_region ARB_extensions_string ARB_pixel_format ARB_make_current_read ARB_pbuffer ARB_render_texture ARB_pixel_format_float EXT_display_color_table EXT_extensions_string EXT_make_current_read EXT_pbuffer EXT_pixel_format EXT_swap_control OML_sync_control I3D_digital_video_control I3D_gamma I3D_genlock I3D_image_buffer I3D_swap_frame_lock I3D_swap_frame_usage NV_vertex_array_range 3DL_stereo_control NV_swap_group NV_video_out NV_present_video ARB_create_context NV_gpu_affinity
+category:	wgl ARB_buffer_region ARB_extensions_string ARB_pixel_format ARB_make_current_read ARB_pbuffer ARB_render_texture ARB_pixel_format_float EXT_display_color_table EXT_extensions_string EXT_make_current_read EXT_pbuffer EXT_pixel_format EXT_swap_control OML_sync_control I3D_digital_video_control I3D_gamma I3D_genlock I3D_image_buffer I3D_swap_frame_lock I3D_swap_frame_usage NV_vertex_array_range 3DL_stereo_control NV_swap_group NV_video_out NV_present_video ARB_create_context NV_gpu_affinity AMD_gpu_association
 # required-props in wgl.spec (which is not used for anything):
 # dlflags:	  notlistable handcode
 # wglflags:	  client-handcode server-handcode non-dispatch
@@ -910,7 +910,7 @@ ResetFrameCountNV(hDC)
 ###############################################################################
 #
 # Extension #355
-# WGL_NV_gpu_affinity commands
+# NV_gpu_affinity commands
 #
 ###############################################################################
 
@@ -943,3 +943,71 @@ DeleteDCNV(hdc)
 	return		BOOL
 	param		hdc		HDC in value
 	category	NV_gpu_affinity
+
+###############################################################################
+#
+# Extension #361
+# AMD_gpu_association commands
+#
+###############################################################################
+
+GetGPUIDsAMD(maxCount, ids)
+	return		UINT
+	param		maxCount	UINT in value
+	param		ids		UINT out array [maxCount]
+	category	AMD_gpu_association
+
+GetGPUInfoAMD(id, property, dataType, size, data)
+	return		INT
+	param		id		UINT in value
+	param		property	int in value
+	param		dataType	GLenum in value
+	param		size		UINT in value
+	param		data		void out array [COMPSIZE(dataType,size)]
+	category	AMD_gpu_association
+
+GetContextGPUIDAMD(hglrc)
+	return		UINT
+	param		hglrc		HGLRC in value
+	category	AMD_gpu_association
+
+CreateAssociatedContextAMD(id)
+	return		HGLRC
+	param		id		UINT in value
+	category	AMD_gpu_association
+
+CreateAssociatedContextAttribsAMD(id, hShareContext, attribList)
+	return		HGLRC
+	param		id		UINT in value
+	param		hShareContext	HGLRC in value
+	param		attribList	int in array [COMPSIZE()]
+	category	AMD_gpu_association
+
+DeleteAssociatedContextAMD(hglrc)
+	return		BOOL
+	param		hglrc		HGLRC in value
+	category	AMD_gpu_association
+
+MakeAssociatedContextCurrentAMD(hglrc)
+	return		BOOL
+	param		hglrc		HGLRC in value
+	category	AMD_gpu_association
+
+GetCurrentAssociatedContextAMD()
+	return		HGLRC
+	category	AMD_gpu_association
+
+BlitContextFramebufferAMD(dstCtx, srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter)
+	return		VOID
+	param		dstCtx		HGLRC in value
+	param		srcX0		GLint in value
+	param		srcY0		GLint in value
+	param		srcX1		GLint in value
+	param		srcY1		GLint in value
+	param		dstX0		GLint in value
+	param		dstY0		GLint in value
+	param		dstX1		GLint in value
+	param		dstY1		GLint in value
+	param		mask		GLbitfield in value
+	param		filter		GLenum in value
+	category	AMD_gpu_association

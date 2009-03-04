@@ -46,9 +46,9 @@ extern "C" {
 /*************************************************************/
 
 /* Header file version number */
-/* wglext.h last updated 2008/10/07 */
+/* wglext.h last updated 2009/03/03 */
 /* Current version at http://www.opengl.org/registry/ */
-#define WGL_WGLEXT_VERSION 11
+#define WGL_WGLEXT_VERSION 12
 
 #ifndef WGL_ARB_buffer_region
 #define WGL_FRONT_COLOR_BUFFER_BIT_ARB 0x00000001
@@ -364,6 +364,19 @@ extern "C" {
 #ifndef WGL_NV_gpu_affinity
 #define WGL_ERROR_INCOMPATIBLE_AFFINITY_MASKS_NV 0x20D0
 #define WGL_ERROR_MISSING_AFFINITY_MASK_NV 0x20D1
+#endif
+
+#ifndef WGL_AMD_gpu_association
+#define WGL_GPU_VENDOR_AMD             0x1F00
+#define WGL_GPU_RENDERER_STRING_AMD    0x1F01
+#define WGL_GPU_OPENGL_VERSION_STRING_AMD 0x1F02
+#define WGL_GPU_FASTEST_TARGET_GPUS_AMD 0x21A2
+#define WGL_GPU_RAM_AMD                0x21A3
+#define WGL_GPU_CLOCK_AMD              0x21A4
+#define WGL_GPU_NUM_PIPES_AMD          0x21A5
+#define WGL_GPU_NUM_SIMD_AMD           0x21A6
+#define WGL_GPU_NUM_RB_AMD             0x21A7
+#define WGL_GPU_NUM_SPI_AMD            0x21A8
 #endif
 
 
@@ -766,6 +779,30 @@ typedef BOOL (WINAPI * PFNWGLENUMGPUDEVICESNVPROC) (HGPUNV hGpu, UINT iDeviceInd
 typedef HDC (WINAPI * PFNWGLCREATEAFFINITYDCNVPROC) (const HGPUNV *phGpuList);
 typedef BOOL (WINAPI * PFNWGLENUMGPUSFROMAFFINITYDCNVPROC) (HDC hAffinityDC, UINT iGpuIndex, HGPUNV *hGpu);
 typedef BOOL (WINAPI * PFNWGLDELETEDCNVPROC) (HDC hdc);
+#endif
+
+#ifndef WGL_AMD_gpu_association
+#define WGL_AMD_gpu_association 1
+#ifdef WGL_WGLEXT_PROTOTYPES
+extern UINT WINAPI wglGetGPUIDsAMD (UINT, UINT *);
+extern INT WINAPI wglGetGPUInfoAMD (UINT, int, GLenum, UINT, void *);
+extern UINT WINAPI wglGetContextGPUIDAMD (HGLRC);
+extern HGLRC WINAPI wglCreateAssociatedContextAMD (UINT);
+extern HGLRC WINAPI wglCreateAssociatedContextAttribsAMD (UINT, HGLRC, const int *);
+extern BOOL WINAPI wglDeleteAssociatedContextAMD (HGLRC);
+extern BOOL WINAPI wglMakeAssociatedContextCurrentAMD (HGLRC);
+extern HGLRC WINAPI wglGetCurrentAssociatedContextAMD (void);
+extern VOID WINAPI wglBlitContextFramebufferAMD (HGLRC, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLbitfield, GLenum);
+#endif /* WGL_WGLEXT_PROTOTYPES */
+typedef UINT (WINAPI * PFNWGLGETGPUIDSAMDPROC) (UINT maxCount, UINT *ids);
+typedef INT (WINAPI * PFNWGLGETGPUINFOAMDPROC) (UINT id, int property, GLenum dataType, UINT size, void *data);
+typedef UINT (WINAPI * PFNWGLGETCONTEXTGPUIDAMDPROC) (HGLRC hglrc);
+typedef HGLRC (WINAPI * PFNWGLCREATEASSOCIATEDCONTEXTAMDPROC) (UINT id);
+typedef HGLRC (WINAPI * PFNWGLCREATEASSOCIATEDCONTEXTATTRIBSAMDPROC) (UINT id, HGLRC hShareContext, const int *attribList);
+typedef BOOL (WINAPI * PFNWGLDELETEASSOCIATEDCONTEXTAMDPROC) (HGLRC hglrc);
+typedef BOOL (WINAPI * PFNWGLMAKEASSOCIATEDCONTEXTCURRENTAMDPROC) (HGLRC hglrc);
+typedef HGLRC (WINAPI * PFNWGLGETCURRENTASSOCIATEDCONTEXTAMDPROC) (void);
+typedef VOID (WINAPI * PFNWGLBLITCONTEXTFRAMEBUFFERAMDPROC) (HGLRC dstCtx, GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, GLbitfield mask, GLenum filter);
 #endif
 
 

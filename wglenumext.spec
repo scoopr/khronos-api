@@ -23,9 +23,9 @@
 
 passthru:
 passthru: /* Header file version number */
-passthru: /* wglext.h last updated 2008/10/07 */
+passthru: /* wglext.h last updated 2009/03/03 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define WGL_WGLEXT_VERSION 11
+passthru: #define WGL_WGLEXT_VERSION 12
 
 ###############################################################################
 #
@@ -425,3 +425,19 @@ WGL_NV_swap_group enum:
 WGL_NV_gpu_affinity enum:
 	WGL_ERROR_INCOMPATIBLE_AFFINITY_MASKS_NV	= 0x20D0
 	WGL_ERROR_MISSING_AFFINITY_MASK_NV		= 0x20D1
+
+###############################################################################
+
+# Extension #361
+
+WGL_AMD_gpu_association enum:
+	WGL_GPU_VENDOR_AMD				= 0x1F00
+	WGL_GPU_RENDERER_STRING_AMD			= 0x1F01
+	WGL_GPU_OPENGL_VERSION_STRING_AMD		= 0x1F02
+	WGL_GPU_FASTEST_TARGET_GPUS_AMD			= 0x21A2
+	WGL_GPU_RAM_AMD					= 0x21A3
+	WGL_GPU_CLOCK_AMD				= 0x21A4
+	WGL_GPU_NUM_PIPES_AMD				= 0x21A5
+	WGL_GPU_NUM_SIMD_AMD				= 0x21A6
+	WGL_GPU_NUM_RB_AMD				= 0x21A7
+	WGL_GPU_NUM_SPI_AMD				= 0x21A8

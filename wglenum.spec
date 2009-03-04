@@ -27,6 +27,8 @@ WGL_ARB_buffer_region enum:
 	WGL_DEPTH_BUFFER_BIT_ARB			= 0x00000004
 	WGL_STENCIL_BUFFER_BIT_ARB			= 0x00000008
 
+# AMD: 0x1F00-0x1F02 (additional; see below; equivalent to corresponding GL token)
+
 ###############################################################################
 
 # SGI: 0x2000-0x203F
@@ -375,7 +377,21 @@ WGL_ARB_pixel_format_float enum:
 WGL_ATI_pixel_format_float enum:
 	WGL_TYPE_RGBA_FLOAT_ATI				= 0x21A0
 
-# ATI_future_use: 0x21A1-0x21AF
+# ATI_future_use: 0x21A1
+
+WGL_AMD_gpu_association enum:
+	WGL_GPU_VENDOR_AMD				= 0x1F00
+	WGL_GPU_RENDERER_STRING_AMD			= 0x1F01
+	WGL_GPU_OPENGL_VERSION_STRING_AMD		= 0x1F02
+	WGL_GPU_FASTEST_TARGET_GPUS_AMD			= 0x21A2
+	WGL_GPU_RAM_AMD					= 0x21A3
+	WGL_GPU_CLOCK_AMD				= 0x21A4
+	WGL_GPU_NUM_PIPES_AMD				= 0x21A5
+	WGL_GPU_NUM_SIMD_AMD				= 0x21A6
+	WGL_GPU_NUM_RB_AMD				= 0x21A7
+	WGL_GPU_NUM_SPI_AMD				= 0x21A8
+
+# ATI_future_use: 0x21A9-0x21AF
 
 ###############################################################################
 
