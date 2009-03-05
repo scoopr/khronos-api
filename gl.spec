@@ -11107,7 +11107,7 @@ VertexAttribDivisor(index, divisor)
 ###############################################################################
 
 MapBufferRange(target, offset, length, access)
-	return		void
+	return		VoidPointer
 	param		target		BufferTargetARB in value
 	param		offset		BufferOffset in value
 	param		length		BufferSize in value
