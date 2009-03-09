@@ -4999,3 +4999,25 @@ AMD_performance_monitor enum:
 	PERFMON_RESULT_AVAILABLE_AMD			= 0x8BC4
 	PERFMON_RESULT_SIZE_AMD				= 0x8BC5
 	PERFMON_RESULT_AMD				= 0x8BC6
+
+###############################################################################
+
+# Extension #361 - WGL_AMD_gpu_association
+
+###############################################################################
+
+# No new tokens
+# Extension #362
+AMD_texture_texture4 enum:
+
+###############################################################################
+
+# Extension #363
+AMD_vertex_shader_tesselator enum:
+      SAMPLER_BUFFER_AMD				= 0x9001
+      INT_SAMPLER_BUFFER_AMD				= 0x9002
+      UNSIGNED_INT_SAMPLER_BUFFER_AMD			= 0x9003
+      TESSELLATION_MODE_AMD				= 0x9004
+      TESSELLATION_FACTOR_AMD				= 0x9005
+      DISCRETE_AMD					= 0x9006
+      CONTINUOUS_AMD					= 0x9007

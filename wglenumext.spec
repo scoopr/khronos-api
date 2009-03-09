@@ -429,7 +429,6 @@ WGL_NV_gpu_affinity enum:
 ###############################################################################
 
 # Extension #361
-
 WGL_AMD_gpu_association enum:
 	WGL_GPU_VENDOR_AMD				= 0x1F00
 	WGL_GPU_RENDERER_STRING_AMD			= 0x1F01

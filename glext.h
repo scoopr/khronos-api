@@ -3878,6 +3878,19 @@ extern "C" {
 #define GL_PERFMON_RESULT_AMD             0x8BC6
 #endif
 
+#ifndef GL_AMD_texture_texture4
+#endif
+
+#ifndef GL_AMD_vertex_shader_tesselator
+#define GL_SAMPLER_BUFFER_AMD             0x9001
+#define GL_INT_SAMPLER_BUFFER_AMD         0x9002
+#define GL_UNSIGNED_INT_SAMPLER_BUFFER_AMD 0x9003
+#define GL_TESSELLATION_MODE_AMD          0x9004
+#define GL_TESSELLATION_FACTOR_AMD        0x9005
+#define GL_DISCRETE_AMD                   0x9006
+#define GL_CONTINUOUS_AMD                 0x9007
+#endif
+
 
 /*************************************************************/
 
@@ -8513,6 +8526,20 @@ typedef void (APIENTRYP PFNGLSELECTPERFMONITORCOUNTERSAMDPROC) (GLuint monitor, 
 typedef void (APIENTRYP PFNGLBEGINPERFMONITORAMDPROC) (GLuint monitor);
 typedef void (APIENTRYP PFNGLENDPERFMONITORAMDPROC) (GLuint monitor);
 typedef void (APIENTRYP PFNGLGETPERFMONITORCOUNTERDATAAMDPROC) (GLuint monitor, GLenum pname, GLsizei dataSize, GLuint *data, GLint *bytesWritten);
+#endif
+
+#ifndef GL_AMD_texture_texture4
+#define GL_AMD_texture_texture4 1
+#endif
+
+#ifndef GL_AMD_vertex_shader_tesselator
+#define GL_AMD_vertex_shader_tesselator 1
+#ifdef GL_GLEXT_PROTOTYPES
+GLAPI void APIENTRY glTessellationFactorAMD (GLfloat);
+GLAPI void APIENTRY glTessellationModeAMD (GLenum);
+#endif /* GL_GLEXT_PROTOTYPES */
+typedef void (APIENTRYP PFNGLTESSELLATIONFACTORAMDPROC) (GLfloat factor);
+typedef void (APIENTRYP PFNGLTESSELLATIONMODEAMDPROC) (GLenum mode);
 #endif
 
 
