@@ -6560,7 +6560,13 @@ SGIX_subsample enum:
 #	TEXTURE_SWIZZLE_A_EXT				= 0x8E45
 #	TEXTURE_SWIZZLE_RGBA_EXT			= 0x8E46
 
-# NV_future_use: 0x8E47-0x8E4F
+# NV_future_use: 0x8E47-0x8E4B
+
+# EXT_provoking_vertex enum:
+#	QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION_EXT	= 0x8E4C
+#	FIRST_VERTEX_CONVENTION_EXT			= 0x8E4D
+#	LAST_VERTEX_CONVENTION_EXT			= 0x8E4E
+#	PROVOKING_VERTEX_EXT				= 0x8E4F
 
 # NV_explicit_multisample enum:
 #	SAMPLE_POSITION_NV				= 0x8E50
@@ -6684,7 +6690,7 @@ SGIX_subsample enum:
 #   range, allocate multiples of 16 from the beginning of the
 #   Any_vendor_future_use range and update enum.spec
 
-# NOTE: first fill the gap from 0x8FE0-0x8FFF before proceeding here)
+# (NOTE: first fill the gap from 0x8FE0-0x8FFF before proceeding here)
 
 ###############################################################################
 
