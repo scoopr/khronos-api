@@ -124,16 +124,6 @@ passthru: /* GetPName */
 	STEREO						= 0x0C33 # 1 I	# GetPName
 	LINE_SMOOTH_HINT				= 0x0C52 # 1 I	# GetPName
 	POLYGON_SMOOTH_HINT				= 0x0C53 # 1 I	# GetPName
-	PIXEL_MAP_I_TO_I_SIZE				= 0x0CB0 # 1 I	# GetPName
-	PIXEL_MAP_S_TO_S_SIZE				= 0x0CB1 # 1 I	# GetPName
-	PIXEL_MAP_I_TO_R_SIZE				= 0x0CB2 # 1 I	# GetPName
-	PIXEL_MAP_I_TO_G_SIZE				= 0x0CB3 # 1 I	# GetPName
-	PIXEL_MAP_I_TO_B_SIZE				= 0x0CB4 # 1 I	# GetPName
-	PIXEL_MAP_I_TO_A_SIZE				= 0x0CB5 # 1 I	# GetPName
-	PIXEL_MAP_R_TO_R_SIZE				= 0x0CB6 # 1 I	# GetPName
-	PIXEL_MAP_G_TO_G_SIZE				= 0x0CB7 # 1 I	# GetPName
-	PIXEL_MAP_B_TO_B_SIZE				= 0x0CB8 # 1 I	# GetPName
-	PIXEL_MAP_A_TO_A_SIZE				= 0x0CB9 # 1 I	# GetPName
 	UNPACK_SWAP_BYTES				= 0x0CF0 # 1 I	# GetPName
 	UNPACK_LSB_FIRST				= 0x0CF1 # 1 I	# GetPName
 	UNPACK_ROW_LENGTH				= 0x0CF2 # 1 I	# GetPName
@@ -149,14 +139,6 @@ passthru: /* GetPName */
 	MAX_TEXTURE_SIZE				= 0x0D33 # 1 I	# GetPName
 	MAX_VIEWPORT_DIMS				= 0x0D3A # 2 F	# GetPName
 	SUBPIXEL_BITS					= 0x0D50 # 1 I	# GetPName
-	INDEX_BITS					= 0x0D51 # 1 I	# GetPName
-	MAP2_COLOR_4					= 0x0DB0 # 1 I	# GetPName
-	MAP2_INDEX					= 0x0DB1 # 1 I	# GetPName
-	MAP2_NORMAL					= 0x0DB2 # 1 I	# GetPName
-	MAP2_TEXTURE_COORD_1				= 0x0DB3 # 1 I	# GetPName
-	MAP2_TEXTURE_COORD_2				= 0x0DB4 # 1 I	# GetPName
-	MAP2_TEXTURE_COORD_3				= 0x0DB5 # 1 I	# GetPName
-	MAP2_TEXTURE_COORD_4				= 0x0DB6 # 1 I	# GetPName
 	TEXTURE_1D					= 0x0DE0 # 1 I	# GetPName
 	TEXTURE_2D					= 0x0DE1 # 1 I	# GetPName
 	POLYGON_OFFSET_UNITS				= 0x2A00 # 1 F	# GetPName
@@ -419,6 +401,16 @@ passthru: /* GetPName */
 	TEXTURE_GEN_T					= 0x0C61 # 1 I	# GetPName
 	TEXTURE_GEN_R					= 0x0C62 # 1 I	# GetPName
 	TEXTURE_GEN_Q					= 0x0C63 # 1 I	# GetPName
+	PIXEL_MAP_I_TO_I_SIZE				= 0x0CB0 # 1 I	# GetPName
+	PIXEL_MAP_S_TO_S_SIZE				= 0x0CB1 # 1 I	# GetPName
+	PIXEL_MAP_I_TO_R_SIZE				= 0x0CB2 # 1 I	# GetPName
+	PIXEL_MAP_I_TO_G_SIZE				= 0x0CB3 # 1 I	# GetPName
+	PIXEL_MAP_I_TO_B_SIZE				= 0x0CB4 # 1 I	# GetPName
+	PIXEL_MAP_I_TO_A_SIZE				= 0x0CB5 # 1 I	# GetPName
+	PIXEL_MAP_R_TO_R_SIZE				= 0x0CB6 # 1 I	# GetPName
+	PIXEL_MAP_G_TO_G_SIZE				= 0x0CB7 # 1 I	# GetPName
+	PIXEL_MAP_B_TO_B_SIZE				= 0x0CB8 # 1 I	# GetPName
+	PIXEL_MAP_A_TO_A_SIZE				= 0x0CB9 # 1 I	# GetPName
 	MAP_COLOR					= 0x0D10 # 1 I	# GetPName
 	MAP_STENCIL					= 0x0D11 # 1 I	# GetPName
 	INDEX_SHIFT					= 0x0D12 # 1 I	# GetPName
@@ -445,6 +437,7 @@ passthru: /* GetPName */
 	MAX_PROJECTION_STACK_DEPTH			= 0x0D38 # 1 I	# GetPName
 	MAX_TEXTURE_STACK_DEPTH				= 0x0D39 # 1 I	# GetPName
 	MAX_CLIENT_ATTRIB_STACK_DEPTH			= 0x0D3B # 1 I	# GetPName
+	INDEX_BITS					= 0x0D51 # 1 I	# GetPName
 	RED_BITS					= 0x0D52 # 1 I	# GetPName
 	GREEN_BITS					= 0x0D53 # 1 I	# GetPName
 	BLUE_BITS					= 0x0D54 # 1 I	# GetPName
@@ -466,6 +459,13 @@ passthru: /* GetPName */
 	MAP1_TEXTURE_COORD_4				= 0x0D96 # 1 I	# GetPName
 	MAP1_VERTEX_3					= 0x0D97 # 1 I	# GetPName
 	MAP1_VERTEX_4					= 0x0D98 # 1 I	# GetPName
+	MAP2_COLOR_4					= 0x0DB0 # 1 I	# GetPName
+	MAP2_INDEX					= 0x0DB1 # 1 I	# GetPName
+	MAP2_NORMAL					= 0x0DB2 # 1 I	# GetPName
+	MAP2_TEXTURE_COORD_1				= 0x0DB3 # 1 I	# GetPName
+	MAP2_TEXTURE_COORD_2				= 0x0DB4 # 1 I	# GetPName
+	MAP2_TEXTURE_COORD_3				= 0x0DB5 # 1 I	# GetPName
+	MAP2_TEXTURE_COORD_4				= 0x0DB6 # 1 I	# GetPName
 	MAP2_VERTEX_3					= 0x0DB7 # 1 I	# GetPName
 	MAP2_VERTEX_4					= 0x0DB8 # 1 I	# GetPName
 	MAP1_GRID_DOMAIN				= 0x0DD0 # 2 F	# GetPName
@@ -1225,8 +1225,6 @@ passthru: /* Reuse tokens from ARB_framebuffer_object */
 	use ARB_framebuffer_object	    TEXTURE_GREEN_TYPE
 	use ARB_framebuffer_object	    TEXTURE_BLUE_TYPE
 	use ARB_framebuffer_object	    TEXTURE_ALPHA_TYPE
-	use ARB_framebuffer_object	    TEXTURE_LUMINANCE_TYPE
-	use ARB_framebuffer_object	    TEXTURE_INTENSITY_TYPE
 	use ARB_framebuffer_object	    TEXTURE_DEPTH_TYPE
 	use ARB_framebuffer_object	    UNSIGNED_NORMALIZED
 	use ARB_framebuffer_object	    FRAMEBUFFER_BINDING
@@ -1329,6 +1327,9 @@ VERSION_3_0_DEPRECATED enum:
 	CLAMP_VERTEX_COLOR				= 0x891A
 	CLAMP_FRAGMENT_COLOR				= 0x891B
 	ALPHA_INTEGER					= 0x8D97
+passthru: /* Reuse tokens from ARB_framebuffer_object */
+	use ARB_framebuffer_object	    TEXTURE_LUMINANCE_TYPE
+	use ARB_framebuffer_object	    TEXTURE_INTENSITY_TYPE
 
 
 ###############################################################################
@@ -1379,13 +1380,11 @@ passthru: /* Reuse tokens from ARB_uniform_buffer_object */
 	use ARB_uniform_buffer_object	    UNIFORM_BUFFER_START
 	use ARB_uniform_buffer_object	    UNIFORM_BUFFER_SIZE
 	use ARB_uniform_buffer_object	    MAX_VERTEX_UNIFORM_BLOCKS
-	use ARB_uniform_buffer_object	    MAX_GEOMETRY_UNIFORM_BLOCKS
 	use ARB_uniform_buffer_object	    MAX_FRAGMENT_UNIFORM_BLOCKS
 	use ARB_uniform_buffer_object	    MAX_COMBINED_UNIFORM_BLOCKS
 	use ARB_uniform_buffer_object	    MAX_UNIFORM_BUFFER_BINDINGS
 	use ARB_uniform_buffer_object	    MAX_UNIFORM_BLOCK_SIZE
 	use ARB_uniform_buffer_object	    MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS
-	use ARB_uniform_buffer_object	    MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS
 	use ARB_uniform_buffer_object	    MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS
 	use ARB_uniform_buffer_object	    UNIFORM_BUFFER_OFFSET_ALIGNMENT
 	use ARB_uniform_buffer_object	    ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH
@@ -1404,7 +1403,6 @@ passthru: /* Reuse tokens from ARB_uniform_buffer_object */
 	use ARB_uniform_buffer_object	    UNIFORM_BLOCK_ACTIVE_UNIFORMS
 	use ARB_uniform_buffer_object	    UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES
 	use ARB_uniform_buffer_object	    UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER
-	use ARB_uniform_buffer_object	    UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER
 	use ARB_uniform_buffer_object	    UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER
 	use ARB_uniform_buffer_object	    INVALID_INDEX
 

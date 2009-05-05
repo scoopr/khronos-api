@@ -6045,6 +6045,12 @@ VERSION_3_1 enum: (Promoted from ARB_shader_objects + ARB_texture_rectangle)
 
 # Imagination Tech.: 0x8C00-0x8C0F
 
+# IMG_texture_compression_pvrtc enum: (OpenGL ES only)
+#	COMPRESSED_RGB_PVRTC_4BPPV1_IMG			= 0x8C00
+#	COMPRESSED_RGB_PVRTC_2BPPV1_IMG			= 0x8C01
+#	COMPRESSED_RGBA_PVRTC_4BPPV1_IMG		= 0x8C02
+#	COMPRESSED_RGBA_PVRTC_2BPPV1_IMG		= 0x8C03
+
 ###############################################################################
 
 # NVIDIA: 0x8C10-0x8C8F (Pat Brown)
@@ -6937,6 +6943,11 @@ ARB_future_use: 0x8F9F
 
 # Qualcomm: 0x8FA0-0x8FBF
 # Assigned for Maurice Ribble (Khronos bug 4512)
+
+# QCOM_driver_control enum: (OpenGL ES only)
+#	PERFMON_GLOBAL_MODE_QCOM			= 0x8FA0
+
+# QCOM_future_use: 0x8FA1-0x8FBF
 
 ###############################################################################
 

@@ -31,7 +31,7 @@ extern "C" {
 /* Header file version number, required by OpenGL ABI for Linux */
 /* glext.h last updated $Date: 2009-04-29 23:57:16 -0700 (Wed, 29 Apr 2009) $ */
 /* Current version at http://www.opengl.org/registry/ */
-#define GL_GLEXT_VERSION 51
+#define GL_GLEXT_VERSION 52
 
 /* Function declaration macros - to move into glplatform.h */
 
@@ -627,8 +627,6 @@ extern "C" {
 /* reuse GL_TEXTURE_GREEN_TYPE */
 /* reuse GL_TEXTURE_BLUE_TYPE */
 /* reuse GL_TEXTURE_ALPHA_TYPE */
-/* reuse GL_TEXTURE_LUMINANCE_TYPE */
-/* reuse GL_TEXTURE_INTENSITY_TYPE */
 /* reuse GL_TEXTURE_DEPTH_TYPE */
 /* reuse GL_UNSIGNED_NORMALIZED */
 /* reuse GL_FRAMEBUFFER_BINDING */
@@ -732,6 +730,9 @@ extern "C" {
 #define GL_CLAMP_VERTEX_COLOR             0x891A
 #define GL_CLAMP_FRAGMENT_COLOR           0x891B
 #define GL_ALPHA_INTEGER                  0x8D97
+/* Reuse tokens from ARB_framebuffer_object */
+/* reuse GL_TEXTURE_LUMINANCE_TYPE */
+/* reuse GL_TEXTURE_INTENSITY_TYPE */
 #endif
 
 #ifndef GL_VERSION_3_1
@@ -776,13 +777,11 @@ extern "C" {
 /* reuse GL_UNIFORM_BUFFER_START */
 /* reuse GL_UNIFORM_BUFFER_SIZE */
 /* reuse GL_MAX_VERTEX_UNIFORM_BLOCKS */
-/* reuse GL_MAX_GEOMETRY_UNIFORM_BLOCKS */
 /* reuse GL_MAX_FRAGMENT_UNIFORM_BLOCKS */
 /* reuse GL_MAX_COMBINED_UNIFORM_BLOCKS */
 /* reuse GL_MAX_UNIFORM_BUFFER_BINDINGS */
 /* reuse GL_MAX_UNIFORM_BLOCK_SIZE */
 /* reuse GL_MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS */
-/* reuse GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS */
 /* reuse GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS */
 /* reuse GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT */
 /* reuse GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH */
@@ -801,7 +800,6 @@ extern "C" {
 /* reuse GL_UNIFORM_BLOCK_ACTIVE_UNIFORMS */
 /* reuse GL_UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES */
 /* reuse GL_UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER */
-/* reuse GL_UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER */
 /* reuse GL_UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER */
 /* reuse GL_INVALID_INDEX */
 #endif
@@ -4051,7 +4049,7 @@ extern "C" {
 #include <stddef.h>
 #ifndef GL_VERSION_2_0
 /* GL type for program/shader text */
-typedef char GLchar;			/* native character */
+typedef char GLchar;
 #endif
 
 #ifndef GL_VERSION_1_5
@@ -4067,12 +4065,12 @@ typedef ptrdiff_t GLsizeiptrARB;
 #endif
 
 #ifndef GL_ARB_shader_objects
-/* GL types for handling shader object handles and program/shader text */
-typedef char GLcharARB;		/* native character */
-typedef unsigned int GLhandleARB;	/* shader object handle */
+/* GL types for program/shader text and shader object handles */
+typedef char GLcharARB;
+typedef unsigned int GLhandleARB;
 #endif
 
-/* GL types for "half" precision (s10e5) float data in host memory */
+/* GL type for "half" precision (s10e5) float data in host memory */
 #ifndef GL_ARB_half_float_pixel
 typedef unsigned short GLhalfARB;
 #endif
@@ -4114,7 +4112,8 @@ typedef __int32 int32_t;
 typedef __int64 int64_t;
 typedef unsigned __int64 uint64_t;
 #else
-#include <inttypes.h>     /* Fallback option */
+/* Fallback if nothing above works */
+#include <inttypes.h>
 #endif
 #endif
 

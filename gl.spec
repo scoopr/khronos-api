@@ -85,7 +85,7 @@ passthru: #include <stddef.h>
 
 passthru: #ifndef GL_VERSION_2_0
 passthru: /* GL type for program/shader text */
-passthru: typedef char GLchar;			/* native character */
+passthru: typedef char GLchar;
 passthru: #endif
 passthru:
 passthru: #ifndef GL_VERSION_1_5
@@ -101,12 +101,12 @@ passthru: typedef ptrdiff_t GLsizeiptrARB;
 passthru: #endif
 passthru:
 passthru: #ifndef GL_ARB_shader_objects
-passthru: /* GL types for handling shader object handles and program/shader text */
-passthru: typedef char GLcharARB;		/* native character */
-passthru: typedef unsigned int GLhandleARB;	/* shader object handle */
+passthru: /* GL types for program/shader text and shader object handles */
+passthru: typedef char GLcharARB;
+passthru: typedef unsigned int GLhandleARB;
 passthru: #endif
 passthru:
-passthru: /* GL types for "half" precision (s10e5) float data in host memory */
+passthru: /* GL type for "half" precision (s10e5) float data in host memory */
 passthru: #ifndef GL_ARB_half_float_pixel
 passthru: typedef unsigned short GLhalfARB;
 passthru: #endif
@@ -148,7 +148,8 @@ passthru: typedef __int32 int32_t;
 passthru: typedef __int64 int64_t;
 passthru: typedef unsigned __int64 uint64_t;
 passthru: #else
-passthru: #include <inttypes.h>     /* Fallback option */
+passthru: /* Fallback if nothing above works */
+passthru: #include <inttypes.h>
 passthru: #endif
 passthru: #endif
 passthru:
