@@ -36,12 +36,12 @@ extern "C" {
  * will probably change slightly as we make sure exactly the right set
  * of interfaces is included.
  *
- * gl3.h last updated on $Date: 2009-04-30 00:05:44 -0700 (Thu, 30 Apr 2009) $
+ * gl3.h last updated on $Date: 2009-05-05 15:53:39 -0700 (Tue, 05 May 2009) $
  *
  * RELEASE NOTES
  *
- * gl3.h should be placed under a directory 'GL3' and
- * included as '<GL3/gl3.h>'.
+ * gl3.h should be placed under a directory 'GL3' and included as
+ * '<GL3/gl3.h>'.
  *
  * gl3.h only includes interfaces supported in a core OpenGL 3.1
  * implementation, as well as interfaces for a few ARB extensions which

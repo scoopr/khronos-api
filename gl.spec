@@ -22409,18 +22409,6 @@ GetVideoui64vNV(video_slot, pname, params)
 	glxflags	ignore
 	offset		?
 
-VideoParameterivNV(video_slot, pname, params)
-	return		void
-	param		video_slot	UInt32 in value
-	param		pname		GLenum in value
-	param		params		Int32 in array [COMPSIZE(pname)]
-	category	NV_present_video
-	version		1.2
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
 ###############################################################################
 #
 # Extension #348 - GLX_NV_video_out

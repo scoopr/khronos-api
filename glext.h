@@ -29,7 +29,7 @@ extern "C" {
 */
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glext.h last updated $Date: 2009-04-29 23:57:16 -0700 (Wed, 29 Apr 2009) $ */
+/* glext.h last updated $Date: 2009-05-05 15:27:42 -0700 (Tue, 05 May 2009) $ */
 /* Current version at http://www.opengl.org/registry/ */
 #define GL_GLEXT_VERSION 52
 
@@ -8273,7 +8273,6 @@ GLAPI void APIENTRY glGetVideoivNV (GLuint, GLenum, GLint *);
 GLAPI void APIENTRY glGetVideouivNV (GLuint, GLenum, GLuint *);
 GLAPI void APIENTRY glGetVideoi64vNV (GLuint, GLenum, GLint64EXT *);
 GLAPI void APIENTRY glGetVideoui64vNV (GLuint, GLenum, GLuint64EXT *);
-GLAPI void APIENTRY glVideoParameterivNV (GLuint, GLenum, const GLint *);
 #endif /* GL_GLEXT_PROTOTYPES */
 typedef void (APIENTRYP PFNGLPRESENTFRAMEKEYEDNVPROC) (GLuint video_slot, GLuint64EXT minPresentTime, GLuint beginPresentTimeId, GLuint presentDurationId, GLenum type, GLenum target0, GLuint fill0, GLuint key0, GLenum target1, GLuint fill1, GLuint key1);
 typedef void (APIENTRYP PFNGLPRESENTFRAMEDUALFILLNVPROC) (GLuint video_slot, GLuint64EXT minPresentTime, GLuint beginPresentTimeId, GLuint presentDurationId, GLenum type, GLenum target0, GLuint fill0, GLenum target1, GLuint fill1, GLenum target2, GLuint fill2, GLenum target3, GLuint fill3);
@@ -8281,7 +8280,6 @@ typedef void (APIENTRYP PFNGLGETVIDEOIVNVPROC) (GLuint video_slot, GLenum pname,
 typedef void (APIENTRYP PFNGLGETVIDEOUIVNVPROC) (GLuint video_slot, GLenum pname, GLuint *params);
 typedef void (APIENTRYP PFNGLGETVIDEOI64VNVPROC) (GLuint video_slot, GLenum pname, GLint64EXT *params);
 typedef void (APIENTRYP PFNGLGETVIDEOUI64VNVPROC) (GLuint video_slot, GLenum pname, GLuint64EXT *params);
-typedef void (APIENTRYP PFNGLVIDEOPARAMETERIVNVPROC) (GLuint video_slot, GLenum pname, const GLint *params);
 #endif
 
 #ifndef GL_EXT_transform_feedback
