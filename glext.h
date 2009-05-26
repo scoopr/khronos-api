@@ -1527,6 +1527,9 @@ extern "C" {
 #define GL_COPY_WRITE_BUFFER              0x8F37
 #endif
 
+#ifndef GL_ARB_shader_texture_lod
+#endif
+
 #ifndef GL_EXT_abgr
 #define GL_ABGR_EXT                       0x8000
 #endif
@@ -5558,6 +5561,10 @@ typedef void (APIENTRYP PFNGLUNIFORMBLOCKBINDINGPROC) (GLuint program, GLuint un
 GLAPI void APIENTRY glCopyBufferSubData (GLenum, GLenum, GLintptr, GLintptr, GLsizeiptr);
 #endif /* GL_GLEXT_PROTOTYPES */
 typedef void (APIENTRYP PFNGLCOPYBUFFERSUBDATAPROC) (GLenum readTarget, GLenum writeTarget, GLintptr readOffset, GLintptr writeOffset, GLsizeiptr size);
+#endif
+
+#ifndef GL_ARB_shader_texture_lod
+#define GL_ARB_shader_texture_lod 1
 #endif
 
 #ifndef GL_EXT_abgr

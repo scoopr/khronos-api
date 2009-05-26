@@ -4599,6 +4599,9 @@ SGIX_subsample enum:
 #	DOT3_RGB_ARB					= 0x86AE
 #	DOT3_RGBA_ARB					= 0x86AF
 
+# IMG_texture_env_enhanced_fixed_function (OpenGL ES only; additional; see below)
+#	DOT3_RGBA_IMG					= 0x86AF
+
 ###############################################################################
 
 # 3Dfx: 0x86B0-0x86BF
@@ -6050,6 +6053,14 @@ VERSION_3_1 enum: (Promoted from ARB_shader_objects + ARB_texture_rectangle)
 #	COMPRESSED_RGB_PVRTC_2BPPV1_IMG			= 0x8C01
 #	COMPRESSED_RGBA_PVRTC_4BPPV1_IMG		= 0x8C02
 #	COMPRESSED_RGBA_PVRTC_2BPPV1_IMG		= 0x8C03
+
+# IMG_texture_env_enhanced_fixed_function (OpenGL ES only)
+#	MODULATE_COLOR_IMG				= 0x8C04
+#	RECIP_ADD_SIGNED_ALPHA_IMG			= 0x8C05
+#	TEXTURE_ALPHA_MODULATE_IMG			= 0x8C06
+#	FACTOR_ALPHA_MODULATE_IMG			= 0x8C07
+#	FRAGMENT_ALPHA_MODULATE_IMG			= 0x8C08
+#	ADD_BLEND_IMG					= 0x8C09
 
 ###############################################################################
 

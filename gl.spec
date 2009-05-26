@@ -11005,6 +11005,15 @@ CopyBufferSubData(readTarget, writeTarget, readOffset, writeOffset, size)
 	glxflags	ignore
 	offset		?
 
+###############################################################################
+#
+# ARB Extension #60
+# ARB_shader_texture_lod commands
+#
+###############################################################################
+
+# (none)
+newcategory: ARB_shader_texture_lod
 
 
 ###############################################################################

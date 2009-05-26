@@ -2350,6 +2350,12 @@ ARB_copy_buffer enum:
 	COPY_READ_BUFFER				= 0x8F36
 	COPY_WRITE_BUFFER				= 0x8F37
 
+###############################################################################
+
+# ARB Extension #60
+# No new tokens
+ARB_shader_texture_lod enum:
+
 
 ###############################################################################
 #
