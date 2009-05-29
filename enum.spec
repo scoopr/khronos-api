@@ -1395,6 +1395,13 @@ DataType enum:
 # OES_fixed_point enum: (OpenGL ES only)
 #	FIXED_OES					= 0x140C
 
+# Leave a gap to preserve even/odd int/uint token values
+# ARB_future_use: 0x140D
+
+# Future NV extension (Khronos bug 5172)
+#	INT64_NV					= 0x140E
+#	UNSIGNED_INT64_NV				= 0x140F
+
 ###############################################################################
 
 ListNameType enum:
