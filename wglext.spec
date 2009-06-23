@@ -762,7 +762,7 @@ newcategory: NV_float_buffer
 #
 ###############################################################################
 
-SetStereoEmitterState3DL(HDC hDC, UINT uState)
+SetStereoEmitterState3DL(hDC, uState)
 	return		BOOL
 	param		hDC		HDC in value
 	param		uState		UINT in value
