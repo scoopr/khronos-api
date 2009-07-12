@@ -1392,6 +1392,9 @@ DataType enum:
 # NV_half_float enum:
 #	HALF_FLOAT_NV					= 0x140B
 
+# APPLE_float_pixels enum: (additional; see below)
+#	HALF_APPLE					= 0x140B
+
 # OES_fixed_point enum: (OpenGL ES only)
 #	FIXED_OES					= 0x140C
 
@@ -4294,9 +4297,13 @@ SGIX_subsample enum:
 # APPLE_client_storage enum:
 #	UNPACK_CLIENT_STORAGE_APPLE			= 0x85B2
 
-# APPLE_future_use: 0x85B3-0x85B4
-## From Jeremy 2006/10/18 (Bugzilla bug 632) - unknown extension name
+# APPLE_object_purgeable enum: (additional; see below)
+# May also be part of APPLE_fence
 #	BUFFER_OBJECT_APPLE				= 0x85B3
+
+# APPLE_future_use: 0x85B4
+
+## From Jeremy 2006/10/18 (Bugzilla bug 632) - unknown extension name
 #	STORAGE_CLIENT_APPLE				= 0x85B4
 
 # VERSION_3_0 enum:
@@ -4308,9 +4315,11 @@ SGIX_subsample enum:
 # APPLE_vertex_array_object enum:
 #	VERTEX_ARRAY_BINDING_APPLE			= 0x85B5
 
-# APPLE_future_use: 0x85B6-0x85B8
+# APPLE_future_use: 0x85B6
 ## From Jeremy 2006/10/18 (Bugzilla bug 632) - unknown extension name
 #	TEXTURE_MINIMIZE_STORAGE_APPLE			= 0x85B6
+
+# APPLE_texture_range enum:  (additional; see below)
 #	TEXTURE_RANGE_LENGTH_APPLE			= 0x85B7
 #	TEXTURE_RANGE_POINTER_APPLE			= 0x85B8
 
@@ -4323,12 +4332,15 @@ SGIX_subsample enum:
 #	UNSIGNED_SHORT_8_8_MESA				= 0x85BA
 #	UNSIGNED_SHORT_8_8_REV_MESA			= 0x85BB
 
-# APPLE_future_use: 0x85BC-0x85BD
-## From Jeremy 2006/10/18 (Bugzilla bug 632) - unknown extension name
+# APPLE_texture_range enum:
 #	TEXTURE_STORAGE_HINT_APPLE			= 0x85BC
 #	STORAGE_PRIVATE_APPLE				= 0x85BD
 
+# APPLE_texture_range enum:
 # APPLE_vertex_array_range (additional; see above): 0x85BE-0x85BF
+#	STORAGE_CACHED_APPLE				= 0x85BE
+#	STORAGE_SHARED_APPLE				= 0x85BF
+
 
 ###############################################################################
 
@@ -5043,36 +5055,52 @@ SGIX_subsample enum:
 # ATI_future_use: 0x8811-0x8813
 
 # VERSION_3_0 enum:
-# ARB_texture_float enum:
-# ATI_texture_float enum:
 #	RGBA32F						= 0x8814    # VERSION_3_0
-#	RGBA32F_ARB					= 0x8814
-#	RGBA_FLOAT32_ATI				= 0x8814
 #	RGB32F						= 0x8815    # VERSION_3_0
-#	RGB32F_ARB					= 0x8815
-#	RGB_FLOAT32_ATI					= 0x8815
-#	ALPHA32F_ARB					= 0x8816
-#	ALPHA_FLOAT32_ATI				= 0x8816
-#	INTENSITY32F_ARB				= 0x8817
-#	INTENSITY_FLOAT32_ATI				= 0x8817
-#	LUMINANCE32F_ARB				= 0x8818
-#	LUMINANCE_FLOAT32_ATI				= 0x8818
-#	LUMINANCE_ALPHA32F_ARB				= 0x8819
-#	LUMINANCE_ALPHA_FLOAT32_ATI			= 0x8819
 #	RGBA16F						= 0x881A    # VERSION_3_0
-#	RGBA16F_ARB					= 0x881A
-#	RGBA_FLOAT16_ATI				= 0x881A
 #	RGB16F						= 0x881B    # VERSION_3_0
+
+# ARB_texture_float enum:
+#	RGBA32F_ARB					= 0x8814
+#	RGB32F_ARB					= 0x8815
+#	ALPHA32F_ARB					= 0x8816
+#	INTENSITY32F_ARB				= 0x8817
+#	LUMINANCE32F_ARB				= 0x8818
+#	LUMINANCE_ALPHA32F_ARB				= 0x8819
+#	RGBA16F_ARB					= 0x881A
 #	RGB16F_ARB					= 0x881B
-#	RGB_FLOAT16_ATI					= 0x881B
 #	ALPHA16F_ARB					= 0x881C
-#	ALPHA_FLOAT16_ATI				= 0x881C
 #	INTENSITY16F_ARB				= 0x881D
-#	INTENSITY_FLOAT16_ATI				= 0x881D
 #	LUMINANCE16F_ARB				= 0x881E
-#	LUMINANCE_FLOAT16_ATI				= 0x881E
 #	LUMINANCE_ALPHA16F_ARB				= 0x881F
+
+# ATI_texture_float enum:
+#	RGBA_FLOAT32_ATI				= 0x8814
+#	RGB_FLOAT32_ATI					= 0x8815
+#	ALPHA_FLOAT32_ATI				= 0x8816
+#	INTENSITY_FLOAT32_ATI				= 0x8817
+#	LUMINANCE_FLOAT32_ATI				= 0x8818
+#	LUMINANCE_ALPHA_FLOAT32_ATI			= 0x8819
+#	RGBA_FLOAT16_ATI				= 0x881A
+#	RGB_FLOAT16_ATI					= 0x881B
+#	ALPHA_FLOAT16_ATI				= 0x881C
+#	INTENSITY_FLOAT16_ATI				= 0x881D
+#	LUMINANCE_FLOAT16_ATI				= 0x881E
 #	LUMINANCE_ALPHA_FLOAT16_ATI			= 0x881F
+
+# APPLE_float_pixels enum: (additional; see below)
+#	RGBA_FLOAT32_APPLE				= 0x8814
+#	RGB_FLOAT32_APPLE				= 0x8815
+#	ALPHA_FLOAT32_APPLE				= 0x8816
+#	INTENSITY_FLOAT32_APPLE				= 0x8817
+#	LUMINANCE_FLOAT32_APPLE				= 0x8818
+#	LUMINANCE_ALPHA_FLOAT32_APPLE			= 0x8819
+#	RGBA_FLOAT16_APPLE				= 0x881A
+#	RGB_FLOAT16_APPLE				= 0x881B
+#	ALPHA_FLOAT16_APPLE				= 0x881C
+#	INTENSITY_FLOAT16_APPLE				= 0x881D
+#	LUMINANCE_FLOAT16_APPLE				= 0x881E
+#	LUMINANCE_ALPHA_FLOAT16_APPLE			= 0x881F
 
 # ARB_color_buffer_float enum:
 #	RGBA_FLOAT_MODE_ARB				= 0x8820    # Equivalent to TYPE_RGBA_FLOAT_ATI
@@ -5747,21 +5775,35 @@ SGIX_subsample enum:
 ###############################################################################
 
 # Apple: 0x8A00-0x8A7F
-# APPLE_vertex_program_evaluators: 0x8A00-0x8A0F?
+
+# APPLE_vertex_program_evaluators enum:
+#	VERTEX_ATTRIB_MAP1_APPLE			= 0x8A00
+#	VERTEX_ATTRIB_MAP2_APPLE			= 0x8A01
+#	VERTEX_ATTRIB_MAP1_SIZE_APPLE			= 0x8A02
+#	VERTEX_ATTRIB_MAP1_COEFF_APPLE			= 0x8A03
+#	VERTEX_ATTRIB_MAP1_ORDER_APPLE			= 0x8A04
+#	VERTEX_ATTRIB_MAP1_DOMAIN_APPLE			= 0x8A05
+#	VERTEX_ATTRIB_MAP2_SIZE_APPLE			= 0x8A06
+#	VERTEX_ATTRIB_MAP2_COEFF_APPLE			= 0x8A07
+#	VERTEX_ATTRIB_MAP2_ORDER_APPLE			= 0x8A08
+#	VERTEX_ATTRIB_MAP2_DOMAIN_APPLE			= 0x8A09
 
 # APPLE_fence enum:
 #	DRAW_PIXELS_APPLE				= 0x8A0A
 #	FENCE_APPLE					= 0x8A0B
 
-# APPLE_future_use: 0x8A0C-0x8A11
 ## From Jeremy 2006/10/18 (Bugzilla bug 632) - unknown extension name
 #	ELEMENT_ARRAY_APPLE				= 0x8A0C
 #	ELEMENT_ARRAY_TYPE_APPLE			= 0x8A0D
 #	ELEMENT_ARRAY_POINTER_APPLE			= 0x8A0E
+
+# APPLE_float_pixels enum:
 #	COLOR_FLOAT_APPLE				= 0x8A0F
+
+# APPLE_future_use: 0x8A10
+## From Jeremy 2006/10/18 (Bugzilla bug 632) - unknown extension name
 #	MIN_PBUFFER_VIEWPORT_DIMS_APPLE			= 0x8A10
 #	ELEMENT_BUFFER_BINDING_APPLE			= 0x8A11
-
 # Apple says the extension that defined ELEMENT_BUFFER_BINDING_APPLE
 # never shipped and there's no actual collision with UNIFORM_BUFFER
 
@@ -5775,7 +5817,23 @@ SGIX_subsample enum:
 #	BUFFER_SERIALIZED_MODIFY_APPLE			= 0x8A12
 #	BUFFER_FLUSHING_UNMAP_APPLE			= 0x8A13
 
-# APPLE_future_use: 0x8A14-0x8A27
+# APPLE_aux_depth_stencil enum:
+#	AUX_DEPTH_STENCIL_APPLE				= 0x8A14
+
+# APPLE_row_bytes enum:
+#	PACK_ROW_BYTES_APPLE				= 0x8A15
+#	UNPACK_ROW_BYTES_APPLE				= 0x8A16
+
+# APPLE_future_use: 0x8A17-0x8A18
+
+# APPLE_object_purgeable enum:
+#	RELEASED_APPLE					= 0x8A19
+#	VOLATILE_APPLE					= 0x8A1A
+#	RETAINED_APPLE					= 0x8A1B
+#	UNDEFINED_APPLE					= 0x8A1C
+#	PURGEABLE_APPLE					= 0x8A1D
+
+# APPLE_future_use: 0x8A1E-0x8A27
 
 # VERSION_3_1 enum:
 #	use ARB_uniform_buffer_object	    UNIFORM_BUFFER_BINDING
@@ -6993,7 +7051,23 @@ ARB_future_use: 0x8F9F
 #	DISCRETE_AMD					= 0x9006
 #	CONTINUOUS_AMD					= 0x9007
 
-# AMD_future_use: 0x9008-0x901F
+# AMD_future_use: 0x9008-0x900F
+
+# EXT_texture_snorm enum:
+#	ALPHA_SNORM					= 0x9010
+#	LUMINANCE_SNORM					= 0x9011
+#	LUMINANCE_ALPHA_SNORM				= 0x9012
+#	INTENSITY_SNORM					= 0x9013
+#	ALPHA8_SNORM					= 0x9014
+#	LUMINANCE8_SNORM				= 0x9015
+#	LUMINANCE8_ALPHA8_SNORM				= 0x9016
+#	INTENSITY8_SNORM				= 0x9017
+#	ALPHA16_SNORM					= 0x9018
+#	LUMINANCE16_SNORM				= 0x9019
+#	LUMINANCE16_ALPHA16_SNORM			= 0x901A
+#	INTENSITY16_SNORM				= 0x901B
+
+# AMD_future_use: 0x901C-0x901F
 
 ###############################################################################
 

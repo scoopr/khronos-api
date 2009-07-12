@@ -4835,6 +4835,9 @@ APPLE_element_array enum:
 ###############################################################################
 
 # Extension #272
+# ??? BUFFER_OBJECT_APPLE appears to be part of the shipping extension,
+# but is not in the spec in the registry. Also appears in
+# APPLE_object_purgeable below.
 APPLE_fence enum:
 	DRAW_PIXELS_APPLE				= 0x8A0A
 	FENCE_APPLE					= 0x8A0B
@@ -5764,3 +5767,108 @@ EXT_provoking_vertex enum:
 	FIRST_VERTEX_CONVENTION_EXT			= 0x8E4D
 	LAST_VERTEX_CONVENTION_EXT			= 0x8E4E
 	PROVOKING_VERTEX_EXT				= 0x8E4F
+
+###############################################################################
+
+# Extension #365
+EXT_texture_snorm enum:
+	ALPHA_SNORM					= 0x9010
+	LUMINANCE_SNORM					= 0x9011
+	LUMINANCE_ALPHA_SNORM				= 0x9012
+	INTENSITY_SNORM					= 0x9013
+	ALPHA8_SNORM					= 0x9014
+	LUMINANCE8_SNORM				= 0x9015
+	LUMINANCE8_ALPHA8_SNORM				= 0x9016
+	INTENSITY8_SNORM				= 0x9017
+	ALPHA16_SNORM					= 0x9018
+	LUMINANCE16_SNORM				= 0x9019
+	LUMINANCE16_ALPHA16_SNORM			= 0x901A
+	INTENSITY16_SNORM				= 0x901B
+	use VERSION_3_1			    R_SNORM
+	use VERSION_3_1			    RG_SNORM
+	use VERSION_3_1			    RGB_SNORM
+	use VERSION_3_1			    RGBA_SNORM
+	use VERSION_3_1			    R8_SNORM
+	use VERSION_3_1			    RG8_SNORM
+	use VERSION_3_1			    RGB8_SNORM
+	use VERSION_3_1			    RGBA8_SNORM
+	use VERSION_3_1			    R16_SNORM
+	use VERSION_3_1			    RG16_SNORM
+	use VERSION_3_1			    RGB16_SNORM
+	use VERSION_3_1			    RGBA16_SNORM
+	use VERSION_3_1			    SIGNED_NORMALIZED
+
+###############################################################################
+
+# No new tokens
+# Extension #366
+AMD_draw_buffers_blend enum:
+
+###############################################################################
+
+# Extension #367
+APPLE_texture_range enum:
+	TEXTURE_RANGE_LENGTH_APPLE			= 0x85B7
+	TEXTURE_RANGE_POINTER_APPLE			= 0x85B8
+	TEXTURE_STORAGE_HINT_APPLE			= 0x85BC
+	STORAGE_PRIVATE_APPLE				= 0x85BD
+	use APPLE_vertex_array_range	    STORAGE_CACHED_APPLE
+	use APPLE_vertex_array_range	    STORAGE_SHARED_APPLE
+
+###############################################################################
+
+# Extension #368
+APPLE_float_pixels enum:
+	HALF_APPLE					= 0x140B
+	RGBA_FLOAT32_APPLE				= 0x8814
+	RGB_FLOAT32_APPLE				= 0x8815
+	ALPHA_FLOAT32_APPLE				= 0x8816
+	INTENSITY_FLOAT32_APPLE				= 0x8817
+	LUMINANCE_FLOAT32_APPLE				= 0x8818
+	LUMINANCE_ALPHA_FLOAT32_APPLE			= 0x8819
+	RGBA_FLOAT16_APPLE				= 0x881A
+	RGB_FLOAT16_APPLE				= 0x881B
+	ALPHA_FLOAT16_APPLE				= 0x881C
+	INTENSITY_FLOAT16_APPLE				= 0x881D
+	LUMINANCE_FLOAT16_APPLE				= 0x881E
+	LUMINANCE_ALPHA_FLOAT16_APPLE			= 0x881F
+	COLOR_FLOAT_APPLE				= 0x8A0F
+
+###############################################################################
+
+# Extension #369
+APPLE_vertex_program_evaluators enum:
+	VERTEX_ATTRIB_MAP1_APPLE			= 0x8A00
+	VERTEX_ATTRIB_MAP2_APPLE			= 0x8A01
+	VERTEX_ATTRIB_MAP1_SIZE_APPLE			= 0x8A02
+	VERTEX_ATTRIB_MAP1_COEFF_APPLE			= 0x8A03
+	VERTEX_ATTRIB_MAP1_ORDER_APPLE			= 0x8A04
+	VERTEX_ATTRIB_MAP1_DOMAIN_APPLE			= 0x8A05
+	VERTEX_ATTRIB_MAP2_SIZE_APPLE			= 0x8A06
+	VERTEX_ATTRIB_MAP2_COEFF_APPLE			= 0x8A07
+	VERTEX_ATTRIB_MAP2_ORDER_APPLE			= 0x8A08
+	VERTEX_ATTRIB_MAP2_DOMAIN_APPLE			= 0x8A09
+
+###############################################################################
+
+# Extension #370
+APPLE_aux_depth_stencil enum:
+	AUX_DEPTH_STENCIL_APPLE				= 0x8A14
+
+###############################################################################
+
+# Extension #371
+APPLE_object_purgeable enum:
+	BUFFER_OBJECT_APPLE				= 0x85B3
+	RELEASED_APPLE					= 0x8A19
+	VOLATILE_APPLE					= 0x8A1A
+	RETAINED_APPLE					= 0x8A1B
+	UNDEFINED_APPLE					= 0x8A1C
+	PURGEABLE_APPLE					= 0x8A1D
+
+###############################################################################
+
+# Extension #372
+APPLE_row_bytes enum:
+	PACK_ROW_BYTES_APPLE				= 0x8A15
+	UNPACK_ROW_BYTES_APPLE				= 0x8A16
