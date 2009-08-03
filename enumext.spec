@@ -1108,6 +1108,8 @@ VERSION_3_0 enum:
 	CLIP_DISTANCE3					= 0x3003    # alias GL_CLIP_PLANE3
 	CLIP_DISTANCE4					= 0x3004    # alias GL_CLIP_PLANE4
 	CLIP_DISTANCE5					= 0x3005    # alias GL_CLIP_PLANE5
+	CLIP_DISTANCE6					= 0x3006
+	CLIP_DISTANCE7					= 0x3007
 	MAX_CLIP_DISTANCES				= 0x0D32    # alias GL_MAX_CLIP_PLANES
 	MAJOR_VERSION					= 0x821B
 	MINOR_VERSION					= 0x821C
@@ -1198,6 +1200,9 @@ VERSION_3_0 enum:
 	QUERY_NO_WAIT					= 0x8E14
 	QUERY_BY_REGION_WAIT				= 0x8E15
 	QUERY_BY_REGION_NO_WAIT				= 0x8E16
+	BUFFER_ACCESS_FLAGS				= 0x911F
+	BUFFER_MAP_LENGTH				= 0x9120
+	BUFFER_MAP_OFFSET				= 0x9121
 passthru: /* Reuse tokens from ARB_depth_buffer_float */
 	use ARB_depth_buffer_float	    DEPTH_COMPONENT32F
 	use ARB_depth_buffer_float	    DEPTH32F_STENCIL8
@@ -1406,6 +1411,89 @@ passthru: /* Reuse tokens from ARB_uniform_buffer_object */
 	use ARB_uniform_buffer_object	    UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER
 	use ARB_uniform_buffer_object	    INVALID_INDEX
 
+
+###############################################################################
+#
+# OpenGL 3.2 enums
+#
+###############################################################################
+
+VERSION_3_2 enum:
+	CONTEXT_CORE_PROFILE_BIT			= 0x00000001
+	CONTEXT_COMPATIBILITY_PROFILE_BIT		= 0x00000002
+	LINES_ADJACENCY					= 0x000A
+	LINE_STRIP_ADJACENCY				= 0x000B
+	TRIANGLES_ADJACENCY				= 0x000C
+	TRIANGLE_STRIP_ADJACENCY			= 0x000D
+	PROGRAM_POINT_SIZE				= 0x8642
+	MAX_GEOMETRY_TEXTURE_IMAGE_UNITS		= 0x8C29
+	FRAMEBUFFER_ATTACHMENT_LAYERED			= 0x8DA7
+	FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS		= 0x8DA8
+	GEOMETRY_SHADER					= 0x8DD9
+	GEOMETRY_VERTICES_OUT				= 0x8916
+	GEOMETRY_INPUT_TYPE				= 0x8917
+	GEOMETRY_OUTPUT_TYPE				= 0x8918
+	MAX_GEOMETRY_UNIFORM_COMPONENTS			= 0x8DDF
+	MAX_GEOMETRY_OUTPUT_VERTICES			= 0x8DE0
+	MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS		= 0x8DE1
+	MAX_VERTEX_OUTPUT_COMPONENTS			= 0x9122
+	MAX_GEOMETRY_INPUT_COMPONENTS			= 0x9123
+	MAX_GEOMETRY_OUTPUT_COMPONENTS			= 0x9124
+	MAX_FRAGMENT_INPUT_COMPONENTS			= 0x9125
+	CONTEXT_PROFILE_MASK				= 0x9126
+	use VERSION_3_0			    MAX_VARYING_COMPONENTS
+	use ARB_framebuffer_object	    FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER
+passthru: /* Reuse tokens from ARB_depth_clamp */
+	use ARB_depth_clamp		    DEPTH_CLAMP
+passthru: /* Would reuse tokens from ARB_draw_elements_base_vertex, but it has none */
+passthru: /* Would reuse tokens from ARB_fragment_coord_conventions, but it has none */
+passthru: /* Reuse tokens from ARB_provoking_vertex */
+	use ARB_provoking_vertex	    QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION
+	use ARB_provoking_vertex	    FIRST_VERTEX_CONVENTION
+	use ARB_provoking_vertex	    LAST_VERTEX_CONVENTION
+	use ARB_provoking_vertex	    PROVOKING_VERTEX
+passthru: /* Reuse tokens from ARB_seamless_cube_map */
+	use ARB_seamless_cube_map	    TEXTURE_CUBE_MAP_SEAMLESS
+passthru: /* Reuse tokens from ARB_sync */
+	use ARB_sync			    MAX_SERVER_WAIT_TIMEOUT
+	use ARB_sync			    OBJECT_TYPE
+	use ARB_sync			    SYNC_CONDITION
+	use ARB_sync			    SYNC_STATUS
+	use ARB_sync			    SYNC_FLAGS
+	use ARB_sync			    SYNC_FENCE
+	use ARB_sync			    SYNC_GPU_COMMANDS_COMPLETE
+	use ARB_sync			    UNSIGNALED
+	use ARB_sync			    SIGNALED
+	use ARB_sync			    ALREADY_SIGNALED
+	use ARB_sync			    TIMEOUT_EXPIRED
+	use ARB_sync			    CONDITION_SATISFIED
+	use ARB_sync			    WAIT_FAILED
+	use ARB_sync			    TIMEOUT_IGNORED
+	use ARB_sync			    SYNC_FLUSH_COMMANDS_BIT
+	use ARB_sync			    TIMEOUT_IGNORED
+passthru: /* Reuse tokens from ARB_texture_multisample */
+	use ARB_texture_multisample	    SAMPLE_POSITION
+	use ARB_texture_multisample	    SAMPLE_MASK
+	use ARB_texture_multisample	    SAMPLE_MASK_VALUE
+	use ARB_texture_multisample	    MAX_SAMPLE_MASK_WORDS
+	use ARB_texture_multisample	    TEXTURE_2D_MULTISAMPLE
+	use ARB_texture_multisample	    PROXY_TEXTURE_2D_MULTISAMPLE
+	use ARB_texture_multisample	    TEXTURE_2D_MULTISAMPLE_ARRAY
+	use ARB_texture_multisample	    PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY
+	use ARB_texture_multisample	    TEXTURE_BINDING_2D_MULTISAMPLE
+	use ARB_texture_multisample	    TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY
+	use ARB_texture_multisample	    TEXTURE_SAMPLES
+	use ARB_texture_multisample	    TEXTURE_FIXED_SAMPLE_LOCATIONS
+	use ARB_texture_multisample	    SAMPLER_2D_MULTISAMPLE
+	use ARB_texture_multisample	    INT_SAMPLER_2D_MULTISAMPLE
+	use ARB_texture_multisample	    UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE
+	use ARB_texture_multisample	    SAMPLER_2D_MULTISAMPLE_ARRAY
+	use ARB_texture_multisample	    INT_SAMPLER_2D_MULTISAMPLE_ARRAY
+	use ARB_texture_multisample	    UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY
+	use ARB_texture_multisample	    MAX_COLOR_TEXTURE_SAMPLES
+	use ARB_texture_multisample	    MAX_DEPTH_TEXTURE_SAMPLES
+	use ARB_texture_multisample	    MAX_INTEGER_SAMPLES
+passthru: /* Don't need to reuse tokens from ARB_vertex_array_bgra since they're already in 1.2 core */
 
 ###############################################################################
 #
@@ -2356,6 +2444,135 @@ ARB_copy_buffer enum:
 # No new tokens
 ARB_shader_texture_lod enum:
 
+###############################################################################
+
+# ARB Extension #61
+ARB_depth_clamp enum:
+	DEPTH_CLAMP					= 0x864F
+
+###############################################################################
+
+# No new tokens
+# ARB Extension #62
+ARB_draw_elements_base_vertex enum:
+
+###############################################################################
+
+# No new tokens
+# ARB Extension #63
+ARB_fragment_coord_conventions enum:
+
+###############################################################################
+
+# ARB Extension #64
+ARB_provoking_vertex enum:
+	QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION	= 0x8E4C
+	FIRST_VERTEX_CONVENTION				= 0x8E4D
+	LAST_VERTEX_CONVENTION				= 0x8E4E
+	PROVOKING_VERTEX				= 0x8E4F
+
+###############################################################################
+
+# ARB Extension #65
+ARB_seamless_cube_map enum:
+	TEXTURE_CUBE_MAP_SEAMLESS			= 0x884F
+
+###############################################################################
+
+# ARB Extension #66
+ARB_sync enum:
+	MAX_SERVER_WAIT_TIMEOUT				= 0x9111
+	OBJECT_TYPE					= 0x9112
+	SYNC_CONDITION					= 0x9113
+	SYNC_STATUS					= 0x9114
+	SYNC_FLAGS					= 0x9115
+	SYNC_FENCE					= 0x9116
+	SYNC_GPU_COMMANDS_COMPLETE			= 0x9117
+	UNSIGNALED					= 0x9118
+	SIGNALED					= 0x9119
+	ALREADY_SIGNALED				= 0x911A
+	TIMEOUT_EXPIRED					= 0x911B
+	CONDITION_SATISFIED				= 0x911C
+	WAIT_FAILED					= 0x911D
+	SYNC_FLUSH_COMMANDS_BIT				= 0x00000001
+	TIMEOUT_IGNORED					= 0xFFFFFFFFFFFFFFFFull
+
+###############################################################################
+
+# ARB Extension #67
+ARB_texture_multisample enum:
+	SAMPLE_POSITION					= 0x8E50
+	SAMPLE_MASK					= 0x8E51
+	SAMPLE_MASK_VALUE				= 0x8E52
+	MAX_SAMPLE_MASK_WORDS				= 0x8E59
+	TEXTURE_2D_MULTISAMPLE				= 0x9100
+	PROXY_TEXTURE_2D_MULTISAMPLE			= 0x9101
+	TEXTURE_2D_MULTISAMPLE_ARRAY			= 0x9102
+	PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY		= 0x9103
+	TEXTURE_BINDING_2D_MULTISAMPLE			= 0x9104
+	TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY		= 0x9105
+	TEXTURE_SAMPLES					= 0x9106
+	TEXTURE_FIXED_SAMPLE_LOCATIONS			= 0x9107
+	SAMPLER_2D_MULTISAMPLE				= 0x9108
+	INT_SAMPLER_2D_MULTISAMPLE			= 0x9109
+	UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE		= 0x910A
+	SAMPLER_2D_MULTISAMPLE_ARRAY			= 0x910B
+	INT_SAMPLER_2D_MULTISAMPLE_ARRAY		= 0x910C
+	UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY	= 0x910D
+	MAX_COLOR_TEXTURE_SAMPLES			= 0x910E
+	MAX_DEPTH_TEXTURE_SAMPLES			= 0x910F
+	MAX_INTEGER_SAMPLES				= 0x9110
+
+###############################################################################
+
+# ARB Extension #68
+ARB_vertex_array_bgra enum:
+	use VERSION_1_2			    BGRA
+
+###############################################################################
+
+# No new tokens
+# ARB Extension #69
+ARB_draw_buffers_blend enum:
+
+###############################################################################
+
+# ARB Extension #70
+ARB_sample_shading enum:
+	SAMPLE_SHADING					= 0x8C36
+	MIN_SAMPLE_SHADING_VALUE			= 0x8C37
+
+###############################################################################
+
+# ARB Extension #71
+ARB_texture_cube_map_array enum:
+	TEXTURE_CUBE_MAP_ARRAY				= 0x9009
+	TEXTURE_BINDING_CUBE_MAP_ARRAY			= 0x900A
+	PROXY_TEXTURE_CUBE_MAP_ARRAY			= 0x900B
+	SAMPLER_CUBE_MAP_ARRAY				= 0x900C
+	SAMPLER_CUBE_MAP_ARRAY_SHADOW			= 0x900D
+	INT_SAMPLER_CUBE_MAP_ARRAY			= 0x900E
+	UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY		= 0x900F
+
+###############################################################################
+
+# ARB Extension #72
+ARB_texture_gather enum:
+	MIN_PROGRAM_TEXTURE_GATHER_OFFSET		= 0x8E5E
+	MAX_PROGRAM_TEXTURE_GATHER_OFFSET		= 0x8E5F
+	MAX_PROGRAM_TEXTURE_GATHER_COMPONENTS		= 0x8F9F
+
+###############################################################################
+
+# No new tokens
+# ARB Extension #73
+ARB_texture_query_lod enum:
+
+###############################################################################
+
+# No new tokens
+# ARB Extension #74 - WGL_ARB_create_context_profile
+# ARB Extension #75 - GLX_ARB_create_context_profile
 
 ###############################################################################
 #
@@ -3026,8 +3243,8 @@ HP_convolution_border_modes enum:
 
 ###############################################################################
 
-#@ Unknown tokens
 # Extension #68
+# (Unknown token values???)
 INGR_palette_buffer enum:
 
 ###############################################################################
@@ -3272,8 +3489,6 @@ SGIX_fragment_lighting enum:
 	FRAGMENT_LIGHT5_SGIX				= 0x8411
 	FRAGMENT_LIGHT6_SGIX				= 0x8412
 	FRAGMENT_LIGHT7_SGIX				= 0x8413
-
-# SGIX_fragment_lighting_future_use: 0x8414-0x842B
 
 ###############################################################################
 
@@ -4826,7 +5041,7 @@ APPLE_client_storage enum:
 ###############################################################################
 
 # Extension #271
-# @@@ (extends ATI_element_array, I think???)
+# (extends ATI_element_array???)
 APPLE_element_array enum:
 	ELEMENT_ARRAY_APPLE				= 0x8768
 	ELEMENT_ARRAY_TYPE_APPLE			= 0x8769
@@ -4851,7 +5066,7 @@ APPLE_vertex_array_object enum:
 ###############################################################################
 
 # Extension #274
-# @@@ How does this interact with NV_vertex_array_range?
+# (How does this interact with NV_vertex_array_range???)
 APPLE_vertex_array_range enum:
 	VERTEX_ARRAY_RANGE_APPLE			= 0x851D
 	VERTEX_ARRAY_RANGE_LENGTH_APPLE			= 0x851E
@@ -5702,11 +5917,11 @@ NV_explicit_multisample enum:
 	SAMPLE_MASK_VALUE_NV				= 0x8E52
 	TEXTURE_BINDING_RENDERBUFFER_NV			= 0x8E53
 	TEXTURE_RENDERBUFFER_DATA_STORE_BINDING_NV	= 0x8E54
-	MAX_SAMPLE_MASK_WORDS_NV			= 0x8E59
 	TEXTURE_RENDERBUFFER_NV				= 0x8E55
 	SAMPLER_RENDERBUFFER_NV				= 0x8E56
 	INT_SAMPLER_RENDERBUFFER_NV			= 0x8E57
 	UNSIGNED_INT_SAMPLER_RENDERBUFFER_NV		= 0x8E58
+	MAX_SAMPLE_MASK_WORDS_NV			= 0x8E59
 
 ###############################################################################
 
@@ -5872,3 +6087,6 @@ APPLE_object_purgeable enum:
 APPLE_row_bytes enum:
 	PACK_ROW_BYTES_APPLE				= 0x8A15
 	UNPACK_ROW_BYTES_APPLE				= 0x8A16
+
+###############################################################################
+

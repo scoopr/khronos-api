@@ -27,6 +27,16 @@ WGL_ARB_buffer_region enum:
 	WGL_DEPTH_BUFFER_BIT_ARB			= 0x00000004
 	WGL_STENCIL_BUFFER_BIT_ARB			= 0x00000008
 
+# CONTEXT_FLAGS_ARB bits
+WGLContextFlags enum:
+	WGL_CONTEXT_DEBUG_BIT_ARB			= 0x00000001	# ARB_create_context
+	WGL_CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x00000002	# ARB_create_context
+
+# CONTEXT_PROFILE_MASK_ARB bits
+WGLContextProfileMask enum:
+	WGL_CONTEXT_CORE_PROFILE_BIT_ARB		= 0x00000001	# ARB_create_context_profile
+	WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB	= 0x00000002	# ARB_create_context_profile
+
 # AMD: 0x1F00-0x1F02 (additional; see below; equivalent to corresponding GL token)
 
 ###############################################################################
@@ -291,17 +301,19 @@ WGL_ARB_render_texture enum:
 	WGL_AUX8_ARB					= 0x208F
 	WGL_AUX9_ARB					= 0x2090
 
-# Also includes a bitmask
+# Also includes a bitmask - see CotnextFlags above
 WGL_ARB_create_context enum:
-	WGL_CONTEXT_DEBUG_BIT_ARB			= 0x0001
-	WGL_CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x0002
 	WGL_CONTEXT_MAJOR_VERSION_ARB			= 0x2091
 	WGL_CONTEXT_MINOR_VERSION_ARB			= 0x2092
 	WGL_CONTEXT_LAYER_PLANE_ARB			= 0x2093
 	WGL_CONTEXT_FLAGS_ARB				= 0x2094
 	ERROR_INVALID_VERSION_ARB			= 0x2095
 
-# ARB_future_use: 0x2096-0x209F
+# Also includes a bitmask - see ContextProfileMask above
+# WGL_ARB_create_context_profile enum: (additional; see above and below)
+#	ERROR_INVALID_PROFILE_ARB			= 0x2096
+
+# ARB_future_use: 0x2097-0x209F
 
 ###############################################################################
 
@@ -398,5 +410,8 @@ WGL_AMD_gpu_association enum:
 # Matrox: 0x21B0-0x21BF (tentative, RFC sent to ARB 2002/10/3)
 
 ###############################################################################
+
+# WGL_ARB_create_context_profile enum: (equivalent to corresponding GL token)
+#	WGL_CONTEXT_PROFILE_MASK_ARB			= 0x9126
 
 # Any_vendor_future_use: 0x21C0-0xFFFF

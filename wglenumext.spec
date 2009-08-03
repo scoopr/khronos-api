@@ -25,7 +25,7 @@ passthru:
 passthru: /* Header file version number */
 passthru: /* wglext.h last updated 2009/06/23 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define WGL_WGLEXT_VERSION 13
+passthru: #define WGL_WGLEXT_VERSION 14
 
 ###############################################################################
 #
@@ -182,14 +182,22 @@ WGL_ARB_pixel_format_float enum:
 
 # ARB Extension #55
 WGL_ARB_create_context enum:
-	WGL_CONTEXT_DEBUG_BIT_ARB			= 0x0001
-	WGL_CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x0002
+	WGL_CONTEXT_DEBUG_BIT_ARB			= 0x00000001
+	WGL_CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x00000002
 	WGL_CONTEXT_MAJOR_VERSION_ARB			= 0x2091
 	WGL_CONTEXT_MINOR_VERSION_ARB			= 0x2092
 	WGL_CONTEXT_LAYER_PLANE_ARB			= 0x2093
 	WGL_CONTEXT_FLAGS_ARB				= 0x2094
 	ERROR_INVALID_VERSION_ARB			= 0x2095
 
+###############################################################################
+
+# ARB Extension #74
+WGL_ARB_create_context_profile enum:
+	WGL_CONTEXT_PROFILE_MASK_ARB			= 0x9126
+	WGL_CONTEXT_CORE_PROFILE_BIT_ARB		= 0x00000001
+	WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB	= 0x00000002
+	ERROR_INVALID_PROFILE_ARB			= 0x2096
 
 ###############################################################################
 #

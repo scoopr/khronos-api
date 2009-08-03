@@ -99,6 +99,7 @@ Extensions define:
 	VERSION_2_1					= 1
 	VERSION_3_0					= 1
 	VERSION_3_1					= 1
+	VERSION_3_2					= 1
 	ARB_imaging					= 1
 	EXT_abgr					= 1
 	EXT_blend_color					= 1
@@ -272,16 +273,26 @@ BeginMode enum:
 	QUADS						= 0x0007
 	QUAD_STRIP					= 0x0008
 	POLYGON						= 0x0009
+
+# VERSION_3_2 enum:
+#	LINES_ADJACENCY					= 0x000A
+#	LINE_STRIP_ADJACENCY				= 0x000B
+#	TRIANGLES_ADJACENCY				= 0x000C
+#	TRIANGLE_STRIP_ADJACENCY			= 0x000D
+
 # ARB_geometry_shader4 enum: (additional; see below)
-# NV_geometry_program4 enum: (additional; see below)
 #	LINES_ADJACENCY_ARB				= 0x000A
-#	LINES_ADJACENCY_EXT				= 0x000A
 #	LINE_STRIP_ADJACENCY_ARB			= 0x000B
-#	LINE_STRIP_ADJACENCY_EXT			= 0x000B
 #	TRIANGLES_ADJACENCY_ARB				= 0x000C
-#	TRIANGLES_ADJACENCY_EXT				= 0x000C
 #	TRIANGLE_STRIP_ADJACENCY_ARB			= 0x000D
+
+# NV_geometry_program4 enum: (additional; see below)
+#	LINES_ADJACENCY_EXT				= 0x000A
+#	LINE_STRIP_ADJACENCY_EXT			= 0x000B
+#	TRIANGLES_ADJACENCY_EXT				= 0x000C
 #	TRIANGLE_STRIP_ADJACENCY_EXT			= 0x000D
+
+# BeginMode_future_use: 0x000E
 
 ###############################################################################
 
@@ -1037,10 +1048,10 @@ GetPName enum:
 	use LightName LIGHT6
 	use LightName LIGHT7
 
-#	 use ARB_transpose_matrix TRANSPOSE_MODELVIEW_MATRIX_ARB
-#	 use ARB_transpose_matrix TRANSPOSE_PROJECTION_MATRIX_ARB
-#	 use ARB_transpose_matrix TRANSPOSE_TEXTURE_MATRIX_ARB
-#	 use ARB_transpose_matrix TRANSPOSE_COLOR_MATRIX_ARB
+#	use ARB_transpose_matrix	    TRANSPOSE_MODELVIEW_MATRIX_ARB
+#	use ARB_transpose_matrix	    TRANSPOSE_PROJECTION_MATRIX_ARB
+#	use ARB_transpose_matrix	    TRANSPOSE_TEXTURE_MATRIX_ARB
+#	use ARB_transpose_matrix	    TRANSPOSE_COLOR_MATRIX_ARB
 
 	use VERSION_1_2 LIGHT_MODEL_COLOR_CONTROL
 
@@ -1483,9 +1494,9 @@ MaterialParameter enum:
 	SHININESS					= 0x1601
 	AMBIENT_AND_DIFFUSE				= 0x1602
 	COLOR_INDEXES					= 0x1603
-	use LightProperty AMBIENT
-	use LightProperty DIFFUSE
-	use LightProperty SPECULAR
+	use LightParameter AMBIENT
+	use LightParameter DIFFUSE
+	use LightParameter SPECULAR
 
 ###############################################################################
 
@@ -2063,6 +2074,8 @@ ClipPlaneName enum:
 #	CLIP_DISTANCE3					= 0x3003    # VERSION_3_0   # alias GL_CLIP_PLANE3
 #	CLIP_DISTANCE4					= 0x3004    # VERSION_3_0   # alias GL_CLIP_PLANE4
 #	CLIP_DISTANCE5					= 0x3005    # VERSION_3_0   # alias GL_CLIP_PLANE5
+#	CLIP_DISTANCE6					= 0x3006    # VERSION_3_0   # alias GL_CLIP_PLANE5
+#	CLIP_DISTANCE7					= 0x3007    # VERSION_3_0   # alias GL_CLIP_PLANE5
 
 ###############################################################################
 
@@ -2613,6 +2626,9 @@ SGI_color_table enum:
 # VERSION_1_2 enum: (Promoted for OpenGL 1.2)
 	BGR						= 0x80E0
 	BGRA						= 0x80E1
+
+# ARB_vertex_array_bgra enum:
+#	use VERSION_1_2			    BGRA
 
 EXT_bgra enum:
 	BGR_EXT						= 0x80E0
@@ -4508,10 +4524,20 @@ SGIX_subsample enum:
 
 # NV_texture_shader (additional; see below): 0x864C-0x864E
 
+# VERSION_3_2 enum:
+#	PROGRAM_POINT_SIZE				= 0x8642
+
 # ARB_geometry_shader4 enum: (additional; see below)
-# NV_geometry_program4 enum: (additional; see below)
 #	PROGRAM_POINT_SIZE_ARB				= 0x8642
+
+# NV_geometry_program4 enum: (additional; see below)
 #	PROGRAM_POINT_SIZE_EXT				= 0x8642
+
+# VERSION_3_2 enum:
+#	use ARB_depth_clamp		    DEPTH_CLAMP
+
+# ARB_depth_clamp enum:
+#	DEPTH_CLAMP					= 0x864F
 
 # NV_depth_clamp enum:
 #	DEPTH_CLAMP_NV					= 0x864F
@@ -5231,7 +5257,11 @@ SGIX_subsample enum:
 # EXT_texture_array enum: (additional; see below)
 #	COMPARE_REF_DEPTH_TO_TEXTURE_EXT		= 0x884E
 
-# ARB_future_use: 0x884F
+# VERSION_3_2 enum:
+#	use ARB_seamless_cube_map	    TEXTURE_CUBE_MAP_SEAMLESS
+
+# ARB_seamless_cube_map enum:
+#	TEXTURE_CUBE_MAP_SEAMLESS			= 0x884F
 
 ###############################################################################
 
@@ -5604,7 +5634,14 @@ SGIX_subsample enum:
 # ARB_occlusion_query enum: (additional; see above)
 #	SAMPLES_PASSED_ARB				= 0x8914
 
-# NV_future_use: 0x8915-0x8919
+# NV_future_use: 0x8915
+
+# VERSION_3_2 enum:
+#	GEOMETRY_VERTICES_OUT				= 0x8916
+#	GEOMETRY_INPUT_TYPE				= 0x8917
+#	GEOMETRY_OUTPUT_TYPE				= 0x8918
+
+# NV_future_use: 0x8919
 
 # VERSION_3_0 enum:
 #	CLAMP_VERTEX_COLOR				= 0x891A    # VERSION_3_0
@@ -5930,10 +5967,10 @@ VERSION_3_1 enum: (Promoted from ARB_shader_objects + ARB_texture_rectangle)
 #	FRAGMENT_SHADER_ARB				= 0x8B30    # ARB_fragment_shader
 #	VERTEX_SHADER					= 0x8B31    # VERSION_2_0
 #	VERTEX_SHADER_ARB				= 0x8B31    # ARB_vertex_shader
-# ARB_future_use: 0x8B32-0x8B3F
+# ARB_future_use: 0x8B32-0x8B3F (for shader types)
 ##Container types + room for expansion
 #	PROGRAM_OBJECT_ARB				= 0x8B40    # ARB_shader_objects
-# ARB_future_use: 0x8B41-0x8B47
+# ARB_future_use: 0x8B41-0x8B47 (for container types)
 ##Misc. shader enums
 #	SHADER_OBJECT_ARB				= 0x8B48    # ARB_shader_objects
 #	MAX_FRAGMENT_UNIFORM_COMPONENTS			= 0x8B49    # VERSION_2_0
@@ -6179,6 +6216,9 @@ VERSION_3_1 enum: (Promoted from ARB_shader_objects + ARB_texture_rectangle)
 
 # NV_future_use: 0x8C1E-0x8C25
 
+# VERSION_3_2 enum:
+#	MAX_GEOMETRY_TEXTURE_IMAGE_UNITS		= 0x8C29
+
 # ARB_geometry_shader4 enum: (additional; see below)
 #	MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_ARB		= 0x8C29
 
@@ -6209,7 +6249,13 @@ VERSION_3_1 enum: (Promoted from ARB_shader_objects + ARB_texture_rectangle)
 #	TEXTURE_BUFFER_DATA_STORE_BINDING_EXT		= 0x8C2D
 #	TEXTURE_BUFFER_FORMAT_EXT			= 0x8C2E
 
-# NV_future_use: 0x8C2F-0x8C39
+# NV_future_use: 0x8C2F-0x8C35
+
+# ARB_sample_shading enum:
+#	SAMPLE_SHADING_ARB				= 0x8C36
+#	MIN_SAMPLE_SHADING_VALUE_ARB			= 0x8C37
+
+# NV_future_use: 0x8C38-0x8C39
 
 # VERSION_3_0 enum:
 #	R11F_G11F_B10F					= 0x8C3A    # VERSION_3_0
@@ -6705,27 +6751,33 @@ VERSION_3_1 enum: (Promoted from ARB_shader_objects + ARB_texture_rectangle)
 #	MAX_PROGRAM_GENERIC_ATTRIBS_NV			= 0x8DA5
 #	MAX_PROGRAM_GENERIC_RESULTS_NV			= 0x8DA6
 
+# VERSION_3_2 enum:
+#	FRAMEBUFFER_ATTACHMENT_LAYERED			= 0x8DA7
+#	FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS		= 0x8DA8
+
 # ARB_geometry_shader4 enum: (additional; see below)
-# NV_geometry_program4 enum: (additional; see above)
 #	FRAMEBUFFER_ATTACHMENT_LAYERED_ARB		= 0x8DA7
-#	FRAMEBUFFER_ATTACHMENT_LAYERED_EXT		= 0x8DA7
 #	FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_ARB	= 0x8DA8
-#	FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT	= 0x8DA8
 #	FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_ARB		= 0x8DA9
+
+# NV_geometry_program4 enum: (additional; see above)
+#	FRAMEBUFFER_ATTACHMENT_LAYERED_EXT		= 0x8DA7
+#	FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT	= 0x8DA8
 #	FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_EXT		= 0x8DA9
 
 # NV_future_use: 0x8DAA
-# NV_future_use: 0x8DAE
 
 # VERSION_3_0 enum:
 # ARB_depth_buffer_float enum: (additional; see above; some values different from NV; note: no ARB suffixes)
+#	FLOAT_32_UNSIGNED_INT_24_8_REV			= 0x8DAD
+
 # NV_depth_buffer_float enum:
 #	DEPTH_COMPONENT32F_NV				= 0x8DAB
 #	DEPTH32F_STENCIL8_NV				= 0x8DAC
 #	FLOAT_32_UNSIGNED_INT_24_8_REV_NV		= 0x8DAD
-#	FLOAT_32_UNSIGNED_INT_24_8_REV			= 0x8DAD
 #	DEPTH_BUFFER_FLOAT_MODE_NV			= 0x8DAF
 
+# NV_future_use: 0x8DAE
 # NV_future_use: 0x8DB0-0x8DB8
 
 # VERSION_3_0 enum:
@@ -6805,6 +6857,9 @@ VERSION_3_1 enum: (Promoted from EXT_gpu_shader4 + ARB_texture_rectangle / ARB_u
 #	UNSIGNED_INT_SAMPLER_2D_ARRAY_EXT		= 0x8DD7
 #	UNSIGNED_INT_SAMPLER_BUFFER_EXT			= 0x8DD8
 
+# VERSION_3_2 enum:
+#	GEOMETRY_SHADER					= 0x8DD9
+
 # ARB_geometry_shader4 enum:
 #	GEOMETRY_SHADER_ARB				= 0x8DD9
 
@@ -6827,6 +6882,11 @@ VERSION_3_1 enum: (Promoted from EXT_gpu_shader4 + ARB_texture_rectangle / ARB_u
 #	MAX_GEOMETRY_UNIFORM_COMPONENTS_ARB		= 0x8DDF
 #	MAX_GEOMETRY_OUTPUT_VERTICES_ARB		= 0x8DE0
 #	MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_ARB	= 0x8DE1
+
+# VERSION_3_2 enum:
+#	MAX_GEOMETRY_UNIFORM_COMPONENTS			= 0x8DDF
+#	MAX_GEOMETRY_OUTPUT_VERTICES			= 0x8DE0
+#	MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS		= 0x8DE1
 
 # EXT_geometry_shader4 enum: (additional; see above)
 #	MAX_GEOMETRY_VARYING_COMPONENTS_EXT		= 0x8DDD
@@ -6915,11 +6975,35 @@ VERSION_3_1 enum: (Promoted from EXT_gpu_shader4 + ARB_texture_rectangle / ARB_u
 
 # NV_future_use: 0x8E47-0x8E4B
 
+# VERSION_3_2 enum:
+#	use ARB_provoking_vertex	    QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION
+#	use ARB_provoking_vertex	    FIRST_VERTEX_CONVENTION
+#	use ARB_provoking_vertex	    LAST_VERTEX_CONVENTION
+#	use ARB_provoking_vertex	    PROVOKING_VERTEX
+
+# ARB_provoking_vertex enum:
+#	QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION	= 0x8E4C
+#	FIRST_VERTEX_CONVENTION				= 0x8E4D
+#	LAST_VERTEX_CONVENTION				= 0x8E4E
+#	PROVOKING_VERTEX				= 0x8E4F
+
 # EXT_provoking_vertex enum:
 #	QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION_EXT	= 0x8E4C
 #	FIRST_VERTEX_CONVENTION_EXT			= 0x8E4D
 #	LAST_VERTEX_CONVENTION_EXT			= 0x8E4E
 #	PROVOKING_VERTEX_EXT				= 0x8E4F
+
+# VERSION_3_2 enum:
+#	use ARB_texture_multisample	    SAMPLE_POSITION
+#	use ARB_texture_multisample	    SAMPLE_MASK
+#	use ARB_texture_multisample	    SAMPLE_MASK_VALUE
+#	use ARB_texture_multisample	    MAX_SAMPLE_MASK_WORDS
+
+# ARB_texture_multisample enum:
+#	SAMPLE_POSITION					= 0x8E50
+#	SAMPLE_MASK					= 0x8E51
+#	SAMPLE_MASK_VALUE				= 0x8E52
+#	MAX_SAMPLE_MASK_WORDS				= 0x8E59
 
 # NV_explicit_multisample enum:
 #	SAMPLE_POSITION_NV				= 0x8E50
@@ -6927,13 +7011,19 @@ VERSION_3_1 enum: (Promoted from EXT_gpu_shader4 + ARB_texture_rectangle / ARB_u
 #	SAMPLE_MASK_VALUE_NV				= 0x8E52
 #	TEXTURE_BINDING_RENDERBUFFER_NV			= 0x8E53
 #	TEXTURE_RENDERBUFFER_DATA_STORE_BINDING_NV	= 0x8E54
-#	MAX_SAMPLE_MASK_WORDS_NV			= 0x8E59
 #	TEXTURE_RENDERBUFFER_NV				= 0x8E55
 #	SAMPLER_RENDERBUFFER_NV				= 0x8E56
 #	INT_SAMPLER_RENDERBUFFER_NV			= 0x8E57
 #	UNSIGNED_INT_SAMPLER_RENDERBUFFER_NV		= 0x8E58
+#	MAX_SAMPLE_MASK_WORDS_NV			= 0x8E59
 
-# NV_future_use: 0x8E59-0x8E8F
+# NV_future_use: 0x8E5A-0x8E5D
+
+# ARB_texture_gather enum:
+#	MIN_PROGRAM_TEXTURE_GATHER_OFFSET		= 0x8E5E
+#	MAX_PROGRAM_TEXTURE_GATHER_OFFSET		= 0x8E5F
+
+# NV_future_use: 0x8E60-0x8E8F
 
 ###############################################################################
 
@@ -6996,6 +7086,7 @@ VERSION_3_1 enum: (Promoted from EXT_gpu_shader4 + ARB_texture_rectangle / ARB_u
 ###############################################################################
 
 # OpenGL ARB: 0x8F90-0x8F9F (SNORM textures, 3.1 primitive restart server state)
+
 # VERSION_3_1 enum:
 #	RED_SNORM					= 0x8F90    # VERSION_3_1
 #	RG_SNORM					= 0x8F91    # VERSION_3_1
@@ -7013,7 +7104,8 @@ VERSION_3_1 enum: (Promoted from EXT_gpu_shader4 + ARB_texture_rectangle / ARB_u
 #	PRIMITIVE_RESTART				= 0x8F9D    # Different from NV_primitive_restart value
 #	PRIMITIVE_RESTART_INDEX				= 0x8F9E    # Different from NV_primitive_restart value
 
-ARB_future_use: 0x8F9F
+ARB_texture_gather enum: (additional; see above)
+#	MAX_PROGRAM_TEXTURE_GATHER_COMPONENTS		= 0x8F9F
 
 ###############################################################################
 
@@ -7051,6 +7143,15 @@ ARB_future_use: 0x8F9F
 #	DISCRETE_AMD					= 0x9006
 #	CONTINUOUS_AMD					= 0x9007
 
+# ARB_texture_cube_map_array enum:
+#	TEXTURE_CUBE_MAP_ARRAY				= 0x9009
+#	TEXTURE_BINDING_CUBE_MAP_ARRAY			= 0x900A
+#	PROXY_TEXTURE_CUBE_MAP_ARRAY			= 0x900B
+#	SAMPLER_CUBE_MAP_ARRAY				= 0x900C
+#	SAMPLER_CUBE_MAP_ARRAY_SHADOW			= 0x900D
+#	INT_SAMPLER_CUBE_MAP_ARRAY			= 0x900E
+#	UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY		= 0x900F
+
 # AMD_future_use: 0x9008-0x900F
 
 # EXT_texture_snorm enum:
@@ -7077,12 +7178,107 @@ ARB_future_use: 0x8F9F
 # NV_future_use: 0x9020-0x90FF
 
 ###############################################################################
+
+# OpenGL ARB: 0x9100-0x912F
+
+# VERSION_3_2 enum:
+#	use ARB_texture_multisample	    TEXTURE_2D_MULTISAMPLE
+#	use ARB_texture_multisample	    PROXY_TEXTURE_2D_MULTISAMPLE
+#	use ARB_texture_multisample	    TEXTURE_2D_MULTISAMPLE_ARRAY
+#	use ARB_texture_multisample	    PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY
+#	use ARB_texture_multisample	    TEXTURE_BINDING_2D_MULTISAMPLE
+#	use ARB_texture_multisample	    TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY
+#	use ARB_texture_multisample	    TEXTURE_SAMPLES
+#	use ARB_texture_multisample	    TEXTURE_FIXED_SAMPLE_LOCATIONS
+#	use ARB_texture_multisample	    SAMPLER_2D_MULTISAMPLE
+#	use ARB_texture_multisample	    INT_SAMPLER_2D_MULTISAMPLE
+#	use ARB_texture_multisample	    UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE
+#	use ARB_texture_multisample	    SAMPLER_2D_MULTISAMPLE_ARRAY
+#	use ARB_texture_multisample	    INT_SAMPLER_2D_MULTISAMPLE_ARRAY
+#	use ARB_texture_multisample	    UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY
+#	use ARB_texture_multisample	    MAX_COLOR_TEXTURE_SAMPLES
+#	use ARB_texture_multisample	    MAX_DEPTH_TEXTURE_SAMPLES
+#	use ARB_texture_multisample	    MAX_INTEGER_SAMPLES
+
+# ARB_texture_multisample enum:
+#	TEXTURE_2D_MULTISAMPLE				= 0x9100
+#	PROXY_TEXTURE_2D_MULTISAMPLE			= 0x9101
+#	TEXTURE_2D_MULTISAMPLE_ARRAY			= 0x9102
+#	PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY		= 0x9103
+#	TEXTURE_BINDING_2D_MULTISAMPLE			= 0x9104
+#	TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY		= 0x9105
+#	TEXTURE_SAMPLES					= 0x9106
+#	TEXTURE_FIXED_SAMPLE_LOCATIONS			= 0x9107
+#	SAMPLER_2D_MULTISAMPLE				= 0x9108
+#	INT_SAMPLER_2D_MULTISAMPLE			= 0x9109
+#	UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE		= 0x910A
+#	SAMPLER_2D_MULTISAMPLE_ARRAY			= 0x910B
+#	INT_SAMPLER_2D_MULTISAMPLE_ARRAY		= 0x910C
+#	UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY	= 0x910D
+#	MAX_COLOR_TEXTURE_SAMPLES			= 0x910E
+#	MAX_DEPTH_TEXTURE_SAMPLES			= 0x910F
+#	MAX_INTEGER_SAMPLES				= 0x9110
+
+# VERSION_3_2 enum:
+#	use ARB_sync			    MAX_SERVER_WAIT_TIMEOUT
+#	use ARB_sync			    OBJECT_TYPE
+#	use ARB_sync			    SYNC_CONDITION
+#	use ARB_sync			    SYNC_STATUS
+#	use ARB_sync			    SYNC_FLAGS
+#	use ARB_sync			    SYNC_FENCE
+#	use ARB_sync			    SYNC_GPU_COMMANDS_COMPLETE
+#	use ARB_sync			    UNSIGNALED
+#	use ARB_sync			    SIGNALED
+#	use ARB_sync			    ALREADY_SIGNALED
+#	use ARB_sync			    TIMEOUT_EXPIRED
+#	use ARB_sync			    CONDITION_SATISFIED
+#	use ARB_sync			    WAIT_FAILED
+#	use ARB_sync			    TIMEOUT_IGNORED
+#	use ARB_sync			    SYNC_FLUSH_COMMANDS_BIT
+#	use ARB_sync			    TIMEOUT_IGNORED
+
+# ARB_sync enum:
+#	MAX_SERVER_WAIT_TIMEOUT				= 0x9111
+#	OBJECT_TYPE					= 0x9112
+#	SYNC_CONDITION					= 0x9113
+#	SYNC_STATUS					= 0x9114
+#	SYNC_FLAGS					= 0x9115
+#	SYNC_FENCE					= 0x9116
+#	SYNC_GPU_COMMANDS_COMPLETE			= 0x9117
+#	UNSIGNALED					= 0x9118
+#	SIGNALED					= 0x9119
+#	ALREADY_SIGNALED				= 0x911A
+#	TIMEOUT_EXPIRED					= 0x911B
+#	CONDITION_SATISFIED				= 0x911C
+#	WAIT_FAILED					= 0x911D
+#	SYNC_FLUSH_COMMANDS_BIT				= 0x00000001
+#	TIMEOUT_IGNORED					= 0xFFFFFFFFFFFFFFFFull
+
+# VERSION_3_0 enum:
+#	BUFFER_ACCESS_FLAGS				= 0x911F
+#	BUFFER_MAP_LENGTH				= 0x9120
+#	BUFFER_MAP_OFFSET				= 0x9121
+
+# VERSION_3_2 enum:
+#	MAX_VERTEX_OUTPUT_COMPONENTS			= 0x9122
+#	MAX_GEOMETRY_INPUT_COMPONENTS			= 0x9123
+#	MAX_GEOMETRY_OUTPUT_COMPONENTS			= 0x9124
+#	MAX_FRAGMENT_INPUT_COMPONENTS			= 0x9125
+
+# VERSION_3_2 enum:
+#	CONTEXT_CORE_PROFILE_BIT			= 0x00000001
+#	CONTEXT_COMPATIBILITY_PROFILE_BIT		= 0x00000002
+#	CONTEXT_PROFILE_MASK				= 0x9126
+
+# ARB_future_use: 0x9127-0x912F
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x9100-0xFFFF
+# Any_vendor_future_use: 0x9130-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the
