@@ -48,9 +48,9 @@ extern "C" {
 /*************************************************************/
 
 /* Header file version number */
-/* wglext.h last updated 2009/06/23 */
+/* wglext.h last updated 2009/08/03 */
 /* Current version at http://www.opengl.org/registry/ */
-#define WGL_WGLEXT_VERSION 14
+#define WGL_WGLEXT_VERSION 15
 
 #ifndef WGL_ARB_buffer_region
 #define WGL_FRONT_COLOR_BUFFER_BIT_ARB 0x00000001
