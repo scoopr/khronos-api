@@ -36,9 +36,9 @@ extern "C" {
  * will probably change slightly as we make sure exactly the right set
  * of interfaces is included.
  *
- * gl3.h last updated on $Date: 2009-08-03 02:13:51 -0700 (Mon, 03 Aug 2009) $
+ * gl3.h last updated on $Date: 2009-09-11 04:13:21 -0700 (Fri, 11 Sep 2009) $
  *
- * RELEASE NOTES
+ * RELEASE NOTES - 2009/09/11
  *
  * gl3.h should be placed under a directory 'GL3' and included as
  * '<GL3/gl3.h>'.

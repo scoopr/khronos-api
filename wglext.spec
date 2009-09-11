@@ -8,7 +8,7 @@
 
 required-props:
 param:		retval retained
-category:	wgl ARB_buffer_region ARB_extensions_string ARB_pixel_format ARB_make_current_read ARB_pbuffer ARB_render_texture ARB_pixel_format_float EXT_display_color_table EXT_extensions_string EXT_make_current_read EXT_pbuffer EXT_pixel_format EXT_swap_control OML_sync_control I3D_digital_video_control I3D_gamma I3D_genlock I3D_image_buffer I3D_swap_frame_lock I3D_swap_frame_usage NV_vertex_array_range 3DL_stereo_control NV_swap_group NV_video_out NV_present_video ARB_create_context NV_gpu_affinity AMD_gpu_association
+category:	wgl ARB_buffer_region ARB_extensions_string ARB_pixel_format ARB_make_current_read ARB_pbuffer ARB_render_texture ARB_pixel_format_float EXT_display_color_table EXT_extensions_string EXT_make_current_read EXT_pbuffer EXT_pixel_format EXT_swap_control OML_sync_control I3D_digital_video_control I3D_gamma I3D_genlock I3D_image_buffer I3D_swap_frame_lock I3D_swap_frame_usage NV_vertex_array_range 3DL_stereo_control NV_swap_group NV_video_output NV_present_video ARB_create_context NV_gpu_affinity AMD_gpu_association NV_video_capture NV_copy_image
 # required-props in wgl.spec (which is not used for anything):
 # dlflags:	  notlistable handcode
 # wglflags:	  client-handcode server-handcode non-dispatch
@@ -29,7 +29,7 @@ passthru: #endif
 passthru: #ifndef WGL_NV_present_video
 passthru: DECLARE_HANDLE(HVIDEOOUTPUTDEVICENV);
 passthru: #endif
-passthru: #ifndef WGL_NV_video_out
+passthru: #ifndef WGL_NV_video_output
 passthru: DECLARE_HANDLE(HPVIDEODEV);
 passthru: #endif
 passthru: #ifndef WGL_NV_gpu_affinity
@@ -44,7 +44,11 @@ passthru:     DWORD  Flags;
 passthru:     RECT   rcVirtualScreen;
 passthru: } GPU_DEVICE, *PGPU_DEVICE;
 passthru: #endif
+passthru: #ifndef WGL_NV_video_capture
+passthru: DECLARE_HANDLE(HVIDEOINPUTDEVICENV);
+passthru: #endif
 passthru:
+
 
 ###############################################################################
 #
@@ -249,6 +253,16 @@ CreateContextAttribsARB(hDC, hShareContext, attribList)
 	param		hShareContext	HGLRC in value
 	param		attribList	int in array [COMPSIZE()]
 	category	ARB_create_context
+
+###############################################################################
+#
+# ARB Extension #74
+# ARB_create_context_profile commands
+#
+###############################################################################
+
+# (none)
+newcategory: ARB_create_context_profile
 
 
 ###############################################################################
@@ -818,35 +832,34 @@ QueryCurrentContextNV(iAttribute, piValue)
 ###############################################################################
 #
 # Extension #349
-# NV_video_out commands
+# NV_video_output commands
 #
 ###############################################################################
 
-# TBD
 GetVideoDeviceNV(hDC, numDevices, hVideoDevice)
 	return		BOOL
 	param		hDC		HDC in value
 	param		numDevices	int in value
 	param		hVideoDevice	HPVIDEODEV out reference
-	category	NV_video_out
+	category	NV_video_output
 
 ReleaseVideoDeviceNV(hVideoDevice)
 	return		BOOL
 	param		hVideoDevice	HPVIDEODEV in value
-	category	NV_video_out
+	category	NV_video_output
 
 BindVideoImageNV(hVideoDevice, hPbuffer, iVideoBuffer)
 	return		BOOL
 	param		hVideoDevice	HPVIDEODEV in value
 	param		hPbuffer	HPBUFFERARB in value
 	param		iVideoBuffer	int in value
-	category	NV_video_out
+	category	NV_video_output
 
 ReleaseVideoImageNV(hPbuffer, iVideoBuffer)
 	return		BOOL
 	param		hPbuffer	HPBUFFERARB in value
 	param		iVideoBuffer	int in value
-	category	NV_video_out
+	category	NV_video_output
 
 SendPbufferToVideoNV(hPbuffer, iBufferType, pulCounterPbuffer, bBlock)
 	return		BOOL
@@ -854,14 +867,14 @@ SendPbufferToVideoNV(hPbuffer, iBufferType, pulCounterPbuffer, bBlock)
 	param		iBufferType	int in value
 	param		pulCounterPbuffer   ulong out reference
 	param		bBlock		BOOL in value
-	category	NV_video_out
+	category	NV_video_output
 
 GetVideoInfoNV(hpVideoDevice, pulCounterOutputPbuffer, pulCounterOutputVideo)
 	return		BOOL
 	param		hpVideoDevice	HPVIDEODEV in value
 	param		pulCounterOutputPbuffer ulong out reference
 	param		pulCounterOutputVideo	ulong out reference
-	category	NV_video_out
+	category	NV_video_output
 
 ###############################################################################
 #
@@ -1011,3 +1024,70 @@ BlitContextFramebufferAMD(dstCtx, srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX
 	param		mask		GLbitfield in value
 	param		filter		GLenum in value
 	category	AMD_gpu_association
+
+###############################################################################
+#
+# Extension #374
+# NV_video_capture commands
+#
+###############################################################################
+
+BindVideoCaptureDeviceNV(uVideoSlot, hDevice)
+	return		BOOL
+	param		uVideoSlot	UINT in value
+	param		hDevice		HVIDEOINPUTDEVICENV in value
+	category	NV_video_capture
+
+EnumerateVideoCaptureDevicesNV(hDc, phDeviceList)
+	return		UINT
+	param		hDc		HDC in value
+	param		phDeviceList	HVIDEOINPUTDEVICENV out reference
+	category	NV_video_capture
+
+LockVideoCaptureDeviceNV(hDc, hDevice)
+	return		BOOL
+	param		hDc		HDC in value
+	param		hDevice		HVIDEOINPUTDEVICENV in value
+	category	NV_video_capture
+
+QueryVideoCaptureDeviceNV(hDc, hDevice, iAttribute, piValue)
+	return		BOOL
+	param		hDc		HDC in value
+	param		hDevice		HVIDEOINPUTDEVICENV in value
+	param		iAttribute	int in value
+	param		piValue		int out reference
+	category	NV_video_capture
+
+ReleaseVideoCaptureDeviceNV(hDc, hDevice)
+	return		BOOL
+	param		hDc		HDC in value
+	param		hDevice		HVIDEOINPUTDEVICENV in value
+	category	NV_video_capture
+
+###############################################################################
+#
+# Extension #376
+# WGL_NV_copy_image commands
+#
+###############################################################################
+
+CopyImageSubDataNV(hDstRC, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, hDstRC, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, width, height, depth)
+	return		BOOL
+	param		hDstRC		HGLRC in value
+	param		srcName		GLuint in value
+	param		srcTarget	GLenum in value
+	param		srcLevel	GLint in value
+	param		srcX		GLint in value
+	param		srcY		GLint in value
+	param		srcZ		GLint in value
+	param		hDstRC		HGLRC in value
+	param		dstName		GLuint in value
+	param		dstTarget	GLenum in value
+	param		dstLevel	GLint in value
+	param		dstX		GLint in value
+	param		dstY		GLint in value
+	param		dstZ		GLint in value
+	param		width		GLsizei in value
+	param		height		GLsizei in value
+	param		depth		GLsizei in value
+	category	NV_copy_image

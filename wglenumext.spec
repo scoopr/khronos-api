@@ -23,9 +23,9 @@
 
 passthru:
 passthru: /* Header file version number */
-passthru: /* wglext.h last updated 2009/08/03 */
+passthru: /* wglext.h last updated 2009/09/11 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define WGL_WGLEXT_VERSION 15
+passthru: #define WGL_WGLEXT_VERSION 16
 
 ###############################################################################
 #
@@ -448,3 +448,16 @@ WGL_AMD_gpu_association enum:
 	WGL_GPU_NUM_SIMD_AMD				= 0x21A6
 	WGL_GPU_NUM_RB_AMD				= 0x21A7
 	WGL_GPU_NUM_SPI_AMD				= 0x21A8
+
+###############################################################################
+
+# Extension #374
+NV_video_capture enum:
+	WGL_UNIQUE_ID_NV				= 0x20CE
+	WGL_NUM_VIDEO_CAPTURE_SLOTS_NV			= 0x20CF
+
+###############################################################################
+
+# No new tokens
+# Extension #376
+NV_copy_image enum:

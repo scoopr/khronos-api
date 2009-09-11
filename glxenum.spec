@@ -287,7 +287,10 @@ GLXAttribute enum:
 	VIDEO_OUT_STACKED_FIELDS_1_2_NV			= 0x20CB
 	VIDEO_OUT_STACKED_FIELDS_2_1_NV			= 0x20CC
 
-# NV_future_use: 0x20CD-0x20CF
+# NV_video_capture enum:
+	DEVICE_ID_NV					= 0x20CD
+	UNIQUE_ID_NV					= 0x20CE
+	NUM_VIDEO_CAPTURE_SLOTS_NV			= 0x20CF
 
 # EXT_texture_from_pixmap enum:
 	BIND_TO_TEXTURE_RGB_EXT				= 0x20D0

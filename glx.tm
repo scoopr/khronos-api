@@ -19,11 +19,18 @@ GLXHyperpipeConfigSGIXPointer,*,*,  GLXHyperpipeConfigSGIX *,*,*
 GLXPbuffer,*,*,		    GLXPbuffer,*,*
 GLXPbufferSGIX,*,*,	    GLXPbufferSGIX,*,*
 GLXPixmap,*,*,		    GLXPixmap,*,*
+GLXVideoCaptureDeviceNV,*,*,	    GLXVideoCaptureDeviceNV,*,*
+GLXVideoCaptureDeviceNVPointer,*,*, GLXVideoCaptureDeviceNV *,*,*
+GLXVideoDeviceNV,*,*,	    GLXVideoDeviceNV,*,*
 GLXVideoSourceSGIX,*,*,     GLXVideoSourceSGIX,*,*
 GLXWindow,*,*,		    GLXWindow,*,*
+GLboolean,*,*,		    GLboolean,*,*
 GLenum,*,*,		    GLenum,*,*
 GLfunction,*,*,		    GLfunction,*,*
+GLint,*,*,		    GLint,*,*
+GLsizei,*,*,		    GLsizei,*,*
 GLubyte,*,*,		    GLubyte,*,*
+GLuint,*,*,		    GLuint,*,*
 Pixmap,*,*,		    Pixmap,*,*
 Status,*,*,		    Status,*,*
 Uint,*,*,		    unsigned int,*,*
@@ -36,6 +43,7 @@ XVisualInfoPointer,*,*,     XVisualInfo *,*,*
 float,*,*,		    float,*,*
 int,*,*,		    int,*,*
 uint,*,*,		    unsigned int,*,*
+uintPointer,*,*,	    unsigned int *,*,*
 int32_t,*,*,		    int32_t,*,*
 int64_t,*,*,		    int64_t,*,*
 long,*,*,		    long,*,*

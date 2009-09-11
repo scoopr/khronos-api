@@ -367,7 +367,10 @@ WGL_NV_video_out enum:
 	WGL_VIDEO_OUT_STACKED_FIELDS_1_2		= 0x20CB
 	WGL_VIDEO_OUT_STACKED_FIELDS_2_1		= 0x20CC
 
-# NV_future_use: 0x20CD-0x20CF
+# 0x20CD reserved for GLX_DEVICE_ID_NV (not present in WGL interface)
+NV_video_capture enum:
+	WGL_UNIQUE_ID_NV				= 0x20CE
+	WGL_NUM_VIDEO_CAPTURE_SLOTS_NV			= 0x20CF
 
 WGL_NV_gpu_affinity:
 	WGL_ERROR_INCOMPATIBLE_AFFINITY_MASKS_NV	= 0x20D0
