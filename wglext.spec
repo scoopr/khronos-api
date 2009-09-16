@@ -1071,9 +1071,9 @@ ReleaseVideoCaptureDeviceNV(hDc, hDevice)
 #
 ###############################################################################
 
-CopyImageSubDataNV(hDstRC, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, hDstRC, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, width, height, depth)
+CopyImageSubDataNV(hSrcRC, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, hDstRC, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, width, height, depth)
 	return		BOOL
-	param		hDstRC		HGLRC in value
+	param		hSrcRC		HGLRC in value
 	param		srcName		GLuint in value
 	param		srcTarget	GLenum in value
 	param		srcLevel	GLint in value

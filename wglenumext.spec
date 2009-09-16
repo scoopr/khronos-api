@@ -23,9 +23,9 @@
 
 passthru:
 passthru: /* Header file version number */
-passthru: /* wglext.h last updated 2009/09/11 */
+passthru: /* wglext.h last updated 2009/09/16 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define WGL_WGLEXT_VERSION 16
+passthru: #define WGL_WGLEXT_VERSION 17
 
 ###############################################################################
 #
