@@ -3299,13 +3299,15 @@ SGIX_convolution_accuracy enum:
 
 ###############################################################################
 
-SGIX_ycrcba: 0x8318-0x8319
+# 0x8318-0x8319
+SGIX_ycrcba enum:
 	YCRCB_SGIX					= 0x8318
 	YCRCBA_SGIX					= 0x8319
 
 ###############################################################################
 
-SGIX_slim: 0x831A-0x831F
+# 0x831A-0x831F
+SGIX_slim enum:
 	UNPACK_COMPRESSED_SIZE_SGIX			= 0x831A
 	PACK_MAX_COMPRESSED_SIZE_SGIX			= 0x831B
 	PACK_COMPRESSED_SIZE_SGIX			= 0x831C
@@ -3841,7 +3843,7 @@ ARB_multitexture enum:
 
 # These are really core ES 1.1 enums, but haven't included
 # ES core enums in enum.spec yet
-OES_texture_env_crossbar: (OpenGL ES only)
+OES_texture_env_crossbar enum: (OpenGL ES only)
 	use VERSION_1_3 TEXTURE0
 	use VERSION_1_3 TEXTURE1
 	use VERSION_1_3 TEXTURE2
@@ -4695,7 +4697,7 @@ IMG_texture_env_enhanced_fixed_function enum: (OpenGL ES only; additional; see b
 	SAMPLES_3DFX					= 0x86B4
 	MULTISAMPLE_BIT_3DFX				= 0x20000000
 
-3DFX_future_use: 0x86B5-0x86BF
+# 3DFX_future_use: 0x86B5-0x86BF
 
 ###############################################################################
 
