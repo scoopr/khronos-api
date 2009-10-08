@@ -22,9 +22,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glxext.h last updated 2009/09/11 */
+passthru: /* glxext.h last updated 2009/10/08 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GLX_GLXEXT_VERSION 24
+passthru: #define GLX_GLXEXT_VERSION 25
 
 ###############################################################################
 #
@@ -491,11 +491,10 @@ NV_video_capture enum:
 
 ###############################################################################
 
-# Enums not assigned, extension not ready to publish yet
 # Extension #375
-# EXT_swap_control enum:
-#	 SWAP_INTERVAL_EXT				 = ????
-#	 MAX_SWAP_INTERVAL_EXT				 = ????
+EXT_swap_control enum:
+	SWAP_INTERVAL_EXT				= 0x20F1
+	MAX_SWAP_INTERVAL_EXT				= 0x20F2
 
 ###############################################################################
 

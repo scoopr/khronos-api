@@ -48,9 +48,9 @@ extern "C" {
 /*************************************************************/
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glxext.h last updated 2009/09/11 */
+/* glxext.h last updated 2009/10/08 */
 /* Current version at http://www.opengl.org/registry/ */
-#define GLX_GLXEXT_VERSION 24
+#define GLX_GLXEXT_VERSION 25
 
 #ifndef GLX_VERSION_1_3
 #define GLX_WINDOW_BIT                     0x00000001
@@ -388,6 +388,11 @@ extern "C" {
 #define GLX_NUM_VIDEO_CAPTURE_SLOTS_NV     0x20CF
 #endif
 
+#ifndef GLX_EXT_swap_control
+#define GLX_SWAP_INTERVAL_EXT              0x20F1
+#define GLX_MAX_SWAP_INTERVAL_EXT          0x20F2
+#endif
+
 #ifndef GLX_NV_copy_image
 #endif
 
@@ -424,13 +429,12 @@ typedef struct {
 } GLXBufferClobberEventSGIX;
 #endif
 
-/* The next two typedefs are placeholders until NVIDIA clarifies these types */
 #ifndef GLX_NV_video_output
-typedef struct { unsigned int dummy; } *GLXVideoDeviceNV;
+typedef unsigned int GLXVideoDeviceNV;
 #endif
 
 #ifndef GLX_NV_video_capture
-typedef struct { unsigned int dummy; } *GLXVideoCaptureDeviceNV;
+typedef XID GLXVideoCaptureDeviceNV;
 #endif
 
 #ifndef GLEXT_64_TYPES_DEFINED
@@ -903,6 +907,14 @@ typedef GLXVideoCaptureDeviceNV * ( * PFNGLXENUMERATEVIDEOCAPTUREDEVICESNVPROC) 
 typedef void ( * PFNGLXLOCKVIDEOCAPTUREDEVICENVPROC) (Display *dpy, GLXVideoCaptureDeviceNV device);
 typedef int ( * PFNGLXQUERYVIDEOCAPTUREDEVICENVPROC) (Display *dpy, GLXVideoCaptureDeviceNV device, int attribute, int *value);
 typedef void ( * PFNGLXRELEASEVIDEOCAPTUREDEVICENVPROC) (Display *dpy, GLXVideoCaptureDeviceNV device);
+#endif
+
+#ifndef GLX_EXT_swap_control
+#define GLX_EXT_swap_control 1
+#ifdef GLX_GLXEXT_PROTOTYPES
+extern int glXSwapIntervalEXT (Display *, GLXDrawable, int);
+#endif /* GLX_GLXEXT_PROTOTYPES */
+typedef int ( * PFNGLXSWAPINTERVALEXTPROC) (Display *dpy, GLXDrawable drawable, int interval);
 #endif
 
 #ifndef GLX_NV_copy_image

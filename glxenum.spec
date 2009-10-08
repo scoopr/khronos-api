@@ -326,10 +326,14 @@ GLXAttribute enum:
 
 # NV_future_use: 0x20EC-0x20EF
 
-# NV_present_video enum:
+NV_present_video enum:
 	NUM_VIDEO_SLOTS_NV				= 0x20F0
 
-# NV_future_use: 0x20F1-0x219F
+EXT_swap_control enum:
+	SWAP_INTERVAL_EXT				= 0x20F1
+	MAX_SWAP_INTERVAL_EXT				= 0x20F2
+
+# NV_future_use: 0x20F3-0x219F
 
 ###############################################################################
 

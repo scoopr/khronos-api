@@ -11,7 +11,7 @@ param:		retval retained
 glxflags:	client-handcode client-intercept server-handcode
 glxvendorglx:	*
 vectorequiv:	*
-category:	VERSION_1_3 VERSION_1_4 ARB_get_proc_address ARB_multisample ARB_fbconfig_float EXT_import_context SGIX_dmbuffer SGIX_fbconfig SGIX_pbuffer SGIX_swap_barrier SGIX_swap_group SGIX_video_resize SGIX_video_source SGI_cushion SGI_make_current_read SGI_swap_control SGI_video_sync SUN_get_transparent_index MESA_agp_offset MESA_copy_sub_buffer MESA_pixmap_colormap MESA_release_buffers MESA_set_3dfx_mode SGIX_visual_select_group OML_sync_control SGIX_hyperpipe EXT_texture_from_pixmap NV_swap_group NV_video_output NV_present_video ARB_create_context NV_video_capture NV_copy_image
+category:	VERSION_1_3 VERSION_1_4 ARB_get_proc_address ARB_multisample ARB_fbconfig_float EXT_import_context SGIX_dmbuffer SGIX_fbconfig SGIX_pbuffer SGIX_swap_barrier SGIX_swap_group SGIX_video_resize SGIX_video_source SGI_cushion SGI_make_current_read SGI_swap_control SGI_video_sync SUN_get_transparent_index MESA_agp_offset MESA_copy_sub_buffer MESA_pixmap_colormap MESA_release_buffers MESA_set_3dfx_mode SGIX_visual_select_group OML_sync_control SGIX_hyperpipe EXT_texture_from_pixmap NV_swap_group NV_video_output NV_present_video ARB_create_context NV_video_capture NV_copy_image EXT_swap_control
 glxopcode:	*
 
 #
@@ -51,13 +51,12 @@ passthru:     int count;		  /* if nonzero, at least this many more */
 passthru: } GLXBufferClobberEventSGIX;
 passthru: #endif
 passthru:
-passthru: /* The next two typedefs are placeholders until NVIDIA clarifies these types */
 passthru: #ifndef GLX_NV_video_output
-passthru: typedef struct { unsigned int dummy; } *GLXVideoDeviceNV;
+passthru: typedef unsigned int GLXVideoDeviceNV;
 passthru: #endif
 passthru:
 passthru: #ifndef GLX_NV_video_capture
-passthru: typedef struct { unsigned int dummy; } *GLXVideoCaptureDeviceNV;
+passthru: typedef XID GLXVideoCaptureDeviceNV;
 passthru: #endif
 passthru:
 passthru: #ifndef GLEXT_64_TYPES_DEFINED
@@ -1279,14 +1278,13 @@ ReleaseVideoCaptureDeviceNV(dpy, device)
 #
 ###############################################################################
 
-# Enums not assigned, extension not ready to publish yet
-# SwapIntervalEXT(dpy, drawable, interval)
-#	  return	  int
-#	  param		  dpy		  Display out reference
-#	  param		  drawable	  GLXDrawable in value
-#	  param		  interval	  int in value
-#	  category	  EXT_swap_control
-#	  glxflags	  client-handcode server-handcode
+SwapIntervalEXT(dpy, drawable, interval)
+	return		int
+	param		dpy		Display out reference
+	param		drawable	GLXDrawable in value
+	param		interval	int in value
+	category	EXT_swap_control
+	glxflags	client-handcode server-handcode
 
 ###############################################################################
 #
