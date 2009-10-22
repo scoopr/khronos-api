@@ -5175,7 +5175,7 @@ ATI_pixel_format_float enum: (really WGL_ATI_pixel_format_float)
 # ATI_future_use: 0x8821-0x8822
 
 QCOM_writeonly_rendering enum: (OpenGL ES only)
-	WRITEONLY_RENDERING_AMD				= 0x8823
+	WRITEONLY_RENDERING_QCOM			= 0x8823
 
 VERSION_2_0 enum: (Promoted for OpenGL 2.0)
 	MAX_DRAW_BUFFERS				= 0x8824    # VERSION_2_0
@@ -6243,6 +6243,11 @@ IMG_texture_env_enhanced_fixed_function enum: (OpenGL ES only)
 	FACTOR_ALPHA_MODULATE_IMG			= 0x8C07
 	FRAGMENT_ALPHA_MODULATE_IMG			= 0x8C08
 	ADD_BLEND_IMG					= 0x8C09
+
+IMG_shader_binary: (OpenGL ES only)
+	SGX_BINARY_IMG					= 0x8C0A
+
+# IMG_future_use: 0x8C0B-0x8C0F
 
 ###############################################################################
 
@@ -7423,12 +7428,21 @@ VERSION_3_2 enum:
 # ARB_future_use: 0x9127-0x912F
 
 ###############################################################################
+
+# Imagination Tech.: 0x9130-0x913F (bug 882)
+
+IMG_program_binary: (OpenGL ES only)
+	SGX_PROGRAM_BINARY_IMG				= 0x9130
+
+# IMG_future_use: 0x9131-0x913F
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x9130-0xFFFF
+# Any_vendor_future_use: 0x9140-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the
