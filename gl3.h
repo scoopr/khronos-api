@@ -36,7 +36,7 @@ extern "C" {
  * will probably change slightly as we make sure exactly the right set
  * of interfaces is included.
  *
- * gl3.h last updated on $Date: 2009-09-11 04:10:11 -0700 (Fri, 11 Sep 2009) $
+ * gl3.h last updated on $Date: 2009-11-19 17:45:11 -0800 (Thu, 19 Nov 2009) $
  *
  * RELEASE NOTES - 2009/09/11
  *
@@ -232,7 +232,6 @@ typedef void GLvoid;
 #define GL_TEXTURE_HEIGHT                 0x1001
 #define GL_TEXTURE_INTERNAL_FORMAT        0x1003
 #define GL_TEXTURE_BORDER_COLOR           0x1004
-#define GL_TEXTURE_BORDER                 0x1005
 #define GL_TEXTURE_RED_SIZE               0x805C
 #define GL_TEXTURE_GREEN_SIZE             0x805D
 #define GL_TEXTURE_BLUE_SIZE              0x805E

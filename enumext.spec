@@ -153,7 +153,6 @@ passthru: /* GetTextureParameter */
 	TEXTURE_HEIGHT					= 0x1001	# GetTextureParameter
 	TEXTURE_INTERNAL_FORMAT				= 0x1003	# GetTextureParameter
 	TEXTURE_BORDER_COLOR				= 0x1004	# GetTextureParameter
-	TEXTURE_BORDER					= 0x1005	# GetTextureParameter
 	TEXTURE_RED_SIZE				= 0x805C	# GetTextureParameter
 	TEXTURE_GREEN_SIZE				= 0x805D	# GetTextureParameter
 	TEXTURE_BLUE_SIZE				= 0x805E	# GetTextureParameter
@@ -497,6 +496,7 @@ passthru: /* GetPName */
 	EDGE_FLAG_ARRAY_STRIDE				= 0x808C # 1 I	# GetPName
 passthru: /* GetTextureParameter */
 	TEXTURE_COMPONENTS				= 0x1003	# GetTextureParameter
+	TEXTURE_BORDER					= 0x1005	# GetTextureParameter
 	TEXTURE_LUMINANCE_SIZE				= 0x8060	# GetTextureParameter
 	TEXTURE_INTENSITY_SIZE				= 0x8061	# GetTextureParameter
 	TEXTURE_PRIORITY				= 0x8066	# GetTextureParameter
