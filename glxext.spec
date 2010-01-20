@@ -1289,7 +1289,7 @@ SwapIntervalEXT(dpy, drawable, interval)
 ###############################################################################
 #
 # Extension #376
-# GLX_NV_copy_image commands
+# NV_copy_image commands
 #
 ###############################################################################
 
@@ -1316,3 +1316,12 @@ CopyImageSubDataNV(dpy, srcCtx, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, 
 	category	NV_copy_image
 	glxflags	client-handcode server-handcode
 
+###############################################################################
+#
+# Extension #384
+# INTEL_swap_event commands
+#
+###############################################################################
+
+# (none)
+newcategory: INTEL_swap_event

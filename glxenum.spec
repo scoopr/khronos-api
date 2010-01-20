@@ -84,7 +84,7 @@ GLXSyncType enum:
 GLXEventMask enum:
 	PBUFFER_CLOBBER_MASK				= 0x08000000	# SelectEvent mask
 	BUFFER_CLOBBER_MASK_SGIX			= 0x08000000	# SelectEventSGIX mask
-#	INTEL_future_use				= 0x04000000	# SelectEvent mask (for GLX_INTEL_swap_event)
+	BUFFER_SWAP_COMPLETE_INTEL_MASK			= 0x04000000	# SelectEvent mask (for GLX_INTEL_swap_event)
 
 GLXPbufferClobberMask enum:
 	FRONT_LEFT_BUFFER_BIT				= 0x00000001	# PbufferClobberEvent mask
@@ -390,9 +390,12 @@ SUN_future_use: 0x8170-0x817F
 
 # INTEL: 0x8180 - 0x818F
 
-# INTEL_swap_event: 0x8180-??? (in process, see Khronos bug 5752)
+# INTEL_swap_event: 0x8180-0x8182
+#	EXCHANGE_COMPLETE_INTEL				= 0x8180
+#	COPY_COMPLETE_INTEL				= 0x8181
+#	FLIP_COMPLETE_INTEL				= 0x8182
 
-INTEL_future_use: 0x8180-0x818F
+INTEL_future_use: 0x8183-0x818F
 
 ###############################################################################
 ### Please remember that new GLX enum allocations must be obtained by request

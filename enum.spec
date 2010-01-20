@@ -6467,13 +6467,15 @@ NV_transform_feedback enum:
 
 # ATI: 0x8C90-0x8C9F (Affie Munshi, OpenGL ES extensions)
 
-# AMD_future_use: 0x8C90-0x8C91
+# Reassigned to Qualcomm at time of mobile/desktop split (bug 5874)
+# Qualcomm__future_use: 0x8C90-0x8C91
 
 AMD_compressed_ATC_texture enum: (OpenGL ES only)
 	ATC_RGB_AMD					= 0x8C92
 	ATC_RGBA_EXPLICIT_ALPHA_AMD			= 0x8C93
 
-# AMD_future_use: 0x8C94-0x8C9F
+# Reassigned to Qualcomm at time of mobile/desktop split (bug 5874)
+# Qualcomm_future_use: 0x8C94-0x8C9F
 
 ###############################################################################
 
@@ -7267,6 +7269,8 @@ AMD_vertex_shader_tesselator enum:
 	DISCRETE_AMD					= 0x9006
 	CONTINUOUS_AMD					= 0x9007
 
+# AMD_future_use: 0x9008
+
 ARB_texture_cube_map_array enum:
 	TEXTURE_CUBE_MAP_ARRAY				= 0x9009
 	TEXTURE_BINDING_CUBE_MAP_ARRAY			= 0x900A
@@ -7275,8 +7279,6 @@ ARB_texture_cube_map_array enum:
 	SAMPLER_CUBE_MAP_ARRAY_SHADOW			= 0x900D
 	INT_SAMPLER_CUBE_MAP_ARRAY			= 0x900E
 	UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY		= 0x900F
-
-# AMD_future_use: 0x9008-0x900F
 
 EXT_texture_snorm enum:
 	ALPHA_SNORM					= 0x9010

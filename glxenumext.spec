@@ -22,9 +22,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glxext.h last updated 2009/10/08 */
+passthru: /* glxext.h last updated 2010/01/20 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GLX_GLXEXT_VERSION 25
+passthru: #define GLX_GLXEXT_VERSION 26
 
 ###############################################################################
 #
@@ -501,3 +501,12 @@ EXT_swap_control enum:
 # No new tokens
 # Extension #376
 NV_copy_image enum:
+
+###############################################################################
+
+# Extension #384
+INTEL_swap_event enum:
+	BUFFER_SWAP_COMPLETE_INTEL_MASK			= 0x04000000
+	EXCHANGE_COMPLETE_INTEL				= 0x8180
+	COPY_COMPLETE_INTEL				= 0x8181
+	FLIP_COMPLETE_INTEL				= 0x8182

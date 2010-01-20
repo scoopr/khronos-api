@@ -48,9 +48,9 @@ extern "C" {
 /*************************************************************/
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glxext.h last updated 2009/10/08 */
+/* glxext.h last updated 2010/01/20 */
 /* Current version at http://www.opengl.org/registry/ */
-#define GLX_GLXEXT_VERSION 25
+#define GLX_GLXEXT_VERSION 26
 
 #ifndef GLX_VERSION_1_3
 #define GLX_WINDOW_BIT                     0x00000001
@@ -394,6 +394,13 @@ extern "C" {
 #endif
 
 #ifndef GLX_NV_copy_image
+#endif
+
+#ifndef GLX_INTEL_swap_event
+#define GLX_BUFFER_SWAP_COMPLETE_INTEL_MASK 0x04000000
+#define GLX_EXCHANGE_COMPLETE_INTEL        0x8180
+#define GLX_COPY_COMPLETE_INTEL            0x8181
+#define GLX_FLIP_COMPLETE_INTEL            0x8182
 #endif
 
 
@@ -923,6 +930,10 @@ typedef int ( * PFNGLXSWAPINTERVALEXTPROC) (Display *dpy, GLXDrawable drawable, 
 extern void glXCopyImageSubDataNV (Display *, GLXContext, GLuint, GLenum, GLint, GLint, GLint, GLint, GLXContext, GLuint, GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei);
 #endif /* GLX_GLXEXT_PROTOTYPES */
 typedef void ( * PFNGLXCOPYIMAGESUBDATANVPROC) (Display *dpy, GLXContext srcCtx, GLuint srcName, GLenum srcTarget, GLint srcLevel, GLint srcX, GLint srcY, GLint srcZ, GLXContext dstCtx, GLuint dstName, GLenum dstTarget, GLint dstLevel, GLint dstX, GLint dstY, GLint dstZ, GLsizei width, GLsizei height, GLsizei depth);
+#endif
+
+#ifndef GLX_INTEL_swap_event
+#define GLX_INTEL_swap_event 1
 #endif
 
 

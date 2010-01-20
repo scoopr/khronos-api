@@ -6205,3 +6205,8 @@ AMD_shader_stencil_export enum:
 # Extension #383
 AMD_seamless_cubemap_per_texture enum:
     use ARB_seamless_cube_map		    TEXTURE_CUBE_MAP_SEAMLESS_ARB
+
+###############################################################################
+
+# Extension #384 - GLX_INTEL_swap_event
+
