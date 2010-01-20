@@ -4334,7 +4334,7 @@ APPLE_object_purgeable enum: (additional; see below)
 
 # APPLE_future_use: 0x85B4
 
-## From Jeremy 2006/10/18 (Bugzilla bug 632) - unknown extension name
+## From Jeremy 2006/10/18 (Khronos bug 632) - unknown extension name
 #	STORAGE_CLIENT_APPLE				= 0x85B4
 
 VERSION_3_0 enum:
@@ -4347,7 +4347,7 @@ APPLE_vertex_array_object enum:
 	VERTEX_ARRAY_BINDING_APPLE			= 0x85B5
 
 # APPLE_future_use: 0x85B6
-## From Jeremy 2006/10/18 (Bugzilla bug 632) - unknown extension name
+## From Jeremy 2006/10/18 (Khronos bug 632) - unknown extension name
 #	TEXTURE_MINIMIZE_STORAGE_APPLE			= 0x85B6
 
 APPLE_texture_range enum:  (additional; see below)
@@ -5879,7 +5879,7 @@ APPLE_fence enum:
 	DRAW_PIXELS_APPLE				= 0x8A0A
 	FENCE_APPLE					= 0x8A0B
 
-## From Jeremy 2006/10/18 (Bugzilla bug 632) - unknown extension name
+## From Jeremy 2006/10/18 (Khronos bug 632) - unknown extension name
 	ELEMENT_ARRAY_APPLE				= 0x8A0C
 	ELEMENT_ARRAY_TYPE_APPLE			= 0x8A0D
 	ELEMENT_ARRAY_POINTER_APPLE			= 0x8A0E
@@ -5888,7 +5888,7 @@ APPLE_float_pixels enum:
 	COLOR_FLOAT_APPLE				= 0x8A0F
 
 # APPLE_future_use: 0x8A10
-## From Jeremy 2006/10/18 (Bugzilla bug 632) - unknown extension name
+## From Jeremy 2006/10/18 (Khronos bug 632) - unknown extension name
 #	MIN_PBUFFER_VIEWPORT_DIMS_APPLE			= 0x8A10
 #	ELEMENT_BUFFER_BINDING_APPLE			= 0x8A11
 # Apple says the extension that defined ELEMENT_BUFFER_BINDING_APPLE
@@ -6745,7 +6745,7 @@ OES_framebuffer_object enum: (OpenGL ES only)
 OES_compressed_ETC1_RGB8_texture enum: (OpenGL ES only)
 	ETC1_RGB8_OES					= 0x8D64
 
-OES_EGL_image_external enum: (OpenGL ES only) (bug 4621)
+OES_EGL_image_external enum: (OpenGL ES only) (Khronos bug 4621)
 	TEXTURE_EXTERNAL_OES				= 0x8D65
 	SAMPLER_EXTERNAL_OES				= 0x8D66
 	TEXTURE_BINDING_EXTERNAL_OES			= 0x8D67
@@ -7429,12 +7429,19 @@ VERSION_3_2 enum:
 
 ###############################################################################
 
-# Imagination Tech.: 0x9130-0x913F (bug 882)
+# Imagination Tech.: 0x9130-0x913F (Khronos bug 882)
 
 IMG_program_binary: (OpenGL ES only)
 	SGX_PROGRAM_BINARY_IMG				= 0x9130
 
 # IMG_future_use: 0x9131-0x913F
+
+###############################################################################
+
+# AMD: 0x9140-0x91BF (Khronos bug 5899)
+
+# AMD_future_use: 0x9140-0x91BF
+
 
 ###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request

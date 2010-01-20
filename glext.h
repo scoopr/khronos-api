@@ -29,9 +29,9 @@ extern "C" {
 */
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glext.h last updated $Date: 2009-09-24 13:55:03 -0700 (Thu, 24 Sep 2009) $ */
+/* glext.h last updated $Date: 2010-01-20 08:02:36 -0800 (Wed, 20 Jan 2010) $ */
 /* Current version at http://www.opengl.org/registry/ */
-#define GL_GLEXT_VERSION 56
+#define GL_GLEXT_VERSION 57
 
 /* Function declaration macros - to move into glplatform.h */
 
@@ -4391,6 +4391,13 @@ extern "C" {
 #endif
 
 #ifndef GL_NV_texture_barrier
+#endif
+
+#ifndef GL_AMD_shader_stencil_export
+#endif
+
+#ifndef GL_AMD_seamless_cubemap_per_texture
+/* reuse GL_TEXTURE_CUBE_MAP_SEAMLESS_ARB */
 #endif
 
 
@@ -9455,6 +9462,14 @@ typedef void (APIENTRYP PFNGLGETINTEGERUI64I_VNVPROC) (GLenum value, GLuint inde
 GLAPI void APIENTRY glTextureBarrierNV (void);
 #endif /* GL_GLEXT_PROTOTYPES */
 typedef void (APIENTRYP PFNGLTEXTUREBARRIERNVPROC) (void);
+#endif
+
+#ifndef GL_AMD_shader_stencil_export
+#define GL_AMD_shader_stencil_export 1
+#endif
+
+#ifndef GL_AMD_seamless_cubemap_per_texture
+#define GL_AMD_seamless_cubemap_per_texture 1
 #endif
 
 

@@ -59,10 +59,11 @@ category:	display-list drawing drawing-control feedback framebuf misc modeling p
 # EXT_vertex_array_bgra ARB_depth_clamp ARB_fragment_coord_conventions
 # ARB_seamless_cube_map ARB_vertex_array_bgra ARB_texture_cube_map_array
 # ARB_texture_gather ARB_texture_query_lod
+# AMD_shader_stencil_export AMD_seamless_cubemap_per_texture
 
 # Core version in which a function was introduced, or against
 # which an extension can be implemented
-version:	1.0 1.1 1.2 1.3 1.4 1.5 2.0 2.1 3.0 3.1 3.2
+version:	1.0 1.1 1.2 1.3 1.4 1.5 2.0 2.1 3.0 3.1 3.2 3.3
 # Core version in which a function was removed
 deprecated:	3.1
 # GLX Single, Rendering, or Vendor Private opcode
@@ -26842,3 +26843,20 @@ TextureBarrierNV()
 	glxflags	ignore
 	offset		?
 
+###############################################################################
+#
+# Extension #382
+# AMD_shader_stencil_export commands
+#
+###############################################################################
+
+newcategory: AMD_shader_stencil_export
+
+###############################################################################
+#
+# Extension #383
+# AMD_seamless_cubemap_per_texture commands
+#
+###############################################################################
+
+newcategory: AMD_seamless_cubemap_per_texture

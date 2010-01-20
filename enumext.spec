@@ -6193,3 +6193,15 @@ NV_vertex_buffer_unified_memory enum:
 # No new tokens
 # Extension #381
 NV_texture_barrier enum:
+
+###############################################################################
+
+# No new tokens
+# Extension #382
+AMD_shader_stencil_export enum:
+
+###############################################################################
+
+# Extension #383
+AMD_seamless_cubemap_per_texture enum:
+    use ARB_seamless_cube_map		    TEXTURE_CUBE_MAP_SEAMLESS_ARB
