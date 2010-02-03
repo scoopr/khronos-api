@@ -29,9 +29,9 @@ extern "C" {
 */
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glext.h last updated $Date: 2010-01-20 07:57:14 -0800 (Wed, 20 Jan 2010) $ */
+/* glext.h last updated $Date: 2010-02-03 10:01:03 -0800 (Wed, 03 Feb 2010) $ */
 /* Current version at http://www.opengl.org/registry/ */
-#define GL_GLEXT_VERSION 57
+#define GL_GLEXT_VERSION 58
 
 /* Function declaration macros - to move into glplatform.h */
 
@@ -9398,8 +9398,8 @@ typedef GLuint (APIENTRYP PFNGLCREATESHADERPROGRAMEXTPROC) (GLenum type, const G
 GLAPI void APIENTRY glMakeBufferResidentNV (GLenum, GLenum);
 GLAPI void APIENTRY glMakeBufferNonResidentNV (GLenum);
 GLAPI GLboolean APIENTRY glIsBufferResidentNV (GLenum);
-GLAPI void APIENTRY glNamedMakeBufferResidentNV (GLuint, GLenum);
-GLAPI void APIENTRY glNamedMakeBufferNonResidentNV (GLuint);
+GLAPI void APIENTRY glMakeNamedBufferResidentNV (GLuint, GLenum);
+GLAPI void APIENTRY glMakeNamedBufferNonResidentNV (GLuint);
 GLAPI GLboolean APIENTRY glIsNamedBufferResidentNV (GLuint);
 GLAPI void APIENTRY glGetBufferParameterui64vNV (GLenum, GLenum, GLuint64EXT *);
 GLAPI void APIENTRY glGetNamedBufferParameterui64vNV (GLuint, GLenum, GLuint64EXT *);
@@ -9413,8 +9413,8 @@ GLAPI void APIENTRY glProgramUniformui64vNV (GLuint, GLint, GLsizei, const GLuin
 typedef void (APIENTRYP PFNGLMAKEBUFFERRESIDENTNVPROC) (GLenum target, GLenum access);
 typedef void (APIENTRYP PFNGLMAKEBUFFERNONRESIDENTNVPROC) (GLenum target);
 typedef GLboolean (APIENTRYP PFNGLISBUFFERRESIDENTNVPROC) (GLenum target);
-typedef void (APIENTRYP PFNGLNAMEDMAKEBUFFERRESIDENTNVPROC) (GLuint buffer, GLenum access);
-typedef void (APIENTRYP PFNGLNAMEDMAKEBUFFERNONRESIDENTNVPROC) (GLuint buffer);
+typedef void (APIENTRYP PFNGLMAKENAMEDBUFFERRESIDENTNVPROC) (GLuint buffer, GLenum access);
+typedef void (APIENTRYP PFNGLMAKENAMEDBUFFERNONRESIDENTNVPROC) (GLuint buffer);
 typedef GLboolean (APIENTRYP PFNGLISNAMEDBUFFERRESIDENTNVPROC) (GLuint buffer);
 typedef void (APIENTRYP PFNGLGETBUFFERPARAMETERUI64VNVPROC) (GLenum target, GLenum pname, GLuint64EXT *params);
 typedef void (APIENTRYP PFNGLGETNAMEDBUFFERPARAMETERUI64VNVPROC) (GLuint buffer, GLenum pname, GLuint64EXT *params);

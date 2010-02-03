@@ -26546,7 +26546,7 @@ IsBufferResidentNV(target)
 	glxflags	ignore
 	offset		?
 
-NamedMakeBufferResidentNV(buffer, access)
+MakeNamedBufferResidentNV(buffer, access)
 	return		void
 	param		buffer		UInt32 in value
 	param		access		GLenum in value
@@ -26557,7 +26557,7 @@ NamedMakeBufferResidentNV(buffer, access)
 	glxflags	ignore
 	offset		?
 
-NamedMakeBufferNonResidentNV(buffer)
+MakeNamedBufferNonResidentNV(buffer)
 	return		void
 	param		buffer		UInt32 in value
 	category	NV_shader_buffer_load
