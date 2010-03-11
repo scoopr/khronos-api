@@ -22,9 +22,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glxext.h last updated 2010/01/20 */
+passthru: /* glxext.h last updated 2010/02/10 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GLX_GLXEXT_VERSION 26
+passthru: #define GLX_GLXEXT_VERSION 27
 
 ###############################################################################
 #

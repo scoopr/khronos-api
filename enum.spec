@@ -7440,10 +7440,10 @@ IMG_program_binary: (OpenGL ES only)
 
 ###############################################################################
 
-# AMD: 0x9140-0x91BF (Khronos bug 5899)
+# AMD: 0x9140-0x91BF (Khronos bugs 5899, 6004)
 
 # AMD_future_use: 0x9140-0x91BF
-
+# AMD_future_use: 0x91C0-0x923F
 
 ###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
