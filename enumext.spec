@@ -2650,12 +2650,12 @@ ARB_vertex_array_bgra enum:
 # No new tokens
 # ARB Extension #69
 ARB_draw_buffers_blend enum:
-@@@ Add ARB suffixes here & functions!
+#@@@ Add ARB suffixes here & functions!
 
 ###############################################################################
 
 # ARB Extension #70
-@@@ Add ARB suffixes here & functions!
+#@@@ Add ARB suffixes here & functions!
 ARB_sample_shading enum:
 	SAMPLE_SHADING					= 0x8C36
 	MIN_SAMPLE_SHADING_VALUE			= 0x8C37
@@ -2663,7 +2663,7 @@ ARB_sample_shading enum:
 ###############################################################################
 
 # ARB Extension #71
-@@@ Add ARB suffixes here & functions!
+#@@@ Add ARB suffixes here & functions!
 ARB_texture_cube_map_array enum:
 	TEXTURE_CUBE_MAP_ARRAY				= 0x9009
 	TEXTURE_BINDING_CUBE_MAP_ARRAY			= 0x900A
@@ -2676,7 +2676,7 @@ ARB_texture_cube_map_array enum:
 ###############################################################################
 
 # ARB Extension #72
-@@@ Add ARB suffixes here & functions!
+#@@@ Add ARB suffixes here & functions!
 ARB_texture_gather enum:
 	MIN_PROGRAM_TEXTURE_GATHER_OFFSET_ARB		= 0x8E5E
 	MAX_PROGRAM_TEXTURE_GATHER_OFFSET_ARB		= 0x8E5F
