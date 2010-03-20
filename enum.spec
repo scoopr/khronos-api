@@ -3,6 +3,8 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
+# $Revision: 10796 $ on $Date: 2010-03-19 17:31:10 -0700 (Fri, 19 Mar 2010) $
+
 ###############################################################################
 #
 # Before modifying this file, read the following:
@@ -217,11 +219,15 @@ EXT_multisample enum:
 
 ###############################################################################
 
+# Note that COVERAGE_BUFFER_BIT_NV collides with AttribMask bit
+# HINT_BIT. This is OK since the extension is for OpenGL ES 2, which
+# doesn't have attribute groups.
 ClearBufferMask enum:
-	use AttribMask COLOR_BUFFER_BIT
-	use AttribMask ACCUM_BUFFER_BIT
-	use AttribMask STENCIL_BUFFER_BIT
-	use AttribMask DEPTH_BUFFER_BIT
+	use AttribMask DEPTH_BUFFER_BIT			# = 0x00000100
+	use AttribMask ACCUM_BUFFER_BIT			# = 0x00000200
+	use AttribMask STENCIL_BUFFER_BIT		# = 0x00000400
+	use AttribMask COLOR_BUFFER_BIT			# = 0x00004000
+	use NV_coverage_sample COVERAGE_BUFFER_BIT_NV	# = 0x00008000
 
 ###############################################################################
 
@@ -7052,7 +7058,8 @@ NV_present_video enum:
 	PRESENT_TIME_NV					= 0x8E2A
 	PRESENT_DURATION_NV				= 0x8E2B
 
-# NV_future_use: 0x8E2C
+NV_depth_nonlinear enum: (OpenGL ES only)
+	DEPTH_COMPONENT16_NONLINEAR_NV			= 0x8E2C
 
 EXT_direct_state_access enum:
 	PROGRAM_MATRIX_EXT				= 0x8E2D
@@ -7146,7 +7153,18 @@ ARB_texture_gather enum:
 # NVIDIA: 0x8ED0-0x8F4F
 # Assigned for Pat Brown (Khronos bug 3191)
 
-# NV_future_use: 0x8ED0-0x8F1C
+NV_coverage_sample enum: (OpenGL ES only)
+	COVERAGE_COMPONENT_NV				= 0x8ED0
+	COVERAGE_COMPONENT4_NV				= 0x8ED1
+	COVERAGE_ATTACHMENT_NV				= 0x8ED2
+	COVERAGE_BUFFERS_NV				= 0x8ED3
+	COVERAGE_SAMPLES_NV				= 0x8ED4
+	COVERAGE_ALL_FRAGMENTS_NV			= 0x8ED5
+	COVERAGE_EDGE_FRAGMENTS_NV			= 0x8ED6
+	COVERAGE_AUTOMATIC_NV				= 0x8ED7
+	COVERAGE_BUFFER_BIT_NV				= 0x00008000
+
+# NV_future_use: 0x8ED8-0x8F1C
 
 NV_shader_buffer_load enum:
 	BUFFER_GPU_ADDRESS_NV				= 0x8F1D

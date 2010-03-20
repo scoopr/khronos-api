@@ -1,5 +1,7 @@
-# List of GL enumerants for glext.h header
+# enumext.spec - list of GL enumerants for glext.h header
 #
+# $Revision: 10796 $ on $Date: 2010-03-19 17:31:10 -0700 (Fri, 19 Mar 2010) $
+
 # This is derived from the master GL enumerant registry (enum.spec).
 #
 # Unlike enum.spec, enumext.spec is
@@ -14,8 +16,8 @@
 #   (4) Is processed by glextenum.pl, which has evolved
 #	from enum.pl - should merge back into one script.
 
-# glext.h version number - this should be automatically updated,
-#   when changing either enum or template spec files.
+# The release number encoded into glext.h is now defined in
+# glextrelease.txt.
 
 ###############################################################################
 #
