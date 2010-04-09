@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 10796 $ on $Date: 2010-03-19 17:31:10 -0700 (Fri, 19 Mar 2010) $
+# $Revision: 10971 $ on $Date: 2010-04-09 02:45:33 -0700 (Fri, 09 Apr 2010) $
 
 ###############################################################################
 #
@@ -7451,10 +7451,18 @@ VERSION_3_2 enum:
 
 # Imagination Tech.: 0x9130-0x913F (Khronos bug 882)
 
-IMG_program_binary: (OpenGL ES only)
+IMG_program_binary enum: (OpenGL ES only)
 	SGX_PROGRAM_BINARY_IMG				= 0x9130
 
-# IMG_future_use: 0x9131-0x913F
+# IMG_future_use: 0x9131-0x9132
+
+IMG_multisampled_render_to_texture enum: (OpenGL ES only)
+	RENDERBUFFER_SAMPLES_IMG			= 0x9133
+	FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_IMG		= 0x9134
+	MAX_SAMPLES_IMG					= 0x9135
+	TEXTURE_SAMPLES_IMG				= 0x9136
+
+# IMG_future_use: 0x9137-0x913F
 
 ###############################################################################
 

@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 10796 $ on $Date: 2010-03-19 17:31:10 -0700 (Fri, 19 Mar 2010) $
+# $Revision: 10971 $ on $Date: 2010-04-09 02:45:33 -0700 (Fri, 09 Apr 2010) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -5681,7 +5681,10 @@ NV_vertex_program3 enum:
 
 # Extension #307 - GLX_SGIX_hyperpipe
 # Extension #308 - GLX_MESA_agp_offset
+
 # Extension #309 - GL_EXT_texture_compression_dxt1 (OpenGL ES only, subset of _s3tc version)
+#	 use EXT_texture_compression_s3tc    COMPRESSED_RGB_S3TC_DXT1_EXT
+#	 use EXT_texture_compression_s3tc    COMPRESSED_RGBA_S3TC_DXT1_EXT
 
 ###############################################################################
 
@@ -6530,4 +6533,10 @@ AMD_seamless_cubemap_per_texture enum:
 ###############################################################################
 
 # Extension #384 - GLX_INTEL_swap_event
+
+###############################################################################
+
+# No new tokens
+# Extension #385
+AMD_conservative_depth enum:
 
