@@ -253,13 +253,21 @@ GLXAttribute enum:
 
 ###############################################################################
 
-# ARB: 0x2070-0x209F (shared with WGL)
+# ARB: 0x2070-0x209F
+
+# Shared with WGL, synchronize create_context_* enums with wglenum.spec!
 
 # Also includes a bitmask - see ContextFlags above
 # ARB_create_context enum:
 	CONTEXT_MAJOR_VERSION_ARB			= 0x2091
 	CONTEXT_MINOR_VERSION_ARB			= 0x2092
+# 0x2093 used for WGL_CONTEXT_LAYER_PLANE_ARB
 	CONTEXT_FLAGS_ARB				= 0x2094
+# 0x2095 collides with WGL_ERROR_INVALID_VERSION_ARB!
+	CONTEXT_ALLOW_BUFFER_BYTE_ORDER_MISMATCH_ARB	= 0x2095
+# 0x2096 used for WGL_ERROR_INVALID_PROFILE_ARB
+
+# ARB_future_use: 0x2097-0x209F
 
 ###############################################################################
 

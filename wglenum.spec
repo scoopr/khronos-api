@@ -304,17 +304,20 @@ WGL_ARB_render_texture enum:
 	WGL_AUX8_ARB					= 0x208F
 	WGL_AUX9_ARB					= 0x2090
 
+# Shared with GLX - synchronize create_context_* enums with glxenum.spec!
+
 # Also includes a bitmask - see CotnextFlags above
 WGL_ARB_create_context enum:
 	WGL_CONTEXT_MAJOR_VERSION_ARB			= 0x2091
 	WGL_CONTEXT_MINOR_VERSION_ARB			= 0x2092
 	WGL_CONTEXT_LAYER_PLANE_ARB			= 0x2093
 	WGL_CONTEXT_FLAGS_ARB				= 0x2094
+# 0x2096 collides with GLX_CONTEXT_ALLOW_BUFFER_BYTE_ORDER_MISMATCH!
 	ERROR_INVALID_VERSION_ARB			= 0x2095
 
 # Also includes a bitmask - see ContextProfileMask above
-# WGL_ARB_create_context_profile enum: (additional; see above and below)
-#	ERROR_INVALID_PROFILE_ARB			= 0x2096
+WGL_ARB_create_context_profile enum: (additional; see above and below)
+	ERROR_INVALID_PROFILE_ARB			= 0x2096
 
 # ARB_future_use: 0x2097-0x209F
 

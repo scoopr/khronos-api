@@ -4114,14 +4114,11 @@ NV_vertex_array_range enum:
 	MAX_VERTEX_ARRAY_RANGE_ELEMENT_NV		= 0x8520
 	VERTEX_ARRAY_RANGE_POINTER_NV			= 0x8521
 
-# @@@ How does this interact with NV_vertex_array_range?
 APPLE_vertex_array_range enum:
 	VERTEX_ARRAY_RANGE_APPLE			= 0x851D
 	VERTEX_ARRAY_RANGE_LENGTH_APPLE			= 0x851E
 	VERTEX_ARRAY_STORAGE_HINT_APPLE			= 0x851F
 	VERTEX_ARRAY_RANGE_POINTER_APPLE		= 0x8521
-	STORAGE_CACHED_APPLE				= 0x85BE
-	STORAGE_SHARED_APPLE				= 0x85BF
 
 NV_register_combiners enum:
 	REGISTER_COMBINERS_NV				= 0x8522
@@ -4338,10 +4335,8 @@ APPLE_client_storage enum:
 APPLE_object_purgeable enum: (additional; see below)
 	BUFFER_OBJECT_APPLE				= 0x85B3
 
-# APPLE_future_use: 0x85B4
-
-## From Jeremy 2006/10/18 (Khronos bug 632) - unknown extension name
-#	STORAGE_CLIENT_APPLE				= 0x85B4
+APPLE_vertex_array_range enum: (additional; see above):
+	STORAGE_CLIENT_APPLE				= 0x85B4
 
 VERSION_3_0 enum:
 	use ARB_vertex_array_object	    VERTEX_ARRAY_BINDING
@@ -4925,12 +4920,6 @@ ATI_element_array enum:
 	ELEMENT_ARRAY_ATI				= 0x8768
 	ELEMENT_ARRAY_TYPE_ATI				= 0x8769
 	ELEMENT_ARRAY_POINTER_ATI			= 0x876A
-
-# @@@ (extends ATI_element_array, I think???)
-APPLE_element_array enum:
-	ELEMENT_ARRAY_APPLE				= 0x8768
-	ELEMENT_ARRAY_TYPE_APPLE			= 0x8769
-	ELEMENT_ARRAY_POINTER_APPLE			= 0x876A
 
 ATI_vertex_streams enum:
 	MAX_VERTEX_STREAMS_ATI				= 0x876B
@@ -5885,7 +5874,8 @@ APPLE_fence enum:
 	DRAW_PIXELS_APPLE				= 0x8A0A
 	FENCE_APPLE					= 0x8A0B
 
-## From Jeremy 2006/10/18 (Khronos bug 632) - unknown extension name
+# Enum values updated (Khronos bugs 5311, 632)
+APPLE_element_array enum:
 	ELEMENT_ARRAY_APPLE				= 0x8A0C
 	ELEMENT_ARRAY_TYPE_APPLE			= 0x8A0D
 	ELEMENT_ARRAY_POINTER_APPLE			= 0x8A0E
@@ -5896,9 +5886,6 @@ APPLE_float_pixels enum:
 # APPLE_future_use: 0x8A10
 ## From Jeremy 2006/10/18 (Khronos bug 632) - unknown extension name
 #	MIN_PBUFFER_VIEWPORT_DIMS_APPLE			= 0x8A10
-#	ELEMENT_BUFFER_BINDING_APPLE			= 0x8A11
-# Apple says the extension that defined ELEMENT_BUFFER_BINDING_APPLE
-# never shipped and there's no actual collision with UNIFORM_BUFFER
 
 VERSION_3_1 enum:
 	use ARB_uniform_buffer_object	    UNIFORM_BUFFER

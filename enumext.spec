@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 10971 $ on $Date: 2010-04-09 02:45:33 -0700 (Fri, 09 Apr 2010) $
+# $Revision: 11014 $ on $Date: 2010-04-12 16:40:16 -0700 (Mon, 12 Apr 2010) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -5362,11 +5362,10 @@ APPLE_client_storage enum:
 ###############################################################################
 
 # Extension #271
-# (extends ATI_element_array???)
 APPLE_element_array enum:
-	ELEMENT_ARRAY_APPLE				= 0x8768
-	ELEMENT_ARRAY_TYPE_APPLE			= 0x8769
-	ELEMENT_ARRAY_POINTER_APPLE			= 0x876A
+	ELEMENT_ARRAY_APPLE				= 0x8A0C
+	ELEMENT_ARRAY_TYPE_APPLE			= 0x8A0D
+	ELEMENT_ARRAY_POINTER_APPLE			= 0x8A0E
 
 ###############################################################################
 
@@ -5387,12 +5386,12 @@ APPLE_vertex_array_object enum:
 ###############################################################################
 
 # Extension #274
-# (How does this interact with NV_vertex_array_range???)
 APPLE_vertex_array_range enum:
 	VERTEX_ARRAY_RANGE_APPLE			= 0x851D
 	VERTEX_ARRAY_RANGE_LENGTH_APPLE			= 0x851E
 	VERTEX_ARRAY_STORAGE_HINT_APPLE			= 0x851F
 	VERTEX_ARRAY_RANGE_POINTER_APPLE		= 0x8521
+	STORAGE_CLIENT_APPLE				= 0x85B4
 	STORAGE_CACHED_APPLE				= 0x85BE
 	STORAGE_SHARED_APPLE				= 0x85BF
 

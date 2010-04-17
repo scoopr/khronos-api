@@ -124,6 +124,12 @@ ARB_multisample enum:
 
 ###############################################################################
 
+# ARB Extension #28
+ARB_vertex_buffer_object enum:
+	CONTEXT_ALLOW_BUFFER_BYTE_ORDER_MISMATCH_ARB	= 0x2095
+
+###############################################################################
+
 # ARB Extension #39
 ARB_fbconfig_float enum:
 	RGBA_FLOAT_TYPE_ARB				= 0x20B9
