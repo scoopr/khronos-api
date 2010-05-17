@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 10796 $ on $Date: 2010-03-19 17:31:10 -0700 (Fri, 19 Mar 2010) $
+# $Revision: 11080 $ on $Date: 2010-04-16 21:00:47 -0700 (Fri, 16 Apr 2010) $
 
 # This is the GLX enumerant registry.
 #
@@ -250,6 +250,7 @@ GLXAttribute enum:
 	SAMPLES_ARB					= 100001	#   "
 	SAMPLE_BUFFERS					= 100000	# Visual attribute (GLX 1.4 core - alias of SGIS_multisample)
 	SAMPLES						= 100001	#   "
+	COVERAGE_SAMPLES_NV				= 100001	# Visual attribute (NV_multisample_coverage - reuse SAMPLES_ARB)
 
 ###############################################################################
 
@@ -279,8 +280,10 @@ GLXAttribute enum:
 	RGBA_UNSIGNED_FLOAT_TYPE_EXT			= 0x20B1
 # EXT_framebuffer_sRGB enum:
 	FRAMEBUFFER_SRGB_CAPABLE_EXT			= 0x20B2
+# NV_multisample_coverage enum:
+	COLOR_SAMPLES_NV				= 0x20B3
 
-# NV_future_use: 0x20B3-0x20B8
+# NV_future_use: 0x20B4-0x20B8
 
 # ARB_fbconfig_float enum:
 	RGBA_FLOAT_TYPE_ARB				= 0x20B9

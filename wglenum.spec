@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 10796 $ on $Date: 2010-03-19 17:31:10 -0700 (Fri, 19 Mar 2010) $
+# $Revision: 11080 $ on $Date: 2010-04-16 21:00:47 -0700 (Fri, 16 Apr 2010) $
 
 # This is the master WGL enumerant registry.
 #
@@ -200,6 +200,9 @@ WGL_ARB_multisample enum:
 	WGL_SAMPLE_BUFFERS_ARB				= 0x2041
 	WGL_SAMPLES_ARB					= 0x2042
 
+WGL_NV_multisample_coverage enum: (additional; see below)
+	WGL_COVERAGE_SAMPLES_NV				= 0x2042
+
 ###############################################################################
 
 WGL_EXT_make_current_read enum:
@@ -356,7 +359,10 @@ WGL_NV_float_buffer enum:
 	WGL_TEXTURE_FLOAT_RGB_NV			= 0x20B7
 	WGL_TEXTURE_FLOAT_RGBA_NV			= 0x20B8
 
-# NV_future_use: 0x20B9-0x20BF
+WGL_NV_multisample_coverage enum: (additional; see below)
+	WGL_COLOR_SAMPLES_NV				= 0x20B9
+
+# NV_future_use: 0x20BA-0x20BF
 
 WGL_NV_video_out enum:
 	WGL_BIND_TO_VIDEO_RGB_NV			= 0x20C0

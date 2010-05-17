@@ -48,9 +48,9 @@ extern "C" {
 /*************************************************************/
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glxext.h last updated 2010/02/10 */
+/* glxext.h last updated 2010/05/17 */
 /* Current version at http://www.opengl.org/registry/ */
-#define GLX_GLXEXT_VERSION 27
+#define GLX_GLXEXT_VERSION 28
 
 #ifndef GLX_VERSION_1_3
 #define GLX_WINDOW_BIT                     0x00000001
@@ -405,6 +405,11 @@ extern "C" {
 #define GLX_EXCHANGE_COMPLETE_INTEL        0x8180
 #define GLX_COPY_COMPLETE_INTEL            0x8181
 #define GLX_FLIP_COMPLETE_INTEL            0x8182
+#endif
+
+#ifndef GLX_NV_multisample_coverage
+#define GLX_COVERAGE_SAMPLES_NV            100001
+#define GLX_COLOR_SAMPLES_NV               0x20B3
 #endif
 
 
@@ -938,6 +943,10 @@ typedef void ( * PFNGLXCOPYIMAGESUBDATANVPROC) (Display *dpy, GLXContext srcCtx,
 
 #ifndef GLX_INTEL_swap_event
 #define GLX_INTEL_swap_event 1
+#endif
+
+#ifndef GLX_NV_multisample_coverage
+#define GLX_NV_multisample_coverage 1
 #endif
 
 

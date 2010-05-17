@@ -26,9 +26,9 @@
 
 passthru:
 passthru: /* Header file version number */
-passthru: /* wglext.h last updated 2010/02/10 */
+passthru: /* wglext.h last updated 2010/05/17 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define WGL_WGLEXT_VERSION 18
+passthru: #define WGL_WGLEXT_VERSION 19
 
 ###############################################################################
 #
@@ -464,3 +464,11 @@ NV_video_capture enum:
 # No new tokens
 # Extension #376
 NV_copy_image enum:
+
+###############################################################################
+
+# Extension #393
+NV_multisample_coverage enum:
+	WGL_COVERAGE_SAMPLES_NV				= 0x2042
+	WGL_COLOR_SAMPLES_NV				= 0x20B9
+

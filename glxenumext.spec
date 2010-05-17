@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 10796 $ on $Date: 2010-03-19 17:31:10 -0700 (Fri, 19 Mar 2010) $
+# $Revision: 11080 $ on $Date: 2010-04-16 21:00:47 -0700 (Fri, 16 Apr 2010) $
 
 # List of GLX enumerants for glxext.h header
 #
@@ -25,9 +25,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glxext.h last updated 2010/02/10 */
+passthru: /* glxext.h last updated 2010/05/17 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GLX_GLXEXT_VERSION 27
+passthru: #define GLX_GLXEXT_VERSION 28
 
 ###############################################################################
 #
@@ -519,3 +519,8 @@ INTEL_swap_event enum:
 	EXCHANGE_COMPLETE_INTEL				= 0x8180
 	COPY_COMPLETE_INTEL				= 0x8181
 	FLIP_COMPLETE_INTEL				= 0x8182
+
+# Extension #393
+NV_multisample_coverage enum:
+	COVERAGE_SAMPLES_NV				= 100001
+	COLOR_SAMPLES_NV				= 0x20B3

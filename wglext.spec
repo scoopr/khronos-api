@@ -1094,3 +1094,13 @@ CopyImageSubDataNV(hSrcRC, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, hDstR
 	param		height		GLsizei in value
 	param		depth		GLsizei in value
 	category	NV_copy_image
+
+###############################################################################
+#
+# Extension #393
+# NV_multisample_coverage commands
+#
+###############################################################################
+
+# (none)
+newcategory: NV_multisample_coverage

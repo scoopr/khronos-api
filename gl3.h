@@ -1405,7 +1405,7 @@ typedef void GLvoid;
 #define GL_MIN_FRAGMENT_INTERPOLATION_OFFSET 0x8E5B
 #define GL_MAX_FRAGMENT_INTERPOLATION_OFFSET 0x8E5C
 #define GL_FRAGMENT_INTERPOLATION_OFFSET_BITS 0x8E5D
-#define GL_MAX_VERTEX_STREAMS             0x8E71
+/* reuse GL_MAX_VERTEX_STREAMS */
 #endif
 
 #ifndef GL_ARB_gpu_shader_fp64
@@ -1493,6 +1493,7 @@ typedef void GLvoid;
 
 #ifndef GL_ARB_transform_feedback3
 #define GL_MAX_TRANSFORM_FEEDBACK_BUFFERS 0x8E70
+#define GL_MAX_VERTEX_STREAMS             0x8E71
 #endif
 
 

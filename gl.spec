@@ -28561,3 +28561,221 @@ newcategory: AMD_seamless_cubemap_per_texture
 
 newcategory: AMD_conservative_depth
 
+###############################################################################
+#
+# Extension #386
+# EXT_shader_image_load_store commands
+#
+###############################################################################
+
+newcategory: EXT_shader_image_load_store
+#@    void BindImageTextureEXT(uint index, uint texture, int level,
+#@			       boolean layered, int layer, enum access,
+#@			       int format);
+#@    void MemoryBarrierEXT(bitfield barriers);
+
+###############################################################################
+#
+# Extension #387
+# EXT_vertex_attrib_64bit commands
+#
+###############################################################################
+
+newcategory: EXT_vertex_attrib_64bit
+#@  void VertexAttribL1dEXT(uint index, double x);
+#@    void VertexAttribL2dEXT(uint index, double x, double y);
+#@    void VertexAttribL3dEXT(uint index, double x, double y, double z);
+#@    void VertexAttribL4dEXT(uint index, double x, double y, double z, double w);
+#@    void VertexAttribL1dvEXT(uint index, const double *v);
+#@    void VertexAttribL2dvEXT(uint index, const double *v);
+#@    void VertexAttribL3dvEXT(uint index, const double *v);
+#@    void VertexAttribL4dvEXT(uint index, const double *v);
+#@    void VertexAttribLPointerEXT(uint index, int size, enum type, sizei stride,
+#@				   const void *pointer);
+#@    void GetVertexAttribLdvEXT(uint index, enum pname, double *params);
+#@    void VertexArrayVertexAttribLOffsetEXT(uint vaobj, uint buffer,
+#@					     uint index, int size,
+#@					     enum type, sizei stride,
+#@					     intptr offset);
+#@    EXT_direct_state_access_memory is supported.)
+
+###############################################################################
+#
+# Extension #388
+# NV_gpu_program5 commands
+#
+###############################################################################
+
+newcategory: NV_gpu_program5
+
+###############################################################################
+#
+# Extension #389
+# NV_gpu_shader5 commands
+#
+###############################################################################
+
+newcategory: NV_gpu_shader5
+#@    void Uniform1i64NV(int location, int64EXT x);
+#@    void Uniform2i64NV(int location, int64EXT x, int64EXT y);
+#@    void Uniform3i64NV(int location, int64EXT x, int64EXT y, int64EXT z);
+#@    void Uniform4i64NV(int location, int64EXT x, int64EXT y, int64EXT z,
+#@			 int64EXT w);
+#@    void Uniform1i64vNV(int location, sizei count, const int64EXT *value);
+#@    void Uniform2i64vNV(int location, sizei count, const int64EXT *value);
+#@    void Uniform3i64vNV(int location, sizei count, const int64EXT *value);
+#@    void Uniform4i64vNV(int location, sizei count, const int64EXT *value);
+#@
+#@    void Uniform1ui64NV(int location, uint64EXT x);
+#@    void Uniform2ui64NV(int location, uint64EXT x, uint64EXT y);
+#@    void Uniform3ui64NV(int location, uint64EXT x, uint64EXT y, uint64EXT z);
+#@    void Uniform4ui64NV(int location, uint64EXT x, uint64EXT y, uint64EXT z,
+#@			 uint64EXT w);
+#@    void Uniform1ui64vNV(int location, sizei count, const uint64EXT *value);
+#@    void Uniform2ui64vNV(int location, sizei count, const uint64EXT *value);
+#@    void Uniform3ui64vNV(int location, sizei count, const uint64EXT *value);
+#@    void Uniform4ui64vNV(int location, sizei count, const uint64EXT *value);
+#@
+#@    void GetUniformi64vNV(uint program, int location, int64EXT *params);
+#@
+#@    (The following function is also provided by NV_shader_buffer_load.)
+#@    void GetUniformui64vNV(uint program, int location, uint64EXT *params);
+#@
+#@    void ProgramUniform1i64NV(uint program, int location, int64EXT x);
+#@    void ProgramUniform2i64NV(uint program, int location, int64EXT x,
+#@				int64EXT y);
+#@    void ProgramUniform3i64NV(uint program, int location, int64EXT x,
+#@				int64EXT y, int64EXT z);
+#@    void ProgramUniform4i64NV(uint program, int location, int64EXT x,
+#@				int64EXT y, int64EXT z, int64EXT w);
+#@    void ProgramUniform1i64vNV(uint program, int location, sizei count,
+#@				 const int64EXT *value);
+#@    void ProgramUniform2i64vNV(uint program, int location, sizei count,
+#@				 const int64EXT *value);
+#@    void ProgramUniform3i64vNV(uint program, int location, sizei count,
+#@				 const int64EXT *value);
+#@    void ProgramUniform4i64vNV(uint program, int location, sizei count,
+#@				 const int64EXT *value);
+#@
+#@    void ProgramUniform1ui64NV(uint program, int location, uint64EXT x);
+#@    void ProgramUniform2ui64NV(uint program, int location, uint64EXT x,
+#@				 uint64EXT y);
+#@    void ProgramUniform3ui64NV(uint program, int location, uint64EXT x,
+#@				 uint64EXT y, uint64EXT z);
+#@    void ProgramUniform4ui64NV(uint program, int location, uint64EXT x,
+#@				 uint64EXT y, uint64EXT z, uint64EXT w);
+#@    void ProgramUniform1ui64vNV(uint program, int location, sizei count,
+#@				  const uint64EXT *value);
+#@    void ProgramUniform2ui64vNV(uint program, int location, sizei count,
+#@				  const uint64EXT *value);
+#@    void ProgramUniform3ui64vNV(uint program, int location, sizei count,
+#@				  const uint64EXT *value);
+#@    void ProgramUniform4ui64vNV(uint program, int location, sizei count,
+#@				  const uint64EXT *value);
+
+###############################################################################
+#
+# Extension #390
+# NV_shader_buffer_store commands
+#
+###############################################################################
+
+newcategory: NV_shader_buffer_store
+
+###############################################################################
+#
+# Extension #391
+# NV_tessellation_program5 commands
+#
+###############################################################################
+
+newcategory: NV_tessellation_program5
+
+###############################################################################
+#
+# Extension #392
+# NV_vertex_attrib_integer_64bit commands
+#
+###############################################################################
+
+newcategory: NV_vertex_attrib_integer_64bit
+#@    void VertexAttribL1i64NV(uint index, int64EXT x);
+#@    void VertexAttribL2i64NV(uint index, int64EXT x, int64EXT y);
+#@    void VertexAttribL3i64NV(uint index, int64EXT x, int64EXT y,
+#@			       int64EXT z);
+#@    void VertexAttribL4i64NV(uint index, int64EXT x, int64EXT y,
+#@			       int64EXT z, int64EXT w);
+#@    void VertexAttribL1i64vNV(uint index, const int64EXT *v);
+#@    void VertexAttribL2i64vNV(uint index, const int64EXT *v);
+#@    void VertexAttribL3i64vNV(uint index, const int64EXT *v);
+#@    void VertexAttribL4i64vNV(uint index, const int64EXT *v);
+#@
+#@    void VertexAttribL1ui64NV(uint index, uint64EXT x);
+#@    void VertexAttribL2ui64NV(uint index, uint64EXT x, uint64EXT y);
+#@    void VertexAttribL3ui64NV(uint index, uint64EXT x, uint64EXT y,
+#@				uint64EXT z);
+#@    void VertexAttribL4ui64NV(uint index, uint64EXT x, uint64EXT y,
+#@				uint64EXT z, uint64EXT w);
+#@    void VertexAttribL1ui64vNV(uint index, const uint64EXT *v);
+#@    void VertexAttribL2ui64vNV(uint index, const uint64EXT *v);
+#@    void VertexAttribL3ui64vNV(uint index, const uint64EXT *v);
+#@    void VertexAttribL4ui64vNV(uint index, const uint64EXT *v);
+#@
+#@    void GetVertexAttribLi64vNV(uint index, enum pname, int64EXT *params);
+#@    void GetVertexAttribLui64vNV(uint index, enum pname, uint64EXT *params);
+#@
+#@    void VertexAttribLFormatNV(uint index, int size, enum type, sizei stride);
+#@
+#@    (note:  VertexAttribLFormatNV is provided only if
+#@    NV_vertex_buffer_unified_memory is supported.)
+
+###############################################################################
+#
+# Extension #393
+# NV_multisample_coverage commands
+#
+###############################################################################
+
+newcategory: NV_multisample_coverage
+
+###############################################################################
+#
+# Extension #394
+# AMD_name_gen_delete commands
+#
+###############################################################################
+
+newcategory: AMD_name_gen_delete
+#@    void GenNamesAMD(enum identifier, uint num, uint *names);
+#@    void DeleteNamesAMD(enum identifier, uint num, const uint *names);
+#@    boolean IsNameAMD(enum identifier, uint name);
+
+###############################################################################
+#
+# Extension #395
+# AMD_debug_output commands
+#
+###############################################################################
+
+#@ void DebugMessageEnableAMD(enum category, enum severity, sizei
+#@			      count, const uint* ids, boolean enabled);
+#@
+#@ void DebugMessageInsertAMD(enum category, enum severity, uint id,
+#@			      sizei length, const char* buf);
+#@
+#@ void DebugMessageCallbackAMD(DEBUGPROCAMD callback, void*
+#@				userParam);
+#@
+#@ uint GetDebugMessageLogAMD(uint count, sizei bufsize, enum*
+#@			      categories, uint* severities, uint* ids,
+#@			      sizei* lengths, char* message);
+#@
+#@ The callback function that applications can define, and
+#@ is accepted by DebugMessageCallbackAMD, is defined as:
+#@
+#@     typedef void (APIENTRY *GLDEBUGPROCAMD)(GLuint id,
+#@					       GLenum category,
+#@					       GLenum severity,
+#@					       GLsizei length,
+#@					       const GLchar* message,
+#@					       GLvoid* userParam);

@@ -1328,3 +1328,12 @@ CopyImageSubDataNV(dpy, srcCtx, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, 
 
 # (none)
 newcategory: INTEL_swap_event
+
+###############################################################################
+#
+# Extension #393
+# NV_multisample_coverage commands
+#
+###############################################################################
+
+newcategory: NV_multisample_coverage
