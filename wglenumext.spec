@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 10796 $ on $Date: 2010-03-19 17:31:10 -0700 (Fri, 19 Mar 2010) $
+# $Revision: 11417 $ on $Date: 2010-05-17 09:47:20 -0700 (Mon, 17 May 2010) $
 
 # List of WGL enumerants for wglext.h header
 #
