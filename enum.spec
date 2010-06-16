@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 11417 $ on $Date: 2010-05-17 09:47:20 -0700 (Mon, 17 May 2010) $
+# $Revision: 11742 $ on $Date: 2010-06-15 23:46:28 -0700 (Tue, 15 Jun 2010) $
 
 ###############################################################################
 #
@@ -4827,12 +4827,17 @@ NV_texture_shader enum:
 	TEXTURE_DT_SIZE_NV				= 0x871E
 	TEXTURE_MAG_SIZE_NV				= 0x871F
 
-NV_texture_shader2 enum:
+NV_vdpau_interop enum:
+	SURFACE_STATE_NV				= 0x86EB
+
+NV_texture_shader2 enum: (additional)
 	DOT_PRODUCT_TEXTURE_3D_NV			= 0x86EF
 
-# NV_future_use: 0x86EB
-# NV_future_use: 0x86FD
-# NV_future_use: 0x8700
+NV_vdpau_interop enum: (additional; see above)
+	SURFACE_REGISTERED_NV				= 0x86FD
+
+NV_vdpau_interop enum: (additional; see above)
+	SURFACE_MAPPED_NV				= 0x8700
 
 ###############################################################################
 
@@ -5552,7 +5557,8 @@ NV_shader_buffer_store enum:
 	use VERSION_1_5			    READ_WRITE
 	use VERSION_1_5			    WRITE_ONLY
 
-# NV_future_use: 0x88BE
+NV_vdpau_interop enum: (additional; see above)
+	WRITE_DISCARD_NV				= 0x88BE
 
 ARB_timer_query enum: (additional; see below)
 	TIME_ELAPSED					= 0x88BF
@@ -7762,18 +7768,26 @@ AMD_name_gen_delete enum:
 # AMD_future_use: 0x9156-0x923F
 
 ###############################################################################
+
+# WebGL Working Group: 0x9240-0x924F (Khronos bug 6473)
+
+#	UNPACK_FLIP_Y_WEBGL				= 0x9240
+#	UNPACK_PREMULTIPLY_ALPHA_WEBGL			= 0x9241
+#	CONTEXT_LOST_WEBGL				= 0x9242
+
+# WebGL_future_use: 0x9243-0x924F
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x9240-0xFFFF
+# Any_vendor_future_use: 0x9250-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the
 #   Any_vendor_future_use range and update enum.spec
-
-# (NOTE: first fill the gap from 0x8FE0-0x8FFF before proceeding here)
 
 ###############################################################################
 

@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 11417 $ on $Date: 2010-05-17 09:47:20 -0700 (Mon, 17 May 2010) $
+# $Revision: 11742 $ on $Date: 2010-06-15 23:46:28 -0700 (Tue, 15 Jun 2010) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -6602,7 +6602,6 @@ EXT_shader_image_load_store enum:
 
 ###############################################################################
 
-# No new tokens
 # Extension #387
 EXT_vertex_attrib_64bit enum:
 	use VERSION_1_1			    DOUBLE
@@ -6722,3 +6721,23 @@ AMD_debug_output enum:
 	DEBUG_CATEGORY_SHADER_COMPILER_AMD		= 0x914E
 	DEBUG_CATEGORY_APPLICATION_AMD			= 0x914F
 	DEBUG_CATEGORY_OTHER_AMD			= 0x9150
+
+###############################################################################
+
+# Extension #396
+NV_vdpau_interop enum:
+	SURFACE_STATE_NV				= 0x86EB
+	SURFACE_REGISTERED_NV				= 0x86FD
+	SURFACE_MAPPED_NV				= 0x8700
+	WRITE_DISCARD_NV				= 0x88BE
+
+###############################################################################
+
+# No new tokens
+# Extension #397
+AMD_transform_feedback3_lines_triangles enum:
+
+###############################################################################
+
+# Extension #398 - GLX_AMD_gpu_association
+

@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 11417 $ on $Date: 2010-05-17 09:47:20 -0700 (Mon, 17 May 2010) $
+# $Revision: 11742 $ on $Date: 2010-06-15 23:46:28 -0700 (Tue, 15 Jun 2010) $
 
 # List of GLX enumerants for glxext.h header
 #
@@ -25,9 +25,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glxext.h last updated 2010/05/17 */
+passthru: /* glxext.h last updated 2010/06/15 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GLX_GLXEXT_VERSION 28
+passthru: #define GLX_GLXEXT_VERSION 29
 
 ###############################################################################
 #
@@ -520,7 +520,24 @@ INTEL_swap_event enum:
 	COPY_COMPLETE_INTEL				= 0x8181
 	FLIP_COMPLETE_INTEL				= 0x8182
 
+###############################################################################
+
 # Extension #393
 NV_multisample_coverage enum:
 	COVERAGE_SAMPLES_NV				= 100001
 	COLOR_SAMPLES_NV				= 0x20B3
+
+###############################################################################
+
+# Extension #398
+GLX_AMD_gpu_association enum:
+	GPU_VENDOR_AMD					= 0x1F00
+	GPU_RENDERER_STRING_AMD				= 0x1F01
+	GPU_OPENGL_VERSION_STRING_AMD			= 0x1F02
+	GPU_FASTEST_TARGET_GPUS_AMD			= 0x21A2
+	GPU_RAM_AMD					= 0x21A3
+	GPU_CLOCK_AMD					= 0x21A4
+	GPU_NUM_PIPES_AMD				= 0x21A5
+	GPU_NUM_SIMD_AMD				= 0x21A6
+	GPU_NUM_RB_AMD					= 0x21A7
+	GPU_NUM_SPI_AMD					= 0x21A8

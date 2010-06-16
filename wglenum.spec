@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 11417 $ on $Date: 2010-05-17 09:47:20 -0700 (Mon, 17 May 2010) $
+# $Revision: 11742 $ on $Date: 2010-06-15 23:46:28 -0700 (Tue, 15 Jun 2010) $
 
 # This is the master WGL enumerant registry.
 #
@@ -397,14 +397,14 @@ WGL_NV_present_video enum:
 
 ###############################################################################
 
-# ATI: 0x21A0-0x21AF
+# AMD: 0x21A0-0x21AF
 WGL_ARB_pixel_format_float enum:
 	WGL_TYPE_RGBA_FLOAT_ARB				= 0x21A0
 
 WGL_ATI_pixel_format_float enum:
 	WGL_TYPE_RGBA_FLOAT_ATI				= 0x21A0
 
-# ATI_future_use: 0x21A1
+# AMD_future_use: 0x21A1
 
 WGL_AMD_gpu_association enum:
 	WGL_GPU_VENDOR_AMD				= 0x1F00
@@ -418,7 +418,7 @@ WGL_AMD_gpu_association enum:
 	WGL_GPU_NUM_RB_AMD				= 0x21A7
 	WGL_GPU_NUM_SPI_AMD				= 0x21A8
 
-# ATI_future_use: 0x21A9-0x21AF
+# AMD_future_use: 0x21A9-0x21AF
 
 ###############################################################################
 

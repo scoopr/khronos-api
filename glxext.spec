@@ -7,7 +7,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 11417 $ on $Date: 2010-05-17 09:47:20 -0700 (Mon, 17 May 2010) $
+# $Revision: 11742 $ on $Date: 2010-06-15 23:46:28 -0700 (Tue, 15 Jun 2010) $
 
 required-props:
 param:		retval retained
@@ -1337,3 +1337,25 @@ newcategory: INTEL_swap_event
 ###############################################################################
 
 newcategory: NV_multisample_coverage
+
+###############################################################################
+#
+# Extension #399
+# AMD_gpu_association commands
+#
+###############################################################################
+
+#@    UINT  glXGetGPUIDsAMD(UINT maxCount, UINT *ids);
+#@    INT   glXGetGPUInfoAMD(UINT id, INT property, GLenum dataType,
+#@			     UINT size, void *data)
+#@    UINT  glXGetContextGPUIDAMD(GLXContext ctx);
+#@    HGLRC glXCreateAssociatedContextAMD(UINT id, GLXContext share_list);
+#@    HGLRC glXCreateAssociatedContextAttribsAMD(UINT id, GLXContext share_context,
+#@						 const int *attribList);
+#@    BOOL  glXDeleteAssociatedContextAMD(GLXContext ctx);
+#@    BOOL  glXMakeAssociatedContextCurrentAMD(GLXContext ctx);
+#@    HGLRC glXGetCurrentAssociatedContextAMD(void);
+#@    VOID  glXBlitContextFramebufferAMD(GLXContext dstCtx, GLint srcX0, GLint srcY0,
+#@					 GLint srcX1, GLint srcY1, GLint dstX0,
+#@					 GLint dstY0, GLint dstX1, GLint dstY1,
+#@					 GLbitfield mask, GLenum filter);

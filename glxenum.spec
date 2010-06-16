@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 11417 $ on $Date: 2010-05-17 09:47:20 -0700 (Mon, 17 May 2010) $
+# $Revision: 11742 $ on $Date: 2010-06-15 23:46:28 -0700 (Tue, 15 Jun 2010) $
 
 # This is the GLX enumerant registry.
 #
@@ -254,6 +254,10 @@ GLXAttribute enum:
 
 ###############################################################################
 
+# AMD: 0x1F00-0x1F02 (additional; see below; equivalent to corresponding WGL/GL tokens)
+
+###############################################################################
+
 # ARB: 0x2070-0x209F
 
 # Shared with WGL, synchronize create_context_* enums with wglenum.spec!
@@ -349,6 +353,28 @@ EXT_swap_control enum:
 	MAX_SWAP_INTERVAL_EXT				= 0x20F2
 
 # NV_future_use: 0x20F3-0x219F
+
+###############################################################################
+
+# AMD: 0x21A0-0x21AF
+
+# Shared with WGL, synchronize with wglenum.spec!
+
+# WGL extensions: 0x21A0-0x21A1
+
+GLX_AMD_gpu_association enum:
+	GPU_VENDOR_AMD					= 0x1F00
+	GPU_RENDERER_STRING_AMD				= 0x1F01
+	GPU_OPENGL_VERSION_STRING_AMD			= 0x1F02
+	GPU_FASTEST_TARGET_GPUS_AMD			= 0x21A2
+	GPU_RAM_AMD					= 0x21A3
+	GPU_CLOCK_AMD					= 0x21A4
+	GPU_NUM_PIPES_AMD				= 0x21A5
+	GPU_NUM_SIMD_AMD				= 0x21A6
+	GPU_NUM_RB_AMD					= 0x21A7
+	GPU_NUM_SPI_AMD					= 0x21A8
+
+# AMD_future_use: 0x21A9-0x21AF
 
 ###############################################################################
 
