@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 11742 $ on $Date: 2010-06-15 23:46:28 -0700 (Tue, 15 Jun 2010) $
+# $Revision: 12070 $ on $Date: 2010-07-22 17:00:28 -0700 (Thu, 22 Jul 2010) $
 
 ###############################################################################
 #
@@ -257,8 +257,29 @@ ARB_map_buffer_range enum:
 
 ###############################################################################
 
+# CONTEXT_FLAGS_ARB bits (should be shared with WGL and GLX)
+
 VERSION_3_0 enum:
-	CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT		= 0x0001    # VERSION_3_0
+	CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT		= 0x00000001 # VERSION_3_0
+
+# 0x00000001 used in WGL/GLX for CONTEXT_DEBUG_BIT_ARB, while
+# 0x00000002 used in WGL/GLX for CONTEXT_FORWARD_COMPATIBLE_BIT_ARB. Oops.
+# We do not currently expose CONTEXT_FLAG_DEBUG_BIT in GL, at least.
+
+ARB_robustness enum:
+	CONTEXT_FLAG_ROBUST_ACCESS_BIT_ARB		= 0x00000004 # ARB_robustness
+
+###############################################################################
+
+# UseProgramStages stage bits
+
+ARB_separate_shader_objects enum:
+	VERTEX_SHADER_BIT				= 0x00000001
+	FRAGMENT_SHADER_BIT				= 0x00000002
+	GEOMETRY_SHADER_BIT				= 0x00000004
+	TESS_CONTROL_SHADER_BIT				= 0x00000008
+	TESS_EVALUATION_SHADER_BIT			= 0x00000010
+	ALL_SHADER_BITS					= 0xFFFFFFFF
 
 ###############################################################################
 
@@ -3185,7 +3206,7 @@ EXT_shared_texture_palette enum:
 
 ###############################################################################
 
-# ATI: 0x8200-0x820F (released by Microsoft 2002/9/16)
+# ATI: 0x8200-0x820F (range released by Microsoft 2002/9/16)
 ATI_text_fragment_shader enum:
 	TEXT_FRAGMENT_SHADER_ATI			= 0x8200
 
@@ -3291,7 +3312,57 @@ ARB_texture_rg enum: (note: no ARB suffixes)
 
 ###############################################################################
 
-# @@@ Any_vendor_future_use: 0x8240-0x82AF (released by Microsoft 2002/9/16)
+# ARB: 0x8240-0x82AF (range released by Microsoft on 2002/9/16)
+
+ARB_cl_event enum:
+	SYNC_CL_EVENT_ARB				= 0x8240
+	SYNC_CL_EVENT_COMPLETE_ARB			= 0x8241
+
+ARB_debug_output enum:
+	DEBUG_OUTPUT_SYNCHRONOUS_ARB			= 0x8242
+	DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_ARB		= 0x8243
+	DEBUG_CALLBACK_FUNCTION_ARB			= 0x8244
+	DEBUG_CALLBACK_USER_PARAM_ARB			= 0x8245
+	DEBUG_SOURCE_API_ARB				= 0x8246
+	DEBUG_SOURCE_WINDOW_SYSTEM_ARB			= 0x8247
+	DEBUG_SOURCE_SHADER_COMPILER_ARB		= 0x8248
+	DEBUG_SOURCE_THIRD_PARTY_ARB			= 0x8249
+	DEBUG_SOURCE_APPLICATION_ARB			= 0x824A
+	DEBUG_SOURCE_OTHER_ARB				= 0x824B
+	DEBUG_TYPE_ERROR_ARB				= 0x824C
+	DEBUG_TYPE_DEPRECATED_BEHAVIOR_ARB		= 0x824D
+	DEBUG_TYPE_UNDEFINED_BEHAVIOR_ARB		= 0x824E
+	DEBUG_TYPE_PORTABILITY_ARB			= 0x824F
+	DEBUG_TYPE_PERFORMANCE_ARB			= 0x8250
+	DEBUG_TYPE_OTHER_ARB				= 0x8251
+
+ARB_robustness enum:
+	LOSE_CONTEXT_ON_RESET_ARB			= 0x8252
+	GUILTY_CONTEXT_RESET_ARB			= 0x8253
+	INNOCENT_CONTEXT_RESET_ARB			= 0x8254
+	UNKNOWN_CONTEXT_RESET_ARB			= 0x8255
+	RESET_NOTIFICATION_STRATEGY_ARB			= 0x8256
+
+ARB_get_program_binary enum:
+	PROGRAM_BINARY_RETRIEVABLE_HINT			= 0x8257
+
+ARB_separate_shader_objects enum:
+	PROGRAM_SEPARABLE				= 0x8258
+	ACTIVE_PROGRAM					= 0x8259
+	PROGRAM_PIPELINE_BINDING			= 0x825A
+
+ARB_viewport_array enum:
+	MAX_VIEWPORTS					= 0x825B
+	VIEWPORT_SUBPIXEL_BITS				= 0x825C
+	VIEWPORT_BOUNDS_RANGE				= 0x825D
+	LAYER_PROVOKING_VERTEX				= 0x825E
+	VIEWPORT_INDEX_PROVOKING_VERTEX			= 0x825F
+	UNDEFINED_VERTEX				= 0x8260
+
+ARB_robustness enum: (additional; see above):
+	NO_RESET_NOTIFICATION_ARB			= 0x8261
+
+ARB_future_use: 0x8262-0x82AF
 
 ###############################################################################
 
@@ -3537,8 +3608,10 @@ S3_s3tc enum:
 
 ###############################################################################
 
+# SGI: 0x83C0-0x83EF (most of this could be reclaimed)
+
 # Obsolete extension, never to be put in enumext.spec
-# SGIS_multitexture: 0x83C0-0x83E5
+# SGIS_multitexture: 0x83C0-0x83CA
 #	SELECTED_TEXTURE_SGIS				= 0x83C0 # 1 I
 #	SELECTED_TEXTURE_COORD_SET_SGIS			= 0x83C1 # 1 I
 #	SELECTED_TEXTURE_TRANSFORM_SGIS			= 0x83C2 # 1 I

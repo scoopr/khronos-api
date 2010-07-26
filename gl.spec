@@ -7,7 +7,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 11742 $ on $Date: 2010-06-15 23:46:28 -0700 (Tue, 15 Jun 2010) $
+# $Revision: 12069 $ on $Date: 2010-07-22 13:04:27 -0700 (Thu, 22 Jul 2010) $
 
 required-props:
 # Description of a parameter
@@ -10574,6 +10574,8 @@ IsRenderbuffer(renderbuffer)
 	glxflags	ignore
 	offset		?
 
+# GLX opcode changed so it can be differentiated from BindRenderbufferEXT
+# (see ARB_framebuffer_object extension spec revision 23)
 BindRenderbuffer(target, renderbuffer)
 	return		void
 	param		target		RenderbufferTarget in value
@@ -10581,7 +10583,7 @@ BindRenderbuffer(target, renderbuffer)
 	category	ARB_framebuffer_object
 	version		3.0
 	extension
-	glxropcode	4316
+	glxropcode	235
 	glxflags	ignore
 	offset		?
 
@@ -10643,6 +10645,8 @@ IsFramebuffer(framebuffer)
 	glxflags	ignore
 	offset		?
 
+# GLX opcode changed so it can be differentiated from BindFramebufferEXT
+# (see ARB_framebuffer_object extension spec revision 23)
 BindFramebuffer(target, framebuffer)
 	return		void
 	param		target		FramebufferTarget in value
@@ -10650,7 +10654,7 @@ BindFramebuffer(target, framebuffer)
 	category	ARB_framebuffer_object
 	version		3.0
 	extension
-	glxropcode	4319
+	glxropcode	236
 	glxflags	ignore
 	offset		?
 
@@ -10810,7 +10814,8 @@ FramebufferTextureLayer(target, attachment, texture, level, layer)
 	extension	soft WINSOFT
 	dlflags		notlistable
 	glfflags	ignore
-	glxflags	ignore
+	glxropcode	237
+	offset		?
 
 
 ###############################################################################
@@ -22753,6 +22758,7 @@ IsRenderbufferEXT(renderbuffer)
 	glxflags	ignore
 	alias		IsRenderbuffer
 
+# Not aliased to BindRenderbuffer
 BindRenderbufferEXT(target, renderbuffer)
 	return		void
 	param		target		RenderbufferTarget in value
@@ -22762,7 +22768,6 @@ BindRenderbufferEXT(target, renderbuffer)
 	extension
 	glxropcode	4316
 	glxflags	ignore
-	alias		BindRenderbuffer
 
 DeleteRenderbuffersEXT(n, renderbuffers)
 	return		void
@@ -22822,6 +22827,7 @@ IsFramebufferEXT(framebuffer)
 	glxflags	ignore
 	alias		IsFramebuffer
 
+# Not aliased to BindFramebuffer
 BindFramebufferEXT(target, framebuffer)
 	return		void
 	param		target		FramebufferTarget in value
@@ -22831,7 +22837,6 @@ BindFramebufferEXT(target, framebuffer)
 	extension
 	glxropcode	4319
 	glxflags	ignore
-	alias		BindFramebuffer
 
 DeleteFramebuffersEXT(n, framebuffers)
 	return		void

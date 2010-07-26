@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 11742 $ on $Date: 2010-06-15 23:46:28 -0700 (Tue, 15 Jun 2010) $
+# $Revision: 12070 $ on $Date: 2010-07-22 17:00:28 -0700 (Thu, 22 Jul 2010) $
 
 # This is the GLX enumerant registry.
 #
@@ -126,10 +126,11 @@ GLXBindToTextureTargetMask enum:
 	TEXTURE_2D_BIT_EXT				= 0x00000002
 	TEXTURE_RECTANGLE_BIT_EXT			= 0x00000004
 
-# CONTEXT_FLAGS_ARB bits
+# CONTEXT_FLAGS_ARB bits (shared with WGL and GL)
 GLXContextFlags enum:
 	CONTEXT_DEBUG_BIT_ARB				= 0x00000001	# ARB_create_context
 	CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x00000002	# ARB_create_context
+	CONTEXT_ROBUST_ACCESS_BIT_ARB			= 0x00000004	# ARB_create_context_robustness
 
 # CONTEXT_PROFILE_MASK_ARB bits
 GLXContextProfileMask enum:
@@ -441,9 +442,24 @@ INTEL_future_use: 0x8183-0x818F
 ### Please remember that new GLX enum allocations must be obtained by request
 ### to the Khronos API Registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
+### Also note that some GLX enum values are shared with GL and WGL, and
+### new ranges should be allocated with such overlaps in mind.
 ###############################################################################
 
-# Any_vendor_future_use: 0x8180-0x9125
+# Any_vendor_future_use: 0x8190-0x824F
+
+###############################################################################
+
+# ARB: 0x8250-0x826F
+# No additional values should be used from this range, which includes
+# the range used by GL_ARB_robustness rounded up to multiples of 16.
+
+# GLX_ARB_create_context_robustness:
+#	LOSE_CONTEXT_ON_RESET_ARB			= 0x8252    # shared with GL_ARB_robustness
+#	CONTEXT_RESET_NOTIFICATION_STRATEGY_ARB		= 0x8256    # shared with GL_ARB_robustness
+#	NO_RESET_NOTIFICATION_ARB			= 0x8261    # shared with GL_ARB_robustness
+
+# Any_vendor_future_use: 0x8270-0x9125
 
 # Also includes a bitmask - see ContextProfileMask above
 # ARB_create_context_profile enum: (equivalent to corresponding GL token)
@@ -452,6 +468,6 @@ INTEL_future_use: 0x8183-0x818F
 # Any_vendor_future_use: 0x9127-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
-#   range, allocate multiples of 16 from the beginning of the
+#   range, allocate multiples of 16 from the beginning of the first
 #   Any_vendor_future_use range and update glxenum.spec, glxenumext.spec,
 #   and extensions.reserved.

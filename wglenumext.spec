@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 11417 $ on $Date: 2010-05-17 09:47:20 -0700 (Mon, 17 May 2010) $
+# $Revision: 12070 $ on $Date: 2010-07-22 17:00:28 -0700 (Thu, 22 Jul 2010) $
 
 # List of WGL enumerants for wglext.h header
 #
@@ -26,9 +26,9 @@
 
 passthru:
 passthru: /* Header file version number */
-passthru: /* wglext.h last updated 2010/05/17 */
+passthru: /* wglext.h last updated 2010/07/26 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define WGL_WGLEXT_VERSION 19
+passthru: #define WGL_WGLEXT_VERSION 20
 
 ###############################################################################
 #
@@ -201,6 +201,16 @@ WGL_ARB_create_context_profile enum:
 	WGL_CONTEXT_CORE_PROFILE_BIT_ARB		= 0x00000001
 	WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB	= 0x00000002
 	ERROR_INVALID_PROFILE_ARB			= 0x2096
+
+###############################################################################
+
+# ARB Extension #??
+# All values are shared with GLX and GL
+WGL_ARB_create_context_robustness enum:
+	WGL_CONTEXT_ROBUST_ACCESS_BIT_ARB		= 0x00000004
+	WGL_LOSE_CONTEXT_ON_RESET_ARB			= 0x8252
+	WGL_CONTEXT_RESET_NOTIFICATION_STRATEGY_ARB	= 0x8256
+	WGL_NO_RESET_NOTIFICATION_ARB			= 0x8261
 
 ###############################################################################
 #

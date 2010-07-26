@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 11742 $ on $Date: 2010-06-15 23:46:28 -0700 (Tue, 15 Jun 2010) $
+# $Revision: 12070 $ on $Date: 2010-07-22 17:00:28 -0700 (Thu, 22 Jul 2010) $
 
 # List of GLX enumerants for glxext.h header
 #
@@ -25,9 +25,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glxext.h last updated 2010/06/15 */
+passthru: /* glxext.h last updated 2010/07/26 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GLX_GLXEXT_VERSION 29
+passthru: #define GLX_GLXEXT_VERSION 30
 
 ###############################################################################
 #
@@ -153,6 +153,15 @@ ARB_create_context_profile enum:
 	CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB		= 0x00000002
 	CONTEXT_PROFILE_MASK_ARB			= 0x9126
 
+###############################################################################
+
+# ARB Extension #??
+# All values are shared with GLX and GL
+ARB_create_context_robustness enum:
+	CONTEXT_ROBUST_ACCESS_BIT_ARB			= 0x00000004
+	LOSE_CONTEXT_ON_RESET_ARB			= 0x8252
+	CONTEXT_RESET_NOTIFICATION_STRATEGY_ARB		= 0x8256
+	NO_RESET_NOTIFICATION_ARB			= 0x8261
 
 ###############################################################################
 #

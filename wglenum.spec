@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 11742 $ on $Date: 2010-06-15 23:46:28 -0700 (Tue, 15 Jun 2010) $
+# $Revision: 12070 $ on $Date: 2010-07-22 17:00:28 -0700 (Thu, 22 Jul 2010) $
 
 # This is the master WGL enumerant registry.
 #
@@ -30,10 +30,11 @@ WGL_ARB_buffer_region enum:
 	WGL_DEPTH_BUFFER_BIT_ARB			= 0x00000004
 	WGL_STENCIL_BUFFER_BIT_ARB			= 0x00000008
 
-# CONTEXT_FLAGS_ARB bits
+# CONTEXT_FLAGS_ARB bits (shared with GLX and GL)
 WGLContextFlags enum:
 	WGL_CONTEXT_DEBUG_BIT_ARB			= 0x00000001	# ARB_create_context
 	WGL_CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x00000002	# ARB_create_context
+	WGL_CONTEXT_ROBUST_ACCESS_BIT_ARB		= 0x00000004	# ARB_create_context_robustness
 
 # CONTEXT_PROFILE_MASK_ARB bits
 WGLContextProfileMask enum:
@@ -426,7 +427,17 @@ WGL_AMD_gpu_association enum:
 
 ###############################################################################
 
+# Any_vendor_future_use: 0x21C0-0x2FFFF
+
+###############################################################################
+
+# Values shared with GLX and/or GL
+
+# WGL_ARB_create_context_robustness:
+#	WGL_LOSE_CONTEXT_ON_RESET_ARB			= 0x8252    # shared with GLX and GL
+#	WGL_CONTEXT_RESET_NOTIFICATION_STRATEGY_ARB	= 0x8256    # shared with GLX and GL
+#	WGL_NO_RESET_NOTIFICATION_ARB			= 0x8261    # shared with GLX and GL
+
 # WGL_ARB_create_context_profile enum: (equivalent to corresponding GL token)
 #	WGL_CONTEXT_PROFILE_MASK_ARB			= 0x9126
 
-# Any_vendor_future_use: 0x21C0-0xFFFF
