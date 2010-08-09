@@ -7,7 +7,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 12183 $ on $Date: 2010-08-06 02:53:05 -0700 (Fri, 06 Aug 2010) $
+# $Revision: 12194 $ on $Date: 2010-08-09 02:56:00 -0700 (Mon, 09 Aug 2010) $
 
 required-props:
 # Description of a parameter
@@ -13201,7 +13201,7 @@ ProgramParameteri(program, pname, value)
 	param		program		UInt32 in value
 	param		pname		ProgramParameterPName in value
 	param		value		Int32 in value
-	category	ARB_geometry_shader4
+	category	ARB_get_program_binary
 	version		3.0
 	extension	soft WINSOFT
 	glfflags	ignore

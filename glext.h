@@ -7061,16 +7061,10 @@ typedef void (APIENTRYP PFNGLCLEARDEPTHFPROC) (GLclampf d);
 #ifdef GL_GLEXT_PROTOTYPES
 GLAPI void APIENTRY glGetProgramBinary (GLuint program, GLsizei bufSize, GLsizei *length, GLenum *binaryFormat, GLvoid *binary);
 GLAPI void APIENTRY glProgramBinary (GLuint program, GLenum binaryFormat, const GLvoid *binary, GLsizei length);
+GLAPI void APIENTRY glProgramParameteri (GLuint program, GLenum pname, GLint value);
 #endif /* GL_GLEXT_PROTOTYPES */
 typedef void (APIENTRYP PFNGLGETPROGRAMBINARYPROC) (GLuint program, GLsizei bufSize, GLsizei *length, GLenum *binaryFormat, GLvoid *binary);
 typedef void (APIENTRYP PFNGLPROGRAMBINARYPROC) (GLuint program, GLenum binaryFormat, const GLvoid *binary, GLsizei length);
-#endif
-
-#ifndef GL_ARB_geometry_shader4
-#define GL_ARB_geometry_shader4 1
-#ifdef GL_GLEXT_PROTOTYPES
-GLAPI void APIENTRY glProgramParameteri (GLuint program, GLenum pname, GLint value);
-#endif /* GL_GLEXT_PROTOTYPES */
 typedef void (APIENTRYP PFNGLPROGRAMPARAMETERIPROC) (GLuint program, GLenum pname, GLint value);
 #endif
 
