@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 12070 $ on $Date: 2010-07-22 17:00:28 -0700 (Thu, 22 Jul 2010) $
+# $Revision: 12183 $ on $Date: 2010-08-06 02:53:05 -0700 (Fri, 06 Aug 2010) $
 
 # List of GLX enumerants for glxext.h header
 #
@@ -25,9 +25,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glxext.h last updated 2010/07/26 */
+passthru: /* glxext.h last updated 2010/08/06 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GLX_GLXEXT_VERSION 30
+passthru: #define GLX_GLXEXT_VERSION 32
 
 ###############################################################################
 #
@@ -137,6 +137,12 @@ ARB_fbconfig_float enum:
 
 ###############################################################################
 
+# ARB Extension #46
+ARB_framebuffer_sRGB enum:
+	FRAMEBUFFER_SRGB_CAPABLE_ARB			= 0x20B2
+
+###############################################################################
+
 # ARB Extension #56
 ARB_create_context enum:
 	CONTEXT_DEBUG_BIT_ARB				= 0x00000001
@@ -155,7 +161,7 @@ ARB_create_context_profile enum:
 
 ###############################################################################
 
-# ARB Extension #??
+# ARB Extension #101
 # All values are shared with GLX and GL
 ARB_create_context_robustness enum:
 	CONTEXT_ROBUST_ACCESS_BIT_ARB			= 0x00000004
@@ -539,7 +545,7 @@ NV_multisample_coverage enum:
 ###############################################################################
 
 # Extension #398
-GLX_AMD_gpu_association enum:
+AMD_gpu_association enum:
 	GPU_VENDOR_AMD					= 0x1F00
 	GPU_RENDERER_STRING_AMD				= 0x1F01
 	GPU_OPENGL_VERSION_STRING_AMD			= 0x1F02
@@ -550,3 +556,10 @@ GLX_AMD_gpu_association enum:
 	GPU_NUM_SIMD_AMD				= 0x21A6
 	GPU_NUM_RB_AMD					= 0x21A7
 	GPU_NUM_SPI_AMD					= 0x21A8
+
+###############################################################################
+
+# Extension #399
+# All values are shared with WGL and GL
+EXT_create_context_es2_profile enum:
+	CONTEXT_ES2_PROFILE_BIT_EXT			= 0x00000004

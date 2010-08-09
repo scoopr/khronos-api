@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 12070 $ on $Date: 2010-07-22 17:00:28 -0700 (Thu, 22 Jul 2010) $
+# $Revision: 12183 $ on $Date: 2010-08-06 02:53:05 -0700 (Fri, 06 Aug 2010) $
 
 # List of WGL enumerants for wglext.h header
 #
@@ -26,9 +26,9 @@
 
 passthru:
 passthru: /* Header file version number */
-passthru: /* wglext.h last updated 2010/07/26 */
+passthru: /* wglext.h last updated 2010/08/06 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define WGL_WGLEXT_VERSION 20
+passthru: #define WGL_WGLEXT_VERSION 22
 
 ###############################################################################
 #
@@ -183,6 +183,12 @@ WGL_ARB_pixel_format_float enum:
 
 ###############################################################################
 
+# ARB Extension #46
+WGL_ARB_framebuffer_sRGB enum:
+	WGL_FRAMEBUFFER_SRGB_CAPABLE_ARB		= 0x20A9
+
+###############################################################################
+
 # ARB Extension #55
 WGL_ARB_create_context enum:
 	WGL_CONTEXT_DEBUG_BIT_ARB			= 0x00000001
@@ -204,7 +210,7 @@ WGL_ARB_create_context_profile enum:
 
 ###############################################################################
 
-# ARB Extension #??
+# ARB Extension #102
 # All values are shared with GLX and GL
 WGL_ARB_create_context_robustness enum:
 	WGL_CONTEXT_ROBUST_ACCESS_BIT_ARB		= 0x00000004
@@ -465,7 +471,7 @@ WGL_AMD_gpu_association enum:
 ###############################################################################
 
 # Extension #374
-NV_video_capture enum:
+WGL_NV_video_capture enum:
 	WGL_UNIQUE_ID_NV				= 0x20CE
 	WGL_NUM_VIDEO_CAPTURE_SLOTS_NV			= 0x20CF
 
@@ -473,12 +479,18 @@ NV_video_capture enum:
 
 # No new tokens
 # Extension #376
-NV_copy_image enum:
+WGL_NV_copy_image enum:
 
 ###############################################################################
 
 # Extension #393
-NV_multisample_coverage enum:
+WGL_NV_multisample_coverage enum:
 	WGL_COVERAGE_SAMPLES_NV				= 0x2042
 	WGL_COLOR_SAMPLES_NV				= 0x20B9
 
+###############################################################################
+
+# Extension #400
+# All values are shared with GLX and GL
+WGL_EXT_create_context_es2_profile enum:
+	WGL_CONTEXT_ES2_PROFILE_BIT_EXT			= 0x00000004

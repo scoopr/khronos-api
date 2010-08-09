@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 12070 $ on $Date: 2010-07-22 17:00:28 -0700 (Thu, 22 Jul 2010) $
+# $Revision: 12183 $ on $Date: 2010-08-06 02:53:05 -0700 (Fri, 06 Aug 2010) $
 
 # This is the master WGL enumerant registry.
 #
@@ -40,6 +40,7 @@ WGLContextFlags enum:
 WGLContextProfileMask enum:
 	WGL_CONTEXT_CORE_PROFILE_BIT_ARB		= 0x00000001	# ARB_create_context_profile
 	WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB	= 0x00000002	# ARB_create_context_profile
+	WGL_CONTEXT_ES2_PROFILE_BIT_EXT			= 0x00000004	# EXT_create_context_es2_profile
 
 # AMD: 0x1F00-0x1F02 (additional; see below; equivalent to corresponding GL token)
 
@@ -344,6 +345,9 @@ WGL_NV_render_depth_texture enum:
 WGL_EXT_pixel_format_packed_float enum:
 	WGL_TYPE_RGBA_UNSIGNED_FLOAT_EXT		= 0x20A8
 
+WGL_ARB_framebuffer_sRGB enum:
+	WGL_FRAMEBUFFER_SRGB_CAPABLE_ARB		= 0x20A9
+
 WGL_EXT_framebuffer_sRGB enum:
 	WGL_FRAMEBUFFER_SRGB_CAPABLE_EXT		= 0x20A9
 
@@ -433,11 +437,15 @@ WGL_AMD_gpu_association enum:
 
 # Values shared with GLX and/or GL
 
-# WGL_ARB_create_context_robustness:
-#	WGL_LOSE_CONTEXT_ON_RESET_ARB			= 0x8252    # shared with GLX and GL
-#	WGL_CONTEXT_RESET_NOTIFICATION_STRATEGY_ARB	= 0x8256    # shared with GLX and GL
-#	WGL_NO_RESET_NOTIFICATION_ARB			= 0x8261    # shared with GLX and GL
+# Also includes a bitmask - see ContextFlags above
+# All values are shared with GLX and GL
+WGL_ARB_create_context_robustness:
+	WGL_LOSE_CONTEXT_ON_RESET_ARB			= 0x8252    # shared with GLX and GL
+	WGL_CONTEXT_RESET_NOTIFICATION_STRATEGY_ARB	= 0x8256    # shared with GLX and GL
+	WGL_NO_RESET_NOTIFICATION_ARB			= 0x8261    # shared with GLX and GL
 
-# WGL_ARB_create_context_profile enum: (equivalent to corresponding GL token)
-#	WGL_CONTEXT_PROFILE_MASK_ARB			= 0x9126
+# Also includes a bitmask - see ContextProfileMask above
+# All values are shared with GLX and GL
+WGL_ARB_create_context_profile enum:
+	WGL_CONTEXT_PROFILE_MASK_ARB			= 0x9126
 

@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 12070 $ on $Date: 2010-07-22 17:00:28 -0700 (Thu, 22 Jul 2010) $
+# $Revision: 12183 $ on $Date: 2010-08-06 02:53:05 -0700 (Fri, 06 Aug 2010) $
 
 # This is the GLX enumerant registry.
 #
@@ -136,6 +136,7 @@ GLXContextFlags enum:
 GLXContextProfileMask enum:
 	CONTEXT_CORE_PROFILE_BIT_ARB			= 0x00000001	# ARB_create_context_profile
 	CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB		= 0x00000002	# ARB_create_context_profile
+	CONTEXT_ES2_PROFILE_BIT_EXT			= 0x00000004	# EXT_create_context_es2_profile
 
 GLXAttribute enum:
 	USE_GL						= 1		# Visual attributes
@@ -283,6 +284,8 @@ GLXAttribute enum:
 	FLOAT_COMPONENTS_NV				= 0x20B0
 # EXT_fbconfig_packed_float enum:
 	RGBA_UNSIGNED_FLOAT_TYPE_EXT			= 0x20B1
+# ARB_framebuffer_sRGB enum:
+	FRAMEBUFFER_SRGB_CAPABLE_ARB			= 0x20B2
 # EXT_framebuffer_sRGB enum:
 	FRAMEBUFFER_SRGB_CAPABLE_EXT			= 0x20B2
 # NV_multisample_coverage enum:
@@ -454,15 +457,18 @@ INTEL_future_use: 0x8183-0x818F
 # No additional values should be used from this range, which includes
 # the range used by GL_ARB_robustness rounded up to multiples of 16.
 
-# GLX_ARB_create_context_robustness:
-#	LOSE_CONTEXT_ON_RESET_ARB			= 0x8252    # shared with GL_ARB_robustness
-#	CONTEXT_RESET_NOTIFICATION_STRATEGY_ARB		= 0x8256    # shared with GL_ARB_robustness
-#	NO_RESET_NOTIFICATION_ARB			= 0x8261    # shared with GL_ARB_robustness
+# Also includes a bitmask - see ContextFlags above
+# All values are shared with GLX and GL
+GLX_ARB_create_context_robustness enum:
+	LOSE_CONTEXT_ON_RESET_ARB			= 0x8252    # shared with GL_ARB_robustness
+	CONTEXT_RESET_NOTIFICATION_STRATEGY_ARB		= 0x8256    # shared with GL_ARB_robustness
+	NO_RESET_NOTIFICATION_ARB			= 0x8261    # shared with GL_ARB_robustness
 
 # Any_vendor_future_use: 0x8270-0x9125
 
 # Also includes a bitmask - see ContextProfileMask above
-# ARB_create_context_profile enum: (equivalent to corresponding GL token)
+# All values are shared with GLX and GL
+ARB_create_context_profile enum:
 	CONTEXT_PROFILE_MASK_ARB			= 0x9126
 
 # Any_vendor_future_use: 0x9127-0xFFFF
