@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 12183 $ on $Date: 2010-08-06 02:53:05 -0700 (Fri, 06 Aug 2010) $
+# $Revision: 12582 $ on $Date: 2010-09-30 01:35:22 -0700 (Thu, 30 Sep 2010) $
 
 ###############################################################################
 #
@@ -7337,6 +7337,10 @@ NV_gpu_program5 enum:
 ARB_texture_gather enum:
 	MIN_PROGRAM_TEXTURE_GATHER_OFFSET		= 0x8E5E
 	MAX_PROGRAM_TEXTURE_GATHER_OFFSET		= 0x8E5F
+
+NV_gpu_program5 enum:
+	MIN_PROGRAM_TEXTURE_GATHER_OFFSET_NV		= 0x8E5E
+	MAX_PROGRAM_TEXTURE_GATHER_OFFSET_NV		= 0x8E5F
 
 # NV_future_use: 0x8E60-0x8E6F
 

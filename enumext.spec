@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 12183 $ on $Date: 2010-08-06 02:53:05 -0700 (Fri, 06 Aug 2010) $
+# $Revision: 12582 $ on $Date: 2010-09-30 01:35:22 -0700 (Thu, 30 Sep 2010) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -6736,7 +6736,7 @@ AMD_shader_stencil_export enum:
 
 # Extension #383
 AMD_seamless_cubemap_per_texture enum:
-    use ARB_seamless_cube_map		    TEXTURE_CUBE_MAP_SEAMLESS_ARB
+    use ARB_seamless_cube_map		    TEXTURE_CUBE_MAP_SEAMLESS
 
 ###############################################################################
 
@@ -6835,6 +6835,8 @@ NV_gpu_program5 enum:
 	MIN_FRAGMENT_INTERPOLATION_OFFSET_NV		= 0x8E5B
 	MAX_FRAGMENT_INTERPOLATION_OFFSET_NV		= 0x8E5C
 	FRAGMENT_PROGRAM_INTERPOLATION_OFFSET_BITS_NV	= 0x8E5D
+	MIN_PROGRAM_TEXTURE_GATHER_OFFSET_NV		= 0x8E5E
+	MAX_PROGRAM_TEXTURE_GATHER_OFFSET_NV		= 0x8E5F
 	MAX_PROGRAM_SUBROUTINE_PARAMETERS_NV		= 0x8F44    # Requires ARB_shader_subroutine
 	MAX_PROGRAM_SUBROUTINE_NUM_NV			= 0x8F45    # Requires ARB_shader_subroutine
 
