@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 12582 $ on $Date: 2010-09-30 01:35:22 -0700 (Thu, 30 Sep 2010) $
+# $Revision: 12613 $ on $Date: 2010-10-05 12:31:22 -0700 (Tue, 05 Oct 2010) $
 
 ###############################################################################
 #
@@ -6647,6 +6647,11 @@ OES_framebuffer_object enum: (OpenGL ES only; additional; see below)
 	FRAMEBUFFER_BINDING_OES				= 0x8CA6
 	RENDERBUFFER_BINDING_OES			= 0x8CA7
 
+# Aliases EXT_framebuffer_object enums above
+ANGLE_framebuffer_blit enum: (OpenGL ES only; additional; see below)
+	FRAMEBUFFER_BINDING_ANGLE			= 0x8CA6
+	RENDERBUFFER_BINDING_ANGLE			= 0x8CA7
+
 VERSION_3_0 enum:
 	use ARB_framebuffer_object	    READ_FRAMEBUFFER
 	use ARB_framebuffer_object	    DRAW_FRAMEBUFFER
@@ -6656,6 +6661,11 @@ ARB_framebuffer_object enum: (note: no ARB suffixes)
 	READ_FRAMEBUFFER				= 0x8CA8    # VERSION_3_0 / ARB_fbo
 	DRAW_FRAMEBUFFER				= 0x8CA9    # VERSION_3_0 / ARB_fbo
 	READ_FRAMEBUFFER_BINDING			= 0x8CAA    # VERSION_3_0 / ARB_fbo
+
+# Aliases ARB_framebuffer_object enums above
+ANGLE_framebuffer_blit enum: (OpenGL ES only; additional; see above)
+	READ_FRAMEBUFFER_ANGLE				= 0x8CA8
+	DRAW_FRAMEBUFFER_ANGLE				= 0x8CA9
 
 EXT_framebuffer_blit enum:
 	READ_FRAMEBUFFER_EXT				= 0x8CA8
@@ -6668,6 +6678,10 @@ VERSION_3_0 enum:
 
 ARB_framebuffer_object enum: (note: no ARB suffixes)
 	RENDERBUFFER_SAMPLES				= 0x8CAB    # VERSION_3_0 / ARB_fbo
+
+# Aliases ARB_framebuffer_object enums above
+ANGLE_framebuffer_multisample enum: (OpenGL ES only)
+	RENDERBUFFER_SAMPLES_ANGLE			= 0x8CAB
 
 EXT_framebuffer_multisample enum:
 	RENDERBUFFER_SAMPLES_EXT			= 0x8CAB
@@ -6852,6 +6866,11 @@ ARB_framebuffer_object enum: (note: no ARB suffixes)
 # Added 2006/10/10 in revision #6b of the extension.
 	FRAMEBUFFER_INCOMPLETE_MULTISAMPLE		= 0x8D56    # VERSION_3_0 / ARB_fbo
 	MAX_SAMPLES					= 0x8D57    # VERSION_3_0 / ARB_fbo
+
+# Aliases ARB_framebuffer_object enums above
+ANGLE_framebuffer_multisample enum: (OpenGL ES only; additional; see above)
+	FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_ANGLE	= 0x8D56
+	MAX_SAMPLES_ANGLE				= 0x8D57
 
 EXT_framebuffer_multisample enum: (additional; see above)
 	FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT		= 0x8D56
@@ -7578,6 +7597,9 @@ QCOM_driver_control enum: (OpenGL ES only)
 # Vivante: 0x8FC0-0x8FDF
 # Assigned for Frido Garritsen	(Khronos bug 4526)
 
+VIV_shader_binary enum: (OpenGL ES only)
+	SHADER_BINARY_VIV				= 0x8FC4
+
 ###############################################################################
 
 # NVIDIA: 0x8FE0-0x8FFF
@@ -7662,7 +7684,11 @@ EXT_texture_snorm enum:
 	LUMINANCE16_ALPHA16_SNORM			= 0x901A
 	INTENSITY16_SNORM				= 0x901B
 
-# AMD_future_use: 0x901C-0x901F
+# AMD_future_use: 0x901C-0x901D
+
+AMD_depth_clamp_separate enum:
+	DEPTH_CLAMP_NEAR_AMD				= 0x901E
+	DEPTH_CLAMP_FAR_AMD				= 0x901F
 
 ###############################################################################
 
@@ -7920,7 +7946,12 @@ AMD_name_gen_delete enum:
 #	UNPACK_PREMULTIPLY_ALPHA_WEBGL			= 0x9241
 #	CONTEXT_LOST_WEBGL				= 0x9242
 
-# WebGL_future_use: 0x9243-0x924F
+# Khronos bug 6884
+
+#	UNPACK_COLORSPACE_CONVERSION_WEBGL		= 0x9243
+#	BROWSER_DEFAULT_WEBGL				= 0x9244
+
+# WebGL_future_use: 0x9245-0x924F
 
 ###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request

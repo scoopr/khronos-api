@@ -31461,7 +31461,18 @@ newcategory: AMD_transform_feedback3_lines_triangles
 ###############################################################################
 #
 # Extension #398 - GLX_AMD_gpu_association
+# Extension #399 - GLX_EXT_create_context_es2_profile
+# Extension #400 - WGL_EXT_create_context_es2_profile
 #
 ###############################################################################
 
+###############################################################################
+#
+# Extension #401
+# AMD_depth_clamp_separate commands
+#
+###############################################################################
+
+# (none)
+newcategory: AMD_depth_clamp_separate
 

@@ -6956,3 +6956,9 @@ AMD_transform_feedback3_lines_triangles enum:
 # Extension #399 - GLX_EXT_create_context_es2_profile
 # Extension #400 - WGL_EXT_create_context_es2_profile
 
+###############################################################################
+
+# Extension #401
+AMD_depth_clamp_separate enum:
+	DEPTH_CLAMP_NEAR_AMD				= 0x901E
+	DEPTH_CLAMP_FAR_AMD				= 0x901F
