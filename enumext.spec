@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 12819 $ on $Date: 2010-11-03 19:02:01 -0700 (Wed, 03 Nov 2010) $
+# $Revision: 13168 $ on $Date: 2010-12-09 02:18:26 -0800 (Thu, 09 Dec 2010) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -6962,3 +6962,11 @@ AMD_transform_feedback3_lines_triangles enum:
 AMD_depth_clamp_separate enum:
 	DEPTH_CLAMP_NEAR_AMD				= 0x901E
 	DEPTH_CLAMP_FAR_AMD				= 0x901F
+
+###############################################################################
+
+# Extension #402
+EXT_texture_sRGB_decode enum:
+	TEXTURE_SRGB_DECODE_EXT				= 0x8A48
+	DECODE_EXT					= 0x8A49
+	SKIP_DECODE_EXT					= 0x8A4A

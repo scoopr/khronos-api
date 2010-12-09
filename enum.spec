@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 12819 $ on $Date: 2010-11-03 19:02:01 -0700 (Wed, 03 Nov 2010) $
+# $Revision: 13168 $ on $Date: 2010-12-09 02:18:26 -0800 (Thu, 09 Dec 2010) $
 
 ###############################################################################
 #
@@ -6123,7 +6123,14 @@ ARB_uniform_buffer_object enum:
 	UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER	= 0x8A46
 	INVALID_INDEX					= 0xFFFFFFFFu
 
-# APPLE_future_use: 0x8A47-0x8A7F
+# APPLE_future_use: 0x8A47
+
+EXT_texture_sRGB_decode enum:
+	TEXTURE_SRGB_DECODE_EXT				= 0x8A48
+	DECODE_EXT					= 0x8A49
+	SKIP_DECODE_EXT					= 0x8A4A
+
+# APPLE_future_use: 0x8A4B-0x8A7F
 
 ###############################################################################
 
@@ -7954,12 +7961,21 @@ AMD_name_gen_delete enum:
 # WebGL_future_use: 0x9245-0x924F
 
 ###############################################################################
+
+# DMP: 0x9250-0x925F (email from Eisaku Ohbuchi)
+
+DMP_shader_binary enum: (OpenGL ES only)
+	SHADER_BINARY_DMP				= 0x9250
+
+# DMP_future_use: 0x9251-0x925F
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x9250-0xFFFF
+# Any_vendor_future_use: 0x9260-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the
