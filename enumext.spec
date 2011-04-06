@@ -6970,3 +6970,18 @@ EXT_texture_sRGB_decode enum:
 	TEXTURE_SRGB_DECODE_EXT				= 0x8A48
 	DECODE_EXT					= 0x8A49
 	SKIP_DECODE_EXT					= 0x8A4A
+
+
+###############################################################################
+
+# Extension #403
+NV_texture_multisample enum:
+	TEXTURE_COVERAGE_SAMPLES_NV			= 0x9045
+	TEXTURE_COLOR_SAMPLES_NV			= 0x9046
+
+###############################################################################
+
+# Extension #404
+AMD_blend_minmax_factor enum:
+	FACTOR_MIN_AMD					= 0x901C
+	FACTOR_MAX_AMD					= 0x901D

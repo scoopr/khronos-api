@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 13168 $ on $Date: 2010-12-09 02:18:26 -0800 (Thu, 09 Dec 2010) $
+# $Revision: 14277 $ on $Date: 2011-03-30 09:21:59 -0700 (Wed, 30 Mar 2011) $
 
 ###############################################################################
 #
@@ -7691,7 +7691,9 @@ EXT_texture_snorm enum:
 	LUMINANCE16_ALPHA16_SNORM			= 0x901A
 	INTENSITY16_SNORM				= 0x901B
 
-# AMD_future_use: 0x901C-0x901D
+AMD_blend_minmax_factor enum:
+	FACTOR_MIN_AMD					= 0x901C
+	FACTOR_MAX_AMD					= 0x901D
 
 AMD_depth_clamp_separate enum:
 	DEPTH_CLAMP_NEAR_AMD				= 0x901E
@@ -7703,37 +7705,43 @@ AMD_depth_clamp_separate enum:
 # Assigned for Pat Brown (Khronos bug 4935)
 
 NV_video_capture enum:
-	  VIDEO_BUFFER_NV				= 0x9020
-	  VIDEO_BUFFER_BINDING_NV			= 0x9021
-	  FIELD_UPPER_NV				= 0x9022
-	  FIELD_LOWER_NV				= 0x9023
-	  NUM_VIDEO_CAPTURE_STREAMS_NV			= 0x9024
-	  NEXT_VIDEO_CAPTURE_BUFFER_STATUS_NV		= 0x9025
-	  VIDEO_CAPTURE_TO_422_SUPPORTED_NV		= 0x9026
-	  LAST_VIDEO_CAPTURE_STATUS_NV			= 0x9027
-	  VIDEO_BUFFER_PITCH_NV				= 0x9028
-	  VIDEO_COLOR_CONVERSION_MATRIX_NV		= 0x9029
-	  VIDEO_COLOR_CONVERSION_MAX_NV			= 0x902A
-	  VIDEO_COLOR_CONVERSION_MIN_NV			= 0x902B
-	  VIDEO_COLOR_CONVERSION_OFFSET_NV		= 0x902C
-	  VIDEO_BUFFER_INTERNAL_FORMAT_NV		= 0x902D
-	  PARTIAL_SUCCESS_NV				= 0x902E
-	  SUCCESS_NV					= 0x902F
-	  FAILURE_NV					= 0x9030
-	  YCBYCR8_422_NV				= 0x9031
-	  YCBAYCR8A_4224_NV				= 0x9032
-	  Z6Y10Z6CB10Z6Y10Z6CR10_422_NV			= 0x9033
-	  Z6Y10Z6CB10Z6A10Z6Y10Z6CR10Z6A10_4224_NV	= 0x9034
-	  Z4Y12Z4CB12Z4Y12Z4CR12_422_NV			= 0x9035
-	  Z4Y12Z4CB12Z4A12Z4Y12Z4CR12Z4A12_4224_NV	= 0x9036
-	  Z4Y12Z4CB12Z4CR12_444_NV			= 0x9037
-	  VIDEO_CAPTURE_FRAME_WIDTH_NV			= 0x9038
-	  VIDEO_CAPTURE_FRAME_HEIGHT_NV			= 0x9039
-	  VIDEO_CAPTURE_FIELD_UPPER_HEIGHT_NV		= 0x903A
-	  VIDEO_CAPTURE_FIELD_LOWER_HEIGHT_NV		= 0x903B
-	  VIDEO_CAPTURE_SURFACE_ORIGIN_NV		= 0x903C
+	VIDEO_BUFFER_NV				      = 0x9020
+	VIDEO_BUFFER_BINDING_NV			      = 0x9021
+	FIELD_UPPER_NV				      = 0x9022
+	FIELD_LOWER_NV				      = 0x9023
+	NUM_VIDEO_CAPTURE_STREAMS_NV		      = 0x9024
+	NEXT_VIDEO_CAPTURE_BUFFER_STATUS_NV	      = 0x9025
+	VIDEO_CAPTURE_TO_422_SUPPORTED_NV	      = 0x9026
+	LAST_VIDEO_CAPTURE_STATUS_NV		      = 0x9027
+	VIDEO_BUFFER_PITCH_NV			      = 0x9028
+	VIDEO_COLOR_CONVERSION_MATRIX_NV	      = 0x9029
+	VIDEO_COLOR_CONVERSION_MAX_NV		      = 0x902A
+	VIDEO_COLOR_CONVERSION_MIN_NV		      = 0x902B
+	VIDEO_COLOR_CONVERSION_OFFSET_NV	      = 0x902C
+	VIDEO_BUFFER_INTERNAL_FORMAT_NV		      = 0x902D
+	PARTIAL_SUCCESS_NV			      = 0x902E
+	SUCCESS_NV				      = 0x902F
+	FAILURE_NV				      = 0x9030
+	YCBYCR8_422_NV				      = 0x9031
+	YCBAYCR8A_4224_NV			      = 0x9032
+	Z6Y10Z6CB10Z6Y10Z6CR10_422_NV		      = 0x9033
+	Z6Y10Z6CB10Z6A10Z6Y10Z6CR10Z6A10_4224_NV      = 0x9034
+	Z4Y12Z4CB12Z4Y12Z4CR12_422_NV		      = 0x9035
+	Z4Y12Z4CB12Z4A12Z4Y12Z4CR12Z4A12_4224_NV      = 0x9036
+	Z4Y12Z4CB12Z4CR12_444_NV		      = 0x9037
+	VIDEO_CAPTURE_FRAME_WIDTH_NV		      = 0x9038
+	VIDEO_CAPTURE_FRAME_HEIGHT_NV		      = 0x9039
+	VIDEO_CAPTURE_FIELD_UPPER_HEIGHT_NV	      = 0x903A
+	VIDEO_CAPTURE_FIELD_LOWER_HEIGHT_NV	      = 0x903B
+	VIDEO_CAPTURE_SURFACE_ORIGIN_NV		      = 0x903C
 
-# NV_future_use: 0x903D-0x904B
+# NV_future_use: 0x903D-0x9044
+
+NV_texture_multisample enum:
+	TEXTURE_COVERAGE_SAMPLES_NV			= 0x9045
+	TEXTURE_COLOR_SAMPLES_NV			= 0x9046
+
+# NV_future_use: 0x9047-0x904B
 
 EXT_shader_image_load_store enum:
 	IMAGE_1D_EXT					= 0x904C
@@ -7968,6 +7976,14 @@ DMP_shader_binary enum: (OpenGL ES only)
 	SHADER_BINARY_DMP				= 0x9250
 
 # DMP_future_use: 0x9251-0x925F
+
+###############################################################################
+
+# Fujitsu: 0x9260-0x926F (Khronos bug 7486)
+
+# FJ_shader_binary enum: (OpenGL ES only)
+
+# FJ_future_use: 0x9260-0x926F
 
 ###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
