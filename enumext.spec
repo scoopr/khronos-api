@@ -6985,3 +6985,9 @@ NV_texture_multisample enum:
 AMD_blend_minmax_factor enum:
 	FACTOR_MIN_AMD					= 0x901C
 	FACTOR_MAX_AMD					= 0x901D
+
+###############################################################################
+
+# Extension #505
+#AMD_sample_positions enum:
+#	 SUBSAMPLE_DISTANCE_AMD				 = 0x883F

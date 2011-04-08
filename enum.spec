@@ -5340,7 +5340,7 @@ ATI_draw_buffers enum:
 ATI_pixel_format_float enum: (really WGL_ATI_pixel_format_float) (additional; see above)
 	COLOR_CLEAR_UNCLAMPED_VALUE_ATI			= 0x8835
 
-# ATI_future_use: 0x8836-0x883F
+# ATI_future_use: 0x8836-0x883C
 
 VERSION_2_0 enum: (Promoted for OpenGL 2.0)
 	BLEND_EQUATION_ALPHA				= 0x883D    # VERSION_2_0
@@ -5351,6 +5351,11 @@ EXT_blend_equation_separate enum:
 # Aliases EXT_blend_equation_separate enum above
 OES_blend_equation_separate enum: (OpenGL ES only)
 	BLEND_EQUATION_ALPHA_OES			= 0x883D
+
+# ATI_future_use: 0x883E
+
+AMD_sample_positions enum:
+	SUBSAMPLE_DISTANCE_AMD				= 0x883F
 
 ###############################################################################
 

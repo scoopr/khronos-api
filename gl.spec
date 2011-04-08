@@ -31598,7 +31598,7 @@ TextureImage3DMultisampleCoverageNV(texture, target, coverageSamples, colorSampl
 
 ###############################################################################
 #
-# Extension #403
+# Extension #404
 # AMD_blend_minmax_factor commands
 #
 ###############################################################################
@@ -31606,3 +31606,12 @@ TextureImage3DMultisampleCoverageNV(texture, target, coverageSamples, colorSampl
 # (none)
 newcategory: AMD_blend_minmax_factor
 
+###############################################################################
+#
+# Extension #405 (awaiting spec clarification)
+# AMD_sample_positions commands
+#
+###############################################################################
+
+#@GL_AMD_sample_positions
+#@void SetMultisamplefv(enum pname, uint index, const float *val);
