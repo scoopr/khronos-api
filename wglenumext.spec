@@ -26,9 +26,9 @@
 
 passthru:
 passthru: /* Header file version number */
-passthru: /* wglext.h last updated 2010/08/06 */
+passthru: /* wglext.h last updated 2011/04/13 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define WGL_WGLEXT_VERSION 22
+passthru: #define WGL_WGLEXT_VERSION 23
 
 ###############################################################################
 #
@@ -494,3 +494,13 @@ WGL_NV_multisample_coverage enum:
 # All values are shared with GLX and GL
 WGL_EXT_create_context_es2_profile enum:
 	WGL_CONTEXT_ES2_PROFILE_BIT_EXT			= 0x00000004
+
+###############################################################################
+
+# Extension #407
+# Not a bitfield but not from an assigned range, either
+WGL_NV_DX_interop enum:
+	WGL_ACCESS_READ_ONLY_NV				= 0x00000000
+	WGL_ACCESS_READ_WRITE_NV			= 0x00000001
+	WGL_ACCESS_WRITE_DISCARD_NV			= 0x00000002
+

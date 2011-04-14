@@ -23,6 +23,12 @@
 
 ###############################################################################
 
+# Not a bitfield but not from an assigned range, either
+WGL_NV_DX_interop enum:
+	WGL_ACCESS_READ_ONLY_NV				= 0x00000000
+	WGL_ACCESS_READ_WRITE_NV			= 0x00000001
+	WGL_ACCESS_WRITE_DISCARD_NV			= 0x00000002
+
 # Bitmasks - not consumed by the registry
 WGL_ARB_buffer_region enum:
 	WGL_FRONT_COLOR_BUFFER_BIT_ARB			= 0x00000001
