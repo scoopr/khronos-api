@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 14384 $ on $Date: 2011-04-05 23:05:03 -0700 (Tue, 05 Apr 2011) $
+# $Revision: 14881 $ on $Date: 2011-06-06 12:06:20 -0700 (Mon, 06 Jun 2011) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -6971,7 +6971,6 @@ EXT_texture_sRGB_decode enum:
 	DECODE_EXT					= 0x8A49
 	SKIP_DECODE_EXT					= 0x8A4A
 
-
 ###############################################################################
 
 # Extension #403
@@ -6988,6 +6987,23 @@ AMD_blend_minmax_factor enum:
 
 ###############################################################################
 
-# Extension #505
-#AMD_sample_positions enum:
-#	 SUBSAMPLE_DISTANCE_AMD				 = 0x883F
+# Extension #405
+AMD_sample_positions enum:
+	SUBSAMPLE_DISTANCE_AMD				= 0x883F
+
+###############################################################################
+
+# Extension #406
+EXT_x11_sync_object enum:
+	SYNC_X11_FENCE_EXT				= 0x90E1
+
+###############################################################################
+
+# Extension #407 - WGL_NV_DX_interop
+
+###############################################################################
+
+# No new tokens
+# Extension #408
+AMD_multi_draw_indirect enum:
+

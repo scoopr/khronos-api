@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 14384 $ on $Date: 2011-04-05 23:05:03 -0700 (Tue, 05 Apr 2011) $
+# $Revision: 14613 $ on $Date: 2011-05-04 15:32:28 -0700 (Wed, 04 May 2011) $
 
 ###############################################################################
 #
@@ -7710,35 +7710,35 @@ AMD_depth_clamp_separate enum:
 # Assigned for Pat Brown (Khronos bug 4935)
 
 NV_video_capture enum:
-	VIDEO_BUFFER_NV				      = 0x9020
-	VIDEO_BUFFER_BINDING_NV			      = 0x9021
-	FIELD_UPPER_NV				      = 0x9022
-	FIELD_LOWER_NV				      = 0x9023
-	NUM_VIDEO_CAPTURE_STREAMS_NV		      = 0x9024
-	NEXT_VIDEO_CAPTURE_BUFFER_STATUS_NV	      = 0x9025
-	VIDEO_CAPTURE_TO_422_SUPPORTED_NV	      = 0x9026
-	LAST_VIDEO_CAPTURE_STATUS_NV		      = 0x9027
-	VIDEO_BUFFER_PITCH_NV			      = 0x9028
-	VIDEO_COLOR_CONVERSION_MATRIX_NV	      = 0x9029
-	VIDEO_COLOR_CONVERSION_MAX_NV		      = 0x902A
-	VIDEO_COLOR_CONVERSION_MIN_NV		      = 0x902B
-	VIDEO_COLOR_CONVERSION_OFFSET_NV	      = 0x902C
-	VIDEO_BUFFER_INTERNAL_FORMAT_NV		      = 0x902D
-	PARTIAL_SUCCESS_NV			      = 0x902E
-	SUCCESS_NV				      = 0x902F
-	FAILURE_NV				      = 0x9030
-	YCBYCR8_422_NV				      = 0x9031
-	YCBAYCR8A_4224_NV			      = 0x9032
-	Z6Y10Z6CB10Z6Y10Z6CR10_422_NV		      = 0x9033
-	Z6Y10Z6CB10Z6A10Z6Y10Z6CR10Z6A10_4224_NV      = 0x9034
-	Z4Y12Z4CB12Z4Y12Z4CR12_422_NV		      = 0x9035
-	Z4Y12Z4CB12Z4A12Z4Y12Z4CR12Z4A12_4224_NV      = 0x9036
-	Z4Y12Z4CB12Z4CR12_444_NV		      = 0x9037
-	VIDEO_CAPTURE_FRAME_WIDTH_NV		      = 0x9038
-	VIDEO_CAPTURE_FRAME_HEIGHT_NV		      = 0x9039
-	VIDEO_CAPTURE_FIELD_UPPER_HEIGHT_NV	      = 0x903A
-	VIDEO_CAPTURE_FIELD_LOWER_HEIGHT_NV	      = 0x903B
-	VIDEO_CAPTURE_SURFACE_ORIGIN_NV		      = 0x903C
+	VIDEO_BUFFER_NV					= 0x9020
+	VIDEO_BUFFER_BINDING_NV				= 0x9021
+	FIELD_UPPER_NV					= 0x9022
+	FIELD_LOWER_NV					= 0x9023
+	NUM_VIDEO_CAPTURE_STREAMS_NV			= 0x9024
+	NEXT_VIDEO_CAPTURE_BUFFER_STATUS_NV		= 0x9025
+	VIDEO_CAPTURE_TO_422_SUPPORTED_NV		= 0x9026
+	LAST_VIDEO_CAPTURE_STATUS_NV			= 0x9027
+	VIDEO_BUFFER_PITCH_NV				= 0x9028
+	VIDEO_COLOR_CONVERSION_MATRIX_NV		= 0x9029
+	VIDEO_COLOR_CONVERSION_MAX_NV			= 0x902A
+	VIDEO_COLOR_CONVERSION_MIN_NV			= 0x902B
+	VIDEO_COLOR_CONVERSION_OFFSET_NV		= 0x902C
+	VIDEO_BUFFER_INTERNAL_FORMAT_NV			= 0x902D
+	PARTIAL_SUCCESS_NV				= 0x902E
+	SUCCESS_NV					= 0x902F
+	FAILURE_NV					= 0x9030
+	YCBYCR8_422_NV					= 0x9031
+	YCBAYCR8A_4224_NV				= 0x9032
+	Z6Y10Z6CB10Z6Y10Z6CR10_422_NV			= 0x9033
+	Z6Y10Z6CB10Z6A10Z6Y10Z6CR10Z6A10_4224_NV	= 0x9034
+	Z4Y12Z4CB12Z4Y12Z4CR12_422_NV			= 0x9035
+	Z4Y12Z4CB12Z4A12Z4Y12Z4CR12Z4A12_4224_NV	= 0x9036
+	Z4Y12Z4CB12Z4CR12_444_NV			= 0x9037
+	VIDEO_CAPTURE_FRAME_WIDTH_NV			= 0x9038
+	VIDEO_CAPTURE_FRAME_HEIGHT_NV			= 0x9039
+	VIDEO_CAPTURE_FIELD_UPPER_HEIGHT_NV		= 0x903A
+	VIDEO_CAPTURE_FIELD_LOWER_HEIGHT_NV		= 0x903B
+	VIDEO_CAPTURE_SURFACE_ORIGIN_NV			= 0x903C
 
 # NV_future_use: 0x903D-0x9044
 
@@ -7806,7 +7806,12 @@ NV_shader_buffer_store enum:
 ARB_texture_rgb10_a2ui enum:
 	RGB10_A2UI					= 0x906F
 
-# NV_future_use: 0x9070-0x90FF
+# NV_future_use: 0x9070-0x90E0
+
+EXT_x11_sync_object enum:
+	SYNC_X11_FENCE_EXT				= 0x90E1
+
+# NV_future_use: 0x90E2-0x90FF
 
 ###############################################################################
 
@@ -7901,7 +7906,17 @@ VERSION_3_2 enum:
 	CONTEXT_COMPATIBILITY_PROFILE_BIT		= 0x00000002
 	CONTEXT_PROFILE_MASK				= 0x9126
 
-# ARB_future_use: 0x9127-0x912F
+#@ Reserved for TBD compressed texture pixel storage extension
+#	 UNPACK_COMPRESSED_BLOCK_WIDTH			= 0x9127
+#	 UNPACK_COMPRESSED_BLOCK_HEIGHT			= 0x9128
+#	 UNPACK_COMPRESSED_BLOCK_DEPTH			= 0x9129
+#	 UNPACK_COMPRESSED_BLOCK_SIZE			= 0x912A
+#	 PACK_COMPRESSED_BLOCK_WIDTH			= 0x912B
+#	 PACK_COMPRESSED_BLOCK_HEIGHT			= 0x912C
+#	 PACK_COMPRESSED_BLOCK_DEPTH			= 0x912D
+#	 PACK_COMPRESSED_BLOCK_SIZE			= 0x912E
+#@ Reserved for EXT_texture_storage
+#	 TEXTURE_IMMUTABLE_FORMAT_EXT			= 0x912F
 
 ###############################################################################
 
@@ -7991,12 +8006,33 @@ DMP_shader_binary enum: (OpenGL ES only)
 # FJ_future_use: 0x9260-0x926F
 
 ###############################################################################
+
+# Khronos OpenGL ES: 0x9270-0x927F (Khronos Bug 7625)
+
+#	 COMPRESSED_R11_EAC_OES				 = 0x9270
+#	 COMPRESSED_SIGNED_R11_EAC_OES			 = 0x9271
+#	 COMPRESSED_RG11_EAC_OES			 = 0x9272
+#	 COMPRESSED_SIGNED_RG11_EAC_OES			 = 0x9273
+#	 COMPRESSED_RGB8_ETC2_OES			 = 0x9274
+#	 COMPRESSED_SRGB8_ETC2_OES			 = 0x9275
+#	 COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2_OES	 = 0x9276
+#	 COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2_OES	 = 0x9277
+#	 COMPRESSED_RGBA8_ETC2_EAC_OES			 = 0x9278
+#	 COMPRESSED_SRGB8_ALPHA8_ETC2_EAC_OES		 = 0x9279
+
+# Khronos_future_use: 0x927A-0x927F
+
+###############################################################################
+
+# NVIDIA: 0x9280-0x937F (Khronos bug 7658)
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x9260-0xFFFF
+# Any_vendor_future_use: 0x9380-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the

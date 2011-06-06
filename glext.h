@@ -29,9 +29,9 @@ extern "C" {
 */
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glext.h last updated $Date: 2011-04-05 23:08:32 -0700 (Tue, 05 Apr 2011) $ */
+/* glext.h last updated $Date: 2011-06-06 12:06:38 -0700 (Mon, 06 Jun 2011) $ */
 /* Current version at http://www.opengl.org/registry/ */
-#define GL_GLEXT_VERSION 68
+#define GL_GLEXT_VERSION 70
 /* Function declaration macros - to move into glplatform.h */
 
 #if defined(_WIN32) && !defined(APIENTRY) && !defined(__CYGWIN__) && !defined(__SCITECH_SNAP__)
@@ -5040,6 +5040,17 @@ extern "C" {
 #ifndef GL_AMD_blend_minmax_factor
 #define GL_FACTOR_MIN_AMD                 0x901C
 #define GL_FACTOR_MAX_AMD                 0x901D
+#endif
+
+#ifndef GL_AMD_sample_positions
+#define GL_SUBSAMPLE_DISTANCE_AMD         0x883F
+#endif
+
+#ifndef GL_EXT_x11_sync_object
+#define GL_SYNC_X11_FENCE_EXT             0x90E1
+#endif
+
+#ifndef GL_AMD_multi_draw_indirect
 #endif
 
 
@@ -11071,6 +11082,32 @@ typedef void (APIENTRYP PFNGLTEXTUREIMAGE3DMULTISAMPLECOVERAGENVPROC) (GLuint te
 
 #ifndef GL_AMD_blend_minmax_factor
 #define GL_AMD_blend_minmax_factor 1
+#endif
+
+#ifndef GL_AMD_sample_positions
+#define GL_AMD_sample_positions 1
+#ifdef GL_GLEXT_PROTOTYPES
+GLAPI void APIENTRY glSetMultisamplefvAMD (GLenum pname, GLuint index, const GLfloat *val);
+#endif /* GL_GLEXT_PROTOTYPES */
+typedef void (APIENTRYP PFNGLSETMULTISAMPLEFVAMDPROC) (GLenum pname, GLuint index, const GLfloat *val);
+#endif
+
+#ifndef GL_EXT_x11_sync_object
+#define GL_EXT_x11_sync_object 1
+#ifdef GL_GLEXT_PROTOTYPES
+GLAPI GLsync APIENTRY glImportSyncEXT (GLenum external_sync_type, GLintptr external_sync, GLbitfield flags);
+#endif /* GL_GLEXT_PROTOTYPES */
+typedef GLsync (APIENTRYP PFNGLIMPORTSYNCEXTPROC) (GLenum external_sync_type, GLintptr external_sync, GLbitfield flags);
+#endif
+
+#ifndef GL_AMD_multi_draw_indirect
+#define GL_AMD_multi_draw_indirect 1
+#ifdef GL_GLEXT_PROTOTYPES
+GLAPI void APIENTRY glMultiDrawArraysIndirectAMD (GLenum mode, const GLvoid *indirect, GLsizei primcount, GLsizei stride);
+GLAPI void APIENTRY glMultiDrawElementsIndirectAMD (GLenum mode, GLenum type, const GLvoid *indirect, GLsizei primcount, GLsizei stride);
+#endif /* GL_GLEXT_PROTOTYPES */
+typedef void (APIENTRYP PFNGLMULTIDRAWARRAYSINDIRECTAMDPROC) (GLenum mode, const GLvoid *indirect, GLsizei primcount, GLsizei stride);
+typedef void (APIENTRYP PFNGLMULTIDRAWELEMENTSINDIRECTAMDPROC) (GLenum mode, GLenum type, const GLvoid *indirect, GLsizei primcount, GLsizei stride);
 #endif
 
 
