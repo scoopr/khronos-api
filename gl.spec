@@ -7,7 +7,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 14881 $ on $Date: 2011-06-06 12:06:20 -0700 (Mon, 06 Jun 2011) $
+# $Revision: 15037 $ on $Date: 2011-07-06 02:45:54 -0700 (Wed, 06 Jul 2011) $
 
 required-props:
 # Description of a parameter
@@ -31684,4 +31684,14 @@ MultiDrawElementsIndirectAMD(mode, type, indirect, primcount, stride)
 	glxropcode	?
 	glxflags	ignore
 	offset		?
+
+###############################################################################
+#
+# Extension #409
+# EXT_framebuffer_multisample_blit_scaled commands
+#
+###############################################################################
+
+# (none)
+newcategory: EXT_framebuffer_multisample_blit_scaled
 

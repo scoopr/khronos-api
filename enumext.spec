@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 14881 $ on $Date: 2011-06-06 12:06:20 -0700 (Mon, 06 Jun 2011) $
+# $Revision: 15037 $ on $Date: 2011-07-06 02:45:54 -0700 (Wed, 06 Jul 2011) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -7007,3 +7007,9 @@ EXT_x11_sync_object enum:
 # Extension #408
 AMD_multi_draw_indirect enum:
 
+###############################################################################
+
+# Extension #409
+EXT_framebuffer_multisample_blit_scaled enum:
+	SCALED_RESOLVE_FASTEST_EXT			= 0x90BA
+	SCALED_RESOLVE_NICEST_EXT			= 0x90BB

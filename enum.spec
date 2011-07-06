@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 14613 $ on $Date: 2011-05-04 15:32:28 -0700 (Wed, 04 May 2011) $
+# $Revision: 15037 $ on $Date: 2011-07-06 02:45:54 -0700 (Wed, 06 Jul 2011) $
 
 ###############################################################################
 #
@@ -1261,6 +1261,12 @@ GetPName enum:
 	use SGI_color_table POST_COLOR_MATRIX_COLOR_TABLE_SGI
 
 	use SGI_texture_color_table TEXTURE_COLOR_TABLE_SGI
+
+# Aliases OpenGL 1.0 core enums above
+QCOM_alpha_test enum:: (OpenGL ES only)
+	ALPHA_TEST_QCOM					= 0x0BC0
+	ALPHA_TEST_FUNC_QCOM				= 0x0BC1
+	ALPHA_TEST_REF_QCOM				= 0x0BC2
 
 ###############################################################################
 
@@ -6616,7 +6622,7 @@ NV_transform_feedback enum:
 # ATI: 0x8C90-0x8C9F (Affie Munshi, OpenGL ES extensions)
 
 # Reassigned to Qualcomm at time of mobile/desktop split (bug 5874)
-# Qualcomm__future_use: 0x8C90-0x8C91
+# Qualcomm_future_use: 0x8C90-0x8C91
 
 AMD_compressed_ATC_texture enum: (OpenGL ES only)
 	ATC_RGB_AMD					= 0x8C92
@@ -6707,7 +6713,7 @@ ARB_depth_buffer_float enum: (note: no ARB suffixes)
 	DEPTH_COMPONENT32F				= 0x8CAC
 	DEPTH32F_STENCIL8				= 0x8CAD
 
-# ARB_future_use: 0x8CAF
+# ARB_future_use: 0x8CAE-0x8CAF
 
 ###############################################################################
 
@@ -6920,7 +6926,12 @@ OES_EGL_image_external enum: (OpenGL ES only) (Khronos bug 4621)
 	TEXTURE_BINDING_EXTERNAL_OES			= 0x8D67
 	REQUIRED_TEXTURE_IMAGE_UNITS_OES		= 0x8D68
 
-# Khronos_future_use: 0x8D69-0x8D6F
+# VERSION_ES_FUTURE enum: (OpenGL ES future version only)
+#	PRIMITIVE_RESTART_MAX_INDEX			= 0x8D69
+#	ANY_SAMPLES_PASSED_CONSERVATIVE			= 0x8D6A
+#	MAX_ELEMENT_INDEX				= 0x8D6B
+
+# Khronos_future_use: 0x8D6C-0x8D6F
 
 ###############################################################################
 
@@ -7806,7 +7817,21 @@ NV_shader_buffer_store enum:
 ARB_texture_rgb10_a2ui enum:
 	RGB10_A2UI					= 0x906F
 
-# NV_future_use: 0x9070-0x90E0
+# NV_future_use: 0x9070-0x90B9
+
+EXT_framebuffer_multisample_blit_scaled enum:
+	SCALED_RESOLVE_FASTEST_EXT			= 0x90BA
+	SCALED_RESOLVE_NICEST_EXT			= 0x90BB
+
+#@ VERSION_GL_FUTURE enum: (OpenGL future version only)
+# ARB_map_buffer_alignment
+#	MINIMUM_MAP_BUFFER_ALIGNMENT			= 0x90BC
+# ARB_shader_image_load_store
+#	IMAGE_FORMAT_COMPATIBILITY_TYPE			= 0x90C7
+#	IMAGE_FORMAT_COMPATIBILITY_BY_SIZE		= 0x90C8
+#	IMAGE_FORMAT_COMPATIBILITY_BY_CLASS		= 0x90C9
+
+# NV_future_use: 0x90BD-0x90C6,0x90CA-0x90E0
 
 EXT_x11_sync_object enum:
 	SYNC_X11_FENCE_EXT				= 0x90E1
@@ -8027,12 +8052,20 @@ DMP_shader_binary enum: (OpenGL ES only)
 # NVIDIA: 0x9280-0x937F (Khronos bug 7658)
 
 ###############################################################################
+
+# OpenGL ARB: 0x9380-0x939F
+
+#@ VERSION_GL_FUTURE enum: (OpenGL future version only)
+# ARB_internalformat_query enum:
+#	NUM_SAMPLE_COUNTS				= 0x9380
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x9380-0xFFFF
+# Any_vendor_future_use: 0x93A0-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the

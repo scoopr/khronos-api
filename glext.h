@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 /*
-** Copyright (c) 2007-2010 The Khronos Group Inc.
+** Copyright (c) 2007-2011 The Khronos Group Inc.
 ** 
 ** Permission is hereby granted, free of charge, to any person obtaining a
 ** copy of this software and/or associated documentation files (the
@@ -29,9 +29,9 @@ extern "C" {
 */
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glext.h last updated $Date: 2011-06-06 12:06:38 -0700 (Mon, 06 Jun 2011) $ */
+/* glext.h last updated $Date: 2011-07-06 02:49:14 -0700 (Wed, 06 Jul 2011) $ */
 /* Current version at http://www.opengl.org/registry/ */
-#define GL_GLEXT_VERSION 70
+#define GL_GLEXT_VERSION 71
 /* Function declaration macros - to move into glplatform.h */
 
 #if defined(_WIN32) && !defined(APIENTRY) && !defined(__CYGWIN__) && !defined(__SCITECH_SNAP__)
@@ -5051,6 +5051,11 @@ extern "C" {
 #endif
 
 #ifndef GL_AMD_multi_draw_indirect
+#endif
+
+#ifndef GL_EXT_framebuffer_multisample_blit_scaled
+#define GL_SCALED_RESOLVE_FASTEST_EXT     0x90BA
+#define GL_SCALED_RESOLVE_NICEST_EXT      0x90BB
 #endif
 
 
@@ -11108,6 +11113,10 @@ GLAPI void APIENTRY glMultiDrawElementsIndirectAMD (GLenum mode, GLenum type, co
 #endif /* GL_GLEXT_PROTOTYPES */
 typedef void (APIENTRYP PFNGLMULTIDRAWARRAYSINDIRECTAMDPROC) (GLenum mode, const GLvoid *indirect, GLsizei primcount, GLsizei stride);
 typedef void (APIENTRYP PFNGLMULTIDRAWELEMENTSINDIRECTAMDPROC) (GLenum mode, GLenum type, const GLvoid *indirect, GLsizei primcount, GLsizei stride);
+#endif
+
+#ifndef GL_EXT_framebuffer_multisample_blit_scaled
+#define GL_EXT_framebuffer_multisample_blit_scaled 1
 #endif
 
 
