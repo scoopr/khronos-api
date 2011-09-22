@@ -36,14 +36,14 @@ extern "C" {
  * will probably change slightly as we make sure exactly the right set
  * of interfaces is included.
  *
- * gl3.h last updated on $Date: 2011-08-08 00:34:29 -0700 (Mon, 08 Aug 2011) $
+ * gl3.h last updated on $Date: 2011-09-22 13:54:21 -0700 (Thu, 22 Sep 2011) $
  *
- * RELEASE NOTES - 2011/08/07
+ * RELEASE NOTES - 2011/09/22
  *
  * gl3.h should be placed under a directory 'GL3' and included as
  * '<GL3/gl3.h>'.
  *
- * gl3.h only includes interfaces supported in a OpenGL 3.1 (without
+ * gl3.h is supposed to only include APIs in a OpenGL 3.1 (without
  * GL_ARB_compatibility) or OpenGL 3.2-4.2 (inclusive) core profile
  * implementation, as well as interfaces for newer ARB extensions which
  * can be supported by the core profile. It does not, and never will
@@ -94,6 +94,7 @@ typedef int GLsizei;
 typedef unsigned char GLubyte;
 typedef unsigned short GLushort;
 typedef unsigned int GLuint;
+typedef unsigned short GLhalf;
 typedef float GLfloat;
 typedef float GLclampf;
 typedef double GLdouble;
