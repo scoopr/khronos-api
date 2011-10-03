@@ -36,9 +36,9 @@ extern "C" {
  * will probably change slightly as we make sure exactly the right set
  * of interfaces is included.
  *
- * gl3.h last updated on $Date: 2011-09-22 13:54:21 -0700 (Thu, 22 Sep 2011) $
+ * gl3.h last updated on $Date: 2011-10-02 22:22:16 -0700 (Sun, 02 Oct 2011) $
  *
- * RELEASE NOTES - 2011/09/22
+ * RELEASE NOTES - 2011/10/02
  *
  * gl3.h should be placed under a directory 'GL3' and included as
  * '<GL3/gl3.h>'.
@@ -612,8 +612,6 @@ typedef void GLvoid;
 #define GL_MINOR_VERSION                  0x821C
 #define GL_NUM_EXTENSIONS                 0x821D
 #define GL_CONTEXT_FLAGS                  0x821E
-#define GL_DEPTH_BUFFER                   0x8223
-#define GL_STENCIL_BUFFER                 0x8224
 #define GL_COMPRESSED_RED                 0x8225
 #define GL_COMPRESSED_RG                  0x8226
 #define GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT 0x0001

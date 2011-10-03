@@ -3306,9 +3306,16 @@ VERSION_3_0 enum:
 ARB_framebuffer_object enum: (note: no ARB suffixes)
 	INDEX						= 0x8222    # VERSION_3_0 / ARB_fbo
 
+# Due to a syncing problem between the ARB_framebuffer_object extension
+# specification and the core API specification during development, the
+# following tokens were present in the .spec file for some time. They are
+# not actually used anywhere in the OpenGL API or extensions and have been
+# withdrawn (use DEPTH or STENCIL respectively, instead, as <attachment>
+# parameters to GetFramebufferAttachmentParameteriv).
+#	 DEPTH_BUFFER					 = 0x8223
+#	 STENCIL_BUFFER					 = 0x8224
+
 VERSION_3_0 enum:
-	DEPTH_BUFFER					= 0x8223    # VERSION_3_0
-	STENCIL_BUFFER					= 0x8224    # VERSION_3_0
 	COMPRESSED_RED					= 0x8225    # VERSION_3_0
 	COMPRESSED_RG					= 0x8226    # VERSION_3_0
 
