@@ -29,9 +29,9 @@ extern "C" {
 */
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glext.h last updated $Date: 2011-10-02 22:22:16 -0700 (Sun, 02 Oct 2011) $ */
+/* glext.h last updated $Date: 2011-12-19 02:48:12 -0800 (Mon, 19 Dec 2011) $ */
 /* Current version at http://www.opengl.org/registry/ */
-#define GL_GLEXT_VERSION 73
+#define GL_GLEXT_VERSION 74
 /* Function declaration macros - to move into glplatform.h */
 
 #if defined(_WIN32) && !defined(APIENTRY) && !defined(__CYGWIN__) && !defined(__SCITECH_SNAP__)
@@ -5309,6 +5309,10 @@ extern "C" {
 #ifndef GL_EXT_framebuffer_multisample_blit_scaled
 #define GL_SCALED_RESOLVE_FASTEST_EXT     0x90BA
 #define GL_SCALED_RESOLVE_NICEST_EXT      0x90BB
+#endif
+
+#ifndef GL_AMD_pinned_memory
+#define GL_EXTERNAL_VIRTUAL_MEMORY_BUFFER_AMD 0x9160
 #endif
 
 
@@ -11476,6 +11480,10 @@ typedef void (APIENTRYP PFNGLMULTIDRAWELEMENTSINDIRECTAMDPROC) (GLenum mode, GLe
 
 #ifndef GL_EXT_framebuffer_multisample_blit_scaled
 #define GL_EXT_framebuffer_multisample_blit_scaled 1
+#endif
+
+#ifndef GL_AMD_pinned_memory
+#define GL_AMD_pinned_memory 1
 #endif
 
 
