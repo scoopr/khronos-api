@@ -36,7 +36,7 @@ extern "C" {
  * will probably change slightly as we make sure exactly the right set
  * of interfaces is included.
  *
- * gl3.h last updated on $Date: 2011-10-02 22:22:16 -0700 (Sun, 02 Oct 2011) $
+ * gl3.h last updated on $Date: 2011-10-02 22:24:53 -0700 (Sun, 02 Oct 2011) $
  *
  * RELEASE NOTES - 2011/10/02
  *

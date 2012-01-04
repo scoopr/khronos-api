@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 16409 $ on $Date: 2011-12-19 02:48:53 -0800 (Mon, 19 Dec 2011) $
+# $Revision: 16478 $ on $Date: 2012-01-04 09:50:51 -0800 (Wed, 04 Jan 2012) $
 
 ###############################################################################
 #
@@ -7108,7 +7108,10 @@ OES_EGL_image_external enum: (OpenGL ES only) (Khronos bug 4621)
 EXT_occlusion_query_boolean enum: (OpenGL ES only; additional; see above)
 	ANY_SAMPLES_PASSED_CONSERVATIVE_EXT		= 0x8D6A
 
-# Khronos_future_use: 0x8D6C-0x8D6F
+EXT_multisampled_render_to_texture enum: (OpenGL ES only; additional; see below)
+	FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT	= 0x8D6C
+
+# Khronos_future_use: 0x8D6D-0x8D6F
 
 ###############################################################################
 
