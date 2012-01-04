@@ -26,9 +26,9 @@
 
 passthru:
 passthru: /* Header file version number */
-passthru: /* wglext.h last updated 2011/04/13 */
+passthru: /* wglext.h last updated 2012/01/04 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define WGL_WGLEXT_VERSION 23
+passthru: #define WGL_WGLEXT_VERSION 24
 
 ###############################################################################
 #
@@ -503,4 +503,11 @@ WGL_NV_DX_interop enum:
 	WGL_ACCESS_READ_ONLY_NV				= 0x00000000
 	WGL_ACCESS_READ_WRITE_NV			= 0x00000001
 	WGL_ACCESS_WRITE_DISCARD_NV			= 0x00000002
+
+###############################################################################
+
+# No new tokens
+# Extension #412
+WGL_NV_DX_interop2 enum:
+
 

@@ -1183,3 +1183,13 @@ DXUnlockObjectsNV(hDevice, count, hObjects)
 	param		hObjects	HANDLE out array [count]
 	category	NV_DX_interop
 
+###############################################################################
+#
+# Extension #412
+# WGL_NV_DX_interop2 commands
+#
+###############################################################################
+
+# (none)
+newcategory: NV_DX_interop2
+
