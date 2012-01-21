@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 16478 $ on $Date: 2012-01-04 09:50:51 -0800 (Wed, 04 Jan 2012) $
+# $Revision: 16622 $ on $Date: 2012-01-18 13:18:22 -0800 (Wed, 18 Jan 2012) $
 
 ###############################################################################
 #
@@ -6393,6 +6393,10 @@ EXT_debug_label enum: (OpenGL ES only; additional; see above)
 # Aliases ARB_shader_objects enum above
 OES_texture3D enum: (OpenGL ES only; additional; see above)
 	SAMPLER_3D_OES					= 0x8B5F    # ARB_shader_objects
+
+# Aliases VERSION_2_0 enum above
+EXT_shadow_samplers enum: (OpenGL ES only; additional; see above)
+	SAMPLER_2D_SHADOW_EXT				= 0x8B62
 
 # Aliases ARB_fragment_shader enum above
 OES_standard_derivatives enum: (OpenGL ES only)
