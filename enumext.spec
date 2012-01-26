@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 16409 $ on $Date: 2011-12-19 02:48:53 -0800 (Mon, 19 Dec 2011) $
+# $Revision: 16728 $ on $Date: 2012-01-26 02:57:23 -0800 (Thu, 26 Jan 2012) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -7309,3 +7309,17 @@ EXT_framebuffer_multisample_blit_scaled enum:
 # Extension #411
 AMD_pinned_memory enum:
 	EXTERNAL_VIRTUAL_MEMORY_BUFFER_AMD		= 0x9160
+
+###############################################################################
+
+# Extension #412 - WGL_NV_DX_interop2
+
+###############################################################################
+
+# Extension #413
+AMD_stencil_operation_extended enum:
+	SET_AMD						= 0x874A
+	REPLACE_VALUE_AMD				= 0x874B
+	STENCIL_OP_VALUE_AMD				= 0x874C
+	STENCIL_BACK_OP_VALUE_AMD			= 0x874D
+

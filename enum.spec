@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 16622 $ on $Date: 2012-01-18 13:18:22 -0800 (Wed, 18 Jan 2012) $
+# $Revision: 16728 $ on $Date: 2012-01-26 02:57:23 -0800 (Thu, 26 Jan 2012) $
 
 ###############################################################################
 #
@@ -5040,7 +5040,15 @@ ATI_texture_env_combine3 enum:
 	MODULATE_SIGNED_ADD_ATI				= 0x8745
 	MODULATE_SUBTRACT_ATI				= 0x8746
 
-# ATI_future_use: 0x8747-0x874F
+# AMD_future_use: 0x8747-0x8749
+
+AMD_stencil_operation_extended enum:
+	SET_AMD						= 0x874A
+	REPLACE_VALUE_AMD				= 0x874B
+	STENCIL_OP_VALUE_AMD				= 0x874C
+	STENCIL_BACK_OP_VALUE_AMD			= 0x874D
+
+# AMD_future_use: 0x874E-0x874F
 
 ###############################################################################
 
@@ -5134,7 +5142,7 @@ ATI_envmap_bumpmap enum:
 	BUMP_ENVMAP_ATI					= 0x877B
 	BUMP_TARGET_ATI					= 0x877C
 
-# ATI_future_use: 0x877D-0x877F
+# AMD_future_use: 0x877D-0x877F
 
 EXT_vertex_shader enum:
 	VERTEX_SHADER_EXT				= 0x8780
@@ -5306,7 +5314,7 @@ ARB_fragment_program enum:
 	MAX_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB		= 0x880F
 	MAX_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB		= 0x8810
 
-# ATI_future_use: 0x8811-0x8813
+# AMD_future_use: 0x8811-0x8813
 
 VERSION_3_0 enum:
 	RGBA32F						= 0x8814    # VERSION_3_0
@@ -5367,7 +5375,7 @@ ARB_color_buffer_float enum:
 ATI_pixel_format_float enum: (really WGL_ATI_pixel_format_float)
 	TYPE_RGBA_FLOAT_ATI				= 0x8820
 
-# ATI_future_use: 0x8821-0x8822
+# AMD_future_use: 0x8821-0x8822
 
 QCOM_writeonly_rendering enum: (OpenGL ES only)
 	WRITEONLY_RENDERING_QCOM			= 0x8823
@@ -5451,7 +5459,7 @@ NV_draw_buffers enum: (OpenGL ES only)
 ATI_pixel_format_float enum: (really WGL_ATI_pixel_format_float) (additional; see above)
 	COLOR_CLEAR_UNCLAMPED_VALUE_ATI			= 0x8835
 
-# ATI_future_use: 0x8836-0x883C
+# AMD_future_use: 0x8836-0x883C
 
 VERSION_2_0 enum: (Promoted for OpenGL 2.0)
 	BLEND_EQUATION_ALPHA				= 0x883D    # VERSION_2_0
@@ -5463,7 +5471,7 @@ EXT_blend_equation_separate enum:
 OES_blend_equation_separate enum: (OpenGL ES only)
 	BLEND_EQUATION_ALPHA_OES			= 0x883D
 
-# ATI_future_use: 0x883E
+# AMD_future_use: 0x883E
 
 AMD_sample_positions enum:
 	SUBSAMPLE_DISTANCE_AMD				= 0x883F
@@ -6075,7 +6083,7 @@ ATI_fragment_shader enum:
 	NEGATE_BIT_ATI					= 0x00000004
 	BIAS_BIT_ATI					= 0x00000008
 
-# ATI_future_use: 0x897C-0x897F
+# AMD_future_use: 0x897C-0x897F
 
 ###############################################################################
 
@@ -6489,7 +6497,7 @@ AMD_performance_monitor enum:
 	PERFMON_RESULT_SIZE_AMD				= 0x8BC5
 	PERFMON_RESULT_AMD				= 0x8BC6
 
-# ATI_future_use: 0x8BC7-0x8BD1
+# AMD_future_use: 0x8BC7-0x8BD1
 
 QCOM_extended_get enum: (OpenGL ES only)
 	TEXTURE_WIDTH_QCOM				= 0x8BD2
@@ -6504,7 +6512,7 @@ QCOM_extended_get enum: (OpenGL ES only)
 	TEXTURE_OBJECT_VALID_QCOM			= 0x8BDB
 	STATE_RESTORE					= 0x8BDC
 
-# ATI_future_use: 0x8BDD-0x8BFF
+# AMD_future_use: 0x8BDD-0x8BFF
 
 ###############################################################################
 

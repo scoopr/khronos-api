@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 /*
-** Copyright (c) 2007-2011 The Khronos Group Inc.
+** Copyright (c) 2007-2012 The Khronos Group Inc.
 ** 
 ** Permission is hereby granted, free of charge, to any person obtaining a
 ** copy of this software and/or associated documentation files (the
@@ -29,9 +29,9 @@ extern "C" {
 */
 
 /* Header file version number, required by OpenGL ABI for Linux */
-/* glext.h last updated $Date: 2011-12-19 02:48:53 -0800 (Mon, 19 Dec 2011) $ */
+/* glext.h last updated $Date: 2012-01-26 02:44:56 -0800 (Thu, 26 Jan 2012) $ */
 /* Current version at http://www.opengl.org/registry/ */
-#define GL_GLEXT_VERSION 74
+#define GL_GLEXT_VERSION 75
 /* Function declaration macros - to move into glplatform.h */
 
 #if defined(_WIN32) && !defined(APIENTRY) && !defined(__CYGWIN__) && !defined(__SCITECH_SNAP__)
@@ -5313,6 +5313,13 @@ extern "C" {
 
 #ifndef GL_AMD_pinned_memory
 #define GL_EXTERNAL_VIRTUAL_MEMORY_BUFFER_AMD 0x9160
+#endif
+
+#ifndef GL_AMD_stencil_operation_extended
+#define GL_SET_AMD                        0x874A
+#define GL_REPLACE_VALUE_AMD              0x874B
+#define GL_STENCIL_OP_VALUE_AMD           0x874C
+#define GL_STENCIL_BACK_OP_VALUE_AMD      0x874D
 #endif
 
 
@@ -11484,6 +11491,14 @@ typedef void (APIENTRYP PFNGLMULTIDRAWELEMENTSINDIRECTAMDPROC) (GLenum mode, GLe
 
 #ifndef GL_AMD_pinned_memory
 #define GL_AMD_pinned_memory 1
+#endif
+
+#ifndef GL_AMD_stencil_operation_extended
+#define GL_AMD_stencil_operation_extended 1
+#ifdef GL_GLEXT_PROTOTYPES
+GLAPI void APIENTRY glStencilOpValueAMD (GLenum face, GLuint value);
+#endif /* GL_GLEXT_PROTOTYPES */
+typedef void (APIENTRYP PFNGLSTENCILOPVALUEAMDPROC) (GLenum face, GLuint value);
 #endif
 
 
