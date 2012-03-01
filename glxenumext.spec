@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 12183 $ on $Date: 2010-08-06 02:53:05 -0700 (Fri, 06 Aug 2010) $
+# $Revision: 17000 $ on $Date: 2012-02-29 19:27:51 -0800 (Wed, 29 Feb 2012) $
 
 # List of GLX enumerants for glxext.h header
 #
@@ -25,9 +25,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glxext.h last updated 2010/08/06 */
+passthru: /* glxext.h last updated 2012/02/29 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GLX_GLXEXT_VERSION 32
+passthru: #define GLX_GLXEXT_VERSION 33
 
 ###############################################################################
 #
@@ -563,3 +563,9 @@ AMD_gpu_association enum:
 # All values are shared with WGL and GL
 EXT_create_context_es2_profile enum:
 	CONTEXT_ES2_PROFILE_BIT_EXT			= 0x00000004
+
+###############################################################################
+
+# Extension #414
+EXT_swap_control_tear enum:
+	LATE_SWAPS_TEAR_EXT				= 0x20F3

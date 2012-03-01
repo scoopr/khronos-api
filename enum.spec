@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 16728 $ on $Date: 2012-01-26 02:57:23 -0800 (Thu, 26 Jan 2012) $
+# $Revision: 16999 $ on $Date: 2012-02-29 19:26:58 -0800 (Wed, 29 Feb 2012) $
 
 ###############################################################################
 #
@@ -3757,6 +3757,14 @@ EXT_texture_compression_s3tc enum:
 	COMPRESSED_RGBA_S3TC_DXT3_EXT			= 0x83F2
 	COMPRESSED_RGBA_S3TC_DXT5_EXT			= 0x83F3
 
+# Aliases EXT_texture_compression_s3tc enum above
+ANGLE_texture_compression_dxt3 enum: (OpenGL ES only)
+	COMPRESSED_RGBA_S3TC_DXT3_ANGLE			= 0x83F2
+
+# Aliases EXT_texture_compression_s3tc enum above
+ANGLE_texture_compression_dxt5 enum: (OpenGL ES only)
+	COMPRESSED_RGBA_S3TC_DXT5_ANGLE			= 0x83F3
+
 INTEL_parallel_arrays enum:
 	PARALLEL_ARRAYS_INTEL				= 0x83F4
 	VERTEX_ARRAY_PARALLEL_POINTERS_INTEL		= 0x83F5
@@ -5911,6 +5919,10 @@ VERSION_3_3 enum:
 
 ARB_instanced_arrays enum:
 	VERTEX_ATTRIB_ARRAY_DIVISOR_ARB			= 0x88FE
+
+# Aliases ARB_instance_arrays enum above
+ANGLE_instanced_arrays enum: (OpenGL ES only)
+	VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE		= 0x88FE
 
 VERSION_3_0 enum:
 	MAX_ARRAY_TEXTURE_LAYERS			= 0x88FF    # VERSION_3_0
@@ -8343,7 +8355,18 @@ ARB_internalformat_query enum:
 
 # ANGLE: 0x93A0-0x93AF (Khronos bug 8100)
 
-# ANGLE_future_use: 0x93A0-0x93AF
+ANGLE_translated_shader_source enum: (OpenGL ES only)
+	TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE		= 0x93A0
+
+ANGLE_texture_usage enum: (OpenGL ES only)
+	TEXTURE_USAGE_ANGLE				= 0x93A2
+	FRAMEBUFFER_ATTACHMENT_ANGLE			= 0x93A3
+	use DrawBufferMode NONE
+
+ANGLE_pack_reverse_row_order enum: (OpenGL ES only)
+	PACK_REVERSE_ROW_ORDER_ANGLE			= 0x93A4
+
+# ANGLE_future_use: 0x93A1,0x93A5-0x93AF
 
 ###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request

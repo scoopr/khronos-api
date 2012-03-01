@@ -7,7 +7,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 12183 $ on $Date: 2010-08-06 02:53:05 -0700 (Fri, 06 Aug 2010) $
+# $Revision: 16999 $ on $Date: 2012-02-29 19:26:58 -0800 (Wed, 29 Feb 2012) $
 
 required-props:
 param:		retval retained
@@ -1490,3 +1490,14 @@ newcategory: NV_multisample_coverage
 #@	   glxropcode	   ?
 #@	   glxflags	   ignore
 #@	   offset	   ?
+
+###############################################################################
+#
+# Extension #414
+# EXT_swap_control_tear commands
+#
+###############################################################################
+
+# (none)
+newcategory: EXT_swap_control_tear
+

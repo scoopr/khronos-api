@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 12183 $ on $Date: 2010-08-06 02:53:05 -0700 (Fri, 06 Aug 2010) $
+# $Revision: 16999 $ on $Date: 2012-02-29 19:26:58 -0800 (Wed, 29 Feb 2012) $
 
 # This is the GLX enumerant registry.
 #
@@ -356,7 +356,10 @@ EXT_swap_control enum:
 	SWAP_INTERVAL_EXT				= 0x20F1
 	MAX_SWAP_INTERVAL_EXT				= 0x20F2
 
-# NV_future_use: 0x20F3-0x219F
+EXT_swap_control_tear enum:
+	LATE_SWAPS_TEAR_EXT				= 0x20F3
+
+# NV_future_use: 0x20F4-0x219F
 
 ###############################################################################
 
