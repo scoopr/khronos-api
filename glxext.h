@@ -968,9 +968,9 @@ typedef void ( * PFNGLXRELEASEVIDEOCAPTUREDEVICENVPROC) (Display *dpy, GLXVideoC
 #ifndef GLX_EXT_swap_control
 #define GLX_EXT_swap_control 1
 #ifdef GLX_GLXEXT_PROTOTYPES
-extern int glXSwapIntervalEXT (Display *dpy, GLXDrawable drawable, int interval);
+extern void glXSwapIntervalEXT (Display *dpy, GLXDrawable drawable, int interval);
 #endif /* GLX_GLXEXT_PROTOTYPES */
-typedef int ( * PFNGLXSWAPINTERVALEXTPROC) (Display *dpy, GLXDrawable drawable, int interval);
+typedef void ( * PFNGLXSWAPINTERVALEXTPROC) (Display *dpy, GLXDrawable drawable, int interval);
 #endif
 
 #ifndef GLX_NV_copy_image

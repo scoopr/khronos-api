@@ -1302,12 +1302,13 @@ ReleaseVideoCaptureDeviceNV(dpy, device)
 ###############################################################################
 
 SwapIntervalEXT(dpy, drawable, interval)
-	return		int
+	return		void
 	param		dpy		Display out reference
 	param		drawable	GLXDrawable in value
 	param		interval	int in value
 	category	EXT_swap_control
 	glxflags	client-handcode server-handcode
+	glxvendorglx	1416
 
 ###############################################################################
 #
