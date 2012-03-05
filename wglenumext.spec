@@ -510,4 +510,11 @@ WGL_NV_DX_interop enum:
 # Extension #412
 WGL_NV_DX_interop2 enum:
 
+###############################################################################
+
+# No new tokens
+# Extension #415
+WGL_EXT_swap_control_tear enum:
+
+
 

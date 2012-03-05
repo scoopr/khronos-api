@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 10796 $ on $Date: 2010-03-19 17:31:10 -0700 (Fri, 19 Mar 2010) $
+# $Revision: 17025 $ on $Date: 2012-03-05 03:01:59 -0800 (Mon, 05 Mar 2012) $
 
 required-props:
 param:		retval retained
@@ -516,7 +516,7 @@ QueryMaxSwapBarriersSGIX()
 ###############################################################################
 
 QueryHyperpipeNetworkSGIX(dpy, npipes)
-	return		GLXHyperpipeNetworkPointer
+	return		GLXHyperpipeNetworkSGIXPointer
 	param		dpy		Display out reference
 	param		npipes		int out reference
 	glxflags	client-handcode server-handcode
@@ -529,7 +529,7 @@ HyperpipeConfigSGIX(dpy, networkId, npipes, cfg, hpId)
 	param		dpy		Display out reference
 	param		networkId	int in value
 	param		npipes		int in value
-	param		cfg		GLXHyperpipeConfig in array[npipes]
+	param		cfg		GLXHyperpipeConfigSGIX in array[npipes]
 	param		hpId		int out reference
 	glxflags	client-handcode server-handcode
 	category	glx
@@ -537,7 +537,7 @@ HyperpipeConfigSGIX(dpy, networkId, npipes, cfg, hpId)
 	glxvendorglx	65552
 
 QueryHyperpipeConfigSGIX(dpy, hpId, npipes)
-	return		GLXHyperpipeConfigPointer
+	return		GLXHyperpipeConfigSGIXPointer
 	param		dpy		Display out reference
 	param		hpId		int in value
 	param		npipes		int out reference

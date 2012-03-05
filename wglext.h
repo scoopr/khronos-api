@@ -425,6 +425,9 @@ extern "C" {
 #ifndef WGL_NV_DX_interop2
 #endif
 
+#ifndef WGL_EXT_swap_control_tear
+#endif
+
 
 /*************************************************************/
 
@@ -926,6 +929,10 @@ typedef BOOL (WINAPI * PFNWGLDXUNLOCKOBJECTSNVPROC) (HANDLE hDevice, GLint count
 
 #ifndef WGL_NV_DX_interop2
 #define WGL_NV_DX_interop2 1
+#endif
+
+#ifndef WGL_EXT_swap_control_tear
+#define WGL_EXT_swap_control_tear 1
 #endif
 
 

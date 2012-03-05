@@ -1090,7 +1090,7 @@ ReleaseVideoCaptureDeviceNV(hDc, hDevice)
 ###############################################################################
 #
 # Extension #376
-# WGL_NV_copy_image commands
+# NV_copy_image commands
 #
 ###############################################################################
 
@@ -1186,10 +1186,20 @@ DXUnlockObjectsNV(hDevice, count, hObjects)
 ###############################################################################
 #
 # Extension #412
-# WGL_NV_DX_interop2 commands
+# NV_DX_interop2 commands
 #
 ###############################################################################
 
 # (none)
 newcategory: NV_DX_interop2
+
+###############################################################################
+#
+# Extension #415
+# EXT_swap_control_tear commands
+#
+###############################################################################
+
+# (none)
+newcategory: EXT_swap_control_tear
 
