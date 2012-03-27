@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 17023 $ on $Date: 2012-03-05 02:53:16 -0800 (Mon, 05 Mar 2012) $
+# $Revision: 17214 $ on $Date: 2012-03-26 17:44:23 -0700 (Mon, 26 Mar 2012) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -7457,4 +7457,33 @@ AMD_stencil_operation_extended enum:
 	REPLACE_VALUE_AMD				= 0x874B
 	STENCIL_OP_VALUE_AMD				= 0x874C
 	STENCIL_BACK_OP_VALUE_AMD			= 0x874D
+
+###############################################################################
+
+# Extension #414 - GLX_EXT_swap_control_tear
+# Extension #415 - WGL_EXT_swap_control_tear
+
+###############################################################################
+
+# No new tokens
+# Extension #416
+AMD_vertex_shader_viewport_index enum:
+
+###############################################################################
+
+# No new tokens
+# Extension #417
+AMD_vertex_shader_layer enum:
+
+###############################################################################
+
+# No new tokens
+# Extension #418
+NV_bindless_texture enum:
+
+###############################################################################
+
+# No new tokens
+# Extension #419
+NV_shader_atomic_float enum:
 
