@@ -7,7 +7,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 17237 $ on $Date: 2012-03-28 22:30:00 -0700 (Wed, 28 Mar 2012) $
+# $Revision: 17519 $ on $Date: 2012-04-19 12:07:23 -0700 (Thu, 19 Apr 2012) $
 
 required-props:
 # Description of a parameter
@@ -5081,7 +5081,7 @@ MultiDrawElements(mode, count, type, indices, primcount)
 	param		mode		BeginMode in value
 	param		count		SizeI in array [COMPSIZE(primcount)]
 	param		type		DrawElementsType in value
-	param		indices		VoidPointer in array [COMPSIZE(primcount)]
+	param		indices		ConstVoidPointer in array [COMPSIZE(primcount)]
 	param		primcount	SizeI in value
 	category	VERSION_1_4
 	version		1.4
@@ -5756,7 +5756,7 @@ GetBufferPointerv(target, pname, params)
 	return		void
 	param		target		BufferTargetARB in value
 	param		pname		BufferPointerNameARB in value
-	param		params		VoidPointer out array [1]
+	param		params		VoidPointer in array [1]
 	category	VERSION_1_5
 	dlflags		notlistable
 	version		1.5
@@ -6144,7 +6144,7 @@ GetVertexAttribPointerv(index, pname, pointer)
 	return		void
 	param		index		UInt32 in value
 	param		pname		VertexAttribPointerPropertyARB in value
-	param		pointer		VoidPointer out array [1]
+	param		pointer		VoidPointer in array [1]
 	dlflags		notlistable
 	category	VERSION_2_0
 	version		2.0
@@ -6186,7 +6186,7 @@ ShaderSource(shader, count, string, length)
 	return		void
 	param		shader		UInt32 in value
 	param		count		SizeI in value
-	param		string		CharPointer in array [count]
+	param		string		ConstCharPointer in array [count]
 	param		length		Int32 in array [1]
 	category	VERSION_2_0
 	version		2.0
@@ -7113,7 +7113,7 @@ TransformFeedbackVaryings(program, count, varyings, bufferMode)
 	return		void
 	param		program		UInt32 in value
 	param		count		SizeI in value
-	param		varyings	CharPointer in array [count]
+	param		varyings	ConstCharPointer in array [count]
 	param		bufferMode	GLenum in value
 	category	VERSION_3_0
 	version		3.0
@@ -11178,7 +11178,7 @@ GetUniformIndices(program, uniformCount, uniformNames, uniformIndices)
 	return		void
 	param		program		UInt32 in value
 	param		uniformCount	SizeI in value
-	param		uniformNames	CharPointer in array [COMPSIZE(uniformCount)]
+	param		uniformNames	ConstCharPointer in array [COMPSIZE(uniformCount)]
 	param		uniformIndices	UInt32 out array [COMPSIZE(uniformCount)]
 	category	ARB_uniform_buffer_object
 	dlflags		notlistable
@@ -11380,7 +11380,7 @@ MultiDrawElementsBaseVertex(mode, count, type, indices, primcount, basevertex)
 	param		mode		GLenum in value
 	param		count		SizeI in array [COMPSIZE(primcount)]
 	param		type		DrawElementsType in value
-	param		indices		VoidPointer in array [COMPSIZE(primcount)]
+	param		indices		ConstVoidPointer in array [COMPSIZE(primcount)]
 	param		primcount	SizeI in value
 	param		basevertex	Int32 in array [COMPSIZE(primcount)]
 	category	ARB_draw_elements_base_vertex
@@ -13260,7 +13260,7 @@ CreateShaderProgramv(type, count, strings)
 	return		UInt32
 	param		type		GLenum in value
 	param		count		SizeI in value
-	param		strings		CharPointer in array [count]
+	param		strings		ConstCharPointer in array [count]
 	category	ARB_separate_shader_objects
 	version		4.1
 	extension

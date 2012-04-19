@@ -12,6 +12,7 @@ Boolean,*,*,			    GLboolean,*,*
 BooleanPointer,*,*,		    GLboolean*,*,*
 Char,*,*,			    GLchar,*,*
 CharPointer,*,*,		    GLchar*,*,*
+ConstCharPointer,*,*,		    GLchar* const,*,*
 CheckedFloat32,*,*,		    GLfloat,*,*
 CheckedInt32,*,*,		    GLint,*,*
 ClampColorTargetARB,*,*,	    GLenum,*,*

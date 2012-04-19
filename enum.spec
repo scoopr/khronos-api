@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 17023 $ on $Date: 2012-03-05 02:53:16 -0800 (Mon, 05 Mar 2012) $
+# $Revision: 17519 $ on $Date: 2012-04-19 12:07:23 -0700 (Thu, 19 Apr 2012) $
 
 ###############################################################################
 #
@@ -5056,7 +5056,10 @@ AMD_stencil_operation_extended enum:
 	STENCIL_OP_VALUE_AMD				= 0x874C
 	STENCIL_BACK_OP_VALUE_AMD			= 0x874D
 
-# AMD_future_use: 0x874E-0x874F
+# ARB_future_use: 0x874E
+#	VERTEX_ATTRIB_ARRAY_LONG			= 0x874E
+
+# AMD_future_use: 0x874F
 
 ###############################################################################
 
@@ -7112,7 +7115,13 @@ OES_vertex_half_float enum: (OpenGL ES only)
 OES_framebuffer_object enum: (OpenGL ES only)
 	RGB565_OES					= 0x8D62
 
-# Khronos_future_use: 0x8D63
+VERSION_4_1 enum:
+ARB_ES2_compatibility enum: (additional; see below)
+# Added 2012/04/13 in revision 6 of the extension
+	RGB565						= 0x8D62
+
+# VERSION_ES_FUTURE enum: (OpenGL ES future version only)
+#	TEXTURE_IMMUTABLE_LEVELS			= 0x8D63
 
 OES_compressed_ETC1_RGB8_texture enum: (OpenGL ES only)
 	ETC1_RGB8_OES					= 0x8D64
@@ -7469,8 +7478,10 @@ NV_multisample_coverage enum:
 
 ARB_transform_feedback2 enum:
 	TRANSFORM_FEEDBACK				= 0x8E22
-	TRANSFORM_FEEDBACK_BUFFER_PAUSED		= 0x8E23
-	TRANSFORM_FEEDBACK_BUFFER_ACTIVE		= 0x8E24
+	TRANSFORM_FEEDBACK_PAUSED			= 0x8E23
+	TRANSFORM_FEEDBACK_BUFFER_PAUSED		= GL_TRANSFORM_FEEDBACK_PAUSED
+	TRANSFORM_FEEDBACK_ACTIVE			= 0x8E24
+	TRANSFORM_FEEDBACK_BUFFER_ACTIVE		= GL_TRANSFORM_FEEDBACK_ACTIVE
 	TRANSFORM_FEEDBACK_BINDING			= 0x8E25
 
 NV_transform_feedback2 enum:
@@ -7703,8 +7714,10 @@ NV_shader_buffer_load enum: (additional; see above)
 	MAX_SHADER_BUFFER_ADDRESS_NV			= 0x8F35
 
 ARB_copy_buffer enum:
-	COPY_READ_BUFFER				= 0x8F36
-	COPY_WRITE_BUFFER				= 0x8F37
+	COPY_READ_BUFFER_BINDING			= 0x8F36
+	COPY_READ_BUFFER				= GL_COPY_READ_BUFFER_BINDING
+	COPY_WRITE_BUFFER_BINDING			= 0x8F37
+	COPY_WRITE_BUFFER				= GL_COPY_WRITE_BUFFER_BINDING
 
 VERSION_3_1 enum:
 	use ARB_copy_buffer		    COPY_READ_BUFFER

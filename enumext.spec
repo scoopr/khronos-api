@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 17214 $ on $Date: 2012-03-26 17:44:23 -0700 (Mon, 26 Mar 2012) $
+# $Revision: 17519 $ on $Date: 2012-04-19 12:07:23 -0700 (Thu, 19 Apr 2012) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -1646,6 +1646,7 @@ passthru: /* Reuse tokens from ARB_ES2_compatibility */
 	use ARB_ES2_compatibility	    MAX_VERTEX_UNIFORM_VECTORS
 	use ARB_ES2_compatibility	    MAX_VARYING_VECTORS
 	use ARB_ES2_compatibility	    MAX_FRAGMENT_UNIFORM_VECTORS
+	use ARB_ES2_compatibility	    RGB565
 passthru: /* Reuse tokens from ARB_get_program_binary */
 	use ARB_get_program_binary	    PROGRAM_BINARY_RETRIEVABLE_HINT
 	use ARB_get_program_binary	    PROGRAM_BINARY_LENGTH
@@ -1794,6 +1795,8 @@ passthru: /* Reuse tokens from ARB_shading_language_packing (none) */
 passthru: /* Reuse tokens from ARB_texture_storage */
 	use ARB_texture_storage		    TEXTURE_IMMUTABLE_FORMAT
 
+# ARB_future_use: 0x874E
+#	VERTEX_ATTRIB_ARRAY_LONG			= 0x874E
 
 ###############################################################################
 #
@@ -2735,8 +2738,10 @@ passthru: /* ARB_compatibility just defines tokens from core 3.0 */
 
 # ARB Extension #59
 ARB_copy_buffer enum:
-	COPY_READ_BUFFER				= 0x8F36
-	COPY_WRITE_BUFFER				= 0x8F37
+	COPY_READ_BUFFER_BINDING			= 0x8F36
+	COPY_READ_BUFFER				= GL_COPY_READ_BUFFER_BINDING
+	COPY_WRITE_BUFFER_BINDING			= 0x8F37
+	COPY_WRITE_BUFFER				= GL_COPY_WRITE_BUFFER_BINDING
 
 ###############################################################################
 
@@ -3061,8 +3066,10 @@ ARB_texture_buffer_object_rgb32 enum:
 # ARB Extension #93
 ARB_transform_feedback2 enum:
 	TRANSFORM_FEEDBACK				= 0x8E22
-	TRANSFORM_FEEDBACK_BUFFER_PAUSED		= 0x8E23
-	TRANSFORM_FEEDBACK_BUFFER_ACTIVE		= 0x8E24
+	TRANSFORM_FEEDBACK_PAUSED			= 0x8E23
+	TRANSFORM_FEEDBACK_BUFFER_PAUSED		= GL_TRANSFORM_FEEDBACK_PAUSED
+	TRANSFORM_FEEDBACK_ACTIVE			= 0x8E24
+	TRANSFORM_FEEDBACK_BUFFER_ACTIVE		= GL_TRANSFORM_FEEDBACK_ACTIVE
 	TRANSFORM_FEEDBACK_BINDING			= 0x8E25
 
 ###############################################################################
@@ -3090,6 +3097,7 @@ ARB_ES2_compatibility enum:
 	MAX_VERTEX_UNIFORM_VECTORS			= 0x8DFB
 	MAX_VARYING_VECTORS				= 0x8DFC
 	MAX_FRAGMENT_UNIFORM_VECTORS			= 0x8DFD
+	RBG565						= 0x8D62
 
 ###############################################################################
 
