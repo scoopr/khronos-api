@@ -7,7 +7,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 17519 $ on $Date: 2012-04-19 12:07:23 -0700 (Thu, 19 Apr 2012) $
+# $Revision: 17604 $ on $Date: 2012-04-26 00:59:42 -0700 (Thu, 26 Apr 2012) $
 
 required-props:
 # Description of a parameter
@@ -5756,7 +5756,7 @@ GetBufferPointerv(target, pname, params)
 	return		void
 	param		target		BufferTargetARB in value
 	param		pname		BufferPointerNameARB in value
-	param		params		VoidPointer in array [1]
+	param		params		VoidPointer out array [1]
 	category	VERSION_1_5
 	dlflags		notlistable
 	version		1.5
@@ -6144,7 +6144,7 @@ GetVertexAttribPointerv(index, pname, pointer)
 	return		void
 	param		index		UInt32 in value
 	param		pname		VertexAttribPointerPropertyARB in value
-	param		pointer		VoidPointer in array [1]
+	param		pointer		VoidPointer out array [1]
 	dlflags		notlistable
 	category	VERSION_2_0
 	version		2.0

@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 17519 $ on $Date: 2012-04-19 12:07:23 -0700 (Thu, 19 Apr 2012) $
+# $Revision: 17579 $ on $Date: 2012-04-24 08:36:00 -0700 (Tue, 24 Apr 2012) $
 
 ###############################################################################
 #
@@ -8435,9 +8435,10 @@ DMP_shader_binary enum: (OpenGL ES only)
 
 # Fujitsu: 0x9260-0x926F (Khronos bug 7486)
 
-# FJ_shader_binary enum: (OpenGL ES only)
+FJ_shader_binary_GCCSO enum: (OpenGL ES only)
+	GCCSO_SHADER_BINARY_FJ				= 0x9260
 
-# FJ_future_use: 0x9260-0x926F
+# FJ_future_use: 0x9261-0x926F
 
 ###############################################################################
 
@@ -8522,12 +8523,18 @@ ANGLE_pack_reverse_row_order enum: (OpenGL ES only)
 # ANGLE_future_use: 0x93A1,0x93A5-0x93AF
 
 ###############################################################################
+
+# Khronos OpenGL ES: 0x93B0-0x93EF (Khronos Bug 8853)
+
+# Khronos_future_use: 0x93B0-0x93EF
+
+###############################################################################
 ### Please remember that new enumerant allocations must be obtained by request
 ### to the Khronos API registrar (see comments at the top of this file)
 ### File requests in the Khronos Bugzilla, OpenGL project, Registry component.
 ###############################################################################
 
-# Any_vendor_future_use: 0x93B0-0xFFFF
+# Any_vendor_future_use: 0x93F0-0xFFFF
 #
 #   This range must be the last range in the file.  To generate a new
 #   range, allocate multiples of 16 from the beginning of the

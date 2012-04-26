@@ -36,9 +36,9 @@ extern "C" {
  * will probably change slightly as we make sure exactly the right set
  * of interfaces is included.
  *
- * gl3.h last updated on $Date: 2012-04-13 03:33:55 -0700 (Fri, 13 Apr 2012) $
+ * gl3.h last updated on $Date: 2012-04-26 00:59:42 -0700 (Thu, 26 Apr 2012) $
  *
- * RELEASE NOTES - 2012/04/13
+ * RELEASE NOTES - 2012/04/25
  *
  * gl3.h should be placed under a directory 'GL3' and included as
  * '<GL3/gl3.h>'.
@@ -1702,7 +1702,7 @@ typedef void GLvoid;
 #define GL_MAX_VERTEX_UNIFORM_VECTORS     0x8DFB
 #define GL_MAX_VARYING_VECTORS            0x8DFC
 #define GL_MAX_FRAGMENT_UNIFORM_VECTORS   0x8DFD
-#define GL_RBG565                         0x8D62
+#define GL_RGB565                         0x8D62
 #endif
 
 #ifndef GL_ARB_get_program_binary
@@ -2262,7 +2262,7 @@ GLAPI void APIENTRY glGetBufferSubData (GLenum target, GLintptr offset, GLsizeip
 GLAPI GLvoid* APIENTRY glMapBuffer (GLenum target, GLenum access);
 GLAPI GLboolean APIENTRY glUnmapBuffer (GLenum target);
 GLAPI void APIENTRY glGetBufferParameteriv (GLenum target, GLenum pname, GLint *params);
-GLAPI void APIENTRY glGetBufferPointerv (GLenum target, GLenum pname, const GLvoid* *params);
+GLAPI void APIENTRY glGetBufferPointerv (GLenum target, GLenum pname, GLvoid* *params);
 #endif /* GL3_PROTOTYPES */
 typedef void (APIENTRYP PFNGLGENQUERIESPROC) (GLsizei n, GLuint *ids);
 typedef void (APIENTRYP PFNGLDELETEQUERIESPROC) (GLsizei n, const GLuint *ids);
@@ -2282,7 +2282,7 @@ typedef void (APIENTRYP PFNGLGETBUFFERSUBDATAPROC) (GLenum target, GLintptr offs
 typedef GLvoid* (APIENTRYP PFNGLMAPBUFFERPROC) (GLenum target, GLenum access);
 typedef GLboolean (APIENTRYP PFNGLUNMAPBUFFERPROC) (GLenum target);
 typedef void (APIENTRYP PFNGLGETBUFFERPARAMETERIVPROC) (GLenum target, GLenum pname, GLint *params);
-typedef void (APIENTRYP PFNGLGETBUFFERPOINTERVPROC) (GLenum target, GLenum pname, const GLvoid* *params);
+typedef void (APIENTRYP PFNGLGETBUFFERPOINTERVPROC) (GLenum target, GLenum pname, GLvoid* *params);
 #endif
 
 #ifndef GL_VERSION_2_0
@@ -2318,7 +2318,7 @@ GLAPI void APIENTRY glGetUniformiv (GLuint program, GLint location, GLint *param
 GLAPI void APIENTRY glGetVertexAttribdv (GLuint index, GLenum pname, GLdouble *params);
 GLAPI void APIENTRY glGetVertexAttribfv (GLuint index, GLenum pname, GLfloat *params);
 GLAPI void APIENTRY glGetVertexAttribiv (GLuint index, GLenum pname, GLint *params);
-GLAPI void APIENTRY glGetVertexAttribPointerv (GLuint index, GLenum pname, const GLvoid* *pointer);
+GLAPI void APIENTRY glGetVertexAttribPointerv (GLuint index, GLenum pname, GLvoid* *pointer);
 GLAPI GLboolean APIENTRY glIsProgram (GLuint program);
 GLAPI GLboolean APIENTRY glIsShader (GLuint shader);
 GLAPI void APIENTRY glLinkProgram (GLuint program);
@@ -2412,7 +2412,7 @@ typedef void (APIENTRYP PFNGLGETUNIFORMIVPROC) (GLuint program, GLint location, 
 typedef void (APIENTRYP PFNGLGETVERTEXATTRIBDVPROC) (GLuint index, GLenum pname, GLdouble *params);
 typedef void (APIENTRYP PFNGLGETVERTEXATTRIBFVPROC) (GLuint index, GLenum pname, GLfloat *params);
 typedef void (APIENTRYP PFNGLGETVERTEXATTRIBIVPROC) (GLuint index, GLenum pname, GLint *params);
-typedef void (APIENTRYP PFNGLGETVERTEXATTRIBPOINTERVPROC) (GLuint index, GLenum pname, const GLvoid* *pointer);
+typedef void (APIENTRYP PFNGLGETVERTEXATTRIBPOINTERVPROC) (GLuint index, GLenum pname, GLvoid* *pointer);
 typedef GLboolean (APIENTRYP PFNGLISPROGRAMPROC) (GLuint program);
 typedef GLboolean (APIENTRYP PFNGLISSHADERPROC) (GLuint shader);
 typedef void (APIENTRYP PFNGLLINKPROGRAMPROC) (GLuint program);

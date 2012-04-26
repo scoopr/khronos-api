@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 17519 $ on $Date: 2012-04-19 12:07:23 -0700 (Thu, 19 Apr 2012) $
+# $Revision: 17604 $ on $Date: 2012-04-26 00:59:42 -0700 (Thu, 26 Apr 2012) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -3097,7 +3097,7 @@ ARB_ES2_compatibility enum:
 	MAX_VERTEX_UNIFORM_VECTORS			= 0x8DFB
 	MAX_VARYING_VECTORS				= 0x8DFC
 	MAX_FRAGMENT_UNIFORM_VECTORS			= 0x8DFD
-	RBG565						= 0x8D62
+	RGB565						= 0x8D62
 
 ###############################################################################
 
