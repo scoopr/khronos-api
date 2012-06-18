@@ -5479,9 +5479,9 @@ extern "C" {
 #endif
 
 #ifndef GL_AMD_query_buffer_object
-#define GL_QUERY_BUFFER_AMD               0x874D
-#define GL_QUERY_BUFFER_BINDING_AMD       0x874D
-#define GL_QUERY_RESULT_NO_WAIT_AMD       0x874D
+#define GL_QUERY_BUFFER_AMD               0x9192
+#define GL_QUERY_BUFFER_BINDING_AMD       0x9193
+#define GL_QUERY_RESULT_NO_WAIT_AMD       0x9194
 #endif
 
 
