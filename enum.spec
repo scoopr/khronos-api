@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 17579 $ on $Date: 2012-04-24 08:36:00 -0700 (Tue, 24 Apr 2012) $
+# $Revision: 18230 $ on $Date: 2012-06-18 11:27:28 -0700 (Mon, 18 Jun 2012) $
 
 ###############################################################################
 #
@@ -279,6 +279,7 @@ ARB_separate_shader_objects enum: (additional; see below)
 	GEOMETRY_SHADER_BIT				= 0x00000004
 	TESS_CONTROL_SHADER_BIT				= 0x00000008
 	TESS_EVALUATION_SHADER_BIT			= 0x00000010
+# RESERVED for features in progress: 0x00000020
 	ALL_SHADER_BITS					= 0xFFFFFFFF
 
 # Aliases ARB_separate_shader_objects enum above
@@ -3397,6 +3398,7 @@ EXT_texture_rg enum: (OpenGL ES only; additional; see above)
 ###############################################################################
 
 # ARB: 0x8240-0x82AF (range released by Microsoft on 2002/9/16)
+# ARB: 0x82B0-0x830F (range reclaimed from long-out-of-business ADD on 2012/05/10)
 
 ARB_cl_event enum:
 	SYNC_CL_EVENT_ARB				= 0x8240
@@ -3452,11 +3454,9 @@ ARB_viewport_array enum:
 ARB_robustness enum: (additional; see above)
 	NO_RESET_NOTIFICATION_ARB			= 0x8261
 
-# ARB_future_use: 0x8262-0x82AF
+# RESERVED for features in progress: 0x8262-0x82E9
 
-###############################################################################
-
-# ADD: 0x82B0-0x830F
+# ARB_future_use: 0x82EA-0x830F
 
 ###############################################################################
 
@@ -7133,7 +7133,7 @@ OES_EGL_image_external enum: (OpenGL ES only) (Khronos bug 4621)
 	REQUIRED_TEXTURE_IMAGE_UNITS_OES		= 0x8D68
 
 # VERSION_ES_FUTURE enum: (OpenGL ES future version only)
-#	PRIMITIVE_RESTART_MAX_INDEX			= 0x8D69
+#	PRIMITIVE_RESTART_FIXED_INDEX			= 0x8D69
 #	ANY_SAMPLES_PASSED_CONSERVATIVE			= 0x8D6A
 #	MAX_ELEMENT_INDEX				= 0x8D6B
 
@@ -8230,10 +8230,14 @@ ARB_shader_image_load_store
 
 # NV_future_use: 0x90D0-0x90E0
 
+# RESERVED for features in progress: 0x90D2-0x90DF
+
 EXT_x11_sync_object enum:
 	SYNC_X11_FENCE_EXT				= 0x90E1
 
 # NV_future_use: 0x90E2-0x90FF
+
+# RESERVED for features in progress: 0x90EA-0x90EF
 
 ###############################################################################
 
@@ -8405,7 +8409,17 @@ EXT_debug_label enum: (OpenGL ES only; additional; see above)
 AMD_pinned_memory enum:
 	EXTERNAL_VIRTUAL_MEMORY_BUFFER_AMD		= 0x9160
 
-# AMD_future_use: 0x9161-0x923F
+# AMD_future_use: 0x9161-0x9191
+
+AMD_query_buffer_object enum:
+	QUERY_BUFFER_AMD				0x9192
+	QUERY_BUFFER_BINDING_AMD			0x9193
+	QUERY_RESULT_NO_WAIT_AMD			0x9194
+
+# AMD_future_use: 0x9195-0x923F
+
+# RESERVED for features in progress: 0x919D-0x919F
+# RESERVED for features in progress: 0x91B9-0x91BF
 
 ###############################################################################
 
@@ -8495,6 +8509,8 @@ ARB_shader_atomic_counters enum:
 	UNSIGNED_INT_ATOMIC_COUNTER			 = 0x92DB
 
 # NV_future_use: 0x92DC-0x937F
+
+# RESERVED for features in progress: 0x92E0-0x9318
 
 ###############################################################################
 

@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 16999 $ on $Date: 2012-02-29 19:26:58 -0800 (Wed, 29 Feb 2012) $
+# $Revision: 17770 $ on $Date: 2012-05-10 14:18:27 -0700 (Thu, 10 May 2012) $
 
 # This is the GLX enumerant registry.
 #
@@ -131,6 +131,7 @@ GLXContextFlags enum:
 	CONTEXT_DEBUG_BIT_ARB				= 0x00000001	# ARB_create_context
 	CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x00000002	# ARB_create_context
 	CONTEXT_ROBUST_ACCESS_BIT_ARB			= 0x00000004	# ARB_create_context_robustness
+	CONTEXT_RESET_ISOLATION_BIT_ARB			= 0x00000008	# ARB_create_context_robustness_isolation (reserved)
 
 # CONTEXT_PROFILE_MASK_ARB bits
 GLXContextProfileMask enum:

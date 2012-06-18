@@ -7,7 +7,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 17604 $ on $Date: 2012-04-26 00:59:42 -0700 (Thu, 26 Apr 2012) $
+# $Revision: 18230 $ on $Date: 2012-06-18 11:27:28 -0700 (Mon, 18 Jun 2012) $
 
 required-props:
 # Description of a parameter
@@ -1232,7 +1232,7 @@ EdgeFlag(flag)
 
 EdgeFlagv(flag)
 	return		void
-	param		flag		Boolean in array [1]
+	param		flag		Boolean in reference
 	category	VERSION_1_0_DEPRECATED	   # old: drawing
 	version		1.0
 	deprecated	3.1
@@ -3565,7 +3565,7 @@ DrawElements(mode, count, type, indices)
 GetPointerv(pname, params)
 	return		void
 	param		pname		GetPointervPName in value
-	param		params		VoidPointer out array [1]
+	param		params		VoidPointer out reference
 	category	VERSION_1_1
 	dlflags		notlistable
 	glxflags	client-handcode client-intercept server-handcode
@@ -14385,7 +14385,7 @@ GetDebugMessageLogARB(count, bufsize, sources, types, ids, severities, lengths, 
 	glxflags	ignore
 	offset		?
 
-#@ GetPointerv is redeclared in this extension
+# GetPointerv is redeclared in this extension
 
 ###############################################################################
 #
@@ -32761,3 +32761,12 @@ IsImageHandleResidentNV(handle)
 # (none)
 newcategory: NV_shader_atomic_float
 
+###############################################################################
+#
+# Extension #420
+# AMD_query_buffer_object commands
+#
+###############################################################################
+
+# (none)
+newcategory: AMD_query_buffer_object

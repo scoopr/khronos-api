@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 17604 $ on $Date: 2012-04-26 00:59:42 -0700 (Thu, 26 Apr 2012) $
+# $Revision: 18230 $ on $Date: 2012-06-18 11:27:28 -0700 (Mon, 18 Jun 2012) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -1794,9 +1794,6 @@ passthru: /* Reuse tokens from ARB_shader_image_load_store */
 passthru: /* Reuse tokens from ARB_shading_language_packing (none) */
 passthru: /* Reuse tokens from ARB_texture_storage */
 	use ARB_texture_storage		    TEXTURE_IMMUTABLE_FORMAT
-
-# ARB_future_use: 0x874E
-#	VERTEX_ATTRIB_ARRAY_LONG			= 0x874E
 
 ###############################################################################
 #
@@ -7495,3 +7492,10 @@ NV_bindless_texture enum:
 # Extension #419
 NV_shader_atomic_float enum:
 
+###############################################################################
+
+# Extension #420
+AMD_query_buffer_object enum:
+	QUERY_BUFFER_AMD				0x9192
+	QUERY_BUFFER_BINDING_AMD			0x9193
+	QUERY_RESULT_NO_WAIT_AMD			0x9194

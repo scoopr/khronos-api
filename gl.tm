@@ -319,6 +319,8 @@ BufferAccessMask,*,*,		    GLbitfield,*,*
 GetMultisamplePNameNV,*,*,	    GLenum,*,*
 SampleMaskNV,*,*,		    GLbitfield,*,*
 # ARB_debug_output
+GLDEBUGPROC,*,*,		    GLDEBUGPROC,*,*
+# ARB_debug_output
 GLDEBUGPROCARB,*,*,		    GLDEBUGPROCARB,*,*
 # AMD_debug_output
 GLDEBUGPROCAMD,*,*,		    GLDEBUGPROCAMD,*,*

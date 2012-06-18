@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 14504 $ on $Date: 2011-04-13 21:31:13 -0700 (Wed, 13 Apr 2011) $
+# $Revision: 17770 $ on $Date: 2012-05-10 14:18:27 -0700 (Thu, 10 May 2012) $
 
 # This is the master WGL enumerant registry.
 #
@@ -41,6 +41,7 @@ WGLContextFlags enum:
 	WGL_CONTEXT_DEBUG_BIT_ARB			= 0x00000001	# ARB_create_context
 	WGL_CONTEXT_FORWARD_COMPATIBLE_BIT_ARB		= 0x00000002	# ARB_create_context
 	WGL_CONTEXT_ROBUST_ACCESS_BIT_ARB		= 0x00000004	# ARB_create_context_robustness
+	WGL_CONTEXT_RESET_ISOLATION_BIT_ARB		= 0x00000008	# ARB_create_context_robustness_isolation (reserved)
 
 # CONTEXT_PROFILE_MASK_ARB bits
 WGLContextProfileMask enum:
