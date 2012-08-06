@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 18818 $ on $Date: 2012-08-06 02:01:57 -0700 (Mon, 06 Aug 2012) $
+# $Revision: 18836 $ on $Date: 2012-08-06 08:39:04 -0700 (Mon, 06 Aug 2012) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
