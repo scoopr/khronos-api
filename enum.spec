@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 18836 $ on $Date: 2012-08-06 08:39:04 -0700 (Mon, 06 Aug 2012) $
+# $Revision: 18887 $ on $Date: 2012-08-13 16:25:45 -0700 (Mon, 13 Aug 2012) $
 
 ###############################################################################
 #
@@ -8437,7 +8437,7 @@ ARB_shader_storage_buffer_object enum:
 	MAX_SHADER_STORAGE_BUFFER_BINDINGS		= 0x90DD
 	MAX_SHADER_STORAGE_BLOCK_SIZE			= 0x90DE
 	SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT		= 0x90DF
-	MAX_COMBINED_SHADER_OUTPUT_RESOURCES		= MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS
+	MAX_COMBINED_SHADER_OUTPUT_RESOURCES		= GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS
 	use ARB_shader_image_load_store			MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS
 
 EXT_x11_sync_object enum:

@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 18836 $ on $Date: 2012-08-06 08:39:04 -0700 (Mon, 06 Aug 2012) $
+# $Revision: 18887 $ on $Date: 2012-08-13 16:25:45 -0700 (Mon, 13 Aug 2012) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -3739,8 +3739,10 @@ KHR_debug enum:
 	PROGRAM						= 0x82E2
 	QUERY						= 0x82E3
 	PROGRAM_PIPELINE				= 0x82E4
+# SYNC = 0x82E5 no longer used in extension
 	SAMPLER						= 0x82E6
 	DISPLAY_LIST					= 0x82E7
+passthru: /* DISPLAY_LIST used in compatibility profile only */
 	MAX_LABEL_LENGTH				= 0x82E8
 	MAX_DEBUG_MESSAGE_LENGTH			= 0x9143
 	MAX_DEBUG_LOGGED_MESSAGES			= 0x9144
@@ -3796,39 +3798,31 @@ ARB_copy_image enum:
 
 ###############################################################################
 
-# ARB Extension #124
-ARB_debug_group enum:
-	use KHR_debug DEBUG_TYPE_MARKER
-	use KHR_debug DEBUG_TYPE_PUSH_GROUP
-	use KHR_debug DEBUG_TYPE_POP_GROUP
-	use KHR_debug DEBUG_SEVERITY_NOTIFICATION
-	use KHR_debug MAX_DEBUG_GROUP_STACK_DEPTH
-	use KHR_debug DEBUG_GROUP_STACK_DEPTH
-	use ErrorCode STACK_UNDERFLOW
-	use ErrorCode STACK_OVERFLOW
+# ARB Extension #124 (renumbered from 142)
+ARB_texture_view enum:
+	TEXTURE_VIEW_MIN_LEVEL				= 0x82DB
+	TEXTURE_VIEW_NUM_LEVELS				= 0x82DC
+	TEXTURE_VIEW_MIN_LAYER				= 0x82DD
+	TEXTURE_VIEW_NUM_LAYERS				= 0x82DE
+	TEXTURE_IMMUTABLE_LEVELS			= 0x82DF
 
 ###############################################################################
 
-# ARB Extension #125
-ARB_debug_label enum:
-	use KHR_debug BUFFER
-	use KHR_debug SHADER
-	use KHR_debug PROGRAM
-	use KHR_debug QUERY
-	use KHR_debug PROGRAM_PIPELINE
-# SYNC = 0x82E5 no longer used in extension
-	use KHR_debug SAMPLER
-passthru: /* DISPLAY_LIST used in compatibility profile only */
-	use KHR_debug DISPLAY_LIST
-	use KHR_debug MAX_LABEL_LENGTH
-	use GetPName VERTEX_ARRAY
+# ARB Extension #125 (renumbered from 143)
+ARB_vertex_attrib_binding enum:
+	VERTEX_ATTRIB_BINDING				= 0x82D4
+	VERTEX_ATTRIB_RELATIVE_OFFSET			= 0x82D5
+	VERTEX_BINDING_DIVISOR				= 0x82D6
+	VERTEX_BINDING_OFFSET				= 0x82D7
+	VERTEX_BINDING_STRIDE				= 0x82D8
+	MAX_VERTEX_ATTRIB_RELATIVE_OFFSET		= 0x82D9
+	MAX_VERTEX_ATTRIB_BINDINGS			= 0x82DA
 
 ###############################################################################
 
-# ARB Extension #126
-ARB_debug_output2 enum:
-	use KHR_debug CONTEXT_FLAG_DEBUG_BIT
-	use KHR_debug DEBUG_OUTPUT
+# No new tokens
+# ARB Extension #126 (renumbered from 144)
+ARB_robustness_isolation enum:
 
 ###############################################################################
 
@@ -4093,7 +4087,7 @@ ARB_shader_storage_buffer_object enum:
 	MAX_SHADER_STORAGE_BLOCK_SIZE			= 0x90DE
 	SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT		= 0x90DF
 	SHADER_STORAGE_BARRIER_BIT			= 0x2000
-	MAX_COMBINED_SHADER_OUTPUT_RESOURCES		= MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS
+	MAX_COMBINED_SHADER_OUTPUT_RESOURCES		= GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS
 	use ARB_shader_image_load_store			MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS
 
 ###############################################################################
@@ -4124,36 +4118,8 @@ ARB_texture_storage_multisample enum:
 
 ###############################################################################
 
-# ARB Extension #142
-ARB_texture_view enum:
-	TEXTURE_VIEW_MIN_LEVEL				= 0x82DB
-	TEXTURE_VIEW_NUM_LEVELS				= 0x82DC
-	TEXTURE_VIEW_MIN_LAYER				= 0x82DD
-	TEXTURE_VIEW_NUM_LAYERS				= 0x82DE
-	TEXTURE_IMMUTABLE_LEVELS			= 0x82DF
-
-###############################################################################
-
-# ARB Extension #143
-ARB_vertex_attrib_binding enum:
-	VERTEX_ATTRIB_BINDING				= 0x82D4
-	VERTEX_ATTRIB_RELATIVE_OFFSET			= 0x82D5
-	VERTEX_BINDING_DIVISOR				= 0x82D6
-	VERTEX_BINDING_OFFSET				= 0x82D7
-	VERTEX_BINDING_STRIDE				= 0x82D8
-	MAX_VERTEX_ATTRIB_RELATIVE_OFFSET		= 0x82D9
-	MAX_VERTEX_ATTRIB_BINDINGS			= 0x82DA
-
-###############################################################################
-
-# No new tokens
-# ARB Extension #144
-ARB_robustness_isolation enum:
-
-###############################################################################
-
-# Extension #145 - GLX_ARB_robustness_application_isolation
-# Extension #146 - WGL_ARB_robustness_application_isolation
+# Extension #142 - GLX_ARB_robustness_application_isolation
+# Extension #143 - WGL_ARB_robustness_application_isolation
 
 ###############################################################################
 

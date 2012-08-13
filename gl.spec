@@ -7,7 +7,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 18818 $ on $Date: 2012-08-06 02:01:57 -0700 (Mon, 06 Aug 2012) $
+# $Revision: 18887 $ on $Date: 2012-08-13 16:25:45 -0700 (Mon, 13 Aug 2012) $
 
 required-props:
 # Description of a parameter
@@ -27,7 +27,7 @@ category: 3DFX_tbuffer
 category: AMD_conservative_depth AMD_debug_output AMD_draw_buffers_blend AMD_multi_draw_indirect AMD_name_gen_delete AMD_performance_monitor AMD_sample_positions AMD_stencil_operation_extended AMD_vertex_shader_tesselator
 category: APPLE_aux_depth_stencil APPLE_element_array APPLE_fence APPLE_float_pixels APPLE_flush_buffer_range APPLE_object_purgeable APPLE_row_bytes APPLE_texture_range APPLE_vertex_array_object APPLE_vertex_array_range APPLE_vertex_program_evaluators
 category: ARB_ES2_compatibility ARB_base_instance ARB_blend_func_extended ARB_cl_event ARB_color_buffer_float ARB_copy_buffer ARB_debug_output ARB_depth_buffer_float ARB_draw_buffers ARB_draw_buffers_blend ARB_draw_elements_base_vertex ARB_draw_indirect ARB_draw_instanced ARB_fragment_program ARB_fragment_shader ARB_framebuffer_object ARB_framebuffer_sRGB ARB_geometry_shader4 ARB_get_program_binary ARB_gpu_shader_fp64 ARB_half_float_vertex ARB_instanced_arrays ARB_internalformat_query ARB_map_buffer_range ARB_matrix_palette ARB_multisample ARB_multitexture ARB_occlusion_query ARB_point_parameters ARB_provoking_vertex ARB_robustness ARB_sample_shading ARB_sampler_objects ARB_separate_shader_objects ARB_shader_atomic_counters ARB_shader_image_load_store ARB_shader_objects ARB_shader_subroutine ARB_shading_language_include ARB_sync ARB_tessellation_shader ARB_texture_buffer_object ARB_texture_compression ARB_texture_compression_rgtc ARB_texture_multisample ARB_texture_rectangle ARB_texture_rg ARB_texture_storage ARB_timer_query ARB_transform_feedback2 ARB_transform_feedback3 ARB_transform_feedback_instanced ARB_transpose_matrix ARB_uniform_buffer_object ARB_vertex_array_object ARB_vertex_attrib_64bit ARB_vertex_blend ARB_vertex_buffer_object ARB_vertex_program ARB_vertex_shader ARB_vertex_type_2_10_10_10_rev ARB_viewport_array ARB_window_pos
-category: ARB_clear_buffer_object ARB_compute_shader ARB_copy_image ARB_debug_group ARB_debug_label ARB_debug_output ARB_framebuffer_no_attachments ARB_internalformat_query2 ARB_invalidate_subdata ARB_multi_draw_indirect ARB_program_interface_query ARB_shader_storage_buffer_object ARB_texture_buffer_range ARB_texture_storage_multisample ARB_texture_view ARB_vertex_attrib_binding
+category: ARB_clear_buffer_object ARB_compute_shader ARB_copy_image ARB_framebuffer_no_attachments ARB_internalformat_query2 ARB_invalidate_subdata ARB_multi_draw_indirect ARB_program_interface_query ARB_shader_storage_buffer_object ARB_texture_buffer_range ARB_texture_storage_multisample ARB_texture_view ARB_vertex_attrib_binding
 category: ATI_draw_buffers ATI_draw_buffers ATI_element_array ATI_envmap_bumpmap ATI_fragment_shader ATI_map_object_buffer ATI_meminfo ATI_pn_triangles ATI_separate_stencil ATI_texture_env_combine3 ATI_texture_float ATI_vertex_array_object ATI_vertex_attrib_array_object ATI_vertex_streams
 category: EXT_bindable_uniform EXT_blend_color EXT_blend_equation_separate EXT_blend_func_separate EXT_blend_minmax EXT_color_subtable EXT_compiled_vertex_array EXT_convolution EXT_coordinate_frame EXT_copy_texture EXT_cull_vertex EXT_depth_bounds_test EXT_direct_state_access EXT_draw_buffers2 EXT_draw_instanced EXT_draw_range_elements EXT_fog_coord EXT_framebuffer_blit EXT_framebuffer_multisample EXT_framebuffer_object EXT_geometry_shader4 EXT_gpu_program_parameters EXT_gpu_shader4 EXT_histogram EXT_index_func EXT_index_material EXT_light_texture EXT_multi_draw_arrays EXT_multisample EXT_paletted_texture EXT_pixel_transform EXT_point_parameters EXT_polygon_offset EXT_provoking_vertex EXT_secondary_color EXT_separate_shader_objects EXT_shader_image_load_store EXT_stencil_clear_tag EXT_stencil_two_side EXT_subtexture EXT_texture3D EXT_texture_buffer_object EXT_texture_integer EXT_texture_object EXT_texture_perturb_normal EXT_texture_snorm EXT_texture_swizzle EXT_timer_query EXT_transform_feedback EXT_vertex_array EXT_vertex_array_bgra EXT_vertex_attrib_64bit EXT_vertex_shader EXT_vertex_weighting EXT_x11_sync_object
 category: GREMEDY_frame_terminator GREMEDY_string_marker
@@ -8055,10 +8055,7 @@ passthru: /* ARB_ES3_compatibility (no entry points) */
 passthru: /* ARB_clear_buffer_object */
 passthru: /* ARB_compute_shader */
 passthru: /* ARB_copy_image */
-passthru: /* ARB_debug_group */
-passthru: /* ARB_debug_label */
-passthru: /* KHR_debug (ARB_debug_output promoted to KHR without suffixes) */
-passthru: /* ARB_debug_output2 (no entry points) */
+passthru: /* KHR_debug (includes ARB_debug_output commands promoted to KHR without suffixes) */
 passthru: /* ARB_explicit_uniform_location (no entry points) */
 passthru: /* ARB_framebuffer_no_attachments */
 passthru: /* ARB_internalformat_query2 */
@@ -15109,7 +15106,6 @@ GetDebugMessageLog(count, bufsize, sources, types, ids, severities, lengths, mes
 	glxflags	ignore
 	offset		?
 
-# Shared with ARB_debug_group
 PushDebugGroup(source, id, length, message)
 	return		void
 	param		source		GLenum in value
@@ -15132,7 +15128,6 @@ PopDebugGroup()
 	glxflags	ignore
 	offset		?
 
-# Shared with ARB_debug_label
 ObjectLabel(identifier, name, length, label)
 	return		void
 	param		identifier	GLenum in value
@@ -15186,8 +15181,6 @@ GetObjectPtrLabel(ptr, bufSize, length, label)
 	glxsingle	?
 	glxflags	ignore
 	offset		?
-
-passthru: /* KHR_debug also reuses entry points from ARB_debug_group and ARB_debug_label */
 
 ###############################################################################
 #
@@ -15330,35 +15323,200 @@ CopyImageSubData(srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTar
 
 ###############################################################################
 #
-# Extension #ARB124
-# ARB_debug_group commands
+# Extension #ARB124 (renumbered from 142)
+# ARB_texture_view commands
+#
+###############################################################################
+
+TextureView(texture, target, origtexture, internalformat, minlevel, numlevels, minlayer, numlayers)
+	return		void
+	param		texture		UInt32 in value
+	param		target		GLenum in value
+	param		origtexture	UInt32 in value
+	param		internalformat	GLenum in value
+	param		minlevel	UInt32 in value
+	param		numlevels	UInt32 in value
+	param		minlayer	UInt32 in value
+	param		numlayers	UInt32 in value
+	category	ARB_texture_view
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+###############################################################################
+#
+# Extension #ARB125 (renumbered from 143)
+# ARB_vertex_attrib_binding commands
+#
+###############################################################################
+
+BindVertexBuffer(bindingindex, buffer, offset, stride)
+	return		void
+	param		bindingindex	UInt32 in value
+	param		buffer		UInt32 in value
+	param		offset		BufferOffset in value
+	param		stride		SizeI in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+VertexAttribFormat(attribindex, size, type, normalized, relativeoffset)
+	return		void
+	param		attribindex	UInt32 in value
+	param		size		Int32 in value
+	param		type		GLenum in value
+	param		normalized	Boolean in value
+	param		relativeoffset	UInt32 in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+VertexAttribIFormat(attribindex, size, type, relativeoffset)
+	return		void
+	param		attribindex	UInt32 in value
+	param		size		Int32 in value
+	param		type		GLenum in value
+	param		relativeoffset	UInt32 in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+VertexAttribLFormat(attribindex, size, type, relativeoffset)
+	return		void
+	param		attribindex	UInt32 in value
+	param		size		Int32 in value
+	param		type		GLenum in value
+	param		relativeoffset	UInt32 in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+VertexAttribBinding(attribindex, bindingindex)
+	return		void
+	param		attribindex	UInt32 in value
+	param		bindingindex	UInt32 in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+VertexBindingDivisor(bindingindex, divisor)
+	return		void
+	param		bindingindex	UInt32 in value
+	param		divisor		UInt32 in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+VertexArrayBindVertexBufferEXT(vaobj, bindingindex, buffer, offset, stride)
+	return		void
+	param		vaobj		UInt32 in value
+	param		bindingindex	UInt32 in value
+	param		buffer		UInt32 in value
+	param		offset		BufferOffset in value
+	param		stride		SizeI in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+VertexArrayVertexAttribFormatEXT(vaobj, attribindex, size, type, normalized, relativeoffset)
+	return		void
+	param		vaobj		UInt32 in value
+	param		attribindex	UInt32 in value
+	param		size		Int32 in value
+	param		type		GLenum in value
+	param		normalized	Boolean in value
+	param		relativeoffset	UInt32 in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+VertexArrayVertexAttribIFormatEXT(vaobj, attribindex, size, type, relativeoffset)
+	return		void
+	param		vaobj		UInt32 in value
+	param		attribindex	UInt32 in value
+	param		size		Int32 in value
+	param		type		GLenum in value
+	param		relativeoffset	UInt32 in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+VertexArrayVertexAttribLFormatEXT(vaobj, attribindex, size, type, relativeoffset)
+	return		void
+	param		vaobj		UInt32 in value
+	param		attribindex	UInt32 in value
+	param		size		Int32 in value
+	param		type		GLenum in value
+	param		relativeoffset	UInt32 in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+VertexArrayVertexAttribBindingEXT(vaobj, attribindex, bindingindex)
+	return		void
+	param		vaobj		UInt32 in value
+	param		attribindex	UInt32 in value
+	param		bindingindex	UInt32 in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+VertexArrayVertexBindingDivisorEXT(vaobj, bindingindex, divisor)
+	return		void
+	param		vaobj		UInt32 in value
+	param		bindingindex	UInt32 in value
+	param		divisor		UInt32 in value
+	category	ARB_vertex_attrib_binding
+	version		4.3
+	extension
+	glxropcode	?
+	glxflags	ignore
+	offset		?
+
+###############################################################################
+#
+# Extension #ARB126 (renumbered from 144)
+# ARB_robustness_isolation commands
 #
 ###############################################################################
 
 # (none)
-newcategory: ARB_debug_group
-passthru: /* ARB_debug_group reuses entry points from KHR_debug */
-
-###############################################################################
-#
-# Extension #ARB125
-# ARB_debug_label commands
-#
-###############################################################################
-
-# (none)
-newcategory: ARB_debug_label
-passthru: /* ARB_debug_label reuses entry points from KHR_debug */
-
-###############################################################################
-#
-# Extension #ARB126
-# ARB_debug_output2 commands
-#
-###############################################################################
-
-# (none)
-newcategory: ARB_debug_output2
+newcategory: ARB_robustness_isolation
 
 ###############################################################################
 #
@@ -15847,203 +16005,6 @@ TextureStorage3DMultisampleEXT(texture, target, samples, internalformat, width, 
 	glxropcode	?
 	glxflags	ignore
 	offset		?
-
-###############################################################################
-#
-# Extension #ARB142
-# ARB_texture_view commands
-#
-###############################################################################
-
-TextureView(texture, target, origtexture, internalformat, minlevel, numlevels, minlayer, numlayers)
-	return		void
-	param		texture		UInt32 in value
-	param		target		GLenum in value
-	param		origtexture	UInt32 in value
-	param		internalformat	GLenum in value
-	param		minlevel	UInt32 in value
-	param		numlevels	UInt32 in value
-	param		minlayer	UInt32 in value
-	param		numlayers	UInt32 in value
-	category	ARB_texture_view
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-###############################################################################
-#
-# Extension #ARB143
-# ARB_vertex_attrib_binding commands
-#
-###############################################################################
-
-BindVertexBuffer(bindingindex, buffer, offset, stride)
-	return		void
-	param		bindingindex	UInt32 in value
-	param		buffer		UInt32 in value
-	param		offset		BufferOffset in value
-	param		stride		SizeI in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-VertexAttribFormat(attribindex, size, type, normalized, relativeoffset)
-	return		void
-	param		attribindex	UInt32 in value
-	param		size		Int32 in value
-	param		type		GLenum in value
-	param		normalized	Boolean in value
-	param		relativeoffset	UInt32 in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-VertexAttribIFormat(attribindex, size, type, relativeoffset)
-	return		void
-	param		attribindex	UInt32 in value
-	param		size		Int32 in value
-	param		type		GLenum in value
-	param		relativeoffset	UInt32 in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-VertexAttribLFormat(attribindex, size, type, relativeoffset)
-	return		void
-	param		attribindex	UInt32 in value
-	param		size		Int32 in value
-	param		type		GLenum in value
-	param		relativeoffset	UInt32 in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-VertexAttribBinding(attribindex, bindingindex)
-	return		void
-	param		attribindex	UInt32 in value
-	param		bindingindex	UInt32 in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-VertexBindingDivisor(bindingindex, divisor)
-	return		void
-	param		bindingindex	UInt32 in value
-	param		divisor		UInt32 in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-VertexArrayBindVertexBufferEXT(vaobj, bindingindex, buffer, offset, stride)
-	return		void
-	param		vaobj		UInt32 in value
-	param		bindingindex	UInt32 in value
-	param		buffer		UInt32 in value
-	param		offset		BufferOffset in value
-	param		stride		SizeI in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-VertexArrayVertexAttribFormatEXT(vaobj, attribindex, size, type, normalized, relativeoffset)
-	return		void
-	param		vaobj		UInt32 in value
-	param		attribindex	UInt32 in value
-	param		size		Int32 in value
-	param		type		GLenum in value
-	param		normalized	Boolean in value
-	param		relativeoffset	UInt32 in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-VertexArrayVertexAttribIFormatEXT(vaobj, attribindex, size, type, relativeoffset)
-	return		void
-	param		vaobj		UInt32 in value
-	param		attribindex	UInt32 in value
-	param		size		Int32 in value
-	param		type		GLenum in value
-	param		relativeoffset	UInt32 in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-VertexArrayVertexAttribLFormatEXT(vaobj, attribindex, size, type, relativeoffset)
-	return		void
-	param		vaobj		UInt32 in value
-	param		attribindex	UInt32 in value
-	param		size		Int32 in value
-	param		type		GLenum in value
-	param		relativeoffset	UInt32 in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-VertexArrayVertexAttribBindingEXT(vaobj, attribindex, bindingindex)
-	return		void
-	param		vaobj		UInt32 in value
-	param		attribindex	UInt32 in value
-	param		bindingindex	UInt32 in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-VertexArrayVertexBindingDivisorEXT(vaobj, bindingindex, divisor)
-	return		void
-	param		vaobj		UInt32 in value
-	param		bindingindex	UInt32 in value
-	param		divisor		UInt32 in value
-	category	ARB_vertex_attrib_binding
-	version		4.3
-	extension
-	glxropcode	?
-	glxflags	ignore
-	offset		?
-
-###############################################################################
-#
-# Extension #ARB144
-# ARB_robustness_isolation commands
-#
-###############################################################################
-
-# (none)
-newcategory: ARB_robustness_isolation
 
 
 ###############################################################################
