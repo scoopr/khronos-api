@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 18887 $ on $Date: 2012-08-13 16:25:45 -0700 (Mon, 13 Aug 2012) $
+# $Revision: 18918 $ on $Date: 2012-08-16 02:36:00 -0700 (Thu, 16 Aug 2012) $
 
 ###############################################################################
 #
@@ -8029,7 +8029,15 @@ ARB_texture_gather enum: (additional; see above)
 QCOM_driver_control enum: (OpenGL ES only)
 	PERFMON_GLOBAL_MODE_QCOM			= 0x8FA0
 
-# QCOM_future_use: 0x8FA1-0x8FBF
+# QCOM_future_use: 0x8FA1-0x8FAF
+
+QCOM_binning_control enum: (OpenGL ES only)
+	BINNING_CONTROL_HINT_QCOM			= 0x8FB0
+	CPU_OPTIMIZED_QCOM				= 0x8FB1
+	GPU_OPTIMIZED_QCOM				= 0x8FB2
+	RENDER_DIRECT_TO_FRAMEBUFFER_QCOM		= 0x8FB3
+
+# QCOM_future_use: 0x8FB4-0x8FBF
 
 ###############################################################################
 
