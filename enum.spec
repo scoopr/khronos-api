@@ -3325,6 +3325,10 @@ VERSION_3_0 enum:
 EXT_color_buffer_half_float enum: (OpenGL ES only)
 	FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT	= 0x8211
 
+# Aliases VERSION_3_0 enum above
+OES_surfaceless_context enum: (OpenGL ES only)
+	FRAMEBUFFER_UNDEFINED_OES			= 0x8219
+
 # ARB_future_use: 0x821F-0x8221
 
 VERSION_3_0 enum:
