@@ -1,6 +1,6 @@
 # enumext.spec - list of GL enumerants for glext.h header
 #
-# $Revision: 18887 $ on $Date: 2012-08-13 16:25:45 -0700 (Mon, 13 Aug 2012) $
+# $Revision: 19241 $ on $Date: 2012-09-19 19:02:24 -0700 (Wed, 19 Sep 2012) $
 
 # This is derived from the master GL enumerant registry (enum.spec).
 #
@@ -41,6 +41,7 @@ passthru: /* BeginMode */
 	TRIANGLES					= 0x0004	# BeginMode
 	TRIANGLE_STRIP					= 0x0005	# BeginMode
 	TRIANGLE_FAN					= 0x0006	# BeginMode
+	QUADS						= 0x0007	# BeginMode
 passthru: /* AlphaFunction */
 	NEVER						= 0x0200	# AlphaFunction
 	LESS						= 0x0201	# AlphaFunction
@@ -91,6 +92,7 @@ passthru: /* GetPName */
 	LINE_WIDTH					= 0x0B21 # 1 F	# GetPName
 	LINE_WIDTH_RANGE				= 0x0B22 # 2 F	# GetPName
 	LINE_WIDTH_GRANULARITY				= 0x0B23 # 1 F	# GetPName
+	POLYGON_MODE					= 0x0B40 # 2 I	# GetPName
 	POLYGON_SMOOTH					= 0x0B41 # 1 I	# GetPName
 	CULL_FACE					= 0x0B44 # 1 I	# GetPName
 	CULL_FACE_MODE					= 0x0B45 # 1 I	# GetPName
@@ -255,8 +257,7 @@ passthru: /* PixelInternalFormat */
 	RGB10_A2					= 0x8059	# PixelInternalFormat
 	RGBA12						= 0x805A	# PixelInternalFormat
 	RGBA16						= 0x805B	# PixelInternalFormat
-
-VERSION_1_1_DEPRECATED enum:
+profile: compatibility
 passthru: /* AttribMask */
 	CURRENT_BIT					= 0x00000001	# AttribMask
 	POINT_BIT					= 0x00000002	# AttribMask
@@ -281,7 +282,6 @@ passthru: /* ClientAttribMask */
 	CLIENT_VERTEX_ARRAY_BIT				= 0x00000002	# ClientAttribMask
 	CLIENT_ALL_ATTRIB_BITS				= 0xFFFFFFFF	# ClientAttribMask
 passthru: /* BeginMode */
-	QUADS						= 0x0007	# BeginMode
 	QUAD_STRIP					= 0x0008	# BeginMode
 	POLYGON						= 0x0009	# BeginMode
 passthru: /* AccumOp */
@@ -356,7 +356,6 @@ passthru: /* GetPName */
 	MAX_LIST_NESTING				= 0x0B31 # 1 I	# GetPName
 	LIST_BASE					= 0x0B32 # 1 I	# GetPName
 	LIST_INDEX					= 0x0B33 # 1 I	# GetPName
-	POLYGON_MODE					= 0x0B40 # 2 I	# GetPName
 	POLYGON_STIPPLE					= 0x0B42 # 1 I	# GetPName
 	EDGE_FLAG					= 0x0B43 # 1 I	# GetPName
 	LIGHTING					= 0x0B50 # 1 I	# GetPName
@@ -662,8 +661,7 @@ VERSION_1_2 enum:
 	SMOOTH_LINE_WIDTH_RANGE				= 0x0B22 # 2 F
 	SMOOTH_LINE_WIDTH_GRANULARITY			= 0x0B23 # 1 F
 	ALIASED_LINE_WIDTH_RANGE			= 0x846E # 2 F
-
-VERSION_1_2_DEPRECATED enum:
+profile: compatibility
 	RESCALE_NORMAL					= 0x803A # 1 I # Equivalent to EXT_rescale_normal
 	LIGHT_MODEL_COLOR_CONTROL			= 0x81F8 # 1 I
 	SINGLE_COLOR					= 0x81F9
@@ -682,8 +680,7 @@ ARB_imaging enum:
 	BLEND_EQUATION					= 0x8009 # 1 I
 	FUNC_SUBTRACT					= 0x800A # Equivalent to EXT_blend_subtract
 	FUNC_REVERSE_SUBTRACT				= 0x800B
-
-ARB_imaging_DEPRECATED enum:
+profile: compatibility
 	CONVOLUTION_1D					= 0x8010 # 1 I # Equivalent to EXT_convolution
 	CONVOLUTION_2D					= 0x8011 # 1 I
 	SEPARABLE_2D					= 0x8012 # 1 I
@@ -816,8 +813,7 @@ VERSION_1_3 enum:
 	NUM_COMPRESSED_TEXTURE_FORMATS			= 0x86A2
 	COMPRESSED_TEXTURE_FORMATS			= 0x86A3
 	CLAMP_TO_BORDER					= 0x812D	# Promoted from ARB_texture_border_clamp
-
-VERSION_1_3_DEPRECATED enum:
+profile: compatibility
 	CLIENT_ACTIVE_TEXTURE				= 0x84E1 # 1 I
 	MAX_TEXTURE_UNITS				= 0x84E2 # 1 I
 	TRANSPOSE_MODELVIEW_MATRIX			= 0x84E3 # 16 F # Promoted from ARB_transpose_matrix
@@ -880,8 +876,7 @@ VERSION_1_4 enum:
 	TEXTURE_DEPTH_SIZE				= 0x884A
 	TEXTURE_COMPARE_MODE				= 0x884C
 	TEXTURE_COMPARE_FUNC				= 0x884D
-
-VERSION_1_4_DEPRECATED enum:
+profile: compatibility
 	POINT_SIZE_MIN					= 0x8126 # 1 F
 	POINT_SIZE_MAX					= 0x8127 # 1 F
 	POINT_DISTANCE_ATTENUATION			= 0x8129 # 3 F
@@ -941,8 +936,9 @@ VERSION_1_5 enum:
 	DYNAMIC_READ					= 0x88E9 # ARB_vertex_buffer_object
 	DYNAMIC_COPY					= 0x88EA # ARB_vertex_buffer_object
 	SAMPLES_PASSED					= 0x8914 # ARB_occlusion_query
-
-VERSION_1_5_DEPRECATED enum:
+# New naming scheme (reintroduced in GL 3.3)
+	SRC1_ALPHA					= 0x8589    # alias GL_SOURCE1_ALPHA
+profile: compatibility
 	VERTEX_ARRAY_BUFFER_BINDING			= 0x8896 # ARB_vertex_buffer_object
 	NORMAL_ARRAY_BUFFER_BINDING			= 0x8897 # ARB_vertex_buffer_object
 	COLOR_ARRAY_BUFFER_BINDING			= 0x8898 # ARB_vertex_buffer_object
@@ -965,7 +961,6 @@ VERSION_1_5_DEPRECATED enum:
 	SRC1_RGB					= 0x8581    # alias GL_SOURCE1_RGB
 	SRC2_RGB					= 0x8582    # alias GL_SOURCE2_RGB
 	SRC0_ALPHA					= 0x8588    # alias GL_SOURCE0_ALPHA
-	SRC1_ALPHA					= 0x8589    # alias GL_SOURCE1_ALPHA
 	SRC2_ALPHA					= 0x858A    # alias GL_SOURCE2_ALPHA
 
 ###############################################################################
@@ -1055,8 +1050,7 @@ VERSION_2_0 enum:
 	STENCIL_BACK_REF				= 0x8CA3    # ARB_stencil_two_side
 	STENCIL_BACK_VALUE_MASK				= 0x8CA4    # ARB_stencil_two_side
 	STENCIL_BACK_WRITEMASK				= 0x8CA5    # ARB_stencil_two_side
-
-VERSION_2_0_DEPRECATED enum:
+profile: compatibility
 	VERTEX_PROGRAM_TWO_SIDE				= 0x8643    # ARB_vertex_shader
 	POINT_SPRITE					= 0x8861    # ARB_point_sprite
 	COORD_REPLACE					= 0x8862    # ARB_point_sprite
@@ -1086,8 +1080,7 @@ VERSION_2_1 enum:
 	SRGB8_ALPHA8					= 0x8C43    # EXT_texture_sRGB
 	COMPRESSED_SRGB					= 0x8C48    # EXT_texture_sRGB
 	COMPRESSED_SRGB_ALPHA				= 0x8C49    # EXT_texture_sRGB
-
-VERSION_2_1_DEPRECATED enum:
+profile: compatibility
 	CURRENT_RASTER_SECONDARY_COLOR			= 0x845F    # New for 2.1
 	SLUMINANCE_ALPHA				= 0x8C44    # EXT_texture_sRGB
 	SLUMINANCE8_ALPHA8				= 0x8C45    # EXT_texture_sRGB
@@ -1328,8 +1321,7 @@ passthru: /* Reuse tokens from ARB_texture_rg */
 	use ARB_texture_rg		    RG32UI
 passthru: /* Reuse tokens from ARB_vertex_array_object */
 	use ARB_vertex_array_object	    VERTEX_ARRAY_BINDING
-
-VERSION_3_0_DEPRECATED enum:
+profile: compatibility
 	CLAMP_VERTEX_COLOR				= 0x891A
 	CLAMP_FRAGMENT_COLOR				= 0x891B
 	ALPHA_INTEGER					= 0x8D97
@@ -1356,7 +1348,6 @@ VERSION_3_1 enum:
 	MAX_TEXTURE_BUFFER_SIZE				= 0x8C2B    # ARB_texture_buffer_object
 	TEXTURE_BINDING_BUFFER				= 0x8C2C    # ARB_texture_buffer_object
 	TEXTURE_BUFFER_DATA_STORE_BINDING		= 0x8C2D    # ARB_texture_buffer_object
-	TEXTURE_BUFFER_FORMAT				= 0x8C2E    # ARB_texture_buffer_object
 	TEXTURE_RECTANGLE				= 0x84F5    # ARB_texture_rectangle
 	TEXTURE_BINDING_RECTANGLE			= 0x84F6    # ARB_texture_rectangle
 	PROXY_TEXTURE_RECTANGLE				= 0x84F7    # ARB_texture_rectangle
@@ -1643,6 +1634,7 @@ passthru: /* Reuse tokens from ARB_ES2_compatibility */
 	use ARB_ES2_compatibility	    MEDIUM_INT
 	use ARB_ES2_compatibility	    HIGH_INT
 	use ARB_ES2_compatibility	    SHADER_COMPILER
+	use ARB_ES2_compatibility	    SHADER_BINARY_FORMATS
 	use ARB_ES2_compatibility	    NUM_SHADER_BINARY_FORMATS
 	use ARB_ES2_compatibility	    MAX_VERTEX_UNIFORM_VECTORS
 	use ARB_ES2_compatibility	    MAX_VARYING_VECTORS
@@ -2859,8 +2851,7 @@ ARB_framebuffer_object enum:
 	RENDERBUFFER_STENCIL_SIZE			= 0x8D55
 	FRAMEBUFFER_INCOMPLETE_MULTISAMPLE		= 0x8D56
 	MAX_SAMPLES					= 0x8D57
-
-ARB_framebuffer_object_DEPRECATED enum:
+profile: compatibility
 	INDEX						= 0x8222
 	TEXTURE_LUMINANCE_TYPE				= 0x8C14
 	TEXTURE_INTENSITY_TYPE				= 0x8C15
@@ -3153,6 +3144,7 @@ ARB_texture_cube_map_array enum:
 ARB_texture_gather enum:
 	MIN_PROGRAM_TEXTURE_GATHER_OFFSET_ARB		= 0x8E5E
 	MAX_PROGRAM_TEXTURE_GATHER_OFFSET_ARB		= 0x8E5F
+	MAX_PROGRAM_TEXTURE_GATHER_COMPONENTS_ARB	= 0x8F9F
 
 ###############################################################################
 
@@ -3188,7 +3180,7 @@ ARB_texture_compression_bptc enum:
 # ARB Extension #78
 ARB_blend_func_extended enum:
 	SRC1_COLOR					= 0x88F9
-	use VERSION_1_5_DEPRECATED	    SRC1_ALPHA
+	use VERSION_1_5			    SRC1_ALPHA
 	ONE_MINUS_SRC1_COLOR				= 0x88FA
 	ONE_MINUS_SRC1_ALPHA				= 0x88FB
 	MAX_DUAL_SOURCE_DRAW_BUFFERS			= 0x88FC
@@ -3381,6 +3373,7 @@ ARB_ES2_compatibility enum:
 	MEDIUM_INT					= 0x8DF4
 	HIGH_INT					= 0x8DF5
 	SHADER_COMPILER					= 0x8DFA
+	SHADER_BINARY_FORMATS				= 0x8DF8
 	NUM_SHADER_BINARY_FORMATS			= 0x8DF9
 	MAX_VERTEX_UNIFORM_VECTORS			= 0x8DFB
 	MAX_VARYING_VECTORS				= 0x8DFC
@@ -3752,8 +3745,8 @@ passthru: /* DISPLAY_LIST used in compatibility profile only */
 	DEBUG_SEVERITY_LOW				= 0x9148
 	DEBUG_OUTPUT					= 0x92E0
 	CONTEXT_FLAG_DEBUG_BIT				= 0x00000002
-	use ErrorCode STACK_UNDERFLOW
-	use ErrorCode STACK_OVERFLOW
+	use ErrorCode			    STACK_UNDERFLOW
+	use ErrorCode			    STACK_OVERFLOW
 
 ###############################################################################
 
@@ -3872,22 +3865,22 @@ ARB_framebuffer_no_attachments enum:
 
 # ARB Extension #131
 ARB_internalformat_query2 enum:
-	use ARB_shader_image_load_store IMAGE_FORMAT_COMPATIBILITY_TYPE
-	use ARB_internalformat_query NUM_SAMPLE_COUNTS
-	use VERSION_3_0 RENDERBUFFER
-	use VERSION_1_3 SAMPLES
-	use GetPName TEXTURE_1D
-	use VERSION_3_0 TEXTURE_1D_ARRAY
-	use GetPName TEXTURE_2D
-	use VERSION_3_0 TEXTURE_2D_ARRAY
-	use VERSION_1_2 TEXTURE_3D
-	use VERSION_1_3 TEXTURE_CUBE_MAP
-	use ARB_texture_cube_map TEXTURE_CUBE_MAP_ARRAY
-	use VERSION_3_1 TEXTURE_RECTANGLE
-	use VERSION_3_1 TEXTURE_BUFFER
-	use ARB_texture_multisample TEXTURE_2D_MULTISAMPLE
-	use ARB_texture_multisample TEXTURE_2D_MULTISAMPLE_ARRAY
-	use VERSION_1_3 TEXTURE_COMPRESSED
+	use ARB_shader_image_load_store     IMAGE_FORMAT_COMPATIBILITY_TYPE
+	use ARB_internalformat_query	    NUM_SAMPLE_COUNTS
+	use VERSION_3_0			    RENDERBUFFER
+	use VERSION_1_3			    SAMPLES
+	use GetPName			    TEXTURE_1D
+	use VERSION_3_0			    TEXTURE_1D_ARRAY
+	use GetPName			    TEXTURE_2D
+	use VERSION_3_0			    TEXTURE_2D_ARRAY
+	use VERSION_1_2			    TEXTURE_3D
+	use VERSION_1_3			    TEXTURE_CUBE_MAP
+	use ARB_texture_cube_map	    TEXTURE_CUBE_MAP_ARRAY
+	use VERSION_3_1			    TEXTURE_RECTANGLE
+	use VERSION_3_1			    TEXTURE_BUFFER
+	use ARB_texture_multisample	    TEXTURE_2D_MULTISAMPLE
+	use ARB_texture_multisample	    TEXTURE_2D_MULTISAMPLE_ARRAY
+	use VERSION_1_3			    TEXTURE_COMPRESSED
 	INTERNALFORMAT_SUPPORTED			= 0x826F
 	INTERNALFORMAT_PREFERRED			= 0x8270
 	INTERNALFORMAT_RED_SIZE				= 0x8271
@@ -4011,7 +4004,7 @@ ARB_program_interface_query enum:
 	PROGRAM_OUTPUT					= 0x92E4
 	BUFFER_VARIABLE					= 0x92E5
 	SHADER_STORAGE_BLOCK				= 0x92E6
-	use ARB_shader_atomic_counters ATOMIC_COUNTER_BUFFER
+	use ARB_shader_atomic_counters	    ATOMIC_COUNTER_BUFFER
 	VERTEX_SUBROUTINE				= 0x92E8
 	TESS_CONTROL_SUBROUTINE				= 0x92E9
 	TESS_EVALUATION_SUBROUTINE			= 0x92EA
@@ -4053,8 +4046,8 @@ ARB_program_interface_query enum:
 	LOCATION					= 0x930E
 	LOCATION_INDEX					= 0x930F
 	IS_PER_PATCH					= 0x92E7
-	use ARB_shader_subroutine NUM_COMPATIBLE_SUBROUTINES
-	use ARB_shader_subroutine COMPATIBLE_SUBROUTINES
+	use ARB_shader_subroutine	    NUM_COMPATIBLE_SUBROUTINES
+	use ARB_shader_subroutine	    COMPATIBLE_SUBROUTINES
 
 ###############################################################################
 
@@ -4088,7 +4081,7 @@ ARB_shader_storage_buffer_object enum:
 	SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT		= 0x90DF
 	SHADER_STORAGE_BARRIER_BIT			= 0x2000
 	MAX_COMBINED_SHADER_OUTPUT_RESOURCES		= GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS
-	use ARB_shader_image_load_store			MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS
+	use ARB_shader_image_load_store     MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS
 
 ###############################################################################
 
@@ -6640,6 +6633,8 @@ S3_s3tc enum:
 	RGB4_S3TC					= 0x83A1
 	RGBA_S3TC					= 0x83A2
 	RGBA4_S3TC					= 0x83A3
+	RGBA_DXT5_S3TC					= 0x83A4
+	RGBA4_DXT5_S3TC					= 0x83A5
 
 ###############################################################################
 
@@ -6669,7 +6664,7 @@ ATI_draw_buffers enum:
 # This is really a WGL extension, but if defined there are
 # some associated GL enumerants.
 ATI_pixel_format_float enum:
-	TYPE_RGBA_FLOAT_ATI				= 0x8820
+	RGBA_FLOAT_MODE_ATI				= 0x8820
 	COLOR_CLEAR_UNCLAMPED_VALUE_ATI			= 0x8835
 
 ###############################################################################
@@ -7305,7 +7300,7 @@ NV_transform_feedback enum:
 	PRIMITIVES_GENERATED_NV				= 0x8C87
 	TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN_NV	= 0x8C88
 	RASTERIZER_DISCARD_NV				= 0x8C89
-	MAX_TRANSFORM_FEEDBACK_INTERLEAVED_ATTRIBS_NV	= 0x8C8A
+	MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_NV = 0x8C8A
 	MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_NV	= 0x8C8B
 	INTERLEAVED_ATTRIBS_NV				= 0x8C8C
 	SEPARATE_ATTRIBS_NV				= 0x8C8D
@@ -7765,7 +7760,7 @@ AMD_shader_stencil_export enum:
 
 # Extension #383
 AMD_seamless_cubemap_per_texture enum:
-    use ARB_seamless_cube_map		    TEXTURE_CUBE_MAP_SEAMLESS
+	use ARB_seamless_cube_map	    TEXTURE_CUBE_MAP_SEAMLESS
 
 ###############################################################################
 
@@ -7950,6 +7945,7 @@ AMD_name_gen_delete enum:
 
 # Extension #395
 AMD_debug_output enum:
+	MAX_DEBUG_MESSAGE_LENGTH_AMD			= 0x9143
 	MAX_DEBUG_LOGGED_MESSAGES_AMD			= 0x9144
 	DEBUG_LOGGED_MESSAGES_AMD			= 0x9145
 	DEBUG_SEVERITY_HIGH_AMD				= 0x9146
@@ -8238,3 +8234,18 @@ AMD_query_buffer_object enum:
 	QUERY_BUFFER_AMD				= 0x9192
 	QUERY_BUFFER_BINDING_AMD			= 0x9193
 	QUERY_RESULT_NO_WAIT_AMD			= 0x9194
+
+###############################################################################
+
+# Extension #421
+AMD_sparse_texture enum:
+	VIRTUAL_PAGE_SIZE_X_AMD				= 0x9195
+	VIRTUAL_PAGE_SIZE_Y_AMD				= 0x9196
+	VIRTUAL_PAGE_SIZE_Z_AMD				= 0x9197
+	MAX_SPARSE_TEXTURE_SIZE_AMD			= 0x9198
+	MAX_SPARSE_3D_TEXTURE_SIZE_AMD			= 0x9199
+	MAX_SPARSE_ARRAY_TEXTURE_LAYERS			= 0x919A
+	MIN_SPARSE_LEVEL_AMD				= 0x919B
+	MIN_LOD_WARNING_AMD				= 0x919C
+	TEXTURE_STORAGE_SPARSE_BIT_AMD			= 0x00000001
+

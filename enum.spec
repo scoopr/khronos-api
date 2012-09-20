@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 19145 $ on $Date: 2012-09-12 21:35:51 -0700 (Wed, 12 Sep 2012) $
+# $Revision: 19241 $ on $Date: 2012-09-19 19:02:24 -0700 (Wed, 19 Sep 2012) $
 
 ###############################################################################
 #
@@ -3885,8 +3885,10 @@ S3_s3tc enum:
 	RGB4_S3TC					= 0x83A1
 	RGBA_S3TC					= 0x83A2
 	RGBA4_S3TC					= 0x83A3
+	RGBA_DXT5_S3TC					= 0x83A4
+	RGBA4_DXT5_S3TC					= 0x83A5
 
-# S3_future_use: 0x83A4-0x83BF
+# S3_future_use: 0x83A6-0x83BF
 
 ###############################################################################
 
@@ -6953,7 +6955,7 @@ NV_transform_feedback enum:
 	RASTERIZER_DISCARD_NV				= 0x8C89
 	MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS	= 0x8C8A    # VERSION_3_0
 	MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_EXT = 0x8C8A
-	MAX_TRANSFORM_FEEDBACK_INTERLEAVED_ATTRIBS_NV	= 0x8C8A
+	MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_NV = 0x8C8A
 	MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS		= 0x8C8B    # VERSION_3_0
 	MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_EXT	= 0x8C8B
 	MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_NV	= 0x8C8B
@@ -7788,6 +7790,7 @@ NV_gpu_program5 enum:
 ARB_texture_gather enum:
 	MIN_PROGRAM_TEXTURE_GATHER_OFFSET		= 0x8E5E
 	MAX_PROGRAM_TEXTURE_GATHER_OFFSET		= 0x8E5F
+	MAX_PROGRAM_TEXTURE_GATHER_COMPONENTS_ARB	= 0x8F9F
 
 NV_gpu_program5 enum:
 	MIN_PROGRAM_TEXTURE_GATHER_OFFSET_NV		= 0x8E5E
@@ -8618,6 +8621,7 @@ ARB_debug_output enum: (additional; see above)
 	DEBUG_SEVERITY_LOW_ARB				= 0x9148
 
 AMD_debug_output enum:
+	MAX_DEBUG_MESSAGE_LENGTH_AMD			= 0x9143
 	MAX_DEBUG_LOGGED_MESSAGES_AMD			= 0x9144
 	DEBUG_LOGGED_MESSAGES_AMD			= 0x9145
 	DEBUG_SEVERITY_HIGH_AMD				= 0x9146
@@ -8657,7 +8661,17 @@ AMD_query_buffer_object enum:
 	QUERY_BUFFER_BINDING_AMD			= 0x9193
 	QUERY_RESULT_NO_WAIT_AMD			= 0x9194
 
-# AMD_future_use: 0x9195-0x919C
+AMD_sparse_texture enum:
+	VIRTUAL_PAGE_SIZE_X_AMD				= 0x9195
+	VIRTUAL_PAGE_SIZE_Y_AMD				= 0x9196
+	VIRTUAL_PAGE_SIZE_Z_AMD				= 0x9197
+	MAX_SPARSE_TEXTURE_SIZE_AMD			= 0x9198
+	MAX_SPARSE_3D_TEXTURE_SIZE_AMD			= 0x9199
+	MAX_SPARSE_ARRAY_TEXTURE_LAYERS			= 0x919A
+	MIN_SPARSE_LEVEL_AMD				= 0x919B
+	MIN_LOD_WARNING_AMD				= 0x919C
+# Bitfield values for Tex*StorageSparseAMD <flags>
+	TEXTURE_STORAGE_SPARSE_BIT_AMD			= 0x00000001
 
 # Also VERSION_4_3
 ARB_texture_buffer_range enum:
