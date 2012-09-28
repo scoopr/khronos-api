@@ -15578,6 +15578,8 @@ GetObjectPtrLabel(ptr, bufSize, length, label)
 	glxflags	ignore
 	offset		?
 
+# Also includes GetPointerv (only for OpenGL ES 2, however)
+
 ###############################################################################
 #
 # Extension #ARB120
