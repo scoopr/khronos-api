@@ -1502,3 +1502,13 @@ newcategory: NV_multisample_coverage
 # (none)
 newcategory: EXT_swap_control_tear
 
+###############################################################################
+#
+# Extension #427
+# EXT_buffer_age commands
+#
+###############################################################################
+
+# (none)
+newcategory: EXT_buffer_age
+

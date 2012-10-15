@@ -569,3 +569,9 @@ EXT_create_context_es2_profile enum:
 # Extension #414
 EXT_swap_control_tear enum:
 	LATE_SWAPS_TEAR_EXT				= 0x20F3
+
+###############################################################################
+
+# Extension #427
+EXT_buffer_age enum:
+	BACK_BUFFER_AGE_EXT				= 0x20F4

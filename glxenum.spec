@@ -360,7 +360,10 @@ EXT_swap_control enum:
 EXT_swap_control_tear enum:
 	LATE_SWAPS_TEAR_EXT				= 0x20F3
 
-# NV_future_use: 0x20F4-0x219F
+EXT_buffer_age enum:
+	BACK_BUFFER_AGE_EXT				= 0x20F4
+
+# NV_future_use: 0x20F5-0x219F
 
 ###############################################################################
 

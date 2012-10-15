@@ -3,7 +3,7 @@
 # It is an extremely important file. Do not mess with it unless
 # you know what you're doing and have permission to do so.
 #
-# $Revision: 19241 $ on $Date: 2012-09-19 19:02:24 -0700 (Wed, 19 Sep 2012) $
+# $Revision: 19335 $ on $Date: 2012-09-28 18:06:41 -0700 (Fri, 28 Sep 2012) $
 
 ###############################################################################
 #
@@ -254,6 +254,15 @@ ARB_map_buffer_range enum:
 	MAP_INVALIDATE_BUFFER_BIT			= 0x0008    # VERSION_3_0 / ARB_mbr
 	MAP_FLUSH_EXPLICIT_BIT				= 0x0010    # VERSION_3_0 / ARB_mbr
 	MAP_UNSYNCHRONIZED_BIT				= 0x0020    # VERSION_3_0 / ARB_mbr
+
+EXT_map_buffer_range enum: (OpenGL ES only)
+	MAP_READ_BIT_EXT				= 0x0001
+	MAP_WRITE_BIT_EXT				= 0x0002
+	MAP_INVALIDATE_RANGE_BIT_EXT			= 0x0004
+	MAP_INVALIDATE_BUFFER_BIT_EXT			= 0x0008
+	MAP_FLUSH_EXPLICIT_BIT_EXT			= 0x0010
+	MAP_UNSYNCHRONIZED_BIT_EXT			= 0x0020
+
 
 ###############################################################################
 
@@ -1326,6 +1335,10 @@ EXT_unpack_subimage enum: (OpenGL ES only)
 	use GetPName UNPACK_ROW_LENGTH
 	use GetPName UNPACK_SKIP_ROWS
 	use GetPName UNPACK_SKIP_PIXELS
+
+EXT_multiview_draw_buffers enum: (OpenGL ES only; additional; see below)
+	DRAW_BUFFER_EXT					= 0x0C01
+	READ_BUFFER_EXT					= 0x0C02
 
 NV_read_buffer enum: (OpenGL ES only)
 	READ_BUFFER_NV					= 0x0C02
@@ -6480,7 +6493,15 @@ EXT_texture_sRGB_decode enum:
 EXT_debug_label enum: (OpenGL ES only)
 	PROGRAM_PIPELINE_OBJECT_EXT			= 0x8A4F
 
-# APPLE_future_use: 0x8A50-0x8A7F
+# APPLE_future_use: 0x8A50-0x8A51
+
+EXT_shader_framebuffer_fetch enum: (OpenGL ES only)
+	FRAGMENT_SHADER_DISCARDS_SAMPLES_EXT		= 0x8A52
+
+APPLE_sync enum: (OpenGL ES only; additional; see below)
+	SYNC_OBJECT_APPLE				= 0x8A53
+
+# APPLE_future_use: 0x8A54-0x8A7F
 
 ###############################################################################
 
@@ -8472,6 +8493,13 @@ ARB_compute_shader enum:
 	DISPATCH_INDIRECT_BUFFER			= 0x90EE
 	DISPATCH_INDIRECT_BUFFER_BINDING		= 0x90EF
 
+EXT_multiview_draw_buffers enum: (OpenGL ES only)
+	DRAW_BUFFER_EXT					= 0x0C01
+	READ_BUFFER_EXT					= 0x0C02
+	COLOR_ATTACHMENT_EXT				= 0x90F0
+	MULTIVIEW_EXT					= 0x90F1
+	MAX_MULTIVIEW_BUFFERS_EXT			= 0x90F2
+
 # NV_future_use: 0x90F0-0x90FF
 
 ###############################################################################
@@ -8550,6 +8578,23 @@ ARB_sync enum:
 	WAIT_FAILED					= 0x911D
 	SYNC_FLUSH_COMMANDS_BIT				= 0x00000001
 	TIMEOUT_IGNORED					= 0xFFFFFFFFFFFFFFFFull
+
+APPLE_sync enum: (OpenGL ES only)
+	MAX_SERVER_WAIT_TIMEOUT_APPLE			= 0x9111
+	OBJECT_TYPE_APPLE				= 0x9112
+	SYNC_CONDITION_APPLE				= 0x9113
+	SYNC_STATUS_APPLE				= 0x9114
+	SYNC_FLAGS_APPLE				= 0x9115
+	SYNC_FENCE_APPLE				= 0x9116
+	SYNC_GPU_COMMANDS_COMPLETE_APPLE		= 0x9117
+	UNSIGNALED_APPLE				= 0x9118
+	SIGNALED_APPLE					= 0x9119
+	ALREADY_SIGNALED_APPLE				= 0x911A
+	TIMEOUT_EXPIRED_APPLE				= 0x911B
+	CONDITION_SATISFIED_APPLE			= 0x911C
+	WAIT_FAILED_APPLE				= 0x911D
+	SYNC_FLUSH_COMMANDS_BIT_APPLE			= 0x00000001
+	TIMEOUT_IGNORED_APPLE				= 0xFFFFFFFFFFFFFFFFull
 
 VERSION_3_0 enum:
 	BUFFER_ACCESS_FLAGS				= 0x911F
