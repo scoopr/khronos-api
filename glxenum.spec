@@ -4,7 +4,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 17770 $ on $Date: 2012-05-10 14:18:27 -0700 (Thu, 10 May 2012) $
+# $Revision: 19459 $ on $Date: 2012-10-15 11:34:35 -0700 (Mon, 15 Oct 2012) $
 
 # This is the GLX enumerant registry.
 #
