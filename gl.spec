@@ -7,7 +7,7 @@
 # This document is licensed under the SGI Free Software B License Version
 # 2.0. For details, see http://oss.sgi.com/projects/FreeB/ .
 #
-# $Revision: 19329 $ on $Date: 2012-09-28 12:26:05 -0700 (Fri, 28 Sep 2012) $
+# $Revision: 19760 $ on $Date: 2012-11-26 14:01:10 -0800 (Mon, 26 Nov 2012) $
 
 required-props:
 # Description of a parameter
@@ -34195,7 +34195,7 @@ IsImageHandleResidentNV(handle)
 # (none)
 newcategory: NV_shader_atomic_float
 
-[###############################################################################
+###############################################################################
 #
 # Extension #420
 # AMD_query_buffer_object commands
