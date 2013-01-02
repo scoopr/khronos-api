@@ -25,9 +25,9 @@
 
 passthru:
 passthru: /* Header file version number, required by OpenGL ABI for Linux */
-passthru: /* glxext.h last updated 2012/02/29 */
+passthru: /* glxext.h last updated 2013/01/02 */
 passthru: /* Current version at http://www.opengl.org/registry/ */
-passthru: #define GLX_GLXEXT_VERSION 33
+passthru: #define GLX_GLXEXT_VERSION 34
 
 ###############################################################################
 #
@@ -563,6 +563,10 @@ AMD_gpu_association enum:
 # All values are shared with WGL and GL
 EXT_create_context_es2_profile enum:
 	CONTEXT_ES2_PROFILE_BIT_EXT			= 0x00000004
+
+# Also extension #399
+EXT_create_context_es_profile enum:
+	CONTEXT_ES_PROFILE_BIT_EXT			= 0x00000004
 
 ###############################################################################
 

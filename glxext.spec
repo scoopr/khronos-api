@@ -1362,7 +1362,7 @@ newcategory: NV_multisample_coverage
 
 ###############################################################################
 #
-# Extension #399
+# Extension #398
 # AMD_gpu_association commands
 #
 ###############################################################################
@@ -1491,6 +1491,19 @@ newcategory: NV_multisample_coverage
 #@	   glxropcode	   ?
 #@	   glxflags	   ignore
 #@	   offset	   ?
+
+###############################################################################
+#
+# Extension #399
+# EXT_create_context_es2_profile commands
+# EXT_create_context_es_profile commands
+#
+###############################################################################
+
+# (none)
+newcategory: EXT_create_context_es2_profile
+
+newcategory: EXT_create_context_es_profile
 
 ###############################################################################
 #

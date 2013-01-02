@@ -137,6 +137,7 @@ GLXContextFlags enum:
 GLXContextProfileMask enum:
 	CONTEXT_CORE_PROFILE_BIT_ARB			= 0x00000001	# ARB_create_context_profile
 	CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB		= 0x00000002	# ARB_create_context_profile
+	CONTEXT_ES_PROFILE_BIT_EXT			= 0x00000004	# EXT_create_context_es_profile
 	CONTEXT_ES2_PROFILE_BIT_EXT			= 0x00000004	# EXT_create_context_es2_profile
 
 GLXAttribute enum:
