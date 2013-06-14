@@ -29,7 +29,6 @@ together with documentation, schema, and Python generator scripts used
 to generate C header files for OpenGL and OpenGL ES, can always be found
 in the Khronos Registry at
     http://www.opengl.org/registry/
-    http://www.khronos.org/registry/gles/
 -->
 
 <registry>
@@ -12726,12 +12725,12 @@ typedef unsigned __int64 uint64_t;
             <glx type="vendor" opcode="4097" />
         </command>
         <command>
-            <proto>const GLubyte * <name>glGetString</name></proto>
+            <proto>const <ptype>GLubyte</ptype> *<name>glGetString</name></proto>
             <param><ptype>GLenum</ptype> <name>name</name></param>
             <glx type="single" opcode="129" />
         </command>
         <command>
-            <proto>const GLubyte * <name>glGetStringi</name></proto>
+            <proto>const <ptype>GLubyte</ptype> *<name>glGetStringi</name></proto>
             <param><ptype>GLenum</ptype> <name>name</name></param>
             <param><ptype>GLuint</ptype> <name>index</name></param>
         </command>

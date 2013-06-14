@@ -28,7 +28,7 @@ extensions and API versions. The canonical version of the registry,
 together with documentation, schema, and Python generator scripts used
 to generate C header files for EGL, can always be found in the Khronos
 Registry at
-    http://www.khronos.org/registry/egl
+    http://www.opengl.org/registry/egl
 -->
 
 <registry>
