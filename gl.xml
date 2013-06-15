@@ -96,7 +96,11 @@ typedef unsigned __int64 uint64_t;
         <type>typedef void *<name>GLeglImageOES</name>;</type>
         <type>typedef char <name>GLchar</name>;</type>
         <type>typedef char <name>GLcharARB</name>;</type>
-        <type>typedef unsigned int <name>GLhandleARB</name>;</type>
+        <type name="GLhandleARB"><![CDATA[#ifdef __APPLE__
+typedef void *GLhandleARB;
+#else
+typedef unsigned int GLhandleARB;
+#endif]]></type>
         <type>typedef unsigned short <name>GLhalfARB</name>;</type>
         <type comment="Must be 32 bits">typedef GLint <name>GLfixed</name>;</type>
         <type requires="stddef">typedef ptrdiff_t <name>GLintptr</name>;</type>
