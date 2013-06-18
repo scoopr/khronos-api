@@ -160,25 +160,25 @@ typedef unsigned __int64 uint64_t;
 } <name>GLXBufferClobberEventSGIX</name>;</type>
 
         <type>typedef struct {
-    char    pipeName[GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX];
+    char    pipeName[80]; /* Should be [GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX] */
     int     networkId;
 } <name>GLXHyperpipeNetworkSGIX</name>;</type>
 
         <type>typedef struct {
-    char    pipeName[GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX];
+    char    pipeName[80]; /* Should be [GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX] */
     int     channel;
     unsigned int participationType;
     int     timeSlice;
 } <name>GLXHyperpipeConfigSGIX</name>;</type>
 
         <type>typedef struct {
-    char pipeName[GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX];
+    char pipeName[80]; /* Should be [GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX] */
     int srcXOrigin, srcYOrigin, srcWidth, srcHeight;
     int destXOrigin, destYOrigin, destWidth, destHeight;
 } <name>GLXPipeRect</name>;</type>
 
         <type>typedef struct {
-    char pipeName[GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX];
+    char pipeName[80]; /* Should be [GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX] */
     int XOrigin, YOrigin, maxHeight, maxWidth;
 } <name>GLXPipeRectLimits</name>;</type>
 
@@ -1598,7 +1598,7 @@ typedef unsigned __int64 uint64_t;
             <command name="glXGetCurrentReadDrawableSGI" />
         </require>
     </extension>
-    <extension name="GLX_SGIX_video_source" supported="glx">
+    <extension name="GLX_SGIX_video_source" supported="glx" protect="_VL_H">
         <require>
             <command name="glXCreateGLXVideoSourceSGIX" />
             <command name="glXDestroyGLXVideoSourceSGIX" />
@@ -1706,12 +1706,19 @@ typedef unsigned __int64 uint64_t;
             <command name="glXChannelRectSyncSGIX" />
         </require>
     </extension>
-    <extension name="GLX_SGIX_dmbuffer" supported="glx">
+<!-- Comment GLX_SGIX_dmbuffer out for the moment. The extension pulls in
+     the GLXPbufferSGIX <type> but then comments it out with #ifdef
+     _DM_BUFFER_H_, making it unavailable to later extensions. Need some
+     work on dependencies.
+-->
+    <extension name="GLX_SGIX_dmbuffer" supported="glx" protect="_DM_BUFFER_H_">
         <require>
             <enum name="GLX_DIGITAL_MEDIA_PBUFFER_SGIX" />
             <command name="glXAssociateDMPbufferSGIX" />
         </require>
     </extension>
+<!--
+-->
     <extension name="GLX_SGIX_swap_group" supported="glx">
         <require>
             <command name="glXJoinSwapGroupSGIX" />

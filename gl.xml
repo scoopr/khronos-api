@@ -231,34 +231,34 @@ typedef unsigned int GLhandleARB;
     </enums>
 
     <enums namespace="MemoryBarrierMask" type="bitmask">
+        <enum value="0x00000001"  name="GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT" />
         <enum value="0x00000001"  name="GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT_EXT" />
+        <enum value="0x00000002"  name="GL_ELEMENT_ARRAY_BARRIER_BIT" />
         <enum value="0x00000002"  name="GL_ELEMENT_ARRAY_BARRIER_BIT_EXT" />
+        <enum value="0x00000004"  name="GL_UNIFORM_BARRIER_BIT" />
         <enum value="0x00000004"  name="GL_UNIFORM_BARRIER_BIT_EXT" />
+        <enum value="0x00000008"  name="GL_TEXTURE_FETCH_BARRIER_BIT" />
         <enum value="0x00000008"  name="GL_TEXTURE_FETCH_BARRIER_BIT_EXT" />
         <enum value="0x00000010"  name="GL_SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV" />
-        <enum value="0x00000020"  name="GL_SHADER_IMAGE_ACCESS_BARRIER_BIT_EXT" />
-        <enum value="0x00000040"  name="GL_COMMAND_BARRIER_BIT_EXT" />
-        <enum value="0x00000080"  name="GL_PIXEL_BUFFER_BARRIER_BIT_EXT" />
-        <enum value="0x00000100"  name="GL_TEXTURE_UPDATE_BARRIER_BIT_EXT" />
-        <enum value="0x00000200"  name="GL_BUFFER_UPDATE_BARRIER_BIT_EXT" />
-        <enum value="0x00000400"  name="GL_FRAMEBUFFER_BARRIER_BIT_EXT" />
-        <enum value="0x00000800"  name="GL_TRANSFORM_FEEDBACK_BARRIER_BIT_EXT" />
-        <enum value="0x00001000"  name="GL_ATOMIC_COUNTER_BARRIER_BIT_EXT" />
-        <enum value="0xFFFFFFFF"  name="GL_ALL_BARRIER_BITS_EXT" />
-        <enum value="0x00000001"  name="GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT" />
-        <enum value="0x00000002"  name="GL_ELEMENT_ARRAY_BARRIER_BIT" />
-        <enum value="0x00000004"  name="GL_UNIFORM_BARRIER_BIT" />
-        <enum value="0x00000008"  name="GL_TEXTURE_FETCH_BARRIER_BIT" />
         <enum value="0x00000020"  name="GL_SHADER_IMAGE_ACCESS_BARRIER_BIT" />
+        <enum value="0x00000020"  name="GL_SHADER_IMAGE_ACCESS_BARRIER_BIT_EXT" />
         <enum value="0x00000040"  name="GL_COMMAND_BARRIER_BIT" />
+        <enum value="0x00000040"  name="GL_COMMAND_BARRIER_BIT_EXT" />
         <enum value="0x00000080"  name="GL_PIXEL_BUFFER_BARRIER_BIT" />
+        <enum value="0x00000080"  name="GL_PIXEL_BUFFER_BARRIER_BIT_EXT" />
         <enum value="0x00000100"  name="GL_TEXTURE_UPDATE_BARRIER_BIT" />
+        <enum value="0x00000100"  name="GL_TEXTURE_UPDATE_BARRIER_BIT_EXT" />
         <enum value="0x00000200"  name="GL_BUFFER_UPDATE_BARRIER_BIT" />
+        <enum value="0x00000200"  name="GL_BUFFER_UPDATE_BARRIER_BIT_EXT" />
         <enum value="0x00000400"  name="GL_FRAMEBUFFER_BARRIER_BIT" />
+        <enum value="0x00000400"  name="GL_FRAMEBUFFER_BARRIER_BIT_EXT" />
         <enum value="0x00000800"  name="GL_TRANSFORM_FEEDBACK_BARRIER_BIT" />
+        <enum value="0x00000800"  name="GL_TRANSFORM_FEEDBACK_BARRIER_BIT_EXT" />
         <enum value="0x00001000"  name="GL_ATOMIC_COUNTER_BARRIER_BIT" />
-        <enum value="0xFFFFFFFF"  name="GL_ALL_BARRIER_BITS" />
+        <enum value="0x00001000"  name="GL_ATOMIC_COUNTER_BARRIER_BIT_EXT" />
         <enum value="0x00002000"  name="GL_SHADER_STORAGE_BARRIER_BIT" />
+        <enum value="0xFFFFFFFF"  name="GL_ALL_BARRIER_BITS" />
+        <enum value="0xFFFFFFFF"  name="GL_ALL_BARRIER_BITS_EXT" />
     </enums>
 
     <enums namespace="SyncObjectMask" type="bitmask">
@@ -6599,7 +6599,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLbyte</ptype> <name>bx</name></param>
             <param><ptype>GLbyte</ptype> <name>by</name></param>
             <param><ptype>GLbyte</ptype> <name>bz</name></param>
-            <vecequiv name="Binormal3bvEXT" />
+            <vecequiv name="glBinormal3bvEXT" />
         </command>
         <command>
             <proto>void <name>glBinormal3bvEXT</name></proto>
@@ -6610,7 +6610,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>bx</name></param>
             <param><ptype>GLdouble</ptype> <name>by</name></param>
             <param><ptype>GLdouble</ptype> <name>bz</name></param>
-            <vecequiv name="Binormal3dvEXT" />
+            <vecequiv name="glBinormal3dvEXT" />
         </command>
         <command>
             <proto>void <name>glBinormal3dvEXT</name></proto>
@@ -6621,7 +6621,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>bx</name></param>
             <param><ptype>GLfloat</ptype> <name>by</name></param>
             <param><ptype>GLfloat</ptype> <name>bz</name></param>
-            <vecequiv name="Binormal3fvEXT" />
+            <vecequiv name="glBinormal3fvEXT" />
         </command>
         <command>
             <proto>void <name>glBinormal3fvEXT</name></proto>
@@ -6632,7 +6632,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>bx</name></param>
             <param><ptype>GLint</ptype> <name>by</name></param>
             <param><ptype>GLint</ptype> <name>bz</name></param>
-            <vecequiv name="Binormal3ivEXT" />
+            <vecequiv name="glBinormal3ivEXT" />
         </command>
         <command>
             <proto>void <name>glBinormal3ivEXT</name></proto>
@@ -6643,7 +6643,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>bx</name></param>
             <param><ptype>GLshort</ptype> <name>by</name></param>
             <param><ptype>GLshort</ptype> <name>bz</name></param>
-            <vecequiv name="Binormal3svEXT" />
+            <vecequiv name="glBinormal3svEXT" />
         </command>
         <command>
             <proto>void <name>glBinormal3svEXT</name></proto>
@@ -7222,7 +7222,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLbyte</ptype> <name>red</name></param>
             <param><ptype>GLbyte</ptype> <name>green</name></param>
             <param><ptype>GLbyte</ptype> <name>blue</name></param>
-            <vecequiv name="Color3bv" />
+            <vecequiv name="glColor3bv" />
         </command>
         <command>
             <proto>void <name>glColor3bv</name></proto>
@@ -7234,7 +7234,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>red</name></param>
             <param><ptype>GLdouble</ptype> <name>green</name></param>
             <param><ptype>GLdouble</ptype> <name>blue</name></param>
-            <vecequiv name="Color3dv" />
+            <vecequiv name="glColor3dv" />
         </command>
         <command>
             <proto>void <name>glColor3dv</name></proto>
@@ -7246,7 +7246,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>red</name></param>
             <param><ptype>GLfloat</ptype> <name>green</name></param>
             <param><ptype>GLfloat</ptype> <name>blue</name></param>
-            <vecequiv name="Color3fv" />
+            <vecequiv name="glColor3fv" />
         </command>
         <command>
             <proto>void <name>glColor3fVertex3fSUN</name></proto>
@@ -7272,7 +7272,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>red</name></param>
             <param><ptype>GLhalfNV</ptype> <name>green</name></param>
             <param><ptype>GLhalfNV</ptype> <name>blue</name></param>
-            <vecequiv name="Color3hvNV" />
+            <vecequiv name="glColor3hvNV" />
         </command>
         <command>
             <proto>void <name>glColor3hvNV</name></proto>
@@ -7284,7 +7284,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>red</name></param>
             <param><ptype>GLint</ptype> <name>green</name></param>
             <param><ptype>GLint</ptype> <name>blue</name></param>
-            <vecequiv name="Color3iv" />
+            <vecequiv name="glColor3iv" />
         </command>
         <command>
             <proto>void <name>glColor3iv</name></proto>
@@ -7296,7 +7296,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>red</name></param>
             <param><ptype>GLshort</ptype> <name>green</name></param>
             <param><ptype>GLshort</ptype> <name>blue</name></param>
-            <vecequiv name="Color3sv" />
+            <vecequiv name="glColor3sv" />
         </command>
         <command>
             <proto>void <name>glColor3sv</name></proto>
@@ -7308,7 +7308,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLubyte</ptype> <name>red</name></param>
             <param><ptype>GLubyte</ptype> <name>green</name></param>
             <param><ptype>GLubyte</ptype> <name>blue</name></param>
-            <vecequiv name="Color3ubv" />
+            <vecequiv name="glColor3ubv" />
         </command>
         <command>
             <proto>void <name>glColor3ubv</name></proto>
@@ -7320,7 +7320,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>red</name></param>
             <param><ptype>GLuint</ptype> <name>green</name></param>
             <param><ptype>GLuint</ptype> <name>blue</name></param>
-            <vecequiv name="Color3uiv" />
+            <vecequiv name="glColor3uiv" />
         </command>
         <command>
             <proto>void <name>glColor3uiv</name></proto>
@@ -7332,7 +7332,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLushort</ptype> <name>red</name></param>
             <param><ptype>GLushort</ptype> <name>green</name></param>
             <param><ptype>GLushort</ptype> <name>blue</name></param>
-            <vecequiv name="Color3usv" />
+            <vecequiv name="glColor3usv" />
         </command>
         <command>
             <proto>void <name>glColor3usv</name></proto>
@@ -7355,7 +7355,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLbyte</ptype> <name>green</name></param>
             <param><ptype>GLbyte</ptype> <name>blue</name></param>
             <param><ptype>GLbyte</ptype> <name>alpha</name></param>
-            <vecequiv name="Color4bv" />
+            <vecequiv name="glColor4bv" />
         </command>
         <command>
             <proto>void <name>glColor4bv</name></proto>
@@ -7368,7 +7368,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>green</name></param>
             <param><ptype>GLdouble</ptype> <name>blue</name></param>
             <param><ptype>GLdouble</ptype> <name>alpha</name></param>
-            <vecequiv name="Color4dv" />
+            <vecequiv name="glColor4dv" />
         </command>
         <command>
             <proto>void <name>glColor4dv</name></proto>
@@ -7381,7 +7381,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>green</name></param>
             <param><ptype>GLfloat</ptype> <name>blue</name></param>
             <param><ptype>GLfloat</ptype> <name>alpha</name></param>
-            <vecequiv name="Color4fv" />
+            <vecequiv name="glColor4fv" />
         </command>
         <command>
             <proto>void <name>glColor4fNormal3fVertex3fSUN</name></proto>
@@ -7413,7 +7413,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>green</name></param>
             <param><ptype>GLhalfNV</ptype> <name>blue</name></param>
             <param><ptype>GLhalfNV</ptype> <name>alpha</name></param>
-            <vecequiv name="Color4hvNV" />
+            <vecequiv name="glColor4hvNV" />
         </command>
         <command>
             <proto>void <name>glColor4hvNV</name></proto>
@@ -7426,7 +7426,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>green</name></param>
             <param><ptype>GLint</ptype> <name>blue</name></param>
             <param><ptype>GLint</ptype> <name>alpha</name></param>
-            <vecequiv name="Color4iv" />
+            <vecequiv name="glColor4iv" />
         </command>
         <command>
             <proto>void <name>glColor4iv</name></proto>
@@ -7439,7 +7439,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>green</name></param>
             <param><ptype>GLshort</ptype> <name>blue</name></param>
             <param><ptype>GLshort</ptype> <name>alpha</name></param>
-            <vecequiv name="Color4sv" />
+            <vecequiv name="glColor4sv" />
         </command>
         <command>
             <proto>void <name>glColor4sv</name></proto>
@@ -7452,7 +7452,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLubyte</ptype> <name>green</name></param>
             <param><ptype>GLubyte</ptype> <name>blue</name></param>
             <param><ptype>GLubyte</ptype> <name>alpha</name></param>
-            <vecequiv name="Color4ubv" />
+            <vecequiv name="glColor4ubv" />
         </command>
         <command>
             <proto>void <name>glColor4ubVertex2fSUN</name></proto>
@@ -7494,7 +7494,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>green</name></param>
             <param><ptype>GLuint</ptype> <name>blue</name></param>
             <param><ptype>GLuint</ptype> <name>alpha</name></param>
-            <vecequiv name="Color4uiv" />
+            <vecequiv name="glColor4uiv" />
         </command>
         <command>
             <proto>void <name>glColor4uiv</name></proto>
@@ -7507,7 +7507,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLushort</ptype> <name>green</name></param>
             <param><ptype>GLushort</ptype> <name>blue</name></param>
             <param><ptype>GLushort</ptype> <name>alpha</name></param>
-            <vecequiv name="Color4usv" />
+            <vecequiv name="glColor4usv" />
         </command>
         <command>
             <proto>void <name>glColor4usv</name></proto>
@@ -9279,7 +9279,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>first</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param><ptype>GLsizei</ptype> <name>instancecount</name></param>
-            <vecequiv name="ArrayElement" />
+            <vecequiv name="glArrayElement" />
         </command>
         <command>
             <proto>void <name>glDrawArraysInstancedANGLE</name></proto>
@@ -9295,7 +9295,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param><ptype>GLsizei</ptype> <name>primcount</name></param>
             <alias name="glDrawArraysInstanced" />
-            <vecequiv name="ArrayElement" />
+            <vecequiv name="glArrayElement" />
         </command>
         <command>
             <proto>void <name>glDrawArraysInstancedBaseInstance</name></proto>
@@ -9312,7 +9312,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param><ptype>GLsizei</ptype> <name>primcount</name></param>
             <alias name="glDrawArraysInstancedARB" />
-            <vecequiv name="ArrayElement" />
+            <vecequiv name="glArrayElement" />
         </command>
         <command>
             <proto>void <name>glDrawArraysInstancedNV</name></proto>
@@ -9395,7 +9395,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>type</name></param>
             <param>const <ptype>GLvoid</ptype> *<name>indices</name></param>
             <param><ptype>GLsizei</ptype> <name>instancecount</name></param>
-            <vecequiv name="ArrayElement" />
+            <vecequiv name="glArrayElement" />
         </command>
         <command>
             <proto>void <name>glDrawElementsInstancedANGLE</name></proto>
@@ -9413,7 +9413,7 @@ typedef unsigned int GLhandleARB;
             <param>const <ptype>GLvoid</ptype> *<name>indices</name></param>
             <param><ptype>GLsizei</ptype> <name>primcount</name></param>
             <alias name="glDrawElementsInstanced" />
-            <vecequiv name="ArrayElement" />
+            <vecequiv name="glArrayElement" />
         </command>
         <command>
             <proto>void <name>glDrawElementsInstancedBaseInstance</name></proto>
@@ -9451,7 +9451,7 @@ typedef unsigned int GLhandleARB;
             <param>const <ptype>GLvoid</ptype> *<name>indices</name></param>
             <param><ptype>GLsizei</ptype> <name>primcount</name></param>
             <alias name="glDrawElementsInstancedARB" />
-            <vecequiv name="ArrayElement" />
+            <vecequiv name="glArrayElement" />
         </command>
         <command>
             <proto>void <name>glDrawElementsInstancedNV</name></proto>
@@ -9626,7 +9626,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glEdgeFlag</name></proto>
             <param><ptype>GLboolean</ptype> <name>flag</name></param>
-            <vecequiv name="EdgeFlagv" />
+            <vecequiv name="glEdgeFlagv" />
         </command>
         <command>
             <proto>void <name>glEdgeFlagFormatNV</name></proto>
@@ -9784,7 +9784,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glEvalCoord1d</name></proto>
             <param><ptype>GLdouble</ptype> <name>u</name></param>
-            <vecequiv name="EvalCoord1dv" />
+            <vecequiv name="glEvalCoord1dv" />
         </command>
         <command>
             <proto>void <name>glEvalCoord1dv</name></proto>
@@ -9794,7 +9794,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glEvalCoord1f</name></proto>
             <param><ptype>GLfloat</ptype> <name>u</name></param>
-            <vecequiv name="EvalCoord1fv" />
+            <vecequiv name="glEvalCoord1fv" />
         </command>
         <command>
             <proto>void <name>glEvalCoord1fv</name></proto>
@@ -9813,7 +9813,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glEvalCoord2d</name></proto>
             <param><ptype>GLdouble</ptype> <name>u</name></param>
             <param><ptype>GLdouble</ptype> <name>v</name></param>
-            <vecequiv name="EvalCoord2dv" />
+            <vecequiv name="glEvalCoord2dv" />
         </command>
         <command>
             <proto>void <name>glEvalCoord2dv</name></proto>
@@ -9824,7 +9824,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glEvalCoord2f</name></proto>
             <param><ptype>GLfloat</ptype> <name>u</name></param>
             <param><ptype>GLfloat</ptype> <name>v</name></param>
-            <vecequiv name="EvalCoord2fv" />
+            <vecequiv name="glEvalCoord2fv" />
         </command>
         <command>
             <proto>void <name>glEvalCoord2fv</name></proto>
@@ -10098,13 +10098,13 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glFogCoordd</name></proto>
             <param><ptype>GLdouble</ptype> <name>coord</name></param>
-            <vecequiv name="FogCoorddv" />
+            <vecequiv name="glFogCoorddv" />
         </command>
         <command>
             <proto>void <name>glFogCoorddEXT</name></proto>
             <param><ptype>GLdouble</ptype> <name>coord</name></param>
             <alias name="glFogCoordd" />
-            <vecequiv name="FogCoorddvEXT" />
+            <vecequiv name="glFogCoorddvEXT" />
         </command>
         <command>
             <proto>void <name>glFogCoorddv</name></proto>
@@ -10120,13 +10120,13 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glFogCoordf</name></proto>
             <param><ptype>GLfloat</ptype> <name>coord</name></param>
-            <vecequiv name="FogCoordfv" />
+            <vecequiv name="glFogCoordfv" />
         </command>
         <command>
             <proto>void <name>glFogCoordfEXT</name></proto>
             <param><ptype>GLfloat</ptype> <name>coord</name></param>
             <alias name="glFogCoordf" />
-            <vecequiv name="FogCoordfvEXT" />
+            <vecequiv name="glFogCoordfvEXT" />
         </command>
         <command>
             <proto>void <name>glFogCoordfv</name></proto>
@@ -10142,7 +10142,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glFogCoordhNV</name></proto>
             <param><ptype>GLhalfNV</ptype> <name>fog</name></param>
-            <vecequiv name="FogCoordhvNV" />
+            <vecequiv name="glFogCoordhvNV" />
         </command>
         <command>
             <proto>void <name>glFogCoordhvNV</name></proto>
@@ -13672,7 +13672,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glIndexd</name></proto>
             <param><ptype>GLdouble</ptype> <name>c</name></param>
-            <vecequiv name="Indexdv" />
+            <vecequiv name="glIndexdv" />
         </command>
         <command>
             <proto>void <name>glIndexdv</name></proto>
@@ -13682,7 +13682,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glIndexf</name></proto>
             <param><ptype>GLfloat</ptype> <name>c</name></param>
-            <vecequiv name="Indexfv" />
+            <vecequiv name="glIndexfv" />
         </command>
         <command>
             <proto>void <name>glIndexfv</name></proto>
@@ -13692,7 +13692,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glIndexi</name></proto>
             <param><ptype>GLint</ptype> <name>c</name></param>
-            <vecequiv name="Indexiv" />
+            <vecequiv name="glIndexiv" />
         </command>
         <command>
             <proto>void <name>glIndexiv</name></proto>
@@ -13702,7 +13702,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glIndexs</name></proto>
             <param><ptype>GLshort</ptype> <name>c</name></param>
-            <vecequiv name="Indexsv" />
+            <vecequiv name="glIndexsv" />
         </command>
         <command>
             <proto>void <name>glIndexsv</name></proto>
@@ -13712,7 +13712,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glIndexub</name></proto>
             <param><ptype>GLubyte</ptype> <name>c</name></param>
-            <vecequiv name="Indexubv" />
+            <vecequiv name="glIndexubv" />
         </command>
         <command>
             <proto>void <name>glIndexubv</name></proto>
@@ -14951,13 +14951,13 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glMultiTexCoord1d</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLdouble</ptype> <name>s</name></param>
-            <vecequiv name="MultiTexCoord1dv" />
+            <vecequiv name="glMultiTexCoord1dv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord1dARB</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLdouble</ptype> <name>s</name></param>
-            <vecequiv name="MultiTexCoord1dv" />
+            <vecequiv name="glMultiTexCoord1dv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord1dv</name></proto>
@@ -14976,13 +14976,13 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glMultiTexCoord1f</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLfloat</ptype> <name>s</name></param>
-            <vecequiv name="MultiTexCoord1fv" />
+            <vecequiv name="glMultiTexCoord1fv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord1fARB</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLfloat</ptype> <name>s</name></param>
-            <vecequiv name="MultiTexCoord1fv" />
+            <vecequiv name="glMultiTexCoord1fv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord1fv</name></proto>
@@ -15001,7 +15001,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glMultiTexCoord1hNV</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLhalfNV</ptype> <name>s</name></param>
-            <vecequiv name="MultiTexCoord1hvNV" />
+            <vecequiv name="glMultiTexCoord1hvNV" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord1hvNV</name></proto>
@@ -15013,13 +15013,13 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glMultiTexCoord1i</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLint</ptype> <name>s</name></param>
-            <vecequiv name="MultiTexCoord1iv" />
+            <vecequiv name="glMultiTexCoord1iv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord1iARB</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLint</ptype> <name>s</name></param>
-            <vecequiv name="MultiTexCoord1iv" />
+            <vecequiv name="glMultiTexCoord1iv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord1iv</name></proto>
@@ -15038,13 +15038,13 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glMultiTexCoord1s</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLshort</ptype> <name>s</name></param>
-            <vecequiv name="MultiTexCoord1sv" />
+            <vecequiv name="glMultiTexCoord1sv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord1sARB</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLshort</ptype> <name>s</name></param>
-            <vecequiv name="MultiTexCoord1sv" />
+            <vecequiv name="glMultiTexCoord1sv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord1sv</name></proto>
@@ -15085,14 +15085,14 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLdouble</ptype> <name>s</name></param>
             <param><ptype>GLdouble</ptype> <name>t</name></param>
-            <vecequiv name="MultiTexCoord2dv" />
+            <vecequiv name="glMultiTexCoord2dv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord2dARB</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLdouble</ptype> <name>s</name></param>
             <param><ptype>GLdouble</ptype> <name>t</name></param>
-            <vecequiv name="MultiTexCoord2dv" />
+            <vecequiv name="glMultiTexCoord2dv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord2dv</name></proto>
@@ -15112,14 +15112,14 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLfloat</ptype> <name>s</name></param>
             <param><ptype>GLfloat</ptype> <name>t</name></param>
-            <vecequiv name="MultiTexCoord2fv" />
+            <vecequiv name="glMultiTexCoord2fv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord2fARB</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLfloat</ptype> <name>s</name></param>
             <param><ptype>GLfloat</ptype> <name>t</name></param>
-            <vecequiv name="MultiTexCoord2fv" />
+            <vecequiv name="glMultiTexCoord2fv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord2fv</name></proto>
@@ -15139,7 +15139,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLhalfNV</ptype> <name>s</name></param>
             <param><ptype>GLhalfNV</ptype> <name>t</name></param>
-            <vecequiv name="MultiTexCoord2hvNV" />
+            <vecequiv name="glMultiTexCoord2hvNV" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord2hvNV</name></proto>
@@ -15152,14 +15152,14 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLint</ptype> <name>s</name></param>
             <param><ptype>GLint</ptype> <name>t</name></param>
-            <vecequiv name="MultiTexCoord2iv" />
+            <vecequiv name="glMultiTexCoord2iv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord2iARB</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLint</ptype> <name>s</name></param>
             <param><ptype>GLint</ptype> <name>t</name></param>
-            <vecequiv name="MultiTexCoord2iv" />
+            <vecequiv name="glMultiTexCoord2iv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord2iv</name></proto>
@@ -15179,14 +15179,14 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLshort</ptype> <name>s</name></param>
             <param><ptype>GLshort</ptype> <name>t</name></param>
-            <vecequiv name="MultiTexCoord2sv" />
+            <vecequiv name="glMultiTexCoord2sv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord2sARB</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLshort</ptype> <name>s</name></param>
             <param><ptype>GLshort</ptype> <name>t</name></param>
-            <vecequiv name="MultiTexCoord2sv" />
+            <vecequiv name="glMultiTexCoord2sv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord2sv</name></proto>
@@ -15230,7 +15230,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>s</name></param>
             <param><ptype>GLdouble</ptype> <name>t</name></param>
             <param><ptype>GLdouble</ptype> <name>r</name></param>
-            <vecequiv name="MultiTexCoord3dv" />
+            <vecequiv name="glMultiTexCoord3dv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord3dARB</name></proto>
@@ -15238,7 +15238,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>s</name></param>
             <param><ptype>GLdouble</ptype> <name>t</name></param>
             <param><ptype>GLdouble</ptype> <name>r</name></param>
-            <vecequiv name="MultiTexCoord3dv" />
+            <vecequiv name="glMultiTexCoord3dv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord3dv</name></proto>
@@ -15259,7 +15259,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>s</name></param>
             <param><ptype>GLfloat</ptype> <name>t</name></param>
             <param><ptype>GLfloat</ptype> <name>r</name></param>
-            <vecequiv name="MultiTexCoord3fv" />
+            <vecequiv name="glMultiTexCoord3fv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord3fARB</name></proto>
@@ -15267,7 +15267,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>s</name></param>
             <param><ptype>GLfloat</ptype> <name>t</name></param>
             <param><ptype>GLfloat</ptype> <name>r</name></param>
-            <vecequiv name="MultiTexCoord3fv" />
+            <vecequiv name="glMultiTexCoord3fv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord3fv</name></proto>
@@ -15288,7 +15288,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>s</name></param>
             <param><ptype>GLhalfNV</ptype> <name>t</name></param>
             <param><ptype>GLhalfNV</ptype> <name>r</name></param>
-            <vecequiv name="MultiTexCoord3hvNV" />
+            <vecequiv name="glMultiTexCoord3hvNV" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord3hvNV</name></proto>
@@ -15302,7 +15302,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>s</name></param>
             <param><ptype>GLint</ptype> <name>t</name></param>
             <param><ptype>GLint</ptype> <name>r</name></param>
-            <vecequiv name="MultiTexCoord3iv" />
+            <vecequiv name="glMultiTexCoord3iv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord3iARB</name></proto>
@@ -15310,7 +15310,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>s</name></param>
             <param><ptype>GLint</ptype> <name>t</name></param>
             <param><ptype>GLint</ptype> <name>r</name></param>
-            <vecequiv name="MultiTexCoord3iv" />
+            <vecequiv name="glMultiTexCoord3iv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord3iv</name></proto>
@@ -15331,7 +15331,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>s</name></param>
             <param><ptype>GLshort</ptype> <name>t</name></param>
             <param><ptype>GLshort</ptype> <name>r</name></param>
-            <vecequiv name="MultiTexCoord3sv" />
+            <vecequiv name="glMultiTexCoord3sv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord3sARB</name></proto>
@@ -15339,7 +15339,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>s</name></param>
             <param><ptype>GLshort</ptype> <name>t</name></param>
             <param><ptype>GLshort</ptype> <name>r</name></param>
-            <vecequiv name="MultiTexCoord3sv" />
+            <vecequiv name="glMultiTexCoord3sv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord3sv</name></proto>
@@ -15386,7 +15386,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>t</name></param>
             <param><ptype>GLdouble</ptype> <name>r</name></param>
             <param><ptype>GLdouble</ptype> <name>q</name></param>
-            <vecequiv name="MultiTexCoord4dv" />
+            <vecequiv name="glMultiTexCoord4dv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord4dARB</name></proto>
@@ -15395,7 +15395,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>t</name></param>
             <param><ptype>GLdouble</ptype> <name>r</name></param>
             <param><ptype>GLdouble</ptype> <name>q</name></param>
-            <vecequiv name="MultiTexCoord4dv" />
+            <vecequiv name="glMultiTexCoord4dv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord4dv</name></proto>
@@ -15417,7 +15417,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>t</name></param>
             <param><ptype>GLfloat</ptype> <name>r</name></param>
             <param><ptype>GLfloat</ptype> <name>q</name></param>
-            <vecequiv name="MultiTexCoord4fv" />
+            <vecequiv name="glMultiTexCoord4fv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord4fARB</name></proto>
@@ -15426,7 +15426,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>t</name></param>
             <param><ptype>GLfloat</ptype> <name>r</name></param>
             <param><ptype>GLfloat</ptype> <name>q</name></param>
-            <vecequiv name="MultiTexCoord4fv" />
+            <vecequiv name="glMultiTexCoord4fv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord4fv</name></proto>
@@ -15448,7 +15448,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>t</name></param>
             <param><ptype>GLhalfNV</ptype> <name>r</name></param>
             <param><ptype>GLhalfNV</ptype> <name>q</name></param>
-            <vecequiv name="MultiTexCoord4hvNV" />
+            <vecequiv name="glMultiTexCoord4hvNV" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord4hvNV</name></proto>
@@ -15463,7 +15463,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>t</name></param>
             <param><ptype>GLint</ptype> <name>r</name></param>
             <param><ptype>GLint</ptype> <name>q</name></param>
-            <vecequiv name="MultiTexCoord4iv" />
+            <vecequiv name="glMultiTexCoord4iv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord4iARB</name></proto>
@@ -15472,7 +15472,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>t</name></param>
             <param><ptype>GLint</ptype> <name>r</name></param>
             <param><ptype>GLint</ptype> <name>q</name></param>
-            <vecequiv name="MultiTexCoord4iv" />
+            <vecequiv name="glMultiTexCoord4iv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord4iv</name></proto>
@@ -15494,7 +15494,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>t</name></param>
             <param><ptype>GLshort</ptype> <name>r</name></param>
             <param><ptype>GLshort</ptype> <name>q</name></param>
-            <vecequiv name="MultiTexCoord4sv" />
+            <vecequiv name="glMultiTexCoord4sv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord4sARB</name></proto>
@@ -15503,7 +15503,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>t</name></param>
             <param><ptype>GLshort</ptype> <name>r</name></param>
             <param><ptype>GLshort</ptype> <name>q</name></param>
-            <vecequiv name="MultiTexCoord4sv" />
+            <vecequiv name="glMultiTexCoord4sv" />
         </command>
         <command>
             <proto>void <name>glMultiTexCoord4sv</name></proto>
@@ -15601,7 +15601,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
             <param><ptype>GLfloat</ptype> <name>param</name></param>
-            <vecequiv name="MultiTexEnvfvEXT" />
+            <vecequiv name="glMultiTexEnvfvEXT" />
         </command>
         <command>
             <proto>void <name>glMultiTexEnvfvEXT</name></proto>
@@ -15616,7 +15616,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
             <param><ptype>GLint</ptype> <name>param</name></param>
-            <vecequiv name="MultiTexEnvivEXT" />
+            <vecequiv name="glMultiTexEnvivEXT" />
         </command>
         <command>
             <proto>void <name>glMultiTexEnvivEXT</name></proto>
@@ -15631,7 +15631,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>coord</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
             <param><ptype>GLdouble</ptype> <name>param</name></param>
-            <vecequiv name="MultiTexGendvEXT" />
+            <vecequiv name="glMultiTexGendvEXT" />
         </command>
         <command>
             <proto>void <name>glMultiTexGendvEXT</name></proto>
@@ -15646,7 +15646,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>coord</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
             <param><ptype>GLfloat</ptype> <name>param</name></param>
-            <vecequiv name="MultiTexGenfvEXT" />
+            <vecequiv name="glMultiTexGenfvEXT" />
         </command>
         <command>
             <proto>void <name>glMultiTexGenfvEXT</name></proto>
@@ -15661,7 +15661,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>coord</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
             <param><ptype>GLint</ptype> <name>param</name></param>
-            <vecequiv name="MultiTexGenivEXT" />
+            <vecequiv name="glMultiTexGenivEXT" />
         </command>
         <command>
             <proto>void <name>glMultiTexGenivEXT</name></proto>
@@ -15729,7 +15729,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
             <param><ptype>GLfloat</ptype> <name>param</name></param>
-            <vecequiv name="MultiTexParameterfvEXT" />
+            <vecequiv name="glMultiTexParameterfvEXT" />
         </command>
         <command>
             <proto>void <name>glMultiTexParameterfvEXT</name></proto>
@@ -15744,7 +15744,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
             <param><ptype>GLint</ptype> <name>param</name></param>
-            <vecequiv name="MultiTexParameterivEXT" />
+            <vecequiv name="glMultiTexParameterivEXT" />
         </command>
         <command>
             <proto>void <name>glMultiTexParameterivEXT</name></proto>
@@ -15890,7 +15890,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <param><ptype>GLdouble</ptype> <name>w</name></param>
-            <vecequiv name="NamedProgramLocalParameter4dvEXT" />
+            <vecequiv name="glNamedProgramLocalParameter4dvEXT" />
         </command>
         <command>
             <proto>void <name>glNamedProgramLocalParameter4dvEXT</name></proto>
@@ -15908,7 +15908,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <param><ptype>GLfloat</ptype> <name>w</name></param>
-            <vecequiv name="NamedProgramLocalParameter4fvEXT" />
+            <vecequiv name="glNamedProgramLocalParameter4fvEXT" />
         </command>
         <command>
             <proto>void <name>glNamedProgramLocalParameter4fvEXT</name></proto>
@@ -15926,7 +15926,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
             <param><ptype>GLint</ptype> <name>w</name></param>
-            <vecequiv name="NamedProgramLocalParameterI4ivEXT" />
+            <vecequiv name="glNamedProgramLocalParameterI4ivEXT" />
         </command>
         <command>
             <proto>void <name>glNamedProgramLocalParameterI4ivEXT</name></proto>
@@ -15944,7 +15944,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>y</name></param>
             <param><ptype>GLuint</ptype> <name>z</name></param>
             <param><ptype>GLuint</ptype> <name>w</name></param>
-            <vecequiv name="NamedProgramLocalParameterI4uivEXT" />
+            <vecequiv name="glNamedProgramLocalParameterI4uivEXT" />
         </command>
         <command>
             <proto>void <name>glNamedProgramLocalParameterI4uivEXT</name></proto>
@@ -16034,7 +16034,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLbyte</ptype> <name>nx</name></param>
             <param><ptype>GLbyte</ptype> <name>ny</name></param>
             <param><ptype>GLbyte</ptype> <name>nz</name></param>
-            <vecequiv name="Normal3bv" />
+            <vecequiv name="glNormal3bv" />
         </command>
         <command>
             <proto>void <name>glNormal3bv</name></proto>
@@ -16046,7 +16046,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>nx</name></param>
             <param><ptype>GLdouble</ptype> <name>ny</name></param>
             <param><ptype>GLdouble</ptype> <name>nz</name></param>
-            <vecequiv name="Normal3dv" />
+            <vecequiv name="glNormal3dv" />
         </command>
         <command>
             <proto>void <name>glNormal3dv</name></proto>
@@ -16058,7 +16058,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>nx</name></param>
             <param><ptype>GLfloat</ptype> <name>ny</name></param>
             <param><ptype>GLfloat</ptype> <name>nz</name></param>
-            <vecequiv name="Normal3fv" />
+            <vecequiv name="glNormal3fv" />
         </command>
         <command>
             <proto>void <name>glNormal3fVertex3fSUN</name></proto>
@@ -16084,7 +16084,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>nx</name></param>
             <param><ptype>GLhalfNV</ptype> <name>ny</name></param>
             <param><ptype>GLhalfNV</ptype> <name>nz</name></param>
-            <vecequiv name="Normal3hvNV" />
+            <vecequiv name="glNormal3hvNV" />
         </command>
         <command>
             <proto>void <name>glNormal3hvNV</name></proto>
@@ -16096,7 +16096,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>nx</name></param>
             <param><ptype>GLint</ptype> <name>ny</name></param>
             <param><ptype>GLint</ptype> <name>nz</name></param>
-            <vecequiv name="Normal3iv" />
+            <vecequiv name="glNormal3iv" />
         </command>
         <command>
             <proto>void <name>glNormal3iv</name></proto>
@@ -16108,7 +16108,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>nx</name></param>
             <param><ptype>GLshort</ptype> <name>ny</name></param>
             <param><ptype>GLshort</ptype> <name>nz</name></param>
-            <vecequiv name="Normal3sv" />
+            <vecequiv name="glNormal3sv" />
         </command>
         <command>
             <proto>void <name>glNormal3sv</name></proto>
@@ -16923,7 +16923,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <param><ptype>GLdouble</ptype> <name>w</name></param>
-            <vecequiv name="ProgramEnvParameter4dvARB" />
+            <vecequiv name="glProgramEnvParameter4dvARB" />
         </command>
         <command>
             <proto>void <name>glProgramEnvParameter4dvARB</name></proto>
@@ -16939,7 +16939,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <param><ptype>GLfloat</ptype> <name>w</name></param>
-            <vecequiv name="ProgramEnvParameter4fvARB" />
+            <vecequiv name="glProgramEnvParameter4fvARB" />
         </command>
         <command>
             <proto>void <name>glProgramEnvParameter4fvARB</name></proto>
@@ -16955,7 +16955,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
             <param><ptype>GLint</ptype> <name>w</name></param>
-            <vecequiv name="ProgramEnvParameterI4ivNV" />
+            <vecequiv name="glProgramEnvParameterI4ivNV" />
         </command>
         <command>
             <proto>void <name>glProgramEnvParameterI4ivNV</name></proto>
@@ -16971,7 +16971,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>y</name></param>
             <param><ptype>GLuint</ptype> <name>z</name></param>
             <param><ptype>GLuint</ptype> <name>w</name></param>
-            <vecequiv name="ProgramEnvParameterI4uivNV" />
+            <vecequiv name="glProgramEnvParameterI4uivNV" />
         </command>
         <command>
             <proto>void <name>glProgramEnvParameterI4uivNV</name></proto>
@@ -17009,7 +17009,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <param><ptype>GLdouble</ptype> <name>w</name></param>
-            <vecequiv name="ProgramLocalParameter4dvARB" />
+            <vecequiv name="glProgramLocalParameter4dvARB" />
         </command>
         <command>
             <proto>void <name>glProgramLocalParameter4dvARB</name></proto>
@@ -17025,7 +17025,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <param><ptype>GLfloat</ptype> <name>w</name></param>
-            <vecequiv name="ProgramLocalParameter4fvARB" />
+            <vecequiv name="glProgramLocalParameter4fvARB" />
         </command>
         <command>
             <proto>void <name>glProgramLocalParameter4fvARB</name></proto>
@@ -17041,7 +17041,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
             <param><ptype>GLint</ptype> <name>w</name></param>
-            <vecequiv name="ProgramLocalParameterI4ivNV" />
+            <vecequiv name="glProgramLocalParameterI4ivNV" />
         </command>
         <command>
             <proto>void <name>glProgramLocalParameterI4ivNV</name></proto>
@@ -17057,7 +17057,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>y</name></param>
             <param><ptype>GLuint</ptype> <name>z</name></param>
             <param><ptype>GLuint</ptype> <name>w</name></param>
-            <vecequiv name="ProgramLocalParameterI4uivNV" />
+            <vecequiv name="glProgramLocalParameterI4uivNV" />
         </command>
         <command>
             <proto>void <name>glProgramLocalParameterI4uivNV</name></proto>
@@ -17096,7 +17096,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <param><ptype>GLdouble</ptype> <name>w</name></param>
-            <vecequiv name="ProgramNamedParameter4dvNV" />
+            <vecequiv name="glProgramNamedParameter4dvNV" />
         </command>
         <command>
             <proto>void <name>glProgramNamedParameter4dvNV</name></proto>
@@ -17115,7 +17115,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <param><ptype>GLfloat</ptype> <name>w</name></param>
-            <vecequiv name="ProgramNamedParameter4fvNV" />
+            <vecequiv name="glProgramNamedParameter4fvNV" />
         </command>
         <command>
             <proto>void <name>glProgramNamedParameter4fvNV</name></proto>
@@ -17133,7 +17133,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <param><ptype>GLdouble</ptype> <name>w</name></param>
-            <vecequiv name="ProgramParameter4dvNV" />
+            <vecequiv name="glProgramParameter4dvNV" />
         </command>
         <command>
             <proto>void <name>glProgramParameter4dvNV</name></proto>
@@ -17150,7 +17150,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <param><ptype>GLfloat</ptype> <name>w</name></param>
-            <vecequiv name="ProgramParameter4fvNV" />
+            <vecequiv name="glProgramParameter4fvNV" />
         </command>
         <command>
             <proto>void <name>glProgramParameter4fvNV</name></proto>
@@ -18177,7 +18177,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glRasterPos2d</name></proto>
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
-            <vecequiv name="RasterPos2dv" />
+            <vecequiv name="glRasterPos2dv" />
         </command>
         <command>
             <proto>void <name>glRasterPos2dv</name></proto>
@@ -18188,7 +18188,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glRasterPos2f</name></proto>
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
-            <vecequiv name="RasterPos2fv" />
+            <vecequiv name="glRasterPos2fv" />
         </command>
         <command>
             <proto>void <name>glRasterPos2fv</name></proto>
@@ -18199,7 +18199,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glRasterPos2i</name></proto>
             <param><ptype>GLint</ptype> <name>x</name></param>
             <param><ptype>GLint</ptype> <name>y</name></param>
-            <vecequiv name="RasterPos2iv" />
+            <vecequiv name="glRasterPos2iv" />
         </command>
         <command>
             <proto>void <name>glRasterPos2iv</name></proto>
@@ -18210,7 +18210,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glRasterPos2s</name></proto>
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
-            <vecequiv name="RasterPos2sv" />
+            <vecequiv name="glRasterPos2sv" />
         </command>
         <command>
             <proto>void <name>glRasterPos2sv</name></proto>
@@ -18231,7 +18231,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
-            <vecequiv name="RasterPos3dv" />
+            <vecequiv name="glRasterPos3dv" />
         </command>
         <command>
             <proto>void <name>glRasterPos3dv</name></proto>
@@ -18243,7 +18243,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
-            <vecequiv name="RasterPos3fv" />
+            <vecequiv name="glRasterPos3fv" />
         </command>
         <command>
             <proto>void <name>glRasterPos3fv</name></proto>
@@ -18255,7 +18255,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>x</name></param>
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
-            <vecequiv name="RasterPos3iv" />
+            <vecequiv name="glRasterPos3iv" />
         </command>
         <command>
             <proto>void <name>glRasterPos3iv</name></proto>
@@ -18267,7 +18267,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
-            <vecequiv name="RasterPos3sv" />
+            <vecequiv name="glRasterPos3sv" />
         </command>
         <command>
             <proto>void <name>glRasterPos3sv</name></proto>
@@ -18290,7 +18290,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <param><ptype>GLdouble</ptype> <name>w</name></param>
-            <vecequiv name="RasterPos4dv" />
+            <vecequiv name="glRasterPos4dv" />
         </command>
         <command>
             <proto>void <name>glRasterPos4dv</name></proto>
@@ -18303,7 +18303,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <param><ptype>GLfloat</ptype> <name>w</name></param>
-            <vecequiv name="RasterPos4fv" />
+            <vecequiv name="glRasterPos4fv" />
         </command>
         <command>
             <proto>void <name>glRasterPos4fv</name></proto>
@@ -18316,7 +18316,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
             <param><ptype>GLint</ptype> <name>w</name></param>
-            <vecequiv name="RasterPos4iv" />
+            <vecequiv name="glRasterPos4iv" />
         </command>
         <command>
             <proto>void <name>glRasterPos4iv</name></proto>
@@ -18329,7 +18329,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
             <param><ptype>GLshort</ptype> <name>w</name></param>
-            <vecequiv name="RasterPos4sv" />
+            <vecequiv name="glRasterPos4sv" />
         </command>
         <command>
             <proto>void <name>glRasterPos4sv</name></proto>
@@ -18406,7 +18406,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y1</name></param>
             <param><ptype>GLdouble</ptype> <name>x2</name></param>
             <param><ptype>GLdouble</ptype> <name>y2</name></param>
-            <vecequiv name="Rectdv" />
+            <vecequiv name="glRectdv" />
         </command>
         <command>
             <proto>void <name>glRectdv</name></proto>
@@ -18420,7 +18420,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y1</name></param>
             <param><ptype>GLfloat</ptype> <name>x2</name></param>
             <param><ptype>GLfloat</ptype> <name>y2</name></param>
-            <vecequiv name="Rectfv" />
+            <vecequiv name="glRectfv" />
         </command>
         <command>
             <proto>void <name>glRectfv</name></proto>
@@ -18434,7 +18434,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>y1</name></param>
             <param><ptype>GLint</ptype> <name>x2</name></param>
             <param><ptype>GLint</ptype> <name>y2</name></param>
-            <vecequiv name="Rectiv" />
+            <vecequiv name="glRectiv" />
         </command>
         <command>
             <proto>void <name>glRectiv</name></proto>
@@ -18448,7 +18448,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>y1</name></param>
             <param><ptype>GLshort</ptype> <name>x2</name></param>
             <param><ptype>GLshort</ptype> <name>y2</name></param>
-            <vecequiv name="Rectsv" />
+            <vecequiv name="glRectsv" />
         </command>
         <command>
             <proto>void <name>glRectsv</name></proto>
@@ -18964,7 +18964,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLbyte</ptype> <name>red</name></param>
             <param><ptype>GLbyte</ptype> <name>green</name></param>
             <param><ptype>GLbyte</ptype> <name>blue</name></param>
-            <vecequiv name="SecondaryColor3bv" />
+            <vecequiv name="glSecondaryColor3bv" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3bEXT</name></proto>
@@ -18972,7 +18972,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLbyte</ptype> <name>green</name></param>
             <param><ptype>GLbyte</ptype> <name>blue</name></param>
             <alias name="glSecondaryColor3b" />
-            <vecequiv name="SecondaryColor3bvEXT" />
+            <vecequiv name="glSecondaryColor3bvEXT" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3bv</name></proto>
@@ -18990,7 +18990,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>red</name></param>
             <param><ptype>GLdouble</ptype> <name>green</name></param>
             <param><ptype>GLdouble</ptype> <name>blue</name></param>
-            <vecequiv name="SecondaryColor3dv" />
+            <vecequiv name="glSecondaryColor3dv" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3dEXT</name></proto>
@@ -18998,7 +18998,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>green</name></param>
             <param><ptype>GLdouble</ptype> <name>blue</name></param>
             <alias name="glSecondaryColor3d" />
-            <vecequiv name="SecondaryColor3dvEXT" />
+            <vecequiv name="glSecondaryColor3dvEXT" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3dv</name></proto>
@@ -19016,7 +19016,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>red</name></param>
             <param><ptype>GLfloat</ptype> <name>green</name></param>
             <param><ptype>GLfloat</ptype> <name>blue</name></param>
-            <vecequiv name="SecondaryColor3fv" />
+            <vecequiv name="glSecondaryColor3fv" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3fEXT</name></proto>
@@ -19024,7 +19024,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>green</name></param>
             <param><ptype>GLfloat</ptype> <name>blue</name></param>
             <alias name="glSecondaryColor3f" />
-            <vecequiv name="SecondaryColor3fvEXT" />
+            <vecequiv name="glSecondaryColor3fvEXT" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3fv</name></proto>
@@ -19042,7 +19042,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>red</name></param>
             <param><ptype>GLhalfNV</ptype> <name>green</name></param>
             <param><ptype>GLhalfNV</ptype> <name>blue</name></param>
-            <vecequiv name="SecondaryColor3hvNV" />
+            <vecequiv name="glSecondaryColor3hvNV" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3hvNV</name></proto>
@@ -19054,7 +19054,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>red</name></param>
             <param><ptype>GLint</ptype> <name>green</name></param>
             <param><ptype>GLint</ptype> <name>blue</name></param>
-            <vecequiv name="SecondaryColor3iv" />
+            <vecequiv name="glSecondaryColor3iv" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3iEXT</name></proto>
@@ -19062,7 +19062,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>green</name></param>
             <param><ptype>GLint</ptype> <name>blue</name></param>
             <alias name="glSecondaryColor3i" />
-            <vecequiv name="SecondaryColor3ivEXT" />
+            <vecequiv name="glSecondaryColor3ivEXT" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3iv</name></proto>
@@ -19080,7 +19080,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>red</name></param>
             <param><ptype>GLshort</ptype> <name>green</name></param>
             <param><ptype>GLshort</ptype> <name>blue</name></param>
-            <vecequiv name="SecondaryColor3sv" />
+            <vecequiv name="glSecondaryColor3sv" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3sEXT</name></proto>
@@ -19088,7 +19088,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>green</name></param>
             <param><ptype>GLshort</ptype> <name>blue</name></param>
             <alias name="glSecondaryColor3s" />
-            <vecequiv name="SecondaryColor3svEXT" />
+            <vecequiv name="glSecondaryColor3svEXT" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3sv</name></proto>
@@ -19106,7 +19106,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLubyte</ptype> <name>red</name></param>
             <param><ptype>GLubyte</ptype> <name>green</name></param>
             <param><ptype>GLubyte</ptype> <name>blue</name></param>
-            <vecequiv name="SecondaryColor3ubv" />
+            <vecequiv name="glSecondaryColor3ubv" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3ubEXT</name></proto>
@@ -19114,7 +19114,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLubyte</ptype> <name>green</name></param>
             <param><ptype>GLubyte</ptype> <name>blue</name></param>
             <alias name="glSecondaryColor3ub" />
-            <vecequiv name="SecondaryColor3ubvEXT" />
+            <vecequiv name="glSecondaryColor3ubvEXT" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3ubv</name></proto>
@@ -19132,7 +19132,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>red</name></param>
             <param><ptype>GLuint</ptype> <name>green</name></param>
             <param><ptype>GLuint</ptype> <name>blue</name></param>
-            <vecequiv name="SecondaryColor3uiv" />
+            <vecequiv name="glSecondaryColor3uiv" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3uiEXT</name></proto>
@@ -19140,7 +19140,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>green</name></param>
             <param><ptype>GLuint</ptype> <name>blue</name></param>
             <alias name="glSecondaryColor3ui" />
-            <vecequiv name="SecondaryColor3uivEXT" />
+            <vecequiv name="glSecondaryColor3uivEXT" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3uiv</name></proto>
@@ -19158,7 +19158,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLushort</ptype> <name>red</name></param>
             <param><ptype>GLushort</ptype> <name>green</name></param>
             <param><ptype>GLushort</ptype> <name>blue</name></param>
-            <vecequiv name="SecondaryColor3usv" />
+            <vecequiv name="glSecondaryColor3usv" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3usEXT</name></proto>
@@ -19166,7 +19166,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLushort</ptype> <name>green</name></param>
             <param><ptype>GLushort</ptype> <name>blue</name></param>
             <alias name="glSecondaryColor3us" />
-            <vecequiv name="SecondaryColor3usvEXT" />
+            <vecequiv name="glSecondaryColor3usvEXT" />
         </command>
         <command>
             <proto>void <name>glSecondaryColor3usv</name></proto>
@@ -19519,7 +19519,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLbyte</ptype> <name>tx</name></param>
             <param><ptype>GLbyte</ptype> <name>ty</name></param>
             <param><ptype>GLbyte</ptype> <name>tz</name></param>
-            <vecequiv name="Tangent3bvEXT" />
+            <vecequiv name="glTangent3bvEXT" />
         </command>
         <command>
             <proto>void <name>glTangent3bvEXT</name></proto>
@@ -19530,7 +19530,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>tx</name></param>
             <param><ptype>GLdouble</ptype> <name>ty</name></param>
             <param><ptype>GLdouble</ptype> <name>tz</name></param>
-            <vecequiv name="Tangent3dvEXT" />
+            <vecequiv name="glTangent3dvEXT" />
         </command>
         <command>
             <proto>void <name>glTangent3dvEXT</name></proto>
@@ -19541,7 +19541,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>tx</name></param>
             <param><ptype>GLfloat</ptype> <name>ty</name></param>
             <param><ptype>GLfloat</ptype> <name>tz</name></param>
-            <vecequiv name="Tangent3fvEXT" />
+            <vecequiv name="glTangent3fvEXT" />
         </command>
         <command>
             <proto>void <name>glTangent3fvEXT</name></proto>
@@ -19552,7 +19552,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>tx</name></param>
             <param><ptype>GLint</ptype> <name>ty</name></param>
             <param><ptype>GLint</ptype> <name>tz</name></param>
-            <vecequiv name="Tangent3ivEXT" />
+            <vecequiv name="glTangent3ivEXT" />
         </command>
         <command>
             <proto>void <name>glTangent3ivEXT</name></proto>
@@ -19563,7 +19563,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>tx</name></param>
             <param><ptype>GLshort</ptype> <name>ty</name></param>
             <param><ptype>GLshort</ptype> <name>tz</name></param>
-            <vecequiv name="Tangent3svEXT" />
+            <vecequiv name="glTangent3svEXT" />
         </command>
         <command>
             <proto>void <name>glTangent3svEXT</name></proto>
@@ -19650,7 +19650,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glTexCoord1d</name></proto>
             <param><ptype>GLdouble</ptype> <name>s</name></param>
-            <vecequiv name="TexCoord1dv" />
+            <vecequiv name="glTexCoord1dv" />
         </command>
         <command>
             <proto>void <name>glTexCoord1dv</name></proto>
@@ -19660,7 +19660,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glTexCoord1f</name></proto>
             <param><ptype>GLfloat</ptype> <name>s</name></param>
-            <vecequiv name="TexCoord1fv" />
+            <vecequiv name="glTexCoord1fv" />
         </command>
         <command>
             <proto>void <name>glTexCoord1fv</name></proto>
@@ -19670,7 +19670,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glTexCoord1hNV</name></proto>
             <param><ptype>GLhalfNV</ptype> <name>s</name></param>
-            <vecequiv name="TexCoord1hvNV" />
+            <vecequiv name="glTexCoord1hvNV" />
         </command>
         <command>
             <proto>void <name>glTexCoord1hvNV</name></proto>
@@ -19680,7 +19680,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glTexCoord1i</name></proto>
             <param><ptype>GLint</ptype> <name>s</name></param>
-            <vecequiv name="TexCoord1iv" />
+            <vecequiv name="glTexCoord1iv" />
         </command>
         <command>
             <proto>void <name>glTexCoord1iv</name></proto>
@@ -19690,7 +19690,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glTexCoord1s</name></proto>
             <param><ptype>GLshort</ptype> <name>s</name></param>
-            <vecequiv name="TexCoord1sv" />
+            <vecequiv name="glTexCoord1sv" />
         </command>
         <command>
             <proto>void <name>glTexCoord1sv</name></proto>
@@ -19718,7 +19718,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glTexCoord2d</name></proto>
             <param><ptype>GLdouble</ptype> <name>s</name></param>
             <param><ptype>GLdouble</ptype> <name>t</name></param>
-            <vecequiv name="TexCoord2dv" />
+            <vecequiv name="glTexCoord2dv" />
         </command>
         <command>
             <proto>void <name>glTexCoord2dv</name></proto>
@@ -19729,7 +19729,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glTexCoord2f</name></proto>
             <param><ptype>GLfloat</ptype> <name>s</name></param>
             <param><ptype>GLfloat</ptype> <name>t</name></param>
-            <vecequiv name="TexCoord2fv" />
+            <vecequiv name="glTexCoord2fv" />
         </command>
         <command>
             <proto>void <name>glTexCoord2fColor3fVertex3fSUN</name></proto>
@@ -19827,7 +19827,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glTexCoord2hNV</name></proto>
             <param><ptype>GLhalfNV</ptype> <name>s</name></param>
             <param><ptype>GLhalfNV</ptype> <name>t</name></param>
-            <vecequiv name="TexCoord2hvNV" />
+            <vecequiv name="glTexCoord2hvNV" />
         </command>
         <command>
             <proto>void <name>glTexCoord2hvNV</name></proto>
@@ -19838,7 +19838,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glTexCoord2i</name></proto>
             <param><ptype>GLint</ptype> <name>s</name></param>
             <param><ptype>GLint</ptype> <name>t</name></param>
-            <vecequiv name="TexCoord2iv" />
+            <vecequiv name="glTexCoord2iv" />
         </command>
         <command>
             <proto>void <name>glTexCoord2iv</name></proto>
@@ -19849,7 +19849,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glTexCoord2s</name></proto>
             <param><ptype>GLshort</ptype> <name>s</name></param>
             <param><ptype>GLshort</ptype> <name>t</name></param>
-            <vecequiv name="TexCoord2sv" />
+            <vecequiv name="glTexCoord2sv" />
         </command>
         <command>
             <proto>void <name>glTexCoord2sv</name></proto>
@@ -19880,7 +19880,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>s</name></param>
             <param><ptype>GLdouble</ptype> <name>t</name></param>
             <param><ptype>GLdouble</ptype> <name>r</name></param>
-            <vecequiv name="TexCoord3dv" />
+            <vecequiv name="glTexCoord3dv" />
         </command>
         <command>
             <proto>void <name>glTexCoord3dv</name></proto>
@@ -19892,7 +19892,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>s</name></param>
             <param><ptype>GLfloat</ptype> <name>t</name></param>
             <param><ptype>GLfloat</ptype> <name>r</name></param>
-            <vecequiv name="TexCoord3fv" />
+            <vecequiv name="glTexCoord3fv" />
         </command>
         <command>
             <proto>void <name>glTexCoord3fv</name></proto>
@@ -19904,7 +19904,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>s</name></param>
             <param><ptype>GLhalfNV</ptype> <name>t</name></param>
             <param><ptype>GLhalfNV</ptype> <name>r</name></param>
-            <vecequiv name="TexCoord3hvNV" />
+            <vecequiv name="glTexCoord3hvNV" />
         </command>
         <command>
             <proto>void <name>glTexCoord3hvNV</name></proto>
@@ -19916,7 +19916,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>s</name></param>
             <param><ptype>GLint</ptype> <name>t</name></param>
             <param><ptype>GLint</ptype> <name>r</name></param>
-            <vecequiv name="TexCoord3iv" />
+            <vecequiv name="glTexCoord3iv" />
         </command>
         <command>
             <proto>void <name>glTexCoord3iv</name></proto>
@@ -19928,7 +19928,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>s</name></param>
             <param><ptype>GLshort</ptype> <name>t</name></param>
             <param><ptype>GLshort</ptype> <name>r</name></param>
-            <vecequiv name="TexCoord3sv" />
+            <vecequiv name="glTexCoord3sv" />
         </command>
         <command>
             <proto>void <name>glTexCoord3sv</name></proto>
@@ -19962,7 +19962,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>t</name></param>
             <param><ptype>GLdouble</ptype> <name>r</name></param>
             <param><ptype>GLdouble</ptype> <name>q</name></param>
-            <vecequiv name="TexCoord4dv" />
+            <vecequiv name="glTexCoord4dv" />
         </command>
         <command>
             <proto>void <name>glTexCoord4dv</name></proto>
@@ -19975,7 +19975,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>t</name></param>
             <param><ptype>GLfloat</ptype> <name>r</name></param>
             <param><ptype>GLfloat</ptype> <name>q</name></param>
-            <vecequiv name="TexCoord4fv" />
+            <vecequiv name="glTexCoord4fv" />
         </command>
         <command>
             <proto>void <name>glTexCoord4fColor4fNormal3fVertex4fSUN</name></proto>
@@ -20029,7 +20029,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>t</name></param>
             <param><ptype>GLhalfNV</ptype> <name>r</name></param>
             <param><ptype>GLhalfNV</ptype> <name>q</name></param>
-            <vecequiv name="TexCoord4hvNV" />
+            <vecequiv name="glTexCoord4hvNV" />
         </command>
         <command>
             <proto>void <name>glTexCoord4hvNV</name></proto>
@@ -20042,7 +20042,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>t</name></param>
             <param><ptype>GLint</ptype> <name>r</name></param>
             <param><ptype>GLint</ptype> <name>q</name></param>
-            <vecequiv name="TexCoord4iv" />
+            <vecequiv name="glTexCoord4iv" />
         </command>
         <command>
             <proto>void <name>glTexCoord4iv</name></proto>
@@ -20055,7 +20055,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>t</name></param>
             <param><ptype>GLshort</ptype> <name>r</name></param>
             <param><ptype>GLshort</ptype> <name>q</name></param>
-            <vecequiv name="TexCoord4sv" />
+            <vecequiv name="glTexCoord4sv" />
         </command>
         <command>
             <proto>void <name>glTexCoord4sv</name></proto>
@@ -20832,7 +20832,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
             <param><ptype>GLfloat</ptype> <name>param</name></param>
-            <vecequiv name="TextureParameterfvEXT" />
+            <vecequiv name="glTextureParameterfvEXT" />
         </command>
         <command>
             <proto>void <name>glTextureParameterfvEXT</name></proto>
@@ -20847,7 +20847,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
             <param><ptype>GLint</ptype> <name>param</name></param>
-            <vecequiv name="TextureParameterivEXT" />
+            <vecequiv name="glTextureParameterivEXT" />
         </command>
         <command>
             <proto>void <name>glTextureParameterivEXT</name></proto>
@@ -21925,7 +21925,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glVertex2d</name></proto>
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
-            <vecequiv name="Vertex2dv" />
+            <vecequiv name="glVertex2dv" />
         </command>
         <command>
             <proto>void <name>glVertex2dv</name></proto>
@@ -21936,7 +21936,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glVertex2f</name></proto>
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
-            <vecequiv name="Vertex2fv" />
+            <vecequiv name="glVertex2fv" />
         </command>
         <command>
             <proto>void <name>glVertex2fv</name></proto>
@@ -21947,7 +21947,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glVertex2hNV</name></proto>
             <param><ptype>GLhalfNV</ptype> <name>x</name></param>
             <param><ptype>GLhalfNV</ptype> <name>y</name></param>
-            <vecequiv name="Vertex2hvNV" />
+            <vecequiv name="glVertex2hvNV" />
         </command>
         <command>
             <proto>void <name>glVertex2hvNV</name></proto>
@@ -21958,7 +21958,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glVertex2i</name></proto>
             <param><ptype>GLint</ptype> <name>x</name></param>
             <param><ptype>GLint</ptype> <name>y</name></param>
-            <vecequiv name="Vertex2iv" />
+            <vecequiv name="glVertex2iv" />
         </command>
         <command>
             <proto>void <name>glVertex2iv</name></proto>
@@ -21969,7 +21969,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glVertex2s</name></proto>
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
-            <vecequiv name="Vertex2sv" />
+            <vecequiv name="glVertex2sv" />
         </command>
         <command>
             <proto>void <name>glVertex2sv</name></proto>
@@ -21998,7 +21998,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
-            <vecequiv name="Vertex3dv" />
+            <vecequiv name="glVertex3dv" />
         </command>
         <command>
             <proto>void <name>glVertex3dv</name></proto>
@@ -22010,7 +22010,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
-            <vecequiv name="Vertex3fv" />
+            <vecequiv name="glVertex3fv" />
         </command>
         <command>
             <proto>void <name>glVertex3fv</name></proto>
@@ -22022,7 +22022,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>x</name></param>
             <param><ptype>GLhalfNV</ptype> <name>y</name></param>
             <param><ptype>GLhalfNV</ptype> <name>z</name></param>
-            <vecequiv name="Vertex3hvNV" />
+            <vecequiv name="glVertex3hvNV" />
         </command>
         <command>
             <proto>void <name>glVertex3hvNV</name></proto>
@@ -22034,7 +22034,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>x</name></param>
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
-            <vecequiv name="Vertex3iv" />
+            <vecequiv name="glVertex3iv" />
         </command>
         <command>
             <proto>void <name>glVertex3iv</name></proto>
@@ -22046,7 +22046,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
-            <vecequiv name="Vertex3sv" />
+            <vecequiv name="glVertex3sv" />
         </command>
         <command>
             <proto>void <name>glVertex3sv</name></proto>
@@ -22078,7 +22078,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <param><ptype>GLdouble</ptype> <name>w</name></param>
-            <vecequiv name="Vertex4dv" />
+            <vecequiv name="glVertex4dv" />
         </command>
         <command>
             <proto>void <name>glVertex4dv</name></proto>
@@ -22091,7 +22091,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <param><ptype>GLfloat</ptype> <name>w</name></param>
-            <vecequiv name="Vertex4fv" />
+            <vecequiv name="glVertex4fv" />
         </command>
         <command>
             <proto>void <name>glVertex4fv</name></proto>
@@ -22104,7 +22104,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>y</name></param>
             <param><ptype>GLhalfNV</ptype> <name>z</name></param>
             <param><ptype>GLhalfNV</ptype> <name>w</name></param>
-            <vecequiv name="Vertex4hvNV" />
+            <vecequiv name="glVertex4hvNV" />
         </command>
         <command>
             <proto>void <name>glVertex4hvNV</name></proto>
@@ -22117,7 +22117,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
             <param><ptype>GLint</ptype> <name>w</name></param>
-            <vecequiv name="Vertex4iv" />
+            <vecequiv name="glVertex4iv" />
         </command>
         <command>
             <proto>void <name>glVertex4iv</name></proto>
@@ -22130,7 +22130,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
             <param><ptype>GLshort</ptype> <name>w</name></param>
-            <vecequiv name="Vertex4sv" />
+            <vecequiv name="glVertex4sv" />
         </command>
         <command>
             <proto>void <name>glVertex4sv</name></proto>
@@ -22221,21 +22221,21 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glVertexAttrib1d</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLdouble</ptype> <name>x</name></param>
-            <vecequiv name="VertexAttrib1dv" />
+            <vecequiv name="glVertexAttrib1dv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib1dARB</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <alias name="glVertexAttrib1d" />
-            <vecequiv name="VertexAttrib1dvARB" />
+            <vecequiv name="glVertexAttrib1dvARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib1dNV</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <alias name="glVertexAttrib1d" />
-            <vecequiv name="VertexAttrib1dvNV" />
+            <vecequiv name="glVertexAttrib1dvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib1dv</name></proto>
@@ -22261,21 +22261,21 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glVertexAttrib1f</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLfloat</ptype> <name>x</name></param>
-            <vecequiv name="VertexAttrib1fv" />
+            <vecequiv name="glVertexAttrib1fv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib1fARB</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <alias name="glVertexAttrib1f" />
-            <vecequiv name="VertexAttrib1fvARB" />
+            <vecequiv name="glVertexAttrib1fvARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib1fNV</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <alias name="glVertexAttrib1f" />
-            <vecequiv name="VertexAttrib1fvNV" />
+            <vecequiv name="glVertexAttrib1fvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib1fv</name></proto>
@@ -22301,7 +22301,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glVertexAttrib1hNV</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLhalfNV</ptype> <name>x</name></param>
-            <vecequiv name="VertexAttrib1hvNV" />
+            <vecequiv name="glVertexAttrib1hvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib1hvNV</name></proto>
@@ -22313,21 +22313,21 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glVertexAttrib1s</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLshort</ptype> <name>x</name></param>
-            <vecequiv name="VertexAttrib1sv" />
+            <vecequiv name="glVertexAttrib1sv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib1sARB</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <alias name="glVertexAttrib1s" />
-            <vecequiv name="VertexAttrib1svARB" />
+            <vecequiv name="glVertexAttrib1svARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib1sNV</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <alias name="glVertexAttrib1s" />
-            <vecequiv name="VertexAttrib1svNV" />
+            <vecequiv name="glVertexAttrib1svNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib1sv</name></proto>
@@ -22354,7 +22354,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
-            <vecequiv name="VertexAttrib2dv" />
+            <vecequiv name="glVertexAttrib2dv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib2dARB</name></proto>
@@ -22362,7 +22362,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <alias name="glVertexAttrib2d" />
-            <vecequiv name="VertexAttrib2dvARB" />
+            <vecequiv name="glVertexAttrib2dvARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib2dNV</name></proto>
@@ -22370,7 +22370,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <alias name="glVertexAttrib2d" />
-            <vecequiv name="VertexAttrib2dvNV" />
+            <vecequiv name="glVertexAttrib2dvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib2dv</name></proto>
@@ -22397,7 +22397,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
-            <vecequiv name="VertexAttrib2fv" />
+            <vecequiv name="glVertexAttrib2fv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib2fARB</name></proto>
@@ -22405,7 +22405,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <alias name="glVertexAttrib2f" />
-            <vecequiv name="VertexAttrib2fvARB" />
+            <vecequiv name="glVertexAttrib2fvARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib2fNV</name></proto>
@@ -22413,7 +22413,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <alias name="glVertexAttrib2f" />
-            <vecequiv name="VertexAttrib2fvNV" />
+            <vecequiv name="glVertexAttrib2fvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib2fv</name></proto>
@@ -22440,7 +22440,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLhalfNV</ptype> <name>x</name></param>
             <param><ptype>GLhalfNV</ptype> <name>y</name></param>
-            <vecequiv name="VertexAttrib2hvNV" />
+            <vecequiv name="glVertexAttrib2hvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib2hvNV</name></proto>
@@ -22453,7 +22453,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
-            <vecequiv name="VertexAttrib2sv" />
+            <vecequiv name="glVertexAttrib2sv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib2sARB</name></proto>
@@ -22461,7 +22461,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <alias name="glVertexAttrib2s" />
-            <vecequiv name="VertexAttrib2svARB" />
+            <vecequiv name="glVertexAttrib2svARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib2sNV</name></proto>
@@ -22469,7 +22469,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <alias name="glVertexAttrib2s" />
-            <vecequiv name="VertexAttrib2svNV" />
+            <vecequiv name="glVertexAttrib2svNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib2sv</name></proto>
@@ -22497,7 +22497,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
-            <vecequiv name="VertexAttrib3dv" />
+            <vecequiv name="glVertexAttrib3dv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib3dARB</name></proto>
@@ -22506,7 +22506,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <alias name="glVertexAttrib3d" />
-            <vecequiv name="VertexAttrib3dvARB" />
+            <vecequiv name="glVertexAttrib3dvARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib3dNV</name></proto>
@@ -22515,7 +22515,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <alias name="glVertexAttrib3d" />
-            <vecequiv name="VertexAttrib3dvNV" />
+            <vecequiv name="glVertexAttrib3dvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib3dv</name></proto>
@@ -22543,7 +22543,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
-            <vecequiv name="VertexAttrib3fv" />
+            <vecequiv name="glVertexAttrib3fv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib3fARB</name></proto>
@@ -22552,7 +22552,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <alias name="glVertexAttrib3f" />
-            <vecequiv name="VertexAttrib3fvARB" />
+            <vecequiv name="glVertexAttrib3fvARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib3fNV</name></proto>
@@ -22561,7 +22561,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <alias name="glVertexAttrib3f" />
-            <vecequiv name="VertexAttrib3fvNV" />
+            <vecequiv name="glVertexAttrib3fvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib3fv</name></proto>
@@ -22589,7 +22589,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>x</name></param>
             <param><ptype>GLhalfNV</ptype> <name>y</name></param>
             <param><ptype>GLhalfNV</ptype> <name>z</name></param>
-            <vecequiv name="VertexAttrib3hvNV" />
+            <vecequiv name="glVertexAttrib3hvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib3hvNV</name></proto>
@@ -22603,7 +22603,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
-            <vecequiv name="VertexAttrib3sv" />
+            <vecequiv name="glVertexAttrib3sv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib3sARB</name></proto>
@@ -22612,7 +22612,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
             <alias name="glVertexAttrib3s" />
-            <vecequiv name="VertexAttrib3svARB" />
+            <vecequiv name="glVertexAttrib3svARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib3sNV</name></proto>
@@ -22621,7 +22621,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
             <alias name="glVertexAttrib3s" />
-            <vecequiv name="VertexAttrib3svNV" />
+            <vecequiv name="glVertexAttrib3svNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib3sv</name></proto>
@@ -22746,7 +22746,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <param><ptype>GLdouble</ptype> <name>w</name></param>
-            <vecequiv name="VertexAttrib4dv" />
+            <vecequiv name="glVertexAttrib4dv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib4dARB</name></proto>
@@ -22756,7 +22756,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <param><ptype>GLdouble</ptype> <name>w</name></param>
             <alias name="glVertexAttrib4d" />
-            <vecequiv name="VertexAttrib4dvARB" />
+            <vecequiv name="glVertexAttrib4dvARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib4dNV</name></proto>
@@ -22766,7 +22766,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <param><ptype>GLdouble</ptype> <name>w</name></param>
             <alias name="glVertexAttrib4d" />
-            <vecequiv name="VertexAttrib4dvNV" />
+            <vecequiv name="glVertexAttrib4dvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib4dv</name></proto>
@@ -22795,7 +22795,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <param><ptype>GLfloat</ptype> <name>w</name></param>
-            <vecequiv name="VertexAttrib4fv" />
+            <vecequiv name="glVertexAttrib4fv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib4fARB</name></proto>
@@ -22805,7 +22805,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <param><ptype>GLfloat</ptype> <name>w</name></param>
             <alias name="glVertexAttrib4f" />
-            <vecequiv name="VertexAttrib4fvARB" />
+            <vecequiv name="glVertexAttrib4fvARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib4fNV</name></proto>
@@ -22815,7 +22815,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <param><ptype>GLfloat</ptype> <name>w</name></param>
             <alias name="glVertexAttrib4f" />
-            <vecequiv name="VertexAttrib4fvNV" />
+            <vecequiv name="glVertexAttrib4fvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib4fv</name></proto>
@@ -22844,7 +22844,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLhalfNV</ptype> <name>y</name></param>
             <param><ptype>GLhalfNV</ptype> <name>z</name></param>
             <param><ptype>GLhalfNV</ptype> <name>w</name></param>
-            <vecequiv name="VertexAttrib4hvNV" />
+            <vecequiv name="glVertexAttrib4hvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib4hvNV</name></proto>
@@ -22870,7 +22870,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
             <param><ptype>GLshort</ptype> <name>w</name></param>
-            <vecequiv name="VertexAttrib4sv" />
+            <vecequiv name="glVertexAttrib4sv" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib4sARB</name></proto>
@@ -22880,7 +22880,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>z</name></param>
             <param><ptype>GLshort</ptype> <name>w</name></param>
             <alias name="glVertexAttrib4s" />
-            <vecequiv name="VertexAttrib4svARB" />
+            <vecequiv name="glVertexAttrib4svARB" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib4sNV</name></proto>
@@ -22890,7 +22890,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>z</name></param>
             <param><ptype>GLshort</ptype> <name>w</name></param>
             <alias name="glVertexAttrib4s" />
-            <vecequiv name="VertexAttrib4svNV" />
+            <vecequiv name="glVertexAttrib4svNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib4sv</name></proto>
@@ -22920,7 +22920,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLubyte</ptype> <name>z</name></param>
             <param><ptype>GLubyte</ptype> <name>w</name></param>
             <alias name="glVertexAttrib4Nub" />
-            <vecequiv name="VertexAttrib4ubvNV" />
+            <vecequiv name="glVertexAttrib4ubvNV" />
         </command>
         <command>
             <proto>void <name>glVertexAttrib4ubv</name></proto>
@@ -23018,14 +23018,14 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glVertexAttribI1i</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLint</ptype> <name>x</name></param>
-            <vecequiv name="VertexAttribI1iv" />
+            <vecequiv name="glVertexAttribI1iv" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI1iEXT</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLint</ptype> <name>x</name></param>
             <alias name="glVertexAttribI1i" />
-            <vecequiv name="VertexAttribI1ivEXT" />
+            <vecequiv name="glVertexAttribI1ivEXT" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI1iv</name></proto>
@@ -23042,14 +23042,14 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glVertexAttribI1ui</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLuint</ptype> <name>x</name></param>
-            <vecequiv name="VertexAttribI1uiv" />
+            <vecequiv name="glVertexAttribI1uiv" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI1uiEXT</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLuint</ptype> <name>x</name></param>
             <alias name="glVertexAttribI1ui" />
-            <vecequiv name="VertexAttribI1uivEXT" />
+            <vecequiv name="glVertexAttribI1uivEXT" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI1uiv</name></proto>
@@ -23067,7 +23067,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLint</ptype> <name>x</name></param>
             <param><ptype>GLint</ptype> <name>y</name></param>
-            <vecequiv name="VertexAttribI2iv" />
+            <vecequiv name="glVertexAttribI2iv" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI2iEXT</name></proto>
@@ -23075,7 +23075,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>x</name></param>
             <param><ptype>GLint</ptype> <name>y</name></param>
             <alias name="glVertexAttribI2i" />
-            <vecequiv name="VertexAttribI2ivEXT" />
+            <vecequiv name="glVertexAttribI2ivEXT" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI2iv</name></proto>
@@ -23093,7 +23093,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLuint</ptype> <name>x</name></param>
             <param><ptype>GLuint</ptype> <name>y</name></param>
-            <vecequiv name="VertexAttribI2uiv" />
+            <vecequiv name="glVertexAttribI2uiv" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI2uiEXT</name></proto>
@@ -23101,7 +23101,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>x</name></param>
             <param><ptype>GLuint</ptype> <name>y</name></param>
             <alias name="glVertexAttribI2ui" />
-            <vecequiv name="VertexAttribI2uivEXT" />
+            <vecequiv name="glVertexAttribI2uivEXT" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI2uiv</name></proto>
@@ -23120,7 +23120,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>x</name></param>
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
-            <vecequiv name="VertexAttribI3iv" />
+            <vecequiv name="glVertexAttribI3iv" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI3iEXT</name></proto>
@@ -23129,7 +23129,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
             <alias name="glVertexAttribI3i" />
-            <vecequiv name="VertexAttribI3ivEXT" />
+            <vecequiv name="glVertexAttribI3ivEXT" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI3iv</name></proto>
@@ -23148,7 +23148,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>x</name></param>
             <param><ptype>GLuint</ptype> <name>y</name></param>
             <param><ptype>GLuint</ptype> <name>z</name></param>
-            <vecequiv name="VertexAttribI3uiv" />
+            <vecequiv name="glVertexAttribI3uiv" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI3uiEXT</name></proto>
@@ -23157,7 +23157,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>y</name></param>
             <param><ptype>GLuint</ptype> <name>z</name></param>
             <alias name="glVertexAttribI3ui" />
-            <vecequiv name="VertexAttribI3uivEXT" />
+            <vecequiv name="glVertexAttribI3uivEXT" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI3uiv</name></proto>
@@ -23188,7 +23188,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
             <param><ptype>GLint</ptype> <name>w</name></param>
-            <vecequiv name="VertexAttribI4iv" />
+            <vecequiv name="glVertexAttribI4iv" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI4iEXT</name></proto>
@@ -23198,7 +23198,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>z</name></param>
             <param><ptype>GLint</ptype> <name>w</name></param>
             <alias name="glVertexAttribI4i" />
-            <vecequiv name="VertexAttribI4ivEXT" />
+            <vecequiv name="glVertexAttribI4ivEXT" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI4iv</name></proto>
@@ -23240,7 +23240,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>y</name></param>
             <param><ptype>GLuint</ptype> <name>z</name></param>
             <param><ptype>GLuint</ptype> <name>w</name></param>
-            <vecequiv name="VertexAttribI4uiv" />
+            <vecequiv name="glVertexAttribI4uiv" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI4uiEXT</name></proto>
@@ -23250,7 +23250,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>z</name></param>
             <param><ptype>GLuint</ptype> <name>w</name></param>
             <alias name="glVertexAttribI4ui" />
-            <vecequiv name="VertexAttribI4uivEXT" />
+            <vecequiv name="glVertexAttribI4uivEXT" />
         </command>
         <command>
             <proto>void <name>glVertexAttribI4uiv</name></proto>
@@ -24006,7 +24006,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glVertexWeightfEXT</name></proto>
             <param><ptype>GLfloat</ptype> <name>weight</name></param>
-            <vecequiv name="VertexWeightfvEXT" />
+            <vecequiv name="glVertexWeightfvEXT" />
         </command>
         <command>
             <proto>void <name>glVertexWeightfvEXT</name></proto>
@@ -24016,7 +24016,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glVertexWeighthNV</name></proto>
             <param><ptype>GLhalfNV</ptype> <name>weight</name></param>
-            <vecequiv name="VertexWeighthvNV" />
+            <vecequiv name="glVertexWeighthvNV" />
         </command>
         <command>
             <proto>void <name>glVertexWeighthvNV</name></proto>
@@ -24162,21 +24162,21 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glWindowPos2d</name></proto>
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
-            <vecequiv name="WindowPos2dv" />
+            <vecequiv name="glWindowPos2dv" />
         </command>
         <command>
             <proto>void <name>glWindowPos2dARB</name></proto>
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <alias name="glWindowPos2d" />
-            <vecequiv name="WindowPos2dvARB" />
+            <vecequiv name="glWindowPos2dvARB" />
         </command>
         <command>
             <proto>void <name>glWindowPos2dMESA</name></proto>
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <alias name="glWindowPos2dARB" />
-            <vecequiv name="WindowPos2dvMESA" />
+            <vecequiv name="glWindowPos2dvMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos2dv</name></proto>
@@ -24198,21 +24198,21 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glWindowPos2f</name></proto>
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
-            <vecequiv name="WindowPos2fv" />
+            <vecequiv name="glWindowPos2fv" />
         </command>
         <command>
             <proto>void <name>glWindowPos2fARB</name></proto>
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <alias name="glWindowPos2f" />
-            <vecequiv name="WindowPos2fvARB" />
+            <vecequiv name="glWindowPos2fvARB" />
         </command>
         <command>
             <proto>void <name>glWindowPos2fMESA</name></proto>
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <alias name="glWindowPos2fARB" />
-            <vecequiv name="WindowPos2fvMESA" />
+            <vecequiv name="glWindowPos2fvMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos2fv</name></proto>
@@ -24234,21 +24234,21 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glWindowPos2i</name></proto>
             <param><ptype>GLint</ptype> <name>x</name></param>
             <param><ptype>GLint</ptype> <name>y</name></param>
-            <vecequiv name="WindowPos2iv" />
+            <vecequiv name="glWindowPos2iv" />
         </command>
         <command>
             <proto>void <name>glWindowPos2iARB</name></proto>
             <param><ptype>GLint</ptype> <name>x</name></param>
             <param><ptype>GLint</ptype> <name>y</name></param>
             <alias name="glWindowPos2i" />
-            <vecequiv name="WindowPos2ivARB" />
+            <vecequiv name="glWindowPos2ivARB" />
         </command>
         <command>
             <proto>void <name>glWindowPos2iMESA</name></proto>
             <param><ptype>GLint</ptype> <name>x</name></param>
             <param><ptype>GLint</ptype> <name>y</name></param>
             <alias name="glWindowPos2iARB" />
-            <vecequiv name="WindowPos2ivMESA" />
+            <vecequiv name="glWindowPos2ivMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos2iv</name></proto>
@@ -24270,21 +24270,21 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glWindowPos2s</name></proto>
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
-            <vecequiv name="WindowPos2sv" />
+            <vecequiv name="glWindowPos2sv" />
         </command>
         <command>
             <proto>void <name>glWindowPos2sARB</name></proto>
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <alias name="glWindowPos2s" />
-            <vecequiv name="WindowPos2svARB" />
+            <vecequiv name="glWindowPos2svARB" />
         </command>
         <command>
             <proto>void <name>glWindowPos2sMESA</name></proto>
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <alias name="glWindowPos2sARB" />
-            <vecequiv name="WindowPos2svMESA" />
+            <vecequiv name="glWindowPos2svMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos2sv</name></proto>
@@ -24307,7 +24307,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>x</name></param>
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
-            <vecequiv name="WindowPos3dv" />
+            <vecequiv name="glWindowPos3dv" />
         </command>
         <command>
             <proto>void <name>glWindowPos3dARB</name></proto>
@@ -24315,7 +24315,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <alias name="glWindowPos3d" />
-            <vecequiv name="WindowPos3dvARB" />
+            <vecequiv name="glWindowPos3dvARB" />
         </command>
         <command>
             <proto>void <name>glWindowPos3dMESA</name></proto>
@@ -24323,7 +24323,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <alias name="glWindowPos3dARB" />
-            <vecequiv name="WindowPos3dvMESA" />
+            <vecequiv name="glWindowPos3dvMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos3dv</name></proto>
@@ -24346,7 +24346,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>x</name></param>
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
-            <vecequiv name="WindowPos3fv" />
+            <vecequiv name="glWindowPos3fv" />
         </command>
         <command>
             <proto>void <name>glWindowPos3fARB</name></proto>
@@ -24354,7 +24354,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <alias name="glWindowPos3f" />
-            <vecequiv name="WindowPos3fvARB" />
+            <vecequiv name="glWindowPos3fvARB" />
         </command>
         <command>
             <proto>void <name>glWindowPos3fMESA</name></proto>
@@ -24362,7 +24362,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <alias name="glWindowPos3fARB" />
-            <vecequiv name="WindowPos3fvMESA" />
+            <vecequiv name="glWindowPos3fvMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos3fv</name></proto>
@@ -24385,7 +24385,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>x</name></param>
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
-            <vecequiv name="WindowPos3iv" />
+            <vecequiv name="glWindowPos3iv" />
         </command>
         <command>
             <proto>void <name>glWindowPos3iARB</name></proto>
@@ -24393,7 +24393,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
             <alias name="glWindowPos3i" />
-            <vecequiv name="WindowPos3ivARB" />
+            <vecequiv name="glWindowPos3ivARB" />
         </command>
         <command>
             <proto>void <name>glWindowPos3iMESA</name></proto>
@@ -24401,7 +24401,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
             <alias name="glWindowPos3iARB" />
-            <vecequiv name="WindowPos3ivMESA" />
+            <vecequiv name="glWindowPos3ivMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos3iv</name></proto>
@@ -24424,7 +24424,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>x</name></param>
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
-            <vecequiv name="WindowPos3sv" />
+            <vecequiv name="glWindowPos3sv" />
         </command>
         <command>
             <proto>void <name>glWindowPos3sARB</name></proto>
@@ -24432,7 +24432,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
             <alias name="glWindowPos3s" />
-            <vecequiv name="WindowPos3svARB" />
+            <vecequiv name="glWindowPos3svARB" />
         </command>
         <command>
             <proto>void <name>glWindowPos3sMESA</name></proto>
@@ -24440,7 +24440,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
             <alias name="glWindowPos3sARB" />
-            <vecequiv name="WindowPos3svMESA" />
+            <vecequiv name="glWindowPos3svMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos3sv</name></proto>
@@ -24464,7 +24464,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLdouble</ptype> <name>y</name></param>
             <param><ptype>GLdouble</ptype> <name>z</name></param>
             <param><ptype>GLdouble</ptype> <name>w</name></param>
-            <vecequiv name="WindowPos4dvMESA" />
+            <vecequiv name="glWindowPos4dvMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos4dvMESA</name></proto>
@@ -24476,7 +24476,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>y</name></param>
             <param><ptype>GLfloat</ptype> <name>z</name></param>
             <param><ptype>GLfloat</ptype> <name>w</name></param>
-            <vecequiv name="WindowPos4fvMESA" />
+            <vecequiv name="glWindowPos4fvMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos4fvMESA</name></proto>
@@ -24488,7 +24488,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>y</name></param>
             <param><ptype>GLint</ptype> <name>z</name></param>
             <param><ptype>GLint</ptype> <name>w</name></param>
-            <vecequiv name="WindowPos4ivMESA" />
+            <vecequiv name="glWindowPos4ivMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos4ivMESA</name></proto>
@@ -24500,7 +24500,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLshort</ptype> <name>y</name></param>
             <param><ptype>GLshort</ptype> <name>z</name></param>
             <param><ptype>GLshort</ptype> <name>w</name></param>
-            <vecequiv name="WindowPos4svMESA" />
+            <vecequiv name="glWindowPos4svMESA" />
         </command>
         <command>
             <proto>void <name>glWindowPos4svMESA</name></proto>
@@ -26410,11 +26410,11 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_BUFFER_ACCESS_FLAGS" />
             <enum name="GL_BUFFER_MAP_LENGTH" />
             <enum name="GL_BUFFER_MAP_OFFSET" />
-            <!-- /* Reuse tokens from ARB_depth_buffer_float */ -->
+            <!-- Reuse tokens from ARB_depth_buffer_float -->
             <enum name="GL_DEPTH_COMPONENT32F" />
             <enum name="GL_DEPTH32F_STENCIL8" />
             <enum name="GL_FLOAT_32_UNSIGNED_INT_24_8_REV" />
-            <!-- /* Reuse tokens from ARB_framebuffer_object */ -->
+            <!-- Reuse tokens from ARB_framebuffer_object -->
             <enum name="GL_INVALID_FRAMEBUFFER_OPERATION" />
             <enum name="GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING" />
             <enum name="GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE" />
@@ -26492,23 +26492,23 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_RENDERBUFFER_STENCIL_SIZE" />
             <enum name="GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE" />
             <enum name="GL_MAX_SAMPLES" />
-            <!-- /* Reuse tokens from ARB_framebuffer_sRGB */ -->
+            <!-- Reuse tokens from ARB_framebuffer_sRGB -->
             <enum name="GL_FRAMEBUFFER_SRGB" />
-            <!-- /* Reuse tokens from ARB_half_float_vertex */ -->
+            <!-- Reuse tokens from ARB_half_float_vertex -->
             <enum name="GL_HALF_FLOAT" />
-            <!-- /* Reuse tokens from ARB_map_buffer_range */ -->
+            <!-- Reuse tokens from ARB_map_buffer_range -->
             <enum name="GL_MAP_READ_BIT" />
             <enum name="GL_MAP_WRITE_BIT" />
             <enum name="GL_MAP_INVALIDATE_RANGE_BIT" />
             <enum name="GL_MAP_INVALIDATE_BUFFER_BIT" />
             <enum name="GL_MAP_FLUSH_EXPLICIT_BIT" />
             <enum name="GL_MAP_UNSYNCHRONIZED_BIT" />
-            <!-- /* Reuse tokens from ARB_texture_compression_rgtc */ -->
+            <!-- Reuse tokens from ARB_texture_compression_rgtc -->
             <enum name="GL_COMPRESSED_RED_RGTC1" />
             <enum name="GL_COMPRESSED_SIGNED_RED_RGTC1" />
             <enum name="GL_COMPRESSED_RG_RGTC2" />
             <enum name="GL_COMPRESSED_SIGNED_RG_RGTC2" />
-            <!-- /* Reuse tokens from ARB_texture_rg */ -->
+            <!-- Reuse tokens from ARB_texture_rg -->
             <enum name="GL_RG" />
             <enum name="GL_RG_INTEGER" />
             <enum name="GL_R8" />
@@ -26531,14 +26531,14 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_RG16UI" />
             <enum name="GL_RG32I" />
             <enum name="GL_RG32UI" />
-            <!-- /* Reuse tokens from ARB_vertex_array_object */ -->
+            <!-- Reuse tokens from ARB_vertex_array_object -->
             <enum name="GL_VERTEX_ARRAY_BINDING" />
             <enum name="GL_CLAMP_VERTEX_COLOR" />
             <enum name="GL_CLAMP_FRAGMENT_COLOR" />
             <enum name="GL_ALPHA_INTEGER" />
         </require>
         <require profile="compatibility">
-            <!-- /* Reuse tokens from ARB_framebuffer_object */ -->
+            <!-- Reuse tokens from ARB_framebuffer_object -->
             <enum name="GL_INDEX" />
             <enum name="GL_TEXTURE_LUMINANCE_TYPE" />
             <enum name="GL_TEXTURE_INTENSITY_TYPE" />
@@ -26602,7 +26602,7 @@ typedef unsigned int GLhandleARB;
             <command name="glClearBufferfv" />
             <command name="glClearBufferfi" />
             <command name="glGetStringi" />
-            <!-- /* Reuse commands from ARB_framebuffer_object */ -->
+            <!-- Reuse commands from ARB_framebuffer_object -->
             <command name="glIsRenderbuffer" />
             <command name="glBindRenderbuffer" />
             <command name="glDeleteRenderbuffers" />
@@ -26623,10 +26623,10 @@ typedef unsigned int GLhandleARB;
             <command name="glBlitFramebuffer" />
             <command name="glRenderbufferStorageMultisample" />
             <command name="glFramebufferTextureLayer" />
-            <!-- /* Reuse commands from ARB_map_buffer_range */ -->
+            <!-- Reuse commands from ARB_map_buffer_range -->
             <command name="glMapBufferRange" />
             <command name="glFlushMappedBufferRange" />
-            <!-- /* Reuse commands from ARB_vertex_array_object */ -->
+            <!-- Reuse commands from ARB_vertex_array_object -->
             <command name="glBindVertexArray" />
             <command name="glDeleteVertexArrays" />
             <command name="glGenVertexArrays" />
@@ -26665,11 +26665,11 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_SIGNED_NORMALIZED" />
             <enum name="GL_PRIMITIVE_RESTART" />
             <enum name="GL_PRIMITIVE_RESTART_INDEX" />
-            <!-- /* Reuse tokens from ARB_copy_buffer */ -->
+            <!-- Reuse tokens from ARB_copy_buffer -->
             <enum name="GL_COPY_READ_BUFFER" />
             <enum name="GL_COPY_WRITE_BUFFER" />
-            <!-- /* Reuse tokens from ARB_draw_instanced (none) */ -->
-            <!-- /* Reuse tokens from ARB_uniform_buffer_object */ -->
+            <!-- Reuse tokens from ARB_draw_instanced (none) -->
+            <!-- Reuse tokens from ARB_uniform_buffer_object -->
             <enum name="GL_UNIFORM_BUFFER" />
             <enum name="GL_UNIFORM_BUFFER_BINDING" />
             <enum name="GL_UNIFORM_BUFFER_START" />
@@ -26704,9 +26704,9 @@ typedef unsigned int GLhandleARB;
             <command name="glDrawElementsInstanced" />
             <command name="glTexBuffer" />
             <command name="glPrimitiveRestartIndex" />
-            <!-- /* Reuse commands from ARB_copy_buffer */ -->
+            <!-- Reuse commands from ARB_copy_buffer -->
             <command name="glCopyBufferSubData" />
-            <!-- /* Reuse commands from ARB_uniform_buffer_object */ -->
+            <!-- Reuse commands from ARB_uniform_buffer_object -->
             <command name="glGetUniformIndices" />
             <command name="glGetActiveUniformsiv" />
             <command name="glGetActiveUniformName" />
@@ -26740,18 +26740,18 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_GEOMETRY_OUTPUT_COMPONENTS" />
             <enum name="GL_MAX_FRAGMENT_INPUT_COMPONENTS" />
             <enum name="GL_CONTEXT_PROFILE_MASK" />
-            <!-- /* Reuse tokens from ARB_depth_clamp */ -->
+            <!-- Reuse tokens from ARB_depth_clamp -->
             <enum name="GL_DEPTH_CLAMP" />
-            <!-- /* Reuse tokens from ARB_draw_elements_base_vertex (none) */ -->
-            <!-- /* Reuse tokens from ARB_fragment_coord_conventions (none) */ -->
-            <!-- /* Reuse tokens from ARB_provoking_vertex */ -->
+            <!-- Reuse tokens from ARB_draw_elements_base_vertex (none) -->
+            <!-- Reuse tokens from ARB_fragment_coord_conventions (none) -->
+            <!-- Reuse tokens from ARB_provoking_vertex -->
             <enum name="GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION" />
             <enum name="GL_FIRST_VERTEX_CONVENTION" />
             <enum name="GL_LAST_VERTEX_CONVENTION" />
             <enum name="GL_PROVOKING_VERTEX" />
-            <!-- /* Reuse tokens from ARB_seamless_cube_map */ -->
+            <!-- Reuse tokens from ARB_seamless_cube_map -->
             <enum name="GL_TEXTURE_CUBE_MAP_SEAMLESS" />
-            <!-- /* Reuse tokens from ARB_sync */ -->
+            <!-- Reuse tokens from ARB_sync -->
             <enum name="GL_MAX_SERVER_WAIT_TIMEOUT" />
             <enum name="GL_OBJECT_TYPE" />
             <enum name="GL_SYNC_CONDITION" />
@@ -26768,7 +26768,7 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_TIMEOUT_IGNORED" />
             <enum name="GL_SYNC_FLUSH_COMMANDS_BIT" />
             <enum name="GL_TIMEOUT_IGNORED" />
-            <!-- /* Reuse tokens from ARB_texture_multisample */ -->
+            <!-- Reuse tokens from ARB_texture_multisample -->
             <enum name="GL_SAMPLE_POSITION" />
             <enum name="GL_SAMPLE_MASK" />
             <enum name="GL_SAMPLE_MASK_VALUE" />
@@ -26794,14 +26794,14 @@ typedef unsigned int GLhandleARB;
             <command name="glGetInteger64i_v" />
             <command name="glGetBufferParameteri64v" />
             <command name="glFramebufferTexture" />
-            <!-- /* Reuse commands from ARB_draw_elements_base_vertex */ -->
+            <!-- Reuse commands from ARB_draw_elements_base_vertex -->
             <command name="glDrawElementsBaseVertex" />
             <command name="glDrawRangeElementsBaseVertex" />
             <command name="glDrawElementsInstancedBaseVertex" />
             <command name="glMultiDrawElementsBaseVertex" />
-            <!-- /* Reuse commands from ARB_provoking_vertex */ -->
+            <!-- Reuse commands from ARB_provoking_vertex -->
             <command name="glProvokingVertex" />
-            <!-- /* Reuse commands from ARB_sync */ -->
+            <!-- Reuse commands from ARB_sync -->
             <command name="glFenceSync" />
             <command name="glIsSync" />
             <command name="glDeleteSync" />
@@ -26809,7 +26809,7 @@ typedef unsigned int GLhandleARB;
             <command name="glWaitSync" />
             <command name="glGetInteger64v" />
             <command name="glGetSynciv" />
-            <!-- /* Reuse commands from ARB_texture_multisample */ -->
+            <!-- Reuse commands from ARB_texture_multisample -->
             <command name="glTexImage2DMultisample" />
             <command name="glTexImage3DMultisample" />
             <command name="glGetMultisamplefv" />
@@ -27730,37 +27730,37 @@ typedef unsigned int GLhandleARB;
     <feature api="gl" name="GL_VERSION_3_3" number="3.3">
         <require>
             <enum name="GL_VERTEX_ATTRIB_ARRAY_DIVISOR" />
-            <!-- /* Reuse tokens from ARB_blend_func_extended */ -->
+            <!-- Reuse tokens from ARB_blend_func_extended -->
             <enum name="GL_SRC1_COLOR" />
             <enum name="GL_ONE_MINUS_SRC1_COLOR" />
             <enum name="GL_ONE_MINUS_SRC1_ALPHA" />
             <enum name="GL_MAX_DUAL_SOURCE_DRAW_BUFFERS" />
-            <!-- /* Reuse tokens from ARB_explicit_attrib_location (none) */ -->
-            <!-- /* Reuse tokens from ARB_occlusion_query2 */ -->
+            <!-- Reuse tokens from ARB_explicit_attrib_location (none) -->
+            <!-- Reuse tokens from ARB_occlusion_query2 -->
             <enum name="GL_ANY_SAMPLES_PASSED" />
-            <!-- /* Reuse tokens from ARB_sampler_objects */ -->
+            <!-- Reuse tokens from ARB_sampler_objects -->
             <enum name="GL_SAMPLER_BINDING" />
-            <!-- /* Reuse tokens from ARB_shader_bit_encoding (none) */ -->
-            <!-- /* Reuse tokens from ARB_texture_rgb10_a2ui */ -->
+            <!-- Reuse tokens from ARB_shader_bit_encoding (none) -->
+            <!-- Reuse tokens from ARB_texture_rgb10_a2ui -->
             <enum name="GL_RGB10_A2UI" />
-            <!-- /* Reuse tokens from ARB_texture_swizzle */ -->
+            <!-- Reuse tokens from ARB_texture_swizzle -->
             <enum name="GL_TEXTURE_SWIZZLE_R" />
             <enum name="GL_TEXTURE_SWIZZLE_G" />
             <enum name="GL_TEXTURE_SWIZZLE_B" />
             <enum name="GL_TEXTURE_SWIZZLE_A" />
             <enum name="GL_TEXTURE_SWIZZLE_RGBA" />
-            <!-- /* Reuse tokens from ARB_timer_query */ -->
+            <!-- Reuse tokens from ARB_timer_query -->
             <enum name="GL_TIME_ELAPSED" />
             <enum name="GL_TIMESTAMP" />
-            <!-- /* Reuse tokens from ARB_vertex_type_2_10_10_10_rev */ -->
+            <!-- Reuse tokens from ARB_vertex_type_2_10_10_10_rev -->
             <enum name="GL_INT_2_10_10_10_REV" />
             <command name="glVertexAttribDivisor" />
-            <!-- /* Reuse commands from ARB_blend_func_extended */ -->
+            <!-- Reuse commands from ARB_blend_func_extended -->
             <command name="glBindFragDataLocationIndexed" />
             <command name="glGetFragDataIndex" />
-            <!-- /* Reuse commands from ARB_explicit_attrib_location (none) */ -->
-            <!-- /* Reuse commands from ARB_occlusion_query2 (none) */ -->
-            <!-- /* Reuse commands from ARB_sampler_objects */ -->
+            <!-- Reuse commands from ARB_explicit_attrib_location (none) -->
+            <!-- Reuse commands from ARB_occlusion_query2 (none) -->
+            <!-- Reuse commands from ARB_sampler_objects -->
             <command name="glGenSamplers" />
             <command name="glDeleteSamplers" />
             <command name="glIsSampler" />
@@ -27775,14 +27775,14 @@ typedef unsigned int GLhandleARB;
             <command name="glGetSamplerParameterIiv" />
             <command name="glGetSamplerParameterfv" />
             <command name="glGetSamplerParameterIuiv" />
-            <!-- /* Reuse commands from ARB_shader_bit_encoding (none) */ -->
-            <!-- /* Reuse commands from ARB_texture_rgb10_a2ui (none) */ -->
-            <!-- /* Reuse commands from ARB_texture_swizzle (none) */ -->
-            <!-- /* Reuse commands from ARB_timer_query */ -->
+            <!-- Reuse commands from ARB_shader_bit_encoding (none) -->
+            <!-- Reuse commands from ARB_texture_rgb10_a2ui (none) -->
+            <!-- Reuse commands from ARB_texture_swizzle (none) -->
+            <!-- Reuse commands from ARB_timer_query -->
             <command name="glQueryCounter" />
             <command name="glGetQueryObjecti64v" />
             <command name="glGetQueryObjectui64v" />
-            <!-- /* Reuse commands from ARB_vertex_type_2_10_10_10_rev */ -->
+            <!-- Reuse commands from ARB_vertex_type_2_10_10_10_rev -->
             <command name="glVertexP2ui" />
             <command name="glVertexP2uiv" />
             <command name="glVertexP3ui" />
@@ -27836,19 +27836,19 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW" />
             <enum name="GL_INT_SAMPLER_CUBE_MAP_ARRAY" />
             <enum name="GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY" />
-            <!-- /* Reuse tokens from ARB_texture_query_lod (none) */ -->
-            <!-- /* Reuse tokens from ARB_draw_buffers_blend (none) */ -->
-            <!-- /* Reuse tokens from ARB_draw_indirect */ -->
+            <!-- Reuse tokens from ARB_texture_query_lod (none) -->
+            <!-- Reuse tokens from ARB_draw_buffers_blend (none) -->
+            <!-- Reuse tokens from ARB_draw_indirect -->
             <enum name="GL_DRAW_INDIRECT_BUFFER" />
             <enum name="GL_DRAW_INDIRECT_BUFFER_BINDING" />
-            <!-- /* Reuse tokens from ARB_gpu_shader5 */ -->
+            <!-- Reuse tokens from ARB_gpu_shader5 -->
             <enum name="GL_GEOMETRY_SHADER_INVOCATIONS" />
             <enum name="GL_MAX_GEOMETRY_SHADER_INVOCATIONS" />
             <enum name="GL_MIN_FRAGMENT_INTERPOLATION_OFFSET" />
             <enum name="GL_MAX_FRAGMENT_INTERPOLATION_OFFSET" />
             <enum name="GL_FRAGMENT_INTERPOLATION_OFFSET_BITS" />
             <enum name="GL_MAX_VERTEX_STREAMS" />
-            <!-- /* Reuse tokens from ARB_gpu_shader_fp64 */ -->
+            <!-- Reuse tokens from ARB_gpu_shader_fp64 -->
             <enum name="GL_DOUBLE_VEC2" />
             <enum name="GL_DOUBLE_VEC3" />
             <enum name="GL_DOUBLE_VEC4" />
@@ -27861,7 +27861,7 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_DOUBLE_MAT3x4" />
             <enum name="GL_DOUBLE_MAT4x2" />
             <enum name="GL_DOUBLE_MAT4x3" />
-            <!-- /* Reuse tokens from ARB_shader_subroutine */ -->
+            <!-- Reuse tokens from ARB_shader_subroutine -->
             <enum name="GL_ACTIVE_SUBROUTINES" />
             <enum name="GL_ACTIVE_SUBROUTINE_UNIFORMS" />
             <enum name="GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS" />
@@ -27871,7 +27871,7 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_SUBROUTINE_UNIFORM_LOCATIONS" />
             <enum name="GL_NUM_COMPATIBLE_SUBROUTINES" />
             <enum name="GL_COMPATIBLE_SUBROUTINES" />
-            <!-- /* Reuse tokens from ARB_tessellation_shader */ -->
+            <!-- Reuse tokens from ARB_tessellation_shader -->
             <enum name="GL_PATCHES" />
             <enum name="GL_PATCH_VERTICES" />
             <enum name="GL_PATCH_DEFAULT_INNER_LEVEL" />
@@ -27904,13 +27904,13 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER" />
             <enum name="GL_TESS_EVALUATION_SHADER" />
             <enum name="GL_TESS_CONTROL_SHADER" />
-            <!-- /* Reuse tokens from ARB_texture_buffer_object_rgb32 (none) */ -->
-            <!-- /* Reuse tokens from ARB_transform_feedback2 */ -->
+            <!-- Reuse tokens from ARB_texture_buffer_object_rgb32 (none) -->
+            <!-- Reuse tokens from ARB_transform_feedback2 -->
             <enum name="GL_TRANSFORM_FEEDBACK" />
             <enum name="GL_TRANSFORM_FEEDBACK_BUFFER_PAUSED" />
             <enum name="GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE" />
             <enum name="GL_TRANSFORM_FEEDBACK_BINDING" />
-            <!-- /* Reuse tokens from ARB_transform_feedback3 */ -->
+            <!-- Reuse tokens from ARB_transform_feedback3 -->
             <enum name="GL_MAX_TRANSFORM_FEEDBACK_BUFFERS" />
             <enum name="GL_MAX_VERTEX_STREAMS" />
             <command name="glMinSampleShading" />
@@ -27918,11 +27918,11 @@ typedef unsigned int GLhandleARB;
             <command name="glBlendEquationSeparatei" />
             <command name="glBlendFunci" />
             <command name="glBlendFuncSeparatei" />
-            <!-- /* Reuse commands from ARB_draw_indirect */ -->
+            <!-- Reuse commands from ARB_draw_indirect -->
             <command name="glDrawArraysIndirect" />
             <command name="glDrawElementsIndirect" />
-            <!-- /* Reuse commands from ARB_gpu_shader5 (none) */ -->
-            <!-- /* Reuse commands from ARB_gpu_shader_fp64 */ -->
+            <!-- Reuse commands from ARB_gpu_shader5 (none) -->
+            <!-- Reuse commands from ARB_gpu_shader_fp64 -->
             <command name="glUniform1d" />
             <command name="glUniform2d" />
             <command name="glUniform3d" />
@@ -27941,7 +27941,7 @@ typedef unsigned int GLhandleARB;
             <command name="glUniformMatrix4x2dv" />
             <command name="glUniformMatrix4x3dv" />
             <command name="glGetUniformdv" />
-            <!-- /* Reuse commands from ARB_shader_subroutine */ -->
+            <!-- Reuse commands from ARB_shader_subroutine -->
             <command name="glGetSubroutineUniformLocation" />
             <command name="glGetSubroutineIndex" />
             <command name="glGetActiveSubroutineUniformiv" />
@@ -27950,14 +27950,14 @@ typedef unsigned int GLhandleARB;
             <command name="glUniformSubroutinesuiv" />
             <command name="glGetUniformSubroutineuiv" />
             <command name="glGetProgramStageiv" />
-            <!-- /* Reuse commands from ARB_tessellation_shader */ -->
+            <!-- Reuse commands from ARB_tessellation_shader -->
             <command name="glPatchParameteri" />
             <command name="glPatchParameterfv" />
-            <!-- /* Reuse commands from ARB_texture_buffer_object_rgb32 (none) */ -->
-            <!-- /* Reuse commands from ARB_texture_cube_map_array (none) */ -->
-            <!-- /* Reuse commands from ARB_texture_gather (none) */ -->
-            <!-- /* Reuse commands from ARB_texture_query_lod (none) */ -->
-            <!-- /* Reuse commands from ARB_transform_feedback2 */ -->
+            <!-- Reuse commands from ARB_texture_buffer_object_rgb32 (none) -->
+            <!-- Reuse commands from ARB_texture_cube_map_array (none) -->
+            <!-- Reuse commands from ARB_texture_gather (none) -->
+            <!-- Reuse commands from ARB_texture_query_lod (none) -->
+            <!-- Reuse commands from ARB_transform_feedback2 -->
             <command name="glBindTransformFeedback" />
             <command name="glDeleteTransformFeedbacks" />
             <command name="glGenTransformFeedbacks" />
@@ -27965,7 +27965,7 @@ typedef unsigned int GLhandleARB;
             <command name="glPauseTransformFeedback" />
             <command name="glResumeTransformFeedback" />
             <command name="glDrawTransformFeedback" />
-            <!-- /* Reuse commands from ARB_transform_feedback3 */ -->
+            <!-- Reuse commands from ARB_transform_feedback3 -->
             <command name="glDrawTransformFeedbackStream" />
             <command name="glBeginQueryIndexed" />
             <command name="glEndQueryIndexed" />
@@ -27974,7 +27974,7 @@ typedef unsigned int GLhandleARB;
     </feature>
     <feature api="gl" name="GL_VERSION_4_1" number="4.1">
         <require>
-            <!-- /* Reuse tokens from ARB_ES2_compatibility */ -->
+            <!-- Reuse tokens from ARB_ES2_compatibility -->
             <enum name="GL_FIXED" />
             <enum name="GL_IMPLEMENTATION_COLOR_READ_TYPE" />
             <enum name="GL_IMPLEMENTATION_COLOR_READ_FORMAT" />
@@ -27991,12 +27991,12 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_VARYING_VECTORS" />
             <enum name="GL_MAX_FRAGMENT_UNIFORM_VECTORS" />
             <enum name="GL_RGB565" />
-            <!-- /* Reuse tokens from ARB_get_program_binary */ -->
+            <!-- Reuse tokens from ARB_get_program_binary -->
             <enum name="GL_PROGRAM_BINARY_RETRIEVABLE_HINT" />
             <enum name="GL_PROGRAM_BINARY_LENGTH" />
             <enum name="GL_NUM_PROGRAM_BINARY_FORMATS" />
             <enum name="GL_PROGRAM_BINARY_FORMATS" />
-            <!-- /* Reuse tokens from ARB_separate_shader_objects */ -->
+            <!-- Reuse tokens from ARB_separate_shader_objects -->
             <enum name="GL_VERTEX_SHADER_BIT" />
             <enum name="GL_FRAGMENT_SHADER_BIT" />
             <enum name="GL_GEOMETRY_SHADER_BIT" />
@@ -28006,26 +28006,26 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_PROGRAM_SEPARABLE" />
             <enum name="GL_ACTIVE_PROGRAM" />
             <enum name="GL_PROGRAM_PIPELINE_BINDING" />
-            <!-- /* Reuse tokens from ARB_shader_precision (none) */ -->
-            <!-- /* Reuse tokens from ARB_vertex_attrib_64bit - all are in GL 3.0 and 4.0 already */ -->
-            <!-- /* Reuse tokens from ARB_viewport_array - some are in GL 1.1 and ARB_provoking_vertex already */ -->
+            <!-- Reuse tokens from ARB_shader_precision (none) -->
+            <!-- Reuse tokens from ARB_vertex_attrib_64bit - all are in GL 3.0 and 4.0 already -->
+            <!-- Reuse tokens from ARB_viewport_array - some are in GL 1.1 and ARB_provoking_vertex already -->
             <enum name="GL_MAX_VIEWPORTS" />
             <enum name="GL_VIEWPORT_SUBPIXEL_BITS" />
             <enum name="GL_VIEWPORT_BOUNDS_RANGE" />
             <enum name="GL_LAYER_PROVOKING_VERTEX" />
             <enum name="GL_VIEWPORT_INDEX_PROVOKING_VERTEX" />
             <enum name="GL_UNDEFINED_VERTEX" />
-            <!-- /* Reuse commands from ARB_ES2_compatibility */ -->
+            <!-- Reuse commands from ARB_ES2_compatibility -->
             <command name="glReleaseShaderCompiler" />
             <command name="glShaderBinary" />
             <command name="glGetShaderPrecisionFormat" />
             <command name="glDepthRangef" />
             <command name="glClearDepthf" />
-            <!-- /* Reuse commands from ARB_get_program_binary */ -->
+            <!-- Reuse commands from ARB_get_program_binary -->
             <command name="glGetProgramBinary" />
             <command name="glProgramBinary" />
             <command name="glProgramParameteri" />
-            <!-- /* Reuse commands from ARB_separate_shader_objects */ -->
+            <!-- Reuse commands from ARB_separate_shader_objects -->
             <command name="glUseProgramStages" />
             <command name="glActiveShaderProgram" />
             <command name="glCreateShaderProgramv" />
@@ -28086,8 +28086,8 @@ typedef unsigned int GLhandleARB;
             <command name="glProgramUniformMatrix4x3dv" />
             <command name="glValidateProgramPipeline" />
             <command name="glGetProgramPipelineInfoLog" />
-            <!-- /* Reuse commands from ARB_shader_precision (none) */ -->
-            <!-- /* Reuse commands from ARB_vertex_attrib_64bit */ -->
+            <!-- Reuse commands from ARB_shader_precision (none) -->
+            <!-- Reuse commands from ARB_vertex_attrib_64bit -->
             <command name="glVertexAttribL1d" />
             <command name="glVertexAttribL2d" />
             <command name="glVertexAttribL3d" />
@@ -28098,7 +28098,7 @@ typedef unsigned int GLhandleARB;
             <command name="glVertexAttribL4dv" />
             <command name="glVertexAttribLPointer" />
             <command name="glGetVertexAttribLdv" />
-            <!-- /* Reuse commands from ARB_viewport_array */ -->
+            <!-- Reuse commands from ARB_viewport_array -->
             <command name="glViewportArrayv" />
             <command name="glViewportIndexedf" />
             <command name="glViewportIndexedfv" />
@@ -28113,10 +28113,10 @@ typedef unsigned int GLhandleARB;
     </feature>
     <feature api="gl" name="GL_VERSION_4_2" number="4.2">
         <require>
-            <!-- /* Reuse tokens from ARB_base_instance (none) */ -->
-            <!-- /* Reuse tokens from ARB_shading_language_420pack (none) */ -->
-            <!-- /* Reuse tokens from ARB_transform_feedback_instanced (none) */ -->
-            <!-- /* Reuse tokens from ARB_compressed_texture_pixel_storage */ -->
+            <!-- Reuse tokens from ARB_base_instance (none) -->
+            <!-- Reuse tokens from ARB_shading_language_420pack (none) -->
+            <!-- Reuse tokens from ARB_transform_feedback_instanced (none) -->
+            <!-- Reuse tokens from ARB_compressed_texture_pixel_storage -->
             <enum name="GL_UNPACK_COMPRESSED_BLOCK_WIDTH" />
             <enum name="GL_UNPACK_COMPRESSED_BLOCK_HEIGHT" />
             <enum name="GL_UNPACK_COMPRESSED_BLOCK_DEPTH" />
@@ -28125,12 +28125,12 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_PACK_COMPRESSED_BLOCK_HEIGHT" />
             <enum name="GL_PACK_COMPRESSED_BLOCK_DEPTH" />
             <enum name="GL_PACK_COMPRESSED_BLOCK_SIZE" />
-            <!-- /* Reuse tokens from ARB_conservative_depth (none) */ -->
-            <!-- /* Reuse tokens from ARB_internalformat_query */ -->
+            <!-- Reuse tokens from ARB_conservative_depth (none) -->
+            <!-- Reuse tokens from ARB_internalformat_query -->
             <enum name="GL_NUM_SAMPLE_COUNTS" />
-            <!-- /* Reuse tokens from ARB_map_buffer_alignment */ -->
+            <!-- Reuse tokens from ARB_map_buffer_alignment -->
             <enum name="GL_MIN_MAP_BUFFER_ALIGNMENT" />
-            <!-- /* Reuse tokens from ARB_shader_atomic_counters */ -->
+            <!-- Reuse tokens from ARB_shader_atomic_counters -->
             <enum name="GL_ATOMIC_COUNTER_BUFFER" />
             <enum name="GL_ATOMIC_COUNTER_BUFFER_BINDING" />
             <enum name="GL_ATOMIC_COUNTER_BUFFER_START" />
@@ -28160,7 +28160,7 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_ACTIVE_ATOMIC_COUNTER_BUFFERS" />
             <enum name="GL_UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX" />
             <enum name="GL_UNSIGNED_INT_ATOMIC_COUNTER" />
-            <!-- /* Reuse tokens from ARB_shader_image_load_store */ -->
+            <!-- Reuse tokens from ARB_shader_image_load_store -->
             <enum name="GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT" />
             <enum name="GL_ELEMENT_ARRAY_BARRIER_BIT" />
             <enum name="GL_UNIFORM_BARRIER_BIT" />
@@ -28225,30 +28225,30 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_GEOMETRY_IMAGE_UNIFORMS" />
             <enum name="GL_MAX_FRAGMENT_IMAGE_UNIFORMS" />
             <enum name="GL_MAX_COMBINED_IMAGE_UNIFORMS" />
-            <!-- /* Reuse tokens from ARB_shading_language_packing (none) */ -->
-            <!-- /* Reuse tokens from ARB_texture_storage */ -->
+            <!-- Reuse tokens from ARB_shading_language_packing (none) -->
+            <!-- Reuse tokens from ARB_texture_storage -->
             <enum name="GL_TEXTURE_IMMUTABLE_FORMAT" />
-            <!-- /* Reuse commands from ARB_base_instance */ -->
+            <!-- Reuse commands from ARB_base_instance -->
             <command name="glDrawArraysInstancedBaseInstance" />
             <command name="glDrawElementsInstancedBaseInstance" />
             <command name="glDrawElementsInstancedBaseVertexBaseInstance" />
-            <!-- /* Reuse commands from ARB_compressed_texture_pixel_storage (none) */ -->
-            <!-- /* Reuse commands from ARB_conservative_depth (none) */ -->
-            <!-- /* Reuse commands from ARB_internalformat_query */ -->
+            <!-- Reuse commands from ARB_compressed_texture_pixel_storage (none) -->
+            <!-- Reuse commands from ARB_conservative_depth (none) -->
+            <!-- Reuse commands from ARB_internalformat_query -->
             <command name="glGetInternalformati64v" />
-            <!-- /* Reuse commands from ARB_map_buffer_alignment (none) */ -->
-            <!-- /* Reuse commands from ARB_shader_atomic_counters */ -->
+            <!-- Reuse commands from ARB_map_buffer_alignment (none) -->
+            <!-- Reuse commands from ARB_shader_atomic_counters -->
             <command name="glGetActiveAtomicCounterBufferiv" />
-            <!-- /* Reuse commands from ARB_shader_image_load_store */ -->
+            <!-- Reuse commands from ARB_shader_image_load_store -->
             <command name="glBindImageTexture" />
             <command name="glMemoryBarrier" />
-            <!-- /* Reuse commands from ARB_shading_language_420pack (none) */ -->
-            <!-- /* Reuse commands from ARB_shading_language_packing (none) */ -->
-            <!-- /* Reuse commands from ARB_texture_storage */ -->
+            <!-- Reuse commands from ARB_shading_language_420pack (none) -->
+            <!-- Reuse commands from ARB_shading_language_packing (none) -->
+            <!-- Reuse commands from ARB_texture_storage -->
             <command name="glTexStorage1D" />
             <command name="glTexStorage2D" />
             <command name="glTexStorage3D" />
-            <!-- /* Reuse commands from ARB_transform_feedback_instanced */ -->
+            <!-- Reuse commands from ARB_transform_feedback_instanced -->
             <command name="glDrawTransformFeedbackInstanced" />
             <command name="glDrawTransformFeedbackStreamInstanced" />
         </require>
@@ -28264,10 +28264,10 @@ typedef unsigned int GLhandleARB;
         <require>
             <enum name="GL_NUM_SHADING_LANGUAGE_VERSIONS" />
             <enum name="GL_VERTEX_ATTRIB_ARRAY_LONG" />
-            <!-- /* Reuse tokens from ARB_arrays_of_arrays (none, GLSL only) */ -->
-            <!-- /* Reuse tokens from ARB_fragment_layer_viewport (none, GLSL only) */ -->
-            <!-- /* Reuse tokens from ARB_shader_image_size (none, GLSL only) */ -->
-            <!-- /* Reuse tokens from ARB_ES3_compatibility */ -->
+            <!-- Reuse tokens from ARB_arrays_of_arrays (none, GLSL only) -->
+            <!-- Reuse tokens from ARB_fragment_layer_viewport (none, GLSL only) -->
+            <!-- Reuse tokens from ARB_shader_image_size (none, GLSL only) -->
+            <!-- Reuse tokens from ARB_ES3_compatibility -->
             <enum name="GL_COMPRESSED_RGB8_ETC2" />
             <enum name="GL_COMPRESSED_SRGB8_ETC2" />
             <enum name="GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2" />
@@ -28281,8 +28281,8 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_PRIMITIVE_RESTART_FIXED_INDEX" />
             <enum name="GL_ANY_SAMPLES_PASSED_CONSERVATIVE" />
             <enum name="GL_MAX_ELEMENT_INDEX" />
-            <!-- /* Reuse tokens from ARB_clear_buffer_object (none) */ -->
-            <!-- /* Reuse tokens from ARB_compute_shader */ -->
+            <!-- Reuse tokens from ARB_clear_buffer_object (none) -->
+            <!-- Reuse tokens from ARB_compute_shader -->
             <enum name="GL_COMPUTE_SHADER" />
             <enum name="GL_MAX_COMPUTE_UNIFORM_BLOCKS" />
             <enum name="GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS" />
@@ -28300,8 +28300,8 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER" />
             <enum name="GL_DISPATCH_INDIRECT_BUFFER" />
             <enum name="GL_DISPATCH_INDIRECT_BUFFER_BINDING" />
-            <!-- /* Reuse tokens from ARB_copy_image (none) */ -->
-            <!-- /* Reuse tokens from KHR_debug */ -->
+            <!-- Reuse tokens from ARB_copy_image (none) -->
+            <!-- Reuse tokens from KHR_debug -->
             <enum name="GL_DEBUG_OUTPUT_SYNCHRONOUS" />
             <enum name="GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH" />
             <enum name="GL_DEBUG_CALLBACK_FUNCTION" />
@@ -28339,9 +28339,9 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_LABEL_LENGTH" />
             <enum name="GL_DEBUG_OUTPUT" />
             <enum name="GL_CONTEXT_FLAG_DEBUG_BIT" />
-            <!-- /* Reuse tokens from ARB_explicit_uniform_location */ -->
+            <!-- Reuse tokens from ARB_explicit_uniform_location -->
             <enum name="GL_MAX_UNIFORM_LOCATIONS" />
-            <!-- /* Reuse tokens from ARB_framebuffer_no_attachments */ -->
+            <!-- Reuse tokens from ARB_framebuffer_no_attachments -->
             <enum name="GL_FRAMEBUFFER_DEFAULT_WIDTH" />
             <enum name="GL_FRAMEBUFFER_DEFAULT_HEIGHT" />
             <enum name="GL_FRAMEBUFFER_DEFAULT_LAYERS" />
@@ -28351,7 +28351,7 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_FRAMEBUFFER_HEIGHT" />
             <enum name="GL_MAX_FRAMEBUFFER_LAYERS" />
             <enum name="GL_MAX_FRAMEBUFFER_SAMPLES" />
-            <!-- /* Reuse tokens from ARB_internalformat_query2 */ -->
+            <!-- Reuse tokens from ARB_internalformat_query2 -->
             <enum name="GL_INTERNALFORMAT_SUPPORTED" />
             <enum name="GL_INTERNALFORMAT_PREFERRED" />
             <enum name="GL_INTERNALFORMAT_RED_SIZE" />
@@ -28450,9 +28450,9 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_VIEW_CLASS_RGTC2_RG" />
             <enum name="GL_VIEW_CLASS_BPTC_UNORM" />
             <enum name="GL_VIEW_CLASS_BPTC_FLOAT" />
-            <!-- /* Reuse tokens from ARB_invalidate_subdata (none) */ -->
-            <!-- /* Reuse tokens from ARB_multi_draw_indirect (none) */ -->
-            <!-- /* Reuse tokens from ARB_program_interface_query */ -->
+            <!-- Reuse tokens from ARB_invalidate_subdata (none) -->
+            <!-- Reuse tokens from ARB_multi_draw_indirect (none) -->
+            <!-- Reuse tokens from ARB_program_interface_query -->
             <enum name="GL_UNIFORM" />
             <enum name="GL_UNIFORM_BLOCK" />
             <enum name="GL_PROGRAM_INPUT" />
@@ -28500,8 +28500,8 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_LOCATION" />
             <enum name="GL_LOCATION_INDEX" />
             <enum name="GL_IS_PER_PATCH" />
-            <!-- /* Reuse tokens from ARB_robust_buffer_access_behavior (none) */ -->
-            <!-- /* Reuse tokens from ARB_shader_storage_buffer_object */ -->
+            <!-- Reuse tokens from ARB_robust_buffer_access_behavior (none) -->
+            <!-- Reuse tokens from ARB_shader_storage_buffer_object -->
             <enum name="GL_SHADER_STORAGE_BUFFER" />
             <enum name="GL_SHADER_STORAGE_BUFFER_BINDING" />
             <enum name="GL_SHADER_STORAGE_BUFFER_START" />
@@ -28518,21 +28518,21 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT" />
             <enum name="GL_SHADER_STORAGE_BARRIER_BIT" />
             <enum name="GL_MAX_COMBINED_SHADER_OUTPUT_RESOURCES" />
-            <!-- /* Reuse tokens from ARB_stencil_texturing */ -->
+            <!-- Reuse tokens from ARB_stencil_texturing -->
             <enum name="GL_DEPTH_STENCIL_TEXTURE_MODE" />
-            <!-- /* Reuse tokens from ARB_texture_buffer_range */ -->
+            <!-- Reuse tokens from ARB_texture_buffer_range -->
             <enum name="GL_TEXTURE_BUFFER_OFFSET" />
             <enum name="GL_TEXTURE_BUFFER_SIZE" />
             <enum name="GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT" />
-            <!-- /* Reuse tokens from ARB_texture_query_levels (none) */ -->
-            <!-- /* Reuse tokens from ARB_texture_storage_multisample (none) */ -->
-            <!-- /* Reuse tokens from ARB_texture_view */ -->
+            <!-- Reuse tokens from ARB_texture_query_levels (none) -->
+            <!-- Reuse tokens from ARB_texture_storage_multisample (none) -->
+            <!-- Reuse tokens from ARB_texture_view -->
             <enum name="GL_TEXTURE_VIEW_MIN_LEVEL" />
             <enum name="GL_TEXTURE_VIEW_NUM_LEVELS" />
             <enum name="GL_TEXTURE_VIEW_MIN_LAYER" />
             <enum name="GL_TEXTURE_VIEW_NUM_LAYERS" />
             <enum name="GL_TEXTURE_IMMUTABLE_LEVELS" />
-            <!-- /* Reuse tokens from ARB_vertex_attrib_binding */ -->
+            <!-- Reuse tokens from ARB_vertex_attrib_binding -->
             <enum name="GL_VERTEX_ATTRIB_BINDING" />
             <enum name="GL_VERTEX_ATTRIB_RELATIVE_OFFSET" />
             <enum name="GL_VERTEX_BINDING_DIVISOR" />
@@ -28540,63 +28540,63 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_VERTEX_BINDING_STRIDE" />
             <enum name="GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET" />
             <enum name="GL_MAX_VERTEX_ATTRIB_BINDINGS" />
-            <!-- /* Reuse commands from ARB_arrays_of_arrays (none, GLSL only) */ -->
-            <!-- /* Reuse commands from ARB_clear_buffer_object */ -->
+            <!-- Reuse commands from ARB_arrays_of_arrays (none, GLSL only) -->
+            <!-- Reuse commands from ARB_clear_buffer_object -->
             <command name="glClearBufferData" />
             <command name="glClearBufferSubData" />
-            <!-- /* Reuse commands from ARB_compute_shader */ -->
+            <!-- Reuse commands from ARB_compute_shader -->
             <command name="glDispatchCompute" />
             <command name="glDispatchComputeIndirect" />
-            <!-- /* Reuse commands from ARB_copy_image */ -->
+            <!-- Reuse commands from ARB_copy_image -->
             <command name="glCopyImageSubData" />
-            <!-- /* Reuse commands from ARB_ES3_compatibility (none) */ -->
-            <!-- /* Reuse commands from ARB_explicit_uniform_location (none) */ -->
-            <!-- /* Reuse commands from ARB_fragment_layer_viewport (none, GLSL only) */ -->
-            <!-- /* Reuse commands from ARB_framebuffer_no_attachments */ -->
+            <!-- Reuse commands from ARB_ES3_compatibility (none) -->
+            <!-- Reuse commands from ARB_explicit_uniform_location (none) -->
+            <!-- Reuse commands from ARB_fragment_layer_viewport (none, GLSL only) -->
+            <!-- Reuse commands from ARB_framebuffer_no_attachments -->
             <command name="glFramebufferParameteri" />
             <command name="glGetFramebufferParameteriv" />
-            <!-- /* Reuse commands from ARB_internalformat_query2 */ -->
+            <!-- Reuse commands from ARB_internalformat_query2 -->
             <command name="glGetInternalformati64v" />
-            <!-- /* Reuse commands from ARB_invalidate_subdata */ -->
+            <!-- Reuse commands from ARB_invalidate_subdata -->
             <command name="glInvalidateTexSubImage" />
             <command name="glInvalidateTexImage" />
             <command name="glInvalidateBufferSubData" />
             <command name="glInvalidateBufferData" />
             <command name="glInvalidateFramebuffer" />
             <command name="glInvalidateSubFramebuffer" />
-            <!-- /* Reuse commands from ARB_multi_draw_indirect */ -->
+            <!-- Reuse commands from ARB_multi_draw_indirect -->
             <command name="glMultiDrawArraysIndirect" />
             <command name="glMultiDrawElementsIndirect" />
-            <!-- /* Reuse commands from ARB_program_interface_query */ -->
+            <!-- Reuse commands from ARB_program_interface_query -->
             <command name="glGetProgramInterfaceiv" />
             <command name="glGetProgramResourceIndex" />
             <command name="glGetProgramResourceName" />
             <command name="glGetProgramResourceiv" />
             <command name="glGetProgramResourceLocation" />
             <command name="glGetProgramResourceLocationIndex" />
-            <!-- /* Reuse commands from ARB_robust_buffer_access_behavior (none) */ -->
-            <!-- /* Reuse commands from ARB_shader_image_size (none, GLSL only) */ -->
-            <!-- /* Reuse commands from ARB_shader_storage_buffer_object */ -->
+            <!-- Reuse commands from ARB_robust_buffer_access_behavior (none) -->
+            <!-- Reuse commands from ARB_shader_image_size (none, GLSL only) -->
+            <!-- Reuse commands from ARB_shader_storage_buffer_object -->
             <command name="glShaderStorageBlockBinding" />
-            <!-- /* Reuse commands from ARB_stencil_texturing (none) */ -->
-            <!-- /* Reuse commands from ARB_texture_buffer_range */ -->
+            <!-- Reuse commands from ARB_stencil_texturing (none) -->
+            <!-- Reuse commands from ARB_texture_buffer_range -->
             <command name="glTexBufferRange" />
-            <!-- /* Reuse commands from ARB_texture_query_levels (none) */ -->
-            <!-- /* Reuse commands from ARB_texture_storage_multisample */ -->
+            <!-- Reuse commands from ARB_texture_query_levels (none) -->
+            <!-- Reuse commands from ARB_texture_storage_multisample -->
             <command name="glTexStorage2DMultisample" />
             <command name="glTexStorage3DMultisample" />
             <command name="glTextureStorage2DMultisampleEXT" />
             <command name="glTextureStorage3DMultisampleEXT" />
-            <!-- /* Reuse commands from ARB_texture_view */ -->
+            <!-- Reuse commands from ARB_texture_view -->
             <command name="glTextureView" />
-            <!-- /* Reuse commands from ARB_vertex_attrib_binding */ -->
+            <!-- Reuse commands from ARB_vertex_attrib_binding -->
             <command name="glBindVertexBuffer" />
             <command name="glVertexAttribFormat" />
             <command name="glVertexAttribIFormat" />
             <command name="glVertexAttribLFormat" />
             <command name="glVertexAttribBinding" />
             <command name="glVertexBindingDivisor" />
-            <!-- /* Reuse commands from KHR_debug (includes ARB_debug_output commands promoted to KHR without suffixes) */ -->
+            <!-- Reuse commands from KHR_debug (includes ARB_debug_output commands promoted to KHR without suffixes) -->
             <command name="glDebugMessageControl" />
             <command name="glDebugMessageInsert" />
             <command name="glDebugMessageCallback" />
@@ -28610,7 +28610,7 @@ typedef unsigned int GLhandleARB;
             <command name="glGetPointerv" />
         </require>
         <require profile="compatibility" comment="Debug functionality not present in core">
-            <!-- /* Reuse tokens from KHR_debug */ -->
+            <!-- Reuse tokens from KHR_debug -->
             <enum name="GL_DISPLAY_LIST" />
         </require>
         <require profile="core" comment="Restore functionality removed in GL 3.2 core to GL 4.3. Needed for debug interface.">

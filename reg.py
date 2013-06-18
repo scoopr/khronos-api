@@ -581,12 +581,15 @@ class COutputGenerator(OutputGenerator):
         if (self.emit):
             self.newline()
             if (self.genOpts.protectFeature):
-                if (self.featureExtraProtect != None):
-                    print('#ifdef', self.featureExtraProtect, file=self.outFile)
                 print('#ifndef', self.featureName, file=self.outFile)
             print('#define', self.featureName, '1', file=self.outFile)
             if (self.typeBody != ''):
                 print(self.typeBody, end='', file=self.outFile)
+            #
+            # Don't add additional protection for derived type declarations,
+            # which may be needed by other features later on.
+            if (self.featureExtraProtect != None):
+                print('#ifdef', self.featureExtraProtect, file=self.outFile)
             if (self.enumBody != ''):
                 print(self.enumBody, end='', file=self.outFile)
             if (self.genOpts.genFuncPointers and self.cmdPointerBody != ''):
@@ -597,10 +600,10 @@ class COutputGenerator(OutputGenerator):
                 print(self.cmdBody, end='', file=self.outFile)
                 if (self.genOpts.protectProto):
                     print('#endif', file=self.outFile)
+            if (self.featureExtraProtect != None):
+                print('#endif /*', self.featureExtraProtect, '*/', file=self.outFile)
             if (self.genOpts.protectFeature):
                 print('#endif /*', self.featureName, '*/', file=self.outFile)
-                if (self.featureExtraProtect != None):
-                    print('#endif /*', self.featureExtraProtect, '*/', file=self.outFile)
         # Finish processing in superclass
         OutputGenerator.endFeature(self)
     #
