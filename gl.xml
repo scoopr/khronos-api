@@ -102,6 +102,7 @@ typedef void *GLhandleARB;
 typedef unsigned int GLhandleARB;
 #endif]]></type>
         <type>typedef unsigned short <name>GLhalfARB</name>;</type>
+        <type>typedef unsigned short <name>GLhalf</name>;</type>
         <type comment="Must be 32 bits">typedef GLint <name>GLfixed</name>;</type>
         <type requires="stddef">typedef ptrdiff_t <name>GLintptr</name>;</type>
         <type requires="stddef">typedef ptrdiff_t <name>GLsizeiptr</name>;</type>
@@ -8762,7 +8763,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glDebugMessageCallback</name></proto>
             <param><ptype>GLDEBUGPROC</ptype> <name>callback</name></param>
-            <param>const void *<name>userParam</name></param>
+            <param>void *<name>userParam</name></param>
         </command>
         <command>
             <proto>void <name>glDebugMessageCallbackAMD</name></proto>
@@ -8772,13 +8773,13 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glDebugMessageCallbackARB</name></proto>
             <param><ptype>GLDEBUGPROCARB</ptype> <name>callback</name></param>
-            <param>const <ptype>GLvoid</ptype> *<name>userParam</name></param>
+            <param><ptype>GLvoid</ptype> *<name>userParam</name></param>
             <alias name="glDebugMessageCallback" />
         </command>
         <command>
             <proto>void <name>glDebugMessageCallbackKHR</name></proto>
             <param><ptype>GLDEBUGPROCKHR</ptype> <name>callback</name></param>
-            <param>const void *<name>userParam</name></param>
+            <param>void *<name>userParam</name></param>
             <alias name="glDebugMessageCallback" />
         </command>
         <command>
@@ -26310,6 +26311,8 @@ typedef unsigned int GLhandleARB;
     </feature>
     <feature api="gl" name="GL_VERSION_3_0" number="3.0">
         <require>
+            <!-- Reuse tokens from ARB_half_float_vertex -->
+            <type name="GLhalf" />
             <enum name="GL_COMPARE_REF_TO_TEXTURE" />
             <enum name="GL_CLIP_DISTANCE0" />
             <enum name="GL_CLIP_DISTANCE1" />
@@ -31059,11 +31062,13 @@ typedef unsigned int GLhandleARB;
     </extension>
     <extension name="GL_ARB_half_float_pixel" supported="gl" >
         <require>
+            <type name="GLhalfARB" />
             <enum name="GL_HALF_FLOAT_ARB" />
         </require>
     </extension>
     <extension name="GL_ARB_half_float_vertex" supported="gl|glcore" >
         <require>
+            <type name="GLhalf" />
             <enum name="GL_HALF_FLOAT" />
         </require>
     </extension>
