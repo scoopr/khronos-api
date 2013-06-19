@@ -179,20 +179,11 @@ typedef unsigned int GLhandleARB;
         <enum value="0x20000000"  name="GL_MULTISAMPLE_BIT_ARB" />
         <enum value="0x20000000"  name="GL_MULTISAMPLE_BIT_EXT" />
         <enum value="0x20000000"  name="GL_MULTISAMPLE_BIT_3DFX" />
-        <!-- ALL_ATTRIB_BITS mask value changed to all-1s in OpenGL 1.3,
-             affecting coverage tests -->
-        <enum value="0xFFFFFFFF"  name="GL_ALL_ATTRIB_BITS" />
+        <enum value="0xFFFFFFFF"  name="GL_ALL_ATTRIB_BITS" comment="Guaranteed to mark all attribute groups at once" />
     </enums>
 
-    <!-- GL_COVERAGE_BUFFER_BIT_NV collides with AttribMask bit
-         GL_HINT_BIT. This is OK since the NV extension is for OpenGL ES
-         2, which doesn't have attribute groups. -->
-    <enums namespace="ClearMask" type="bitmask">
-            <!-- GL_DEPTH_BUFFER_BIT   = 0x00000100 -->
-            <!-- GL_ACCUM_BUFFER_BIT   = 0x00000200 -->
-            <!-- GL_STENCIL_BUFFER_BIT = 0x00000400 -->
-            <!-- GL_COLOR_BUFFER_BIT   = 0x00004000 -->
-        <enum value="0x00008000"  name="GL_COVERAGE_BUFFER_BIT_NV" />
+    <enums namespace="ClearMask" type="bitmask" comment="GL_{DEPTH,ACCUM,STENCIL,COLOR}_BUFFER_BIT also lie in this namespace">
+        <enum value="0x00008000"  name="GL_COVERAGE_BUFFER_BIT_NV" comment="Collides with AttribMask bit GL_HINT_BIT. OK since this token is for OpenGL ES 2, which doesn't have attribute groups." />
     </enums>
 
     <enums namespace="ClientAttribMask" type="bitmask">
@@ -302,8 +293,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x00000040"  name="GL_SATURATE_BIT_ATI" />
     </enums>
 
-    <enums namespace="ATIFragmentShaderColorModMask" type="bitmask">
-            <!-- GL_2X_BIT_ATI      = 0x00000001 -->
+    <enums namespace="ATIFragmentShaderColorModMask" type="bitmask" comment="GL_2X_BIT_ATI also lies in this namespace">
         <enum value="0x00000002"  name="GL_COMP_BIT_ATI" />
         <enum value="0x00000004"  name="GL_NEGATE_BIT_ATI" />
         <enum value="0x00000008"  name="GL_BIAS_BIT_ATI" />
@@ -416,16 +406,13 @@ typedef unsigned int GLhandleARB;
         <enum value="0x0003"      name="GL_REPLACE_OLDEST_SUN" />
     </enums>
 
-    <enums namespace="INTELMapTextureFormat" vendor="INTEL">
-        <!-- Texture memory layouts, for INTEL_map_texture -->
+    <enums namespace="INTELMapTextureFormat" vendor="INTEL" comment="Texture memory layouts for INTEL_map_texture">
         <enum value="0"           name="GL_LAYOUT_DEFAULT_INTEL" />
         <enum value="1"           name="GL_LAYOUT_LINEAR_INTEL" />
         <enum value="2"           name="GL_LAYOUT_LINEAR_CPU_CACHED_INTEL" />
     </enums>
 
-    <enums namespace="NVTransformFeedbackToken" vendor="NV">
-        <!-- For NV_transform_feedback. No idea why small negative values
-             are used -->
+    <enums namespace="NVTransformFeedbackToken" vendor="NV" comment="For NV_transform_feedback. No clue why small negative values are used">
         <enum value="-2"          name="GL_NEXT_BUFFER_NV" />
         <enum value="-3"          name="GL_SKIP_COMPONENTS4_NV" />
         <enum value="-4"          name="GL_SKIP_COMPONENTS3_NV" />
@@ -492,15 +479,12 @@ typedef unsigned int GLhandleARB;
     <enums namespace="GL" class="SpecialNumbers"  vendor="ARB" comment="Tokens whose numeric value is intrinsically meaningful">
         <enum value="0"           name="GL_ZERO" />
         <enum value="1"           name="GL_ONE" />
-            <!-- These values are tagged since they're not integers
-                 (unsigned and unsigned long long, respectively) -->
-        <enum value="0xFFFFFFFF"  name="GL_INVALID_INDEX" type="u" />
-        <enum value="0xFFFFFFFFFFFFFFFF" name="GL_TIMEOUT_IGNORED" type="ull" />
-        <enum value="0xFFFFFFFFFFFFFFFF" name="GL_TIMEOUT_IGNORED_APPLE" type="ull" />
-            <!-- These are not API enums, they're additional API definition macros for ES 1.0/1.1 headers -->
-        <enum value="1"           name="GL_VERSION_ES_CL_1_0" />
-        <enum value="1"           name="GL_VERSION_ES_CM_1_1" />
-        <enum value="1"           name="GL_VERSION_ES_CL_1_1" />
+        <enum value="0xFFFFFFFF"  name="GL_INVALID_INDEX" type="u" comment="Tagged as uint" />
+        <enum value="0xFFFFFFFFFFFFFFFF" name="GL_TIMEOUT_IGNORED" type="ull" comment="Tagged as uint64" />
+        <enum value="0xFFFFFFFFFFFFFFFF" name="GL_TIMEOUT_IGNORED_APPLE" type="ull" comment="Tagged as uint64" />
+        <enum value="1"           name="GL_VERSION_ES_CL_1_0" comment="Not an API enum. API definition macro for ES 1.0/1.1 headers" />
+        <enum value="1"           name="GL_VERSION_ES_CM_1_1" comment="Not an API enum. API definition macro for ES 1.0/1.1 headers" />
+        <enum value="1"           name="GL_VERSION_ES_CL_1_1" comment="Not an API enum. API definition macro for ES 1.0/1.1 headers" />
     </enums>
 
     <enums namespace="GL" class="PrimitiveType" vendor="ARB" comment="Previously BeginMode">
@@ -627,8 +611,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x0A02"      name="GL_DOMAIN" />
     </enums>
 
-    <!-- There are many more query pname tokens than these -->
-    <enums namespace="GL" class="GetPName" vendor="ARB">
+    <enums namespace="GL" class="GetPName" vendor="ARB" comment="Many, many other query pname tokens exist">
         <enum value="0x0B00"      name="GL_CURRENT_COLOR" />
         <enum value="0x0B01"      name="GL_CURRENT_INDEX" />
         <enum value="0x0B02"      name="GL_CURRENT_NORMAL" />
@@ -785,8 +768,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x0C79"      name="GL_PIXEL_MAP_A_TO_A" />
     </enums>
 
-    <!-- Miscellaneous OpenGL 1.0/1.1 enums -->
-    <enums namespace="GL" vendor="ARB">
+    <enums namespace="GL" vendor="ARB" comment="Miscellaneous OpenGL 1.0/1.1 enums">
         <enum value="0x0CB0"      name="GL_PIXEL_MAP_I_TO_I_SIZE" />
         <enum value="0x0CB1"      name="GL_PIXEL_MAP_S_TO_S_SIZE" />
         <enum value="0x0CB2"      name="GL_PIXEL_MAP_I_TO_R_SIZE" />
@@ -1112,8 +1094,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x2A02"      name="GL_POLYGON_OFFSET_LINE" />
     </enums>
 
-    <enums namespace="GL" class="InternalFormat" vendor="ARB">
-        <!-- Many more internal formats in the general 0x8nnn range -->
+    <enums namespace="GL" class="InternalFormat" vendor="ARB" comment="Many other internal formats exist" >
         <enum value="0x2A10"      name="GL_R3_G3_B2" />
     </enums>
 
@@ -1170,12 +1151,11 @@ typedef unsigned int GLhandleARB;
         <unused start="0x7000" end="0x7FFF" comment="Unused. Do not use." />
     </enums>
 
-    <!-- The rest of the enum reserved space begins here. It starts at
-         0x8000 and all modern enum allocations are in this range. These
-         enums are mostly assigned the default class since it's a great
-         deal of not very useful work to be more specific -->
-
-    <enums namespace="GL" start="0x8000" end="0x80BF" vendor="SGI" />
+    <enums namespace="GL" start="0x8000" end="0x80BF" vendor="SGI" 
+           comment="The primary GL enumerant space begins here. All modern
+                    enum allocations are in this range. These enums are
+                    mostly assigned the default class since it's a great
+                    deal of not very useful work to be more specific" />
 
     <enums namespace="GL" vendor="ARB">
         <enum value="0x8000"      name="GL_ABGR_EXT" />
@@ -1751,7 +1731,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8150"      name="GL_IGNORE_BORDER_HP" />
         <enum value="0x8151"      name="GL_CONSTANT_BORDER" />
         <enum value="0x8151"      name="GL_CONSTANT_BORDER_HP" />
-            <!-- <enum value="0x8152" name="GL_WRAP_BORDER"                     comment="Proposed, but not promoted to core" /> -->
+            <unused start="0x8152" comment="GL_WRAP_BORDER = 0x8152 was proposed, but not actually promoted to core" />
         <enum value="0x8153"      name="GL_REPLICATE_BORDER" />
         <enum value="0x8153"      name="GL_REPLICATE_BORDER_HP" />
         <enum value="0x8154"      name="GL_CONVOLUTION_BORDER_COLOR" />
@@ -1976,9 +1956,8 @@ typedef unsigned int GLhandleARB;
         <enum value="0x821E"      name="GL_CONTEXT_FLAGS" />
             <unused start="0x821F" end="0x8221" />
         <enum value="0x8222"      name="GL_INDEX" />
-            <!-- These tokens are not actually used anywhere -->
-            <!-- <enum value="0x8223" name="GL_DEPTH_BUFFER" /> -->
-            <!-- <enum value="0x8224" name="GL_STENCIL_BUFFER" /> -->
+            <unused start="0x8223" comment="GL_DEPTH_BUFFER = 0x8223 not actually used in the API" />
+            <unused start="0x8224" comment="GL_STENCIL_BUFFER = 0x8224 not actually used in the API" />
         <enum value="0x8225"      name="GL_COMPRESSED_RED" />
         <enum value="0x8226"      name="GL_COMPRESSED_RG" />
         <enum value="0x8227"      name="GL_RG" />
@@ -2071,10 +2050,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8258"      name="GL_PROGRAM_SEPARABLE" />
         <enum value="0x8258"      name="GL_PROGRAM_SEPARABLE_EXT" />
         <enum value="0x8259"      name="GL_ACTIVE_PROGRAM" />
-            <!-- There are two definitions of ACTIVE_PROGRAM_EXT in the
-                 unrelated OpenGL and OpenGL ES EXT_separate_shader_objects
-                 extensions. -->
-        <enum value="0x8259" api="gles2"  name="GL_ACTIVE_PROGRAM_EXT" />
+        <enum value="0x8259" api="gles2"  name="GL_ACTIVE_PROGRAM_EXT" comment="For the OpenGL ES version of EXT_separate_shader_objects" />
         <enum value="0x825A"      name="GL_PROGRAM_PIPELINE_BINDING" />
         <enum value="0x825A"      name="GL_PROGRAM_PIPELINE_BINDING_EXT" />
         <enum value="0x825B"      name="GL_MAX_VIEWPORTS" />
@@ -2141,8 +2117,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8292"      name="GL_GET_TEXTURE_IMAGE_TYPE" />
         <enum value="0x8293"      name="GL_MIPMAP" />
         <enum value="0x8294"      name="GL_MANUAL_GENERATE_MIPMAP" />
-            <!-- Should be deprecated -->
-        <enum value="0x8295"      name="GL_AUTO_GENERATE_MIPMAP" />
+        <enum value="0x8295"      name="GL_AUTO_GENERATE_MIPMAP" comment="Should be deprecated" />
         <enum value="0x8296"      name="GL_COLOR_ENCODING" />
         <enum value="0x8297"      name="GL_SRGB_READ" />
         <enum value="0x8298"      name="GL_SRGB_WRITE" />
@@ -3636,70 +3611,87 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8824"      name="GL_MAX_DRAW_BUFFERS" />
         <enum value="0x8824"      name="GL_MAX_DRAW_BUFFERS_ARB" />
         <enum value="0x8824"      name="GL_MAX_DRAW_BUFFERS_ATI" />
+        <enum value="0x8824"      name="GL_MAX_DRAW_BUFFERS_EXT" />
         <enum value="0x8824"      name="GL_MAX_DRAW_BUFFERS_NV" />
         <enum value="0x8825"      name="GL_DRAW_BUFFER0" />
         <enum value="0x8825"      name="GL_DRAW_BUFFER0_ARB" />
         <enum value="0x8825"      name="GL_DRAW_BUFFER0_ATI" />
+        <enum value="0x8825"      name="GL_DRAW_BUFFER0_EXT" />
         <enum value="0x8825"      name="GL_DRAW_BUFFER0_NV" />
         <enum value="0x8826"      name="GL_DRAW_BUFFER1" />
         <enum value="0x8826"      name="GL_DRAW_BUFFER1_ARB" />
         <enum value="0x8826"      name="GL_DRAW_BUFFER1_ATI" />
+        <enum value="0x8826"      name="GL_DRAW_BUFFER1_EXT" />
         <enum value="0x8826"      name="GL_DRAW_BUFFER1_NV" />
         <enum value="0x8827"      name="GL_DRAW_BUFFER2" />
         <enum value="0x8827"      name="GL_DRAW_BUFFER2_ARB" />
         <enum value="0x8827"      name="GL_DRAW_BUFFER2_ATI" />
+        <enum value="0x8827"      name="GL_DRAW_BUFFER2_EXT" />
         <enum value="0x8827"      name="GL_DRAW_BUFFER2_NV" />
         <enum value="0x8828"      name="GL_DRAW_BUFFER3" />
         <enum value="0x8828"      name="GL_DRAW_BUFFER3_ARB" />
         <enum value="0x8828"      name="GL_DRAW_BUFFER3_ATI" />
+        <enum value="0x8828"      name="GL_DRAW_BUFFER3_EXT" />
         <enum value="0x8828"      name="GL_DRAW_BUFFER3_NV" />
         <enum value="0x8829"      name="GL_DRAW_BUFFER4" />
         <enum value="0x8829"      name="GL_DRAW_BUFFER4_ARB" />
         <enum value="0x8829"      name="GL_DRAW_BUFFER4_ATI" />
+        <enum value="0x8829"      name="GL_DRAW_BUFFER4_EXT" />
         <enum value="0x8829"      name="GL_DRAW_BUFFER4_NV" />
         <enum value="0x882A"      name="GL_DRAW_BUFFER5" />
         <enum value="0x882A"      name="GL_DRAW_BUFFER5_ARB" />
         <enum value="0x882A"      name="GL_DRAW_BUFFER5_ATI" />
+        <enum value="0x882A"      name="GL_DRAW_BUFFER5_EXT" />
         <enum value="0x882A"      name="GL_DRAW_BUFFER5_NV" />
         <enum value="0x882B"      name="GL_DRAW_BUFFER6" />
         <enum value="0x882B"      name="GL_DRAW_BUFFER6_ARB" />
         <enum value="0x882B"      name="GL_DRAW_BUFFER6_ATI" />
+        <enum value="0x882B"      name="GL_DRAW_BUFFER6_EXT" />
         <enum value="0x882B"      name="GL_DRAW_BUFFER6_NV" />
         <enum value="0x882C"      name="GL_DRAW_BUFFER7" />
         <enum value="0x882C"      name="GL_DRAW_BUFFER7_ARB" />
         <enum value="0x882C"      name="GL_DRAW_BUFFER7_ATI" />
+        <enum value="0x882C"      name="GL_DRAW_BUFFER7_EXT" />
         <enum value="0x882C"      name="GL_DRAW_BUFFER7_NV" />
         <enum value="0x882D"      name="GL_DRAW_BUFFER8" />
         <enum value="0x882D"      name="GL_DRAW_BUFFER8_ARB" />
         <enum value="0x882D"      name="GL_DRAW_BUFFER8_ATI" />
+        <enum value="0x882D"      name="GL_DRAW_BUFFER8_EXT" />
         <enum value="0x882D"      name="GL_DRAW_BUFFER8_NV" />
         <enum value="0x882E"      name="GL_DRAW_BUFFER9" />
         <enum value="0x882E"      name="GL_DRAW_BUFFER9_ARB" />
         <enum value="0x882E"      name="GL_DRAW_BUFFER9_ATI" />
+        <enum value="0x882E"      name="GL_DRAW_BUFFER9_EXT" />
         <enum value="0x882E"      name="GL_DRAW_BUFFER9_NV" />
         <enum value="0x882F"      name="GL_DRAW_BUFFER10" />
         <enum value="0x882F"      name="GL_DRAW_BUFFER10_ARB" />
         <enum value="0x882F"      name="GL_DRAW_BUFFER10_ATI" />
+        <enum value="0x882F"      name="GL_DRAW_BUFFER10_EXT" />
         <enum value="0x882F"      name="GL_DRAW_BUFFER10_NV" />
         <enum value="0x8830"      name="GL_DRAW_BUFFER11" />
         <enum value="0x8830"      name="GL_DRAW_BUFFER11_ARB" />
         <enum value="0x8830"      name="GL_DRAW_BUFFER11_ATI" />
+        <enum value="0x8830"      name="GL_DRAW_BUFFER11_EXT" />
         <enum value="0x8830"      name="GL_DRAW_BUFFER11_NV" />
         <enum value="0x8831"      name="GL_DRAW_BUFFER12" />
         <enum value="0x8831"      name="GL_DRAW_BUFFER12_ARB" />
         <enum value="0x8831"      name="GL_DRAW_BUFFER12_ATI" />
+        <enum value="0x8831"      name="GL_DRAW_BUFFER12_EXT" />
         <enum value="0x8831"      name="GL_DRAW_BUFFER12_NV" />
         <enum value="0x8832"      name="GL_DRAW_BUFFER13" />
         <enum value="0x8832"      name="GL_DRAW_BUFFER13_ARB" />
         <enum value="0x8832"      name="GL_DRAW_BUFFER13_ATI" />
+        <enum value="0x8832"      name="GL_DRAW_BUFFER13_EXT" />
         <enum value="0x8832"      name="GL_DRAW_BUFFER13_NV" />
         <enum value="0x8833"      name="GL_DRAW_BUFFER14" />
         <enum value="0x8833"      name="GL_DRAW_BUFFER14_ARB" />
         <enum value="0x8833"      name="GL_DRAW_BUFFER14_ATI" />
+        <enum value="0x8833"      name="GL_DRAW_BUFFER14_EXT" />
         <enum value="0x8833"      name="GL_DRAW_BUFFER14_NV" />
         <enum value="0x8834"      name="GL_DRAW_BUFFER15" />
         <enum value="0x8834"      name="GL_DRAW_BUFFER15_ARB" />
         <enum value="0x8834"      name="GL_DRAW_BUFFER15_ATI" />
+        <enum value="0x8834"      name="GL_DRAW_BUFFER15_EXT" />
         <enum value="0x8834"      name="GL_DRAW_BUFFER15_NV" />
         <enum value="0x8835"      name="GL_COLOR_CLEAR_UNCLAMPED_VALUE_ATI" />
             <unused start="0x8836" end="0x883C" />
@@ -3994,6 +3986,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x88FB"      name="GL_ONE_MINUS_SRC1_ALPHA" />
         <enum value="0x88FC"      name="GL_MAX_DUAL_SOURCE_DRAW_BUFFERS" />
         <enum value="0x88FD"      name="GL_VERTEX_ATTRIB_ARRAY_INTEGER" />
+        <enum value="0x88FD"      name="GL_VERTEX_ATTRIB_ARRAY_INTEGER_EXT" />
         <enum value="0x88FD"      name="GL_VERTEX_ATTRIB_ARRAY_INTEGER_NV" />
         <enum value="0x88FE"      name="GL_VERTEX_ATTRIB_ARRAY_DIVISOR" />
         <enum value="0x88FE"      name="GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE" />
@@ -4002,8 +3995,10 @@ typedef unsigned int GLhandleARB;
         <enum value="0x88FF"      name="GL_MAX_ARRAY_TEXTURE_LAYERS" />
         <enum value="0x88FF"      name="GL_MAX_ARRAY_TEXTURE_LAYERS_EXT" />
         <enum value="0x8904"      name="GL_MIN_PROGRAM_TEXEL_OFFSET" />
+        <enum value="0x8904"      name="GL_MIN_PROGRAM_TEXEL_OFFSET_EXT" />
         <enum value="0x8904"      name="GL_MIN_PROGRAM_TEXEL_OFFSET_NV" />
         <enum value="0x8905"      name="GL_MAX_PROGRAM_TEXEL_OFFSET" />
+        <enum value="0x8905"      name="GL_MAX_PROGRAM_TEXEL_OFFSET_EXT" />
         <enum value="0x8905"      name="GL_MAX_PROGRAM_TEXEL_OFFSET_NV" />
         <enum value="0x8906"      name="GL_PROGRAM_ATTRIB_COMPONENTS_NV" />
         <enum value="0x8907"      name="GL_PROGRAM_RESULT_COMPONENTS_NV" />
@@ -4348,10 +4343,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8B8C"      name="GL_SHADING_LANGUAGE_VERSION" />
         <enum value="0x8B8C"      name="GL_SHADING_LANGUAGE_VERSION_ARB" />
         <enum value="0x8B8D"      name="GL_CURRENT_PROGRAM" />
-            <!-- There are two definitions of ACTIVE_PROGRAM_EXT in the
-                 unrelated OpenGL and OpenGL ES EXT_separate_shader_objects
-                 extensions. -->
-        <enum value="0x8B8D" api="gl"     name="GL_ACTIVE_PROGRAM_EXT" alias="GL_CURRENT_PROGRAM" />
+        <enum value="0x8B8D" api="gl"     name="GL_ACTIVE_PROGRAM_EXT" alias="GL_CURRENT_PROGRAM" comment="For the OpenGL version of EXT_separate_shader_objects" />
             <unused start="0x8B8E" end="0x8B8F" />
     </enums>
 
@@ -9340,6 +9332,12 @@ typedef unsigned int GLhandleARB;
             <alias name="glDrawBuffers" />
         </command>
         <command>
+            <proto>void <name>glDrawBuffersEXT</name></proto>
+            <param><ptype>GLsizei</ptype> <name>n</name></param>
+            <param>const <ptype>GLenum</ptype> *<name>bufs</name></param>
+            <alias name="glDrawBuffers" />
+        </command>
+        <command>
             <proto>void <name>glDrawBuffersATI</name></proto>
             <param><ptype>GLsizei</ptype> <name>n</name></param>
             <param>const <ptype>GLenum</ptype> *<name>bufs</name></param>
@@ -10718,7 +10716,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGenVertexArraysAPPLE</name></proto>
             <param><ptype>GLsizei</ptype> <name>n</name></param>
             <param><ptype>GLuint</ptype> *<name>arrays</name></param>
-            <alias name="glGenVertexArray" />
+            <alias name="glGenVertexArrays" />
         </command>
         <command>
             <proto>void <name>glGenVertexArraysOES</name></proto>
@@ -13038,7 +13036,6 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>program</name></param>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLint</ptype> *<name>location</name></param>
-            <alias name="glGetTransformFeedbackVarying" />
         </command>
         <command>
             <proto>void <name>glGetTranslatedShaderSourceANGLE</name></proto>
@@ -13917,13 +13914,12 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto><ptype>GLboolean</ptype> <name>glIsProgramARB</name></proto>
             <param><ptype>GLuint</ptype> <name>program</name></param>
-            <alias name="glIsProgram" />
             <glx type="vendor" opcode="1304" />
         </command>
         <command>
             <proto><ptype>GLboolean</ptype> <name>glIsProgramNV</name></proto>
             <param><ptype>GLuint</ptype> <name>id</name></param>
-            <alias name="glIsProgram" />
+            <alias name="glIsProgramARB" />
             <glx type="vendor" opcode="1304" />
         </command>
         <command>
@@ -14885,7 +14881,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>mode</name></param>
             <param>const <ptype>GLsizei</ptype> *<name>count</name></param>
             <param><ptype>GLenum</ptype> <name>type</name></param>
-            <param>const <ptype>GLvoid</ptype> **<name>indices</name></param>
+            <param>const <ptype>GLvoid</ptype> *const*<name>indices</name></param>
             <param><ptype>GLsizei</ptype> <name>primcount</name></param>
             <alias name="glMultiDrawElements" />
         </command>
@@ -19432,7 +19428,6 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>backfunc</name></param>
             <param><ptype>GLint</ptype> <name>ref</name></param>
             <param><ptype>GLuint</ptype> <name>mask</name></param>
-            <alias name="glStencilFuncSeparate" />
         </command>
         <command>
             <proto>void <name>glStencilMask</name></proto>
@@ -21021,7 +21016,6 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param>const <ptype>GLint</ptype> *<name>locations</name></param>
             <param><ptype>GLenum</ptype> <name>bufferMode</name></param>
-            <alias name="glTransformFeedbackVaryings" />
         </command>
         <command>
             <proto>void <name>glTransformPathNV</name></proto>
@@ -26311,8 +26305,6 @@ typedef unsigned int GLhandleARB;
     </feature>
     <feature api="gl" name="GL_VERSION_3_0" number="3.0">
         <require>
-            <!-- Reuse tokens from ARB_half_float_vertex -->
-            <type name="GLhalf" />
             <enum name="GL_COMPARE_REF_TO_TEXTURE" />
             <enum name="GL_CLIP_DISTANCE0" />
             <enum name="GL_CLIP_DISTANCE1" />
@@ -26413,11 +26405,71 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_BUFFER_ACCESS_FLAGS" />
             <enum name="GL_BUFFER_MAP_LENGTH" />
             <enum name="GL_BUFFER_MAP_OFFSET" />
-            <!-- Reuse tokens from ARB_depth_buffer_float -->
+            <command name="glColorMaski" />
+            <command name="glGetBooleani_v" />
+            <command name="glGetIntegeri_v" />
+            <command name="glEnablei" />
+            <command name="glDisablei" />
+            <command name="glIsEnabledi" />
+            <command name="glBeginTransformFeedback" />
+            <command name="glEndTransformFeedback" />
+            <command name="glBindBufferRange" />
+            <command name="glBindBufferBase" />
+            <command name="glTransformFeedbackVaryings" />
+            <command name="glGetTransformFeedbackVarying" />
+            <command name="glClampColor" />
+            <command name="glBeginConditionalRender" />
+            <command name="glEndConditionalRender" />
+            <command name="glVertexAttribIPointer" />
+            <command name="glGetVertexAttribIiv" />
+            <command name="glGetVertexAttribIuiv" />
+            <command name="glVertexAttribI1i" />
+            <command name="glVertexAttribI2i" />
+            <command name="glVertexAttribI3i" />
+            <command name="glVertexAttribI4i" />
+            <command name="glVertexAttribI1ui" />
+            <command name="glVertexAttribI2ui" />
+            <command name="glVertexAttribI3ui" />
+            <command name="glVertexAttribI4ui" />
+            <command name="glVertexAttribI1iv" />
+            <command name="glVertexAttribI2iv" />
+            <command name="glVertexAttribI3iv" />
+            <command name="glVertexAttribI4iv" />
+            <command name="glVertexAttribI1uiv" />
+            <command name="glVertexAttribI2uiv" />
+            <command name="glVertexAttribI3uiv" />
+            <command name="glVertexAttribI4uiv" />
+            <command name="glVertexAttribI4bv" />
+            <command name="glVertexAttribI4sv" />
+            <command name="glVertexAttribI4ubv" />
+            <command name="glVertexAttribI4usv" />
+            <command name="glGetUniformuiv" />
+            <command name="glBindFragDataLocation" />
+            <command name="glGetFragDataLocation" />
+            <command name="glUniform1ui" />
+            <command name="glUniform2ui" />
+            <command name="glUniform3ui" />
+            <command name="glUniform4ui" />
+            <command name="glUniform1uiv" />
+            <command name="glUniform2uiv" />
+            <command name="glUniform3uiv" />
+            <command name="glUniform4uiv" />
+            <command name="glTexParameterIiv" />
+            <command name="glTexParameterIuiv" />
+            <command name="glGetTexParameterIiv" />
+            <command name="glGetTexParameterIuiv" />
+            <command name="glClearBufferiv" />
+            <command name="glClearBufferuiv" />
+            <command name="glClearBufferfv" />
+            <command name="glClearBufferfi" />
+            <command name="glGetStringi" />
+        </require>
+        <require comment="Reuse ARB_depth_buffer_float">
             <enum name="GL_DEPTH_COMPONENT32F" />
             <enum name="GL_DEPTH32F_STENCIL8" />
             <enum name="GL_FLOAT_32_UNSIGNED_INT_24_8_REV" />
-            <!-- Reuse tokens from ARB_framebuffer_object -->
+        </require>
+        <require comment="Reuse ARB_framebuffer_object">
             <enum name="GL_INVALID_FRAMEBUFFER_OPERATION" />
             <enum name="GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING" />
             <enum name="GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE" />
@@ -26495,23 +26547,56 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_RENDERBUFFER_STENCIL_SIZE" />
             <enum name="GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE" />
             <enum name="GL_MAX_SAMPLES" />
-            <!-- Reuse tokens from ARB_framebuffer_sRGB -->
+            <command name="glIsRenderbuffer" />
+            <command name="glBindRenderbuffer" />
+            <command name="glDeleteRenderbuffers" />
+            <command name="glGenRenderbuffers" />
+            <command name="glRenderbufferStorage" />
+            <command name="glGetRenderbufferParameteriv" />
+            <command name="glIsFramebuffer" />
+            <command name="glBindFramebuffer" />
+            <command name="glDeleteFramebuffers" />
+            <command name="glGenFramebuffers" />
+            <command name="glCheckFramebufferStatus" />
+            <command name="glFramebufferTexture1D" />
+            <command name="glFramebufferTexture2D" />
+            <command name="glFramebufferTexture3D" />
+            <command name="glFramebufferRenderbuffer" />
+            <command name="glGetFramebufferAttachmentParameteriv" />
+            <command name="glGenerateMipmap" />
+            <command name="glBlitFramebuffer" />
+            <command name="glRenderbufferStorageMultisample" />
+            <command name="glFramebufferTextureLayer" />
+        </require>
+        <require profile="compatibility" comment="Reuse ARB_framebuffer_object compatibility profile">
+            <enum name="GL_INDEX" />
+            <enum name="GL_TEXTURE_LUMINANCE_TYPE" />
+            <enum name="GL_TEXTURE_INTENSITY_TYPE" />
+        </require>
+        <require comment="Reuse ARB_framebuffer_sRGB">
             <enum name="GL_FRAMEBUFFER_SRGB" />
-            <!-- Reuse tokens from ARB_half_float_vertex -->
-            <enum name="GL_HALF_FLOAT" />
-            <!-- Reuse tokens from ARB_map_buffer_range -->
+        </require>
+        <require comment="Reuse ARB_half_float_vertex">
+            <type name="GLhalf" />
+            <enum name="GL_HALF_FLOAT" />       
+        </require>
+        <require comment="Reuse ARB_map_buffer_range">
             <enum name="GL_MAP_READ_BIT" />
             <enum name="GL_MAP_WRITE_BIT" />
             <enum name="GL_MAP_INVALIDATE_RANGE_BIT" />
             <enum name="GL_MAP_INVALIDATE_BUFFER_BIT" />
             <enum name="GL_MAP_FLUSH_EXPLICIT_BIT" />
             <enum name="GL_MAP_UNSYNCHRONIZED_BIT" />
-            <!-- Reuse tokens from ARB_texture_compression_rgtc -->
+            <command name="glMapBufferRange" />
+            <command name="glFlushMappedBufferRange" />
+        </require>
+        <require comment="Reuse ARB_texture_compression_rgtc">
             <enum name="GL_COMPRESSED_RED_RGTC1" />
             <enum name="GL_COMPRESSED_SIGNED_RED_RGTC1" />
             <enum name="GL_COMPRESSED_RG_RGTC2" />
             <enum name="GL_COMPRESSED_SIGNED_RG_RGTC2" />
-            <!-- Reuse tokens from ARB_texture_rg -->
+        </require>
+        <require comment="Reuse ARB_texture_rg">
             <enum name="GL_RG" />
             <enum name="GL_RG_INTEGER" />
             <enum name="GL_R8" />
@@ -26534,102 +26619,12 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_RG16UI" />
             <enum name="GL_RG32I" />
             <enum name="GL_RG32UI" />
-            <!-- Reuse tokens from ARB_vertex_array_object -->
+        </require>
+        <require comment="Reuse ARB_vertex_array_object">
             <enum name="GL_VERTEX_ARRAY_BINDING" />
             <enum name="GL_CLAMP_VERTEX_COLOR" />
             <enum name="GL_CLAMP_FRAGMENT_COLOR" />
             <enum name="GL_ALPHA_INTEGER" />
-        </require>
-        <require profile="compatibility">
-            <!-- Reuse tokens from ARB_framebuffer_object -->
-            <enum name="GL_INDEX" />
-            <enum name="GL_TEXTURE_LUMINANCE_TYPE" />
-            <enum name="GL_TEXTURE_INTENSITY_TYPE" />
-        </require>
-        <require>
-            <command name="glColorMaski" />
-            <command name="glGetBooleani_v" />
-            <command name="glGetIntegeri_v" />
-            <command name="glEnablei" />
-            <command name="glDisablei" />
-            <command name="glIsEnabledi" />
-            <command name="glBeginTransformFeedback" />
-            <command name="glEndTransformFeedback" />
-            <command name="glBindBufferRange" />
-            <command name="glBindBufferBase" />
-            <command name="glTransformFeedbackVaryings" />
-            <command name="glGetTransformFeedbackVarying" />
-            <command name="glClampColor" />
-            <command name="glBeginConditionalRender" />
-            <command name="glEndConditionalRender" />
-            <command name="glVertexAttribIPointer" />
-            <command name="glGetVertexAttribIiv" />
-            <command name="glGetVertexAttribIuiv" />
-            <command name="glVertexAttribI1i" />
-            <command name="glVertexAttribI2i" />
-            <command name="glVertexAttribI3i" />
-            <command name="glVertexAttribI4i" />
-            <command name="glVertexAttribI1ui" />
-            <command name="glVertexAttribI2ui" />
-            <command name="glVertexAttribI3ui" />
-            <command name="glVertexAttribI4ui" />
-            <command name="glVertexAttribI1iv" />
-            <command name="glVertexAttribI2iv" />
-            <command name="glVertexAttribI3iv" />
-            <command name="glVertexAttribI4iv" />
-            <command name="glVertexAttribI1uiv" />
-            <command name="glVertexAttribI2uiv" />
-            <command name="glVertexAttribI3uiv" />
-            <command name="glVertexAttribI4uiv" />
-            <command name="glVertexAttribI4bv" />
-            <command name="glVertexAttribI4sv" />
-            <command name="glVertexAttribI4ubv" />
-            <command name="glVertexAttribI4usv" />
-            <command name="glGetUniformuiv" />
-            <command name="glBindFragDataLocation" />
-            <command name="glGetFragDataLocation" />
-            <command name="glUniform1ui" />
-            <command name="glUniform2ui" />
-            <command name="glUniform3ui" />
-            <command name="glUniform4ui" />
-            <command name="glUniform1uiv" />
-            <command name="glUniform2uiv" />
-            <command name="glUniform3uiv" />
-            <command name="glUniform4uiv" />
-            <command name="glTexParameterIiv" />
-            <command name="glTexParameterIuiv" />
-            <command name="glGetTexParameterIiv" />
-            <command name="glGetTexParameterIuiv" />
-            <command name="glClearBufferiv" />
-            <command name="glClearBufferuiv" />
-            <command name="glClearBufferfv" />
-            <command name="glClearBufferfi" />
-            <command name="glGetStringi" />
-            <!-- Reuse commands from ARB_framebuffer_object -->
-            <command name="glIsRenderbuffer" />
-            <command name="glBindRenderbuffer" />
-            <command name="glDeleteRenderbuffers" />
-            <command name="glGenRenderbuffers" />
-            <command name="glRenderbufferStorage" />
-            <command name="glGetRenderbufferParameteriv" />
-            <command name="glIsFramebuffer" />
-            <command name="glBindFramebuffer" />
-            <command name="glDeleteFramebuffers" />
-            <command name="glGenFramebuffers" />
-            <command name="glCheckFramebufferStatus" />
-            <command name="glFramebufferTexture1D" />
-            <command name="glFramebufferTexture2D" />
-            <command name="glFramebufferTexture3D" />
-            <command name="glFramebufferRenderbuffer" />
-            <command name="glGetFramebufferAttachmentParameteriv" />
-            <command name="glGenerateMipmap" />
-            <command name="glBlitFramebuffer" />
-            <command name="glRenderbufferStorageMultisample" />
-            <command name="glFramebufferTextureLayer" />
-            <!-- Reuse commands from ARB_map_buffer_range -->
-            <command name="glMapBufferRange" />
-            <command name="glFlushMappedBufferRange" />
-            <!-- Reuse commands from ARB_vertex_array_object -->
             <command name="glBindVertexArray" />
             <command name="glDeleteVertexArrays" />
             <command name="glGenVertexArrays" />
@@ -26653,10 +26648,6 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_TEXTURE_BINDING_RECTANGLE" />
             <enum name="GL_PROXY_TEXTURE_RECTANGLE" />
             <enum name="GL_MAX_RECTANGLE_TEXTURE_SIZE" />
-            <enum name="GL_RED_SNORM" />
-            <enum name="GL_RG_SNORM" />
-            <enum name="GL_RGB_SNORM" />
-            <enum name="GL_RGBA_SNORM" />
             <enum name="GL_R8_SNORM" />
             <enum name="GL_RG8_SNORM" />
             <enum name="GL_RGB8_SNORM" />
@@ -26668,11 +26659,17 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_SIGNED_NORMALIZED" />
             <enum name="GL_PRIMITIVE_RESTART" />
             <enum name="GL_PRIMITIVE_RESTART_INDEX" />
-            <!-- Reuse tokens from ARB_copy_buffer -->
+            <command name="glDrawArraysInstanced" />
+            <command name="glDrawElementsInstanced" />
+            <command name="glTexBuffer" />
+            <command name="glPrimitiveRestartIndex" />
+        </require>
+        <require comment="Reuse ARB_copy_buffer">
             <enum name="GL_COPY_READ_BUFFER" />
             <enum name="GL_COPY_WRITE_BUFFER" />
-            <!-- Reuse tokens from ARB_draw_instanced (none) -->
-            <!-- Reuse tokens from ARB_uniform_buffer_object -->
+            <command name="glCopyBufferSubData" />
+        </require>             
+        <require comment="Reuse ARB_uniform_buffer_object">
             <enum name="GL_UNIFORM_BUFFER" />
             <enum name="GL_UNIFORM_BUFFER_BINDING" />
             <enum name="GL_UNIFORM_BUFFER_START" />
@@ -26703,13 +26700,6 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER" />
             <enum name="GL_UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER" />
             <enum name="GL_INVALID_INDEX" />
-            <command name="glDrawArraysInstanced" />
-            <command name="glDrawElementsInstanced" />
-            <command name="glTexBuffer" />
-            <command name="glPrimitiveRestartIndex" />
-            <!-- Reuse commands from ARB_copy_buffer -->
-            <command name="glCopyBufferSubData" />
-            <!-- Reuse commands from ARB_uniform_buffer_object -->
             <command name="glGetUniformIndices" />
             <command name="glGetActiveUniformsiv" />
             <command name="glGetActiveUniformName" />
@@ -26743,18 +26733,29 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_GEOMETRY_OUTPUT_COMPONENTS" />
             <enum name="GL_MAX_FRAGMENT_INPUT_COMPONENTS" />
             <enum name="GL_CONTEXT_PROFILE_MASK" />
-            <!-- Reuse tokens from ARB_depth_clamp -->
+        </require>
+        <require comment="Reuse ARB_depth_clamp">
             <enum name="GL_DEPTH_CLAMP" />
-            <!-- Reuse tokens from ARB_draw_elements_base_vertex (none) -->
-            <!-- Reuse tokens from ARB_fragment_coord_conventions (none) -->
-            <!-- Reuse tokens from ARB_provoking_vertex -->
+        </require>
+        <require comment="Reuse ARB_draw_elements_base_vertex">
+            <command name="glDrawElementsBaseVertex" />
+            <command name="glDrawRangeElementsBaseVertex" />
+            <command name="glDrawElementsInstancedBaseVertex" />
+            <command name="glMultiDrawElementsBaseVertex" />
+        </require>
+        <require comment="Reuse ARB_fragment_coord_conventions (none)">
+        </require>
+        <require comment="Reuse ARB_provoking_vertex">
             <enum name="GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION" />
             <enum name="GL_FIRST_VERTEX_CONVENTION" />
             <enum name="GL_LAST_VERTEX_CONVENTION" />
             <enum name="GL_PROVOKING_VERTEX" />
-            <!-- Reuse tokens from ARB_seamless_cube_map -->
+            <command name="glProvokingVertex" />
+        </require>
+        <require comment="Reuse ARB_seamless_cube_map">
             <enum name="GL_TEXTURE_CUBE_MAP_SEAMLESS" />
-            <!-- Reuse tokens from ARB_sync -->
+        </require>
+        <require comment="Reuse ARB_sync">
             <enum name="GL_MAX_SERVER_WAIT_TIMEOUT" />
             <enum name="GL_OBJECT_TYPE" />
             <enum name="GL_SYNC_CONDITION" />
@@ -26771,7 +26772,15 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_TIMEOUT_IGNORED" />
             <enum name="GL_SYNC_FLUSH_COMMANDS_BIT" />
             <enum name="GL_TIMEOUT_IGNORED" />
-            <!-- Reuse tokens from ARB_texture_multisample -->
+            <command name="glFenceSync" />
+            <command name="glIsSync" />
+            <command name="glDeleteSync" />
+            <command name="glClientWaitSync" />
+            <command name="glWaitSync" />
+            <command name="glGetInteger64v" />
+            <command name="glGetSynciv" />
+        </require>
+        <require comment="Reuse ARB_texture_multisample">
             <enum name="GL_SAMPLE_POSITION" />
             <enum name="GL_SAMPLE_MASK" />
             <enum name="GL_SAMPLE_MASK_VALUE" />
@@ -26797,22 +26806,6 @@ typedef unsigned int GLhandleARB;
             <command name="glGetInteger64i_v" />
             <command name="glGetBufferParameteri64v" />
             <command name="glFramebufferTexture" />
-            <!-- Reuse commands from ARB_draw_elements_base_vertex -->
-            <command name="glDrawElementsBaseVertex" />
-            <command name="glDrawRangeElementsBaseVertex" />
-            <command name="glDrawElementsInstancedBaseVertex" />
-            <command name="glMultiDrawElementsBaseVertex" />
-            <!-- Reuse commands from ARB_provoking_vertex -->
-            <command name="glProvokingVertex" />
-            <!-- Reuse commands from ARB_sync -->
-            <command name="glFenceSync" />
-            <command name="glIsSync" />
-            <command name="glDeleteSync" />
-            <command name="glClientWaitSync" />
-            <command name="glWaitSync" />
-            <command name="glGetInteger64v" />
-            <command name="glGetSynciv" />
-            <!-- Reuse commands from ARB_texture_multisample -->
             <command name="glTexImage2DMultisample" />
             <command name="glTexImage3DMultisample" />
             <command name="glGetMultisamplefv" />
@@ -27720,10 +27713,8 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_TEXTURE_LUMINANCE_TYPE" />
             <enum name="GL_TEXTURE_INTENSITY_TYPE" />
         </remove>
-        <!-- These features were deprecated in OpenGL 3.2 core, but there's
-             no way to indicate that yet (and it has no effect on the API
-             except in forward-compatible contexts). -->
-        <!--
+        <!-- Deprecated (not removed) in OpenGL 3.2 core; 
+             deprecate tag not defined/supported yet
           <deprecate profile="core">
             <enum name="GL_MAX_VARYING_FLOATS" />
             <enum name="GL_MAX_VARYING_COMPONENTS" />
@@ -27733,37 +27724,22 @@ typedef unsigned int GLhandleARB;
     <feature api="gl" name="GL_VERSION_3_3" number="3.3">
         <require>
             <enum name="GL_VERTEX_ATTRIB_ARRAY_DIVISOR" />
-            <!-- Reuse tokens from ARB_blend_func_extended -->
+        </require>
+        <require comment="Reuse ARB_blend_func_extended">
             <enum name="GL_SRC1_COLOR" />
             <enum name="GL_ONE_MINUS_SRC1_COLOR" />
             <enum name="GL_ONE_MINUS_SRC1_ALPHA" />
             <enum name="GL_MAX_DUAL_SOURCE_DRAW_BUFFERS" />
-            <!-- Reuse tokens from ARB_explicit_attrib_location (none) -->
-            <!-- Reuse tokens from ARB_occlusion_query2 -->
-            <enum name="GL_ANY_SAMPLES_PASSED" />
-            <!-- Reuse tokens from ARB_sampler_objects -->
-            <enum name="GL_SAMPLER_BINDING" />
-            <!-- Reuse tokens from ARB_shader_bit_encoding (none) -->
-            <!-- Reuse tokens from ARB_texture_rgb10_a2ui -->
-            <enum name="GL_RGB10_A2UI" />
-            <!-- Reuse tokens from ARB_texture_swizzle -->
-            <enum name="GL_TEXTURE_SWIZZLE_R" />
-            <enum name="GL_TEXTURE_SWIZZLE_G" />
-            <enum name="GL_TEXTURE_SWIZZLE_B" />
-            <enum name="GL_TEXTURE_SWIZZLE_A" />
-            <enum name="GL_TEXTURE_SWIZZLE_RGBA" />
-            <!-- Reuse tokens from ARB_timer_query -->
-            <enum name="GL_TIME_ELAPSED" />
-            <enum name="GL_TIMESTAMP" />
-            <!-- Reuse tokens from ARB_vertex_type_2_10_10_10_rev -->
-            <enum name="GL_INT_2_10_10_10_REV" />
-            <command name="glVertexAttribDivisor" />
-            <!-- Reuse commands from ARB_blend_func_extended -->
             <command name="glBindFragDataLocationIndexed" />
             <command name="glGetFragDataIndex" />
-            <!-- Reuse commands from ARB_explicit_attrib_location (none) -->
-            <!-- Reuse commands from ARB_occlusion_query2 (none) -->
-            <!-- Reuse commands from ARB_sampler_objects -->
+        </require>
+        <require comment="Reuse ARB_explicit_attrib_location (none)">
+        </require>
+        <require comment="Reuse ARB_occlusion_query2">
+            <enum name="GL_ANY_SAMPLES_PASSED" />
+        </require>
+        <require comment="Reuse ARB_sampler_objects">
+            <enum name="GL_SAMPLER_BINDING" />
             <command name="glGenSamplers" />
             <command name="glDeleteSamplers" />
             <command name="glIsSampler" />
@@ -27778,14 +27754,39 @@ typedef unsigned int GLhandleARB;
             <command name="glGetSamplerParameterIiv" />
             <command name="glGetSamplerParameterfv" />
             <command name="glGetSamplerParameterIuiv" />
-            <!-- Reuse commands from ARB_shader_bit_encoding (none) -->
-            <!-- Reuse commands from ARB_texture_rgb10_a2ui (none) -->
-            <!-- Reuse commands from ARB_texture_swizzle (none) -->
-            <!-- Reuse commands from ARB_timer_query -->
+        </require>
+        <require comment="Reuse ARB_shader_bit_encoding (none)">
+        </require>
+        <require comment="Reuse ARB_texture_rgb10_a2ui">
+            <enum name="GL_RGB10_A2UI" />
+        </require>
+        <require comment="Reuse ARB_texture_swizzle">
+            <enum name="GL_TEXTURE_SWIZZLE_R" />
+            <enum name="GL_TEXTURE_SWIZZLE_G" />
+            <enum name="GL_TEXTURE_SWIZZLE_B" />
+            <enum name="GL_TEXTURE_SWIZZLE_A" />
+            <enum name="GL_TEXTURE_SWIZZLE_RGBA" />
+        </require>
+        <require comment="Reuse ARB_timer_query">
+            <enum name="GL_TIME_ELAPSED" />
+            <enum name="GL_TIMESTAMP" />
             <command name="glQueryCounter" />
             <command name="glGetQueryObjecti64v" />
             <command name="glGetQueryObjectui64v" />
-            <!-- Reuse commands from ARB_vertex_type_2_10_10_10_rev -->
+        </require>
+        <require comment="Reuse ARB_vertex_type_2_10_10_10_rev">
+            <enum name="GL_INT_2_10_10_10_REV" />
+            <command name="glVertexAttribDivisor" />
+            <command name="glVertexAttribP1ui" />
+            <command name="glVertexAttribP1uiv" />
+            <command name="glVertexAttribP2ui" />
+            <command name="glVertexAttribP2uiv" />
+            <command name="glVertexAttribP3ui" />
+            <command name="glVertexAttribP3uiv" />
+            <command name="glVertexAttribP4ui" />
+            <command name="glVertexAttribP4uiv" />
+        </require>
+        <require profile="compatibility" comment="Reuse ARB_vertex_type_2_10_10_10_rev compatibility profile">
             <command name="glVertexP2ui" />
             <command name="glVertexP2uiv" />
             <command name="glVertexP3ui" />
@@ -27816,14 +27817,6 @@ typedef unsigned int GLhandleARB;
             <command name="glColorP4uiv" />
             <command name="glSecondaryColorP3ui" />
             <command name="glSecondaryColorP3uiv" />
-            <command name="glVertexAttribP1ui" />
-            <command name="glVertexAttribP1uiv" />
-            <command name="glVertexAttribP2ui" />
-            <command name="glVertexAttribP2uiv" />
-            <command name="glVertexAttribP3ui" />
-            <command name="glVertexAttribP3uiv" />
-            <command name="glVertexAttribP4ui" />
-            <command name="glVertexAttribP4uiv" />
         </require>
     </feature>
     <feature api="gl" name="GL_VERSION_4_0" number="4.0">
@@ -27839,19 +27832,29 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW" />
             <enum name="GL_INT_SAMPLER_CUBE_MAP_ARRAY" />
             <enum name="GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY" />
-            <!-- Reuse tokens from ARB_texture_query_lod (none) -->
-            <!-- Reuse tokens from ARB_draw_buffers_blend (none) -->
-            <!-- Reuse tokens from ARB_draw_indirect -->
+            <command name="glMinSampleShading" />
+            <command name="glBlendEquationi" />
+            <command name="glBlendEquationSeparatei" />
+            <command name="glBlendFunci" />
+            <command name="glBlendFuncSeparatei" />
+        </require>
+        <require comment="Reuse ARB_draw_buffers_blend (none)">
+        </require>
+        <require comment="Reuse ARB_draw_indirect">
             <enum name="GL_DRAW_INDIRECT_BUFFER" />
             <enum name="GL_DRAW_INDIRECT_BUFFER_BINDING" />
-            <!-- Reuse tokens from ARB_gpu_shader5 -->
+            <command name="glDrawArraysIndirect" />
+            <command name="glDrawElementsIndirect" />
+        </require>
+        <require comment="Reuse ARB_gpu_shader5">
             <enum name="GL_GEOMETRY_SHADER_INVOCATIONS" />
             <enum name="GL_MAX_GEOMETRY_SHADER_INVOCATIONS" />
             <enum name="GL_MIN_FRAGMENT_INTERPOLATION_OFFSET" />
             <enum name="GL_MAX_FRAGMENT_INTERPOLATION_OFFSET" />
             <enum name="GL_FRAGMENT_INTERPOLATION_OFFSET_BITS" />
             <enum name="GL_MAX_VERTEX_STREAMS" />
-            <!-- Reuse tokens from ARB_gpu_shader_fp64 -->
+        </require>
+        <require comment="Reuse ARB_gpu_shader_fp64">
             <enum name="GL_DOUBLE_VEC2" />
             <enum name="GL_DOUBLE_VEC3" />
             <enum name="GL_DOUBLE_VEC4" />
@@ -27864,7 +27867,26 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_DOUBLE_MAT3x4" />
             <enum name="GL_DOUBLE_MAT4x2" />
             <enum name="GL_DOUBLE_MAT4x3" />
-            <!-- Reuse tokens from ARB_shader_subroutine -->
+            <command name="glUniform1d" />
+            <command name="glUniform2d" />
+            <command name="glUniform3d" />
+            <command name="glUniform4d" />
+            <command name="glUniform1dv" />
+            <command name="glUniform2dv" />
+            <command name="glUniform3dv" />
+            <command name="glUniform4dv" />
+            <command name="glUniformMatrix2dv" />
+            <command name="glUniformMatrix3dv" />
+            <command name="glUniformMatrix4dv" />
+            <command name="glUniformMatrix2x3dv" />
+            <command name="glUniformMatrix2x4dv" />
+            <command name="glUniformMatrix3x2dv" />
+            <command name="glUniformMatrix3x4dv" />
+            <command name="glUniformMatrix4x2dv" />
+            <command name="glUniformMatrix4x3dv" />
+            <command name="glGetUniformdv" />
+        </require>
+        <require comment="Reuse ARB_shader_subroutine">
             <enum name="GL_ACTIVE_SUBROUTINES" />
             <enum name="GL_ACTIVE_SUBROUTINE_UNIFORMS" />
             <enum name="GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS" />
@@ -27874,7 +27896,16 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_SUBROUTINE_UNIFORM_LOCATIONS" />
             <enum name="GL_NUM_COMPATIBLE_SUBROUTINES" />
             <enum name="GL_COMPATIBLE_SUBROUTINES" />
-            <!-- Reuse tokens from ARB_tessellation_shader -->
+            <command name="glGetSubroutineUniformLocation" />
+            <command name="glGetSubroutineIndex" />
+            <command name="glGetActiveSubroutineUniformiv" />
+            <command name="glGetActiveSubroutineUniformName" />
+            <command name="glGetActiveSubroutineName" />
+            <command name="glUniformSubroutinesuiv" />
+            <command name="glGetUniformSubroutineuiv" />
+            <command name="glGetProgramStageiv" />
+        </require>
+        <require comment="Reuse ARB_tessellation_shader">
             <enum name="GL_PATCHES" />
             <enum name="GL_PATCH_VERTICES" />
             <enum name="GL_PATCH_DEFAULT_INNER_LEVEL" />
@@ -27907,60 +27938,22 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER" />
             <enum name="GL_TESS_EVALUATION_SHADER" />
             <enum name="GL_TESS_CONTROL_SHADER" />
-            <!-- Reuse tokens from ARB_texture_buffer_object_rgb32 (none) -->
-            <!-- Reuse tokens from ARB_transform_feedback2 -->
+            <command name="glPatchParameteri" />
+            <command name="glPatchParameterfv" />
+        </require>
+        <require comment="Reuse ARB_texture_buffer_object_rgb32 (none)">
+        </require>
+        <require comment="Reuse ARB_texture_cube_map_array (none)">
+        </require>
+        <require comment="Reuse ARB_texture_gather (none)">
+        </require>
+        <require comment="Reuse ARB_texture_query_lod (none)">
+        </require>
+        <require comment="Reuse ARB_transform_feedback2">
             <enum name="GL_TRANSFORM_FEEDBACK" />
             <enum name="GL_TRANSFORM_FEEDBACK_BUFFER_PAUSED" />
             <enum name="GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE" />
             <enum name="GL_TRANSFORM_FEEDBACK_BINDING" />
-            <!-- Reuse tokens from ARB_transform_feedback3 -->
-            <enum name="GL_MAX_TRANSFORM_FEEDBACK_BUFFERS" />
-            <enum name="GL_MAX_VERTEX_STREAMS" />
-            <command name="glMinSampleShading" />
-            <command name="glBlendEquationi" />
-            <command name="glBlendEquationSeparatei" />
-            <command name="glBlendFunci" />
-            <command name="glBlendFuncSeparatei" />
-            <!-- Reuse commands from ARB_draw_indirect -->
-            <command name="glDrawArraysIndirect" />
-            <command name="glDrawElementsIndirect" />
-            <!-- Reuse commands from ARB_gpu_shader5 (none) -->
-            <!-- Reuse commands from ARB_gpu_shader_fp64 -->
-            <command name="glUniform1d" />
-            <command name="glUniform2d" />
-            <command name="glUniform3d" />
-            <command name="glUniform4d" />
-            <command name="glUniform1dv" />
-            <command name="glUniform2dv" />
-            <command name="glUniform3dv" />
-            <command name="glUniform4dv" />
-            <command name="glUniformMatrix2dv" />
-            <command name="glUniformMatrix3dv" />
-            <command name="glUniformMatrix4dv" />
-            <command name="glUniformMatrix2x3dv" />
-            <command name="glUniformMatrix2x4dv" />
-            <command name="glUniformMatrix3x2dv" />
-            <command name="glUniformMatrix3x4dv" />
-            <command name="glUniformMatrix4x2dv" />
-            <command name="glUniformMatrix4x3dv" />
-            <command name="glGetUniformdv" />
-            <!-- Reuse commands from ARB_shader_subroutine -->
-            <command name="glGetSubroutineUniformLocation" />
-            <command name="glGetSubroutineIndex" />
-            <command name="glGetActiveSubroutineUniformiv" />
-            <command name="glGetActiveSubroutineUniformName" />
-            <command name="glGetActiveSubroutineName" />
-            <command name="glUniformSubroutinesuiv" />
-            <command name="glGetUniformSubroutineuiv" />
-            <command name="glGetProgramStageiv" />
-            <!-- Reuse commands from ARB_tessellation_shader -->
-            <command name="glPatchParameteri" />
-            <command name="glPatchParameterfv" />
-            <!-- Reuse commands from ARB_texture_buffer_object_rgb32 (none) -->
-            <!-- Reuse commands from ARB_texture_cube_map_array (none) -->
-            <!-- Reuse commands from ARB_texture_gather (none) -->
-            <!-- Reuse commands from ARB_texture_query_lod (none) -->
-            <!-- Reuse commands from ARB_transform_feedback2 -->
             <command name="glBindTransformFeedback" />
             <command name="glDeleteTransformFeedbacks" />
             <command name="glGenTransformFeedbacks" />
@@ -27968,7 +27961,10 @@ typedef unsigned int GLhandleARB;
             <command name="glPauseTransformFeedback" />
             <command name="glResumeTransformFeedback" />
             <command name="glDrawTransformFeedback" />
-            <!-- Reuse commands from ARB_transform_feedback3 -->
+        </require>
+        <require comment="Reuse ARB_transform_feedback3">
+            <enum name="GL_MAX_TRANSFORM_FEEDBACK_BUFFERS" />
+            <enum name="GL_MAX_VERTEX_STREAMS" />
             <command name="glDrawTransformFeedbackStream" />
             <command name="glBeginQueryIndexed" />
             <command name="glEndQueryIndexed" />
@@ -27976,8 +27972,7 @@ typedef unsigned int GLhandleARB;
         </require>
     </feature>
     <feature api="gl" name="GL_VERSION_4_1" number="4.1">
-        <require>
-            <!-- Reuse tokens from ARB_ES2_compatibility -->
+        <require comment="Reuse tokens from ARB_ES2_compatibility">
             <enum name="GL_FIXED" />
             <enum name="GL_IMPLEMENTATION_COLOR_READ_TYPE" />
             <enum name="GL_IMPLEMENTATION_COLOR_READ_FORMAT" />
@@ -27994,12 +27989,14 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_VARYING_VECTORS" />
             <enum name="GL_MAX_FRAGMENT_UNIFORM_VECTORS" />
             <enum name="GL_RGB565" />
-            <!-- Reuse tokens from ARB_get_program_binary -->
+        </require>
+        <require comment="Reuse tokens from ARB_get_program_binary">
             <enum name="GL_PROGRAM_BINARY_RETRIEVABLE_HINT" />
             <enum name="GL_PROGRAM_BINARY_LENGTH" />
             <enum name="GL_NUM_PROGRAM_BINARY_FORMATS" />
             <enum name="GL_PROGRAM_BINARY_FORMATS" />
-            <!-- Reuse tokens from ARB_separate_shader_objects -->
+        </require>
+        <require comment="Reuse tokens from ARB_separate_shader_objects">
             <enum name="GL_VERTEX_SHADER_BIT" />
             <enum name="GL_FRAGMENT_SHADER_BIT" />
             <enum name="GL_GEOMETRY_SHADER_BIT" />
@@ -28009,26 +28006,32 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_PROGRAM_SEPARABLE" />
             <enum name="GL_ACTIVE_PROGRAM" />
             <enum name="GL_PROGRAM_PIPELINE_BINDING" />
-            <!-- Reuse tokens from ARB_shader_precision (none) -->
-            <!-- Reuse tokens from ARB_vertex_attrib_64bit - all are in GL 3.0 and 4.0 already -->
-            <!-- Reuse tokens from ARB_viewport_array - some are in GL 1.1 and ARB_provoking_vertex already -->
+        </require>
+        <require comment="Reuse tokens from ARB_shader_precision (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_vertex_attrib_64bit - all are in GL 3.0 and 4.0 already">
+        </require>
+        <require comment="Reuse tokens from ARB_viewport_array - some are in GL 1.1 and ARB_provoking_vertex already">
             <enum name="GL_MAX_VIEWPORTS" />
             <enum name="GL_VIEWPORT_SUBPIXEL_BITS" />
             <enum name="GL_VIEWPORT_BOUNDS_RANGE" />
             <enum name="GL_LAYER_PROVOKING_VERTEX" />
             <enum name="GL_VIEWPORT_INDEX_PROVOKING_VERTEX" />
             <enum name="GL_UNDEFINED_VERTEX" />
-            <!-- Reuse commands from ARB_ES2_compatibility -->
+        </require>
+        <require comment="Reuse commands from ARB_ES2_compatibility">
             <command name="glReleaseShaderCompiler" />
             <command name="glShaderBinary" />
             <command name="glGetShaderPrecisionFormat" />
             <command name="glDepthRangef" />
             <command name="glClearDepthf" />
-            <!-- Reuse commands from ARB_get_program_binary -->
+        </require>
+        <require comment="Reuse commands from ARB_get_program_binary">
             <command name="glGetProgramBinary" />
             <command name="glProgramBinary" />
             <command name="glProgramParameteri" />
-            <!-- Reuse commands from ARB_separate_shader_objects -->
+        </require>
+        <require comment="Reuse commands from ARB_separate_shader_objects">
             <command name="glUseProgramStages" />
             <command name="glActiveShaderProgram" />
             <command name="glCreateShaderProgramv" />
@@ -28089,8 +28092,10 @@ typedef unsigned int GLhandleARB;
             <command name="glProgramUniformMatrix4x3dv" />
             <command name="glValidateProgramPipeline" />
             <command name="glGetProgramPipelineInfoLog" />
-            <!-- Reuse commands from ARB_shader_precision (none) -->
-            <!-- Reuse commands from ARB_vertex_attrib_64bit -->
+        </require>
+        <require comment="Reuse commands from ARB_shader_precision (none)">
+        </require>
+        <require comment="Reuse commands from ARB_vertex_attrib_64bit">
             <command name="glVertexAttribL1d" />
             <command name="glVertexAttribL2d" />
             <command name="glVertexAttribL3d" />
@@ -28101,7 +28106,8 @@ typedef unsigned int GLhandleARB;
             <command name="glVertexAttribL4dv" />
             <command name="glVertexAttribLPointer" />
             <command name="glGetVertexAttribLdv" />
-            <!-- Reuse commands from ARB_viewport_array -->
+        </require>
+        <require comment="Reuse commands from ARB_viewport_array">
             <command name="glViewportArrayv" />
             <command name="glViewportIndexedf" />
             <command name="glViewportIndexedfv" />
@@ -28116,10 +28122,14 @@ typedef unsigned int GLhandleARB;
     </feature>
     <feature api="gl" name="GL_VERSION_4_2" number="4.2">
         <require>
-            <!-- Reuse tokens from ARB_base_instance (none) -->
-            <!-- Reuse tokens from ARB_shading_language_420pack (none) -->
-            <!-- Reuse tokens from ARB_transform_feedback_instanced (none) -->
-            <!-- Reuse tokens from ARB_compressed_texture_pixel_storage -->
+        </require>
+        <require comment="Reuse tokens from ARB_base_instance (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_shading_language_420pack (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_transform_feedback_instanced (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_compressed_texture_pixel_storage">
             <enum name="GL_UNPACK_COMPRESSED_BLOCK_WIDTH" />
             <enum name="GL_UNPACK_COMPRESSED_BLOCK_HEIGHT" />
             <enum name="GL_UNPACK_COMPRESSED_BLOCK_DEPTH" />
@@ -28128,12 +28138,16 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_PACK_COMPRESSED_BLOCK_HEIGHT" />
             <enum name="GL_PACK_COMPRESSED_BLOCK_DEPTH" />
             <enum name="GL_PACK_COMPRESSED_BLOCK_SIZE" />
-            <!-- Reuse tokens from ARB_conservative_depth (none) -->
-            <!-- Reuse tokens from ARB_internalformat_query -->
+        </require>
+        <require comment="Reuse tokens from ARB_conservative_depth (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_internalformat_query">
             <enum name="GL_NUM_SAMPLE_COUNTS" />
-            <!-- Reuse tokens from ARB_map_buffer_alignment -->
+        </require>
+        <require comment="Reuse tokens from ARB_map_buffer_alignment">
             <enum name="GL_MIN_MAP_BUFFER_ALIGNMENT" />
-            <!-- Reuse tokens from ARB_shader_atomic_counters -->
+        </require>
+        <require comment="Reuse tokens from ARB_shader_atomic_counters">
             <enum name="GL_ATOMIC_COUNTER_BUFFER" />
             <enum name="GL_ATOMIC_COUNTER_BUFFER_BINDING" />
             <enum name="GL_ATOMIC_COUNTER_BUFFER_START" />
@@ -28163,7 +28177,8 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_ACTIVE_ATOMIC_COUNTER_BUFFERS" />
             <enum name="GL_UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX" />
             <enum name="GL_UNSIGNED_INT_ATOMIC_COUNTER" />
-            <!-- Reuse tokens from ARB_shader_image_load_store -->
+        </require>
+        <require comment="Reuse tokens from ARB_shader_image_load_store">
             <enum name="GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT" />
             <enum name="GL_ELEMENT_ARRAY_BARRIER_BIT" />
             <enum name="GL_UNIFORM_BARRIER_BIT" />
@@ -28228,35 +28243,48 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_GEOMETRY_IMAGE_UNIFORMS" />
             <enum name="GL_MAX_FRAGMENT_IMAGE_UNIFORMS" />
             <enum name="GL_MAX_COMBINED_IMAGE_UNIFORMS" />
-            <!-- Reuse tokens from ARB_shading_language_packing (none) -->
-            <!-- Reuse tokens from ARB_texture_storage -->
+        </require>
+        <require comment="Reuse tokens from ARB_shading_language_packing (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_texture_storage">
             <enum name="GL_TEXTURE_IMMUTABLE_FORMAT" />
-            <!-- Reuse commands from ARB_base_instance -->
+        </require>
+        <require comment="Reuse commands from ARB_base_instance">
             <command name="glDrawArraysInstancedBaseInstance" />
             <command name="glDrawElementsInstancedBaseInstance" />
             <command name="glDrawElementsInstancedBaseVertexBaseInstance" />
-            <!-- Reuse commands from ARB_compressed_texture_pixel_storage (none) -->
-            <!-- Reuse commands from ARB_conservative_depth (none) -->
-            <!-- Reuse commands from ARB_internalformat_query -->
+        </require>
+        <require comment="Reuse commands from ARB_compressed_texture_pixel_storage (none)">
+        </require>
+        <require comment="Reuse commands from ARB_conservative_depth (none)">
+        </require>
+        <require comment="Reuse commands from ARB_internalformat_query">
             <command name="glGetInternalformati64v" />
-            <!-- Reuse commands from ARB_map_buffer_alignment (none) -->
-            <!-- Reuse commands from ARB_shader_atomic_counters -->
+        </require>
+        <require comment="Reuse commands from ARB_map_buffer_alignment (none)">
+        </require>
+        <require comment="Reuse commands from ARB_shader_atomic_counters">
             <command name="glGetActiveAtomicCounterBufferiv" />
-            <!-- Reuse commands from ARB_shader_image_load_store -->
+        </require>
+        <require comment="Reuse commands from ARB_shader_image_load_store">
             <command name="glBindImageTexture" />
             <command name="glMemoryBarrier" />
-            <!-- Reuse commands from ARB_shading_language_420pack (none) -->
-            <!-- Reuse commands from ARB_shading_language_packing (none) -->
-            <!-- Reuse commands from ARB_texture_storage -->
+        </require>
+        <require comment="Reuse commands from ARB_shading_language_420pack (none)">
+        </require>
+        <require comment="Reuse commands from ARB_shading_language_packing (none)">
+        </require>
+        <require comment="Reuse commands from ARB_texture_storage">
             <command name="glTexStorage1D" />
             <command name="glTexStorage2D" />
             <command name="glTexStorage3D" />
-            <!-- Reuse commands from ARB_transform_feedback_instanced -->
+        </require>
+        <require comment="Reuse commands from ARB_transform_feedback_instanced">
             <command name="glDrawTransformFeedbackInstanced" />
             <command name="glDrawTransformFeedbackStreamInstanced" />
         </require>
-        <!-- These features were deprecated in OpenGL 4.2 core -->
-        <!--
+        <!-- Deprecated in OpenGL 4.2 core; 
+             deprecate tag not defined/supported yet
           <deprecate profile="core">
             <enum name="GL_NUM_COMPRESSED_TEXTURE_FORMATS" />
             <enum name="GL_COMPRESSED_TEXTURE_FORMATS" />
@@ -28267,10 +28295,14 @@ typedef unsigned int GLhandleARB;
         <require>
             <enum name="GL_NUM_SHADING_LANGUAGE_VERSIONS" />
             <enum name="GL_VERTEX_ATTRIB_ARRAY_LONG" />
-            <!-- Reuse tokens from ARB_arrays_of_arrays (none, GLSL only) -->
-            <!-- Reuse tokens from ARB_fragment_layer_viewport (none, GLSL only) -->
-            <!-- Reuse tokens from ARB_shader_image_size (none, GLSL only) -->
-            <!-- Reuse tokens from ARB_ES3_compatibility -->
+        </require>
+        <require comment="Reuse tokens from ARB_arrays_of_arrays (none, GLSL only)">
+        </require>
+        <require comment="Reuse tokens from ARB_fragment_layer_viewport (none, GLSL only)">
+        </require>
+        <require comment="Reuse tokens from ARB_shader_image_size (none, GLSL only)">
+        </require>
+        <require comment="Reuse tokens from ARB_ES3_compatibility">
             <enum name="GL_COMPRESSED_RGB8_ETC2" />
             <enum name="GL_COMPRESSED_SRGB8_ETC2" />
             <enum name="GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2" />
@@ -28284,8 +28316,10 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_PRIMITIVE_RESTART_FIXED_INDEX" />
             <enum name="GL_ANY_SAMPLES_PASSED_CONSERVATIVE" />
             <enum name="GL_MAX_ELEMENT_INDEX" />
-            <!-- Reuse tokens from ARB_clear_buffer_object (none) -->
-            <!-- Reuse tokens from ARB_compute_shader -->
+        </require>
+        <require comment="Reuse tokens from ARB_clear_buffer_object (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_compute_shader">
             <enum name="GL_COMPUTE_SHADER" />
             <enum name="GL_MAX_COMPUTE_UNIFORM_BLOCKS" />
             <enum name="GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS" />
@@ -28303,8 +28337,10 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER" />
             <enum name="GL_DISPATCH_INDIRECT_BUFFER" />
             <enum name="GL_DISPATCH_INDIRECT_BUFFER_BINDING" />
-            <!-- Reuse tokens from ARB_copy_image (none) -->
-            <!-- Reuse tokens from KHR_debug -->
+        </require>
+        <require comment="Reuse tokens from ARB_copy_image (none)">
+        </require>
+        <require comment="Reuse tokens from KHR_debug">
             <enum name="GL_DEBUG_OUTPUT_SYNCHRONOUS" />
             <enum name="GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH" />
             <enum name="GL_DEBUG_CALLBACK_FUNCTION" />
@@ -28342,9 +28378,11 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_LABEL_LENGTH" />
             <enum name="GL_DEBUG_OUTPUT" />
             <enum name="GL_CONTEXT_FLAG_DEBUG_BIT" />
-            <!-- Reuse tokens from ARB_explicit_uniform_location -->
+        </require>
+        <require comment="Reuse tokens from ARB_explicit_uniform_location">
             <enum name="GL_MAX_UNIFORM_LOCATIONS" />
-            <!-- Reuse tokens from ARB_framebuffer_no_attachments -->
+        </require>
+        <require comment="Reuse tokens from ARB_framebuffer_no_attachments">
             <enum name="GL_FRAMEBUFFER_DEFAULT_WIDTH" />
             <enum name="GL_FRAMEBUFFER_DEFAULT_HEIGHT" />
             <enum name="GL_FRAMEBUFFER_DEFAULT_LAYERS" />
@@ -28354,7 +28392,8 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_FRAMEBUFFER_HEIGHT" />
             <enum name="GL_MAX_FRAMEBUFFER_LAYERS" />
             <enum name="GL_MAX_FRAMEBUFFER_SAMPLES" />
-            <!-- Reuse tokens from ARB_internalformat_query2 -->
+        </require>
+        <require comment="Reuse tokens from ARB_internalformat_query2">
             <enum name="GL_INTERNALFORMAT_SUPPORTED" />
             <enum name="GL_INTERNALFORMAT_PREFERRED" />
             <enum name="GL_INTERNALFORMAT_RED_SIZE" />
@@ -28453,9 +28492,12 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_VIEW_CLASS_RGTC2_RG" />
             <enum name="GL_VIEW_CLASS_BPTC_UNORM" />
             <enum name="GL_VIEW_CLASS_BPTC_FLOAT" />
-            <!-- Reuse tokens from ARB_invalidate_subdata (none) -->
-            <!-- Reuse tokens from ARB_multi_draw_indirect (none) -->
-            <!-- Reuse tokens from ARB_program_interface_query -->
+        </require>
+        <require comment="Reuse tokens from ARB_invalidate_subdata (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_multi_draw_indirect (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_program_interface_query">
             <enum name="GL_UNIFORM" />
             <enum name="GL_UNIFORM_BLOCK" />
             <enum name="GL_PROGRAM_INPUT" />
@@ -28503,8 +28545,10 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_LOCATION" />
             <enum name="GL_LOCATION_INDEX" />
             <enum name="GL_IS_PER_PATCH" />
-            <!-- Reuse tokens from ARB_robust_buffer_access_behavior (none) -->
-            <!-- Reuse tokens from ARB_shader_storage_buffer_object -->
+        </require>
+        <require comment="Reuse tokens from ARB_robust_buffer_access_behavior (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_shader_storage_buffer_object">
             <enum name="GL_SHADER_STORAGE_BUFFER" />
             <enum name="GL_SHADER_STORAGE_BUFFER_BINDING" />
             <enum name="GL_SHADER_STORAGE_BUFFER_START" />
@@ -28521,21 +28565,27 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT" />
             <enum name="GL_SHADER_STORAGE_BARRIER_BIT" />
             <enum name="GL_MAX_COMBINED_SHADER_OUTPUT_RESOURCES" />
-            <!-- Reuse tokens from ARB_stencil_texturing -->
+        </require>
+        <require comment="Reuse tokens from ARB_stencil_texturing">
             <enum name="GL_DEPTH_STENCIL_TEXTURE_MODE" />
-            <!-- Reuse tokens from ARB_texture_buffer_range -->
+        </require>
+        <require comment="Reuse tokens from ARB_texture_buffer_range">
             <enum name="GL_TEXTURE_BUFFER_OFFSET" />
             <enum name="GL_TEXTURE_BUFFER_SIZE" />
             <enum name="GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT" />
-            <!-- Reuse tokens from ARB_texture_query_levels (none) -->
-            <!-- Reuse tokens from ARB_texture_storage_multisample (none) -->
-            <!-- Reuse tokens from ARB_texture_view -->
+        </require>
+        <require comment="Reuse tokens from ARB_texture_query_levels (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_texture_storage_multisample (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_texture_view">
             <enum name="GL_TEXTURE_VIEW_MIN_LEVEL" />
             <enum name="GL_TEXTURE_VIEW_NUM_LEVELS" />
             <enum name="GL_TEXTURE_VIEW_MIN_LAYER" />
             <enum name="GL_TEXTURE_VIEW_NUM_LAYERS" />
             <enum name="GL_TEXTURE_IMMUTABLE_LEVELS" />
-            <!-- Reuse tokens from ARB_vertex_attrib_binding -->
+        </require>
+        <require comment="Reuse tokens from ARB_vertex_attrib_binding">
             <enum name="GL_VERTEX_ATTRIB_BINDING" />
             <enum name="GL_VERTEX_ATTRIB_RELATIVE_OFFSET" />
             <enum name="GL_VERTEX_BINDING_DIVISOR" />
@@ -28543,63 +28593,85 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_VERTEX_BINDING_STRIDE" />
             <enum name="GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET" />
             <enum name="GL_MAX_VERTEX_ATTRIB_BINDINGS" />
-            <!-- Reuse commands from ARB_arrays_of_arrays (none, GLSL only) -->
-            <!-- Reuse commands from ARB_clear_buffer_object -->
+        </require>
+        <require comment="Reuse commands from ARB_arrays_of_arrays (none, GLSL only)">
+        </require>
+        <require comment="Reuse commands from ARB_clear_buffer_object">
             <command name="glClearBufferData" />
             <command name="glClearBufferSubData" />
-            <!-- Reuse commands from ARB_compute_shader -->
+        </require>
+        <require comment="Reuse commands from ARB_compute_shader">
             <command name="glDispatchCompute" />
             <command name="glDispatchComputeIndirect" />
-            <!-- Reuse commands from ARB_copy_image -->
+        </require>
+        <require comment="Reuse commands from ARB_copy_image">
             <command name="glCopyImageSubData" />
-            <!-- Reuse commands from ARB_ES3_compatibility (none) -->
-            <!-- Reuse commands from ARB_explicit_uniform_location (none) -->
-            <!-- Reuse commands from ARB_fragment_layer_viewport (none, GLSL only) -->
-            <!-- Reuse commands from ARB_framebuffer_no_attachments -->
+        </require>
+        <require comment="Reuse commands from ARB_ES3_compatibility (none)">
+        </require>
+        <require comment="Reuse commands from ARB_explicit_uniform_location (none)">
+        </require>
+        <require comment="Reuse commands from ARB_fragment_layer_viewport (none, GLSL only)">
+        </require>
+        <require comment="Reuse commands from ARB_framebuffer_no_attachments">
             <command name="glFramebufferParameteri" />
             <command name="glGetFramebufferParameteriv" />
-            <!-- Reuse commands from ARB_internalformat_query2 -->
+        </require>
+        <require comment="Reuse commands from ARB_internalformat_query2">
             <command name="glGetInternalformati64v" />
-            <!-- Reuse commands from ARB_invalidate_subdata -->
+        </require>
+        <require comment="Reuse commands from ARB_invalidate_subdata">
             <command name="glInvalidateTexSubImage" />
             <command name="glInvalidateTexImage" />
             <command name="glInvalidateBufferSubData" />
             <command name="glInvalidateBufferData" />
             <command name="glInvalidateFramebuffer" />
             <command name="glInvalidateSubFramebuffer" />
-            <!-- Reuse commands from ARB_multi_draw_indirect -->
+        </require>
+        <require comment="Reuse commands from ARB_multi_draw_indirect">
             <command name="glMultiDrawArraysIndirect" />
             <command name="glMultiDrawElementsIndirect" />
-            <!-- Reuse commands from ARB_program_interface_query -->
+        </require>
+        <require comment="Reuse commands from ARB_program_interface_query">
             <command name="glGetProgramInterfaceiv" />
             <command name="glGetProgramResourceIndex" />
             <command name="glGetProgramResourceName" />
             <command name="glGetProgramResourceiv" />
             <command name="glGetProgramResourceLocation" />
             <command name="glGetProgramResourceLocationIndex" />
-            <!-- Reuse commands from ARB_robust_buffer_access_behavior (none) -->
-            <!-- Reuse commands from ARB_shader_image_size (none, GLSL only) -->
-            <!-- Reuse commands from ARB_shader_storage_buffer_object -->
+        </require>
+        <require comment="Reuse commands from ARB_robust_buffer_access_behavior (none)">
+        </require>
+        <require comment="Reuse commands from ARB_shader_image_size (none, GLSL only)">
+        </require>
+        <require comment="Reuse commands from ARB_shader_storage_buffer_object">
             <command name="glShaderStorageBlockBinding" />
-            <!-- Reuse commands from ARB_stencil_texturing (none) -->
-            <!-- Reuse commands from ARB_texture_buffer_range -->
+        </require>
+        <require comment="Reuse commands from ARB_stencil_texturing (none)">
+        </require>
+        <require comment="Reuse commands from ARB_texture_buffer_range">
             <command name="glTexBufferRange" />
-            <!-- Reuse commands from ARB_texture_query_levels (none) -->
-            <!-- Reuse commands from ARB_texture_storage_multisample -->
+        </require>
+        <require comment="Reuse commands from ARB_texture_query_levels (none)">
+        </require>
+        <require comment="Reuse commands from ARB_texture_storage_multisample">
             <command name="glTexStorage2DMultisample" />
             <command name="glTexStorage3DMultisample" />
             <command name="glTextureStorage2DMultisampleEXT" />
             <command name="glTextureStorage3DMultisampleEXT" />
-            <!-- Reuse commands from ARB_texture_view -->
+        </require>
+        <require comment="Reuse commands from ARB_texture_view">
             <command name="glTextureView" />
-            <!-- Reuse commands from ARB_vertex_attrib_binding -->
+        </require>
+        <require comment="Reuse commands from ARB_vertex_attrib_binding">
             <command name="glBindVertexBuffer" />
             <command name="glVertexAttribFormat" />
             <command name="glVertexAttribIFormat" />
             <command name="glVertexAttribLFormat" />
             <command name="glVertexAttribBinding" />
             <command name="glVertexBindingDivisor" />
-            <!-- Reuse commands from KHR_debug (includes ARB_debug_output commands promoted to KHR without suffixes) -->
+        </require>
+        <require comment="Reuse commands from KHR_debug (includes ARB_debug_output commands promoted to KHR without suffixes)">
             <command name="glDebugMessageControl" />
             <command name="glDebugMessageInsert" />
             <command name="glDebugMessageCallback" />
@@ -28612,8 +28684,7 @@ typedef unsigned int GLhandleARB;
             <command name="glGetObjectPtrLabel" />
             <command name="glGetPointerv" />
         </require>
-        <require profile="compatibility" comment="Debug functionality not present in core">
-            <!-- Reuse tokens from KHR_debug -->
+        <require profile="compatibility" comment="KHR_debug functionality not supported in core profile">
             <enum name="GL_DISPLAY_LIST" />
         </require>
         <require profile="core" comment="Restore functionality removed in GL 3.2 core to GL 4.3. Needed for debug interface.">
@@ -28621,8 +28692,8 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_STACK_OVERFLOW" />
             <command name="glGetPointerv" />
         </require>
-        <!-- These features were deprecated in OpenGL 4.3 core -->
-        <!--
+        <!-- Deprecated in OpenGL 4.3 core; 
+             deprecate tag not defined/supported yet
           <deprecate profile="core">
             <enum name="GL_UNPACK_LSB_FIRST" />
             <enum name="GL_PACK_LSB_FIRST" />
@@ -29008,7 +29079,6 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_DOT3_RGBA" />
         </require>
         <require profile="common">
-            <!-- Available only in Common profile -->
             <command name="glAlphaFunc" />
             <command name="glClearColor" />
             <command name="glClearDepthf" />
@@ -30619,8 +30689,7 @@ typedef unsigned int GLhandleARB;
         </require>
     </extension>
     <extension name="GL_ARB_compatibility" supported="gl" >
-        <require>
-            <!-- /* ARB_compatibility just defines tokens from core 3.0 */ -->
+        <require comment="Defines features from OpenGL 3.0 that were removed in OpenGL 3.1 - not enumerated here yet">
         </require>
     </extension>
     <extension name="GL_ARB_compressed_texture_pixel_storage" supported="gl|glcore" >
@@ -30800,6 +30869,29 @@ typedef unsigned int GLhandleARB;
     <extension name="GL_ARB_fragment_program" supported="gl" >
         <require>
             <enum name="GL_FRAGMENT_PROGRAM_ARB" />
+            <enum name="GL_PROGRAM_FORMAT_ASCII_ARB" />
+            <enum name="GL_PROGRAM_LENGTH_ARB" />
+            <enum name="GL_PROGRAM_FORMAT_ARB" />
+            <enum name="GL_PROGRAM_BINDING_ARB" />
+            <enum name="GL_PROGRAM_INSTRUCTIONS_ARB" />
+            <enum name="GL_MAX_PROGRAM_INSTRUCTIONS_ARB" />
+            <enum name="GL_PROGRAM_NATIVE_INSTRUCTIONS_ARB" />
+            <enum name="GL_MAX_PROGRAM_NATIVE_INSTRUCTIONS_ARB" />
+            <enum name="GL_PROGRAM_TEMPORARIES_ARB" />
+            <enum name="GL_MAX_PROGRAM_TEMPORARIES_ARB" />
+            <enum name="GL_PROGRAM_NATIVE_TEMPORARIES_ARB" />
+            <enum name="GL_MAX_PROGRAM_NATIVE_TEMPORARIES_ARB" />
+            <enum name="GL_PROGRAM_PARAMETERS_ARB" />
+            <enum name="GL_MAX_PROGRAM_PARAMETERS_ARB" />
+            <enum name="GL_PROGRAM_NATIVE_PARAMETERS_ARB" />
+            <enum name="GL_MAX_PROGRAM_NATIVE_PARAMETERS_ARB" />
+            <enum name="GL_PROGRAM_ATTRIBS_ARB" />
+            <enum name="GL_MAX_PROGRAM_ATTRIBS_ARB" />
+            <enum name="GL_PROGRAM_NATIVE_ATTRIBS_ARB" />
+            <enum name="GL_MAX_PROGRAM_NATIVE_ATTRIBS_ARB" />
+            <enum name="GL_MAX_PROGRAM_LOCAL_PARAMETERS_ARB" />
+            <enum name="GL_MAX_PROGRAM_ENV_PARAMETERS_ARB" />
+            <enum name="GL_PROGRAM_UNDER_NATIVE_LIMITS_ARB" />
             <enum name="GL_PROGRAM_ALU_INSTRUCTIONS_ARB" />
             <enum name="GL_PROGRAM_TEX_INSTRUCTIONS_ARB" />
             <enum name="GL_PROGRAM_TEX_INDIRECTIONS_ARB" />
@@ -30812,11 +30904,69 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB" />
             <enum name="GL_MAX_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB" />
             <enum name="GL_MAX_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB" />
+            <enum name="GL_PROGRAM_STRING_ARB" />
+            <enum name="GL_PROGRAM_ERROR_POSITION_ARB" />
+            <enum name="GL_CURRENT_MATRIX_ARB" />
+            <enum name="GL_TRANSPOSE_CURRENT_MATRIX_ARB" />
+            <enum name="GL_CURRENT_MATRIX_STACK_DEPTH_ARB" />
+            <enum name="GL_MAX_PROGRAM_MATRICES_ARB" />
+            <enum name="GL_MAX_PROGRAM_MATRIX_STACK_DEPTH_ARB" />
             <enum name="GL_MAX_TEXTURE_COORDS_ARB" />
             <enum name="GL_MAX_TEXTURE_IMAGE_UNITS_ARB" />
-    <!--
-/* All ARB_fragment_program entry points are shared with ARB_vertex_program. */
-    -->
+            <enum name="GL_PROGRAM_ERROR_STRING_ARB" />
+            <enum name="GL_MATRIX0_ARB" />
+            <enum name="GL_MATRIX1_ARB" />
+            <enum name="GL_MATRIX2_ARB" />
+            <enum name="GL_MATRIX3_ARB" />
+            <enum name="GL_MATRIX4_ARB" />
+            <enum name="GL_MATRIX5_ARB" />
+            <enum name="GL_MATRIX6_ARB" />
+            <enum name="GL_MATRIX7_ARB" />
+            <enum name="GL_MATRIX8_ARB" />
+            <enum name="GL_MATRIX9_ARB" />
+            <enum name="GL_MATRIX10_ARB" />
+            <enum name="GL_MATRIX11_ARB" />
+            <enum name="GL_MATRIX12_ARB" />
+            <enum name="GL_MATRIX13_ARB" />
+            <enum name="GL_MATRIX14_ARB" />
+            <enum name="GL_MATRIX15_ARB" />
+            <enum name="GL_MATRIX16_ARB" />
+            <enum name="GL_MATRIX17_ARB" />
+            <enum name="GL_MATRIX18_ARB" />
+            <enum name="GL_MATRIX19_ARB" />
+            <enum name="GL_MATRIX20_ARB" />
+            <enum name="GL_MATRIX21_ARB" />
+            <enum name="GL_MATRIX22_ARB" />
+            <enum name="GL_MATRIX23_ARB" />
+            <enum name="GL_MATRIX24_ARB" />
+            <enum name="GL_MATRIX25_ARB" />
+            <enum name="GL_MATRIX26_ARB" />
+            <enum name="GL_MATRIX27_ARB" />
+            <enum name="GL_MATRIX28_ARB" />
+            <enum name="GL_MATRIX29_ARB" />
+            <enum name="GL_MATRIX30_ARB" />
+            <enum name="GL_MATRIX31_ARB" />
+        </require>
+        <require comment="Shared with ARB_vertex_program">
+            <command name="glProgramStringARB" />
+            <command name="glBindProgramARB" />
+            <command name="glDeleteProgramsARB" />
+            <command name="glGenProgramsARB" />
+            <command name="glProgramEnvParameter4dARB" />
+            <command name="glProgramEnvParameter4dvARB" />
+            <command name="glProgramEnvParameter4fARB" />
+            <command name="glProgramEnvParameter4fvARB" />
+            <command name="glProgramLocalParameter4dARB" />
+            <command name="glProgramLocalParameter4dvARB" />
+            <command name="glProgramLocalParameter4fARB" />
+            <command name="glProgramLocalParameter4fvARB" />
+            <command name="glGetProgramEnvParameterdvARB" />
+            <command name="glGetProgramEnvParameterfvARB" />
+            <command name="glGetProgramLocalParameterdvARB" />
+            <command name="glGetProgramLocalParameterfvARB" />
+            <command name="glGetProgramivARB" />
+            <command name="glGetProgramStringARB" />
+            <command name="glIsProgramARB" />
         </require>
     </extension>
     <extension name="GL_ARB_fragment_program_shadow" supported="gl" >
@@ -31040,7 +31190,8 @@ typedef unsigned int GLhandleARB;
             <command name="glUniformMatrix4x2dv" />
             <command name="glUniformMatrix4x3dv" />
             <command name="glGetUniformdv" />
-                <!-- requires EXT_direct_state_access -->
+        </require>
+        <require comment="Only supported if EXT_direct_state_access is supported">
             <command name="glProgramUniform1dEXT" />
             <command name="glProgramUniform2dEXT" />
             <command name="glProgramUniform3dEXT" />
@@ -32681,6 +32832,16 @@ typedef unsigned int GLhandleARB;
         <require>
             <enum name="GL_UNSIGNED_INT_2_10_10_10_REV" />
             <enum name="GL_INT_2_10_10_10_REV" />
+            <command name="glVertexAttribP1ui" />
+            <command name="glVertexAttribP1uiv" />
+            <command name="glVertexAttribP2ui" />
+            <command name="glVertexAttribP2uiv" />
+            <command name="glVertexAttribP3ui" />
+            <command name="glVertexAttribP3uiv" />
+            <command name="glVertexAttribP4ui" />
+            <command name="glVertexAttribP4uiv" />
+        </require>
+        <require api="gl" profile="compatibility">
             <command name="glVertexP2ui" />
             <command name="glVertexP2uiv" />
             <command name="glVertexP3ui" />
@@ -32711,14 +32872,6 @@ typedef unsigned int GLhandleARB;
             <command name="glColorP4uiv" />
             <command name="glSecondaryColorP3ui" />
             <command name="glSecondaryColorP3uiv" />
-            <command name="glVertexAttribP1ui" />
-            <command name="glVertexAttribP1uiv" />
-            <command name="glVertexAttribP2ui" />
-            <command name="glVertexAttribP2uiv" />
-            <command name="glVertexAttribP3ui" />
-            <command name="glVertexAttribP3uiv" />
-            <command name="glVertexAttribP4ui" />
-            <command name="glVertexAttribP4uiv" />
         </require>
     </extension>
     <extension name="GL_ARB_viewport_array" supported="gl|glcore" >
@@ -32965,15 +33118,10 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_RENDERBUFFER_FREE_MEMORY_ATI" />
         </require>
     </extension>
-    <extension name="GL_ATI_pixel_format_float" supported="gl" >
+    <extension name="GL_ATI_pixel_format_float" supported="gl" comment="WGL extension defining some associated GL enums. ATI does not export this extension.">
         <require>
             <enum name="GL_RGBA_FLOAT_MODE_ATI" />
             <enum name="GL_COLOR_CLEAR_UNCLAMPED_VALUE_ATI" />
-    <!--
-/* This is really a WGL extension, but defines some associated gl" enums.
- * ATI does not export "ATI_pixel_format_float" in the GL_EXTENSIONS string.
- */
-    -->
         </require>
     </extension>
     <extension name="GL_ATI_pn_triangles" supported="gl" >
@@ -33372,7 +33520,8 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_PROGRAM_MATRIX_EXT" />
             <enum name="GL_TRANSPOSE_PROGRAM_MATRIX_EXT" />
             <enum name="GL_PROGRAM_MATRIX_STACK_DEPTH_EXT" />
-                <!-- OpenGL 1.0: New matrix commands -->
+        </require>
+        <require comment="OpenGL 1.0: New matrix commands">
             <command name="glMatrixLoadfEXT" />
             <command name="glMatrixLoaddEXT" />
             <command name="glMatrixMultfEXT" />
@@ -33388,10 +33537,12 @@ typedef unsigned int GLhandleARB;
             <command name="glMatrixOrthoEXT" />
             <command name="glMatrixPopEXT" />
             <command name="glMatrixPushEXT" />
-                <!-- OpenGL 1.1: New client commands -->
+        </require>
+        <require comment="OpenGL 1.1: New client commands">
             <command name="glClientAttribDefaultEXT" />
             <command name="glPushClientAttribDefaultEXT" />
-                <!-- OpenGL 1.1: New texture object commands -->
+        </require>
+        <require comment="OpenGL 1.1: New texture object commands">
             <command name="glTextureParameterfEXT" />
             <command name="glTextureParameterfvEXT" />
             <command name="glTextureParameteriEXT" />
@@ -33409,11 +33560,13 @@ typedef unsigned int GLhandleARB;
             <command name="glGetTextureParameterivEXT" />
             <command name="glGetTextureLevelParameterfvEXT" />
             <command name="glGetTextureLevelParameterivEXT" />
-                <!-- OpenGL 1.2: New 3D texture object commands -->
+        </require>
+        <require comment="OpenGL 1.2: New 3D texture object commands">
             <command name="glTextureImage3DEXT" />
             <command name="glTextureSubImage3DEXT" />
             <command name="glCopyTextureSubImage3DEXT" />
-                <!-- OpenGL 1.2.1: New multitexture commands -->
+        </require>
+        <require comment="OpenGL 1.2.1: New multitexture commands">
             <command name="glBindMultiTextureEXT" />
             <command name="glMultiTexCoordPointerEXT" />
             <command name="glMultiTexEnvfEXT" />
@@ -33451,20 +33604,24 @@ typedef unsigned int GLhandleARB;
             <command name="glMultiTexImage3DEXT" />
             <command name="glMultiTexSubImage3DEXT" />
             <command name="glCopyMultiTexSubImage3DEXT" />
-                <!-- OpenGL 1.2.1: New indexed texture commands -->
+        </require>
+        <require comment="OpenGL 1.2.1: New indexed texture commands">
             <command name="glEnableClientStateIndexedEXT" />
             <command name="glDisableClientStateIndexedEXT" />
-                <!-- OpenGL 1.2.1: New indexed generic queries-->
+        </require>
+        <require comment="OpenGL 1.2.1: New indexed generic queries">
             <command name="glGetFloatIndexedvEXT" />
             <command name="glGetDoubleIndexedvEXT" />
             <command name="glGetPointerIndexedvEXT" />
-                <!-- OpenGL 1.2.1: Extend EXT_draw_buffers2 commands -->
+        </require>
+        <require comment="OpenGL 1.2.1: Extend EXT_draw_buffers2 commands">
             <command name="glEnableIndexedEXT" />
             <command name="glDisableIndexedEXT" />
             <command name="glIsEnabledIndexedEXT" />
             <command name="glGetIntegerIndexedvEXT" />
             <command name="glGetBooleanIndexedvEXT" />
-                <!-- OpenGL 1.3: New compressed texture object commands -->
+        </require>
+        <require comment="OpenGL 1.3: New compressed texture object commands">
             <command name="glCompressedTextureImage3DEXT" />
             <command name="glCompressedTextureImage2DEXT" />
             <command name="glCompressedTextureImage1DEXT" />
@@ -33472,7 +33629,8 @@ typedef unsigned int GLhandleARB;
             <command name="glCompressedTextureSubImage2DEXT" />
             <command name="glCompressedTextureSubImage1DEXT" />
             <command name="glGetCompressedTextureImageEXT" />
-                <!-- OpenGL 1.3: New multitexture compressed texture commands -->
+        </require>
+        <require comment="OpenGL 1.3: New multitexture compressed texture commands">
             <command name="glCompressedMultiTexImage3DEXT" />
             <command name="glCompressedMultiTexImage2DEXT" />
             <command name="glCompressedMultiTexImage1DEXT" />
@@ -33480,12 +33638,14 @@ typedef unsigned int GLhandleARB;
             <command name="glCompressedMultiTexSubImage2DEXT" />
             <command name="glCompressedMultiTexSubImage1DEXT" />
             <command name="glGetCompressedMultiTexImageEXT" />
-                <!-- OpenGL 1.3: New transpose matrix commands -->
+        </require>
+        <require comment="OpenGL 1.3: New transpose matrix commands">
             <command name="glMatrixLoadTransposefEXT" />
             <command name="glMatrixLoadTransposedEXT" />
             <command name="glMatrixMultTransposefEXT" />
             <command name="glMatrixMultTransposedEXT" />
-                <!-- OpenGL 1.5: New buffer commands -->
+        </require>
+        <require comment="OpenGL 1.5: New buffer commands">
             <command name="glNamedBufferDataEXT" />
             <command name="glNamedBufferSubDataEXT" />
             <command name="glMapNamedBufferEXT" />
@@ -33493,7 +33653,8 @@ typedef unsigned int GLhandleARB;
             <command name="glGetNamedBufferParameterivEXT" />
             <command name="glGetNamedBufferPointervEXT" />
             <command name="glGetNamedBufferSubDataEXT" />
-                <!-- OpenGL 2.0: New uniform commands -->
+        </require>
+        <require comment="OpenGL 2.0: New uniform commands">
             <command name="glProgramUniform1fEXT" />
             <command name="glProgramUniform2fEXT" />
             <command name="glProgramUniform3fEXT" />
@@ -33513,17 +33674,20 @@ typedef unsigned int GLhandleARB;
             <command name="glProgramUniformMatrix2fvEXT" />
             <command name="glProgramUniformMatrix3fvEXT" />
             <command name="glProgramUniformMatrix4fvEXT" />
-                <!-- OpenGL 2.1: New uniform matrix commands -->
+        </require>
+        <require comment="OpenGL 2.1: New uniform matrix commands">
             <command name="glProgramUniformMatrix2x3fvEXT" />
             <command name="glProgramUniformMatrix3x2fvEXT" />
             <command name="glProgramUniformMatrix2x4fvEXT" />
             <command name="glProgramUniformMatrix4x2fvEXT" />
             <command name="glProgramUniformMatrix3x4fvEXT" />
             <command name="glProgramUniformMatrix4x3fvEXT" />
-                <!-- Extend EXT_texture_buffer_object commands -->
+        </require>
+        <require comment="Extend EXT_texture_buffer_object commands">
             <command name="glTextureBufferEXT" />
             <command name="glMultiTexBufferEXT" />
-                <!-- Extend EXT_texture_integer commands -->
+        </require>
+        <require comment="Extend EXT_texture_integer commands">
             <command name="glTextureParameterIivEXT" />
             <command name="glTextureParameterIuivEXT" />
             <command name="glGetTextureParameterIivEXT" />
@@ -33532,7 +33696,8 @@ typedef unsigned int GLhandleARB;
             <command name="glMultiTexParameterIuivEXT" />
             <command name="glGetMultiTexParameterIivEXT" />
             <command name="glGetMultiTexParameterIuivEXT" />
-                <!-- Extend EXT_gpu_shader4 commands -->
+        </require>
+        <require comment="Extend EXT_gpu_shader4 commands">
             <command name="glProgramUniform1uiEXT" />
             <command name="glProgramUniform2uiEXT" />
             <command name="glProgramUniform3uiEXT" />
@@ -33541,9 +33706,11 @@ typedef unsigned int GLhandleARB;
             <command name="glProgramUniform2uivEXT" />
             <command name="glProgramUniform3uivEXT" />
             <command name="glProgramUniform4uivEXT" />
-                <!-- Extend EXT_gpu_program_parameters commands -->
+        </require>
+        <require comment="Extend EXT_gpu_program_parameters commands">
             <command name="glNamedProgramLocalParameters4fvEXT" />
-                <!-- Extend NV_gpu_program4 commands -->
+        </require>
+        <require comment="Extend NV_gpu_program4 commands">
             <command name="glNamedProgramLocalParameterI4iEXT" />
             <command name="glNamedProgramLocalParameterI4ivEXT" />
             <command name="glNamedProgramLocalParametersI4ivEXT" />
@@ -33552,14 +33719,17 @@ typedef unsigned int GLhandleARB;
             <command name="glNamedProgramLocalParametersI4uivEXT" />
             <command name="glGetNamedProgramLocalParameterIivEXT" />
             <command name="glGetNamedProgramLocalParameterIuivEXT" />
-                <!-- OpenGL 3.0: New indexed texture commands -->
+        </require>
+        <require comment="OpenGL 3.0: New indexed texture commands">
             <command name="glEnableClientStateiEXT" />
             <command name="glDisableClientStateiEXT" />
-                <!-- OpenGL 3.0: New indexed generic queries -->
+        </require>
+        <require comment="OpenGL 3.0: New indexed generic queries">
             <command name="glGetFloati_vEXT" />
             <command name="glGetDoublei_vEXT" />
             <command name="glGetPointeri_vEXT" />
-                <!-- Extend ARB_vertex_program commands -->
+        </require>
+        <require comment="Extend ARB_vertex_program commands">
             <command name="glNamedProgramStringEXT" />
             <command name="glNamedProgramLocalParameter4dEXT" />
             <command name="glNamedProgramLocalParameter4dvEXT" />
@@ -33569,37 +33739,46 @@ typedef unsigned int GLhandleARB;
             <command name="glGetNamedProgramLocalParameterfvEXT" />
             <command name="glGetNamedProgramivEXT" />
             <command name="glGetNamedProgramStringEXT" />
-                <!-- OpenGL 3.0: New renderbuffer commands -->
+        </require>
+        <require comment="OpenGL 3.0: New renderbuffer commands">
             <command name="glNamedRenderbufferStorageEXT" />
             <command name="glGetNamedRenderbufferParameterivEXT" />
             <command name="glNamedRenderbufferStorageMultisampleEXT" />
-                <!-- Extend NV_framebuffer_multisample_coverage -->
+        </require>
+        <require comment="Extend NV_framebuffer_multisample_coverage">
             <command name="glNamedRenderbufferStorageMultisampleCoverageEXT" />
-                <!-- OpenGL 3.0: New framebuffer commands -->
+        </require>
+        <require comment="OpenGL 3.0: New framebuffer commands">
             <command name="glCheckNamedFramebufferStatusEXT" />
             <command name="glNamedFramebufferTexture1DEXT" />
             <command name="glNamedFramebufferTexture2DEXT" />
             <command name="glNamedFramebufferTexture3DEXT" />
             <command name="glNamedFramebufferRenderbufferEXT" />
             <command name="glGetNamedFramebufferAttachmentParameterivEXT" />
-                <!-- OpenGL 3.0: New texture commands -->
+        </require>
+        <require comment="OpenGL 3.0: New texture commands">
             <command name="glGenerateTextureMipmapEXT" />
             <command name="glGenerateMultiTexMipmapEXT" />
-                <!-- OpenGL 3.0: New framebuffer commands -->
+        </require>
+        <require comment="OpenGL 3.0: New framebuffer commands">
             <command name="glFramebufferDrawBufferEXT" />
             <command name="glFramebufferDrawBuffersEXT" />
             <command name="glFramebufferReadBufferEXT" />
             <command name="glGetFramebufferParameterivEXT" />
-                <!-- OpenGL 3.0: New buffer data copy command -->
+        </require>
+        <require comment="OpenGL 3.0: New buffer data copy command">
             <command name="glNamedCopyBufferSubDataEXT" />
-                <!-- Extend EXT_geometry_shader4 or NV_gpu_program4 -->
+        </require>
+        <require comment="Extend EXT_geometry_shader4 or NV_gpu_program4">
             <command name="glNamedFramebufferTextureEXT" />
             <command name="glNamedFramebufferTextureLayerEXT" />
             <command name="glNamedFramebufferTextureFaceEXT" />
-                <!-- Extend NV_explicit_multisample -->
+        </require>
+        <require comment="Extend NV_explicit_multisample">
             <command name="glTextureRenderbufferEXT" />
             <command name="glMultiTexRenderbufferEXT" />
-                <!-- OpenGL 3.0: New vertex array specification commands for VAO -->
+        </require>
+        <require comment="OpenGL 3.0: New vertex array specification commands for VAO">
             <command name="glVertexArrayVertexOffsetEXT" />
             <command name="glVertexArrayColorOffsetEXT" />
             <command name="glVertexArrayEdgeFlagOffsetEXT" />
@@ -33611,18 +33790,22 @@ typedef unsigned int GLhandleARB;
             <command name="glVertexArraySecondaryColorOffsetEXT" />
             <command name="glVertexArrayVertexAttribOffsetEXT" />
             <command name="glVertexArrayVertexAttribIOffsetEXT" />
-                <!-- OpenGL 3.0: New vertex array enable commands for VAO -->
+        </require>
+        <require comment="OpenGL 3.0: New vertex array enable commands for VAO">
             <command name="glEnableVertexArrayEXT" />
             <command name="glDisableVertexArrayEXT" />
-                <!-- OpenGL 3.0: New vertex attrib array enable commands for VAO -->
+        </require>
+        <require comment="OpenGL 3.0: New vertex attrib array enable commands for VAO">
             <command name="glEnableVertexArrayAttribEXT" />
             <command name="glDisableVertexArrayAttribEXT" />
-                <!-- OpenGL 3.0: New queries for VAO -->
+        </require>
+        <require comment="OpenGL 3.0: New queries for VAO">
             <command name="glGetVertexArrayIntegervEXT" />
             <command name="glGetVertexArrayPointervEXT" />
             <command name="glGetVertexArrayIntegeri_vEXT" />
             <command name="glGetVertexArrayPointeri_vEXT" />
-                <!-- OpenGL 3.0: New buffer commands -->
+        </require>
+        <require comment="OpenGL 3.0: New buffer commands">
             <command name="glMapNamedBufferRangeEXT" />
             <command name="glFlushMappedNamedBufferRangeEXT" />
         </require>
@@ -33656,6 +33839,45 @@ typedef unsigned int GLhandleARB;
             <command name="glGetQueryObjectuivEXT" />
             <command name="glGetQueryObjecti64vEXT" />
             <command name="glGetQueryObjectui64vEXT" />
+        </require>
+    </extension>
+    <extension name="GL_EXT_draw_buffers" supported="gles2" >
+        <require>
+            <enum name="GL_MAX_COLOR_ATTACHMENTS_EXT" />
+            <enum name="GL_MAX_DRAW_BUFFERS_EXT" />
+            <enum name="GL_DRAW_BUFFER0_EXT" />
+            <enum name="GL_DRAW_BUFFER1_EXT" />
+            <enum name="GL_DRAW_BUFFER2_EXT" />
+            <enum name="GL_DRAW_BUFFER3_EXT" />
+            <enum name="GL_DRAW_BUFFER4_EXT" />
+            <enum name="GL_DRAW_BUFFER5_EXT" />
+            <enum name="GL_DRAW_BUFFER6_EXT" />
+            <enum name="GL_DRAW_BUFFER7_EXT" />
+            <enum name="GL_DRAW_BUFFER8_EXT" />
+            <enum name="GL_DRAW_BUFFER9_EXT" />
+            <enum name="GL_DRAW_BUFFER10_EXT" />
+            <enum name="GL_DRAW_BUFFER11_EXT" />
+            <enum name="GL_DRAW_BUFFER12_EXT" />
+            <enum name="GL_DRAW_BUFFER13_EXT" />
+            <enum name="GL_DRAW_BUFFER14_EXT" />
+            <enum name="GL_DRAW_BUFFER15_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT0_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT1_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT2_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT3_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT4_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT5_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT6_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT7_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT8_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT9_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT10_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT11_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT12_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT13_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT14_EXT" />
+            <enum name="GL_COLOR_ATTACHMENT15_EXT" />
+            <command name="glDrawBuffersEXT" />
         </require>
     </extension>
     <extension name="GL_EXT_draw_buffers2" supported="gl" >
@@ -33832,6 +34054,7 @@ typedef unsigned int GLhandleARB;
     </extension>
     <extension name="GL_EXT_gpu_shader4" supported="gl" >
         <require>
+            <enum name="GL_VERTEX_ATTRIB_ARRAY_INTEGER_EXT" />
             <enum name="GL_SAMPLER_1D_ARRAY_EXT" />
             <enum name="GL_SAMPLER_2D_ARRAY_EXT" />
             <enum name="GL_SAMPLER_BUFFER_EXT" />
@@ -33857,6 +34080,8 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_UNSIGNED_INT_SAMPLER_1D_ARRAY_EXT" />
             <enum name="GL_UNSIGNED_INT_SAMPLER_2D_ARRAY_EXT" />
             <enum name="GL_UNSIGNED_INT_SAMPLER_BUFFER_EXT" />
+            <enum name="GL_MIN_PROGRAM_TEXEL_OFFSET_EXT" />
+            <enum name="GL_MAX_PROGRAM_TEXEL_OFFSET_EXT" />
             <command name="glGetUniformuivEXT" />
             <command name="glBindFragDataLocationEXT" />
             <command name="glGetFragDataLocationEXT" />
@@ -34192,18 +34417,13 @@ typedef unsigned int GLhandleARB;
         </require>
     </extension>
     <extension name="GL_EXT_separate_shader_objects" supported="gl|gles2" >
-            <!-- Unfortunately, there are two completely unrelated
-                 extensions of this name for OpenGL and OpenGL ES, which is
-                 captured by the API-specific <require> language below. In
-                 addition, the token ACTIVE_PROGRAM_EXT has different values
-                 in the two extensions. -->
-        <require api="gl">
+        <require api="gl" comment="The OpenGL version of this extension is completely unrelated to the OpenGL ES version">
             <enum name="GL_ACTIVE_PROGRAM_EXT" />
             <command name="glUseShaderProgramEXT" />
             <command name="glActiveProgramEXT" />
             <command name="glCreateShaderProgramEXT" />
         </require>
-        <require api="gles2">
+        <require api="gles2" comment="The OpenGL ES version of this extension is completely unrelated to the OpenGL version">
             <enum name="GL_VERTEX_SHADER_BIT_EXT" />
             <enum name="GL_FRAGMENT_SHADER_BIT_EXT" />
             <enum name="GL_ALL_SHADER_BITS_EXT" />
@@ -34704,11 +34924,7 @@ typedef unsigned int GLhandleARB;
         </require>
     </extension>
     <extension name="GL_EXT_texture_storage" supported="gles1|gles2" >
-        <require>
-            <!-- Not clear all of these format enums should be here, at
-                 least for OpenGL ES. Many of them are only defined if
-                 other extensions, which already require them, are
-                 supported. -->
+        <require comment="Not clear all of these enums should be here for OpenGL ES. Many are only defined if other extensions also requiring them are supported">
             <enum name="GL_TEXTURE_IMMUTABLE_FORMAT_EXT" />
             <enum name="GL_ALPHA8_EXT" />
             <enum name="GL_LUMINANCE8_EXT" />
@@ -35282,8 +35498,7 @@ typedef unsigned int GLhandleARB;
         </require>
     </extension>
     <extension name="GL_KHR_debug" supported="gl|glcore|gles2" >
-        <!-- KHR extensions *mandate* suffixes for ES, unlike for GL -->
-        <require api="gl">
+        <require api="gl" comment="KHR extensions *mandate* suffixes for ES, unlike for GL">
             <enum name="GL_DEBUG_OUTPUT_SYNCHRONOUS" />
             <enum name="GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH" />
             <enum name="GL_DEBUG_CALLBACK_FUNCTION" />
@@ -35385,8 +35600,7 @@ typedef unsigned int GLhandleARB;
             <command name="glGetObjectPtrLabelKHR" />
             <command name="glGetPointervKHR" />
         </require>
-        <!-- Could benefit from api/profile attributes at <enum> level -->
-        <require api="gl">
+        <require api="gl" comment="Could benefit from api/profile attributes at enum tag level">
             <enum name="GL_PROGRAM_PIPELINE" />
         </require>
         <require api="gl" profile="compatibility">
@@ -35749,9 +35963,8 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_TEXTURE_IMAGE_UNITS_NV" />
             <enum name="GL_FRAGMENT_PROGRAM_BINDING_NV" />
             <enum name="GL_PROGRAM_ERROR_STRING_NV" />
-    <!--
-/* Some NV_fragment_program entry points are shared with ARB_vertex_program. */
-    -->
+        </require>
+        <require comment="Some NV_fragment_program entry points are shared with ARB_vertex_program">
             <command name="glProgramNamedParameter4fNV" />
             <command name="glProgramNamedParameter4fvNV" />
             <command name="glProgramNamedParameter4dNV" />
@@ -37206,20 +37419,13 @@ typedef unsigned int GLhandleARB;
             <command name="glTexParameterxvOES" />
             <command name="glTranslatexOES" />
         </require>
-        <!-- These entry points are not in the extension spec, but are in
-             the Khronos glext.h for ES 1.x. They are included only for
-             backwards compatibility. -->
-        <require api='gles1'>
+        <require api='gles1' comment="Entry points not in the extension spec, but in the Khronos glext.h. Included for backward compatibility.">
             <command name="glGetLightxvOES" />
             <command name="glGetMaterialxvOES" />
             <command name="glPointParameterxOES" />
             <command name="glSampleCoveragexOES" />
         </require>
-        <!-- These entry points are in the extension spec, but not the
-             Khronos glext.h for ES 1.x. They largely correspond to
-             GL-only features and it's doubtful anyone ever implemented
-             these in any driver. -->
-        <require api='gl'>
+        <require api='gl' comment="Entry points in the extension spec, but not the Khronos glext.h. Correspond to GL-only features it's unlikely were ever implemented against ES 1.x.">
             <command name="glAccumxOES" />
             <command name="glBitmapxOES" />
             <command name="glBlendColorxOES" />
@@ -38446,9 +38652,4 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_FOG_SPECULAR_TEXTURE_WIN" />
         </require>
     </extension>
-<!--
-    <xi:include href="es2cmd.xml"
-     xpointer="xpointer(/root//extension)"
-     xmlns:xi="http://www.w3.org/2003/XInclude"/>
--->
 </registry>

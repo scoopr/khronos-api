@@ -1200,6 +1200,9 @@ typedef unsigned short GLhalf;
 #define GL_RENDERBUFFER_STENCIL_SIZE      0x8D55
 #define GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE 0x8D56
 #define GL_MAX_SAMPLES                    0x8D57
+#define GL_INDEX                          0x8222
+#define GL_TEXTURE_LUMINANCE_TYPE         0x8C14
+#define GL_TEXTURE_INTENSITY_TYPE         0x8C15
 #define GL_FRAMEBUFFER_SRGB               0x8DB9
 #define GL_HALF_FLOAT                     0x140B
 #define GL_MAP_READ_BIT                   0x0001
@@ -1238,9 +1241,6 @@ typedef unsigned short GLhalf;
 #define GL_CLAMP_VERTEX_COLOR             0x891A
 #define GL_CLAMP_FRAGMENT_COLOR           0x891B
 #define GL_ALPHA_INTEGER                  0x8D97
-#define GL_INDEX                          0x8222
-#define GL_TEXTURE_LUMINANCE_TYPE         0x8C14
-#define GL_TEXTURE_INTENSITY_TYPE         0x8C15
 typedef void (APIENTRYP PFNGLCOLORMASKIPROC) (GLuint index, GLboolean r, GLboolean g, GLboolean b, GLboolean a);
 typedef void (APIENTRYP PFNGLGETBOOLEANI_VPROC) (GLenum target, GLuint index, GLboolean *data);
 typedef void (APIENTRYP PFNGLGETINTEGERI_VPROC) (GLenum target, GLuint index, GLint *data);
@@ -1430,10 +1430,6 @@ GLAPI GLboolean APIENTRY glIsVertexArray (GLuint array);
 #define GL_TEXTURE_BINDING_RECTANGLE      0x84F6
 #define GL_PROXY_TEXTURE_RECTANGLE        0x84F7
 #define GL_MAX_RECTANGLE_TEXTURE_SIZE     0x84F8
-#define GL_RED_SNORM                      0x8F90
-#define GL_RG_SNORM                       0x8F91
-#define GL_RGB_SNORM                      0x8F92
-#define GL_RGBA_SNORM                     0x8F93
 #define GL_R8_SNORM                       0x8F94
 #define GL_RG8_SNORM                      0x8F95
 #define GL_RGB8_SNORM                     0x8F96
@@ -1507,6 +1503,7 @@ GLAPI void APIENTRY glUniformBlockBinding (GLuint program, GLuint uniformBlockIn
 
 #ifndef GL_VERSION_3_2
 #define GL_VERSION_3_2 1
+typedef struct __GLsync *GLsync;
 #ifndef GLEXT_64_TYPES_DEFINED
 /* This code block is duplicated in glxext.h, so must be protected */
 #define GLEXT_64_TYPES_DEFINED
@@ -1544,9 +1541,8 @@ typedef unsigned __int64 uint64_t;
 #include <inttypes.h>
 #endif
 #endif
-typedef int64_t GLint64;
-typedef struct __GLsync *GLsync;
 typedef uint64_t GLuint64;
+typedef int64_t GLint64;
 #define GL_CONTEXT_CORE_PROFILE_BIT       0x00000001
 #define GL_CONTEXT_COMPATIBILITY_PROFILE_BIT 0x00000002
 #define GL_LINES_ADJACENCY                0x000A
@@ -1611,9 +1607,6 @@ typedef uint64_t GLuint64;
 #define GL_MAX_COLOR_TEXTURE_SAMPLES      0x910E
 #define GL_MAX_DEPTH_TEXTURE_SAMPLES      0x910F
 #define GL_MAX_INTEGER_SAMPLES            0x9110
-typedef void (APIENTRYP PFNGLGETINTEGER64I_VPROC) (GLenum target, GLuint index, GLint64 *data);
-typedef void (APIENTRYP PFNGLGETBUFFERPARAMETERI64VPROC) (GLenum target, GLenum pname, GLint64 *params);
-typedef void (APIENTRYP PFNGLFRAMEBUFFERTEXTUREPROC) (GLenum target, GLenum attachment, GLuint texture, GLint level);
 typedef void (APIENTRYP PFNGLDRAWELEMENTSBASEVERTEXPROC) (GLenum mode, GLsizei count, GLenum type, const GLvoid *indices, GLint basevertex);
 typedef void (APIENTRYP PFNGLDRAWRANGEELEMENTSBASEVERTEXPROC) (GLenum mode, GLuint start, GLuint end, GLsizei count, GLenum type, const GLvoid *indices, GLint basevertex);
 typedef void (APIENTRYP PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXPROC) (GLenum mode, GLsizei count, GLenum type, const GLvoid *indices, GLsizei instancecount, GLint basevertex);
@@ -1626,14 +1619,14 @@ typedef GLenum (APIENTRYP PFNGLCLIENTWAITSYNCPROC) (GLsync sync, GLbitfield flag
 typedef void (APIENTRYP PFNGLWAITSYNCPROC) (GLsync sync, GLbitfield flags, GLuint64 timeout);
 typedef void (APIENTRYP PFNGLGETINTEGER64VPROC) (GLenum pname, GLint64 *params);
 typedef void (APIENTRYP PFNGLGETSYNCIVPROC) (GLsync sync, GLenum pname, GLsizei bufSize, GLsizei *length, GLint *values);
+typedef void (APIENTRYP PFNGLGETINTEGER64I_VPROC) (GLenum target, GLuint index, GLint64 *data);
+typedef void (APIENTRYP PFNGLGETBUFFERPARAMETERI64VPROC) (GLenum target, GLenum pname, GLint64 *params);
+typedef void (APIENTRYP PFNGLFRAMEBUFFERTEXTUREPROC) (GLenum target, GLenum attachment, GLuint texture, GLint level);
 typedef void (APIENTRYP PFNGLTEXIMAGE2DMULTISAMPLEPROC) (GLenum target, GLsizei samples, GLint internalformat, GLsizei width, GLsizei height, GLboolean fixedsamplelocations);
 typedef void (APIENTRYP PFNGLTEXIMAGE3DMULTISAMPLEPROC) (GLenum target, GLsizei samples, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedsamplelocations);
 typedef void (APIENTRYP PFNGLGETMULTISAMPLEFVPROC) (GLenum pname, GLuint index, GLfloat *val);
 typedef void (APIENTRYP PFNGLSAMPLEMASKIPROC) (GLuint index, GLbitfield mask);
 #ifdef GL_GLEXT_PROTOTYPES
-GLAPI void APIENTRY glGetInteger64i_v (GLenum target, GLuint index, GLint64 *data);
-GLAPI void APIENTRY glGetBufferParameteri64v (GLenum target, GLenum pname, GLint64 *params);
-GLAPI void APIENTRY glFramebufferTexture (GLenum target, GLenum attachment, GLuint texture, GLint level);
 GLAPI void APIENTRY glDrawElementsBaseVertex (GLenum mode, GLsizei count, GLenum type, const GLvoid *indices, GLint basevertex);
 GLAPI void APIENTRY glDrawRangeElementsBaseVertex (GLenum mode, GLuint start, GLuint end, GLsizei count, GLenum type, const GLvoid *indices, GLint basevertex);
 GLAPI void APIENTRY glDrawElementsInstancedBaseVertex (GLenum mode, GLsizei count, GLenum type, const GLvoid *indices, GLsizei instancecount, GLint basevertex);
@@ -1646,6 +1639,9 @@ GLAPI GLenum APIENTRY glClientWaitSync (GLsync sync, GLbitfield flags, GLuint64 
 GLAPI void APIENTRY glWaitSync (GLsync sync, GLbitfield flags, GLuint64 timeout);
 GLAPI void APIENTRY glGetInteger64v (GLenum pname, GLint64 *params);
 GLAPI void APIENTRY glGetSynciv (GLsync sync, GLenum pname, GLsizei bufSize, GLsizei *length, GLint *values);
+GLAPI void APIENTRY glGetInteger64i_v (GLenum target, GLuint index, GLint64 *data);
+GLAPI void APIENTRY glGetBufferParameteri64v (GLenum target, GLenum pname, GLint64 *params);
+GLAPI void APIENTRY glFramebufferTexture (GLenum target, GLenum attachment, GLuint texture, GLint level);
 GLAPI void APIENTRY glTexImage2DMultisample (GLenum target, GLsizei samples, GLint internalformat, GLsizei width, GLsizei height, GLboolean fixedsamplelocations);
 GLAPI void APIENTRY glTexImage3DMultisample (GLenum target, GLsizei samples, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedsamplelocations);
 GLAPI void APIENTRY glGetMultisamplefv (GLenum pname, GLuint index, GLfloat *val);
@@ -1671,7 +1667,6 @@ GLAPI void APIENTRY glSampleMaski (GLuint index, GLbitfield mask);
 #define GL_TIME_ELAPSED                   0x88BF
 #define GL_TIMESTAMP                      0x8E28
 #define GL_INT_2_10_10_10_REV             0x8D9F
-typedef void (APIENTRYP PFNGLVERTEXATTRIBDIVISORPROC) (GLuint index, GLuint divisor);
 typedef void (APIENTRYP PFNGLBINDFRAGDATALOCATIONINDEXEDPROC) (GLuint program, GLuint colorNumber, GLuint index, const GLchar *name);
 typedef GLint (APIENTRYP PFNGLGETFRAGDATAINDEXPROC) (GLuint program, const GLchar *name);
 typedef void (APIENTRYP PFNGLGENSAMPLERSPROC) (GLsizei count, GLuint *samplers);
@@ -1691,6 +1686,15 @@ typedef void (APIENTRYP PFNGLGETSAMPLERPARAMETERIUIVPROC) (GLuint sampler, GLenu
 typedef void (APIENTRYP PFNGLQUERYCOUNTERPROC) (GLuint id, GLenum target);
 typedef void (APIENTRYP PFNGLGETQUERYOBJECTI64VPROC) (GLuint id, GLenum pname, GLint64 *params);
 typedef void (APIENTRYP PFNGLGETQUERYOBJECTUI64VPROC) (GLuint id, GLenum pname, GLuint64 *params);
+typedef void (APIENTRYP PFNGLVERTEXATTRIBDIVISORPROC) (GLuint index, GLuint divisor);
+typedef void (APIENTRYP PFNGLVERTEXATTRIBP1UIPROC) (GLuint index, GLenum type, GLboolean normalized, GLuint value);
+typedef void (APIENTRYP PFNGLVERTEXATTRIBP1UIVPROC) (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
+typedef void (APIENTRYP PFNGLVERTEXATTRIBP2UIPROC) (GLuint index, GLenum type, GLboolean normalized, GLuint value);
+typedef void (APIENTRYP PFNGLVERTEXATTRIBP2UIVPROC) (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
+typedef void (APIENTRYP PFNGLVERTEXATTRIBP3UIPROC) (GLuint index, GLenum type, GLboolean normalized, GLuint value);
+typedef void (APIENTRYP PFNGLVERTEXATTRIBP3UIVPROC) (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
+typedef void (APIENTRYP PFNGLVERTEXATTRIBP4UIPROC) (GLuint index, GLenum type, GLboolean normalized, GLuint value);
+typedef void (APIENTRYP PFNGLVERTEXATTRIBP4UIVPROC) (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
 typedef void (APIENTRYP PFNGLVERTEXP2UIPROC) (GLenum type, GLuint value);
 typedef void (APIENTRYP PFNGLVERTEXP2UIVPROC) (GLenum type, const GLuint *value);
 typedef void (APIENTRYP PFNGLVERTEXP3UIPROC) (GLenum type, GLuint value);
@@ -1721,16 +1725,7 @@ typedef void (APIENTRYP PFNGLCOLORP4UIPROC) (GLenum type, GLuint color);
 typedef void (APIENTRYP PFNGLCOLORP4UIVPROC) (GLenum type, const GLuint *color);
 typedef void (APIENTRYP PFNGLSECONDARYCOLORP3UIPROC) (GLenum type, GLuint color);
 typedef void (APIENTRYP PFNGLSECONDARYCOLORP3UIVPROC) (GLenum type, const GLuint *color);
-typedef void (APIENTRYP PFNGLVERTEXATTRIBP1UIPROC) (GLuint index, GLenum type, GLboolean normalized, GLuint value);
-typedef void (APIENTRYP PFNGLVERTEXATTRIBP1UIVPROC) (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
-typedef void (APIENTRYP PFNGLVERTEXATTRIBP2UIPROC) (GLuint index, GLenum type, GLboolean normalized, GLuint value);
-typedef void (APIENTRYP PFNGLVERTEXATTRIBP2UIVPROC) (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
-typedef void (APIENTRYP PFNGLVERTEXATTRIBP3UIPROC) (GLuint index, GLenum type, GLboolean normalized, GLuint value);
-typedef void (APIENTRYP PFNGLVERTEXATTRIBP3UIVPROC) (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
-typedef void (APIENTRYP PFNGLVERTEXATTRIBP4UIPROC) (GLuint index, GLenum type, GLboolean normalized, GLuint value);
-typedef void (APIENTRYP PFNGLVERTEXATTRIBP4UIVPROC) (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
 #ifdef GL_GLEXT_PROTOTYPES
-GLAPI void APIENTRY glVertexAttribDivisor (GLuint index, GLuint divisor);
 GLAPI void APIENTRY glBindFragDataLocationIndexed (GLuint program, GLuint colorNumber, GLuint index, const GLchar *name);
 GLAPI GLint APIENTRY glGetFragDataIndex (GLuint program, const GLchar *name);
 GLAPI void APIENTRY glGenSamplers (GLsizei count, GLuint *samplers);
@@ -1750,6 +1745,15 @@ GLAPI void APIENTRY glGetSamplerParameterIuiv (GLuint sampler, GLenum pname, GLu
 GLAPI void APIENTRY glQueryCounter (GLuint id, GLenum target);
 GLAPI void APIENTRY glGetQueryObjecti64v (GLuint id, GLenum pname, GLint64 *params);
 GLAPI void APIENTRY glGetQueryObjectui64v (GLuint id, GLenum pname, GLuint64 *params);
+GLAPI void APIENTRY glVertexAttribDivisor (GLuint index, GLuint divisor);
+GLAPI void APIENTRY glVertexAttribP1ui (GLuint index, GLenum type, GLboolean normalized, GLuint value);
+GLAPI void APIENTRY glVertexAttribP1uiv (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
+GLAPI void APIENTRY glVertexAttribP2ui (GLuint index, GLenum type, GLboolean normalized, GLuint value);
+GLAPI void APIENTRY glVertexAttribP2uiv (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
+GLAPI void APIENTRY glVertexAttribP3ui (GLuint index, GLenum type, GLboolean normalized, GLuint value);
+GLAPI void APIENTRY glVertexAttribP3uiv (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
+GLAPI void APIENTRY glVertexAttribP4ui (GLuint index, GLenum type, GLboolean normalized, GLuint value);
+GLAPI void APIENTRY glVertexAttribP4uiv (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
 GLAPI void APIENTRY glVertexP2ui (GLenum type, GLuint value);
 GLAPI void APIENTRY glVertexP2uiv (GLenum type, const GLuint *value);
 GLAPI void APIENTRY glVertexP3ui (GLenum type, GLuint value);
@@ -1780,14 +1784,6 @@ GLAPI void APIENTRY glColorP4ui (GLenum type, GLuint color);
 GLAPI void APIENTRY glColorP4uiv (GLenum type, const GLuint *color);
 GLAPI void APIENTRY glSecondaryColorP3ui (GLenum type, GLuint color);
 GLAPI void APIENTRY glSecondaryColorP3uiv (GLenum type, const GLuint *color);
-GLAPI void APIENTRY glVertexAttribP1ui (GLuint index, GLenum type, GLboolean normalized, GLuint value);
-GLAPI void APIENTRY glVertexAttribP1uiv (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
-GLAPI void APIENTRY glVertexAttribP2ui (GLuint index, GLenum type, GLboolean normalized, GLuint value);
-GLAPI void APIENTRY glVertexAttribP2uiv (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
-GLAPI void APIENTRY glVertexAttribP3ui (GLuint index, GLenum type, GLboolean normalized, GLuint value);
-GLAPI void APIENTRY glVertexAttribP3uiv (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
-GLAPI void APIENTRY glVertexAttribP4ui (GLuint index, GLenum type, GLboolean normalized, GLuint value);
-GLAPI void APIENTRY glVertexAttribP4uiv (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
 #endif
 #endif /* GL_VERSION_3_3 */
 
@@ -2881,6 +2877,29 @@ GLAPI void APIENTRY glDrawElementsInstancedARB (GLenum mode, GLsizei count, GLen
 #ifndef GL_ARB_fragment_program
 #define GL_ARB_fragment_program 1
 #define GL_FRAGMENT_PROGRAM_ARB           0x8804
+#define GL_PROGRAM_FORMAT_ASCII_ARB       0x8875
+#define GL_PROGRAM_LENGTH_ARB             0x8627
+#define GL_PROGRAM_FORMAT_ARB             0x8876
+#define GL_PROGRAM_BINDING_ARB            0x8677
+#define GL_PROGRAM_INSTRUCTIONS_ARB       0x88A0
+#define GL_MAX_PROGRAM_INSTRUCTIONS_ARB   0x88A1
+#define GL_PROGRAM_NATIVE_INSTRUCTIONS_ARB 0x88A2
+#define GL_MAX_PROGRAM_NATIVE_INSTRUCTIONS_ARB 0x88A3
+#define GL_PROGRAM_TEMPORARIES_ARB        0x88A4
+#define GL_MAX_PROGRAM_TEMPORARIES_ARB    0x88A5
+#define GL_PROGRAM_NATIVE_TEMPORARIES_ARB 0x88A6
+#define GL_MAX_PROGRAM_NATIVE_TEMPORARIES_ARB 0x88A7
+#define GL_PROGRAM_PARAMETERS_ARB         0x88A8
+#define GL_MAX_PROGRAM_PARAMETERS_ARB     0x88A9
+#define GL_PROGRAM_NATIVE_PARAMETERS_ARB  0x88AA
+#define GL_MAX_PROGRAM_NATIVE_PARAMETERS_ARB 0x88AB
+#define GL_PROGRAM_ATTRIBS_ARB            0x88AC
+#define GL_MAX_PROGRAM_ATTRIBS_ARB        0x88AD
+#define GL_PROGRAM_NATIVE_ATTRIBS_ARB     0x88AE
+#define GL_MAX_PROGRAM_NATIVE_ATTRIBS_ARB 0x88AF
+#define GL_MAX_PROGRAM_LOCAL_PARAMETERS_ARB 0x88B4
+#define GL_MAX_PROGRAM_ENV_PARAMETERS_ARB 0x88B5
+#define GL_PROGRAM_UNDER_NATIVE_LIMITS_ARB 0x88B6
 #define GL_PROGRAM_ALU_INSTRUCTIONS_ARB   0x8805
 #define GL_PROGRAM_TEX_INSTRUCTIONS_ARB   0x8806
 #define GL_PROGRAM_TEX_INDIRECTIONS_ARB   0x8807
@@ -2893,8 +2912,88 @@ GLAPI void APIENTRY glDrawElementsInstancedARB (GLenum mode, GLsizei count, GLen
 #define GL_MAX_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB 0x880E
 #define GL_MAX_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB 0x880F
 #define GL_MAX_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB 0x8810
+#define GL_PROGRAM_STRING_ARB             0x8628
+#define GL_PROGRAM_ERROR_POSITION_ARB     0x864B
+#define GL_CURRENT_MATRIX_ARB             0x8641
+#define GL_TRANSPOSE_CURRENT_MATRIX_ARB   0x88B7
+#define GL_CURRENT_MATRIX_STACK_DEPTH_ARB 0x8640
+#define GL_MAX_PROGRAM_MATRICES_ARB       0x862F
+#define GL_MAX_PROGRAM_MATRIX_STACK_DEPTH_ARB 0x862E
 #define GL_MAX_TEXTURE_COORDS_ARB         0x8871
 #define GL_MAX_TEXTURE_IMAGE_UNITS_ARB    0x8872
+#define GL_PROGRAM_ERROR_STRING_ARB       0x8874
+#define GL_MATRIX0_ARB                    0x88C0
+#define GL_MATRIX1_ARB                    0x88C1
+#define GL_MATRIX2_ARB                    0x88C2
+#define GL_MATRIX3_ARB                    0x88C3
+#define GL_MATRIX4_ARB                    0x88C4
+#define GL_MATRIX5_ARB                    0x88C5
+#define GL_MATRIX6_ARB                    0x88C6
+#define GL_MATRIX7_ARB                    0x88C7
+#define GL_MATRIX8_ARB                    0x88C8
+#define GL_MATRIX9_ARB                    0x88C9
+#define GL_MATRIX10_ARB                   0x88CA
+#define GL_MATRIX11_ARB                   0x88CB
+#define GL_MATRIX12_ARB                   0x88CC
+#define GL_MATRIX13_ARB                   0x88CD
+#define GL_MATRIX14_ARB                   0x88CE
+#define GL_MATRIX15_ARB                   0x88CF
+#define GL_MATRIX16_ARB                   0x88D0
+#define GL_MATRIX17_ARB                   0x88D1
+#define GL_MATRIX18_ARB                   0x88D2
+#define GL_MATRIX19_ARB                   0x88D3
+#define GL_MATRIX20_ARB                   0x88D4
+#define GL_MATRIX21_ARB                   0x88D5
+#define GL_MATRIX22_ARB                   0x88D6
+#define GL_MATRIX23_ARB                   0x88D7
+#define GL_MATRIX24_ARB                   0x88D8
+#define GL_MATRIX25_ARB                   0x88D9
+#define GL_MATRIX26_ARB                   0x88DA
+#define GL_MATRIX27_ARB                   0x88DB
+#define GL_MATRIX28_ARB                   0x88DC
+#define GL_MATRIX29_ARB                   0x88DD
+#define GL_MATRIX30_ARB                   0x88DE
+#define GL_MATRIX31_ARB                   0x88DF
+typedef void (APIENTRYP PFNGLPROGRAMSTRINGARBPROC) (GLenum target, GLenum format, GLsizei len, const GLvoid *string);
+typedef void (APIENTRYP PFNGLBINDPROGRAMARBPROC) (GLenum target, GLuint program);
+typedef void (APIENTRYP PFNGLDELETEPROGRAMSARBPROC) (GLsizei n, const GLuint *programs);
+typedef void (APIENTRYP PFNGLGENPROGRAMSARBPROC) (GLsizei n, GLuint *programs);
+typedef void (APIENTRYP PFNGLPROGRAMENVPARAMETER4DARBPROC) (GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
+typedef void (APIENTRYP PFNGLPROGRAMENVPARAMETER4DVARBPROC) (GLenum target, GLuint index, const GLdouble *params);
+typedef void (APIENTRYP PFNGLPROGRAMENVPARAMETER4FARBPROC) (GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
+typedef void (APIENTRYP PFNGLPROGRAMENVPARAMETER4FVARBPROC) (GLenum target, GLuint index, const GLfloat *params);
+typedef void (APIENTRYP PFNGLPROGRAMLOCALPARAMETER4DARBPROC) (GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
+typedef void (APIENTRYP PFNGLPROGRAMLOCALPARAMETER4DVARBPROC) (GLenum target, GLuint index, const GLdouble *params);
+typedef void (APIENTRYP PFNGLPROGRAMLOCALPARAMETER4FARBPROC) (GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
+typedef void (APIENTRYP PFNGLPROGRAMLOCALPARAMETER4FVARBPROC) (GLenum target, GLuint index, const GLfloat *params);
+typedef void (APIENTRYP PFNGLGETPROGRAMENVPARAMETERDVARBPROC) (GLenum target, GLuint index, GLdouble *params);
+typedef void (APIENTRYP PFNGLGETPROGRAMENVPARAMETERFVARBPROC) (GLenum target, GLuint index, GLfloat *params);
+typedef void (APIENTRYP PFNGLGETPROGRAMLOCALPARAMETERDVARBPROC) (GLenum target, GLuint index, GLdouble *params);
+typedef void (APIENTRYP PFNGLGETPROGRAMLOCALPARAMETERFVARBPROC) (GLenum target, GLuint index, GLfloat *params);
+typedef void (APIENTRYP PFNGLGETPROGRAMIVARBPROC) (GLenum target, GLenum pname, GLint *params);
+typedef void (APIENTRYP PFNGLGETPROGRAMSTRINGARBPROC) (GLenum target, GLenum pname, GLvoid *string);
+typedef GLboolean (APIENTRYP PFNGLISPROGRAMARBPROC) (GLuint program);
+#ifdef GL_GLEXT_PROTOTYPES
+GLAPI void APIENTRY glProgramStringARB (GLenum target, GLenum format, GLsizei len, const GLvoid *string);
+GLAPI void APIENTRY glBindProgramARB (GLenum target, GLuint program);
+GLAPI void APIENTRY glDeleteProgramsARB (GLsizei n, const GLuint *programs);
+GLAPI void APIENTRY glGenProgramsARB (GLsizei n, GLuint *programs);
+GLAPI void APIENTRY glProgramEnvParameter4dARB (GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
+GLAPI void APIENTRY glProgramEnvParameter4dvARB (GLenum target, GLuint index, const GLdouble *params);
+GLAPI void APIENTRY glProgramEnvParameter4fARB (GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
+GLAPI void APIENTRY glProgramEnvParameter4fvARB (GLenum target, GLuint index, const GLfloat *params);
+GLAPI void APIENTRY glProgramLocalParameter4dARB (GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
+GLAPI void APIENTRY glProgramLocalParameter4dvARB (GLenum target, GLuint index, const GLdouble *params);
+GLAPI void APIENTRY glProgramLocalParameter4fARB (GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
+GLAPI void APIENTRY glProgramLocalParameter4fvARB (GLenum target, GLuint index, const GLfloat *params);
+GLAPI void APIENTRY glGetProgramEnvParameterdvARB (GLenum target, GLuint index, GLdouble *params);
+GLAPI void APIENTRY glGetProgramEnvParameterfvARB (GLenum target, GLuint index, GLfloat *params);
+GLAPI void APIENTRY glGetProgramLocalParameterdvARB (GLenum target, GLuint index, GLdouble *params);
+GLAPI void APIENTRY glGetProgramLocalParameterfvARB (GLenum target, GLuint index, GLfloat *params);
+GLAPI void APIENTRY glGetProgramivARB (GLenum target, GLenum pname, GLint *params);
+GLAPI void APIENTRY glGetProgramStringARB (GLenum target, GLenum pname, GLvoid *string);
+GLAPI GLboolean APIENTRY glIsProgramARB (GLuint program);
+#endif
 #endif /* GL_ARB_fragment_program */
 
 #ifndef GL_ARB_fragment_program_shadow
@@ -4017,78 +4116,15 @@ GLAPI void APIENTRY glGetBufferPointervARB (GLenum target, GLenum pname, GLvoid 
 #define GL_VERTEX_ATTRIB_ARRAY_STRIDE_ARB 0x8624
 #define GL_VERTEX_ATTRIB_ARRAY_TYPE_ARB   0x8625
 #define GL_CURRENT_VERTEX_ATTRIB_ARB      0x8626
-#define GL_PROGRAM_LENGTH_ARB             0x8627
-#define GL_PROGRAM_STRING_ARB             0x8628
-#define GL_MAX_PROGRAM_MATRIX_STACK_DEPTH_ARB 0x862E
-#define GL_MAX_PROGRAM_MATRICES_ARB       0x862F
-#define GL_CURRENT_MATRIX_STACK_DEPTH_ARB 0x8640
-#define GL_CURRENT_MATRIX_ARB             0x8641
 #define GL_VERTEX_PROGRAM_POINT_SIZE_ARB  0x8642
 #define GL_VERTEX_PROGRAM_TWO_SIDE_ARB    0x8643
 #define GL_VERTEX_ATTRIB_ARRAY_POINTER_ARB 0x8645
-#define GL_PROGRAM_ERROR_POSITION_ARB     0x864B
-#define GL_PROGRAM_BINDING_ARB            0x8677
 #define GL_MAX_VERTEX_ATTRIBS_ARB         0x8869
 #define GL_VERTEX_ATTRIB_ARRAY_NORMALIZED_ARB 0x886A
-#define GL_PROGRAM_ERROR_STRING_ARB       0x8874
-#define GL_PROGRAM_FORMAT_ASCII_ARB       0x8875
-#define GL_PROGRAM_FORMAT_ARB             0x8876
-#define GL_PROGRAM_INSTRUCTIONS_ARB       0x88A0
-#define GL_MAX_PROGRAM_INSTRUCTIONS_ARB   0x88A1
-#define GL_PROGRAM_NATIVE_INSTRUCTIONS_ARB 0x88A2
-#define GL_MAX_PROGRAM_NATIVE_INSTRUCTIONS_ARB 0x88A3
-#define GL_PROGRAM_TEMPORARIES_ARB        0x88A4
-#define GL_MAX_PROGRAM_TEMPORARIES_ARB    0x88A5
-#define GL_PROGRAM_NATIVE_TEMPORARIES_ARB 0x88A6
-#define GL_MAX_PROGRAM_NATIVE_TEMPORARIES_ARB 0x88A7
-#define GL_PROGRAM_PARAMETERS_ARB         0x88A8
-#define GL_MAX_PROGRAM_PARAMETERS_ARB     0x88A9
-#define GL_PROGRAM_NATIVE_PARAMETERS_ARB  0x88AA
-#define GL_MAX_PROGRAM_NATIVE_PARAMETERS_ARB 0x88AB
-#define GL_PROGRAM_ATTRIBS_ARB            0x88AC
-#define GL_MAX_PROGRAM_ATTRIBS_ARB        0x88AD
-#define GL_PROGRAM_NATIVE_ATTRIBS_ARB     0x88AE
-#define GL_MAX_PROGRAM_NATIVE_ATTRIBS_ARB 0x88AF
 #define GL_PROGRAM_ADDRESS_REGISTERS_ARB  0x88B0
 #define GL_MAX_PROGRAM_ADDRESS_REGISTERS_ARB 0x88B1
 #define GL_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB 0x88B2
 #define GL_MAX_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB 0x88B3
-#define GL_MAX_PROGRAM_LOCAL_PARAMETERS_ARB 0x88B4
-#define GL_MAX_PROGRAM_ENV_PARAMETERS_ARB 0x88B5
-#define GL_PROGRAM_UNDER_NATIVE_LIMITS_ARB 0x88B6
-#define GL_TRANSPOSE_CURRENT_MATRIX_ARB   0x88B7
-#define GL_MATRIX0_ARB                    0x88C0
-#define GL_MATRIX1_ARB                    0x88C1
-#define GL_MATRIX2_ARB                    0x88C2
-#define GL_MATRIX3_ARB                    0x88C3
-#define GL_MATRIX4_ARB                    0x88C4
-#define GL_MATRIX5_ARB                    0x88C5
-#define GL_MATRIX6_ARB                    0x88C6
-#define GL_MATRIX7_ARB                    0x88C7
-#define GL_MATRIX8_ARB                    0x88C8
-#define GL_MATRIX9_ARB                    0x88C9
-#define GL_MATRIX10_ARB                   0x88CA
-#define GL_MATRIX11_ARB                   0x88CB
-#define GL_MATRIX12_ARB                   0x88CC
-#define GL_MATRIX13_ARB                   0x88CD
-#define GL_MATRIX14_ARB                   0x88CE
-#define GL_MATRIX15_ARB                   0x88CF
-#define GL_MATRIX16_ARB                   0x88D0
-#define GL_MATRIX17_ARB                   0x88D1
-#define GL_MATRIX18_ARB                   0x88D2
-#define GL_MATRIX19_ARB                   0x88D3
-#define GL_MATRIX20_ARB                   0x88D4
-#define GL_MATRIX21_ARB                   0x88D5
-#define GL_MATRIX22_ARB                   0x88D6
-#define GL_MATRIX23_ARB                   0x88D7
-#define GL_MATRIX24_ARB                   0x88D8
-#define GL_MATRIX25_ARB                   0x88D9
-#define GL_MATRIX26_ARB                   0x88DA
-#define GL_MATRIX27_ARB                   0x88DB
-#define GL_MATRIX28_ARB                   0x88DC
-#define GL_MATRIX29_ARB                   0x88DD
-#define GL_MATRIX30_ARB                   0x88DE
-#define GL_MATRIX31_ARB                   0x88DF
 typedef void (APIENTRYP PFNGLVERTEXATTRIB1DARBPROC) (GLuint index, GLdouble x);
 typedef void (APIENTRYP PFNGLVERTEXATTRIB1DVARBPROC) (GLuint index, const GLdouble *v);
 typedef void (APIENTRYP PFNGLVERTEXATTRIB1FARBPROC) (GLuint index, GLfloat x);
@@ -4128,29 +4164,10 @@ typedef void (APIENTRYP PFNGLVERTEXATTRIB4USVARBPROC) (GLuint index, const GLush
 typedef void (APIENTRYP PFNGLVERTEXATTRIBPOINTERARBPROC) (GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid *pointer);
 typedef void (APIENTRYP PFNGLENABLEVERTEXATTRIBARRAYARBPROC) (GLuint index);
 typedef void (APIENTRYP PFNGLDISABLEVERTEXATTRIBARRAYARBPROC) (GLuint index);
-typedef void (APIENTRYP PFNGLPROGRAMSTRINGARBPROC) (GLenum target, GLenum format, GLsizei len, const GLvoid *string);
-typedef void (APIENTRYP PFNGLBINDPROGRAMARBPROC) (GLenum target, GLuint program);
-typedef void (APIENTRYP PFNGLDELETEPROGRAMSARBPROC) (GLsizei n, const GLuint *programs);
-typedef void (APIENTRYP PFNGLGENPROGRAMSARBPROC) (GLsizei n, GLuint *programs);
-typedef void (APIENTRYP PFNGLPROGRAMENVPARAMETER4DARBPROC) (GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
-typedef void (APIENTRYP PFNGLPROGRAMENVPARAMETER4DVARBPROC) (GLenum target, GLuint index, const GLdouble *params);
-typedef void (APIENTRYP PFNGLPROGRAMENVPARAMETER4FARBPROC) (GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
-typedef void (APIENTRYP PFNGLPROGRAMENVPARAMETER4FVARBPROC) (GLenum target, GLuint index, const GLfloat *params);
-typedef void (APIENTRYP PFNGLPROGRAMLOCALPARAMETER4DARBPROC) (GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
-typedef void (APIENTRYP PFNGLPROGRAMLOCALPARAMETER4DVARBPROC) (GLenum target, GLuint index, const GLdouble *params);
-typedef void (APIENTRYP PFNGLPROGRAMLOCALPARAMETER4FARBPROC) (GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
-typedef void (APIENTRYP PFNGLPROGRAMLOCALPARAMETER4FVARBPROC) (GLenum target, GLuint index, const GLfloat *params);
-typedef void (APIENTRYP PFNGLGETPROGRAMENVPARAMETERDVARBPROC) (GLenum target, GLuint index, GLdouble *params);
-typedef void (APIENTRYP PFNGLGETPROGRAMENVPARAMETERFVARBPROC) (GLenum target, GLuint index, GLfloat *params);
-typedef void (APIENTRYP PFNGLGETPROGRAMLOCALPARAMETERDVARBPROC) (GLenum target, GLuint index, GLdouble *params);
-typedef void (APIENTRYP PFNGLGETPROGRAMLOCALPARAMETERFVARBPROC) (GLenum target, GLuint index, GLfloat *params);
-typedef void (APIENTRYP PFNGLGETPROGRAMIVARBPROC) (GLenum target, GLenum pname, GLint *params);
-typedef void (APIENTRYP PFNGLGETPROGRAMSTRINGARBPROC) (GLenum target, GLenum pname, GLvoid *string);
 typedef void (APIENTRYP PFNGLGETVERTEXATTRIBDVARBPROC) (GLuint index, GLenum pname, GLdouble *params);
 typedef void (APIENTRYP PFNGLGETVERTEXATTRIBFVARBPROC) (GLuint index, GLenum pname, GLfloat *params);
 typedef void (APIENTRYP PFNGLGETVERTEXATTRIBIVARBPROC) (GLuint index, GLenum pname, GLint *params);
 typedef void (APIENTRYP PFNGLGETVERTEXATTRIBPOINTERVARBPROC) (GLuint index, GLenum pname, GLvoid **pointer);
-typedef GLboolean (APIENTRYP PFNGLISPROGRAMARBPROC) (GLuint program);
 #ifdef GL_GLEXT_PROTOTYPES
 GLAPI void APIENTRY glVertexAttrib1dARB (GLuint index, GLdouble x);
 GLAPI void APIENTRY glVertexAttrib1dvARB (GLuint index, const GLdouble *v);
@@ -4191,29 +4208,10 @@ GLAPI void APIENTRY glVertexAttrib4usvARB (GLuint index, const GLushort *v);
 GLAPI void APIENTRY glVertexAttribPointerARB (GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid *pointer);
 GLAPI void APIENTRY glEnableVertexAttribArrayARB (GLuint index);
 GLAPI void APIENTRY glDisableVertexAttribArrayARB (GLuint index);
-GLAPI void APIENTRY glProgramStringARB (GLenum target, GLenum format, GLsizei len, const GLvoid *string);
-GLAPI void APIENTRY glBindProgramARB (GLenum target, GLuint program);
-GLAPI void APIENTRY glDeleteProgramsARB (GLsizei n, const GLuint *programs);
-GLAPI void APIENTRY glGenProgramsARB (GLsizei n, GLuint *programs);
-GLAPI void APIENTRY glProgramEnvParameter4dARB (GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
-GLAPI void APIENTRY glProgramEnvParameter4dvARB (GLenum target, GLuint index, const GLdouble *params);
-GLAPI void APIENTRY glProgramEnvParameter4fARB (GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
-GLAPI void APIENTRY glProgramEnvParameter4fvARB (GLenum target, GLuint index, const GLfloat *params);
-GLAPI void APIENTRY glProgramLocalParameter4dARB (GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
-GLAPI void APIENTRY glProgramLocalParameter4dvARB (GLenum target, GLuint index, const GLdouble *params);
-GLAPI void APIENTRY glProgramLocalParameter4fARB (GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
-GLAPI void APIENTRY glProgramLocalParameter4fvARB (GLenum target, GLuint index, const GLfloat *params);
-GLAPI void APIENTRY glGetProgramEnvParameterdvARB (GLenum target, GLuint index, GLdouble *params);
-GLAPI void APIENTRY glGetProgramEnvParameterfvARB (GLenum target, GLuint index, GLfloat *params);
-GLAPI void APIENTRY glGetProgramLocalParameterdvARB (GLenum target, GLuint index, GLdouble *params);
-GLAPI void APIENTRY glGetProgramLocalParameterfvARB (GLenum target, GLuint index, GLfloat *params);
-GLAPI void APIENTRY glGetProgramivARB (GLenum target, GLenum pname, GLint *params);
-GLAPI void APIENTRY glGetProgramStringARB (GLenum target, GLenum pname, GLvoid *string);
 GLAPI void APIENTRY glGetVertexAttribdvARB (GLuint index, GLenum pname, GLdouble *params);
 GLAPI void APIENTRY glGetVertexAttribfvARB (GLuint index, GLenum pname, GLfloat *params);
 GLAPI void APIENTRY glGetVertexAttribivARB (GLuint index, GLenum pname, GLint *params);
 GLAPI void APIENTRY glGetVertexAttribPointervARB (GLuint index, GLenum pname, GLvoid **pointer);
-GLAPI GLboolean APIENTRY glIsProgramARB (GLuint program);
 #endif
 #endif /* GL_ARB_vertex_program */
 
@@ -6482,6 +6480,7 @@ GLAPI void APIENTRY glProgramLocalParameters4fvEXT (GLenum target, GLuint index,
 
 #ifndef GL_EXT_gpu_shader4
 #define GL_EXT_gpu_shader4 1
+#define GL_VERTEX_ATTRIB_ARRAY_INTEGER_EXT 0x88FD
 #define GL_SAMPLER_1D_ARRAY_EXT           0x8DC0
 #define GL_SAMPLER_2D_ARRAY_EXT           0x8DC1
 #define GL_SAMPLER_BUFFER_EXT             0x8DC2
@@ -6507,6 +6506,8 @@ GLAPI void APIENTRY glProgramLocalParameters4fvEXT (GLenum target, GLuint index,
 #define GL_UNSIGNED_INT_SAMPLER_1D_ARRAY_EXT 0x8DD6
 #define GL_UNSIGNED_INT_SAMPLER_2D_ARRAY_EXT 0x8DD7
 #define GL_UNSIGNED_INT_SAMPLER_BUFFER_EXT 0x8DD8
+#define GL_MIN_PROGRAM_TEXEL_OFFSET_EXT   0x8904
+#define GL_MAX_PROGRAM_TEXEL_OFFSET_EXT   0x8905
 typedef void (APIENTRYP PFNGLGETUNIFORMUIVEXTPROC) (GLuint program, GLint location, GLuint *params);
 typedef void (APIENTRYP PFNGLBINDFRAGDATALOCATIONEXTPROC) (GLuint program, GLuint color, const GLchar *name);
 typedef GLint (APIENTRYP PFNGLGETFRAGDATALOCATIONEXTPROC) (GLuint program, const GLchar *name);
@@ -6639,10 +6640,10 @@ GLAPI void APIENTRY glTextureMaterialEXT (GLenum face, GLenum mode);
 #ifndef GL_EXT_multi_draw_arrays
 #define GL_EXT_multi_draw_arrays 1
 typedef void (APIENTRYP PFNGLMULTIDRAWARRAYSEXTPROC) (GLenum mode, const GLint *first, const GLsizei *count, GLsizei primcount);
-typedef void (APIENTRYP PFNGLMULTIDRAWELEMENTSEXTPROC) (GLenum mode, const GLsizei *count, GLenum type, const GLvoid **indices, GLsizei primcount);
+typedef void (APIENTRYP PFNGLMULTIDRAWELEMENTSEXTPROC) (GLenum mode, const GLsizei *count, GLenum type, const GLvoid *const*indices, GLsizei primcount);
 #ifdef GL_GLEXT_PROTOTYPES
 GLAPI void APIENTRY glMultiDrawArraysEXT (GLenum mode, const GLint *first, const GLsizei *count, GLsizei primcount);
-GLAPI void APIENTRY glMultiDrawElementsEXT (GLenum mode, const GLsizei *count, GLenum type, const GLvoid **indices, GLsizei primcount);
+GLAPI void APIENTRY glMultiDrawElementsEXT (GLenum mode, const GLsizei *count, GLenum type, const GLvoid *const*indices, GLsizei primcount);
 #endif
 #endif /* GL_EXT_multi_draw_arrays */
 
@@ -7308,6 +7309,10 @@ GLAPI void APIENTRY glTextureNormalEXT (GLenum mode);
 #define GL_LUMINANCE16_SNORM              0x9019
 #define GL_LUMINANCE16_ALPHA16_SNORM      0x901A
 #define GL_INTENSITY16_SNORM              0x901B
+#define GL_RED_SNORM                      0x8F90
+#define GL_RG_SNORM                       0x8F91
+#define GL_RGB_SNORM                      0x8F92
+#define GL_RGBA_SNORM                     0x8F93
 #endif /* GL_EXT_texture_snorm */
 
 #ifndef GL_EXT_texture_swizzle
