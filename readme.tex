@@ -15,7 +15,7 @@
 
 \title{The Khronos XML API Registry}
 \author{Jon Leech}
-\date{Last updated 2013/06/14}
+\date{Last updated 2013/06/19}
 \maketitle
 
 \begin{abstract}
@@ -184,8 +184,8 @@ Zero or more of each of the following tags, normally in this order
       one tag is used.
 \item \tag{feature} - defines API feature interfaces (API versions, more
       or less). One tag per feature set.
-\item \tag{extension} - defines API extension interfaces. One tag per
-      extension.
+\item \tag{extensions} - defines API extension interfaces. Usually
+      only one tag is used, wrapping many extensions.
 \end{itemize}
 
 
@@ -556,6 +556,24 @@ If processed into a header for the \code{core} profile, the definition of
 \code{GL\_INDEX} would not appear.
 
 
+\section{Extension Blocks (\tag{extensions} tag)}
+\label{tag:extensions}
+
+The \tag{extensions} tag contains definitions of each of the extenions
+which are defined for the API.
+
+\subsection{Attributes of \tag{extensions} tags}
+
+None.
+
+\subsection{Contents of \tag{extensions} tags}
+
+Each \tag{extensions} block contains zero or more \tag{extension} tags,
+each describing an API extension, in arbitrary order (although they are
+typically ordered by sorting on the extension name, to improve human
+readability).
+
+
 \section{API Extensions (\tag{extension} tag)}
 \label{tag:extension}
 
@@ -587,18 +605,20 @@ section~\ref{tag:required}), in arbitrary order. Each tag describes a
 set of interfaces that is respectively required for, or removed from,
 this extension, as described below.
 
-\subsection{Example of an \tag{extension} tag}
+\subsection{Example of an \tag{extensions} tag}
 
 \begin{verbatim}
-<extension name="GL_ARB_robustness" supported="gl|glcore" >
-    <require>
-        <enum name="GL_NO_ERROR" />
-        <command name="glGetGraphicsResetStatusARB" />
-    </require>
-    <require api="gl" profile="compatibility">
-        <command name="glGetnMapdvARB" />
-    </require>
-</extension>
+<extensions>
+    <extension name="GL_ARB_robustness" supported="gl|glcore" >
+        <require>
+            <enum name="GL_NO_ERROR" />
+            <command name="glGetGraphicsResetStatusARB" />
+        </require>
+        <require api="gl" profile="compatibility">
+            <command name="glGetnMapdvARB" />
+        </require>
+    </extension>
+</extensions>
 \end{verbatim}
 
 The \attr{supported} attribute says that the extension can be supported for
@@ -700,22 +720,26 @@ now that there's a more modern and maintainable framework to build on.
 \subsection{Feature Regressions Relative to \code{.spec} Files}
 \label{general:regressions}
 
-Some information from the \code{.spec} files is not included because it
-is inaccurate (\code{version} tags from \code{.spec} rarely had anything
-to do with reality, nor was their actual meaning well-defined) or cannot
-be easily represented (such as the (supposed) length of array
-parameters).
+Some information from the \code{.spec} files is not included because it is
+inaccurate (\code{version} tags from \code{.spec} rarely had anything to do
+with reality, nor was their actual meaning well-defined) or cannot be easily
+represented (such as the (supposed) length of array parameters). We will add
+some of this information back in, probably via new attributes in the schema,
+as the need becomes apparent and the information can be validated.
 
-It would be a big job to go backwards from the XML to \code{.spec}
-formats, and we don't want to support this or enhance the \code{.spec}
-files going forward. Hopefully, people using the \code{.spec} files for
-other purposes will be able to transition to the XML registry.
+It would be a big job to go backwards from the XML to \code{.spec} formats,
+and we don't want to support this or enhance the \code{.spec} files going
+forward. Hopefully, people using the \code{.spec} files for other purposes
+will be able to transition to the XML registry.
 
 
 \section{Change Log}
 \label{changelog}
 
 \begin{itemize}
+\item 2013/06/19 - Added \tag{extensions} tag block as a wrapper around
+      groups of \tag{extension} tags, to ease XML transformations such
+      as sorting extensions by name.
 \item 2013/06/14 - Expanded description of tags, better formatting
 \item 2013/06/12 - First release, text file format
 \end{itemize}

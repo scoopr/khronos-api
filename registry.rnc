@@ -33,7 +33,7 @@ start = element registry {
     Enums      * ,
     Commands   * ,
     Feature    * ,
-    Extension  *
+    Extensions *
 }
 # <types> defines a group of types
 Types = element types {
@@ -180,6 +180,9 @@ Feature = element feature {
             InterfaceElement *
         }
     ) *
+}
+Extensions = element extensions {
+    Extension *
 }
 # Defines the interface of an API <extension>. Like a <feature>
 # tag, but with a slightly different api attribute.

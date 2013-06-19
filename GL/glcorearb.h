@@ -75,21 +75,6 @@ extern "C" {
  * Extensions removed: _nomatch_^
  */
 
-#ifndef GL_ARB_imaging
-#define GL_ARB_imaging 1
-#define GL_CONSTANT_COLOR                 0x8001
-#define GL_ONE_MINUS_CONSTANT_COLOR       0x8002
-#define GL_CONSTANT_ALPHA                 0x8003
-#define GL_ONE_MINUS_CONSTANT_ALPHA       0x8004
-#define GL_BLEND_COLOR                    0x8005
-#define GL_FUNC_ADD                       0x8006
-#define GL_MIN                            0x8007
-#define GL_MAX                            0x8008
-#define GL_BLEND_EQUATION                 0x8009
-#define GL_FUNC_SUBTRACT                  0x800A
-#define GL_FUNC_REVERSE_SUBTRACT          0x800B
-#endif /* GL_ARB_imaging */
-
 #ifndef GL_VERSION_1_0
 #define GL_VERSION_1_0 1
 typedef unsigned int GLenum;
@@ -2795,6 +2780,21 @@ GLAPI void APIENTRY glProgramUniformMatrix4x3dvEXT (GLuint program, GLint locati
 #ifndef GL_ARB_half_float_vertex
 #define GL_ARB_half_float_vertex 1
 #endif /* GL_ARB_half_float_vertex */
+
+#ifndef GL_ARB_imaging
+#define GL_ARB_imaging 1
+#define GL_CONSTANT_COLOR                 0x8001
+#define GL_ONE_MINUS_CONSTANT_COLOR       0x8002
+#define GL_CONSTANT_ALPHA                 0x8003
+#define GL_ONE_MINUS_CONSTANT_ALPHA       0x8004
+#define GL_BLEND_COLOR                    0x8005
+#define GL_FUNC_ADD                       0x8006
+#define GL_MIN                            0x8007
+#define GL_MAX                            0x8008
+#define GL_BLEND_EQUATION                 0x8009
+#define GL_FUNC_SUBTRACT                  0x800A
+#define GL_FUNC_REVERSE_SUBTRACT          0x800B
+#endif /* GL_ARB_imaging */
 
 #ifndef GL_ARB_internalformat_query
 #define GL_ARB_internalformat_query 1

@@ -787,9 +787,9 @@ class Registry:
         for feature in self.reg.findall('feature'):
             ai = FeatureInfo(feature)
             self.addElementInfo(feature, ai, 'feature', self.apidict)
-        self.extensions = self.reg.findall('extension')
+        self.extensions = self.reg.findall('extensions/extension')
         self.extdict = {}
-        for feature in self.reg.findall('extension'):
+        for feature in self.extensions:
             ei = FeatureInfo(feature)
             self.addElementInfo(feature, ei, 'extension', self.extdict)
     def dumpReg(self, maxlen = 40, filehandle = sys.stdout):

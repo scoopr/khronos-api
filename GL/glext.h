@@ -51,7 +51,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
-#define GL_GLEXT_VERSION 20130618
+#define GL_GLEXT_VERSION 20130619
 
 /* Generated C header for:
  * API: gl
@@ -62,157 +62,6 @@ extern "C" {
  * Additional extensions included: _nomatch_^
  * Extensions removed: _nomatch_^
  */
-
-#ifndef GL_ARB_imaging
-#define GL_ARB_imaging 1
-typedef unsigned int GLenum;
-typedef int GLsizei;
-typedef void GLvoid;
-typedef float GLfloat;
-typedef int GLint;
-typedef unsigned char GLboolean;
-#define GL_CONSTANT_COLOR                 0x8001
-#define GL_ONE_MINUS_CONSTANT_COLOR       0x8002
-#define GL_CONSTANT_ALPHA                 0x8003
-#define GL_ONE_MINUS_CONSTANT_ALPHA       0x8004
-#define GL_BLEND_COLOR                    0x8005
-#define GL_FUNC_ADD                       0x8006
-#define GL_MIN                            0x8007
-#define GL_MAX                            0x8008
-#define GL_BLEND_EQUATION                 0x8009
-#define GL_FUNC_SUBTRACT                  0x800A
-#define GL_FUNC_REVERSE_SUBTRACT          0x800B
-#define GL_CONVOLUTION_1D                 0x8010
-#define GL_CONVOLUTION_2D                 0x8011
-#define GL_SEPARABLE_2D                   0x8012
-#define GL_CONVOLUTION_BORDER_MODE        0x8013
-#define GL_CONVOLUTION_FILTER_SCALE       0x8014
-#define GL_CONVOLUTION_FILTER_BIAS        0x8015
-#define GL_REDUCE                         0x8016
-#define GL_CONVOLUTION_FORMAT             0x8017
-#define GL_CONVOLUTION_WIDTH              0x8018
-#define GL_CONVOLUTION_HEIGHT             0x8019
-#define GL_MAX_CONVOLUTION_WIDTH          0x801A
-#define GL_MAX_CONVOLUTION_HEIGHT         0x801B
-#define GL_POST_CONVOLUTION_RED_SCALE     0x801C
-#define GL_POST_CONVOLUTION_GREEN_SCALE   0x801D
-#define GL_POST_CONVOLUTION_BLUE_SCALE    0x801E
-#define GL_POST_CONVOLUTION_ALPHA_SCALE   0x801F
-#define GL_POST_CONVOLUTION_RED_BIAS      0x8020
-#define GL_POST_CONVOLUTION_GREEN_BIAS    0x8021
-#define GL_POST_CONVOLUTION_BLUE_BIAS     0x8022
-#define GL_POST_CONVOLUTION_ALPHA_BIAS    0x8023
-#define GL_HISTOGRAM                      0x8024
-#define GL_PROXY_HISTOGRAM                0x8025
-#define GL_HISTOGRAM_WIDTH                0x8026
-#define GL_HISTOGRAM_FORMAT               0x8027
-#define GL_HISTOGRAM_RED_SIZE             0x8028
-#define GL_HISTOGRAM_GREEN_SIZE           0x8029
-#define GL_HISTOGRAM_BLUE_SIZE            0x802A
-#define GL_HISTOGRAM_ALPHA_SIZE           0x802B
-#define GL_HISTOGRAM_LUMINANCE_SIZE       0x802C
-#define GL_HISTOGRAM_SINK                 0x802D
-#define GL_MINMAX                         0x802E
-#define GL_MINMAX_FORMAT                  0x802F
-#define GL_MINMAX_SINK                    0x8030
-#define GL_TABLE_TOO_LARGE                0x8031
-#define GL_COLOR_MATRIX                   0x80B1
-#define GL_COLOR_MATRIX_STACK_DEPTH       0x80B2
-#define GL_MAX_COLOR_MATRIX_STACK_DEPTH   0x80B3
-#define GL_POST_COLOR_MATRIX_RED_SCALE    0x80B4
-#define GL_POST_COLOR_MATRIX_GREEN_SCALE  0x80B5
-#define GL_POST_COLOR_MATRIX_BLUE_SCALE   0x80B6
-#define GL_POST_COLOR_MATRIX_ALPHA_SCALE  0x80B7
-#define GL_POST_COLOR_MATRIX_RED_BIAS     0x80B8
-#define GL_POST_COLOR_MATRIX_GREEN_BIAS   0x80B9
-#define GL_POST_COLOR_MATRIX_BLUE_BIAS    0x80BA
-#define GL_POST_COLOR_MATRIX_ALPHA_BIAS   0x80BB
-#define GL_COLOR_TABLE                    0x80D0
-#define GL_POST_CONVOLUTION_COLOR_TABLE   0x80D1
-#define GL_POST_COLOR_MATRIX_COLOR_TABLE  0x80D2
-#define GL_PROXY_COLOR_TABLE              0x80D3
-#define GL_PROXY_POST_CONVOLUTION_COLOR_TABLE 0x80D4
-#define GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE 0x80D5
-#define GL_COLOR_TABLE_SCALE              0x80D6
-#define GL_COLOR_TABLE_BIAS               0x80D7
-#define GL_COLOR_TABLE_FORMAT             0x80D8
-#define GL_COLOR_TABLE_WIDTH              0x80D9
-#define GL_COLOR_TABLE_RED_SIZE           0x80DA
-#define GL_COLOR_TABLE_GREEN_SIZE         0x80DB
-#define GL_COLOR_TABLE_BLUE_SIZE          0x80DC
-#define GL_COLOR_TABLE_ALPHA_SIZE         0x80DD
-#define GL_COLOR_TABLE_LUMINANCE_SIZE     0x80DE
-#define GL_COLOR_TABLE_INTENSITY_SIZE     0x80DF
-#define GL_CONSTANT_BORDER                0x8151
-#define GL_REPLICATE_BORDER               0x8153
-#define GL_CONVOLUTION_BORDER_COLOR       0x8154
-typedef void (APIENTRYP PFNGLCOLORTABLEPROC) (GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const GLvoid *table);
-typedef void (APIENTRYP PFNGLCOLORTABLEPARAMETERFVPROC) (GLenum target, GLenum pname, const GLfloat *params);
-typedef void (APIENTRYP PFNGLCOLORTABLEPARAMETERIVPROC) (GLenum target, GLenum pname, const GLint *params);
-typedef void (APIENTRYP PFNGLCOPYCOLORTABLEPROC) (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
-typedef void (APIENTRYP PFNGLGETCOLORTABLEPROC) (GLenum target, GLenum format, GLenum type, GLvoid *table);
-typedef void (APIENTRYP PFNGLGETCOLORTABLEPARAMETERFVPROC) (GLenum target, GLenum pname, GLfloat *params);
-typedef void (APIENTRYP PFNGLGETCOLORTABLEPARAMETERIVPROC) (GLenum target, GLenum pname, GLint *params);
-typedef void (APIENTRYP PFNGLCOLORSUBTABLEPROC) (GLenum target, GLsizei start, GLsizei count, GLenum format, GLenum type, const GLvoid *data);
-typedef void (APIENTRYP PFNGLCOPYCOLORSUBTABLEPROC) (GLenum target, GLsizei start, GLint x, GLint y, GLsizei width);
-typedef void (APIENTRYP PFNGLCONVOLUTIONFILTER1DPROC) (GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const GLvoid *image);
-typedef void (APIENTRYP PFNGLCONVOLUTIONFILTER2DPROC) (GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *image);
-typedef void (APIENTRYP PFNGLCONVOLUTIONPARAMETERFPROC) (GLenum target, GLenum pname, GLfloat params);
-typedef void (APIENTRYP PFNGLCONVOLUTIONPARAMETERFVPROC) (GLenum target, GLenum pname, const GLfloat *params);
-typedef void (APIENTRYP PFNGLCONVOLUTIONPARAMETERIPROC) (GLenum target, GLenum pname, GLint params);
-typedef void (APIENTRYP PFNGLCONVOLUTIONPARAMETERIVPROC) (GLenum target, GLenum pname, const GLint *params);
-typedef void (APIENTRYP PFNGLCOPYCONVOLUTIONFILTER1DPROC) (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
-typedef void (APIENTRYP PFNGLCOPYCONVOLUTIONFILTER2DPROC) (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height);
-typedef void (APIENTRYP PFNGLGETCONVOLUTIONFILTERPROC) (GLenum target, GLenum format, GLenum type, GLvoid *image);
-typedef void (APIENTRYP PFNGLGETCONVOLUTIONPARAMETERFVPROC) (GLenum target, GLenum pname, GLfloat *params);
-typedef void (APIENTRYP PFNGLGETCONVOLUTIONPARAMETERIVPROC) (GLenum target, GLenum pname, GLint *params);
-typedef void (APIENTRYP PFNGLGETSEPARABLEFILTERPROC) (GLenum target, GLenum format, GLenum type, GLvoid *row, GLvoid *column, GLvoid *span);
-typedef void (APIENTRYP PFNGLSEPARABLEFILTER2DPROC) (GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *row, const GLvoid *column);
-typedef void (APIENTRYP PFNGLGETHISTOGRAMPROC) (GLenum target, GLboolean reset, GLenum format, GLenum type, GLvoid *values);
-typedef void (APIENTRYP PFNGLGETHISTOGRAMPARAMETERFVPROC) (GLenum target, GLenum pname, GLfloat *params);
-typedef void (APIENTRYP PFNGLGETHISTOGRAMPARAMETERIVPROC) (GLenum target, GLenum pname, GLint *params);
-typedef void (APIENTRYP PFNGLGETMINMAXPROC) (GLenum target, GLboolean reset, GLenum format, GLenum type, GLvoid *values);
-typedef void (APIENTRYP PFNGLGETMINMAXPARAMETERFVPROC) (GLenum target, GLenum pname, GLfloat *params);
-typedef void (APIENTRYP PFNGLGETMINMAXPARAMETERIVPROC) (GLenum target, GLenum pname, GLint *params);
-typedef void (APIENTRYP PFNGLHISTOGRAMPROC) (GLenum target, GLsizei width, GLenum internalformat, GLboolean sink);
-typedef void (APIENTRYP PFNGLMINMAXPROC) (GLenum target, GLenum internalformat, GLboolean sink);
-typedef void (APIENTRYP PFNGLRESETHISTOGRAMPROC) (GLenum target);
-typedef void (APIENTRYP PFNGLRESETMINMAXPROC) (GLenum target);
-#ifdef GL_GLEXT_PROTOTYPES
-GLAPI void APIENTRY glColorTable (GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const GLvoid *table);
-GLAPI void APIENTRY glColorTableParameterfv (GLenum target, GLenum pname, const GLfloat *params);
-GLAPI void APIENTRY glColorTableParameteriv (GLenum target, GLenum pname, const GLint *params);
-GLAPI void APIENTRY glCopyColorTable (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
-GLAPI void APIENTRY glGetColorTable (GLenum target, GLenum format, GLenum type, GLvoid *table);
-GLAPI void APIENTRY glGetColorTableParameterfv (GLenum target, GLenum pname, GLfloat *params);
-GLAPI void APIENTRY glGetColorTableParameteriv (GLenum target, GLenum pname, GLint *params);
-GLAPI void APIENTRY glColorSubTable (GLenum target, GLsizei start, GLsizei count, GLenum format, GLenum type, const GLvoid *data);
-GLAPI void APIENTRY glCopyColorSubTable (GLenum target, GLsizei start, GLint x, GLint y, GLsizei width);
-GLAPI void APIENTRY glConvolutionFilter1D (GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const GLvoid *image);
-GLAPI void APIENTRY glConvolutionFilter2D (GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *image);
-GLAPI void APIENTRY glConvolutionParameterf (GLenum target, GLenum pname, GLfloat params);
-GLAPI void APIENTRY glConvolutionParameterfv (GLenum target, GLenum pname, const GLfloat *params);
-GLAPI void APIENTRY glConvolutionParameteri (GLenum target, GLenum pname, GLint params);
-GLAPI void APIENTRY glConvolutionParameteriv (GLenum target, GLenum pname, const GLint *params);
-GLAPI void APIENTRY glCopyConvolutionFilter1D (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
-GLAPI void APIENTRY glCopyConvolutionFilter2D (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height);
-GLAPI void APIENTRY glGetConvolutionFilter (GLenum target, GLenum format, GLenum type, GLvoid *image);
-GLAPI void APIENTRY glGetConvolutionParameterfv (GLenum target, GLenum pname, GLfloat *params);
-GLAPI void APIENTRY glGetConvolutionParameteriv (GLenum target, GLenum pname, GLint *params);
-GLAPI void APIENTRY glGetSeparableFilter (GLenum target, GLenum format, GLenum type, GLvoid *row, GLvoid *column, GLvoid *span);
-GLAPI void APIENTRY glSeparableFilter2D (GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *row, const GLvoid *column);
-GLAPI void APIENTRY glGetHistogram (GLenum target, GLboolean reset, GLenum format, GLenum type, GLvoid *values);
-GLAPI void APIENTRY glGetHistogramParameterfv (GLenum target, GLenum pname, GLfloat *params);
-GLAPI void APIENTRY glGetHistogramParameteriv (GLenum target, GLenum pname, GLint *params);
-GLAPI void APIENTRY glGetMinmax (GLenum target, GLboolean reset, GLenum format, GLenum type, GLvoid *values);
-GLAPI void APIENTRY glGetMinmaxParameterfv (GLenum target, GLenum pname, GLfloat *params);
-GLAPI void APIENTRY glGetMinmaxParameteriv (GLenum target, GLenum pname, GLint *params);
-GLAPI void APIENTRY glHistogram (GLenum target, GLsizei width, GLenum internalformat, GLboolean sink);
-GLAPI void APIENTRY glMinmax (GLenum target, GLenum internalformat, GLboolean sink);
-GLAPI void APIENTRY glResetHistogram (GLenum target);
-GLAPI void APIENTRY glResetMinmax (GLenum target);
-#endif
-#endif /* GL_ARB_imaging */
 
 #ifndef GL_VERSION_1_2
 #define GL_VERSION_1_2 1
@@ -3114,6 +2963,151 @@ typedef unsigned short GLhalfARB;
 #ifndef GL_ARB_half_float_vertex
 #define GL_ARB_half_float_vertex 1
 #endif /* GL_ARB_half_float_vertex */
+
+#ifndef GL_ARB_imaging
+#define GL_ARB_imaging 1
+#define GL_CONSTANT_COLOR                 0x8001
+#define GL_ONE_MINUS_CONSTANT_COLOR       0x8002
+#define GL_CONSTANT_ALPHA                 0x8003
+#define GL_ONE_MINUS_CONSTANT_ALPHA       0x8004
+#define GL_BLEND_COLOR                    0x8005
+#define GL_FUNC_ADD                       0x8006
+#define GL_MIN                            0x8007
+#define GL_MAX                            0x8008
+#define GL_BLEND_EQUATION                 0x8009
+#define GL_FUNC_SUBTRACT                  0x800A
+#define GL_FUNC_REVERSE_SUBTRACT          0x800B
+#define GL_CONVOLUTION_1D                 0x8010
+#define GL_CONVOLUTION_2D                 0x8011
+#define GL_SEPARABLE_2D                   0x8012
+#define GL_CONVOLUTION_BORDER_MODE        0x8013
+#define GL_CONVOLUTION_FILTER_SCALE       0x8014
+#define GL_CONVOLUTION_FILTER_BIAS        0x8015
+#define GL_REDUCE                         0x8016
+#define GL_CONVOLUTION_FORMAT             0x8017
+#define GL_CONVOLUTION_WIDTH              0x8018
+#define GL_CONVOLUTION_HEIGHT             0x8019
+#define GL_MAX_CONVOLUTION_WIDTH          0x801A
+#define GL_MAX_CONVOLUTION_HEIGHT         0x801B
+#define GL_POST_CONVOLUTION_RED_SCALE     0x801C
+#define GL_POST_CONVOLUTION_GREEN_SCALE   0x801D
+#define GL_POST_CONVOLUTION_BLUE_SCALE    0x801E
+#define GL_POST_CONVOLUTION_ALPHA_SCALE   0x801F
+#define GL_POST_CONVOLUTION_RED_BIAS      0x8020
+#define GL_POST_CONVOLUTION_GREEN_BIAS    0x8021
+#define GL_POST_CONVOLUTION_BLUE_BIAS     0x8022
+#define GL_POST_CONVOLUTION_ALPHA_BIAS    0x8023
+#define GL_HISTOGRAM                      0x8024
+#define GL_PROXY_HISTOGRAM                0x8025
+#define GL_HISTOGRAM_WIDTH                0x8026
+#define GL_HISTOGRAM_FORMAT               0x8027
+#define GL_HISTOGRAM_RED_SIZE             0x8028
+#define GL_HISTOGRAM_GREEN_SIZE           0x8029
+#define GL_HISTOGRAM_BLUE_SIZE            0x802A
+#define GL_HISTOGRAM_ALPHA_SIZE           0x802B
+#define GL_HISTOGRAM_LUMINANCE_SIZE       0x802C
+#define GL_HISTOGRAM_SINK                 0x802D
+#define GL_MINMAX                         0x802E
+#define GL_MINMAX_FORMAT                  0x802F
+#define GL_MINMAX_SINK                    0x8030
+#define GL_TABLE_TOO_LARGE                0x8031
+#define GL_COLOR_MATRIX                   0x80B1
+#define GL_COLOR_MATRIX_STACK_DEPTH       0x80B2
+#define GL_MAX_COLOR_MATRIX_STACK_DEPTH   0x80B3
+#define GL_POST_COLOR_MATRIX_RED_SCALE    0x80B4
+#define GL_POST_COLOR_MATRIX_GREEN_SCALE  0x80B5
+#define GL_POST_COLOR_MATRIX_BLUE_SCALE   0x80B6
+#define GL_POST_COLOR_MATRIX_ALPHA_SCALE  0x80B7
+#define GL_POST_COLOR_MATRIX_RED_BIAS     0x80B8
+#define GL_POST_COLOR_MATRIX_GREEN_BIAS   0x80B9
+#define GL_POST_COLOR_MATRIX_BLUE_BIAS    0x80BA
+#define GL_POST_COLOR_MATRIX_ALPHA_BIAS   0x80BB
+#define GL_COLOR_TABLE                    0x80D0
+#define GL_POST_CONVOLUTION_COLOR_TABLE   0x80D1
+#define GL_POST_COLOR_MATRIX_COLOR_TABLE  0x80D2
+#define GL_PROXY_COLOR_TABLE              0x80D3
+#define GL_PROXY_POST_CONVOLUTION_COLOR_TABLE 0x80D4
+#define GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE 0x80D5
+#define GL_COLOR_TABLE_SCALE              0x80D6
+#define GL_COLOR_TABLE_BIAS               0x80D7
+#define GL_COLOR_TABLE_FORMAT             0x80D8
+#define GL_COLOR_TABLE_WIDTH              0x80D9
+#define GL_COLOR_TABLE_RED_SIZE           0x80DA
+#define GL_COLOR_TABLE_GREEN_SIZE         0x80DB
+#define GL_COLOR_TABLE_BLUE_SIZE          0x80DC
+#define GL_COLOR_TABLE_ALPHA_SIZE         0x80DD
+#define GL_COLOR_TABLE_LUMINANCE_SIZE     0x80DE
+#define GL_COLOR_TABLE_INTENSITY_SIZE     0x80DF
+#define GL_CONSTANT_BORDER                0x8151
+#define GL_REPLICATE_BORDER               0x8153
+#define GL_CONVOLUTION_BORDER_COLOR       0x8154
+typedef void (APIENTRYP PFNGLCOLORTABLEPROC) (GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const GLvoid *table);
+typedef void (APIENTRYP PFNGLCOLORTABLEPARAMETERFVPROC) (GLenum target, GLenum pname, const GLfloat *params);
+typedef void (APIENTRYP PFNGLCOLORTABLEPARAMETERIVPROC) (GLenum target, GLenum pname, const GLint *params);
+typedef void (APIENTRYP PFNGLCOPYCOLORTABLEPROC) (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
+typedef void (APIENTRYP PFNGLGETCOLORTABLEPROC) (GLenum target, GLenum format, GLenum type, GLvoid *table);
+typedef void (APIENTRYP PFNGLGETCOLORTABLEPARAMETERFVPROC) (GLenum target, GLenum pname, GLfloat *params);
+typedef void (APIENTRYP PFNGLGETCOLORTABLEPARAMETERIVPROC) (GLenum target, GLenum pname, GLint *params);
+typedef void (APIENTRYP PFNGLCOLORSUBTABLEPROC) (GLenum target, GLsizei start, GLsizei count, GLenum format, GLenum type, const GLvoid *data);
+typedef void (APIENTRYP PFNGLCOPYCOLORSUBTABLEPROC) (GLenum target, GLsizei start, GLint x, GLint y, GLsizei width);
+typedef void (APIENTRYP PFNGLCONVOLUTIONFILTER1DPROC) (GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const GLvoid *image);
+typedef void (APIENTRYP PFNGLCONVOLUTIONFILTER2DPROC) (GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *image);
+typedef void (APIENTRYP PFNGLCONVOLUTIONPARAMETERFPROC) (GLenum target, GLenum pname, GLfloat params);
+typedef void (APIENTRYP PFNGLCONVOLUTIONPARAMETERFVPROC) (GLenum target, GLenum pname, const GLfloat *params);
+typedef void (APIENTRYP PFNGLCONVOLUTIONPARAMETERIPROC) (GLenum target, GLenum pname, GLint params);
+typedef void (APIENTRYP PFNGLCONVOLUTIONPARAMETERIVPROC) (GLenum target, GLenum pname, const GLint *params);
+typedef void (APIENTRYP PFNGLCOPYCONVOLUTIONFILTER1DPROC) (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
+typedef void (APIENTRYP PFNGLCOPYCONVOLUTIONFILTER2DPROC) (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height);
+typedef void (APIENTRYP PFNGLGETCONVOLUTIONFILTERPROC) (GLenum target, GLenum format, GLenum type, GLvoid *image);
+typedef void (APIENTRYP PFNGLGETCONVOLUTIONPARAMETERFVPROC) (GLenum target, GLenum pname, GLfloat *params);
+typedef void (APIENTRYP PFNGLGETCONVOLUTIONPARAMETERIVPROC) (GLenum target, GLenum pname, GLint *params);
+typedef void (APIENTRYP PFNGLGETSEPARABLEFILTERPROC) (GLenum target, GLenum format, GLenum type, GLvoid *row, GLvoid *column, GLvoid *span);
+typedef void (APIENTRYP PFNGLSEPARABLEFILTER2DPROC) (GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *row, const GLvoid *column);
+typedef void (APIENTRYP PFNGLGETHISTOGRAMPROC) (GLenum target, GLboolean reset, GLenum format, GLenum type, GLvoid *values);
+typedef void (APIENTRYP PFNGLGETHISTOGRAMPARAMETERFVPROC) (GLenum target, GLenum pname, GLfloat *params);
+typedef void (APIENTRYP PFNGLGETHISTOGRAMPARAMETERIVPROC) (GLenum target, GLenum pname, GLint *params);
+typedef void (APIENTRYP PFNGLGETMINMAXPROC) (GLenum target, GLboolean reset, GLenum format, GLenum type, GLvoid *values);
+typedef void (APIENTRYP PFNGLGETMINMAXPARAMETERFVPROC) (GLenum target, GLenum pname, GLfloat *params);
+typedef void (APIENTRYP PFNGLGETMINMAXPARAMETERIVPROC) (GLenum target, GLenum pname, GLint *params);
+typedef void (APIENTRYP PFNGLHISTOGRAMPROC) (GLenum target, GLsizei width, GLenum internalformat, GLboolean sink);
+typedef void (APIENTRYP PFNGLMINMAXPROC) (GLenum target, GLenum internalformat, GLboolean sink);
+typedef void (APIENTRYP PFNGLRESETHISTOGRAMPROC) (GLenum target);
+typedef void (APIENTRYP PFNGLRESETMINMAXPROC) (GLenum target);
+#ifdef GL_GLEXT_PROTOTYPES
+GLAPI void APIENTRY glColorTable (GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const GLvoid *table);
+GLAPI void APIENTRY glColorTableParameterfv (GLenum target, GLenum pname, const GLfloat *params);
+GLAPI void APIENTRY glColorTableParameteriv (GLenum target, GLenum pname, const GLint *params);
+GLAPI void APIENTRY glCopyColorTable (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
+GLAPI void APIENTRY glGetColorTable (GLenum target, GLenum format, GLenum type, GLvoid *table);
+GLAPI void APIENTRY glGetColorTableParameterfv (GLenum target, GLenum pname, GLfloat *params);
+GLAPI void APIENTRY glGetColorTableParameteriv (GLenum target, GLenum pname, GLint *params);
+GLAPI void APIENTRY glColorSubTable (GLenum target, GLsizei start, GLsizei count, GLenum format, GLenum type, const GLvoid *data);
+GLAPI void APIENTRY glCopyColorSubTable (GLenum target, GLsizei start, GLint x, GLint y, GLsizei width);
+GLAPI void APIENTRY glConvolutionFilter1D (GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const GLvoid *image);
+GLAPI void APIENTRY glConvolutionFilter2D (GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *image);
+GLAPI void APIENTRY glConvolutionParameterf (GLenum target, GLenum pname, GLfloat params);
+GLAPI void APIENTRY glConvolutionParameterfv (GLenum target, GLenum pname, const GLfloat *params);
+GLAPI void APIENTRY glConvolutionParameteri (GLenum target, GLenum pname, GLint params);
+GLAPI void APIENTRY glConvolutionParameteriv (GLenum target, GLenum pname, const GLint *params);
+GLAPI void APIENTRY glCopyConvolutionFilter1D (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
+GLAPI void APIENTRY glCopyConvolutionFilter2D (GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height);
+GLAPI void APIENTRY glGetConvolutionFilter (GLenum target, GLenum format, GLenum type, GLvoid *image);
+GLAPI void APIENTRY glGetConvolutionParameterfv (GLenum target, GLenum pname, GLfloat *params);
+GLAPI void APIENTRY glGetConvolutionParameteriv (GLenum target, GLenum pname, GLint *params);
+GLAPI void APIENTRY glGetSeparableFilter (GLenum target, GLenum format, GLenum type, GLvoid *row, GLvoid *column, GLvoid *span);
+GLAPI void APIENTRY glSeparableFilter2D (GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *row, const GLvoid *column);
+GLAPI void APIENTRY glGetHistogram (GLenum target, GLboolean reset, GLenum format, GLenum type, GLvoid *values);
+GLAPI void APIENTRY glGetHistogramParameterfv (GLenum target, GLenum pname, GLfloat *params);
+GLAPI void APIENTRY glGetHistogramParameteriv (GLenum target, GLenum pname, GLint *params);
+GLAPI void APIENTRY glGetMinmax (GLenum target, GLboolean reset, GLenum format, GLenum type, GLvoid *values);
+GLAPI void APIENTRY glGetMinmaxParameterfv (GLenum target, GLenum pname, GLfloat *params);
+GLAPI void APIENTRY glGetMinmaxParameteriv (GLenum target, GLenum pname, GLint *params);
+GLAPI void APIENTRY glHistogram (GLenum target, GLsizei width, GLenum internalformat, GLboolean sink);
+GLAPI void APIENTRY glMinmax (GLenum target, GLenum internalformat, GLboolean sink);
+GLAPI void APIENTRY glResetHistogram (GLenum target);
+GLAPI void APIENTRY glResetMinmax (GLenum target);
+#endif
+#endif /* GL_ARB_imaging */
 
 #ifndef GL_ARB_instanced_arrays
 #define GL_ARB_instanced_arrays 1
