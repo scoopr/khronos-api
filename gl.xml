@@ -16495,7 +16495,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glPixelMapfv</name></proto>
             <param><ptype>GLenum</ptype> <name>map</name></param>
-            <param><ptype>GLint</ptype> <name>mapsize</name></param>
+            <param><ptype>GLsizei</ptype> <name>mapsize</name></param>
             <param>const <ptype>GLfloat</ptype> *<name>values</name></param>
             <glx type="render" opcode="168"/>
             <glx type="render" opcode="323" name="glPixelMapfvPBO" comment="PBO protocol"/>
@@ -16503,7 +16503,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glPixelMapuiv</name></proto>
             <param><ptype>GLenum</ptype> <name>map</name></param>
-            <param><ptype>GLint</ptype> <name>mapsize</name></param>
+            <param><ptype>GLsizei</ptype> <name>mapsize</name></param>
             <param>const <ptype>GLuint</ptype> *<name>values</name></param>
             <glx type="render" opcode="169"/>
             <glx type="render" opcode="324" name="glPixelMapuivPBO" comment="PBO protocol"/>
@@ -16511,7 +16511,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glPixelMapusv</name></proto>
             <param><ptype>GLenum</ptype> <name>map</name></param>
-            <param><ptype>GLint</ptype> <name>mapsize</name></param>
+            <param><ptype>GLsizei</ptype> <name>mapsize</name></param>
             <param>const <ptype>GLushort</ptype> *<name>values</name></param>
             <glx type="render" opcode="170"/>
             <glx type="render" opcode="325" name="glPixelMapusvPBO" comment="PBO protocol"/>
@@ -21810,7 +21810,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto><ptype>GLvdpauSurfaceNV</ptype> <name>glVDPAURegisterOutputSurfaceNV</name></proto>
-            <param><ptype>GLvoid</ptype> *<name>vdpSurface</name></param>
+            <param>const <ptype>GLvoid</ptype> *<name>vdpSurface</name></param>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLsizei</ptype> <name>numTextureNames</name></param>
             <param>const <ptype>GLuint</ptype> *<name>textureNames</name></param>
