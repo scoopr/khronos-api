@@ -22,8 +22,8 @@
 
 This document describes the Khronos XML API Registry schema, and
 provides some additional information about using the registry and
-scripts to generate C header files. The underlying XML files and
-scripts can be found at URL
+scripts to generate C header files. The underlying XML files and scripts
+can be obtained starting on the OpenGL.org registry pages at URL
 
 \begin{center}
 {\tt http://www.opengl.org/registry}
@@ -65,11 +65,30 @@ extension loaders, and it may be desirable to construct XSLT or other
 translators between the schema.
 
 
+\section{Downloading the Registry}
+
+You can get the processed C header files from the registry pages on the
+OpenGL.org webserver at URL
+
+\begin{center}
+{\tt http://www.opengl.org/registry}
+\end{center}
+
+However, to modify the XML database or the generator scripts for other
+purposes, you'll need to install a Subversion client and download
+the registry subrepository at
+
+\begin{center}
+{\tt https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/api/}
+\end{center}
+
+
 \section{Getting Started}
 
-If you're running in a Linux command-line environment and have Python 3,
-the lxml Python bindings, and libxml installed, you should just be able
-to invoke \code{make} and generate C/C++ header files for all the following
+Once the registry has been obtained from Subversion, if you're running
+in a Linux command-line environment and have Python 3, the lxml Python
+bindings, and libxml installed, you should just be able to invoke
+\code{make} and generate C/C++ header files for all the following
 targets:
 
 \begin{itemize}
@@ -286,7 +305,7 @@ on enumerant values, to improve human readability).
 </enums>
 <enums namespace="GL" start="0x80E0" end="0x810F" vendor="MS">
     <enum value="0x80E0"      name="GL_BGR" />
-        <unused start="0x80E1" end="0x810F" />
+	<unused start="0x80E1" end="0x810F" />
 </enums>
 \end{verbatim}
 
@@ -296,7 +315,7 @@ required, this results in
 \begin{verbatim}
 #define GL_CURRENT_BIT 0x00000001
 #define GL_POINT_BIT   0x00000001
-#define GL_BGR         0x80E0
+#define GL_BGR	       0x80E0
 \end{verbatim}
 
 
@@ -313,8 +332,8 @@ Each \tag{enum} tag defines a single GL (or other API) token.
 \item \attr{name} - enumerant name, a legal C preprocessor token name.
 \item \attr{api} - an API name which specializes this definition of the
       named enum, so that different APIs may have different values for
-      the same token (used to address a few accidentally
-      incompatibilities between GL and GL ES).
+      the same token (used to address a few accidental incompatibilities
+      between GL and GL ES).
 \item \attr{type} - legal C suffix for the value to force it to a
       specific type. Currently only \code{u} and \code{ull} are used,
       for \code{unsigned} 32- and 64-bit integer values, respectively.
@@ -471,11 +490,11 @@ addition it may contain two semantic tags:
 \begin{verbatim}
 <commands>
     <command>
-        <proto>void <name>glBeginConditionalRenderNV</name></proto>
-        <param><ptype>GLuint</ptype> <name>id</name></param>
-        <param><ptype>GLenum</ptype> <name>mode</name></param>
-        <alias name="glBeginConditionalRender" />
-        <glx type="render" opcode="348" />
+	<proto>void <name>glBeginConditionalRenderNV</name></proto>
+	<param><ptype>GLuint</ptype> <name>id</name></param>
+	<param><ptype>GLenum</ptype> <name>mode</name></param>
+	<alias name="glBeginConditionalRender" />
+	<glx type="render" opcode="348" />
     </command>
 </commands>
 \end{verbatim}
@@ -525,12 +544,12 @@ this feature, as described below.
 \begin{verbatim}
 <feature api="gl" name="GL_VERSION_3_0" number="3.0">
     <require>
-        <enum name="GL_COMPARE_REF_TO_TEXTURE" />
-        <enum name="GL_CLIP_DISTANCE0" />
-        <command name="glEndTransformFeedback" />
+	<enum name="GL_COMPARE_REF_TO_TEXTURE" />
+	<enum name="GL_CLIP_DISTANCE0" />
+	<command name="glEndTransformFeedback" />
     </require>
     <require profile="compatibility">
-        <enum name="GL_INDEX" />
+	<enum name="GL_INDEX" />
     </require>
 </feature>
 \end{verbatim}
@@ -542,9 +561,9 @@ interfaces):
 \begin{verbatim}
 #ifndef GL_VERSION_3_0
 #define GL_VERSION_3_0 1
-#define GL_COMPARE_REF_TO_TEXTURE         0x884E
-#define GL_CLIP_DISTANCE0                 0x3000
-#define GL_INDEX                          0x8222
+#define GL_COMPARE_REF_TO_TEXTURE	  0x884E
+#define GL_CLIP_DISTANCE0		  0x3000
+#define GL_INDEX			  0x8222
 typedef void (APIENTRYP PFNGLENDTRANSFORMFEEDBACKPROC) (void);
 #ifdef GL_GLEXT_PROTOTYPES
 GLAPI void APIENTRY glEndTransformFeedback (void);
@@ -610,13 +629,13 @@ this extension, as described below.
 \begin{verbatim}
 <extensions>
     <extension name="GL_ARB_robustness" supported="gl|glcore" >
-        <require>
-            <enum name="GL_NO_ERROR" />
-            <command name="glGetGraphicsResetStatusARB" />
-        </require>
-        <require api="gl" profile="compatibility">
-            <command name="glGetnMapdvARB" />
-        </require>
+	<require>
+	    <enum name="GL_NO_ERROR" />
+	    <command name="glGetGraphicsResetStatusARB" />
+	</require>
+	<require api="gl" profile="compatibility">
+	    <command name="glGetnMapdvARB" />
+	</require>
     </extension>
 </extensions>
 \end{verbatim}
@@ -630,7 +649,7 @@ definitions of these GL interfaces):
 \begin{verbatim}
 #ifndef GL_ARB_robustness
 #define GL_ARB_robustness 1
-#define GL_NO_ERROR                       0
+#define GL_NO_ERROR			  0
 typedef GLenum (APIENTRYP PFNGLGETGRAPHICSRESETSTATUSARBPROC) (void);
 #ifdef GL_GLEXT_PROTOTYPES
 GLAPI GLenum APIENTRY glGetGraphicsResetStatusARB (void);
@@ -706,6 +725,23 @@ Zero or more of the following tags, in any order:
 
 \section{General Discussion}
 \label{general}
+
+
+\subsection{Stability of the XML Database and Schema}
+\label{general:stability}
+
+The new registry schema, scripts, and databases are evolving in response
+to feedback and to Khronos' own wishlist. This means the XML schema is
+subject to change, although most such change will probably be confined
+to adding attributes to existing tags. The XML databases such as
+\code{gl.xml} will evolve in response to schema changes, to new
+extensions and API versions, and to general cleanup, such as
+canonicalization of the XML or sorting of \tag{command} and
+\tag{extension} tags by name. Changes to the schema will be described in
+the change log of this document (see section~\ref{changelog}). Changes
+to the \code{.xml} files will be described in Subversion revision
+history.
+
 
 \subsection{Feature Enhancements to the Registry}
 \label{general:enhancements}
