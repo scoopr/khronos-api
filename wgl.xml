@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Copyright (c) 2013 The Khronos Group Inc.
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and/or associated documentation files (the
-"Materials"), to deal in the Materials without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Materials, and to
-permit persons to whom the Materials are furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Materials.
-
-THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
--->
-<!--
-This file, wgl.xml, is the WGL API Registry. The older ".spec" file
-format has been retired and will no longer be updated with new
-extensions and API versions. The canonical version of the registry,
-together with documentation, schema, and Python generator scripts used
-to generate C header files for WGL, can always be found in the Khronos
-Registry at
-    http://www.opengl.org/registry/
--->
-
 <registry>
+    <!--
+    Copyright (c) 2013 The Khronos Group Inc.
+    
+    Permission is hereby granted, free of charge, to any person obtaining a
+    copy of this software and/or associated documentation files (the
+    "Materials"), to deal in the Materials without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Materials, and to
+    permit persons to whom the Materials are furnished to do so, subject to
+    the following conditions:
+    
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Materials.
+    
+    THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
+    -->
+    <!--
+    This file, wgl.xml, is the WGL API Registry. The older ".spec" file
+    format has been retired and will no longer be updated with new
+    extensions and API versions. The canonical version of the registry,
+    together with documentation, schema, and Python generator scripts used
+    to generate C header files for WGL, can always be found in the Khronos
+    Registry at
+        http://www.opengl.org/registry/
+    -->
 
     <!-- SECTION: WGL type definitions. Does not include base Windows types. -->
 
@@ -331,7 +330,7 @@ Registry at
             <unused start="0x2060" end="0x206F" comment="Could be reclaimed"/>
     </enums>
 
-    <enums namespace="WGL" start="0x2070" end="0x209F" vendor="ARB" >
+    <enums namespace="WGL" start="0x2070" end="0x209F" vendor="ARB">
         <enum value="0x2060"        name="WGL_SAMPLE_BUFFERS_3DFX"/>
         <enum value="0x2061"        name="WGL_SAMPLES_3DFX"/>
         <enum value="0x2070"        name="WGL_BIND_TO_TEXTURE_RGB_ARB"/>
@@ -423,7 +422,7 @@ Registry at
             <unused start="0x20F1" end="0x219F"/>
     </enums>
 
-    <enums namespace="WGL" start="0x21A0" end="0x21AF" vendor="AMD" >
+    <enums namespace="WGL" start="0x21A0" end="0x21AF" vendor="AMD">
         <enum value="0x21A0"        name="WGL_TYPE_RGBA_FLOAT_ARB"/>
         <enum value="0x21A0"        name="WGL_TYPE_RGBA_FLOAT_ATI"/>
             <unused start="0x21A1"/>
