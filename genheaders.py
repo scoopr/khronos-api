@@ -31,12 +31,14 @@ from reg import *
 # registry <filename> - use specified XML registry instead of gl.xml
 # target - string name of target header, or all targets if None
 # timeit - time length of registry loading & header generation
+# validate - validate return & parameter group tags against <group>
 debug   = False
 dump    = False
 profile = False
 protect = True
 target  = None
 timeit  = False
+validate= False
 # Default input / log files
 errFilename = None
 diagFilename = 'diag.txt'
@@ -66,6 +68,9 @@ if __name__ == '__main__':
         elif (arg == '-time'):
             print('Enabling timing (-time)', file=sys.stderr)
             timeit = True
+        elif (arg == '-validate'):
+            print('Enabling group validation (-validate)', file=sys.stderr)
+            validate = True
         elif (arg[0:1] == '-'):
             print('Unrecognized argument:', arg, file=sys.stderr)
             exit(1)
@@ -95,6 +100,9 @@ endTimer('Time to make ElementTree =')
 startTimer()
 reg.loadElementTree(tree)
 endTimer('Time to parse ElementTree =')
+
+if (validate):
+    reg.validateGroups()
 
 if (dump):
     print('***************************************')

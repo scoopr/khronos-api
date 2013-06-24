@@ -151,12 +151,12 @@
 
     <enums namespace="EGL" start="0x0000" end="0x2FFF" vendor="ARB"/>
 
-    <enums namespace="EGL" class="Boolean" vendor="ARB">
+    <enums namespace="EGL" group="Boolean" vendor="ARB">
         <enum value="0"           name="EGL_FALSE"/>
         <enum value="1"           name="EGL_TRUE"/>
     </enums>
 
-    <enums namespace="EGL" class="SpecialNumbers"  vendor="ARB" comment="Tokens whose numeric value is intrinsically meaningful">
+    <enums namespace="EGL" group="SpecialNumbers"  vendor="ARB" comment="Tokens whose numeric value is intrinsically meaningful">
         <enum value="((EGLint)-1)"                        name="EGL_DONT_CARE"/>
         <enum value="((EGLint)-1)"                        name="EGL_UNKNOWN"/>
         <enum value="-1"                                  name="EGL_NO_NATIVE_FENCE_FD_ANDROID"/>

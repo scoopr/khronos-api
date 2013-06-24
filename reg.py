@@ -24,31 +24,6 @@
 import io,os,re,string,sys
 from lxml import etree
 
-### # Test if 'enum' tags in a registry object are in numerical order
-### # regobj is a Registry object
-### # This should only check ordering within each class of enum, and
-### #   should respect the enum 'type' field, if present
-### def checkOrder(regobj):
-###     reg = regobj.soup.registry
-###
-###     lastName = ''
-###     lastValue = 0
-###     enums = reg.find_all('enum')
-###     # Loop over enums, but only those with values assigned
-###     for e in enums:
-###         name = e['name']
-###         # Check if the value is in order
-###         if 'value' in e.attrs.keys():
-###             value = int(e['value'],0)
-###             if value == lastValue:
-###                 # Might try and compare enum names up to the vendor suffix
-###                 # print('Interpreting alias:', lastName, '==', name)
-###                 pass
-###             elif value < lastValue:
-###                 print('Value out of order:', lastName, '=', hex(lastValue), 'IS >=', name, '= ', hex(value))
-###             lastName = name
-###             lastValue = value
-
 # noneStr - returns string argument, or "" if argument is None.
 # Used in converting lxml Elements into text.
 #   str - string to convert
@@ -72,7 +47,7 @@ def noneStr(str):
 #   <remove profile='core'> will match
 #   <remove profile='compatibility'> will not match
 # Possible match conditions:
-#   Requested   Registry
+#   Requested   Element
 #   Profile     Profile
 #   ---------   --------
 #   None        None        Always matches
@@ -107,7 +82,7 @@ def matchAPIProfile(api, profile, elem):
     return True
 
 # BaseInfo - base class for information about a registry feature
-# (type/enum/command/API/extension).
+# (type/group/enum/command/API/extension).
 #   required - should this feature be defined during header generation
 #     (has it been removed by a profile or version)?
 #   declared - has this feature been defined already?
@@ -130,6 +105,14 @@ class TypeInfo(BaseInfo):
     """Represents the state of a registry type"""
     def __init__(self, elem):
         BaseInfo.__init__(self, elem)
+
+# GroupInfo - registry information about a group of related enums.
+#   enums - dictionary of enum names which are in the group
+class GroupInfo(BaseInfo):
+    """Represents the state of a registry enumerant group"""
+    def __init__(self, elem):
+        BaseInfo.__init__(self, elem)
+        self.enums = {}
 
 # EnumInfo - registry information about an enum
 #   type - numeric type of the value of the <enum> tag
@@ -650,6 +633,7 @@ class COutputGenerator(OutputGenerator):
 # Members
 #   tree - ElementTree containing the root <registry>
 #   typedict - dictionary of TypeInfo objects keyed by type name
+#   groupdict - dictionary of GroupInfo objects keyed by group name
 #   enumdict - dictionary of EnumInfo objects keyed by enum name
 #   cmddict - dictionary of CmdInfo objects keyed by command name
 #   apidict - dictionary of <api> Elements keyed by API name
@@ -673,6 +657,8 @@ class COutputGenerator(OutputGenerator):
 #     and profile specified in genOpts, but only for the versions and
 #     extensions specified there.
 #   apiReset() - call between calls to apiGen() to reset internal state
+#   validateGroups() - call to verify that each <proto> or <param>
+#     with a 'group' attribute matches an actual existing group.
 # Private methods
 #   addElementInfo(elem,info,infoName,dictionary) - add feature info to dict
 #   lookupElementInfo(fname,dictionary) - lookup feature info in dict
@@ -681,6 +667,7 @@ class Registry:
     def __init__(self):
         self.tree         = None
         self.typedict     = {}
+        self.groupdict    = {}
         self.enumdict     = {}
         self.cmddict      = {}
         self.apidict      = {}
@@ -704,13 +691,13 @@ class Registry:
         self.gen = gen
     # addElementInfo - add information about an element to the
     # corresponding dictionary
-    #   elem - <type>/<enum>/<command>/<feature>/<extension> Element
-    #   info - corresponding {Type|Enum|Cmd|Feature}Info object
-    #   infoName - 'type' / 'enum' / 'command' / 'feature' / 'extension'
-    #   dictionary - self.{type|enum|cmd|api|ext}dict
+    #   elem - <type>/<group>/<enum>/<command>/<feature>/<extension> Element
+    #   info - corresponding {Type|Group|Enum|Cmd|Feature}Info object
+    #   infoName - 'type' / 'group' / 'enum' / 'command' / 'feature' / 'extension'
+    #   dictionary - self.{type|group|enum|cmd|api|ext}dict
     # If the Element has an 'api' attribute, the dictionary key is the
-    # tuple (name,api). If not, the key is name. 'name' is an attribute
-    # of the Element
+    # tuple (name,api). If not, the key is the name. 'name' is an 
+    # attribute of the Element
     def addElementInfo(self, elem, info, infoName, dictionary):
         if ('api' in elem.attrib):
             key = (elem.get('name'),elem.get('api'))
@@ -754,6 +741,14 @@ class Registry:
             if (type.get('name') == None):
                 type.attrib['name'] = type.find('name').text
             self.addElementInfo(type, TypeInfo(type), 'type', self.typedict)
+        #
+        # Create dictionary of registry groups from toplevel <groups> tags.
+        #
+        # There's usually one <groups> block; more are OK.
+        # Required <group> attributes: 'name'
+        self.groupdict = {}
+        for group in self.reg.findall('groups/group'):
+            self.addElementInfo(group, GroupInfo(group), 'group', self.groupdict)
         #
         # Create dictionary of registry enums from toplevel <enums> tags
         #
@@ -801,6 +796,10 @@ class Registry:
         for name in self.typedict:
             tobj = self.typedict[name]
             print('    Type', name, '->', etree.tostring(tobj.elem)[0:maxlen], file=filehandle)
+        print('// Groups', file=filehandle)
+        for name in self.groupdict:
+            gobj = self.groupdict[name]
+            print('    Group', name, '->', etree.tostring(gobj.elem)[0:maxlen], file=filehandle)
         print('// Enums', file=filehandle)
         for name in self.enumdict:
             eobj = self.enumdict[name]
@@ -1113,3 +1112,41 @@ class Registry:
             self.cmddict[cmd].resetState()
         for cmd in self.apidict:
             self.apidict[cmd].resetState()
+    #
+    # validateGroups - check that group= attributes match actual groups
+    #
+    def validateGroups(self):
+        """Validate group= attributes on <param> and <proto> tags"""
+        # Keep track of group names not in <group> tags
+        badGroup = {}
+        self.gen.logMsg('diag', '*** VALIDATING GROUP ATTRIBUTES ***')
+        for cmd in self.reg.findall('commands/command'):
+            proto = cmd.find('proto')
+            funcname = cmd.find('proto/name').text
+            if ('group' in proto.attrib.keys()):
+                group = proto.get('group')
+                # self.gen.logMsg('diag', '*** Command ', funcname, ' has return group ', group)
+                if (group not in self.groupdict.keys()):
+                    # self.gen.logMsg('diag', '*** Command ', funcname, ' has UNKNOWN return group ', group)
+                    if (group not in badGroup.keys()):
+                        badGroup[group] = 1
+                    else:
+                        badGroup[group] = badGroup[group] +  1
+            for param in cmd.findall('param'):
+                pname = param.find('name')
+                if (pname != None):
+                    pname = pname.text
+                else:
+                    pname = type.get('name')
+                if ('group' in param.attrib.keys()):
+                    group = param.get('group')
+                    if (group not in self.groupdict.keys()):
+                        # self.gen.logMsg('diag', '*** Command ', funcname, ' param ', pname, ' has UNKNOWN group ', group)
+                        if (group not in badGroup.keys()):
+                            badGroup[group] = 1
+                        else:
+                            badGroup[group] = badGroup[group] +  1
+        if (len(badGroup.keys()) > 0):
+            self.gen.logMsg('diag', '*** SUMMARY OF UNRECOGNIZED GROUPS ***')
+            for key in sorted(badGroup.keys()):
+                self.gen.logMsg('diag', '    ', key, ' occurred ', badGroup[key], ' times')

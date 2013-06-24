@@ -300,7 +300,6 @@ GL_API void GL_APIENTRY glTexGenxvOES (GLenum coord, GLenum pname, const GLfixed
 
 #ifndef GL_OES_framebuffer_object
 #define GL_OES_framebuffer_object 1
-#define GL_NONE_OES                       0
 #define GL_FRAMEBUFFER_OES                0x8D40
 #define GL_RENDERBUFFER_OES               0x8D41
 #define GL_RGBA4_OES                      0x8056

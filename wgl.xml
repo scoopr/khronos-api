@@ -167,7 +167,7 @@
          tokens are reused for different purposes in different
          extensions and API versions). -->
 
-    <enums namespace="WGL" class="SpecialNumbers" vendor="MS">
+    <enums namespace="WGL" group="SpecialNumbers" vendor="MS">
         <enum value="0"           name="WGL_FONT_LINES"/>
         <enum value="1"           name="WGL_FONT_POLYGONS"/>
     </enums>

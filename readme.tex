@@ -15,7 +15,7 @@
 
 \title{The Khronos XML API Registry}
 \author{Jon Leech}
-\date{Last updated 2013/06/19}
+\date{Last updated 2013/06/24}
 \maketitle
 
 \begin{abstract}
@@ -196,15 +196,23 @@ Zero or more of each of the following tags, normally in this order
 (although order shouldn't be important):
 
 \begin{itemize}
-\item \tag{types} - defines API types. Usually only one tag is used.
-\item \tag{enums} - defines API enumerants (tokens). Usually multiple
-      tags are used.
-\item \tag{commands} - defines API commands (functions). Usually only
-      one tag is used.
-\item \tag{feature} - defines API feature interfaces (API versions, more
-      or less). One tag per feature set.
-\item \tag{extensions} - defines API extension interfaces. Usually
-      only one tag is used, wrapping many extensions.
+\item \tag{comment} - Contains arbitrary text, such as a copyright
+      statement. Unused.
+\item \tag{types} (see section~\ref{tag:types}) - defines API types.
+      Usually only one tag is used.
+\item \tag{groups} (see section~\ref{tag:groups}) - defines named groups
+      of tokens for possible parameter validation in API bindings for
+      languages other than C. Usually only one tag is used.
+\item \tag{enums} (see section~\ref{tag:enums}) - defines API enumerants
+      (tokens). Usually multiple tags are used.
+\item \tag{commands} (see section~\ref{tag:commands}) - defines API
+      commands (functions). Usually only one tag is used.
+\item \tag{feature} (see section~\ref{tag:feature}) - defines API
+      feature interfaces (API versions, more or less). One tag per
+      feature set.
+\item \tag{extensions} (see section~\ref{tag:extensions}) - defines API
+      extension interfaces. Usually only one tag is used, wrapping many
+      extensions.
 \end{itemize}
 
 
@@ -259,6 +267,67 @@ typedef ptrdiff_t GLintptr;
 \end{verbatim}
 
 
+\section{Enumerant Groups (\tag{groups} tag)}
+\label{tag:groups}
+
+The \tag{groups} tags contain individual \tag{group} tags describing
+some of the group annotations used for return and parameter types.
+
+\subsection{Attributes of \tag{groups} tags}
+
+None.
+
+\subsection{Contents of \tag{groups} tags}
+
+Each \tag{groups} block contains zero or more \tag{group} tags, in
+arbitrary order (although they are typically ordered by group name, to
+improve human readability).
+
+\subsection{Example of \tag{groups} tags}
+
+\begin{verbatim}
+<groups>
+    <group name="AccumOp">
+        <enum name="GL_ACCUM"/>
+    </group>
+
+    <group name="AttribMask">
+        <enum name="GL_ACCUM_BUFFER_BIT"/>
+        <enum name="GL_ALL_ATTRIB_BITS"/>
+    </group>
+</groups>
+\end{verbatim}
+
+
+\section{Enumerant Group (\tag{group} tag)}
+\label{tag:group}
+
+Each \tag{group} tag defines a single group annotation.
+
+\subsection{Attributes of \tag{group} tags}
+
+\begin{itemize}
+\item \attr{name} - group name, an arbitrary string for grouping a set
+      of enums together within a broader namespace.
+\end{itemize}
+
+\subsection{Contents of \tag{group} tags}
+
+\tag{group} tags may contain zero or more \tag{enum} tags. Each
+\tag{enum} tag may contain only a \attr{name} attribute, which should
+correspond to a \tag{enum} definition in an \tag{enums} block.
+
+\subsection{Meaning of \tag{group} tags}
+\label{tag:group:meaning}
+
+If a \tag{proto} or \tag{param} tag of a \tag{command} has a
+\attr{group} attribute defined, and that attribute matches a \tag{group}
+name, then the return type or parameter type is considered to be
+constrained to values defined by the corresponding \tag{group}. C
+language bindings do not attempt to enforce this constraint in any way,
+but other language bindings may try to do so.
+
+
 \section{Enumerant Blocks (\tag{enums} tag)}
 \label{tag:enums}
 
@@ -272,10 +341,6 @@ token (enumerant) names used in the API.
       together, currently unused but typically something like \code{GL}
       for all enums in the OpenGL / OpenGL ES shared namespace. Multiple
       \tag{enums} tags can share the same namespace.
-\item \attr{class} - a string for grouping this set of enums together in
-      the broader namespace, currently unused. Roughly corresponds to
-      some of the functional \code{enum:} descriptions, such as
-      \code{PixelFormat}, in the old \code{enum.spec} files.
 \item \attr{type} - a string describing the data type of the values of
       this group of enums, currently unused. The only string used at
       present in the is \code{bitmask}.
@@ -292,7 +357,7 @@ token (enumerant) names used in the API.
 
 \subsection{Contents of \tag{enums} tags}
 
-Each \tag{enums} block contains zero of more \tag{enum} and \tag{unused}
+Each \tag{enums} block contains zero or more \tag{enum} and \tag{unused}
 tags, in arbitrary order (although they are typically ordered by sorting
 on enumerant values, to improve human readability).
 
@@ -305,7 +370,7 @@ on enumerant values, to improve human readability).
 </enums>
 <enums namespace="GL" start="0x80E0" end="0x810F" vendor="MS">
     <enum value="0x80E0"      name="GL_BGR" />
-	<unused start="0x80E1" end="0x810F" />
+        <unused start="0x80E1" end="0x810F" />
 </enums>
 \end{verbatim}
 
@@ -315,7 +380,7 @@ required, this results in
 \begin{verbatim}
 #define GL_CURRENT_BIT 0x00000001
 #define GL_POINT_BIT   0x00000001
-#define GL_BGR	       0x80E0
+#define GL_BGR         0x80E0
 \end{verbatim}
 
 
@@ -439,7 +504,12 @@ The \tag{proto} tag defines the return type and name of a command.
 
 \subsubsection{Attributes of \tag{proto} tags}
 
-None.
+\begin{itemize}
+\item \attr{group} - group name, an arbitrary string.
+\end{itemize}
+
+If the group name is defined, it may be interpreted as described in
+section~\ref{tag:group:meaning}.
 
 \subsubsection{Contents of \tag{proto} tags}
 
@@ -458,7 +528,6 @@ it may contain two semantic tags:
       being described.
 \end{itemize}
 
-
 \subsection{Command parameter (\tag{param} tags)}
 \label{tag:command:param}
 
@@ -466,7 +535,17 @@ The \tag{param} tag defines the type and name of a parameter.
 
 \subsubsection{Attributes of \tag{param} tags}
 
-None.
+\begin{itemize}
+\item \attr{group} - group name, an arbitrary string.
+\item \attr{len} - parameter length, either an integer specifying the
+      number of elements of the parameter \tag{ptype}, or a complex
+      string expression with poorly defined syntax, usually representing
+      a length that is computed as a combination of other command
+      parameter values, and possibly current GL state as well.
+\end{itemize}
+
+If the group name is defined, it may be interpreted as described in
+section~\ref{tag:group:meaning}.
 
 \subsubsection{Contents of \tag{param} tags}
 
@@ -490,11 +569,11 @@ addition it may contain two semantic tags:
 \begin{verbatim}
 <commands>
     <command>
-	<proto>void <name>glBeginConditionalRenderNV</name></proto>
-	<param><ptype>GLuint</ptype> <name>id</name></param>
-	<param><ptype>GLenum</ptype> <name>mode</name></param>
-	<alias name="glBeginConditionalRender" />
-	<glx type="render" opcode="348" />
+        <proto>void <name>glBeginConditionalRenderNV</name></proto>
+        <param><ptype>GLuint</ptype> <name>id</name></param>
+        <param><ptype>GLenum</ptype> <name>mode</name></param>
+        <alias name="glBeginConditionalRender" />
+        <glx type="render" opcode="348" />
     </command>
 </commands>
 \end{verbatim}
@@ -544,12 +623,12 @@ this feature, as described below.
 \begin{verbatim}
 <feature api="gl" name="GL_VERSION_3_0" number="3.0">
     <require>
-	<enum name="GL_COMPARE_REF_TO_TEXTURE" />
-	<enum name="GL_CLIP_DISTANCE0" />
-	<command name="glEndTransformFeedback" />
+        <enum name="GL_COMPARE_REF_TO_TEXTURE" />
+        <enum name="GL_CLIP_DISTANCE0" />
+        <command name="glEndTransformFeedback" />
     </require>
     <require profile="compatibility">
-	<enum name="GL_INDEX" />
+        <enum name="GL_INDEX" />
     </require>
 </feature>
 \end{verbatim}
@@ -561,9 +640,9 @@ interfaces):
 \begin{verbatim}
 #ifndef GL_VERSION_3_0
 #define GL_VERSION_3_0 1
-#define GL_COMPARE_REF_TO_TEXTURE	  0x884E
-#define GL_CLIP_DISTANCE0		  0x3000
-#define GL_INDEX			  0x8222
+#define GL_COMPARE_REF_TO_TEXTURE         0x884E
+#define GL_CLIP_DISTANCE0                 0x3000
+#define GL_INDEX                          0x8222
 typedef void (APIENTRYP PFNGLENDTRANSFORMFEEDBACKPROC) (void);
 #ifdef GL_GLEXT_PROTOTYPES
 GLAPI void APIENTRY glEndTransformFeedback (void);
@@ -629,13 +708,13 @@ this extension, as described below.
 \begin{verbatim}
 <extensions>
     <extension name="GL_ARB_robustness" supported="gl|glcore" >
-	<require>
-	    <enum name="GL_NO_ERROR" />
-	    <command name="glGetGraphicsResetStatusARB" />
-	</require>
-	<require api="gl" profile="compatibility">
-	    <command name="glGetnMapdvARB" />
-	</require>
+        <require>
+            <enum name="GL_NO_ERROR" />
+            <command name="glGetGraphicsResetStatusARB" />
+        </require>
+        <require api="gl" profile="compatibility">
+            <command name="glGetnMapdvARB" />
+        </require>
     </extension>
 </extensions>
 \end{verbatim}
@@ -649,7 +728,7 @@ definitions of these GL interfaces):
 \begin{verbatim}
 #ifndef GL_ARB_robustness
 #define GL_ARB_robustness 1
-#define GL_NO_ERROR			  0
+#define GL_NO_ERROR                       0
 typedef GLenum (APIENTRYP PFNGLGETGRAPHICSRESETSTATUSARBPROC) (void);
 #ifdef GL_GLEXT_PROTOTYPES
 GLAPI GLenum APIENTRY glGetGraphicsResetStatusARB (void);
@@ -753,26 +832,124 @@ to be much more responsive to bugs filed in the Khronos public bugzilla
 now that there's a more modern and maintainable framework to build on.
 
 
-\subsection{Feature Regressions Relative to \code{.spec} Files}
-\label{general:regressions}
+\subsection{Type Annotations and Relationship to \code{.spec} Files}
+\label{general:annotations}
 
-Some information from the \code{.spec} files is not included because it is
-inaccurate (\code{version} tags from \code{.spec} rarely had anything to do
-with reality, nor was their actual meaning well-defined) or cannot be easily
-represented (such as the (supposed) length of array parameters). We will add
-some of this information back in, probably via new attributes in the schema,
-as the need becomes apparent and the information can be validated.
+The initial releases of the XML Registry did not include type annotation
+and array length information from the old \code{.spec} files, which
+generated a number of complaints from people writing bindings of OpenGL
+to languages other than C. The majority of these annotations have now
+been added to the XML, in the form of \tag{group} tags (see
+section~\ref{tag:group}) defining groups of related enumerants,
+\attr{group} attributes on \tag{proto} and \tag{param} tags specifying
+that the corresponding return type belongs to a group, and \attr{len}
+attributes on \tag{param} tags specifying the array length of the
+corresponding parameter.
 
-It would be a big job to go backwards from the XML to \code{.spec} formats,
-and we don't want to support this or enhance the \code{.spec} files going
-forward. Hopefully, people using the \code{.spec} files for other purposes
-will be able to transition to the XML registry.
+There are many caveats regarding these annotations. For the most part
+they date from SGI's OpenGL 1.1 implementation, and have not been
+updated. The defined \tag{group}s therefore do not cover many API
+parameters which {\bf could} be given a group, and in many cases, the
+defined \tag{group}s have not been updated to add new enumerants from
+later versions of OpenGL and OpenGL extensions. The group names are
+often somewhat misleading (with imbedded vendor extension tags, while
+the corresponding features have been promoted).
+
+The \tag{group}s added to \code{gl.xml} are the enumerant groups defined
+in \code{enum.spec}, and \code{enumext.spec}. Many additional group
+names were used in the annotations in \code{gl.spec}, and they
+fall in several categories discussed below.
+
+
+\subsubsection{Simple API Type Aliases}
+
+Group names that were simply an alias for a GL type have been left
+entirely out of \code{gl.xml}, since they offer no useful additional
+information.
+
+For example, a parameter described as \code{UInt32} in \code{gl.spec} is
+not annotated with \code{group="UInt32"} in \code{gl.xml}, because this
+offers no information about the parameter not already present in its
+declaration as \code{<ptype>GLuint</ptype>}.
+
+A few examples of such groups are \code{cl\_context},
+\code{handleARB}, \code{Int32}, and \code{sync}.
+
+
+\subsubsection{Numeric Constraints}
+
+Group names representing some type of numerical constraint on a value
+are retained in \tag{proto} and \tag{param} \attr{group} attributes, but
+no definition exists. This is because the existing \tag{group} mechanism
+can only describe constraints to specific enumerant names.
+
+This is not a regression relative to the \code{.spec} files, which also
+did not describe the meaning of these groups.
+
+A few examples of such groups are \code{CheckedFloat32},
+\code{ClampedFixed}, and \code{CoordD}.
+
+
+\subsubsection{GL Object Names}
+
+Group names representing an object name obtained from e.g. a
+\code{glGen*} command, such as a display list name, are retained in in
+\tag{proto} and \tag{param} \attr{group} attributes, but no definition
+exists. This is because the existing \tag{group} mechanism can only
+describe constraints to specific enumerant names.
+
+This is not a regression relative to the \code{.spec} files, which also
+did not describe the meaning of these groups.
+
+A few examples of such groups are \code{List} and \code{Path}.
+
+
+\subsubsection{Groups Not Defined Yet}
+
+Group names representing enumerant groups which were not defined in
+\code{enum.spec} and \code{enumext.spec} are retained in \tag{proto} and
+\tag{param} \attr{group} attributes, but no definition exists. Such
+groups usually are a result of vendors contributing \code{gl.spec}
+entries for an extension without contributing corresponding
+\code{enum.spec} entries.
+
+This is not a regression relative to the \code{.spec} files, which also
+did not describe the meaning of these groups.
+
+A few examples of such groups are \code{ArrayObjectPNameATI},
+\code{BinormalPointerTypeEXT}, and \code{SpriteParameterNameSGIX}.
+
+
+\subsubsection{Other Groups}
+
+There are probably a few groups which are present in \code{gl.xml} but
+should not be. These can be gradually cleaned up over time.
+
+
+\subsubsection{Validating Groups}
+
+The \code{genheaders.py} script has been enhanced to allow validating
+groups during header generation. Invoking it with the
+\code{-validate} option, for example via:
+
+\code{\$ genheaders.py -validate -registry gl.xml}
+
+\noindent will generate a text dump on standard output showing all
+parameter type \attr{group} attributes which do {\bf not} have
+corresponding \tag{group} tags.
 
 
 \section{Change Log}
 \label{changelog}
 
 \begin{itemize}
+\item 2013/06/24 - Add \tag{groups} and \tag{group} tags, renamed
+      \tag{enums} attribute \attr{class} to \attr{group}, and add
+      parameter type annotation attributes \attr{group} and \attr{len}
+      to both \tag{proto} and \tag{param}. Add
+      section~\ref{general:annotations} discussing limitations of these
+      annotations. Still need to add examples of the annotation
+      attributes.
 \item 2013/06/19 - Added \tag{extensions} tag block as a wrapper around
       groups of \tag{extension} tags, to ease XML transformations such
       as sorting extensions by name.
