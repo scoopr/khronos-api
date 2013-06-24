@@ -1,11 +1,20 @@
 \documentclass{article}
-% \EnableCrossrefs
-% \CodelineIndex
+
+% Various packages of possible use. {index} creates problems for some reason.
+% \usepackage{index}
+\def\specpdftitle{The Khronos XML API Registry}
+\usepackage[pdftex,bookmarksnumbered=true,linktocpage,plainpages=false,pdftitle={\specpdftitle},colorlinks=true]{hyperref}
+\usepackage{amsmath,enumerate,epsfig,framed,mdframed,multicol,longtable,times,url}
+\usepackage[normalem]{ulem}
+% underscore allows use of _ instead of \_ in text. [strings] allows _ in file names
+\usepackage[strings]{underscore}
+\usepackage[breakwords,fit]{truncate}
+
 \makeatletter
 \makeatother
 \makeindex
 
-%    Some commonly used abbreviations
+% Some commonly used abbreviations
 
 \def\code#1{{\tt #1}}
 \def\tag#1{{\tt <#1>\index{<#1>}}}
@@ -26,7 +35,8 @@ scripts to generate C header files. The underlying XML files and scripts
 can be obtained starting on the OpenGL.org registry pages at URL
 
 \begin{center}
-{\tt http://www.opengl.org/registry}
+{\bf \href{http://www.opengl.org/registry/}
+	  {http://www.opengl.org/registry/}}
 \end{center}
 
 \end{abstract}
@@ -71,7 +81,8 @@ You can get the processed C header files from the registry pages on the
 OpenGL.org webserver at URL
 
 \begin{center}
-{\tt http://www.opengl.org/registry}
+{\bf \href{http://www.opengl.org/registry/}
+	  {http://www.opengl.org/registry/}}
 \end{center}
 
 However, to modify the XML database or the generator scripts for other
@@ -79,7 +90,10 @@ purposes, you'll need to install a Subversion client and download
 the registry subrepository at
 
 \begin{center}
-{\tt https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/api/}
+\end{center}
+\begin{center}
+{\bf \href{https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/api/}
+	  {https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/api/}}
 \end{center}
 
 
@@ -288,12 +302,12 @@ improve human readability).
 \begin{verbatim}
 <groups>
     <group name="AccumOp">
-        <enum name="GL_ACCUM"/>
+	<enum name="GL_ACCUM"/>
     </group>
 
     <group name="AttribMask">
-        <enum name="GL_ACCUM_BUFFER_BIT"/>
-        <enum name="GL_ALL_ATTRIB_BITS"/>
+	<enum name="GL_ACCUM_BUFFER_BIT"/>
+	<enum name="GL_ALL_ATTRIB_BITS"/>
     </group>
 </groups>
 \end{verbatim}
@@ -370,7 +384,7 @@ on enumerant values, to improve human readability).
 </enums>
 <enums namespace="GL" start="0x80E0" end="0x810F" vendor="MS">
     <enum value="0x80E0"      name="GL_BGR" />
-        <unused start="0x80E1" end="0x810F" />
+	<unused start="0x80E1" end="0x810F" />
 </enums>
 \end{verbatim}
 
@@ -380,7 +394,7 @@ required, this results in
 \begin{verbatim}
 #define GL_CURRENT_BIT 0x00000001
 #define GL_POINT_BIT   0x00000001
-#define GL_BGR         0x80E0
+#define GL_BGR	       0x80E0
 \end{verbatim}
 
 
@@ -404,9 +418,14 @@ Each \tag{enum} tag defines a single GL (or other API) token.
       for \code{unsigned} 32- and 64-bit integer values, respectively.
       Separated from the \attr{value} field since this eases parsing and
       sorting of values, and is rarely used.
-\item \attr{alias} - name of another enumerant this is an alias
-      (semantic equivalent) of, used where token names have been changed
-      as a result of profile changes or for consistency purposes.
+\item \attr{alias} - name of another enumerant this is an alias of, used
+      where token names have been changed as a result of profile changes
+      or for consistency purposes. An enumerant alias is simply a
+      different \attr{name} for the exact same \attr{value}. At present,
+      enumerants which are promoted from extension to core API status
+      are not tagged as aliases - just enumerants tagged as aliases in
+      the {\em Changed Tokens} sections of appendices to the OpenGL
+      Specification. This might change in the future.
 \end{itemize}
 
 \subsection{Contents of \tag{enum} tags}
@@ -484,9 +503,12 @@ tag are optional and may be in any order:
 
 \begin{itemize}
 \item \tag{alias} has no attributes and contains a string which is the
-      name of another command this command is a semantic alias of,
-      typically used when promoting a function from extension to ARB or
-      ARB to API status.
+      name of another command this command is an alias of, used when
+      promoting a function from extension to ARB or ARB to API status. A
+      command alias describes the case where there are two function
+      names which resolve to the {\bf same} client library code, so (for
+      example) the case where a command is promoted but is also given
+      different GLX protocol would {\bf not} be an alias in this sense.
 \item \tag{vecequiv} has no attributes and contains a string which is
       the name of another command which is the {\em vector equivalent}
       of this command. For example, the vector equivalent of
@@ -569,11 +591,11 @@ addition it may contain two semantic tags:
 \begin{verbatim}
 <commands>
     <command>
-        <proto>void <name>glBeginConditionalRenderNV</name></proto>
-        <param><ptype>GLuint</ptype> <name>id</name></param>
-        <param><ptype>GLenum</ptype> <name>mode</name></param>
-        <alias name="glBeginConditionalRender" />
-        <glx type="render" opcode="348" />
+	<proto>void <name>glBeginConditionalRenderNV</name></proto>
+	<param><ptype>GLuint</ptype> <name>id</name></param>
+	<param><ptype>GLenum</ptype> <name>mode</name></param>
+	<alias name="glBeginConditionalRender" />
+	<glx type="render" opcode="348" />
     </command>
 </commands>
 \end{verbatim}
@@ -623,12 +645,12 @@ this feature, as described below.
 \begin{verbatim}
 <feature api="gl" name="GL_VERSION_3_0" number="3.0">
     <require>
-        <enum name="GL_COMPARE_REF_TO_TEXTURE" />
-        <enum name="GL_CLIP_DISTANCE0" />
-        <command name="glEndTransformFeedback" />
+	<enum name="GL_COMPARE_REF_TO_TEXTURE" />
+	<enum name="GL_CLIP_DISTANCE0" />
+	<command name="glEndTransformFeedback" />
     </require>
     <require profile="compatibility">
-        <enum name="GL_INDEX" />
+	<enum name="GL_INDEX" />
     </require>
 </feature>
 \end{verbatim}
@@ -640,9 +662,9 @@ interfaces):
 \begin{verbatim}
 #ifndef GL_VERSION_3_0
 #define GL_VERSION_3_0 1
-#define GL_COMPARE_REF_TO_TEXTURE         0x884E
-#define GL_CLIP_DISTANCE0                 0x3000
-#define GL_INDEX                          0x8222
+#define GL_COMPARE_REF_TO_TEXTURE	  0x884E
+#define GL_CLIP_DISTANCE0		  0x3000
+#define GL_INDEX			  0x8222
 typedef void (APIENTRYP PFNGLENDTRANSFORMFEEDBACKPROC) (void);
 #ifdef GL_GLEXT_PROTOTYPES
 GLAPI void APIENTRY glEndTransformFeedback (void);
@@ -708,13 +730,13 @@ this extension, as described below.
 \begin{verbatim}
 <extensions>
     <extension name="GL_ARB_robustness" supported="gl|glcore" >
-        <require>
-            <enum name="GL_NO_ERROR" />
-            <command name="glGetGraphicsResetStatusARB" />
-        </require>
-        <require api="gl" profile="compatibility">
-            <command name="glGetnMapdvARB" />
-        </require>
+	<require>
+	    <enum name="GL_NO_ERROR" />
+	    <command name="glGetGraphicsResetStatusARB" />
+	</require>
+	<require api="gl" profile="compatibility">
+	    <command name="glGetnMapdvARB" />
+	</require>
     </extension>
 </extensions>
 \end{verbatim}
@@ -728,7 +750,7 @@ definitions of these GL interfaces):
 \begin{verbatim}
 #ifndef GL_ARB_robustness
 #define GL_ARB_robustness 1
-#define GL_NO_ERROR                       0
+#define GL_NO_ERROR			  0
 typedef GLenum (APIENTRYP PFNGLGETGRAPHICSRESETSTATUSARBPROC) (void);
 #ifdef GL_GLEXT_PROTOTYPES
 GLAPI GLenum APIENTRY glGetGraphicsResetStatusARB (void);
@@ -831,6 +853,14 @@ hosting additional processing scripts for other purposes. We're hoping
 to be much more responsive to bugs filed in the Khronos public bugzilla
 now that there's a more modern and maintainable framework to build on.
 
+A partial wishlist follows:
+
+\begin{itemize}
+\item Enhance \tag{command} \tag{alias} tags to describe more relaxed
+      sorts of aliases, such as commands equivalent in behavior and
+      interface, but using different GLX protocol (this might be called
+      a {\em client-side alias} or something of the sort).
+\end{itemize}
 
 \subsection{Type Annotations and Relationship to \code{.spec} Files}
 \label{general:annotations}
