@@ -14952,7 +14952,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>vaobj</name></param>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param><ptype>GLvoid</ptype> *<name>*param</name></param>
+            <param><ptype>GLvoid</ptype> **<name>param</name></param>
         </command>
         <command>
             <proto>void <name>glGetVertexArrayPointervEXT</name></proto>
