@@ -9505,7 +9505,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glCompileShaderIncludeARB</name></proto>
             <param><ptype>GLuint</ptype> <name>shader</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
-            <param len="count">const <ptype>GLchar</ptype> **<name>path</name></param>
+            <param len="count">const <ptype>GLchar</ptype> *const*<name>path</name></param>
             <param len="count">const <ptype>GLint</ptype> *<name>length</name></param>
         </command>
         <command>
@@ -14294,7 +14294,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetQueryObjecti64vEXT</name></proto>
             <param><ptype>GLuint</ptype> <name>id</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLint64EXT</ptype> *<name>params</name></param>
+            <param len="pname"><ptype>GLint64</ptype> *<name>params</name></param>
             <glx type="vendor" opcode="1328"/>
         </command>
         <command>
@@ -14328,7 +14328,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetQueryObjectui64vEXT</name></proto>
             <param><ptype>GLuint</ptype> <name>id</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLuint64EXT</ptype> *<name>params</name></param>
+            <param len="pname"><ptype>GLuint64</ptype> *<name>params</name></param>
             <glx type="vendor" opcode="1329"/>
         </command>
         <command>
