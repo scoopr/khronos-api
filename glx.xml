@@ -2,7 +2,7 @@
 <registry>
     <!--
     Copyright (c) 2013 The Khronos Group Inc.
-    
+
     Permission is hereby granted, free of charge, to any person obtaining a
     copy of this software and/or associated documentation files (the
     "Materials"), to deal in the Materials without restriction, including
@@ -10,10 +10,10 @@
     distribute, sublicense, and/or sell copies of the Materials, and to
     permit persons to whom the Materials are furnished to do so, subject to
     the following conditions:
-    
+
     The above copyright notice and this permission notice shall be included
     in all copies or substantial portions of the Materials.
-    
+
     THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
     MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -1709,15 +1709,15 @@ typedef unsigned __int64 uint64_t;
          the GLXPbufferSGIX <type> but then comments it out with #ifdef
          _DM_BUFFER_H_, making it unavailable to later extensions. Need some
          work on dependencies.
--->     
+-->
         <extension name="GLX_SGIX_dmbuffer" supported="glx" protect="_DM_BUFFER_H_">
             <require>
                 <enum name="GLX_DIGITAL_MEDIA_PBUFFER_SGIX"/>
                 <command name="glXAssociateDMPbufferSGIX"/>
             </require>
         </extension>
-<!--    
--->     
+<!--
+-->
         <extension name="GLX_SGIX_swap_group" supported="glx">
             <require>
                 <command name="glXJoinSwapGroupSGIX"/>
