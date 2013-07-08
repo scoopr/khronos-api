@@ -35,7 +35,7 @@ GLHEADERS  = GL/glext.h GL/glcorearb.h \
 	     GLES3/gl3.h
 GLXHEADERS = GL/glx.h GL/glxext.h
 WGLHEADERS = GL/wgl.h GL/wglext.h
-EGLHEADERS = EGL/egl.h
+EGLHEADERS = EGL/egl.h EGL/eglext.h
 ALLHEADERS = $(GLHEADERS) $(GLXHEADERS) $(WGLHEADERS) $(EGLHEADERS)
 
 default: $(ALLHEADERS)

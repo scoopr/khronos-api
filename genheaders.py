@@ -174,7 +174,9 @@ prefixStrings = [
 # glext.h / glcorearb.h define calling conventions inline (no GL *platform.h)
 glExtPlatformStrings = [
     '#if defined(_WIN32) && !defined(APIENTRY) && !defined(__CYGWIN__) && !defined(__SCITECH_SNAP__)',
+    '#ifndef WIN32_LEAN_AND_MEAN',
     '#define WIN32_LEAN_AND_MEAN 1',
+    '#endif',
     '#include <windows.h>',
     '#endif',
     '',
@@ -383,13 +385,31 @@ buildList = [
         apicall           = 'GL_APICALL ',
         apientry          = 'GL_APIENTRY ',
         apientryp         = 'GL_APIENTRYP '),
-    # EGL - egl.h (no function pointers, yet @@@)
+    # EGL API - egl.h (no function pointers, yet @@@)
     CGeneratorOptions(
         filename          = 'EGL/egl.h',
         apiname           = 'egl',
         profile           = None,
         versions          = allVersions,
         emitversions      = allVersions,
+        defaultExtensions = None,                   # No default extensions
+        addExtensions     = None,
+        removeExtensions  = None,
+        prefixText        = prefixStrings + eglPlatformStrings + eglextVersionStrings,
+        genFuncPointers   = False,
+        protectFile       = protectFile,
+        protectFeature    = protectFeature,
+        protectProto      = protectProto,
+        apicall           = 'EGLAPI ',
+        apientry          = 'EGLAPIENTRY ',
+        apientryp         = 'EGLAPIENTRYP '),
+    # EGL extensions - eglext.h (no function pointers, yet @@@)
+    CGeneratorOptions(
+        filename          = 'EGL/eglext.h',
+        apiname           = 'egl',
+        profile           = None,
+        versions          = allVersions,
+        emitversions      = None,
         defaultExtensions = 'egl',                  # Default extensions for EGL
         addExtensions     = None,
         removeExtensions  = None,
@@ -401,14 +421,14 @@ buildList = [
         apicall           = 'EGLAPI ',
         apientry          = 'EGLAPIENTRY ',
         apientryp         = 'EGLAPIENTRYP '),
-    # GLX 1.* API + extensions - glx.h
+    # GLX 1.* API - glx.h
     CGeneratorOptions(
         filename          = 'GL/glx.h',
         apiname           = 'glx',
         profile           = None,
         versions          = allVersions,
         emitversions      = allVersions,
-        defaultExtensions = 'glx',                  # Default extensions for GLX
+        defaultExtensions = None,                   # No default extensions
         addExtensions     = None,
         removeExtensions  = None,
         # add glXPlatformStrings?
