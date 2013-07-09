@@ -376,7 +376,8 @@
         <enum value="0x30FB" name="EGL_CONTEXT_MINOR_VERSION_KHR"/>
         <enum value="0x30FC" name="EGL_CONTEXT_FLAGS_KHR"/>
         <enum value="0x30FD" name="EGL_CONTEXT_OPENGL_PROFILE_MASK_KHR"/>
-            <unused start="0x30FE" end="0x30FF"/>
+        <enum value="0x30FE" name="EGL_SYNC_CL_EVENT_KHR"/>
+        <enum value="0x30FF" name="EGL_SYNC_CL_EVENT_COMPLETE_KHR"/>
     </enums>
 
     <enums namespace="EGL" start="0x3100" end="0x310F" vendor="IMG" comment="Reserved for Ben Bowman (Khronos bug 4748)">
