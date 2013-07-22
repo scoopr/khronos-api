@@ -27,9 +27,9 @@
     format has been retired and will no longer be updated with new
     extensions and API versions. The canonical version of the registry,
     together with documentation, schema, and Python generator scripts used
-    to generate C header files for EGL, can always be found in the Khronos
-    Registry at
-        http://www.opengl.org/registry/egl
+    to generate C header files for EGL, can be found in the Khronos Registry
+    at
+        http://www.opengl.org/registry/
     -->
 
     <!-- SECTION: EGL type definitions. Does not include GL types. -->
@@ -70,6 +70,7 @@
         <type requires="khrplatform">typedef khronos_ssize_t <name>EGLsizeiANDROID</name>;</type>
         <type requires="EGLsizeiANDROID">typedef void (*<name>EGLSetBlobFuncANDROID</name>) (const void *key, EGLsizeiANDROID keySize, const void *value, EGLsizeiANDROID valueSize);</type>
         <type requires="EGLsizeiANDROID">typedef EGLsizeiANDROID (*<name>EGLGetBlobFuncANDROID</name>) (const void *key, EGLsizeiANDROID keySize, void *value, EGLsizeiANDROID valueSize);</type>
+        <type>typedef struct _cl_event *<name>cl_event</name>;</type>
         <type>struct <name>EGLClientPixmapHI</name> {
     void  *pData;
     EGLint iWidth;
@@ -176,7 +177,7 @@
         <enum value="0xFFFFFFFFFFFFFFFF" name="EGL_FOREVER_NV" type="ull"/>
     </enums>
 
-    <enums namespace="EGL" start="0x3000" end="0x305F" vendor="Khronos">
+    <enums namespace="EGL" start="0x3000" end="0x305F" vendor="KHR">
         <enum value="0x3000" name="EGL_SUCCESS"/>
         <enum value="0x3001" name="EGL_NOT_INITIALIZED"/>
         <enum value="0x3002" name="EGL_BAD_ACCESS"/>
@@ -256,7 +257,7 @@
         <unused start="0x3070" end="0x307F"/>
     </enums>
 
-    <enums namespace="EGL" start="0x3080-0x30AF" vendor="Khronos">
+    <enums namespace="EGL" start="0x3080-0x30AF" vendor="KHR">
         <enum value="0x3080" name="EGL_TEXTURE_FORMAT"/>
         <enum value="0x3081" name="EGL_TEXTURE_TARGET"/>
         <enum value="0x3082" name="EGL_MIPMAP_TEXTURE"/>
@@ -292,7 +293,8 @@
         <enum value="0x3099" name="EGL_MULTISAMPLE_RESOLVE"/>
         <enum value="0x309A" name="EGL_MULTISAMPLE_RESOLVE_DEFAULT"/>
         <enum value="0x309B" name="EGL_MULTISAMPLE_RESOLVE_BOX"/>
-            <unused start="0x309C" end="0x309F"/>
+        <enum value="0x309C" name="EGL_CL_EVENT_HANDLE_KHR"/>
+            <unused start="0x309D" end="0x309F"/>
         <enum value="0x30A0" name="EGL_OPENGL_ES_API"/>
         <enum value="0x30A1" name="EGL_OPENVG_API"/>
         <enum value="0x30A2" name="EGL_OPENGL_API"/>
@@ -459,6 +461,8 @@
         <enum value="0x31D2" name="EGL_DRM_BUFFER_FORMAT_ARGB32_MESA"/>
         <enum value="0x31D3" name="EGL_DRM_BUFFER_MESA"/>
         <enum value="0x31D4" name="EGL_DRM_BUFFER_STRIDE_MESA"/>
+        <enum value="0x31D5" name="EGL_PLATFORM_X11_EXT"/>
+        <enum value="0x31D6" name="EGL_PLATFORM_X11_SCREEN_EXT"/>
             <unused start="0x31D5" end="0x31DF"/>
     </enums>
 
@@ -507,7 +511,9 @@
         <enum value="0x321A" name="EGL_STREAM_STATE_DISCONNECTED_KHR"/>
         <enum value="0x321B" name="EGL_BAD_STREAM_KHR"/>
         <enum value="0x321C" name="EGL_BAD_STATE_KHR"/>
+        <enum value="0x321D" name="EGL_BUFFER_COUNT_NV" comment="From EGL_NV_stream_producer_eglsurface, which has no known specification and was replaced by a KHR extension"/>
         <enum value="0x321E" name="EGL_CONSUMER_ACQUIRE_TIMEOUT_USEC_KHR"/>
+        <enum value="0x321F" name="EGL_SYNC_NEW_FRAME_NV"/>
     </enums>
 
     <enums namespace="EGL" start="0x3220" end="0x325F" vendor="NV" comment="Reserved for Greg Roth (Bug 8220)">
@@ -563,7 +569,7 @@
 <!-- Reservable for future use: 0x32B0-0x3FFF.
      To generate a new range, allocate multiples of 16 starting at the
      lowest available point in this block. -->
-    <enums namespace="EGL" start="0x32B0" end="0x3FFF" vendor="Khronos">
+    <enums namespace="EGL" start="0x32B0" end="0x3FFF" vendor="KHR">
             <unused start="0x32B0" end="0x3FFF" comment="Reserved for future use"/>
     </enums>
 
@@ -668,6 +674,20 @@
             <param>struct <ptype>EGLClientPixmapHI</ptype> *<name>pixmap</name></param>
         </command>
         <command>
+            <proto><ptype>EGLSurface</ptype> <name>eglCreatePlatformPixmapSurfaceEXT</name></proto>
+            <param><ptype>EGLDisplay</ptype> <name>dpy</name></param>
+            <param><ptype>EGLConfig</ptype> <name>config</name></param>
+            <param>void *<name>native_pixmap</name></param>
+            <param>const <ptype>EGLint</ptype> *<name>attrib_list</name></param>
+        </command>
+        <command>
+            <proto><ptype>EGLSurface</ptype> <name>eglCreatePlatformWindowSurfaceEXT</name></proto>
+            <param><ptype>EGLDisplay</ptype> <name>dpy</name></param>
+            <param><ptype>EGLConfig</ptype> <name>config</name></param>
+            <param>void *<name>native_window</name></param>
+            <param>const <ptype>EGLint</ptype> *<name>attrib_list</name></param>
+        </command>
+        <command>
             <proto><ptype>EGLStreamKHR</ptype> <name>eglCreateStreamFromFileDescriptorKHR</name></proto>
             <param><ptype>EGLDisplay</ptype> <name>dpy</name></param>
             <param><ptype>EGLNativeFileDescriptorKHR</ptype> <name>file_descriptor</name></param>
@@ -682,6 +702,13 @@
             <param><ptype>EGLDisplay</ptype> <name>dpy</name></param>
             <param><ptype>EGLConfig</ptype> <name>config</name></param>
             <param><ptype>EGLStreamKHR</ptype> <name>stream</name></param>
+            <param>const <ptype>EGLint</ptype> *<name>attrib_list</name></param>
+        </command>
+        <command>
+            <proto><ptype>EGLSyncKHR</ptype> <name>eglCreateStreamSyncNV</name></proto>
+            <param><ptype>EGLDisplay</ptype> <name>dpy</name></param>
+            <param><ptype>EGLStreamKHR</ptype> <name>stream</name></param>
+            <param><ptype>EGLenum</ptype> <name>type</name></param>
             <param>const <ptype>EGLint</ptype> *<name>attrib_list</name></param>
         </command>
         <command>
@@ -773,6 +800,12 @@
         </command>
         <command>
             <proto><ptype>EGLint</ptype> <name>eglGetError</name></proto>
+        </command>
+        <command>
+            <proto><ptype>EGLDisplay</ptype> <name>eglGetPlatformDisplayEXT</name></proto>
+            <param><ptype>EGLenum</ptype> <name>platform</name></param>
+            <param>void *<name>native_display</name></param>
+            <param>const <ptype>EGLint</ptype> *<name>attrib_list</name></param>
         </command>
         <command>
             <proto><ptype>__eglMustCastToProperFunctionPointerType</ptype> <name>eglGetProcAddress</name></proto>
@@ -1230,6 +1263,10 @@
                 <enum name="EGL_BUFFER_AGE_EXT"/>
             </require>
         </extension>
+        <extension name="EGL_EXT_client_extensions" supported="egl">
+            <require>
+            </require>
+        </extension>
         <extension name="EGL_EXT_create_context_robustness" supported="egl">
             <require>
                 <enum name="EGL_CONTEXT_OPENGL_ROBUST_ACCESS_EXT"/>
@@ -1269,6 +1306,19 @@
                 <enum name="EGL_MULTIVIEW_VIEW_COUNT_EXT"/>
             </require>
         </extension>
+        <extension name="EGL_EXT_platform_base" supported="egl">
+            <require>
+                <command name="eglGetPlatformDisplayEXT"/>
+                <command name="eglCreatePlatformWindowSurfaceEXT"/>
+                <command name="eglCreatePlatformPixmapSurfaceEXT"/>
+            </require>
+        </extension>
+        <extension name="EGL_EXT_platform_x11" supported="egl">
+            <require>
+                <enum name="EGL_PLATFORM_X11_EXT"/>
+                <enum name="EGL_PLATFORM_X11_SCREEN_EXT"/>
+            </require>
+        </extension>
         <extension name="EGL_EXT_swap_buffers_with_damage" supported="egl">
             <require>
                 <command name="eglSwapBuffersWithDamageEXT"/>
@@ -1294,6 +1344,14 @@
                 <enum name="EGL_CONTEXT_PRIORITY_HIGH_IMG"/>
                 <enum name="EGL_CONTEXT_PRIORITY_MEDIUM_IMG"/>
                 <enum name="EGL_CONTEXT_PRIORITY_LOW_IMG"/>
+            </require>
+        </extension>
+        <extension name="EGL_KHR_cl_event" supported="egl">
+            <require>
+                <type name="cl_event"/>
+                <enum name="EGL_CL_EVENT_HANDLE_KHR"/>
+                <enum name="EGL_SYNC_CL_EVENT_KHR"/>
+                <enum name="EGL_SYNC_CL_EVENT_COMPLETE_KHR"/>
             </require>
         </extension>
         <extension name="EGL_KHR_config_attribs" supported="egl">
@@ -1326,6 +1384,10 @@
                 <enum name="EGL_SYNC_PRIOR_COMMANDS_COMPLETE_KHR"/>
                 <enum name="EGL_SYNC_CONDITION_KHR"/>
                 <enum name="EGL_SYNC_FENCE_KHR"/>
+            </require>
+        </extension>
+        <extension name="EGL_KHR_get_all_proc_addresses" supported="egl">
+            <require>
             </require>
         </extension>
         <extension name="EGL_KHR_gl_renderbuffer_image" supported="egl">
@@ -1549,6 +1611,13 @@
             <require>
                 <enum name="EGL_POST_SUB_BUFFER_SUPPORTED_NV"/>
                 <command name="eglPostSubBufferNV"/>
+            </require>
+        </extension>
+        <extension name="EGL_NV_stream_sync" supported="egl">
+            <require>
+                <enum name="EGL_SYNC_TYPE_KHR"/>
+                <enum name="EGL_SYNC_NEW_FRAME_NV"/>
+                <command name="eglCreateStreamSyncNV"/>
             </require>
         </extension>
         <extension name="EGL_NV_sync" protect="KHRONOS_SUPPORT_INT64" supported="egl">
