@@ -27970,6 +27970,19 @@ typedef unsigned int GLhandleARB;
             <command name="glWindowPos3s"/>
             <command name="glWindowPos3sv"/>
         </require>
+        <require comment="Promoted from ARB_imaging subset to core">
+            <enum name="GL_FUNC_ADD"/>
+            <enum name="GL_FUNC_SUBTRACT"/>
+            <enum name="GL_FUNC_REVERSE_SUBTRACT"/>
+            <enum name="GL_MIN"/>
+            <enum name="GL_MAX"/>
+            <enum name="GL_CONSTANT_COLOR"/>
+            <enum name="GL_ONE_MINUS_CONSTANT_COLOR"/>
+            <enum name="GL_CONSTANT_ALPHA"/>
+            <enum name="GL_ONE_MINUS_CONSTANT_ALPHA"/>
+            <command name="glBlendColor"/>
+            <command name="glBlendEquation"/>
+        </require>
     </feature>
     <feature api="gl" name="GL_VERSION_1_5" number="1.5">
         <require>
@@ -30228,6 +30241,7 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_BUFFER"/>
             <enum name="GL_SHADER"/>
             <enum name="GL_PROGRAM"/>
+            <enum name="GL_VERTEX_ARRAY"/>
             <enum name="GL_QUERY"/>
             <enum name="GL_PROGRAM_PIPELINE"/>
             <enum name="GL_SAMPLER"/>
@@ -32115,6 +32129,10 @@ typedef unsigned int GLhandleARB;
         <extension name="GL_AMD_seamless_cubemap_per_texture" supported="gl">
             <require>
                 <enum name="GL_TEXTURE_CUBE_MAP_SEAMLESS"/>
+            </require>
+        </extension>
+        <extension name="GL_AMD_shader_atomic_counter_ops" supported="gl">
+            <require>
             </require>
         </extension>
         <extension name="GL_AMD_shader_stencil_export" supported="gl">
@@ -35881,15 +35899,15 @@ typedef unsigned int GLhandleARB;
                 <command name="glMapNamedBufferRangeEXT"/>
                 <command name="glFlushMappedNamedBufferRangeEXT"/>
             </require>
-            <require comment="Extend GL_ARB_clear_buffer_object">
+            <require comment="Extended by GL_ARB_clear_buffer_object">
                 <command name="glClearNamedBufferDataEXT"/>
                 <command name="glClearNamedBufferSubDataEXT"/>
             </require>
-            <require comment="Extend GL_ARB_framebuffer_no_attachments">
+            <require comment="Extended by GL_ARB_framebuffer_no_attachments">
                 <command name="glNamedFramebufferParameteriEXT"/>
                 <command name="glGetNamedFramebufferParameterivEXT"/>
             </require>
-            <require comment="Extend GL_ARB_gpu_shader_fp64">
+            <require comment="Extended by GL_ARB_gpu_shader_fp64">
                 <command name="glProgramUniform1dEXT"/>
                 <command name="glProgramUniform2dEXT"/>
                 <command name="glProgramUniform3dEXT"/>
@@ -35908,19 +35926,19 @@ typedef unsigned int GLhandleARB;
                 <command name="glProgramUniformMatrix4x2dvEXT"/>
                 <command name="glProgramUniformMatrix4x3dvEXT"/>
             </require>
-            <require comment="Extend GL_ARB_texture_buffer_range">
+            <require comment="Extended by GL_ARB_texture_buffer_range">
                 <command name="glTextureBufferRangeEXT"/>
             </require>
-            <require comment="Extend GL_ARB_texture_storage">
+            <require comment="Extended by GL_ARB_texture_storage">
                 <command name="glTextureStorage1DEXT"/>
                 <command name="glTextureStorage2DEXT"/>
                 <command name="glTextureStorage3DEXT"/>
             </require>
-            <require comment="Extend GL_ARB_texture_storage_multisample">
+            <require comment="Extended by GL_ARB_texture_storage_multisample">
                 <command name="glTextureStorage2DMultisampleEXT"/>
                 <command name="glTextureStorage3DMultisampleEXT"/>
             </require>
-            <require comment="Extend GL_ARB_vertex_attrib_binding">
+            <require comment="Extended by GL_ARB_vertex_attrib_binding">
                 <command name="glVertexArrayBindVertexBufferEXT"/>
                 <command name="glVertexArrayVertexAttribFormatEXT"/>
                 <command name="glVertexArrayVertexAttribIFormatEXT"/>
@@ -35928,10 +35946,10 @@ typedef unsigned int GLhandleARB;
                 <command name="glVertexArrayVertexAttribBindingEXT"/>
                 <command name="glVertexArrayVertexBindingDivisorEXT"/>
             </require>
-            <require comment="Extend GL_EXT_vertex_attrib_64bit">
+            <require comment="Extended by GL_EXT_vertex_attrib_64bit">
                 <command name="glVertexArrayVertexAttribLOffsetEXT"/>
             </require>
-            <require comment="Extend GL_ARB_sparse_texture">
+            <require comment="Extended by GL_ARB_sparse_texture">
                 <command name="glTexturePageCommitmentEXT"/>
             </require>
         </extension>
@@ -37648,6 +37666,7 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_BUFFER"/>
                 <enum name="GL_SHADER"/>
                 <enum name="GL_PROGRAM"/>
+                <enum name="GL_VERTEX_ARRAY"/>
                 <enum name="GL_QUERY"/>
                 <enum name="GL_SAMPLER"/>
                 <enum name="GL_MAX_LABEL_LENGTH"/>
@@ -37699,6 +37718,7 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_BUFFER_KHR"/>
                 <enum name="GL_SHADER_KHR"/>
                 <enum name="GL_PROGRAM_KHR"/>
+                <enum name="GL_VERTEX_ARRAY_KHR"/>
                 <enum name="GL_QUERY_KHR"/>
                 <enum name="GL_SAMPLER_KHR"/>
                 <enum name="GL_MAX_LABEL_LENGTH_KHR"/>
@@ -39071,11 +39091,6 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_TRANSFORM_FEEDBACK_BUFFER_NV"/>
                 <enum name="GL_TRANSFORM_FEEDBACK_BUFFER_BINDING_NV"/>
                 <enum name="GL_LAYER_NV"/>
-                <enum name="GL_NEXT_BUFFER_NV"/>
-                <enum name="GL_SKIP_COMPONENTS4_NV"/>
-                <enum name="GL_SKIP_COMPONENTS3_NV"/>
-                <enum name="GL_SKIP_COMPONENTS2_NV"/>
-                <enum name="GL_SKIP_COMPONENTS1_NV"/>
                 <command name="glBeginTransformFeedbackNV"/>
                 <command name="glEndTransformFeedbackNV"/>
                 <command name="glTransformFeedbackAttribsNV"/>
@@ -39087,6 +39102,13 @@ typedef unsigned int GLhandleARB;
                 <command name="glGetVaryingLocationNV"/>
                 <command name="glGetActiveVaryingNV"/>
                 <command name="glGetTransformFeedbackVaryingNV"/>
+            </require>
+            <require comment="Extended by GL_ARB_transform_feedback3">
+                <enum name="GL_NEXT_BUFFER_NV"/>
+                <enum name="GL_SKIP_COMPONENTS4_NV"/>
+                <enum name="GL_SKIP_COMPONENTS3_NV"/>
+                <enum name="GL_SKIP_COMPONENTS2_NV"/>
+                <enum name="GL_SKIP_COMPONENTS1_NV"/>
                 <command name="glTransformFeedbackStreamAttribsNV"/>
             </require>
         </extension>
