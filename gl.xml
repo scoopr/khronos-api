@@ -30128,7 +30128,7 @@ typedef unsigned int GLhandleARB;
         <require comment="Reuse commands from ARB_conservative_depth (none)">
         </require>
         <require comment="Reuse commands from ARB_internalformat_query">
-            <command name="glGetInternalformati64v"/>
+            <command name="glGetInternalformativ"/>
         </require>
         <require comment="Reuse commands from ARB_map_buffer_alignment (none)">
         </require>
