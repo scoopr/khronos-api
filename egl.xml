@@ -70,7 +70,6 @@
         <type requires="khrplatform">typedef khronos_ssize_t <name>EGLsizeiANDROID</name>;</type>
         <type requires="EGLsizeiANDROID">typedef void (*<name>EGLSetBlobFuncANDROID</name>) (const void *key, EGLsizeiANDROID keySize, const void *value, EGLsizeiANDROID valueSize);</type>
         <type requires="EGLsizeiANDROID">typedef EGLsizeiANDROID (*<name>EGLGetBlobFuncANDROID</name>) (const void *key, EGLsizeiANDROID keySize, void *value, EGLsizeiANDROID valueSize);</type>
-        <type>typedef struct _cl_event *<name>cl_event</name>;</type>
         <type>struct <name>EGLClientPixmapHI</name> {
     void  *pData;
     EGLint iWidth;
@@ -1352,7 +1351,6 @@
         </extension>
         <extension name="EGL_KHR_cl_event" supported="egl">
             <require>
-                <type name="cl_event"/>
                 <enum name="EGL_CL_EVENT_HANDLE_KHR"/>
                 <enum name="EGL_SYNC_CL_EVENT_KHR"/>
                 <enum name="EGL_SYNC_CL_EVENT_COMPLETE_KHR"/>
