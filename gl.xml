@@ -27731,8 +27731,6 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_SINGLE_COLOR"/>
             <enum name="GL_SEPARATE_SPECULAR_COLOR"/>
             <enum name="GL_ALIASED_POINT_SIZE_RANGE"/>
-            <command name="glBlendColor"/>
-            <command name="glBlendEquation"/>
             <command name="glDrawRangeElements"/>
             <command name="glTexImage3D"/>
             <command name="glTexSubImage3D"/>
@@ -33160,6 +33158,8 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_BLEND_EQUATION"/>
                 <enum name="GL_FUNC_SUBTRACT"/>
                 <enum name="GL_FUNC_REVERSE_SUBTRACT"/>
+                <command name="glBlendColor"/>
+                <command name="glBlendEquation"/>
             </require>
             <require api="gl" profile="compatibility">
                 <enum name="GL_CONVOLUTION_1D"/>
