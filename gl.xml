@@ -2310,6 +2310,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0" name="GL_NO_ERROR"/>
         <enum value="0" name="GL_ZERO"/>
         <enum value="0" name="GL_NONE"/>
+        <enum value="0" name="GL_NONE_OES"/>
         <enum value="1" name="GL_TRUE"/>
         <enum value="1" name="GL_ONE"/>
         <enum value="0xFFFFFFFF" name="GL_INVALID_INDEX" type="u" comment="Tagged as uint"/>
@@ -3133,6 +3134,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8073" name="GL_MAX_3D_TEXTURE_SIZE_OES"/>
         <enum value="0x8074" name="GL_VERTEX_ARRAY"/>
         <enum value="0x8074" name="GL_VERTEX_ARRAY_EXT"/>
+        <enum value="0x8074" name="GL_VERTEX_ARRAY_KHR"/>
         <enum value="0x8075" name="GL_NORMAL_ARRAY"/>
         <enum value="0x8075" name="GL_NORMAL_ARRAY_EXT"/>
         <enum value="0x8076" name="GL_COLOR_ARRAY"/>
@@ -35970,7 +35972,6 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_TIME_ELAPSED_EXT"/>
                 <enum name="GL_TIMESTAMP_EXT"/>
                 <enum name="GL_GPU_DISJOINT_EXT"/>
-                <command name="glDiscardFramebufferEXT"/>
                 <command name="glGenQueriesEXT"/>
                 <command name="glDeleteQueriesEXT"/>
                 <command name="glIsQueryEXT"/>
