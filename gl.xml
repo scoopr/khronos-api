@@ -35963,6 +35963,9 @@ typedef unsigned int GLhandleARB;
                 <command name="glMapNamedBufferRangeEXT"/>
                 <command name="glFlushMappedNamedBufferRangeEXT"/>
             </require>
+            <require comment="Extended by GL_ARB_buffer_storage">
+                <command name="glNamedBufferStorageEXT"/>
+            </require>
             <require comment="Extended by GL_ARB_clear_buffer_object">
                 <command name="glClearNamedBufferDataEXT"/>
                 <command name="glClearNamedBufferSubDataEXT"/>
@@ -37157,6 +37160,8 @@ typedef unsigned int GLhandleARB;
                 <command name="glTexStorage1DEXT"/>
                 <command name="glTexStorage2DEXT"/>
                 <command name="glTexStorage3DEXT"/>
+            </require>
+            <require comment="Supported only if GL_EXT_direct_state_access is supported">
                 <command name="glTextureStorage1DEXT"/>
                 <command name="glTextureStorage2DEXT"/>
                 <command name="glTextureStorage3DEXT"/>
