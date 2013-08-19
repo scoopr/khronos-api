@@ -14725,7 +14725,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>pname</name></param>
             <param><ptype>GLsizei</ptype> <name>bufSize</name></param>
             <param len="1"><ptype>GLsizei</ptype> *<name>length</name></param>
-            <param len="length"><ptype>GLint</ptype> *<name>values</name></param>
+            <param len="bufSize"><ptype>GLint</ptype> *<name>values</name></param>
         </command>
         <command>
             <proto>void <name>glGetSyncivAPPLE</name></proto>
