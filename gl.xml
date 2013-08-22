@@ -22970,7 +22970,6 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glTexturePageCommitmentEXT</name></proto>
             <param><ptype>GLuint</ptype> <name>texture</name></param>
-            <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLint</ptype> <name>level</name></param>
             <param><ptype>GLint</ptype> <name>xoffset</name></param>
             <param><ptype>GLint</ptype> <name>yoffset</name></param>
@@ -24421,6 +24420,12 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>vaobj</name></param>
             <param><ptype>GLuint</ptype> <name>attribindex</name></param>
             <param><ptype>GLuint</ptype> <name>bindingindex</name></param>
+        </command>
+        <command>
+            <proto>void <name>glVertexArrayVertexAttribDivisorEXT</name></proto>
+            <param><ptype>GLuint</ptype> <name>vaobj</name></param>
+            <param><ptype>GLuint</ptype> <name>index</name></param>
+            <param><ptype>GLuint</ptype> <name>divisor</name></param>
         </command>
         <command>
             <proto>void <name>glVertexArrayVertexAttribFormatEXT</name></proto>
@@ -36018,6 +36023,9 @@ typedef unsigned int GLhandleARB;
             </require>
             <require comment="Extended by GL_ARB_sparse_texture">
                 <command name="glTexturePageCommitmentEXT"/>
+            </require>
+            <require comment="Extended by GL_ARB_instanced_arrays">
+                <command name="glVertexArrayVertexAttribDivisorEXT"/>
             </require>
         </extension>
         <extension name="GL_EXT_discard_framebuffer" supported="gles1|gles2">
