@@ -148,6 +148,7 @@ Commands = element commands {
 #     name - if present, protocol name (defaults to command name)
 #     comment - unused
 Command = element command {
+    Comment ? ,
     element proto {
 	attribute group { text } ? ,
 	text ,

@@ -24,7 +24,7 @@
 
 \title{The Khronos XML API Registry}
 \author{Jon Leech}
-\date{Last updated 2013/06/24}
+\date{Last updated 2013/09/17}
 \maketitle
 
 \begin{abstract}
@@ -485,7 +485,9 @@ command (function).
 
 \subsection{Attributes of \tag{command} tags}
 
-None.
+\begin{itemize}
+\item \attr{comment} - arbitrary string (unused).
+\end{itemize}
 
 \subsection{Contents of \tag{command} tags}
 
@@ -973,6 +975,8 @@ corresponding \tag{group} tags.
 \label{changelog}
 
 \begin{itemize}
+\item 2013/09/17 - Add \tag{comment} attribute to \tag{command} tags
+      within \tag{commands}.
 \item 2013/06/24 - Add \tag{groups} and \tag{group} tags, renamed
       \tag{enums} attribute \attr{class} to \attr{group}, and add
       parameter type annotation attributes \attr{group} and \attr{len}

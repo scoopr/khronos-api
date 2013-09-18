@@ -269,8 +269,14 @@
         <enum value="0x3088" name="EGL_ALPHA_FORMAT" alias="EGL_VG_ALPHA_FORMAT"/>
         <enum value="0x3088" name="EGL_VG_ALPHA_FORMAT"/>
         <enum value="0x3089" name="EGL_COLORSPACE_sRGB" alias="EGL_VG_COLORSPACE_sRGB"/>
+        <!-- placeholder for draft enum 
+            <enum value="0x3089" name="EGL_GL_COLORSPACE_SRGB_KHR" alias="EGL_VG_COLORSPACE_sRGB"/>
+        -->
         <enum value="0x3089" name="EGL_VG_COLORSPACE_sRGB"/>
         <enum value="0x308A" name="EGL_COLORSPACE_LINEAR" alias="EGL_VG_COLORSPACE_LINEAR"/>
+        <!-- placeholder for draft enum 
+            <enum value="0x308A" name="EGL_GL_COLORSPACE_LINEAR_KHR" alias="EGL_VG_COLORSPACE_LINEAR"/>
+        -->
         <enum value="0x308A" name="EGL_VG_COLORSPACE_LINEAR"/>
         <enum value="0x308B" name="EGL_ALPHA_FORMAT_NONPRE" alias="EGL_VG_ALPHA_FORMAT_NONPRE"/>
         <enum value="0x308B" name="EGL_VG_ALPHA_FORMAT_NONPRE"/>
@@ -293,7 +299,10 @@
         <enum value="0x309A" name="EGL_MULTISAMPLE_RESOLVE_DEFAULT"/>
         <enum value="0x309B" name="EGL_MULTISAMPLE_RESOLVE_BOX"/>
         <enum value="0x309C" name="EGL_CL_EVENT_HANDLE_KHR"/>
-            <unused start="0x309D" end="0x309F"/>
+            <unused start="0x309D" end="0x309F" comment="Placeholders for draft extensions follow"/>
+        <!--
+            <enum value="0x309D" name="EGL_GL_COLORSPACE_KHR"/>
+        -->
         <enum value="0x30A0" name="EGL_OPENGL_ES_API"/>
         <enum value="0x30A1" name="EGL_OPENVG_API"/>
         <enum value="0x30A2" name="EGL_OPENGL_API"/>
@@ -1361,6 +1370,10 @@
                 <enum name="EGL_CONFORMANT_KHR"/>
                 <enum name="EGL_VG_COLORSPACE_LINEAR_BIT_KHR"/>
                 <enum name="EGL_VG_ALPHA_FORMAT_PRE_BIT_KHR"/>
+            </require>
+        </extension>
+        <extension name="EGL_KHR_client_get_all_proc_addresses" supported="egl" comment="Alias of EGL_KHR_get_all_proc_addresses">
+            <require>
             </require>
         </extension>
         <extension name="EGL_KHR_create_context" supported="egl">
