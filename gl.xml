@@ -16528,8 +16528,8 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>texture</name></param>
             <param><ptype>GLint</ptype> <name>level</name></param>
             <param><ptype>GLbitfield</ptype> <name>access</name></param>
-            <param len="1">const <ptype>GLint</ptype> *<name>stride</name></param>
-            <param len="1">const <ptype>GLenum</ptype> *<name>layout</name></param>
+            <param len="1"><ptype>GLint</ptype> *<name>stride</name></param>
+            <param len="1"><ptype>GLenum</ptype> *<name>layout</name></param>
         </command>
         <command>
             <proto>void <name>glMapVertexAttrib1dAPPLE</name></proto>
@@ -22455,7 +22455,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glTexImage2DMultisample</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLsizei</ptype> <name>samples</name></param>
-            <param><ptype>GLint</ptype> <name>internalformat</name></param>
+            <param><ptype>GLenum</ptype> <name>internalformat</name></param>
             <param><ptype>GLsizei</ptype> <name>width</name></param>
             <param><ptype>GLsizei</ptype> <name>height</name></param>
             <param group="Boolean"><ptype>GLboolean</ptype> <name>fixedsamplelocations</name></param>
@@ -22504,7 +22504,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glTexImage3DMultisample</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLsizei</ptype> <name>samples</name></param>
-            <param><ptype>GLint</ptype> <name>internalformat</name></param>
+            <param><ptype>GLenum</ptype> <name>internalformat</name></param>
             <param><ptype>GLsizei</ptype> <name>width</name></param>
             <param><ptype>GLsizei</ptype> <name>height</name></param>
             <param><ptype>GLsizei</ptype> <name>depth</name></param>
@@ -31125,6 +31125,11 @@ typedef unsigned int GLhandleARB;
             <type name="GLfixed"/>
             <type name="GLshort"/>
             <type name="GLushort"/>
+        </require>
+        <require comment="Not used by the API, so this type doesn't need to be declared in gl2ext.h">
+            <type name="GLsync"/>
+            <type name="GLint64"/>
+            <type name="GLuint64"/>
         </require>
         <require>
             <enum name="GL_DEPTH_BUFFER_BIT"/>
