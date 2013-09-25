@@ -6071,11 +6071,17 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8B64" name="GL_SAMPLER_2D_RECT_SHADOW"/>
         <enum value="0x8B64" name="GL_SAMPLER_2D_RECT_SHADOW_ARB"/>
         <enum value="0x8B65" name="GL_FLOAT_MAT2x3"/>
+        <enum value="0x8B65" name="GL_FLOAT_MAT2x3_NV"/>
         <enum value="0x8B66" name="GL_FLOAT_MAT2x4"/>
+        <enum value="0x8B66" name="GL_FLOAT_MAT2x4_NV"/>
         <enum value="0x8B67" name="GL_FLOAT_MAT3x2"/>
+        <enum value="0x8B67" name="GL_FLOAT_MAT3x2_NV"/>
         <enum value="0x8B68" name="GL_FLOAT_MAT3x4"/>
+        <enum value="0x8B68" name="GL_FLOAT_MAT3x4_NV"/>
         <enum value="0x8B69" name="GL_FLOAT_MAT4x2"/>
+        <enum value="0x8B69" name="GL_FLOAT_MAT4x2_NV"/>
         <enum value="0x8B6A" name="GL_FLOAT_MAT4x3"/>
+        <enum value="0x8B6A" name="GL_FLOAT_MAT4x3_NV"/>
             <unused start="0x8B6B" end="0x8B7F" comment="For attribute types"/>
     </enums>
 
@@ -6978,8 +6984,10 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8F34" name="GL_GPU_ADDRESS_NV"/>
         <enum value="0x8F35" name="GL_MAX_SHADER_BUFFER_ADDRESS_NV"/>
         <enum value="0x8F36" name="GL_COPY_READ_BUFFER"/>
+        <enum value="0x8F36" name="GL_COPY_READ_BUFFER_NV"/>
         <enum value="0x8F36" name="GL_COPY_READ_BUFFER_BINDING" alias="GL_COPY_READ_BUFFER"/>
         <enum value="0x8F37" name="GL_COPY_WRITE_BUFFER"/>
+        <enum value="0x8F37" name="GL_COPY_WRITE_BUFFER_NV"/>
         <enum value="0x8F37" name="GL_COPY_WRITE_BUFFER_BINDING" alias="GL_COPY_WRITE_BUFFER"/>
         <enum value="0x8F38" name="GL_MAX_IMAGE_UNITS"/>
         <enum value="0x8F38" name="GL_MAX_IMAGE_UNITS_EXT"/>
@@ -10156,6 +10164,15 @@ typedef unsigned int GLhandleARB;
             <param group="BufferOffset"><ptype>GLintptr</ptype> <name>readOffset</name></param>
             <param group="BufferOffset"><ptype>GLintptr</ptype> <name>writeOffset</name></param>
             <param group="BufferSize"><ptype>GLsizeiptr</ptype> <name>size</name></param>
+        </command>
+        <command>
+            <proto>void <name>glCopyBufferSubDataNV</name></proto>
+            <param><ptype>GLenum</ptype> <name>readTarget</name></param>
+            <param><ptype>GLenum</ptype> <name>writeTarget</name></param>
+            <param group="BufferOffset"><ptype>GLintptr</ptype> <name>readOffset</name></param>
+            <param group="BufferOffset"><ptype>GLintptr</ptype> <name>writeOffset</name></param>
+            <param group="BufferSize"><ptype>GLsizeiptr</ptype> <name>size</name></param>
+            <alias name="glCopyBufferSubData"/>
         </command>
         <command>
             <proto>void <name>glCopyColorSubTable</name></proto>
@@ -23762,6 +23779,14 @@ typedef unsigned int GLhandleARB;
             <glx type="render" opcode="305"/>
         </command>
         <command>
+            <proto>void <name>glUniformMatrix2x3fvNV</name></proto>
+            <param><ptype>GLint</ptype> <name>location</name></param>
+            <param><ptype>GLsizei</ptype> <name>count</name></param>
+            <param group="Boolean"><ptype>GLboolean</ptype> <name>transpose</name></param>
+            <param len="6">const <ptype>GLfloat</ptype> *<name>value</name></param>
+            <alias name="glUniformMatrix2x3fv"/>
+        </command>
+        <command>
             <proto>void <name>glUniformMatrix2x4dv</name></proto>
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
@@ -23775,6 +23800,14 @@ typedef unsigned int GLhandleARB;
             <param group="Boolean"><ptype>GLboolean</ptype> <name>transpose</name></param>
             <param len="8">const <ptype>GLfloat</ptype> *<name>value</name></param>
             <glx type="render" opcode="307"/>
+        </command>
+        <command>
+            <proto>void <name>glUniformMatrix2x4fvNV</name></proto>
+            <param><ptype>GLint</ptype> <name>location</name></param>
+            <param><ptype>GLsizei</ptype> <name>count</name></param>
+            <param group="Boolean"><ptype>GLboolean</ptype> <name>transpose</name></param>
+            <param len="8">const <ptype>GLfloat</ptype> *<name>value</name></param>
+            <alias name="glUniformMatrix2x4fv"/>
         </command>
         <command>
             <proto>void <name>glUniformMatrix3dv</name></proto>
@@ -23814,6 +23847,14 @@ typedef unsigned int GLhandleARB;
             <glx type="render" opcode="306"/>
         </command>
         <command>
+            <proto>void <name>glUniformMatrix3x2fvNV</name></proto>
+            <param><ptype>GLint</ptype> <name>location</name></param>
+            <param><ptype>GLsizei</ptype> <name>count</name></param>
+            <param group="Boolean"><ptype>GLboolean</ptype> <name>transpose</name></param>
+            <param len="6">const <ptype>GLfloat</ptype> *<name>value</name></param>
+            <alias name="glUniformMatrix3x2"/>
+        </command>
+        <command>
             <proto>void <name>glUniformMatrix3x4dv</name></proto>
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
@@ -23827,6 +23868,14 @@ typedef unsigned int GLhandleARB;
             <param group="Boolean"><ptype>GLboolean</ptype> <name>transpose</name></param>
             <param len="12">const <ptype>GLfloat</ptype> *<name>value</name></param>
             <glx type="render" opcode="309"/>
+        </command>
+        <command>
+            <proto>void <name>glUniformMatrix3x4fvNV</name></proto>
+            <param><ptype>GLint</ptype> <name>location</name></param>
+            <param><ptype>GLsizei</ptype> <name>count</name></param>
+            <param group="Boolean"><ptype>GLboolean</ptype> <name>transpose</name></param>
+            <param len="12">const <ptype>GLfloat</ptype> *<name>value</name></param>
+            <alias name="glUniformMatrix3x4fv"/>
         </command>
         <command>
             <proto>void <name>glUniformMatrix4dv</name></proto>
@@ -23866,6 +23915,14 @@ typedef unsigned int GLhandleARB;
             <glx type="render" opcode="308"/>
         </command>
         <command>
+            <proto>void <name>glUniformMatrix4x2fvNV</name></proto>
+            <param><ptype>GLint</ptype> <name>location</name></param>
+            <param><ptype>GLsizei</ptype> <name>count</name></param>
+            <param group="Boolean"><ptype>GLboolean</ptype> <name>transpose</name></param>
+            <param len="8">const <ptype>GLfloat</ptype> *<name>value</name></param>
+            <alias name="glUniformMatrix4x2fv"/>
+        </command>
+        <command>
             <proto>void <name>glUniformMatrix4x3dv</name></proto>
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
@@ -23879,6 +23936,14 @@ typedef unsigned int GLhandleARB;
             <param group="Boolean"><ptype>GLboolean</ptype> <name>transpose</name></param>
             <param len="12">const <ptype>GLfloat</ptype> *<name>value</name></param>
             <glx type="render" opcode="310"/>
+        </command>
+        <command>
+            <proto>void <name>glUniformMatrix4x3fvNV</name></proto>
+            <param><ptype>GLint</ptype> <name>location</name></param>
+            <param><ptype>GLsizei</ptype> <name>count</name></param>
+            <param group="Boolean"><ptype>GLboolean</ptype> <name>transpose</name></param>
+            <param len="12">const <ptype>GLfloat</ptype> *<name>value</name></param>
+            <alias name="glUniformMatrix4x3fv"/>
         </command>
         <command>
             <proto>void <name>glUniformSubroutinesuiv</name></proto>
@@ -38091,6 +38156,13 @@ typedef unsigned int GLhandleARB;
                 <command name="glEndConditionalRenderNV"/>
             </require>
         </extension>
+        <extension name="GL_NV_copy_buffer" supported="gles2">
+            <require>
+                <enum name="GL_COPY_READ_BUFFER_NV"/>
+                <enum name="GL_COPY_WRITE_BUFFER_NV"/>
+                <command name="glCopyBufferSubDataNV"/>
+            </require>
+        </extension>
         <extension name="GL_NV_copy_depth_to_color" supported="gl">
             <require>
                 <enum name="GL_DEPTH_STENCIL_TO_RGBA_NV"/>
@@ -38228,6 +38300,10 @@ typedef unsigned int GLhandleARB;
                 <command name="glGetMapAttribParameterivNV"/>
                 <command name="glGetMapAttribParameterfvNV"/>
                 <command name="glEvalMapsNV"/>
+            </require>
+        </extension>
+        <extension name="GL_NV_explicit_attrib_location" supported="gles2">
+            <require>
             </require>
         </extension>
         <extension name="GL_NV_explicit_multisample" supported="gl">
@@ -38588,6 +38664,22 @@ typedef unsigned int GLhandleARB;
         <extension name="GL_NV_multisample_filter_hint" supported="gl">
             <require>
                 <enum name="GL_MULTISAMPLE_FILTER_HINT_NV"/>
+            </require>
+        </extension>
+        <extension name="GL_NV_non_square_matrices" supported="gles2">
+            <require>
+                <enum name="GL_FLOAT_MAT2x3_NV"/>
+                <enum name="GL_FLOAT_MAT2x4_NV"/>
+                <enum name="GL_FLOAT_MAT3x2_NV"/>
+                <enum name="GL_FLOAT_MAT3x4_NV"/>
+                <enum name="GL_FLOAT_MAT4x2_NV"/>
+                <enum name="GL_FLOAT_MAT4x3_NV"/>
+                <command name="glUniformMatrix2x3fvNV"/>
+                <command name="glUniformMatrix3x2fvNV"/>
+                <command name="glUniformMatrix2x4fvNV"/>
+                <command name="glUniformMatrix4x2fvNV"/>
+                <command name="glUniformMatrix3x4fvNV"/>
+                <command name="glUniformMatrix4x3fvNV"/>
             </require>
         </extension>
         <extension name="GL_NV_occlusion_query" supported="gl">
