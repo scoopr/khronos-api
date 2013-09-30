@@ -36883,6 +36883,10 @@ typedef unsigned int GLhandleARB;
                 <command name="glMemoryBarrierEXT"/>
             </require>
         </extension>
+        <extension name="GL_EXT_shader_integer_mix" supported="gl|gles2">
+            <require>
+            </require>
+        </extension>
         <extension name="GL_EXT_shader_texture_lod" supported="gles2">
             <require>
             </require>

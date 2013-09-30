@@ -7099,6 +7099,10 @@ GLAPI void APIENTRY glMemoryBarrierEXT (GLbitfield barriers);
 #endif
 #endif /* GL_EXT_shader_image_load_store */
 
+#ifndef GL_EXT_shader_integer_mix
+#define GL_EXT_shader_integer_mix 1
+#endif /* GL_EXT_shader_integer_mix */
+
 #ifndef GL_EXT_shadow_funcs
 #define GL_EXT_shadow_funcs 1
 #endif /* GL_EXT_shadow_funcs */
