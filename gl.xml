@@ -3813,7 +3813,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8264" name="GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS"/>
         <enum value="0x8265" name="GL_MAX_COMPUTE_ATOMIC_COUNTERS"/>
         <enum value="0x8266" name="GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS"/>
-        <enum value="0x8267" name="GL_COMPUTE_LOCAL_WORK_SIZE"/>
+        <enum value="0x8267" name="GL_COMPUTE_WORK_GROUP_SIZE"/>
         <enum value="0x8268" name="GL_DEBUG_TYPE_MARKER"/>
         <enum value="0x8268" name="GL_DEBUG_TYPE_MARKER_KHR"/>
         <enum value="0x8269" name="GL_DEBUG_TYPE_PUSH_GROUP"/>
@@ -7371,8 +7371,8 @@ typedef unsigned int GLhandleARB;
         <enum value="0x90E1" name="GL_SYNC_X11_FENCE_EXT"/>
             <unused start="0x90E2" end="0x90E9"/>
         <enum value="0x90EA" name="GL_DEPTH_STENCIL_TEXTURE_MODE"/>
-        <enum value="0x90EB" name="GL_MAX_COMPUTE_FIXED_GROUP_INVOCATIONS_ARB" alias="GL_MAX_COMPUTE_LOCAL_INVOCATIONS"/>
-        <enum value="0x90EB" name="GL_MAX_COMPUTE_LOCAL_INVOCATIONS"/>
+        <enum value="0x90EB" name="GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS"/>
+        <enum value="0x90EB" name="GL_MAX_COMPUTE_FIXED_GROUP_INVOCATIONS_ARB" alias="GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS"/>
         <enum value="0x90EC" name="GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER"/>
         <enum value="0x90ED" name="GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER"/>
         <enum value="0x90EE" name="GL_DISPATCH_INDIRECT_BUFFER"/>
@@ -7546,8 +7546,8 @@ typedef unsigned int GLhandleARB;
         <enum value="0x91BC" name="GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS"/>
         <enum value="0x91BD" name="GL_MAX_COMPUTE_IMAGE_UNIFORMS"/>
         <enum value="0x91BE" name="GL_MAX_COMPUTE_WORK_GROUP_COUNT"/>
-        <enum value="0x91BF" name="GL_MAX_COMPUTE_FIXED_GROUP_SIZE_ARB" alias="GL_MAX_COMPUTE_WORK_GROUP_SIZE"/>
         <enum value="0x91BF" name="GL_MAX_COMPUTE_WORK_GROUP_SIZE"/>
+        <enum value="0x91BF" name="GL_MAX_COMPUTE_FIXED_GROUP_SIZE_ARB" alias="GL_MAX_COMPUTE_WORK_GROUP_SIZE"/>
             <unused start="0x91C0" end="0x923F"/>
     </enums>
 
@@ -30271,10 +30271,10 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS"/>
             <enum name="GL_MAX_COMPUTE_ATOMIC_COUNTERS"/>
             <enum name="GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS"/>
-            <enum name="GL_MAX_COMPUTE_LOCAL_INVOCATIONS"/>
+            <enum name="GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS"/>
             <enum name="GL_MAX_COMPUTE_WORK_GROUP_COUNT"/>
             <enum name="GL_MAX_COMPUTE_WORK_GROUP_SIZE"/>
-            <enum name="GL_COMPUTE_LOCAL_WORK_SIZE"/>
+            <enum name="GL_COMPUTE_WORK_GROUP_SIZE"/>
             <enum name="GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER"/>
             <enum name="GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER"/>
             <enum name="GL_DISPATCH_INDIRECT_BUFFER"/>
@@ -32737,10 +32737,10 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS"/>
                 <enum name="GL_MAX_COMPUTE_ATOMIC_COUNTERS"/>
                 <enum name="GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS"/>
-                <enum name="GL_MAX_COMPUTE_LOCAL_INVOCATIONS"/>
+                <enum name="GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS"/>
                 <enum name="GL_MAX_COMPUTE_WORK_GROUP_COUNT"/>
                 <enum name="GL_MAX_COMPUTE_WORK_GROUP_SIZE"/>
-                <enum name="GL_COMPUTE_LOCAL_WORK_SIZE"/>
+                <enum name="GL_COMPUTE_WORK_GROUP_SIZE"/>
                 <enum name="GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER"/>
                 <enum name="GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER"/>
                 <enum name="GL_DISPATCH_INDIRECT_BUFFER"/>
