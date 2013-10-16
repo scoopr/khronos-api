@@ -471,7 +471,9 @@
         <enum value="0x31D4" name="EGL_DRM_BUFFER_STRIDE_MESA"/>
         <enum value="0x31D5" name="EGL_PLATFORM_X11_EXT"/>
         <enum value="0x31D6" name="EGL_PLATFORM_X11_SCREEN_EXT"/>
-            <unused start="0x31D5" end="0x31DF"/>
+        <enum value="0x31D7" name="EGL_PLATFORM_GBM_MESA"/>
+        <enum value="0x31D8" name="EGL_PLATFORM_WAYLAND_EXT"/>
+            <unused start="0x31D9" end="0x31DF"/>
     </enums>
 
     <enums namespace="EGL" start="0x31E0" end="0x31EF" vendor="HI" comment="Reserved for Mark Callow (Khronos bug 6799)">
@@ -1325,6 +1327,11 @@
                 <command name="eglCreatePlatformPixmapSurfaceEXT"/>
             </require>
         </extension>
+        <extension name="EGL_EXT_platform_wayland" supported="egl">
+            <require>
+                <enum name="EGL_PLATFORM_WAYLAND_EXT"/>
+            </require>
+        </extension>
         <extension name="EGL_EXT_platform_x11" supported="egl">
             <require>
                 <enum name="EGL_PLATFORM_X11_EXT"/>
@@ -1584,6 +1591,11 @@
                 <enum name="EGL_DRM_BUFFER_USE_SHARE_MESA"/>
                 <command name="eglCreateDRMImageMESA"/>
                 <command name="eglExportDRMImageMESA"/>
+            </require>
+        </extension>
+        <extension name="EGL_MESA_platform_gbm" supported="egl">
+            <require>
+                <enum name="EGL_PLATFORM_GBM_MESA"/>
             </require>
         </extension>
         <extension name="EGL_NV_3dvision_surface" supported="egl">
