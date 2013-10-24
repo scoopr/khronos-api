@@ -13578,12 +13578,6 @@ typedef unsigned int GLhandleARB;
             <glx type="single" opcode="119"/>
         </command>
         <command>
-            <proto>void <name>glGetLightx</name></proto>
-            <param><ptype>GLenum</ptype> <name>light</name></param>
-            <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param><ptype>GLfixed</ptype> *<name>params</name></param>
-        </command>
-        <command>
             <proto>void <name>glGetLightxOES</name></proto>
             <param><ptype>GLenum</ptype> <name>light</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
@@ -13707,12 +13701,6 @@ typedef unsigned int GLhandleARB;
             <param group="MaterialParameter"><ptype>GLenum</ptype> <name>pname</name></param>
             <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>params</name></param>
             <glx type="single" opcode="124"/>
-        </command>
-        <command>
-            <proto>void <name>glGetMaterialx</name></proto>
-            <param><ptype>GLenum</ptype> <name>face</name></param>
-            <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param><ptype>GLfixed</ptype> <name>param</name></param>
         </command>
         <command>
             <proto>void <name>glGetMaterialxOES</name></proto>
