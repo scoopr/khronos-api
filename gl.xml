@@ -9071,11 +9071,6 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint64</ptype> <name>timeout</name></param>
         </command>
         <command>
-            <proto>void <name>glClipControlARB</name></proto>
-            <param><ptype>GLenum</ptype> <name>origin</name></param>
-            <param><ptype>GLenum</ptype> <name>depth</name></param>
-        </command>
-        <command>
             <proto>void <name>glClipPlane</name></proto>
             <param group="ClipPlaneName"><ptype>GLenum</ptype> <name>plane</name></param>
             <param len="4">const <ptype>GLdouble</ptype> *<name>equation</name></param>
