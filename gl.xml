@@ -304,9 +304,7 @@ typedef unsigned int GLhandleARB;
         <group name="ColorTableParameterPNameSGI">
             <enum name="GL_COLOR_TABLE_BIAS"/>
             <enum name="GL_COLOR_TABLE_BIAS_SGI"/>
-            <enum name="GL_COLOR_TABLE_BIAS_SGI"/>
             <enum name="GL_COLOR_TABLE_SCALE"/>
-            <enum name="GL_COLOR_TABLE_SCALE_SGI"/>
             <enum name="GL_COLOR_TABLE_SCALE_SGI"/>
         </group>
 
@@ -28798,7 +28796,6 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_WAIT_FAILED"/>
             <enum name="GL_TIMEOUT_IGNORED"/>
             <enum name="GL_SYNC_FLUSH_COMMANDS_BIT"/>
-            <enum name="GL_TIMEOUT_IGNORED"/>
             <command name="glFenceSync"/>
             <command name="glIsSync"/>
             <command name="glDeleteSync"/>
