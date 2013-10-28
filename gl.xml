@@ -12867,7 +12867,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glGetBooleanv</name></proto>
             <param group="GetPName"><ptype>GLenum</ptype> <name>pname</name></param>
-            <param group="Boolean" len="COMPSIZE(pname)"><ptype>GLboolean</ptype> *<name>params</name></param>
+            <param group="Boolean" len="COMPSIZE(pname)"><ptype>GLboolean</ptype> *<name>data</name></param>
             <glx type="single" opcode="112"/>
         </command>
         <command>
@@ -13218,7 +13218,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glGetDoublev</name></proto>
             <param group="GetPName"><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="COMPSIZE(pname)"><ptype>GLdouble</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLdouble</ptype> *<name>data</name></param>
             <glx type="single" opcode="114"/>
         </command>
         <command>
@@ -13292,7 +13292,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glGetFloatv</name></proto>
             <param group="GetPName"><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="COMPSIZE(pname)"><ptype>GLfloat</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLfloat</ptype> *<name>data</name></param>
             <glx type="single" opcode="116"/>
         </command>
         <command>
@@ -13486,7 +13486,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glGetInteger64v</name></proto>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="COMPSIZE(pname)"><ptype>GLint64</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLint64</ptype> *<name>data</name></param>
         </command>
         <command>
             <proto>void <name>glGetInteger64vAPPLE</name></proto>
@@ -13526,7 +13526,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glGetIntegerv</name></proto>
             <param group="GetPName"><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>data</name></param>
             <glx type="single" opcode="117"/>
         </command>
         <command>
@@ -35727,7 +35727,7 @@ typedef unsigned int GLhandleARB;
                 <command name="glCullParameterfvEXT"/>
             </require>
         </extension>
-        <extension name="GL_EXT_debug_label" supported="gles2">
+        <extension name="GL_EXT_debug_label" supported="gl|gles2">
             <require>
                 <enum name="GL_PROGRAM_PIPELINE_OBJECT_EXT"/>
                 <enum name="GL_PROGRAM_OBJECT_EXT"/>
@@ -35743,7 +35743,7 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_TRANSFORM_FEEDBACK"/>
             </require>
         </extension>
-        <extension name="GL_EXT_debug_marker" supported="gles2">
+        <extension name="GL_EXT_debug_marker" supported="gl|gles2">
             <require>
                 <command name="glInsertEventMarkerEXT"/>
                 <command name="glPushGroupMarkerEXT"/>
