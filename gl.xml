@@ -21470,14 +21470,14 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>shader</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param len="count">const <ptype>GLchar</ptype> *const*<name>string</name></param>
-            <param len="1">const <ptype>GLint</ptype> *<name>length</name></param>
+            <param len="count">const <ptype>GLint</ptype> *<name>length</name></param>
         </command>
         <command>
             <proto>void <name>glShaderSourceARB</name></proto>
             <param group="handleARB"><ptype>GLhandleARB</ptype> <name>shaderObj</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param len="count">const <ptype>GLcharARB</ptype> **<name>string</name></param>
-            <param len="1">const <ptype>GLint</ptype> *<name>length</name></param>
+            <param len="count">const <ptype>GLint</ptype> *<name>length</name></param>
             <alias name="glShaderSource"/>
         </command>
         <command>
