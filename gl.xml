@@ -11581,7 +11581,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glElementPointerAPPLE</name></proto>
             <param group="ElementPointerTypeATI"><ptype>GLenum</ptype> <name>type</name></param>
-            <param len="type">const void *<name>pointer</name></param>
+            <param len="COMPSIZE(type)">const void *<name>pointer</name></param>
         </command>
         <command>
             <proto>void <name>glElementPointerATI</name></proto>
