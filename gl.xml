@@ -14008,7 +14008,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetObjectParameterfvARB</name></proto>
             <param group="handleARB"><ptype>GLhandleARB</ptype> <name>obj</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLfloat</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLfloat</ptype> *<name>params</name></param>
         </command>
         <command>
             <proto>void <name>glGetObjectParameterivAPPLE</name></proto>
@@ -14021,7 +14021,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetObjectParameterivARB</name></proto>
             <param group="handleARB"><ptype>GLhandleARB</ptype> <name>obj</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLint</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>params</name></param>
         </command>
         <command>
             <proto>void <name>glGetObjectPtrLabel</name></proto>
@@ -14473,7 +14473,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetProgramiv</name></proto>
             <param><ptype>GLuint</ptype> <name>program</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLint</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>params</name></param>
             <glx type="single" opcode="199"/>
         </command>
         <command>
@@ -14506,7 +14506,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetQueryObjecti64vEXT</name></proto>
             <param><ptype>GLuint</ptype> <name>id</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLint64</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLint64</ptype> *<name>params</name></param>
             <glx type="vendor" opcode="1328"/>
             <alias name="glGetQueryObjecti64v"/>
         </command>
@@ -14514,14 +14514,14 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetQueryObjectiv</name></proto>
             <param><ptype>GLuint</ptype> <name>id</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLint</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>params</name></param>
             <glx type="single" opcode="165"/>
         </command>
         <command>
             <proto>void <name>glGetQueryObjectivARB</name></proto>
             <param><ptype>GLuint</ptype> <name>id</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLint</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>params</name></param>
             <alias name="glGetQueryObjectiv"/>
         </command>
         <command>
@@ -14541,7 +14541,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetQueryObjectui64vEXT</name></proto>
             <param><ptype>GLuint</ptype> <name>id</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLuint64</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLuint64</ptype> *<name>params</name></param>
             <glx type="vendor" opcode="1329"/>
             <alias name="glGetQueryObjectui64v"/>
         </command>
@@ -14549,14 +14549,14 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetQueryObjectuiv</name></proto>
             <param><ptype>GLuint</ptype> <name>id</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLuint</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLuint</ptype> *<name>params</name></param>
             <glx type="single" opcode="166"/>
         </command>
         <command>
             <proto>void <name>glGetQueryObjectuivARB</name></proto>
             <param><ptype>GLuint</ptype> <name>id</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLuint</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLuint</ptype> *<name>params</name></param>
             <alias name="glGetQueryObjectuiv"/>
         </command>
         <command>
@@ -14569,14 +14569,14 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetQueryiv</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLint</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>params</name></param>
             <glx type="single" opcode="164"/>
         </command>
         <command>
             <proto>void <name>glGetQueryivARB</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLint</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>params</name></param>
             <alias name="glGetQueryiv"/>
         </command>
         <command>
@@ -14685,7 +14685,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetShaderiv</name></proto>
             <param><ptype>GLuint</ptype> <name>shader</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLint</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>params</name></param>
             <glx type="single" opcode="198"/>
         </command>
         <command>
@@ -15187,13 +15187,13 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glGetVertexAttribArrayObjectfvATI</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param group="ArrayObjectPNameATI"><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLfloat</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLfloat</ptype> *<name>params</name></param>
         </command>
         <command>
             <proto>void <name>glGetVertexAttribArrayObjectivATI</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
             <param group="ArrayObjectPNameATI"><ptype>GLenum</ptype> <name>pname</name></param>
-            <param len="pname"><ptype>GLint</ptype> *<name>params</name></param>
+            <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>params</name></param>
         </command>
         <command>
             <proto>void <name>glGetVertexAttribIiv</name></proto>
