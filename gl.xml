@@ -37813,6 +37813,9 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_INTERLACE_READ_INGR"/>
             </require>
         </extension>
+        <extension name="GL_INTEL_fragment_ordering" supported="gl">
+            <require/>
+        </extension>
         <extension name="GL_INTEL_map_texture" supported="gl">
             <require>
                 <enum name="GL_TEXTURE_MEMORY_LAYOUT_INTEL"/>
@@ -40988,8 +40991,7 @@ typedef unsigned int GLhandleARB;
             </require>
         </extension>
         <extension name="GL_SGIX_ycrcb_subsample" supported="gl">
-            <require>
-            </require>
+            <require/>
         </extension>
         <extension name="GL_SGIX_ycrcba" supported="gl">
             <require>
