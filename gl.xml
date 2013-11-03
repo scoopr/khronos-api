@@ -37813,7 +37813,7 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_INTERLACE_READ_INGR"/>
             </require>
         </extension>
-        <extension name="GL_INTEL_fragment_ordering" supported="gl">
+        <extension name="GL_INTEL_fragment_shader_ordering" supported="gl">
             <require/>
         </extension>
         <extension name="GL_INTEL_map_texture" supported="gl">
