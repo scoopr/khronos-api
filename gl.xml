@@ -7796,7 +7796,18 @@ typedef unsigned int GLhandleARB;
         <enum value="0x93BB" name="GL_COMPRESSED_RGBA_ASTC_10x10_KHR"/>
         <enum value="0x93BC" name="GL_COMPRESSED_RGBA_ASTC_12x10_KHR"/>
         <enum value="0x93BD" name="GL_COMPRESSED_RGBA_ASTC_12x12_KHR"/>
-            <unused start="0x93BE" end="0x93CF"/>
+            <unused start="0x93BE" end="0x93BF"/>
+        <enum value="0x93C0" name="GL_COMPRESSED_RGBA_ASTC_3x3x3_OES"/>          
+        <enum value="0x93C1" name="GL_COMPRESSED_RGBA_ASTC_4x3x3_OES"/>          
+        <enum value="0x93C2" name="GL_COMPRESSED_RGBA_ASTC_4x4x3_OES"/>          
+        <enum value="0x93C3" name="GL_COMPRESSED_RGBA_ASTC_4x4x4_OES"/>          
+        <enum value="0x93C4" name="GL_COMPRESSED_RGBA_ASTC_5x4x4_OES"/>          
+        <enum value="0x93C5" name="GL_COMPRESSED_RGBA_ASTC_5x5x4_OES"/>          
+        <enum value="0x93C6" name="GL_COMPRESSED_RGBA_ASTC_5x5x5_OES"/>          
+        <enum value="0x93C7" name="GL_COMPRESSED_RGBA_ASTC_6x5x5_OES"/>          
+        <enum value="0x93C8" name="GL_COMPRESSED_RGBA_ASTC_6x6x5_OES"/>          
+        <enum value="0x93C9" name="GL_COMPRESSED_RGBA_ASTC_6x6x6_OES"/>          
+            <unused start="0x93CA" end="0x93CF"/>
         <enum value="0x93D0" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR"/>
         <enum value="0x93D1" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR"/>
         <enum value="0x93D2" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR"/>
@@ -7811,9 +7822,20 @@ typedef unsigned int GLhandleARB;
         <enum value="0x93DB" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR"/>
         <enum value="0x93DC" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR"/>
         <enum value="0x93DD" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR"/>
-            <unused start="0x93DE" end="0x93EF"/>
+            <unused start="0x93DE" end="0x93DF"/>
+        <enum value="0x93E0" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_3x3x3_OES"/>  
+        <enum value="0x93E1" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x3x3_OES"/>  
+        <enum value="0x93E2" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x3_OES"/>  
+        <enum value="0x93E3" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x4_OES"/>  
+        <enum value="0x93E4" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4x4_OES"/>  
+        <enum value="0x93E5" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x4_OES"/>  
+        <enum value="0x93E6" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x5_OES"/>  
+        <enum value="0x93E7" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5x5_OES"/>  
+        <enum value="0x93E8" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x5_OES"/>  
+        <enum value="0x93E9" name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x6_OES"/>  
+            <unused start="0x93EA" end="0x93EF"/>
     </enums>
-
+        
     <enums namespace="GL" start="0x93F0" end="0x94EF" vendor="APPLE" comment="Khronos bug 10233">
             <unused start="0x93F0" end="0x94EF"/>
     </enums>
@@ -36813,7 +36835,7 @@ typedef unsigned int GLhandleARB;
                 <command name="glUseProgramStagesEXT"/>
                 <command name="glValidateProgramPipelineEXT"/>
             </require>
-            <require api="gles2" comment="Depends on OpenGL ES 3.0">
+            <require api="gles2" comment="Depends on OpenGL ES 3.0 or GL_NV_non_square_matrices">
                 <command name="glProgramUniform1uiEXT"/>
                 <command name="glProgramUniform2uiEXT"/>
                 <command name="glProgramUniform3uiEXT"/>
@@ -40265,6 +40287,26 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR"/>
                 <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR"/>
                 <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR"/>
+                <enum name="GL_COMPRESSED_RGBA_ASTC_3x3x3_OES"/>          
+                <enum name="GL_COMPRESSED_RGBA_ASTC_4x3x3_OES"/>          
+                <enum name="GL_COMPRESSED_RGBA_ASTC_4x4x3_OES"/>          
+                <enum name="GL_COMPRESSED_RGBA_ASTC_4x4x4_OES"/>          
+                <enum name="GL_COMPRESSED_RGBA_ASTC_5x4x4_OES"/>          
+                <enum name="GL_COMPRESSED_RGBA_ASTC_5x5x4_OES"/>          
+                <enum name="GL_COMPRESSED_RGBA_ASTC_5x5x5_OES"/>          
+                <enum name="GL_COMPRESSED_RGBA_ASTC_6x5x5_OES"/>          
+                <enum name="GL_COMPRESSED_RGBA_ASTC_6x6x5_OES"/>          
+                <enum name="GL_COMPRESSED_RGBA_ASTC_6x6x6_OES"/>          
+                <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_3x3x3_OES"/>  
+                <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x3x3_OES"/>  
+                <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x3_OES"/>  
+                <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x4_OES"/>  
+                <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4x4_OES"/>  
+                <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x4_OES"/>  
+                <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x5_OES"/>  
+                <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5x5_OES"/>  
+                <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x5_OES"/>  
+                <enum name="GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x6_OES"/>  
             </require>
         </extension>
         <extension name="GL_OES_texture_cube_map" supported="gles1">
