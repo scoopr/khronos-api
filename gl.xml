@@ -6973,9 +6973,13 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8E88" name="GL_TESS_CONTROL_SHADER"/>
         <enum value="0x8E89" name="GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS"/>
         <enum value="0x8E8A" name="GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS"/>
+        <enum value="0x8E8C" name="GL_COMPRESSED_RGBA_BPTC_UNORM"/>
         <enum value="0x8E8C" name="GL_COMPRESSED_RGBA_BPTC_UNORM_ARB"/>
+        <enum value="0x8E8D" name="GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM"/>
         <enum value="0x8E8D" name="GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB"/>
+        <enum value="0x8E8E" name="GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT"/>
         <enum value="0x8E8E" name="GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB"/>
+        <enum value="0x8E8F" name="GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT"/>
         <enum value="0x8E8F" name="GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB"/>
     </enums>
 
@@ -30240,6 +30244,12 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_MAX_COMBINED_IMAGE_UNIFORMS"/>
         </require>
         <require comment="Reuse tokens from ARB_shading_language_packing (none)">
+        </require>
+        <require comment="Reuse tokens from ARB_texture_compression_bptc">
+            <enum name="GL_COMPRESSED_RGBA_BPTC_UNORM"/>
+            <enum name="GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM"/>
+            <enum name="GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT"/>
+            <enum name="GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT"/>
         </require>
         <require comment="Reuse tokens from ARB_texture_storage">
             <enum name="GL_TEXTURE_IMMUTABLE_FORMAT"/>
