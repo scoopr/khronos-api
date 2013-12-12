@@ -9071,10 +9071,10 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glClearNamedBufferSubDataEXT</name></proto>
             <param><ptype>GLuint</ptype> <name>buffer</name></param>
             <param><ptype>GLenum</ptype> <name>internalformat</name></param>
-            <param group="PixelFormat"><ptype>GLenum</ptype> <name>format</name></param>
-            <param group="PixelType"><ptype>GLenum</ptype> <name>type</name></param>
             <param group="BufferSize"><ptype>GLsizeiptr</ptype> <name>offset</name></param>
             <param group="BufferSize"><ptype>GLsizeiptr</ptype> <name>size</name></param>
+            <param group="PixelFormat"><ptype>GLenum</ptype> <name>format</name></param>
+            <param group="PixelType"><ptype>GLenum</ptype> <name>type</name></param>
             <param len="COMPSIZE(format,type)">const void *<name>data</name></param>
         </command>
         <command>
