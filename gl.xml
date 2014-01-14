@@ -5494,7 +5494,9 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8834" name="GL_DRAW_BUFFER15_EXT"/>
         <enum value="0x8834" name="GL_DRAW_BUFFER15_NV"/>
         <enum value="0x8835" name="GL_COLOR_CLEAR_UNCLAMPED_VALUE_ATI"/>
-            <unused start="0x8836" end="0x883C"/>
+            <unused start="0x8836"/>
+        <enum value="0x8837" name="GL_COMPRESSED_LUMINANCE_ALPHA_3DC_ATI" comment="Defined by Mesa but not ATI"/>
+            <unused start="0x8838" end="0x883C"/>
         <enum value="0x883D" name="GL_BLEND_EQUATION_ALPHA"/>
         <enum value="0x883D" name="GL_BLEND_EQUATION_ALPHA_EXT"/>
         <enum value="0x883D" name="GL_BLEND_EQUATION_ALPHA_OES"/>
@@ -8489,7 +8491,6 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glBindVertexArrayAPPLE</name></proto>
             <param><ptype>GLuint</ptype> <name>array</name></param>
-            <alias name="glBindVertexArray"/>
         </command>
         <command>
             <proto>void <name>glBindVertexArrayOES</name></proto>
@@ -12925,13 +12926,12 @@ typedef unsigned int GLhandleARB;
             <param group="ArrayObjectPNameATI"><ptype>GLenum</ptype> <name>pname</name></param>
             <param len="1"><ptype>GLint</ptype> *<name>params</name></param>
         </command>
-        <command>
+        <command comment="Could be an alias of glGetAttachedShaders except that GLhandleARB is different on MacOS X">
             <proto>void <name>glGetAttachedObjectsARB</name></proto>
             <param group="handleARB"><ptype>GLhandleARB</ptype> <name>containerObj</name></param>
             <param><ptype>GLsizei</ptype> <name>maxCount</name></param>
             <param len="1"><ptype>GLsizei</ptype> *<name>count</name></param>
             <param group="handleARB" len="count"><ptype>GLhandleARB</ptype> *<name>obj</name></param>
-            <alias name="glGetAttachedShaders"/>
         </command>
         <command>
             <proto>void <name>glGetAttachedShaders</name></proto>
@@ -13013,6 +13013,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLenum</ptype> <name>pname</name></param>
             <param>void **<name>params</name></param>
+            <alias name="glGetBufferPointerv"/>
         </command>
         <command>
             <proto>void <name>glGetBufferSubData</name></proto>
@@ -16569,6 +16570,7 @@ typedef unsigned int GLhandleARB;
             <proto>void *<name>glMapBufferOES</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLenum</ptype> <name>access</name></param>
+            <alias name="glMapBuffer"/>
         </command>
         <command>
             <proto>void *<name>glMapBufferRange</name></proto>
@@ -23992,7 +23994,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param group="Boolean"><ptype>GLboolean</ptype> <name>transpose</name></param>
             <param len="6">const <ptype>GLfloat</ptype> *<name>value</name></param>
-            <alias name="glUniformMatrix3x2"/>
+            <alias name="glUniformMatrix3x2fv"/>
         </command>
         <command>
             <proto>void <name>glUniformMatrix3x4dv</name></proto>
