@@ -1472,13 +1472,15 @@
         </extension>
         <extension name="EGL_KHR_image_base" supported="egl">
             <require>
-                <!-- @ Most interfaces defined by EGL_KHR_image above -->
                 <enum name="EGL_IMAGE_PRESERVED_KHR"/>
+                <enum name="EGL_NO_IMAGE_KHR"/>
+                <command name="eglCreateImageKHR"/>
+                <command name="eglDestroyImageKHR"/>
             </require>
         </extension>
         <extension name="EGL_KHR_image_pixmap" supported="egl">
             <require>
-                <!-- @ Most interfaces defined by EGL_KHR_image above -->
+                <enum name="EGL_NATIVE_PIXMAP_KHR"/>
             </require>
         </extension>
         <extension name="EGL_KHR_lock_surface" supported="egl">
