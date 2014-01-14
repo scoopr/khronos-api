@@ -1327,6 +1327,7 @@ typedef unsigned __int64 uint64_t;
     <!-- SECTION: GLX API interface definitions. -->
     <feature api="glx" name="GLX_VERSION_1_0" number="1.0">
         <require>
+            <type name="GLXContextID" comment="Required here so it isn't added to glxext.h, breaking Mesa (Bug 11454)"/>
                 <!-- A string #define. Maybe should have a <text> tag for this use? -->
             <enum name="GLX_EXTENSION_NAME"/>
                 <!-- Events -->
