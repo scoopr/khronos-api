@@ -432,6 +432,14 @@ void glXCopyImageSubDataNV (Display *dpy, GLXContext srcCtx, GLuint srcName, GLe
 #endif
 #endif /* GLX_NV_copy_image */
 
+#ifndef GLX_NV_delay_before_swap
+#define GLX_NV_delay_before_swap 1
+typedef Bool ( *PFNGLXDELAYBEFORESWAPNVPROC) (Display *dpy, GLXDrawable drawable, GLfloat seconds);
+#ifdef GLX_GLXEXT_PROTOTYPES
+Bool glXDelayBeforeSwapNV (Display *dpy, GLXDrawable drawable, GLfloat seconds);
+#endif
+#endif /* GLX_NV_delay_before_swap */
+
 #ifndef GLX_NV_float_buffer
 #define GLX_NV_float_buffer 1
 #define GLX_FLOAT_COMPONENTS_NV           0x20B0
