@@ -49,6 +49,7 @@ extern "C" {
 
 #ifndef GLX_VERSION_1_3
 #define GLX_VERSION_1_3 1
+typedef XID GLXContextID;
 typedef struct __GLXFBConfigRec *GLXFBConfig;
 typedef XID GLXWindow;
 typedef XID GLXPbuffer;
