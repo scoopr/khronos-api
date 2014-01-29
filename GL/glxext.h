@@ -36,7 +36,7 @@ extern "C" {
 ** Khronos $Revision$ on $Date$
 */
 
-#define GLX_GLXEXT_VERSION 20140114
+#define GLX_GLXEXT_VERSION 20140129
 
 /* Generated C header for:
  * API: glx
