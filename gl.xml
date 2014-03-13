@@ -7084,7 +7084,13 @@ typedef unsigned int GLhandleARB;
     <enums namespace="GL" start="0x8F60" end="0x8F6F" vendor="ARM" comment="For Remi Pedersen, Khronos bug 3745">
         <enum value="0x8F60" name="GL_MALI_SHADER_BINARY_ARM"/>
         <enum value="0x8F61" name="GL_MALI_PROGRAM_BINARY_ARM"/>
-            <unused start="0x8F62" end="0x8F6F"/>
+            <unused start="0x8F62"/>
+        <enum value="0x8F63" name="GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_FAST_SIZE_EXT"/>
+        <enum value="0x8F64" name="GL_SHADER_PIXEL_LOCAL_STORAGE_EXT"/>
+        <enum value="0x8F65" name="GL_FETCH_PER_SAMPLE_ARM"/>
+        <enum value="0x8F66" name="GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM"/>
+        <enum value="0x8F67" name="GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_SIZE_EXT"/>
+            <unused start="0x8F68" end="0x8F6F"/>
     </enums>
 
     <enums namespace="GL" start="0x8F70" end="0x8F7F" vendor="HI" comment="For Mark Callow, Khronos bug 4055. Shared with EGL."/>
@@ -35300,6 +35306,13 @@ typedef unsigned int GLhandleARB;
             </require>
         </extension>
         <extension name="GL_ARM_rgba8" supported="gles1|gles2"/>
+        <extension name="GL_ARM_shader_framebuffer_fetch" supported="gles2">
+            <require>
+                <enum name="GL_FETCH_PER_SAMPLE_ARM"/>
+                <enum name="GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM"/>
+            </require>
+        </extension>
+        <extension name="GL_ARM_shader_framebuffer_fetch_depth_stencil" supported="gles2"/>
         <extension name="GL_ATI_draw_buffers" supported="gl">
             <require>
                 <enum name="GL_MAX_DRAW_BUFFERS_ATI"/>
@@ -36998,6 +37011,13 @@ typedef unsigned int GLhandleARB;
             </require>
         </extension>
         <extension name="GL_EXT_shader_integer_mix" supported="gl|gles2"/>
+        <extension name="GL_EXT_shader_pixel_local_storage" supported="gles2">
+            <require>
+                <enum name="GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_FAST_SIZE_EXT"/>
+                <enum name="GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_SIZE_EXT"/>
+                <enum name="GL_SHADER_PIXEL_LOCAL_STORAGE_EXT"/>
+            </require>
+        </extension>
         <extension name="GL_EXT_shader_texture_lod" supported="gles2"/>
         <extension name="GL_EXT_shadow_funcs" supported="gl"/>
         <extension name="GL_EXT_shadow_samplers" supported="gles2">
