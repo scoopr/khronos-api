@@ -147,6 +147,17 @@ typedef unsigned __int64 uint64_t;
 
         <type>typedef struct {
     int type;
+    unsigned long serial;
+    Bool send_event;
+    Display *display;
+    int extension;
+    int evtype;
+    GLXDrawable window;
+    Bool stereo_tree;
+} <name>GLXStereoNotifyEventEXT</name>;</type>
+
+        <type>typedef struct {
+    int type;
     unsigned long serial;   /* # of last request processed by server */
     Bool send_event;        /* true if this came for SendEvent request */
     Display *display;       /* display the event was read from */
@@ -252,6 +263,7 @@ typedef unsigned __int64 uint64_t;
     </enums>
 
     <enums namespace="GLXEventMask" type="bitmask" comment="SelectEvent mask">
+        <enum value="0x00000001"    name="GLX_STEREO_NOTIFY_MASK_EXT"/>
         <enum value="0x04000000"    name="GLX_BUFFER_SWAP_COMPLETE_INTEL_MASK"/>
         <enum value="0x08000000"    name="GLX_PBUFFER_CLOBBER_MASK"/>
         <enum value="0x08000000"    name="GLX_BUFFER_CLOBBER_MASK_SGIX"/>
@@ -311,6 +323,10 @@ typedef unsigned __int64 uint64_t;
 
     <enums namespace="GLXHyperpipeMiscSGIX">
         <enum value="80"            name="GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX"/>
+    </enums>
+
+    <enums namespace="GLX_XGenericEventCookieNV" vendor="NV" comment="Returned in the evtype field of XGenericEventCookie requests">
+        <enum value="0x00000000"    name="GLX_STEREO_NOTIFY_EXT"/>
     </enums>
 
     <enums namespace="GLX" start="0x0000" end="0x2FFF" vendor="ARB"           comment="Miscellaneous OpenGL 1.0/1.1 enums. Most parts of this range are unused and should remain unused."/>
@@ -431,7 +447,8 @@ typedef unsigned __int64 uint64_t;
         <enum value="0x20F2"        name="GLX_MAX_SWAP_INTERVAL_EXT"/>
         <enum value="0x20F3"        name="GLX_LATE_SWAPS_TEAR_EXT"/>
         <enum value="0x20F4"        name="GLX_BACK_BUFFER_AGE_EXT"/>
-            <unused start="0x20F5" end="0x219F"/>
+        <enum value="0x20F5"        name="GLX_STEREO_TREE_EXT"/>
+            <unused start="0x20F6" end="0x219F"/>
     </enums>
 
     <enums namespace="GLX" start="0x21A0" end="0x21AF" vendor="AMD" comment="Shared with WGL; synchronize create_context enums">
@@ -1530,37 +1547,24 @@ typedef unsigned __int64 uint64_t;
 
     <!-- SECTION: GLX extension interface definitions -->
     <extensions>
-        <extension name="GLX_ARB_get_proc_address" supported="glx">
-            <require>
-                <command name="glXGetProcAddressARB"/>
-            </require>
-        </extension>
-        <extension name="GLX_ARB_multisample" supported="glx">
-            <require>
-                <enum name="GLX_SAMPLE_BUFFERS_ARB"/>
-                <enum name="GLX_SAMPLES_ARB"/>
-            </require>
-        </extension>
         <extension name="GLX_3DFX_multisample" supported="glx">
             <require>
                 <enum name="GLX_SAMPLE_BUFFERS_3DFX"/>
                 <enum name="GLX_SAMPLES_3DFX"/>
             </require>
         </extension>
-        <extension name="GLX_ARB_vertex_buffer_object" supported="glx">
+        <extension name="GLX_AMD_gpu_association" supported="glx">
             <require>
-                <enum name="GLX_CONTEXT_ALLOW_BUFFER_BYTE_ORDER_MISMATCH_ARB"/>
-            </require>
-        </extension>
-        <extension name="GLX_ARB_fbconfig_float" supported="glx">
-            <require>
-                <enum name="GLX_RGBA_FLOAT_TYPE_ARB"/>
-                <enum name="GLX_RGBA_FLOAT_BIT_ARB"/>
-            </require>
-        </extension>
-        <extension name="GLX_ARB_framebuffer_sRGB" supported="glx">
-            <require>
-                <enum name="GLX_FRAMEBUFFER_SRGB_CAPABLE_ARB"/>
+                <enum name="GLX_GPU_VENDOR_AMD"/>
+                <enum name="GLX_GPU_RENDERER_STRING_AMD"/>
+                <enum name="GLX_GPU_OPENGL_VERSION_STRING_AMD"/>
+                <enum name="GLX_GPU_FASTEST_TARGET_GPUS_AMD"/>
+                <enum name="GLX_GPU_RAM_AMD"/>
+                <enum name="GLX_GPU_CLOCK_AMD"/>
+                <enum name="GLX_GPU_NUM_PIPES_AMD"/>
+                <enum name="GLX_GPU_NUM_SIMD_AMD"/>
+                <enum name="GLX_GPU_NUM_RB_AMD"/>
+                <enum name="GLX_GPU_NUM_SPI_AMD"/>
             </require>
         </extension>
         <extension name="GLX_ARB_create_context" supported="glx">
@@ -1588,6 +1592,28 @@ typedef unsigned __int64 uint64_t;
                 <enum name="GLX_NO_RESET_NOTIFICATION_ARB"/>
             </require>
         </extension>
+        <extension name="GLX_ARB_fbconfig_float" supported="glx">
+            <require>
+                <enum name="GLX_RGBA_FLOAT_TYPE_ARB"/>
+                <enum name="GLX_RGBA_FLOAT_BIT_ARB"/>
+            </require>
+        </extension>
+        <extension name="GLX_ARB_framebuffer_sRGB" supported="glx">
+            <require>
+                <enum name="GLX_FRAMEBUFFER_SRGB_CAPABLE_ARB"/>
+            </require>
+        </extension>
+        <extension name="GLX_ARB_get_proc_address" supported="glx">
+            <require>
+                <command name="glXGetProcAddressARB"/>
+            </require>
+        </extension>
+        <extension name="GLX_ARB_multisample" supported="glx">
+            <require>
+                <enum name="GLX_SAMPLE_BUFFERS_ARB"/>
+                <enum name="GLX_SAMPLES_ARB"/>
+            </require>
+        </extension>
         <extension name="GLX_ARB_robustness_application_isolation" supported="glx">
             <require>
                 <enum name="GLX_CONTEXT_RESET_ISOLATION_BIT_ARB"/>
@@ -1598,61 +1624,35 @@ typedef unsigned __int64 uint64_t;
                 <enum name="GLX_CONTEXT_RESET_ISOLATION_BIT_ARB"/>
             </require>
         </extension>
-        <extension name="GLX_SGIS_multisample" supported="glx">
+        <extension name="GLX_ARB_vertex_buffer_object" supported="glx">
             <require>
-                <enum name="GLX_SAMPLE_BUFFERS_SGIS"/>
-                <enum name="GLX_SAMPLES_SGIS"/>
+                <enum name="GLX_CONTEXT_ALLOW_BUFFER_BYTE_ORDER_MISMATCH_ARB"/>
             </require>
         </extension>
-        <extension name="GLX_EXT_visual_info" supported="glx">
+        <extension name="GLX_EXT_buffer_age" supported="glx">
             <require>
-                <enum name="GLX_X_VISUAL_TYPE_EXT"/>
-                <enum name="GLX_TRANSPARENT_TYPE_EXT"/>
-                <enum name="GLX_TRANSPARENT_INDEX_VALUE_EXT"/>
-                <enum name="GLX_TRANSPARENT_RED_VALUE_EXT"/>
-                <enum name="GLX_TRANSPARENT_GREEN_VALUE_EXT"/>
-                <enum name="GLX_TRANSPARENT_BLUE_VALUE_EXT"/>
-                <enum name="GLX_TRANSPARENT_ALPHA_VALUE_EXT"/>
-                <enum name="GLX_NONE_EXT"/>
-                <enum name="GLX_TRUE_COLOR_EXT"/>
-                <enum name="GLX_DIRECT_COLOR_EXT"/>
-                <enum name="GLX_PSEUDO_COLOR_EXT"/>
-                <enum name="GLX_STATIC_COLOR_EXT"/>
-                <enum name="GLX_GRAY_SCALE_EXT"/>
-                <enum name="GLX_STATIC_GRAY_EXT"/>
-                <enum name="GLX_TRANSPARENT_RGB_EXT"/>
-                <enum name="GLX_TRANSPARENT_INDEX_EXT"/>
+                <enum name="GLX_BACK_BUFFER_AGE_EXT"/>
             </require>
         </extension>
-        <extension name="GLX_SGI_swap_control" supported="glx">
+        <extension name="GLX_EXT_create_context_es_profile" supported="glx">
             <require>
-                <command name="glXSwapIntervalSGI"/>
+                <enum name="GLX_CONTEXT_ES_PROFILE_BIT_EXT"/>
             </require>
         </extension>
-        <extension name="GLX_SGI_video_sync" supported="glx">
+        <extension name="GLX_EXT_create_context_es2_profile" supported="glx">
             <require>
-                <command name="glXGetVideoSyncSGI"/>
-                <command name="glXWaitVideoSyncSGI"/>
+                <enum name="GLX_CONTEXT_ES2_PROFILE_BIT_EXT"/>
             </require>
         </extension>
-        <extension name="GLX_SGI_make_current_read" supported="glx">
+        <extension name="GLX_EXT_fbconfig_packed_float" supported="glx">
             <require>
-                <command name="glXMakeCurrentReadSGI"/>
-                <command name="glXGetCurrentReadDrawableSGI"/>
+                <enum name="GLX_RGBA_UNSIGNED_FLOAT_TYPE_EXT"/>
+                <enum name="GLX_RGBA_UNSIGNED_FLOAT_BIT_EXT"/>
             </require>
         </extension>
-        <extension name="GLX_SGIX_video_source" supported="glx" protect="_VL_H">
+        <extension name="GLX_EXT_framebuffer_sRGB" supported="glx">
             <require>
-                <command name="glXCreateGLXVideoSourceSGIX"/>
-                <command name="glXDestroyGLXVideoSourceSGIX"/>
-            </require>
-        </extension>
-        <extension name="GLX_EXT_visual_rating" supported="glx">
-            <require>
-                <enum name="GLX_VISUAL_CAVEAT_EXT"/>
-                <enum name="GLX_SLOW_VISUAL_EXT"/>
-                <enum name="GLX_NON_CONFORMANT_VISUAL_EXT"/>
-                <enum name="GLX_NONE_EXT"/>
+                <enum name="GLX_FRAMEBUFFER_SRGB_CAPABLE_EXT"/>
             </require>
         </extension>
         <extension name="GLX_EXT_import_context" supported="glx">
@@ -1667,211 +1667,24 @@ typedef unsigned __int64 uint64_t;
                 <command name="glXFreeContextEXT"/>
             </require>
         </extension>
-        <extension name="GLX_SGIX_fbconfig" supported="glx">
+        <extension name="GLX_EXT_stereo_tree" supported="glx">
             <require>
-                <enum name="GLX_WINDOW_BIT_SGIX"/>
-                <enum name="GLX_PIXMAP_BIT_SGIX"/>
-                <enum name="GLX_RGBA_BIT_SGIX"/>
-                <enum name="GLX_COLOR_INDEX_BIT_SGIX"/>
-                <enum name="GLX_DRAWABLE_TYPE_SGIX"/>
-                <enum name="GLX_RENDER_TYPE_SGIX"/>
-                <enum name="GLX_X_RENDERABLE_SGIX"/>
-                <enum name="GLX_FBCONFIG_ID_SGIX"/>
-                <enum name="GLX_RGBA_TYPE_SGIX"/>
-                <enum name="GLX_COLOR_INDEX_TYPE_SGIX"/>
-                <enum name="GLX_SCREEN_EXT"/>
-                <command name="glXGetFBConfigAttribSGIX"/>
-                <command name="glXChooseFBConfigSGIX"/>
-                <command name="glXCreateGLXPixmapWithConfigSGIX"/>
-                <command name="glXCreateContextWithConfigSGIX"/>
-                <command name="glXGetVisualFromFBConfigSGIX"/>
-                <command name="glXGetFBConfigFromVisualSGIX"/>
+                <type name="GLXStereoNotifyEventEXT"/>
+                <enum name="GLX_STEREO_TREE_EXT"/>
+                <enum name="GLX_STEREO_NOTIFY_MASK_EXT"/>
+                <enum name="GLX_STEREO_NOTIFY_EXT"/>
             </require>
         </extension>
-        <extension name="GLX_SGIX_pbuffer" supported="glx">
+        <extension name="GLX_EXT_swap_control" supported="glx">
             <require>
-                <enum name="GLX_PBUFFER_BIT_SGIX"/>
-                <enum name="GLX_BUFFER_CLOBBER_MASK_SGIX"/>
-                <enum name="GLX_FRONT_LEFT_BUFFER_BIT_SGIX"/>
-                <enum name="GLX_FRONT_RIGHT_BUFFER_BIT_SGIX"/>
-                <enum name="GLX_BACK_LEFT_BUFFER_BIT_SGIX"/>
-                <enum name="GLX_BACK_RIGHT_BUFFER_BIT_SGIX"/>
-                <enum name="GLX_AUX_BUFFERS_BIT_SGIX"/>
-                <enum name="GLX_DEPTH_BUFFER_BIT_SGIX"/>
-                <enum name="GLX_STENCIL_BUFFER_BIT_SGIX"/>
-                <enum name="GLX_ACCUM_BUFFER_BIT_SGIX"/>
-                <enum name="GLX_SAMPLE_BUFFERS_BIT_SGIX"/>
-                <enum name="GLX_MAX_PBUFFER_WIDTH_SGIX"/>
-                <enum name="GLX_MAX_PBUFFER_HEIGHT_SGIX"/>
-                <enum name="GLX_MAX_PBUFFER_PIXELS_SGIX"/>
-                <enum name="GLX_OPTIMAL_PBUFFER_WIDTH_SGIX"/>
-                <enum name="GLX_OPTIMAL_PBUFFER_HEIGHT_SGIX"/>
-                <enum name="GLX_PRESERVED_CONTENTS_SGIX"/>
-                <enum name="GLX_LARGEST_PBUFFER_SGIX"/>
-                <enum name="GLX_WIDTH_SGIX"/>
-                <enum name="GLX_HEIGHT_SGIX"/>
-                <enum name="GLX_EVENT_MASK_SGIX"/>
-                <enum name="GLX_DAMAGED_SGIX"/>
-                <enum name="GLX_SAVED_SGIX"/>
-                <enum name="GLX_WINDOW_SGIX"/>
-                <enum name="GLX_PBUFFER_SGIX"/>
-                <command name="glXCreateGLXPbufferSGIX"/>
-                <command name="glXDestroyGLXPbufferSGIX"/>
-                <command name="glXQueryGLXPbufferSGIX"/>
-                <command name="glXSelectEventSGIX"/>
-                <command name="glXGetSelectedEventSGIX"/>
+                <enum name="GLX_SWAP_INTERVAL_EXT"/>
+                <enum name="GLX_MAX_SWAP_INTERVAL_EXT"/>
+                <command name="glXSwapIntervalEXT"/>
             </require>
         </extension>
-        <extension name="GLX_SGIS_blended_overlay" supported="glx">
+        <extension name="GLX_EXT_swap_control_tear" supported="glx">
             <require>
-                <enum name="GLX_BLENDED_RGBA_SGIS"/>
-            </require>
-        </extension>
-        <extension name="GLX_SGI_cushion" supported="glx">
-            <require>
-                <command name="glXCushionSGI"/>
-            </require>
-        </extension>
-        <extension name="GLX_SGIS_shared_multisample" supported="glx">
-            <require>
-                <enum name="GLX_MULTISAMPLE_SUB_RECT_WIDTH_SGIS"/>
-                <enum name="GLX_MULTISAMPLE_SUB_RECT_HEIGHT_SGIS"/>
-            </require>
-        </extension>
-        <extension name="GLX_SGIX_video_resize" supported="glx">
-            <require>
-                <enum name="GLX_SYNC_FRAME_SGIX"/>
-                <enum name="GLX_SYNC_SWAP_SGIX"/>
-                <command name="glXBindChannelToWindowSGIX"/>
-                <command name="glXChannelRectSGIX"/>
-                <command name="glXQueryChannelRectSGIX"/>
-                <command name="glXQueryChannelDeltasSGIX"/>
-                <command name="glXChannelRectSyncSGIX"/>
-            </require>
-        </extension>
-<!--     Comment GLX_SGIX_dmbuffer out for the moment. The extension pulls in
-         the GLXPbufferSGIX <type> but then comments it out with #ifdef
-         _DM_BUFFER_H_, making it unavailable to later extensions. Need some
-         work on dependencies.
--->
-        <extension name="GLX_SGIX_dmbuffer" supported="glx" protect="_DM_BUFFER_H_">
-            <require>
-                <enum name="GLX_DIGITAL_MEDIA_PBUFFER_SGIX"/>
-                <command name="glXAssociateDMPbufferSGIX"/>
-            </require>
-        </extension>
-<!--
--->
-        <extension name="GLX_SGIX_swap_group" supported="glx">
-            <require>
-                <command name="glXJoinSwapGroupSGIX"/>
-            </require>
-        </extension>
-        <extension name="GLX_SGIX_swap_barrier" supported="glx">
-            <require>
-                <command name="glXBindSwapBarrierSGIX"/>
-                <command name="glXQueryMaxSwapBarriersSGIX"/>
-            </require>
-        </extension>
-        <extension name="GLX_SUN_get_transparent_index" supported="glx">
-            <require>
-                <command name="glXGetTransparentIndexSUN"/>
-            </require>
-        </extension>
-        <extension name="GLX_MESA_copy_sub_buffer" supported="glx">
-            <require>
-                <command name="glXCopySubBufferMESA"/>
-            </require>
-        </extension>
-        <extension name="GLX_MESA_pixmap_colormap" supported="glx">
-            <require>
-                <command name="glXCreateGLXPixmapMESA"/>
-            </require>
-        </extension>
-        <extension name="GLX_MESA_release_buffers" supported="glx">
-            <require>
-                <command name="glXReleaseBuffersMESA"/>
-            </require>
-        </extension>
-        <extension name="GLX_MESA_set_3dfx_mode" supported="glx">
-            <require>
-                <enum name="GLX_3DFX_WINDOW_MODE_MESA"/>
-                <enum name="GLX_3DFX_FULLSCREEN_MODE_MESA"/>
-                <command name="glXSet3DfxModeMESA"/>
-            </require>
-        </extension>
-        <extension name="GLX_SGIX_visual_select_group" supported="glx">
-            <require>
-                <enum name="GLX_VISUAL_SELECT_GROUP_SGIX"/>
-            </require>
-        </extension>
-        <extension name="GLX_OML_swap_method" supported="glx">
-            <require>
-                <enum name="GLX_SWAP_METHOD_OML"/>
-                <enum name="GLX_SWAP_EXCHANGE_OML"/>
-                <enum name="GLX_SWAP_COPY_OML"/>
-                <enum name="GLX_SWAP_UNDEFINED_OML"/>
-            </require>
-        </extension>
-        <extension name="GLX_OML_sync_control" supported="glx">
-            <require>
-                <command name="glXGetSyncValuesOML"/>
-                <command name="glXGetMscRateOML"/>
-                <command name="glXSwapBuffersMscOML"/>
-                <command name="glXWaitForMscOML"/>
-                <command name="glXWaitForSbcOML"/>
-            </require>
-        </extension>
-        <extension name="GLX_NV_delay_before_swap" supported="glx">
-            <require>
-                <command name="glXDelayBeforeSwapNV"/>
-            </require>
-        </extension>
-        <extension name="GLX_NV_float_buffer" supported="glx">
-            <require>
-                <enum name="GLX_FLOAT_COMPONENTS_NV"/>
-            </require>
-        </extension>
-        <extension name="GLX_SGIX_hyperpipe" supported="glx">
-            <require>
-                <type name="GLXHyperpipeNetworkSGIX"/>
-                <type name="GLXHyperpipeConfigSGIX"/>
-                <type name="GLXPipeRect"/>
-                <type name="GLXPipeRectLimits"/>
-                <enum name="GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX"/>
-                <enum name="GLX_BAD_HYPERPIPE_CONFIG_SGIX"/>
-                <enum name="GLX_BAD_HYPERPIPE_SGIX"/>
-                <enum name="GLX_HYPERPIPE_DISPLAY_PIPE_SGIX"/>
-                <enum name="GLX_HYPERPIPE_RENDER_PIPE_SGIX"/>
-                <enum name="GLX_PIPE_RECT_SGIX"/>
-                <enum name="GLX_PIPE_RECT_LIMITS_SGIX"/>
-                <enum name="GLX_HYPERPIPE_STEREO_SGIX"/>
-                <enum name="GLX_HYPERPIPE_PIXEL_AVERAGE_SGIX"/>
-                <enum name="GLX_HYPERPIPE_ID_SGIX"/>
-                <command name="glXQueryHyperpipeNetworkSGIX"/>
-                <command name="glXHyperpipeConfigSGIX"/>
-                <command name="glXQueryHyperpipeConfigSGIX"/>
-                <command name="glXDestroyHyperpipeConfigSGIX"/>
-                <command name="glXBindHyperpipeSGIX"/>
-                <command name="glXQueryHyperpipeBestAttribSGIX"/>
-                <command name="glXHyperpipeAttribSGIX"/>
-                <command name="glXQueryHyperpipeAttribSGIX"/>
-            </require>
-        </extension>
-        <extension name="GLX_MESA_agp_offset" supported="glx">
-            <require>
-                <command name="glXGetAGPOffsetMESA"/>
-            </require>
-        </extension>
-        <extension name="GLX_EXT_fbconfig_packed_float" supported="glx">
-            <require>
-                <enum name="GLX_RGBA_UNSIGNED_FLOAT_TYPE_EXT"/>
-                <enum name="GLX_RGBA_UNSIGNED_FLOAT_BIT_EXT"/>
-            </require>
-        </extension>
-        <extension name="GLX_EXT_framebuffer_sRGB" supported="glx">
-            <require>
-                <enum name="GLX_FRAMEBUFFER_SRGB_CAPABLE_EXT"/>
+                <enum name="GLX_LATE_SWAPS_TEAR_EXT"/>
             </require>
         </extension>
         <extension name="GLX_EXT_texture_from_pixmap" supported="glx">
@@ -1913,31 +1726,115 @@ typedef unsigned __int64 uint64_t;
                 <command name="glXReleaseTexImageEXT"/>
             </require>
         </extension>
+        <extension name="GLX_EXT_visual_info" supported="glx">
+            <require>
+                <enum name="GLX_X_VISUAL_TYPE_EXT"/>
+                <enum name="GLX_TRANSPARENT_TYPE_EXT"/>
+                <enum name="GLX_TRANSPARENT_INDEX_VALUE_EXT"/>
+                <enum name="GLX_TRANSPARENT_RED_VALUE_EXT"/>
+                <enum name="GLX_TRANSPARENT_GREEN_VALUE_EXT"/>
+                <enum name="GLX_TRANSPARENT_BLUE_VALUE_EXT"/>
+                <enum name="GLX_TRANSPARENT_ALPHA_VALUE_EXT"/>
+                <enum name="GLX_NONE_EXT"/>
+                <enum name="GLX_TRUE_COLOR_EXT"/>
+                <enum name="GLX_DIRECT_COLOR_EXT"/>
+                <enum name="GLX_PSEUDO_COLOR_EXT"/>
+                <enum name="GLX_STATIC_COLOR_EXT"/>
+                <enum name="GLX_GRAY_SCALE_EXT"/>
+                <enum name="GLX_STATIC_GRAY_EXT"/>
+                <enum name="GLX_TRANSPARENT_RGB_EXT"/>
+                <enum name="GLX_TRANSPARENT_INDEX_EXT"/>
+            </require>
+        </extension>
+        <extension name="GLX_EXT_visual_rating" supported="glx">
+            <require>
+                <enum name="GLX_VISUAL_CAVEAT_EXT"/>
+                <enum name="GLX_SLOW_VISUAL_EXT"/>
+                <enum name="GLX_NON_CONFORMANT_VISUAL_EXT"/>
+                <enum name="GLX_NONE_EXT"/>
+            </require>
+        </extension>
+        <extension name="GLX_INTEL_swap_event" supported="glx">
+            <require>
+                <enum name="GLX_BUFFER_SWAP_COMPLETE_INTEL_MASK"/>
+                <enum name="GLX_EXCHANGE_COMPLETE_INTEL"/>
+                <enum name="GLX_COPY_COMPLETE_INTEL"/>
+                <enum name="GLX_FLIP_COMPLETE_INTEL"/>
+            </require>
+        </extension>
+        <extension name="GLX_MESA_agp_offset" supported="glx">
+            <require>
+                <command name="glXGetAGPOffsetMESA"/>
+            </require>
+        </extension>
+        <extension name="GLX_MESA_copy_sub_buffer" supported="glx">
+            <require>
+                <command name="glXCopySubBufferMESA"/>
+            </require>
+        </extension>
+        <extension name="GLX_MESA_pixmap_colormap" supported="glx">
+            <require>
+                <command name="glXCreateGLXPixmapMESA"/>
+            </require>
+        </extension>
+        <extension name="GLX_MESA_query_renderer" supported="glx">
+            <require>
+                <enum name="GLX_RENDERER_VENDOR_ID_MESA"/>                               
+                <enum name="GLX_RENDERER_DEVICE_ID_MESA"/>                               
+                <enum name="GLX_RENDERER_VERSION_MESA"/>                                 
+                <enum name="GLX_RENDERER_ACCELERATED_MESA"/>                             
+                <enum name="GLX_RENDERER_VIDEO_MEMORY_MESA"/>                            
+                <enum name="GLX_RENDERER_UNIFIED_MEMORY_ARCHITECTURE_MESA"/>             
+                <enum name="GLX_RENDERER_PREFERRED_PROFILE_MESA"/>                       
+                <enum name="GLX_RENDERER_OPENGL_CORE_PROFILE_VERSION_MESA"/>             
+                <enum name="GLX_RENDERER_OPENGL_COMPATIBILITY_PROFILE_VERSION_MESA"/>    
+                <enum name="GLX_RENDERER_OPENGL_ES_PROFILE_VERSION_MESA"/>               
+                <enum name="GLX_RENDERER_OPENGL_ES2_PROFILE_VERSION_MESA"/>              
+                <enum name="GLX_RENDERER_ID_MESA"/>                                      
+                <command name="glXQueryCurrentRendererIntegerMESA"/>
+                <command name="glXQueryCurrentRendererStringMESA"/>
+                <command name="glXQueryRendererIntegerMESA"/>
+                <command name="glXQueryRendererStringMESA"/>
+            </require>
+        </extension>
+        <extension name="GLX_MESA_release_buffers" supported="glx">
+            <require>
+                <command name="glXReleaseBuffersMESA"/>
+            </require>
+        </extension>
+        <extension name="GLX_MESA_set_3dfx_mode" supported="glx">
+            <require>
+                <enum name="GLX_3DFX_WINDOW_MODE_MESA"/>
+                <enum name="GLX_3DFX_FULLSCREEN_MODE_MESA"/>
+                <command name="glXSet3DfxModeMESA"/>
+            </require>
+        </extension>
+        <extension name="GLX_NV_copy_image" supported="glx">
+            <require>
+                <command name="glXCopyImageSubDataNV"/>
+            </require>
+        </extension>
+        <extension name="GLX_NV_delay_before_swap" supported="glx">
+            <require>
+                <command name="glXDelayBeforeSwapNV"/>
+            </require>
+        </extension>
+        <extension name="GLX_NV_float_buffer" supported="glx">
+            <require>
+                <enum name="GLX_FLOAT_COMPONENTS_NV"/>
+            </require>
+        </extension>
+        <extension name="GLX_NV_multisample_coverage" supported="glx">
+            <require>
+                <enum name="GLX_COVERAGE_SAMPLES_NV"/>
+                <enum name="GLX_COLOR_SAMPLES_NV"/>
+            </require>
+        </extension>
         <extension name="GLX_NV_present_video" supported="glx">
             <require>
                 <enum name="GLX_NUM_VIDEO_SLOTS_NV"/>
                 <command name="glXEnumerateVideoDevicesNV"/>
                 <command name="glXBindVideoDeviceNV"/>
-            </require>
-        </extension>
-        <extension name="GLX_NV_video_output" supported="glx">
-            <require>
-                <enum name="GLX_VIDEO_OUT_COLOR_NV"/>
-                <enum name="GLX_VIDEO_OUT_ALPHA_NV"/>
-                <enum name="GLX_VIDEO_OUT_DEPTH_NV"/>
-                <enum name="GLX_VIDEO_OUT_COLOR_AND_ALPHA_NV"/>
-                <enum name="GLX_VIDEO_OUT_COLOR_AND_DEPTH_NV"/>
-                <enum name="GLX_VIDEO_OUT_FRAME_NV"/>
-                <enum name="GLX_VIDEO_OUT_FIELD_1_NV"/>
-                <enum name="GLX_VIDEO_OUT_FIELD_2_NV"/>
-                <enum name="GLX_VIDEO_OUT_STACKED_FIELDS_1_2_NV"/>
-                <enum name="GLX_VIDEO_OUT_STACKED_FIELDS_2_1_NV"/>
-                <command name="glXGetVideoDeviceNV"/>
-                <command name="glXReleaseVideoDeviceNV"/>
-                <command name="glXBindVideoImageNV"/>
-                <command name="glXReleaseVideoImageNV"/>
-                <command name="glXSendPbufferToVideoNV"/>
-                <command name="glXGetVideoInfoNV"/>
             </require>
         </extension>
         <extension name="GLX_NV_swap_group" supported="glx">
@@ -1962,84 +1859,212 @@ typedef unsigned __int64 uint64_t;
                 <command name="glXReleaseVideoCaptureDeviceNV"/>
             </require>
         </extension>
-        <extension name="GLX_EXT_swap_control" supported="glx">
+        <extension name="GLX_NV_video_output" supported="glx">
             <require>
-                <enum name="GLX_SWAP_INTERVAL_EXT"/>
-                <enum name="GLX_MAX_SWAP_INTERVAL_EXT"/>
-                <command name="glXSwapIntervalEXT"/>
+                <enum name="GLX_VIDEO_OUT_COLOR_NV"/>
+                <enum name="GLX_VIDEO_OUT_ALPHA_NV"/>
+                <enum name="GLX_VIDEO_OUT_DEPTH_NV"/>
+                <enum name="GLX_VIDEO_OUT_COLOR_AND_ALPHA_NV"/>
+                <enum name="GLX_VIDEO_OUT_COLOR_AND_DEPTH_NV"/>
+                <enum name="GLX_VIDEO_OUT_FRAME_NV"/>
+                <enum name="GLX_VIDEO_OUT_FIELD_1_NV"/>
+                <enum name="GLX_VIDEO_OUT_FIELD_2_NV"/>
+                <enum name="GLX_VIDEO_OUT_STACKED_FIELDS_1_2_NV"/>
+                <enum name="GLX_VIDEO_OUT_STACKED_FIELDS_2_1_NV"/>
+                <command name="glXGetVideoDeviceNV"/>
+                <command name="glXReleaseVideoDeviceNV"/>
+                <command name="glXBindVideoImageNV"/>
+                <command name="glXReleaseVideoImageNV"/>
+                <command name="glXSendPbufferToVideoNV"/>
+                <command name="glXGetVideoInfoNV"/>
             </require>
         </extension>
-        <extension name="GLX_NV_copy_image" supported="glx">
+        <extension name="GLX_OML_swap_method" supported="glx">
             <require>
-                <command name="glXCopyImageSubDataNV"/>
+                <enum name="GLX_SWAP_METHOD_OML"/>
+                <enum name="GLX_SWAP_EXCHANGE_OML"/>
+                <enum name="GLX_SWAP_COPY_OML"/>
+                <enum name="GLX_SWAP_UNDEFINED_OML"/>
             </require>
         </extension>
-        <extension name="GLX_INTEL_swap_event" supported="glx">
+        <extension name="GLX_OML_sync_control" supported="glx">
             <require>
-                <enum name="GLX_BUFFER_SWAP_COMPLETE_INTEL_MASK"/>
-                <enum name="GLX_EXCHANGE_COMPLETE_INTEL"/>
-                <enum name="GLX_COPY_COMPLETE_INTEL"/>
-                <enum name="GLX_FLIP_COMPLETE_INTEL"/>
+                <command name="glXGetSyncValuesOML"/>
+                <command name="glXGetMscRateOML"/>
+                <command name="glXSwapBuffersMscOML"/>
+                <command name="glXWaitForMscOML"/>
+                <command name="glXWaitForSbcOML"/>
             </require>
         </extension>
-        <extension name="GLX_NV_multisample_coverage" supported="glx">
+        <extension name="GLX_SGI_cushion" supported="glx">
             <require>
-                <enum name="GLX_COVERAGE_SAMPLES_NV"/>
-                <enum name="GLX_COLOR_SAMPLES_NV"/>
+                <command name="glXCushionSGI"/>
             </require>
         </extension>
-        <extension name="GLX_AMD_gpu_association" supported="glx">
+        <extension name="GLX_SGI_make_current_read" supported="glx">
             <require>
-                <enum name="GLX_GPU_VENDOR_AMD"/>
-                <enum name="GLX_GPU_RENDERER_STRING_AMD"/>
-                <enum name="GLX_GPU_OPENGL_VERSION_STRING_AMD"/>
-                <enum name="GLX_GPU_FASTEST_TARGET_GPUS_AMD"/>
-                <enum name="GLX_GPU_RAM_AMD"/>
-                <enum name="GLX_GPU_CLOCK_AMD"/>
-                <enum name="GLX_GPU_NUM_PIPES_AMD"/>
-                <enum name="GLX_GPU_NUM_SIMD_AMD"/>
-                <enum name="GLX_GPU_NUM_RB_AMD"/>
-                <enum name="GLX_GPU_NUM_SPI_AMD"/>
+                <command name="glXMakeCurrentReadSGI"/>
+                <command name="glXGetCurrentReadDrawableSGI"/>
             </require>
         </extension>
-        <extension name="GLX_EXT_create_context_es_profile" supported="glx">
+        <extension name="GLX_SGI_swap_control" supported="glx">
             <require>
-                <enum name="GLX_CONTEXT_ES_PROFILE_BIT_EXT"/>
+                <command name="glXSwapIntervalSGI"/>
             </require>
         </extension>
-        <extension name="GLX_EXT_create_context_es2_profile" supported="glx">
+        <extension name="GLX_SGI_video_sync" supported="glx">
             <require>
-                <enum name="GLX_CONTEXT_ES2_PROFILE_BIT_EXT"/>
+                <command name="glXGetVideoSyncSGI"/>
+                <command name="glXWaitVideoSyncSGI"/>
             </require>
         </extension>
-        <extension name="GLX_EXT_swap_control_tear" supported="glx">
+        <extension name="GLX_SGIS_blended_overlay" supported="glx">
             <require>
-                <enum name="GLX_LATE_SWAPS_TEAR_EXT"/>
+                <enum name="GLX_BLENDED_RGBA_SGIS"/>
             </require>
         </extension>
-        <extension name="GLX_EXT_buffer_age" supported="glx">
+        <extension name="GLX_SGIS_multisample" supported="glx">
             <require>
-                <enum name="GLX_BACK_BUFFER_AGE_EXT"/>
+                <enum name="GLX_SAMPLE_BUFFERS_SGIS"/>
+                <enum name="GLX_SAMPLES_SGIS"/>
             </require>
         </extension>
-        <extension name="GLX_MESA_query_renderer" supported="glx">
+        <extension name="GLX_SGIS_shared_multisample" supported="glx">
             <require>
-                <enum name="GLX_RENDERER_VENDOR_ID_MESA"/>                               
-                <enum name="GLX_RENDERER_DEVICE_ID_MESA"/>                               
-                <enum name="GLX_RENDERER_VERSION_MESA"/>                                 
-                <enum name="GLX_RENDERER_ACCELERATED_MESA"/>                             
-                <enum name="GLX_RENDERER_VIDEO_MEMORY_MESA"/>                            
-                <enum name="GLX_RENDERER_UNIFIED_MEMORY_ARCHITECTURE_MESA"/>             
-                <enum name="GLX_RENDERER_PREFERRED_PROFILE_MESA"/>                       
-                <enum name="GLX_RENDERER_OPENGL_CORE_PROFILE_VERSION_MESA"/>             
-                <enum name="GLX_RENDERER_OPENGL_COMPATIBILITY_PROFILE_VERSION_MESA"/>    
-                <enum name="GLX_RENDERER_OPENGL_ES_PROFILE_VERSION_MESA"/>               
-                <enum name="GLX_RENDERER_OPENGL_ES2_PROFILE_VERSION_MESA"/>              
-                <enum name="GLX_RENDERER_ID_MESA"/>                                      
-                <command name="glXQueryCurrentRendererIntegerMESA"/>
-                <command name="glXQueryCurrentRendererStringMESA"/>
-                <command name="glXQueryRendererIntegerMESA"/>
-                <command name="glXQueryRendererStringMESA"/>
+                <enum name="GLX_MULTISAMPLE_SUB_RECT_WIDTH_SGIS"/>
+                <enum name="GLX_MULTISAMPLE_SUB_RECT_HEIGHT_SGIS"/>
+            </require>
+        </extension>
+<!--     Comment GLX_SGIX_dmbuffer out for the moment. The extension pulls in
+         the GLXPbufferSGIX <type> but then comments it out with #ifdef
+         _DM_BUFFER_H_, making it unavailable to later extensions. Need some
+         work on dependencies.
+-->
+        <extension name="GLX_SGIX_dmbuffer" supported="glx" protect="_DM_BUFFER_H_">
+            <require>
+                <enum name="GLX_DIGITAL_MEDIA_PBUFFER_SGIX"/>
+                <command name="glXAssociateDMPbufferSGIX"/>
+            </require>
+        </extension>
+<!--
+-->
+        <extension name="GLX_SGIX_fbconfig" supported="glx">
+            <require>
+                <enum name="GLX_WINDOW_BIT_SGIX"/>
+                <enum name="GLX_PIXMAP_BIT_SGIX"/>
+                <enum name="GLX_RGBA_BIT_SGIX"/>
+                <enum name="GLX_COLOR_INDEX_BIT_SGIX"/>
+                <enum name="GLX_DRAWABLE_TYPE_SGIX"/>
+                <enum name="GLX_RENDER_TYPE_SGIX"/>
+                <enum name="GLX_X_RENDERABLE_SGIX"/>
+                <enum name="GLX_FBCONFIG_ID_SGIX"/>
+                <enum name="GLX_RGBA_TYPE_SGIX"/>
+                <enum name="GLX_COLOR_INDEX_TYPE_SGIX"/>
+                <enum name="GLX_SCREEN_EXT"/>
+                <command name="glXGetFBConfigAttribSGIX"/>
+                <command name="glXChooseFBConfigSGIX"/>
+                <command name="glXCreateGLXPixmapWithConfigSGIX"/>
+                <command name="glXCreateContextWithConfigSGIX"/>
+                <command name="glXGetVisualFromFBConfigSGIX"/>
+                <command name="glXGetFBConfigFromVisualSGIX"/>
+            </require>
+        </extension>
+        <extension name="GLX_SGIX_hyperpipe" supported="glx">
+            <require>
+                <type name="GLXHyperpipeNetworkSGIX"/>
+                <type name="GLXHyperpipeConfigSGIX"/>
+                <type name="GLXPipeRect"/>
+                <type name="GLXPipeRectLimits"/>
+                <enum name="GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX"/>
+                <enum name="GLX_BAD_HYPERPIPE_CONFIG_SGIX"/>
+                <enum name="GLX_BAD_HYPERPIPE_SGIX"/>
+                <enum name="GLX_HYPERPIPE_DISPLAY_PIPE_SGIX"/>
+                <enum name="GLX_HYPERPIPE_RENDER_PIPE_SGIX"/>
+                <enum name="GLX_PIPE_RECT_SGIX"/>
+                <enum name="GLX_PIPE_RECT_LIMITS_SGIX"/>
+                <enum name="GLX_HYPERPIPE_STEREO_SGIX"/>
+                <enum name="GLX_HYPERPIPE_PIXEL_AVERAGE_SGIX"/>
+                <enum name="GLX_HYPERPIPE_ID_SGIX"/>
+                <command name="glXQueryHyperpipeNetworkSGIX"/>
+                <command name="glXHyperpipeConfigSGIX"/>
+                <command name="glXQueryHyperpipeConfigSGIX"/>
+                <command name="glXDestroyHyperpipeConfigSGIX"/>
+                <command name="glXBindHyperpipeSGIX"/>
+                <command name="glXQueryHyperpipeBestAttribSGIX"/>
+                <command name="glXHyperpipeAttribSGIX"/>
+                <command name="glXQueryHyperpipeAttribSGIX"/>
+            </require>
+        </extension>
+        <extension name="GLX_SGIX_pbuffer" supported="glx">
+            <require>
+                <enum name="GLX_PBUFFER_BIT_SGIX"/>
+                <enum name="GLX_BUFFER_CLOBBER_MASK_SGIX"/>
+                <enum name="GLX_FRONT_LEFT_BUFFER_BIT_SGIX"/>
+                <enum name="GLX_FRONT_RIGHT_BUFFER_BIT_SGIX"/>
+                <enum name="GLX_BACK_LEFT_BUFFER_BIT_SGIX"/>
+                <enum name="GLX_BACK_RIGHT_BUFFER_BIT_SGIX"/>
+                <enum name="GLX_AUX_BUFFERS_BIT_SGIX"/>
+                <enum name="GLX_DEPTH_BUFFER_BIT_SGIX"/>
+                <enum name="GLX_STENCIL_BUFFER_BIT_SGIX"/>
+                <enum name="GLX_ACCUM_BUFFER_BIT_SGIX"/>
+                <enum name="GLX_SAMPLE_BUFFERS_BIT_SGIX"/>
+                <enum name="GLX_MAX_PBUFFER_WIDTH_SGIX"/>
+                <enum name="GLX_MAX_PBUFFER_HEIGHT_SGIX"/>
+                <enum name="GLX_MAX_PBUFFER_PIXELS_SGIX"/>
+                <enum name="GLX_OPTIMAL_PBUFFER_WIDTH_SGIX"/>
+                <enum name="GLX_OPTIMAL_PBUFFER_HEIGHT_SGIX"/>
+                <enum name="GLX_PRESERVED_CONTENTS_SGIX"/>
+                <enum name="GLX_LARGEST_PBUFFER_SGIX"/>
+                <enum name="GLX_WIDTH_SGIX"/>
+                <enum name="GLX_HEIGHT_SGIX"/>
+                <enum name="GLX_EVENT_MASK_SGIX"/>
+                <enum name="GLX_DAMAGED_SGIX"/>
+                <enum name="GLX_SAVED_SGIX"/>
+                <enum name="GLX_WINDOW_SGIX"/>
+                <enum name="GLX_PBUFFER_SGIX"/>
+                <command name="glXCreateGLXPbufferSGIX"/>
+                <command name="glXDestroyGLXPbufferSGIX"/>
+                <command name="glXQueryGLXPbufferSGIX"/>
+                <command name="glXSelectEventSGIX"/>
+                <command name="glXGetSelectedEventSGIX"/>
+            </require>
+        </extension>
+        <extension name="GLX_SGIX_swap_barrier" supported="glx">
+            <require>
+                <command name="glXBindSwapBarrierSGIX"/>
+                <command name="glXQueryMaxSwapBarriersSGIX"/>
+            </require>
+        </extension>
+        <extension name="GLX_SGIX_swap_group" supported="glx">
+            <require>
+                <command name="glXJoinSwapGroupSGIX"/>
+            </require>
+        </extension>
+        <extension name="GLX_SGIX_video_resize" supported="glx">
+            <require>
+                <enum name="GLX_SYNC_FRAME_SGIX"/>
+                <enum name="GLX_SYNC_SWAP_SGIX"/>
+                <command name="glXBindChannelToWindowSGIX"/>
+                <command name="glXChannelRectSGIX"/>
+                <command name="glXQueryChannelRectSGIX"/>
+                <command name="glXQueryChannelDeltasSGIX"/>
+                <command name="glXChannelRectSyncSGIX"/>
+            </require>
+        </extension>
+        <extension name="GLX_SGIX_video_source" supported="glx" protect="_VL_H">
+            <require>
+                <command name="glXCreateGLXVideoSourceSGIX"/>
+                <command name="glXDestroyGLXVideoSourceSGIX"/>
+            </require>
+        </extension>
+        <extension name="GLX_SGIX_visual_select_group" supported="glx">
+            <require>
+                <enum name="GLX_VISUAL_SELECT_GROUP_SGIX"/>
+            </require>
+        </extension>
+        <extension name="GLX_SUN_get_transparent_index" supported="glx">
+            <require>
+                <command name="glXGetTransparentIndexSUN"/>
             </require>
         </extension>
     </extensions>
