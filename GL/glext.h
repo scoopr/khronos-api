@@ -53,7 +53,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
-#define GL_GLEXT_VERSION 20140416
+#define GL_GLEXT_VERSION 20140417
 
 /* Generated C header for:
  * API: gl
@@ -4803,6 +4803,10 @@ GLAPI void APIENTRY glBlendEquationIndexedAMD (GLuint buf, GLenum mode);
 GLAPI void APIENTRY glBlendEquationSeparateIndexedAMD (GLuint buf, GLenum modeRGB, GLenum modeAlpha);
 #endif
 #endif /* GL_AMD_draw_buffers_blend */
+
+#ifndef GL_AMD_gcn_shader
+#define GL_AMD_gcn_shader 1
+#endif /* GL_AMD_gcn_shader */
 
 #ifndef GL_AMD_gpu_shader_int64
 #define GL_AMD_gpu_shader_int64 1
