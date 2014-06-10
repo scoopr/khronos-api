@@ -1853,7 +1853,7 @@ typedef unsigned __int64 uint64_t;
                 <command name="glXReleaseVideoCaptureDeviceNV"/>
             </require>
         </extension>
-        <extension name="GLX_NV_video_output" supported="glx">
+        <extension name="GLX_NV_video_out" supported="glx">
             <require>
                 <enum name="GLX_VIDEO_OUT_COLOR_NV"/>
                 <enum name="GLX_VIDEO_OUT_ALPHA_NV"/>

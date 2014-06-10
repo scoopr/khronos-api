@@ -36,7 +36,7 @@ extern "C" {
 ** Khronos $Revision$ on $Date$
 */
 
-#define GLX_GLXEXT_VERSION 20140416
+#define GLX_GLXEXT_VERSION 20140610
 
 /* Generated C header for:
  * API: glx
@@ -544,8 +544,8 @@ void glXReleaseVideoCaptureDeviceNV (Display *dpy, GLXVideoCaptureDeviceNV devic
 #endif
 #endif /* GLX_NV_video_capture */
 
-#ifndef GLX_NV_video_output
-#define GLX_NV_video_output 1
+#ifndef GLX_NV_video_out
+#define GLX_NV_video_out 1
 typedef unsigned int GLXVideoDeviceNV;
 #define GLX_VIDEO_OUT_COLOR_NV            0x20C3
 #define GLX_VIDEO_OUT_ALPHA_NV            0x20C4
@@ -571,7 +571,7 @@ int glXReleaseVideoImageNV (Display *dpy, GLXPbuffer pbuf);
 int glXSendPbufferToVideoNV (Display *dpy, GLXPbuffer pbuf, int iBufferType, unsigned long *pulCounterPbuffer, GLboolean bBlock);
 int glXGetVideoInfoNV (Display *dpy, int screen, GLXVideoDeviceNV VideoDevice, unsigned long *pulCounterOutputPbuffer, unsigned long *pulCounterOutputVideo);
 #endif
-#endif /* GLX_NV_video_output */
+#endif /* GLX_NV_video_out */
 
 #ifndef GLX_OML_swap_method
 #define GLX_OML_swap_method 1
