@@ -23671,7 +23671,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glTransformFeedbackAttribsNV</name></proto>
-            <param><ptype>GLuint</ptype> <name>count</name></param>
+            <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param len="COMPSIZE(count)">const <ptype>GLint</ptype> *<name>attribs</name></param>
             <param><ptype>GLenum</ptype> <name>bufferMode</name></param>
         </command>
