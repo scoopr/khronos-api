@@ -96,7 +96,7 @@ Enums = element enums {
     attribute type { text } ? ,
     attribute start { Integer } ? ,
     attribute end { Integer } ? ,
-    attribute vendor { text } ? ,
+    Vendor ? ,
     Comment ? ,
     (Enum | Unused) *
 }
@@ -119,10 +119,12 @@ Enum = element enum {
 }
 # <unused> defines a range of enumerants not currently being used
 #   start, end - beginning and end of an unused numeric range
+#   vendor - unused
 #   comment - unused
 Unused = element unused {
     attribute start { Integer } ,
     attribute end { Integer } ? ,
+    Vendor ? ,
     Comment ?
 }
 # <commands> defines a group of commands
@@ -278,5 +280,6 @@ StringGroup = text
 
 # Repeatedly used attributes
 ProfileName = attribute profile { text }
+Vendor = attribute vendor { text }
 Comment = attribute comment { text }
 Name = attribute name { text }

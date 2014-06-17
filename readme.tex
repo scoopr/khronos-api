@@ -24,7 +24,7 @@
 
 \title{The Khronos XML API Registry}
 \author{Jon Leech}
-\date{Last updated 2013/09/17}
+\date{Last updated 2014/06/16}
 \maketitle
 
 \begin{abstract}
@@ -448,6 +448,9 @@ values and is not needed for header generation.
       an unused range of enumerants. \attr{start} must be $\leq$
       \attr{end}. This range should not exceed the range reserved by the
       surrounding \tag{enums} tag.
+\item \attr{vendor} - string describing the vendor or purposes to whom a
+      reserved range of enumerants is allocated. Usually identical to
+      the \attr{vendor} attribute of the surrounding \attr{enums} block.
 \item \attr{comment} - arbitrary string (unused)
 \end{itemize}
 
@@ -975,6 +978,7 @@ corresponding \tag{group} tags.
 \label{changelog}
 
 \begin{itemize}
+\item 2014/06/16 - Add \tag{vendor} attribute to \tag{unused} tags.
 \item 2013/09/17 - Add \tag{comment} attribute to \tag{command} tags
       within \tag{commands}.
 \item 2013/06/24 - Add \tag{groups} and \tag{group} tags, renamed
