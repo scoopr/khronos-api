@@ -40831,6 +40831,10 @@ typedef unsigned int GLhandleARB;
         </extension>
         <extension name="GL_OES_byte_coordinates" supported="gl|gles1">
             <require>
+                <type name="GLbyte"/>
+                <enum name="GL_BYTE"/>
+            </require>
+            <require api="gl" comment="Immediate-mode entry points don't exist in ES 1.x">
                 <command name="glMultiTexCoord1bOES"/>
                 <command name="glMultiTexCoord1bvOES"/>
                 <command name="glMultiTexCoord2bOES"/>
