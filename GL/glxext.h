@@ -36,7 +36,7 @@ extern "C" {
 ** Khronos $Revision$ on $Date$
 */
 
-#define GLX_GLXEXT_VERSION 20140725
+#define GLX_GLXEXT_VERSION 20140810
 
 /* Generated C header for:
  * API: glx
@@ -157,6 +157,13 @@ typedef __GLXextFuncPtr ( *PFNGLXGETPROCADDRESSPROC) (const GLubyte *procName);
 __GLXextFuncPtr glXGetProcAddress (const GLubyte *procName);
 #endif
 #endif /* GLX_VERSION_1_4 */
+
+#ifndef GLX_ARB_context_flush_control
+#define GLX_ARB_context_flush_control 1
+#define GLX_CONTEXT_RELEASE_BEHAVIOR_ARB  0x2097
+#define GLX_CONTEXT_RELEASE_BEHAVIOR_NONE_ARB 0
+#define GLX_CONTEXT_RELEASE_BEHAVIOR_FLUSH_ARB 0x2098
+#endif /* GLX_ARB_context_flush_control */
 
 #ifndef GLX_ARB_create_context
 #define GLX_ARB_create_context 1

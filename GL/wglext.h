@@ -41,7 +41,7 @@ extern "C" {
 #include <windows.h>
 #endif
 
-#define WGL_WGLEXT_VERSION 20140630
+#define WGL_WGLEXT_VERSION 20140810
 
 /* Generated C header for:
  * API: wgl
@@ -69,6 +69,13 @@ BOOL WINAPI wglSaveBufferRegionARB (HANDLE hRegion, int x, int y, int width, int
 BOOL WINAPI wglRestoreBufferRegionARB (HANDLE hRegion, int x, int y, int width, int height, int xSrc, int ySrc);
 #endif
 #endif /* WGL_ARB_buffer_region */
+
+#ifndef WGL_ARB_context_flush_control
+#define WGL_ARB_context_flush_control 1
+#define WGL_CONTEXT_RELEASE_BEHAVIOR_ARB  0x2097
+#define WGL_CONTEXT_RELEASE_BEHAVIOR_NONE_ARB 0
+#define WGL_CONTEXT_RELEASE_BEHAVIOR_FLUSH_ARB 0x2098
+#endif /* WGL_ARB_context_flush_control */
 
 #ifndef WGL_ARB_create_context
 #define WGL_ARB_create_context 1
