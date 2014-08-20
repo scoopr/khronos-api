@@ -622,7 +622,9 @@
     </enums>
 
     <enums namespace="EGL" start="0x32A0" end="0x32AF" vendor="Samsung" comment="Reserved for Dongyeon Kim (Public bug 880)">
-            <unused start="0x32A0" end="0x32AF"/>
+        <enum value="0x32A0" name="EGL_NATIVE_BUFFER_TIZEN"/>
+        <enum value="0x32A1" name="EGL_NATIVE_SURFACE_TIZEN"/>
+            <unused start="0x32A2" end="0x32AF"/>
     </enums>
 
     <enums namespace="EGL" start="0x32B0" end="0x32BF" vendor="QCOM" comment="Reserved for Jeff Vigil (Bug 10663) - EGL_QCOM_lock_image spec TBD">
@@ -2022,6 +2024,16 @@
             <require>
                 <command name="eglGetSystemTimeFrequencyNV"/>
                 <command name="eglGetSystemTimeNV"/>
+            </require>
+        </extension>
+        <extension name="EGL_TIZEN_image_native_buffer" supported="egl">
+            <require>
+                <enum name="EGL_NATIVE_BUFFER_TIZEN"/>
+            </require>
+        </extension>
+        <extension name="EGL_TIZEN_image_native_surface" supported="egl">
+            <require>
+                <enum name="EGL_NATIVE_SURFACE_TIZEN"/>
             </require>
         </extension>
     </extensions>
