@@ -7768,7 +7768,6 @@ typedef unsigned int GLhandleARB;
         <enum value="0x9199" name="GL_MAX_SPARSE_3D_TEXTURE_SIZE_AMD"/>
         <enum value="0x919A" name="GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_ARB"/>
         <enum value="0x919A" name="GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS"/>
-        <enum value="0x919B" name="GL_MIN_SPARSE_LEVEL_ARB"/>
         <enum value="0x919B" name="GL_MIN_SPARSE_LEVEL_AMD"/>
         <enum value="0x919C" name="GL_MIN_LOD_WARNING_AMD"/>
         <enum value="0x919D" name="GL_TEXTURE_BUFFER_OFFSET"/>
@@ -7785,7 +7784,8 @@ typedef unsigned int GLhandleARB;
         <enum value="0x91A7" name="GL_VIRTUAL_PAGE_SIZE_INDEX_ARB"/>
         <enum value="0x91A8" name="GL_NUM_VIRTUAL_PAGE_SIZES_ARB"/>
         <enum value="0x91A9" name="GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_ARB"/>
-            <unused start="0x91AA" end="0x91B8" vendor="AMD"/>
+        <enum value="0x91AA" name="GL_NUM_SPARSE_LEVELS_ARB"/>
+            <unused start="0x91AB" end="0x91B8" vendor="AMD"/>
         <enum value="0x91B9" name="GL_COMPUTE_SHADER"/>
             <unused start="0x91BA" vendor="AMD"/>
         <enum value="0x91BB" name="GL_MAX_COMPUTE_UNIFORM_BLOCKS"/>
@@ -9189,7 +9189,7 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glBufferPageCommitmentARB</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLintptr</ptype> <name>offset</name></param>
-            <param><ptype>GLsizei</ptype> <name>size</name></param>
+            <param><ptype>GLsizeiptr</ptype> <name>size</name></param>
             <param><ptype>GLboolean</ptype> <name>commit</name></param>
         </command>
         <command>
@@ -19072,14 +19072,14 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glNamedBufferPageCommitmentARB</name></proto>
             <param><ptype>GLuint</ptype> <name>buffer</name></param>
             <param><ptype>GLintptr</ptype> <name>offset</name></param>
-            <param><ptype>GLsizei</ptype> <name>size</name></param>
+            <param><ptype>GLsizeiptr</ptype> <name>size</name></param>
             <param><ptype>GLboolean</ptype> <name>commit</name></param>
         </command>
         <command>
             <proto>void <name>glNamedBufferPageCommitmentEXT</name></proto>
             <param><ptype>GLuint</ptype> <name>buffer</name></param>
             <param><ptype>GLintptr</ptype> <name>offset</name></param>
-            <param><ptype>GLsizei</ptype> <name>size</name></param>
+            <param><ptype>GLsizeiptr</ptype> <name>size</name></param>
             <param><ptype>GLboolean</ptype> <name>commit</name></param>
         </command>
         <command>
@@ -36580,7 +36580,7 @@ typedef unsigned int GLhandleARB;
             <require>
                 <enum name="GL_TEXTURE_SPARSE_ARB"/>
                 <enum name="GL_VIRTUAL_PAGE_SIZE_INDEX_ARB"/>
-                <enum name="GL_MIN_SPARSE_LEVEL_ARB"/>
+                <enum name="GL_NUM_SPARSE_LEVELS_ARB"/>
                 <enum name="GL_NUM_VIRTUAL_PAGE_SIZES_ARB"/>
                 <enum name="GL_VIRTUAL_PAGE_SIZE_X_ARB"/>
                 <enum name="GL_VIRTUAL_PAGE_SIZE_Y_ARB"/>
