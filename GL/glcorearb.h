@@ -2097,6 +2097,10 @@ GLAPI void APIENTRY glGetDoublei_v (GLenum target, GLuint index, GLdouble *data)
 
 #ifndef GL_VERSION_4_2
 #define GL_VERSION_4_2 1
+#define GL_COPY_READ_BUFFER_BINDING       0x8F36
+#define GL_COPY_WRITE_BUFFER_BINDING      0x8F37
+#define GL_TRANSFORM_FEEDBACK_ACTIVE      0x8E24
+#define GL_TRANSFORM_FEEDBACK_PAUSED      0x8E23
 #define GL_UNPACK_COMPRESSED_BLOCK_WIDTH  0x9127
 #define GL_UNPACK_COMPRESSED_BLOCK_HEIGHT 0x9128
 #define GL_UNPACK_COMPRESSED_BLOCK_DEPTH  0x9129
@@ -2990,8 +2994,6 @@ GLAPI void APIENTRY glDispatchComputeGroupSizeARB (GLuint num_groups_x, GLuint n
 
 #ifndef GL_ARB_copy_buffer
 #define GL_ARB_copy_buffer 1
-#define GL_COPY_READ_BUFFER_BINDING       0x8F36
-#define GL_COPY_WRITE_BUFFER_BINDING      0x8F37
 #endif /* GL_ARB_copy_buffer */
 
 #ifndef GL_ARB_copy_image
@@ -3479,8 +3481,6 @@ GLAPI void APIENTRY glTexPageCommitmentARB (GLenum target, GLint level, GLint xo
 
 #ifndef GL_ARB_transform_feedback2
 #define GL_ARB_transform_feedback2 1
-#define GL_TRANSFORM_FEEDBACK_PAUSED      0x8E23
-#define GL_TRANSFORM_FEEDBACK_ACTIVE      0x8E24
 #endif /* GL_ARB_transform_feedback2 */
 
 #ifndef GL_ARB_transform_feedback3
