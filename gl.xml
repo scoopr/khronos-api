@@ -15291,6 +15291,34 @@ typedef unsigned int GLhandleARB;
             <glx type="vendor" opcode="1298"/>
         </command>
         <command>
+            <proto>void <name>glGetQueryBufferObjecti64v</name></proto>
+            <param><ptype>GLuint</ptype> <name>id</name></param>
+            <param><ptype>GLuint</ptype> <name>buffer</name></param>
+            <param><ptype>GLenum</ptype> <name>pname</name></param>
+            <param><ptype>GLintptr</ptype> <name>offset</name></param>
+        </command>
+        <command>
+            <proto>void <name>glGetQueryBufferObjectiv</name></proto>
+            <param><ptype>GLuint</ptype> <name>id</name></param>
+            <param><ptype>GLuint</ptype> <name>buffer</name></param>
+            <param><ptype>GLenum</ptype> <name>pname</name></param>
+            <param><ptype>GLintptr</ptype> <name>offset</name></param>
+        </command>
+        <command>
+            <proto>void <name>glGetQueryBufferObjectui64v</name></proto>
+            <param><ptype>GLuint</ptype> <name>id</name></param>
+            <param><ptype>GLuint</ptype> <name>buffer</name></param>
+            <param><ptype>GLenum</ptype> <name>pname</name></param>
+            <param><ptype>GLintptr</ptype> <name>offset</name></param>
+        </command>
+        <command>
+            <proto>void <name>glGetQueryBufferObjectuiv</name></proto>
+            <param><ptype>GLuint</ptype> <name>id</name></param>
+            <param><ptype>GLuint</ptype> <name>buffer</name></param>
+            <param><ptype>GLenum</ptype> <name>pname</name></param>
+            <param><ptype>GLintptr</ptype> <name>offset</name></param>
+        </command>
+        <command>
             <proto>void <name>glGetQueryIndexediv</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLuint</ptype> <name>index</name></param>
@@ -32494,8 +32522,13 @@ typedef unsigned int GLhandleARB;
             <command name="glCreateSamplers"/>
             <command name="glCreateProgramPipelines"/>
             <command name="glCreateQueries"/>
+            <command name="glGetQueryBufferObjecti64v"/>
+            <command name="glGetQueryBufferObjectiv"/>
+            <command name="glGetQueryBufferObjectui64v"/>
+            <command name="glGetQueryBufferObjectuiv"/>
         </require>
         <require comment="Reuse GL_ARB_ES3_1_compatibility">
+            <enum name="GL_BACK"/>
             <command name="glMemoryBarrierByRegion"/>
         </require>
         <require comment="Reuse GL_ARB_get_texture_sub_image">
@@ -34835,6 +34868,7 @@ typedef unsigned int GLhandleARB;
         </extension>
         <extension name="GL_ARB_ES3_1_compatibility" supported="gl|glcore">
             <require>
+                <enum name="GL_BACK"/>
                 <command name="glMemoryBarrierByRegion"/>
             </require>
         </extension>
@@ -35205,6 +35239,10 @@ typedef unsigned int GLhandleARB;
             </require>
             <require comment="Query object functions">
                 <command name="glCreateQueries"/>
+                <command name="glGetQueryBufferObjecti64v"/>
+                <command name="glGetQueryBufferObjectiv"/>
+                <command name="glGetQueryBufferObjectui64v"/>
+                <command name="glGetQueryBufferObjectuiv"/>
             </require>
         </extension>
         <extension name="GL_ARB_draw_buffers" supported="gl">
