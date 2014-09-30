@@ -28613,7 +28613,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glCoverageModulationTableNV</name></proto>
-            <param><ptype>GLsizei</ptype><name>n</name></param>
+            <param><ptype>GLsizei</ptype> <name>n</name></param>
             <param>const <ptype>GLfloat</ptype> *<name>v</name></param>
         </command>
         <command>
@@ -28624,19 +28624,19 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glFramebufferSampleLocationsfvNV</name></proto>
             <param><ptype>GLenum</ptype> <name>target</name></param>
             <param><ptype>GLuint</ptype> <name>start</name></param>
-            <param><ptype>GLsizei</ptype><name>count</name></param>
+            <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param>const <ptype>GLfloat</ptype> *<name>v</name></param>
         </command>
         <command>
             <proto>void <name>glGetCoverageModulationTableNV</name></proto>
-            <param><ptype>GLsizei</ptype><name>bufsize</name></param>
+            <param><ptype>GLsizei</ptype> <name>bufsize</name></param>
             <param><ptype>GLfloat</ptype> *<name>v</name></param>
         </command>
         <command>
             <proto>void <name>glNamedFramebufferSampleLocationsfvNV</name></proto>
             <param><ptype>GLuint</ptype> <name>framebuffer</name></param>
             <param><ptype>GLuint</ptype> <name>start</name></param>
-            <param><ptype>GLsizei</ptype><name>count</name></param>
+            <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param>const <ptype>GLfloat</ptype> *<name>v</name></param>
         </command>
         <command>
