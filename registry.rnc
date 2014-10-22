@@ -31,13 +31,13 @@ namespace xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
 # May be led by an optional <comment> tag containing e.g. copyrights.
 start = element registry {
     (
-	element comment { text } ? |
-	Types	   * |
-	Groups	   * |
-	Enums	   * |
-	Commands   * |
-	Feature    * |
-	Extensions *
+        element comment { text } ? |
+        Types      * |
+        Groups     * |
+        Enums      * |
+        Commands   * |
+        Feature    * |
+        Extensions *
     ) *
 }
 
@@ -51,6 +51,8 @@ Types = element types {
 #   name - name of this type, if not present in the <name> tag
 #   api - matches a <feature> api attribute, if present
 #   requires - name of another type definition required by this one
+#   type - "group", if present, indicating a group of values in the
+#       corresponding <enums> definition.
 #   comment - unused
 #   <apientry /> - substitutes for an APIENTRY-style macro on output
 #   <name> - contains typename
@@ -58,6 +60,7 @@ Type = element type {
     attribute api { text } ? ,
     attribute requires { text } ? ,
     attribute name { TypeName } ? ,
+    attribute type { text } ? ,
     Comment ? ,
     text ,
     element apientry { text } ? ,
@@ -109,12 +112,12 @@ Enums = element enums {
 #   comment - unused
 Enum = element enum {
     (
-	attribute value { Integer } &
-	attribute api { text } ? &
-	attribute type { TypeSuffix } ? &
-	attribute name { text } &
-	attribute alias { text } ? &
-	Comment ?
+        attribute value { Integer } &
+        attribute api { text } ? &
+        attribute type { TypeSuffix } ? &
+        attribute name { text } &
+        attribute alias { text } ? &
+        Comment ?
     )
 }
 # <unused> defines a range of enumerants not currently being used
@@ -152,35 +155,35 @@ Commands = element commands {
 Command = element command {
     Comment ? ,
     element proto {
-	attribute group { text } ? ,
-	text ,
-	element ptype { TypeName } ? ,
-	text ,
-	element name { text } ,
-	text
+        attribute group { text } ? ,
+        text ,
+        element ptype { TypeName } ? ,
+        text ,
+        element name { text } ,
+        text
     } ,
     element param {
-	attribute group { text } ? ,
-	attribute len { text } ? ,
-	text ,
-	element ptype { TypeName } ? ,
-	text ,
-	element name { text } ,
-	text
+        attribute group { text } ? ,
+        attribute len { text } ? ,
+        text ,
+        element ptype { TypeName } ? ,
+        text ,
+        element name { text } ,
+        text
     } * ,
     (
-	element alias {
-	    Name
-	} ? &
-	element vecequiv {
-	    Name
-	} ? &
-	element glx {
-	    attribute type { text } ,
-	    attribute opcode { xsd:integer } ,
-	    Name ? ,
-	    Comment ?
-	} *
+        element alias {
+            Name
+        } ? &
+        element vecequiv {
+            Name
+        } ? &
+        element glx {
+            attribute type { text } ,
+            attribute opcode { xsd:integer } ,
+            Name ? ,
+            Comment ?
+        } *
     )
 }
 # Each <feature> defines the interface of an API version (e.g. OpenGL 1.2)
@@ -190,7 +193,7 @@ Command = element command {
 #   number - version number, e.g. 4.2
 #   protect - additional #ifdef symbol to place around the feature
 #   <require> / <remove> contains features to require or remove in
-#			 this version
+#                        this version
 #     profile - only require/remove when generated profile matches
 #     comment - unused
 Feature = element feature {
@@ -200,16 +203,16 @@ Feature = element feature {
     attribute protect { text } ?,
     Comment ? ,
     (
-	element require {
-	    ProfileName ? ,
-	    Comment ? ,
-	    InterfaceElement *
-	} |
-	element remove {
-	    ProfileName ? ,
-	    Comment ? ,
-	    InterfaceElement *
-	}
+        element require {
+            ProfileName ? ,
+            Comment ? ,
+            InterfaceElement *
+        } |
+        element remove {
+            ProfileName ? ,
+            Comment ? ,
+            InterfaceElement *
+        }
     ) *
 }
 Extensions = element extensions {
@@ -224,25 +227,25 @@ Extensions = element extensions {
 # In addition, <require> / <remove> tags also support an
 # api attribute:
 #     api - only require/remove these features for the matching API.
-#	Not a regular expression.
+#       Not a regular expression.
 Extension = element extension {
     Name ,
     attribute protect { text } ?,
     attribute supported { StringGroup } ? ,
     Comment ? ,
     (
-	element require {
-	    attribute api { text } ? ,
-	    ProfileName ? ,
-	    Comment ? ,
-	    InterfaceElement *
-	} |
-	element remove {
-	    attribute api { text } ? ,
-	    ProfileName ? ,
-	    Comment ? ,
-	    InterfaceElement *
-	}
+        element require {
+            attribute api { text } ? ,
+            ProfileName ? ,
+            Comment ? ,
+            InterfaceElement *
+        } |
+        element remove {
+            attribute api { text } ? ,
+            ProfileName ? ,
+            Comment ? ,
+            InterfaceElement *
+        }
     ) *
 }
 # Contents of a <require> / <remove> tag, defining a group
@@ -251,16 +254,16 @@ Extension = element extension {
 #     name - feature name which must match
 InterfaceElement =
     element type {
-	Name ,
-	Comment ?
+        Name ,
+        Comment ?
     } |
     element enum {
-	Name ,
-	Comment ?
+        Name ,
+        Comment ?
     } |
     element command {
-	Name ,
-	Comment ?
+        Name ,
+        Comment ?
     }
 
 # Integers are allowed to be either decimal or C-hex (0x[0-9A-F]+), but
