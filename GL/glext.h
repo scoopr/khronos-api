@@ -53,7 +53,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
-#define GL_GLEXT_VERSION 20141118
+#define GL_GLEXT_VERSION 20150104
 
 /* Generated C header for:
  * API: gl
@@ -10819,6 +10819,10 @@ GLAPI void APIENTRY glVideoCaptureStreamParameterfvNV (GLuint video_capture_slot
 GLAPI void APIENTRY glVideoCaptureStreamParameterdvNV (GLuint video_capture_slot, GLuint stream, GLenum pname, const GLdouble *params);
 #endif
 #endif /* GL_NV_video_capture */
+
+#ifndef GL_NV_viewport_array2
+#define GL_NV_viewport_array2 1
+#endif /* GL_NV_viewport_array2 */
 
 #ifndef GL_OML_interlace
 #define GL_OML_interlace 1
