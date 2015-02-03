@@ -2646,7 +2646,6 @@ GLAPI void APIENTRY glBindVertexBuffers (GLuint first, GLsizei count, const GLui
 #define GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES 0x82FA
 #define GL_TEXTURE_TARGET                 0x1006
 #define GL_QUERY_TARGET                   0x82EA
-#define GL_TEXTURE_BINDING                0x82EB
 #define GL_GUILTY_CONTEXT_RESET           0x8253
 #define GL_INNOCENT_CONTEXT_RESET         0x8254
 #define GL_UNKNOWN_CONTEXT_RESET          0x8255
