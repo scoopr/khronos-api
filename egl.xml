@@ -1869,10 +1869,14 @@
         </extension>
         <extension name="EGL_KHR_fence_sync" protect="KHRONOS_SUPPORT_INT64" supported="egl">
             <require>
-                <!-- @ Most interfaces defined by EGL_KHR_reusable sync -->
+                <!-- Most interfaces also defined by EGL_KHR_reusable sync -->
                 <enum name="EGL_SYNC_PRIOR_COMMANDS_COMPLETE_KHR"/>
                 <enum name="EGL_SYNC_CONDITION_KHR"/>
                 <enum name="EGL_SYNC_FENCE_KHR"/>
+                <command name="eglCreateSync"/>
+                <command name="eglDestroySync"/>
+                <command name="eglClientWaitSync"/>
+                <command name="eglGetSyncAttrib"/>
             </require>
         </extension>
         <extension name="EGL_KHR_get_all_proc_addresses" supported="egl"/>
