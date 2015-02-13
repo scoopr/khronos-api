@@ -1873,12 +1873,12 @@
                 <enum name="EGL_SYNC_PRIOR_COMMANDS_COMPLETE_KHR"/>
                 <enum name="EGL_SYNC_CONDITION_KHR"/>
                 <enum name="EGL_SYNC_FENCE_KHR"/>
-                <command name="eglCreateSync"/>
-                <command name="eglDestroySync"/>
-                <command name="eglClientWaitSync"/>
-                <command name="eglGetSyncAttrib"/>
-            </require>
-        </extension>
+                <command name="eglCreateSyncKHR"/>
+                <command name="eglDestroySyncKHR"/>
+                <command name="eglClientWaitSyncKHR"/>
+                <command name="eglGetSyncAttribKHR"/>
+            </require>        
+        </extension>          
         <extension name="EGL_KHR_get_all_proc_addresses" supported="egl"/>
         <extension name="EGL_KHR_gl_colorspace" supported="egl">
             <require>
