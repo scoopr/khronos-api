@@ -31233,6 +31233,9 @@ typedef unsigned int GLhandleARB;
             <command name="glGetActiveUniformBlockiv"/>
             <command name="glGetActiveUniformBlockName"/>
             <command name="glUniformBlockBinding"/>
+            <command name="glBindBufferRange"/>
+            <command name="glBindBufferBase"/>
+            <command name="glGetIntegeri_v"/>
         </require>
     </feature>
     <feature api="gl" name="GL_VERSION_3_2" number="3.2">
@@ -37908,6 +37911,9 @@ typedef unsigned int GLhandleARB;
                 <command name="glGetActiveUniformBlockiv"/>
                 <command name="glGetActiveUniformBlockName"/>
                 <command name="glUniformBlockBinding"/>
+                <command name="glBindBufferRange"/>
+                <command name="glBindBufferBase"/>
+                <command name="glGetIntegeri_v"/>
             </require>
         </extension>
         <extension name="GL_ARB_vertex_array_bgra" supported="gl|glcore">
