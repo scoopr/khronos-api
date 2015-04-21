@@ -53,7 +53,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
-#define GL_GLEXT_VERSION 20150409
+#define GL_GLEXT_VERSION 20150421
 
 /* Generated C header for:
  * API: gl
@@ -8968,7 +8968,7 @@ typedef void (APIENTRYP PFNGLDRAWCOMMANDSSTATESADDRESSNVPROC) (const GLuint64 *i
 typedef void (APIENTRYP PFNGLCREATECOMMANDLISTSNVPROC) (GLsizei n, GLuint *lists);
 typedef void (APIENTRYP PFNGLDELETECOMMANDLISTSNVPROC) (GLsizei n, const GLuint *lists);
 typedef GLboolean (APIENTRYP PFNGLISCOMMANDLISTNVPROC) (GLuint list);
-typedef void (APIENTRYP PFNGLLISTDRAWCOMMANDSSTATESCLIENTNVPROC) (GLuint list, GLuint segment, const void **indirects, const size_t *sizes, const GLuint *states, const GLuint *fbos, GLuint count);
+typedef void (APIENTRYP PFNGLLISTDRAWCOMMANDSSTATESCLIENTNVPROC) (GLuint list, GLuint segment, const void **indirects, const GLsizei *sizes, const GLuint *states, const GLuint *fbos, GLuint count);
 typedef void (APIENTRYP PFNGLCOMMANDLISTSEGMENTSNVPROC) (GLuint list, GLuint segments);
 typedef void (APIENTRYP PFNGLCOMPILECOMMANDLISTNVPROC) (GLuint list);
 typedef void (APIENTRYP PFNGLCALLCOMMANDLISTNVPROC) (GLuint list);
@@ -8986,7 +8986,7 @@ GLAPI void APIENTRY glDrawCommandsStatesAddressNV (const GLuint64 *indirects, co
 GLAPI void APIENTRY glCreateCommandListsNV (GLsizei n, GLuint *lists);
 GLAPI void APIENTRY glDeleteCommandListsNV (GLsizei n, const GLuint *lists);
 GLAPI GLboolean APIENTRY glIsCommandListNV (GLuint list);
-GLAPI void APIENTRY glListDrawCommandsStatesClientNV (GLuint list, GLuint segment, const void **indirects, const size_t *sizes, const GLuint *states, const GLuint *fbos, GLuint count);
+GLAPI void APIENTRY glListDrawCommandsStatesClientNV (GLuint list, GLuint segment, const void **indirects, const GLsizei *sizes, const GLuint *states, const GLuint *fbos, GLuint count);
 GLAPI void APIENTRY glCommandListSegmentsNV (GLuint list, GLuint segments);
 GLAPI void APIENTRY glCompileCommandListNV (GLuint list);
 GLAPI void APIENTRY glCallCommandListNV (GLuint list);
