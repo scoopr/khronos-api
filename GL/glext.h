@@ -53,7 +53,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
-#define GL_GLEXT_VERSION 20150421
+#define GL_GLEXT_VERSION 20150428
 
 /* Generated C header for:
  * API: gl
@@ -4891,7 +4891,6 @@ typedef void (APIENTRYP PFNGLPOINTPARAMETERXVOESPROC) (GLenum pname, const GLfix
 typedef void (APIENTRYP PFNGLPOINTSIZEXOESPROC) (GLfixed size);
 typedef void (APIENTRYP PFNGLPOLYGONOFFSETXOESPROC) (GLfixed factor, GLfixed units);
 typedef void (APIENTRYP PFNGLROTATEXOESPROC) (GLfixed angle, GLfixed x, GLfixed y, GLfixed z);
-typedef void (APIENTRYP PFNGLSAMPLECOVERAGEOESPROC) (GLfixed value, GLboolean invert);
 typedef void (APIENTRYP PFNGLSCALEXOESPROC) (GLfixed x, GLfixed y, GLfixed z);
 typedef void (APIENTRYP PFNGLTEXENVXOESPROC) (GLenum target, GLenum pname, GLfixed param);
 typedef void (APIENTRYP PFNGLTEXENVXVOESPROC) (GLenum target, GLenum pname, const GLfixed *params);
@@ -4996,7 +4995,6 @@ GLAPI void APIENTRY glPointParameterxvOES (GLenum pname, const GLfixed *params);
 GLAPI void APIENTRY glPointSizexOES (GLfixed size);
 GLAPI void APIENTRY glPolygonOffsetxOES (GLfixed factor, GLfixed units);
 GLAPI void APIENTRY glRotatexOES (GLfixed angle, GLfixed x, GLfixed y, GLfixed z);
-GLAPI void APIENTRY glSampleCoverageOES (GLfixed value, GLboolean invert);
 GLAPI void APIENTRY glScalexOES (GLfixed x, GLfixed y, GLfixed z);
 GLAPI void APIENTRY glTexEnvxOES (GLenum target, GLenum pname, GLfixed param);
 GLAPI void APIENTRY glTexEnvxvOES (GLenum target, GLenum pname, const GLfixed *params);
@@ -10903,6 +10901,21 @@ GLAPI void APIENTRY glVideoCaptureStreamParameterdvNV (GLuint video_capture_slot
 #define GL_FORMAT_SUBSAMPLE_24_24_OML     0x8982
 #define GL_FORMAT_SUBSAMPLE_244_244_OML   0x8983
 #endif /* GL_OML_subsample */
+
+#ifndef GL_OVR_multiview
+#define GL_OVR_multiview 1
+#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR 0x9630
+#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR 0x9632
+#define GL_MAX_VIEWS_OVR                  0x9631
+typedef void (APIENTRYP PFNGLFRAMEBUFFERTEXTUREMULTIVIEWOVRPROC) (GLenum target, GLenum attachment, GLuint texture, GLint level, GLint baseViewIndex, GLsizei numViews);
+#ifdef GL_GLEXT_PROTOTYPES
+GLAPI void APIENTRY glFramebufferTextureMultiviewOVR (GLenum target, GLenum attachment, GLuint texture, GLint level, GLint baseViewIndex, GLsizei numViews);
+#endif
+#endif /* GL_OVR_multiview */
+
+#ifndef GL_OVR_multiview2
+#define GL_OVR_multiview2 1
+#endif /* GL_OVR_multiview2 */
 
 #ifndef GL_PGI_misc_hints
 #define GL_PGI_misc_hints 1
