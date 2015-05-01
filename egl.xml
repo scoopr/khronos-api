@@ -74,6 +74,7 @@
         <type requires="khrplatform">typedef khronos_utime_nanoseconds_t <name>EGLTimeNV</name>;</type>
         <type requires="khrplatform">typedef khronos_utime_nanoseconds_t <name>EGLuint64NV</name>;</type>
         <type requires="khrplatform">typedef khronos_uint64_t <name>EGLuint64KHR</name>;</type>
+        <type requires="khrplatform">typedef khronos_uint64_t <name>EGLuint64MESA</name>;</type>
         <type>typedef int <name>EGLNativeFileDescriptorKHR</name>;</type>
         <type requires="khrplatform">typedef khronos_ssize_t <name>EGLsizeiANDROID</name>;</type>
         <type requires="EGLsizeiANDROID">typedef void (*<name>EGLSetBlobFuncANDROID</name>) (const void *key, EGLsizeiANDROID keySize, const void *value, EGLsizeiANDROID valueSize);</type>
@@ -699,7 +700,9 @@
     </enums>
 
     <enums namespace="EGL" start="0x33A0" end="0x33AF" vendor="ANGLE" comment="Reserved for Shannon Woods (Bug 13175)">
-            <unused start="0x33A0" end="0x33AF"/>
+        <enum value="0x33A0" name="EGL_D3D9_DEVICE_ANGLE"/>
+        <enum value="0x33A1" name="EGL_D3D11_DEVICE_ANGLE"/>
+            <unused start="0x33A2" end="0x33AF"/>
     </enums>
 
     <enums namespace="EGL" start="0x33B0" end="0x33BF" vendor="KHR" comment="Reserved for Jeff Vigil (Bug 13357)">
@@ -966,6 +969,22 @@
             <proto><ptype>EGLint</ptype> <name>eglDupNativeFenceFDANDROID</name></proto>
             <param><ptype>EGLDisplay</ptype> <name>dpy</name></param>
             <param><ptype>EGLSyncKHR</ptype> <name>sync</name></param>
+        </command>
+        <command>
+            <proto><ptype>EGLBoolean</ptype> <name>eglExportDMABUFImageMESA</name></proto>
+            <param><ptype>EGLDisplay</ptype> <name>dpy</name></param>
+            <param><ptype>EGLImageKHR</ptype> <name>image</name></param>
+            <param>int *<name>fds</name></param>
+            <param><ptype>EGLint</ptype> *<name>strides</name></param>
+            <param><ptype>EGLint</ptype> *<name>offsets</name></param>
+        </command>
+        <command>
+            <proto><ptype>EGLBoolean</ptype> <name>eglExportDMABUFImageQueryMESA</name></proto>
+            <param><ptype>EGLDisplay</ptype> <name>dpy</name></param>
+            <param><ptype>EGLImageKHR</ptype> <name>image</name></param>
+            <param>int *<name>fourcc</name></param>
+            <param>int *<name>num_planes</name></param>
+            <param><ptype>EGLuint64MESA</ptype> *<name>modifiers</name></param>
         </command>
         <command>
             <proto><ptype>EGLBoolean</ptype> <name>eglExportDRMImageMESA</name></proto>
@@ -1676,6 +1695,12 @@
                 <enum name="EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE"/>
             </require>
         </extension>
+        <extension name="EGL_ANGLE_device_d3d" supported="egl">
+            <require>
+                <enum name="EGL_D3D9_DEVICE_ANGLE"/>
+                <enum name="EGL_D3D11_DEVICE_ANGLE"/>
+            </require>
+        </extension>
         <extension name="EGL_ANGLE_query_surface_pointer" supported="egl">
             <require>
                 <command name="eglQuerySurfacePointerANGLE"/>
@@ -1726,9 +1751,24 @@
                 <enum name="EGL_DRM_DEVICE_FILE_EXT"/>
             </require>
         </extension>
+        <extension name="EGL_EXT_device_enumeration" supported="egl">
+            <require>
+                <command name="eglQueryDevicesEXT"/>
+            </require>
+        </extension>
         <extension name="EGL_EXT_device_openwf" supported="egl">
             <require>
                 <enum name="EGL_OPENWF_DEVICE_ID_EXT"/>
+            </require>
+        </extension>
+        <extension name="EGL_EXT_device_query" supported="egl">
+            <require>
+                <enum name="EGL_NO_DEVICE_EXT"/>
+                <enum name="EGL_BAD_DEVICE_EXT"/>
+                <enum name="EGL_DEVICE_EXT"/>
+                <command name="eglQueryDeviceAttribEXT"/>
+                <command name="eglQueryDeviceStringEXT"/>
+                <command name="eglQueryDisplayAttribEXT"/>
             </require>
         </extension>
         <extension name="EGL_EXT_image_dma_buf_import" supported="egl">
@@ -2179,6 +2219,13 @@
                 <enum name="EGL_DRM_BUFFER_USE_SHARE_MESA"/>
                 <command name="eglCreateDRMImageMESA"/>
                 <command name="eglExportDRMImageMESA"/>
+            </require>
+        </extension>
+        <extension name="EGL_MESA_image_dma_buf_export" supported="egl">
+            <require>
+                <type name="EGLuint64MESA"/>
+                <command name="eglExportDMABUFImageQueryMESA"/>
+                <command name="eglExportDMABUFImageMESA"/>
             </require>
         </extension>
         <extension name="EGL_MESA_platform_gbm" supported="egl">
