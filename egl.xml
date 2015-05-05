@@ -74,7 +74,6 @@
         <type requires="khrplatform">typedef khronos_utime_nanoseconds_t <name>EGLTimeNV</name>;</type>
         <type requires="khrplatform">typedef khronos_utime_nanoseconds_t <name>EGLuint64NV</name>;</type>
         <type requires="khrplatform">typedef khronos_uint64_t <name>EGLuint64KHR</name>;</type>
-        <type requires="khrplatform">typedef khronos_uint64_t <name>EGLuint64MESA</name>;</type>
         <type>typedef int <name>EGLNativeFileDescriptorKHR</name>;</type>
         <type requires="khrplatform">typedef khronos_ssize_t <name>EGLsizeiANDROID</name>;</type>
         <type requires="EGLsizeiANDROID">typedef void (*<name>EGLSetBlobFuncANDROID</name>) (const void *key, EGLsizeiANDROID keySize, const void *value, EGLsizeiANDROID valueSize);</type>
@@ -984,7 +983,7 @@
             <param><ptype>EGLImageKHR</ptype> <name>image</name></param>
             <param>int *<name>fourcc</name></param>
             <param>int *<name>num_planes</name></param>
-            <param><ptype>EGLuint64MESA</ptype> *<name>modifiers</name></param>
+            <param><ptype>EGLuint64KHR</ptype> *<name>modifiers</name></param>
         </command>
         <command>
             <proto><ptype>EGLBoolean</ptype> <name>eglExportDRMImageMESA</name></proto>
@@ -2223,7 +2222,7 @@
         </extension>
         <extension name="EGL_MESA_image_dma_buf_export" supported="egl">
             <require>
-                <type name="EGLuint64MESA"/>
+                <type name="EGLuint64KHR"/>
                 <command name="eglExportDMABUFImageQueryMESA"/>
                 <command name="eglExportDMABUFImageMESA"/>
             </require>
