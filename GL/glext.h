@@ -53,7 +53,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
-#define GL_GLEXT_VERSION 20150428
+#define GL_GLEXT_VERSION 20150508
 
 /* Generated C header for:
  * API: gl
@@ -4748,6 +4748,11 @@ GLAPI void APIENTRY glBlendBarrierKHR (void);
 #ifndef GL_KHR_debug
 #define GL_KHR_debug 1
 #endif /* GL_KHR_debug */
+
+#ifndef GL_KHR_no_error
+#define GL_KHR_no_error 1
+#define GL_CONTEXT_FLAG_NO_ERROR_BIT_KHR  0x00000008
+#endif /* GL_KHR_no_error */
 
 #ifndef GL_KHR_robust_buffer_access_behavior
 #define GL_KHR_robust_buffer_access_behavior 1
