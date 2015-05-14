@@ -53,7 +53,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
-#define GL_GLEXT_VERSION 20150508
+#define GL_GLEXT_VERSION 20150514
 
 /* Generated C header for:
  * API: gl
@@ -1041,6 +1041,22 @@ typedef unsigned short GLhalf;
 #define GL_COLOR_ATTACHMENT13             0x8CED
 #define GL_COLOR_ATTACHMENT14             0x8CEE
 #define GL_COLOR_ATTACHMENT15             0x8CEF
+#define GL_COLOR_ATTACHMENT16             0x8CF0
+#define GL_COLOR_ATTACHMENT17             0x8CF1
+#define GL_COLOR_ATTACHMENT18             0x8CF2
+#define GL_COLOR_ATTACHMENT19             0x8CF3
+#define GL_COLOR_ATTACHMENT20             0x8CF4
+#define GL_COLOR_ATTACHMENT21             0x8CF5
+#define GL_COLOR_ATTACHMENT22             0x8CF6
+#define GL_COLOR_ATTACHMENT23             0x8CF7
+#define GL_COLOR_ATTACHMENT24             0x8CF8
+#define GL_COLOR_ATTACHMENT25             0x8CF9
+#define GL_COLOR_ATTACHMENT26             0x8CFA
+#define GL_COLOR_ATTACHMENT27             0x8CFB
+#define GL_COLOR_ATTACHMENT28             0x8CFC
+#define GL_COLOR_ATTACHMENT29             0x8CFD
+#define GL_COLOR_ATTACHMENT30             0x8CFE
+#define GL_COLOR_ATTACHMENT31             0x8CFF
 #define GL_DEPTH_ATTACHMENT               0x8D00
 #define GL_STENCIL_ATTACHMENT             0x8D20
 #define GL_FRAMEBUFFER                    0x8D40
