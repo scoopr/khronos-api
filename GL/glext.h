@@ -53,7 +53,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
-#define GL_GLEXT_VERSION 20150805
+#define GL_GLEXT_VERSION 20150720
 
 /* Generated C header for:
  * API: gl
@@ -8648,14 +8648,6 @@ GLAPI void APIENTRY glBlendFuncSeparateINGR (GLenum sfactorRGB, GLenum dfactorRG
 #ifndef GL_INTEL_fragment_shader_ordering
 #define GL_INTEL_fragment_shader_ordering 1
 #endif /* GL_INTEL_fragment_shader_ordering */
-
-#ifndef GL_INTEL_framebuffer_CMAA
-#define GL_INTEL_framebuffer_CMAA 1
-typedef void (APIENTRYP PFNGLAPPLYFRAMEBUFFERATTACHMENTCMAAINTELPROC) (void);
-#ifdef GL_GLEXT_PROTOTYPES
-GLAPI void APIENTRY glApplyFramebufferAttachmentCMAAINTEL (void);
-#endif
-#endif /* GL_INTEL_framebuffer_CMAA */
 
 #ifndef GL_INTEL_map_texture
 #define GL_INTEL_map_texture 1
