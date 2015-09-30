@@ -86,7 +86,7 @@
     EGLint iHeight;
     EGLint iStride;
 };</type>
-        <type>typedef void (<apientry/> *<name>EGLDEBUGPROC</name>)(EGLenum error,const char *command,EGLint messageType,EGLLabelKHR threadLabel,EGLLabelKHR objectLabel,const char* message);</type>
+        <type>typedef void (<apientry/> *<name>EGLDEBUGPROCKHR</name>)(EGLenum error,const char *command,EGLint messageType,EGLLabelKHR threadLabel,EGLLabelKHR objectLabel,const char* message);</type>
     </types>
 
     <!-- SECTION: EGL enumerant (token) definitions. -->
@@ -942,7 +942,7 @@
         </command>
         <command>
             <proto><ptype>EGLint</ptype> <name>eglDebugMessageControlKHR</name></proto>
-            <param><ptype>EGLDEBUGPROC</ptype> <name>callback</name></param>
+            <param><ptype>EGLDEBUGPROCKHR</ptype> <name>callback</name></param>
             <param>const <ptype>EGLAttrib</ptype> *<name>attrib_list</name></param>
         </command>
         <command>
