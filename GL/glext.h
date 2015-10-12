@@ -53,7 +53,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
-#define GL_GLEXT_VERSION 20150903
+#define GL_GLEXT_VERSION 20151012
 
 /* Generated C header for:
  * API: gl
@@ -4978,6 +4978,10 @@ GLAPI void APIENTRY glBlendBarrierKHR (void);
 #ifndef GL_KHR_texture_compression_astc_ldr
 #define GL_KHR_texture_compression_astc_ldr 1
 #endif /* GL_KHR_texture_compression_astc_ldr */
+
+#ifndef GL_KHR_texture_compression_astc_sliced_3d
+#define GL_KHR_texture_compression_astc_sliced_3d 1
+#endif /* GL_KHR_texture_compression_astc_sliced_3d */
 
 #ifndef GL_OES_byte_coordinates
 #define GL_OES_byte_coordinates 1
