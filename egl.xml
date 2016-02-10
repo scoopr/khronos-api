@@ -111,6 +111,7 @@
         <enum value="0x0800" name="EGL_STREAM_BIT_KHR"/>
             <!--
         <enum value="0x0800"      name="EGL_STREAM_BIT_NV" comment="Draft EGL_NV_stream_producer_eglsurface extension (bug 8064)"/>
+        <enum value="0x1000" name="EGL_MUTABLE_RENDER_BUFFER_BIT_KHR" comment="Draft extension"/>
             -->
     </enums>
 

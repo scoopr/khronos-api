@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright (c) 2013-2015 The Khronos Group Inc.
+# Copyright (c) 2013-2016 The Khronos Group Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and/or associated documentation files (the
@@ -126,21 +126,22 @@ es1CoreList = [
 # Descriptive names for various regexp patterns used to select
 # versions and extensions
 
-allVersions     = allExtensions = '.*'
-noVersions      = noExtensions = None
-gl12andLaterPat = '1\.[2-9]|[234]\.[0-9]'
-gles2onlyPat    = '2\.[0-9]'
-gles2and30Pat   = '2\.[0-9]|3.0'
-gles2and30and31Pat    = '2.[0-9]|3.[01]'
-es1CorePat      = makeREstring(es1CoreList)
+allVersions       = allExtensions = '.*'
+noVersions        = noExtensions = None
+gl12andLaterPat   = '1\.[2-9]|[234]\.[0-9]'
+gles2onlyPat      = '2\.[0-9]'
+gles2through30Pat = '2\.[0-9]|3\.0'
+gles2through31Pat = '2\.[0-9]|3\.[01]'
+gles2through32Pat = '2\.[0-9]|3\.[012]'
+es1CorePat        = makeREstring(es1CoreList)
 # Extensions in old glcorearb.h but not yet tagged accordingly in gl.xml
-glCoreARBPat    = None
-glx13andLaterPat = '1\.[3-9]'
+glCoreARBPat      = None
+glx13andLaterPat  = '1\.[3-9]'
 
 # Copyright text prefixing all headers (list of strings).
 prefixStrings = [
     '/*',
-    '** Copyright (c) 2013-2015 The Khronos Group Inc.',
+    '** Copyright (c) 2013-2016 The Khronos Group Inc.',
     '**',
     '** Permission is hereby granted, free of charge, to any person obtaining a',
     '** copy of this software and/or associated documentation files (the',
@@ -380,12 +381,31 @@ buildList = [
         apicall           = 'GL_APICALL ',
         apientry          = 'GL_APIENTRY ',
         apientryp         = 'GL_APIENTRYP '),
+    # GLES 3.2 API - GLES3/gl32.h (now with function pointers)
+    CGeneratorOptions(
+        filename          = 'GLES3/gl32.h',
+        apiname           = 'gles2',
+        profile           = 'common',
+        versions          = gles2through32Pat,
+        emitversions      = allVersions,
+        defaultExtensions = None,                   # No default extensions
+        addExtensions     = None,
+        removeExtensions  = None,
+        prefixText        = prefixStrings + gles3PlatformStrings + apiEntryPrefixStrings + genDateCommentString,
+        genFuncPointers   = True,
+        protectFile       = protectFile,
+        protectFeature    = protectFeature,
+        protectProto      = protectProto,           # Core ES API functions are in the static link libraries
+        protectProtoStr   = 'GL_GLEXT_PROTOTYPES',
+        apicall           = 'GL_APICALL ',
+        apientry          = 'GL_APIENTRY ',
+        apientryp         = 'GL_APIENTRYP '),
     # GLES 3.1 API - GLES3/gl31.h (now with function pointers)
     CGeneratorOptions(
         filename          = 'GLES3/gl31.h',
         apiname           = 'gles2',
         profile           = 'common',
-        versions          = gles2and30and31Pat,
+        versions          = gles2through31Pat,
         emitversions      = allVersions,
         defaultExtensions = None,                   # No default extensions
         addExtensions     = None,
@@ -404,7 +424,7 @@ buildList = [
         filename          = 'GLES3/gl3.h',
         apiname           = 'gles2',
         profile           = 'common',
-        versions          = gles2and30Pat,
+        versions          = gles2through30Pat,
         emitversions      = allVersions,
         defaultExtensions = None,                   # No default extensions
         addExtensions     = None,
