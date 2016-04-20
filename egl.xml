@@ -357,7 +357,7 @@
         <enum value="0x30BD" name="EGL_GL_TEXTURE_ZOFFSET"/>
         <enum value="0x30BD" name="EGL_GL_TEXTURE_ZOFFSET_KHR" alias="EGL_GL_TEXTURE_ZOFFSET"/>
         <enum value="0x30BE" name="EGL_POST_SUB_BUFFER_SUPPORTED_NV"/>
-        <enum value="0x30BF" name="EGL_CONTEXT_OPENGL_ROBUST_ACCESS_EXT" alias="EGL_CONTEXT_OPENGL_ROBUST_ACCESS"/>
+        <enum value="0x30BF" name="EGL_CONTEXT_OPENGL_ROBUST_ACCESS_EXT"/>
     </enums>
 
     <enums namespace="EGL" start="0x30C0-0x30CF" vendor="KHR">

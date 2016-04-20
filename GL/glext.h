@@ -53,7 +53,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
-#define GL_GLEXT_VERSION 20160411
+#define GL_GLEXT_VERSION 20160419
 
 /* Generated C header for:
  * API: gl
@@ -11087,6 +11087,26 @@ GLAPI void APIENTRY glVideoCaptureStreamParameterdvNV (GLuint video_capture_slot
 #ifndef GL_NV_viewport_array2
 #define GL_NV_viewport_array2 1
 #endif /* GL_NV_viewport_array2 */
+
+#ifndef GL_NV_viewport_swizzle
+#define GL_NV_viewport_swizzle 1
+#define GL_VIEWPORT_SWIZZLE_POSITIVE_X_NV 0x9350
+#define GL_VIEWPORT_SWIZZLE_NEGATIVE_X_NV 0x9351
+#define GL_VIEWPORT_SWIZZLE_POSITIVE_Y_NV 0x9352
+#define GL_VIEWPORT_SWIZZLE_NEGATIVE_Y_NV 0x9353
+#define GL_VIEWPORT_SWIZZLE_POSITIVE_Z_NV 0x9354
+#define GL_VIEWPORT_SWIZZLE_NEGATIVE_Z_NV 0x9355
+#define GL_VIEWPORT_SWIZZLE_POSITIVE_W_NV 0x9356
+#define GL_VIEWPORT_SWIZZLE_NEGATIVE_W_NV 0x9357
+#define GL_VIEWPORT_SWIZZLE_X_NV          0x9358
+#define GL_VIEWPORT_SWIZZLE_Y_NV          0x9359
+#define GL_VIEWPORT_SWIZZLE_Z_NV          0x935A
+#define GL_VIEWPORT_SWIZZLE_W_NV          0x935B
+typedef void (APIENTRYP PFNGLVIEWPORTSWIZZLENVPROC) (GLuint index, GLenum swizzlex, GLenum swizzley, GLenum swizzlez, GLenum swizzlew);
+#ifdef GL_GLEXT_PROTOTYPES
+GLAPI void APIENTRY glViewportSwizzleNV (GLuint index, GLenum swizzlex, GLenum swizzley, GLenum swizzlez, GLenum swizzlew);
+#endif
+#endif /* GL_NV_viewport_swizzle */
 
 #ifndef GL_OML_interlace
 #define GL_OML_interlace 1

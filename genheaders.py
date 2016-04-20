@@ -220,10 +220,12 @@ wglPlatformStrings = [
     '',
 ]
 
-# GLES 1/2/3 core .h have separate *platform.h files to define calling conventions
+# Different APIs use different *platform.h files to define calling
+# conventions
 gles1PlatformStrings = [ '#include <GLES/glplatform.h>', '' ]
 gles2PlatformStrings = [ '#include <GLES2/gl2platform.h>', '' ]
 gles3PlatformStrings = [ '#include <GLES3/gl3platform.h>', '' ]
+glsc2PlatformStrings = [ '#include <GLSC2/gl2platform.h>', '' ]
 eglPlatformStrings   = [ '#include <EGL/eglplatform.h>', '' ]
 
 # GLES headers have a small addition to calling convention headers for function pointer typedefs
@@ -434,6 +436,44 @@ buildList = [
         protectFile       = protectFile,
         protectFeature    = protectFeature,
         protectProto      = protectProto,           # Core ES API functions are in the static link libraries
+        protectProtoStr   = 'GL_GLEXT_PROTOTYPES',
+        apicall           = 'GL_APICALL ',
+        apientry          = 'GL_APIENTRY ',
+        apientryp         = 'GL_APIENTRYP '),
+    # GLSC 2.0 API - GLSC2/glsc2.h
+    CGeneratorOptions(
+        filename          = 'GLSC2/glsc2.h',
+        apiname           = 'glsc2',
+        profile           = 'common',
+        versions          = gles2onlyPat,
+        emitversions      = allVersions,
+        defaultExtensions = None,                   # No default extensions
+        addExtensions     = None,
+        removeExtensions  = None,
+        prefixText        = prefixStrings + glsc2PlatformStrings + apiEntryPrefixStrings + genDateCommentString,
+        genFuncPointers   = False,
+        protectFile       = protectFile,
+        protectFeature    = protectFeature,
+        protectProto      = False,
+        protectProtoStr   = 'GL_GLEXT_PROTOTYPES',
+        apicall           = 'GL_APICALL ',
+        apientry          = 'GL_APIENTRY ',
+        apientryp         = 'GL_APIENTRYP '),
+    # GLSC 2.0 extensions - GLSC2/gl2ext.h
+    CGeneratorOptions(
+        filename          = 'GLSC2/glsc2ext.h',
+        apiname           = 'glsc2',
+        profile           = 'common',
+        versions          = gles2onlyPat,
+        emitversions      = None,
+        defaultExtensions = 'glsc2',                # Default extensions for GLSC 2
+        addExtensions     = None,
+        removeExtensions  = None,
+        prefixText        = prefixStrings + apiEntryPrefixStrings + genDateCommentString,
+        genFuncPointers   = False,
+        protectFile       = protectFile,
+        protectFeature    = protectFeature,
+        protectProto      = False,
         protectProtoStr   = 'GL_GLEXT_PROTOTYPES',
         apicall           = 'GL_APICALL ',
         apientry          = 'GL_APIENTRY ',
