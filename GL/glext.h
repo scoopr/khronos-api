@@ -53,7 +53,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
-#define GL_GLEXT_VERSION 20160428
+#define GL_GLEXT_VERSION 20160525
 
 /* Generated C header for:
  * API: gl
@@ -5596,6 +5596,10 @@ GLAPI void APIENTRY glSetMultisamplefvAMD (GLenum pname, GLuint index, const GLf
 #define GL_AMD_shader_atomic_counter_ops 1
 #endif /* GL_AMD_shader_atomic_counter_ops */
 
+#ifndef GL_AMD_shader_explicit_vertex_parameter
+#define GL_AMD_shader_explicit_vertex_parameter 1
+#endif /* GL_AMD_shader_explicit_vertex_parameter */
+
 #ifndef GL_AMD_shader_stencil_export
 #define GL_AMD_shader_stencil_export 1
 #endif /* GL_AMD_shader_stencil_export */
@@ -10222,6 +10226,11 @@ GLAPI void APIENTRY glCombinerStageParameterfvNV (GLenum stage, GLenum pname, co
 GLAPI void APIENTRY glGetCombinerStageParameterfvNV (GLenum stage, GLenum pname, GLfloat *params);
 #endif
 #endif /* GL_NV_register_combiners2 */
+
+#ifndef GL_NV_robustness_video_memory_purge
+#define GL_NV_robustness_video_memory_purge 1
+#define GL_PURGED_CONTEXT_RESET_NV        0x92BB
+#endif /* GL_NV_robustness_video_memory_purge */
 
 #ifndef GL_NV_sample_locations
 #define GL_NV_sample_locations 1
