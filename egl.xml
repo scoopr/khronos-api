@@ -723,7 +723,9 @@
         <enum value="0x332C" name="EGL_YUV_PLANE0_TEXTURE_UNIT_NV"/>
         <enum value="0x332D" name="EGL_YUV_PLANE1_TEXTURE_UNIT_NV"/>
         <enum value="0x332E" name="EGL_YUV_PLANE2_TEXTURE_UNIT_NV"/>
-            <unused start="0x332F" end="0x339F"/>
+            <unused start="0x332F" end="0x334B"/>
+        <enum value="0x334C" name="EGL_GENERATE_RESET_ON_VIDEO_MEMORY_PURGE_NV"/>
+            <unused start="0x334D" end="0x339F"/>
     </enums>
 
     <enums namespace="EGL" start="0x33A0" end="0x33AF" vendor="ANGLE" comment="Reserved for Shannon Woods (Bug 13175)">
@@ -2432,6 +2434,11 @@
             <require>
                 <enum name="EGL_POST_SUB_BUFFER_SUPPORTED_NV"/>
                 <command name="eglPostSubBufferNV"/>
+            </require>
+        </extension>
+        <extension name="EGL_NV_robustness_video_memory_purge" supported="egl">
+            <require>
+                <enum name="EGL_GENERATE_RESET_ON_VIDEO_MEMORY_PURGE_NV"/>
             </require>
         </extension>
         <extension name="EGL_NV_stream_consumer_gltexture_yuv" supported="egl">

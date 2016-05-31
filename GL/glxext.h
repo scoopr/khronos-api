@@ -36,7 +36,7 @@ extern "C" {
 ** Khronos $Revision$ on $Date$
 */
 
-#define GLX_GLXEXT_VERSION 20160428
+#define GLX_GLXEXT_VERSION 20160531
 
 /* Generated C header for:
  * API: glx
@@ -547,6 +547,11 @@ unsigned int *glXEnumerateVideoDevicesNV (Display *dpy, int screen, int *nelemen
 int glXBindVideoDeviceNV (Display *dpy, unsigned int video_slot, unsigned int video_device, const int *attrib_list);
 #endif
 #endif /* GLX_NV_present_video */
+
+#ifndef GLX_NV_robustness_video_memory_purge
+#define GLX_NV_robustness_video_memory_purge 1
+#define GLX_GENERATE_RESET_ON_VIDEO_MEMORY_PURGE_NV 0x20F7
+#endif /* GLX_NV_robustness_video_memory_purge */
 
 #ifndef GLX_NV_swap_group
 #define GLX_NV_swap_group 1
