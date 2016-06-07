@@ -1,6 +1,6 @@
 #!/usr/bin/python3 -i
 #
-# Copyright (c) 2013-2014 The Khronos Group Inc.
+# Copyright (c) 2013-2016 The Khronos Group Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and/or associated documentation files (the
@@ -706,7 +706,7 @@ class Registry:
     #   infoName - 'type' / 'group' / 'enum' / 'command' / 'feature' / 'extension'
     #   dictionary - self.{type|group|enum|cmd|api|ext}dict
     # If the Element has an 'api' attribute, the dictionary key is the
-    # tuple (name,api). If not, the key is the name. 'name' is an 
+    # tuple (name,api). If not, the key is the name. 'name' is an
     # attribute of the Element
     def addElementInfo(self, elem, info, infoName, dictionary):
         if ('api' in elem.attrib):
