@@ -199,6 +199,7 @@
         <enum value="((EGLSync)0)" name="EGL_NO_SYNC"/>
         <enum value="((EGLSyncKHR)0)" name="EGL_NO_SYNC_KHR" alias="EGL_NO_SYNC"/>
         <enum value="((EGLSyncNV)0)" name="EGL_NO_SYNC_NV" alias="EGL_NO_SYNC"/>
+        <enum value="((EGLConfig)0)" name="EGL_NO_CONFIG_KHR"/>
         <enum value="10000" name="EGL_DISPLAY_SCALING"/>
         <enum value="0xFFFFFFFFFFFFFFFF" name="EGL_FOREVER" type="ull"/>
         <enum value="0xFFFFFFFFFFFFFFFF" name="EGL_FOREVER_KHR" type="ull" alias="EGL_FOREVER"/>
@@ -2267,6 +2268,11 @@
         <extension name="EGL_KHR_mutable_render_buffer" supported="egl">
             <require>
                 <enum name="EGL_MUTABLE_RENDER_BUFFER_BIT_KHR"/>
+            </require>
+        </extension>
+        <extension name="EGL_KHR_no_config_context" supported="egl">
+            <require>
+                <enum name="EGL_NO_CONFIG_KHR"/>
             </require>
         </extension>
         <extension name="EGL_KHR_partial_update" supported="egl">

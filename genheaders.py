@@ -236,30 +236,39 @@ apiEntryPrefixStrings = [
     ''
 ]
 
+# GLES 2/3 core API headers use a different protection mechanism for
+# prototypes, per bug 14206.
+glesProtoPrefixStrings = [
+    '#ifndef GL_GLES_PROTOTYPES',
+    '#define GL_GLES_PROTOTYPES 1',
+    '#endif',
+    ''
+]
+
 # Insert generation date in a comment for headers not having *GLEXT_VERSION macros
 genDateCommentString = [
-    format("/* Generated on date %s */" % time.strftime("%Y%m%d")),
+    format('/* Generated on date %s */' % time.strftime('%Y%m%d')),
     ''
 ]
 
 # GL_GLEXT_VERSION is defined only in glext.h
 glextVersionStrings = [
-    format("#define GL_GLEXT_VERSION %s" % time.strftime("%Y%m%d")),
+    format('#define GL_GLEXT_VERSION %s' % time.strftime('%Y%m%d')),
     ''
 ]
 # WGL_WGLEXT_VERSION is defined only in wglext.h
 wglextVersionStrings = [
-    format("#define WGL_WGLEXT_VERSION %s" % time.strftime("%Y%m%d")),
+    format('#define WGL_WGLEXT_VERSION %s' % time.strftime('%Y%m%d')),
     ''
 ]
 # GLX_GLXEXT_VERSION is defined only in glxext.h
 glxextVersionStrings = [
-    format("#define GLX_GLXEXT_VERSION %s" % time.strftime("%Y%m%d")),
+    format('#define GLX_GLXEXT_VERSION %s' % time.strftime('%Y%m%d')),
     ''
 ]
 # EGL_EGLEXT_VERSION is defined only in eglext.h
 eglextVersionStrings = [
-    format("#define EGL_EGLEXT_VERSION %s" % time.strftime("%Y%m%d")),
+    format('#define EGL_EGLEXT_VERSION %s' % time.strftime('%Y%m%d')),
     ''
 ]
 
@@ -355,12 +364,12 @@ buildList = [
         defaultExtensions = None,                   # No default extensions
         addExtensions     = None,
         removeExtensions  = None,
-        prefixText        = prefixStrings + gles2PlatformStrings + apiEntryPrefixStrings + genDateCommentString,
+        prefixText        = prefixStrings + gles2PlatformStrings + apiEntryPrefixStrings + glesProtoPrefixStrings + genDateCommentString,
         genFuncPointers   = True,
         protectFile       = protectFile,
         protectFeature    = protectFeature,
-        protectProto      = protectProto,           # Core ES API functions are in the static link libraries
-        protectProtoStr   = 'GL_GLEXT_PROTOTYPES',
+        protectProto      = 'nonzero',              # Core ES API functions are in the static link libraries
+        protectProtoStr   = 'GL_GLES_PROTOTYPES',
         apicall           = 'GL_APICALL ',
         apientry          = 'GL_APIENTRY ',
         apientryp         = 'GL_APIENTRYP '),
@@ -393,12 +402,12 @@ buildList = [
         defaultExtensions = None,                   # No default extensions
         addExtensions     = None,
         removeExtensions  = None,
-        prefixText        = prefixStrings + gles3PlatformStrings + apiEntryPrefixStrings + genDateCommentString,
+        prefixText        = prefixStrings + gles3PlatformStrings + apiEntryPrefixStrings + glesProtoPrefixStrings + genDateCommentString,
         genFuncPointers   = True,
         protectFile       = protectFile,
         protectFeature    = protectFeature,
-        protectProto      = protectProto,           # Core ES API functions are in the static link libraries
-        protectProtoStr   = 'GL_GLEXT_PROTOTYPES',
+        protectProto      = 'nonzero',              # Core ES API functions are in the static link libraries
+        protectProtoStr   = 'GL_GLES_PROTOTYPES',
         apicall           = 'GL_APICALL ',
         apientry          = 'GL_APIENTRY ',
         apientryp         = 'GL_APIENTRYP '),
@@ -412,12 +421,12 @@ buildList = [
         defaultExtensions = None,                   # No default extensions
         addExtensions     = None,
         removeExtensions  = None,
-        prefixText        = prefixStrings + gles3PlatformStrings + apiEntryPrefixStrings + genDateCommentString,
+        prefixText        = prefixStrings + gles3PlatformStrings + apiEntryPrefixStrings + glesProtoPrefixStrings + genDateCommentString,
         genFuncPointers   = True,
         protectFile       = protectFile,
         protectFeature    = protectFeature,
-        protectProto      = protectProto,           # Core ES API functions are in the static link libraries
-        protectProtoStr   = 'GL_GLEXT_PROTOTYPES',
+        protectProto      = 'nonzero',              # Core ES API functions are in the static link libraries
+        protectProtoStr   = 'GL_GLES_PROTOTYPES',
         apicall           = 'GL_APICALL ',
         apientry          = 'GL_APIENTRY ',
         apientryp         = 'GL_APIENTRYP '),
@@ -431,12 +440,12 @@ buildList = [
         defaultExtensions = None,                   # No default extensions
         addExtensions     = None,
         removeExtensions  = None,
-        prefixText        = prefixStrings + gles3PlatformStrings + apiEntryPrefixStrings + genDateCommentString,
+        prefixText        = prefixStrings + gles3PlatformStrings + apiEntryPrefixStrings + glesProtoPrefixStrings + genDateCommentString,
         genFuncPointers   = True,
         protectFile       = protectFile,
         protectFeature    = protectFeature,
-        protectProto      = protectProto,           # Core ES API functions are in the static link libraries
-        protectProtoStr   = 'GL_GLEXT_PROTOTYPES',
+        protectProto      = 'nonzero',              # Core ES API functions are in the static link libraries
+        protectProtoStr   = 'GL_GLES_PROTOTYPES',
         apicall           = 'GL_APICALL ',
         apientry          = 'GL_APIENTRY ',
         apientryp         = 'GL_APIENTRYP '),

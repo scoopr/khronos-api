@@ -24,11 +24,11 @@
 import io,os,re,string,sys
 from lxml import etree
 
-def write( *args, **kwargs ):
-    file = kwargs.pop('file',sys.stdout)
-    end = kwargs.pop( 'end','\n')
-    file.write( ' '.join([str(arg) for arg in args]) )
-    file.write( end )
+def write(*args, **kwargs):
+    file = kwargs.pop('file', sys.stdout)
+    end = kwargs.pop('end', '\n')
+    file.write(' '.join([str(arg) for arg in args]))
+    file.write(end)
 
 # noneStr - returns string argument, or "" if argument is None.
 # Used in converting lxml Elements into text.
@@ -275,8 +275,10 @@ class GeneratorOptions:
 #     generated around a feature interface in the header file.
 #   genFuncPointers - True if function pointer typedefs should be
 #     generated
-#   protectProto - True if #ifdef..#endif protection should be
-#     generated around prototype declarations
+#   protectProto - Controls cpp protection around prototypes:
+#     False - no protection
+#     'nonzero' - protectProtoStr must be defined to a nonzero value
+#     True - protectProtoStr must be defined
 #   protectProtoStr - #ifdef symbol to use around prototype
 #     declarations, if protected
 #   apicall - string to use for the function declaration prefix,
@@ -506,7 +508,7 @@ class COutputGenerator(OutputGenerator):
                     paramdecl += ', '
         else:
             paramdecl += 'void'
-        paramdecl += ");\n";
+        paramdecl += ');\n';
         return [ pdecl + paramdecl, tdecl + paramdecl ]
     #
     def newline(self):
@@ -588,11 +590,24 @@ class COutputGenerator(OutputGenerator):
             if (self.genOpts.genFuncPointers and self.cmdPointerBody != ''):
                 write(self.cmdPointerBody, end='', file=self.outFile)
             if (self.cmdBody != ''):
-                if (self.genOpts.protectProto):
-                    write('#ifdef', self.genOpts.protectProtoStr, file=self.outFile)
-                write(self.cmdBody, end='', file=self.outFile)
-                if (self.genOpts.protectProto):
-                    write('#endif', file=self.outFile)
+                if (self.genOpts.protectProto == True):
+                    prefix = '#ifdef ' + self.genOpts.protectProtoStr + '\n'
+                    suffix = '#endif\n'
+                elif (self.genOpts.protectProto == 'nonzero'):
+                    prefix = '#if ' + self.genOpts.protectProtoStr + '\n'
+                    suffix = '#endif\n'
+                elif (self.genOpts.protectProto == False):
+                    prefix = ''
+                    suffix = ''
+                else:
+                    self.gen.logMsg('warn',
+                                    '*** Unrecognized value for protectProto:',
+                                    self.genOpts.protectProto,
+                                    'not generating prototype wrappers')
+                    prefix = ''
+                    suffix = ''
+
+                write(prefix + self.cmdBody + suffix, end='', file=self.outFile)
             if (self.featureExtraProtect != None):
                 write('#endif /*', self.featureExtraProtect, '*/', file=self.outFile)
             if (self.genOpts.protectFeature):
@@ -615,7 +630,7 @@ class COutputGenerator(OutputGenerator):
             else:
                 s += noneStr(elem.text) + noneStr(elem.tail)
         if (len(s) > 0):
-            self.typeBody += s + "\n"
+            self.typeBody += s + '\n'
     #
     # Enumerant generation
     def genEnum(self, enuminfo, name):
@@ -628,7 +643,7 @@ class COutputGenerator(OutputGenerator):
         t = enuminfo.elem.get('type')
         if (t != '' and t != 'i'):
             self.enumBody += enuminfo.type
-        self.enumBody += "\n"
+        self.enumBody += '\n'
     #
     # Command generation
     def genCmd(self, cmdinfo, name):

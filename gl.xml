@@ -8042,7 +8042,17 @@ typedef unsigned int GLhandleARB;
         <enum value="0x91BE" name="GL_MAX_COMPUTE_WORK_GROUP_COUNT"/>
         <enum value="0x91BF" name="GL_MAX_COMPUTE_WORK_GROUP_SIZE"/>
         <enum value="0x91BF" name="GL_MAX_COMPUTE_FIXED_GROUP_SIZE_ARB" alias="GL_MAX_COMPUTE_WORK_GROUP_SIZE"/>
-            <unused start="0x91C0" end="0x923F" vendor="AMD"/>
+            <unused start="0x91C0" end="0x91C4" vendor="AMD"/>
+        <enum value="0x91C5" name="GL_FLOAT16_MAT2_AMD"/>
+        <enum value="0x91C6" name="GL_FLOAT16_MAT3_AMD"/>
+        <enum value="0x91C7" name="GL_FLOAT16_MAT4_AMD"/>
+        <enum value="0x91C8" name="GL_FLOAT16_MAT2x3_AMD"/>
+        <enum value="0x91C9" name="GL_FLOAT16_MAT2x4_AMD"/>
+        <enum value="0x91CA" name="GL_FLOAT16_MAT3x2_AMD"/>
+        <enum value="0x91CB" name="GL_FLOAT16_MAT3x4_AMD"/>
+        <enum value="0x91CC" name="GL_FLOAT16_MAT4x2_AMD"/>
+        <enum value="0x91CD" name="GL_FLOAT16_MAT4x3_AMD"/>
+            <unused start="0x91CE" end="0x923F" vendor="AMD"/>
     </enums>
 
     <enums namespace="GL" start="0x9240" end="0x924F" vendor="WEBGL" comment="Khronos bug 6473,6884">
@@ -36508,6 +36518,23 @@ typedef unsigned int GLhandleARB;
             </require>
         </extension>
         <extension name="GL_AMD_gcn_shader" supported="gl"/>
+        <extension name="GL_AMD_gpu_shader_half_float" supported="gl">
+            <require>
+                <enum name="GL_FLOAT16_NV"/>
+                <enum name="GL_FLOAT16_VEC2_NV"/>
+                <enum name="GL_FLOAT16_VEC3_NV"/>
+                <enum name="GL_FLOAT16_VEC4_NV"/>
+                <enum name="GL_FLOAT16_MAT2_AMD"/>
+                <enum name="GL_FLOAT16_MAT3_AMD"/>
+                <enum name="GL_FLOAT16_MAT4_AMD"/>
+                <enum name="GL_FLOAT16_MAT2x3_AMD"/>
+                <enum name="GL_FLOAT16_MAT2x4_AMD"/>
+                <enum name="GL_FLOAT16_MAT3x2_AMD"/>
+                <enum name="GL_FLOAT16_MAT3x4_AMD"/>
+                <enum name="GL_FLOAT16_MAT4x2_AMD"/>
+                <enum name="GL_FLOAT16_MAT4x3_AMD"/>
+            </require>
+        </extension>
         <extension name="GL_AMD_gpu_shader_int64" supported="gl">
             <require>
                 <enum name="GL_INT64_NV"/>
@@ -36670,6 +36697,7 @@ typedef unsigned int GLhandleARB;
             </require>
         </extension>
         <extension name="GL_AMD_shader_atomic_counter_ops" supported="gl"/>
+        <extension name="GL_AMD_shader_ballot" supported="gl"/>
         <extension name="GL_AMD_shader_stencil_export" supported="gl"/>
         <extension name="GL_AMD_shader_trinary_minmax" supported="gl"/>
         <extension name="GL_AMD_shader_explicit_vertex_parameter" supported="gl"/>
