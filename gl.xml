@@ -9965,6 +9965,15 @@ typedef unsigned int GLhandleARB;
             <param len="COMPSIZE(format,type)">const void *<name>data</name></param>
         </command>
         <command>
+            <proto>void <name>glClearTexImageEXT</name></proto>
+            <param><ptype>GLuint</ptype> <name>texture</name></param>
+            <param><ptype>GLint</ptype> <name>level</name></param>
+            <param><ptype>GLenum</ptype> <name>format</name></param>
+            <param><ptype>GLenum</ptype> <name>type</name></param>
+            <param len="COMPSIZE(format,type)">const void *<name>data</name></param>
+            <alias name="glClearTexImage"/>
+        </command>
+        <command>
             <proto>void <name>glClearTexSubImage</name></proto>
             <param><ptype>GLuint</ptype> <name>texture</name></param>
             <param><ptype>GLint</ptype> <name>level</name></param>
@@ -9977,6 +9986,21 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLenum</ptype> <name>format</name></param>
             <param><ptype>GLenum</ptype> <name>type</name></param>
             <param len="COMPSIZE(format,type)">const void *<name>data</name></param>
+        </command>
+        <command>
+            <proto>void <name>glClearTexSubImageEXT</name></proto>
+            <param><ptype>GLuint</ptype> <name>texture</name></param>
+            <param><ptype>GLint</ptype> <name>level</name></param>
+            <param><ptype>GLint</ptype> <name>xoffset</name></param>
+            <param><ptype>GLint</ptype> <name>yoffset</name></param>
+            <param><ptype>GLint</ptype> <name>zoffset</name></param>
+            <param><ptype>GLsizei</ptype> <name>width</name></param>
+            <param><ptype>GLsizei</ptype> <name>height</name></param>
+            <param><ptype>GLsizei</ptype> <name>depth</name></param>
+            <param><ptype>GLenum</ptype> <name>format</name></param>
+            <param><ptype>GLenum</ptype> <name>type</name></param>
+            <param len="COMPSIZE(format,type)">const void *<name>data</name></param>
+            <alias name="glClearTexSubImage"/>
         </command>
         <command>
             <proto>void <name>glClientActiveTexture</name></proto>
@@ -16639,6 +16663,11 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>texture</name></param>
         </command>
         <command>
+            <proto><ptype>GLuint64</ptype> <name>glGetTextureHandleIMG</name></proto>
+            <param><ptype>GLuint</ptype> <name>texture</name></param>
+            <alias name="glGetTextureHandleARB"/>
+        </command>
+        <command>
             <proto><ptype>GLuint64</ptype> <name>glGetTextureHandleNV</name></proto>
             <param><ptype>GLuint</ptype> <name>texture</name></param>
         </command>
@@ -16746,6 +16775,12 @@ typedef unsigned int GLhandleARB;
             <proto><ptype>GLuint64</ptype> <name>glGetTextureSamplerHandleARB</name></proto>
             <param><ptype>GLuint</ptype> <name>texture</name></param>
             <param><ptype>GLuint</ptype> <name>sampler</name></param>
+        </command>
+        <command>
+            <proto><ptype>GLuint64</ptype> <name>glGetTextureSamplerHandleIMG</name></proto>
+            <param><ptype>GLuint</ptype> <name>texture</name></param>
+            <param><ptype>GLuint</ptype> <name>sampler</name></param>
+            <alias name="glGetTextureSamplerHandleARB"/>
         </command>
         <command>
             <proto><ptype>GLuint64</ptype> <name>glGetTextureSamplerHandleNV</name></proto>
@@ -22430,6 +22465,13 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint64</ptype> <name>value</name></param>
         </command>
         <command>
+            <proto>void <name>glProgramUniformHandleui64IMG</name></proto>
+            <param><ptype>GLuint</ptype> <name>program</name></param>
+            <param><ptype>GLint</ptype> <name>location</name></param>
+            <param><ptype>GLuint64</ptype> <name>value</name></param>
+            <alias name="glProgramUniformHandleui64ARB"/>
+        </command>
+        <command>
             <proto>void <name>glProgramUniformHandleui64NV</name></proto>
             <param><ptype>GLuint</ptype> <name>program</name></param>
             <param><ptype>GLint</ptype> <name>location</name></param>
@@ -22441,6 +22483,14 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param len="count">const <ptype>GLuint64</ptype> *<name>values</name></param>
+        </command>
+        <command>
+            <proto>void <name>glProgramUniformHandleui64vIMG</name></proto>
+            <param><ptype>GLuint</ptype> <name>program</name></param>
+            <param><ptype>GLint</ptype> <name>location</name></param>
+            <param><ptype>GLsizei</ptype> <name>count</name></param>
+            <param len="count">const <ptype>GLuint64</ptype> *<name>values</name></param>
+            <alias name="glProgramUniformHandleui64vARB"/>
         </command>
         <command>
             <proto>void <name>glProgramUniformHandleui64vNV</name></proto>
@@ -26722,6 +26772,12 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint64</ptype> <name>value</name></param>
         </command>
         <command>
+            <proto>void <name>glUniformHandleui64IMG</name></proto>
+            <param><ptype>GLint</ptype> <name>location</name></param>
+            <param><ptype>GLuint64</ptype> <name>value</name></param>
+            <alias name="glUniformHandleui64ARB"/>
+        </command>
+        <command>
             <proto>void <name>glUniformHandleui64NV</name></proto>
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLuint64</ptype> <name>value</name></param>
@@ -26731,6 +26787,13 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param len="count">const <ptype>GLuint64</ptype> *<name>value</name></param>
+        </command>
+        <command>
+            <proto>void <name>glUniformHandleui64vIMG</name></proto>
+            <param><ptype>GLint</ptype> <name>location</name></param>
+            <param><ptype>GLsizei</ptype> <name>count</name></param>
+            <param len="count">const <ptype>GLuint64</ptype> *<name>value</name></param>
+            <alias name="glUniformHandleui64vARB"/>
         </command>
         <command>
             <proto>void <name>glUniformHandleui64vNV</name></proto>
@@ -40396,6 +40459,12 @@ typedef unsigned int GLhandleARB;
                 <!-- <command name="glNamedBufferStorageEXT"/> -->
             </require>
         </extension>
+        <extension name="GL_EXT_clear_texture" supported="gles2">
+            <require>
+                <command name="glClearTexImageEXT"/>
+                <command name="glClearTexSubImageEXT"/>
+            </require>
+        </extension>
         <extension name="GL_EXT_clip_cull_distance" supported="gles2">
             <require>
                 <enum name="GL_MAX_CLIP_DISTANCES_EXT"/>
@@ -40449,6 +40518,7 @@ typedef unsigned int GLhandleARB;
                 <command name="glUnlockArraysEXT"/>
             </require>
         </extension>
+        <extension name="GL_EXT_conservative_depth" supported="gles2"/>
         <extension name="GL_EXT_convolution" supported="gl">
             <require>
                 <enum name="GL_CONVOLUTION_1D_EXT"/>
@@ -42874,6 +42944,16 @@ typedef unsigned int GLhandleARB;
                 <command name="glNormalPointerListIBM"/>
                 <command name="glTexCoordPointerListIBM"/>
                 <command name="glVertexPointerListIBM"/>
+            </require>
+        </extension>
+        <extension name="GL_IMG_bindless_texture" supported="gles2">
+            <require>
+                <command name="glGetTextureHandleIMG"/>
+                <command name="glGetTextureSamplerHandleIMG"/>
+                <command name="glUniformHandleui64IMG"/>
+                <command name="glUniformHandleui64vIMG"/>
+                <command name="glProgramUniformHandleui64IMG"/>
+                <command name="glProgramUniformHandleui64vIMG"/>
             </require>
         </extension>
         <extension name="GL_IMG_framebuffer_downsample" supported="gles2">
