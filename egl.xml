@@ -173,7 +173,11 @@
          tokens are reused for different purposes in different
          extensions and API versions). -->
 
-    <enums namespace="EGL" start="0x0000" end="0x2FFF" vendor="ARB"/>
+    <enums namespace="EGL" start="0x0000" end="0x2FFF" vendor="KHR" comment="Reserved for enumerants shared with WGL, GLX, and GL">
+        <enum value="0" name="EGL_CONTEXT_RELEASE_BEHAVIOR_NONE_KHR"/>
+        <enum value="0x2097" name="EGL_CONTEXT_RELEASE_BEHAVIOR_KHR"/>
+        <enum value="0x2098" name="EGL_CONTEXT_RELEASE_BEHAVIOR_FLUSH_KHR"/>
+    </enums>
 
     <enums namespace="EGL" group="Boolean" vendor="ARB">
         <enum value="0" name="EGL_FALSE"/>
@@ -773,6 +777,10 @@
             <unused start="0x3430" end="0x343F"/>
     </enums>
 
+    <enums namespace="EGL" start="0x3440" end="0x344F" vendor="ANDROID" comment="Reserved for Kristian Kristensen (Bug 16033)">
+            <unused start="0x3440" end="0x344F"/>
+    </enums>
+
 <!-- Please remember that new enumerant allocations must be obtained by
      request to the Khronos API registrar (see comments at the top of this
      file) File requests in the Khronos Bugzilla, EGL project, Registry
@@ -782,8 +790,8 @@
 
 <!-- Reservable for future use. To generate a new range, allocate multiples
      of 16 starting at the lowest available point in this block. -->
-    <enums namespace="EGL" start="0x3440" end="0x3FFF" vendor="KHR">
-            <unused start="0x3440" end="0x3FFF" comment="Reserved for future use"/>
+    <enums namespace="EGL" start="0x3450" end="0x3FFF" vendor="KHR">
+            <unused start="0x3450" end="0x3FFF" comment="Reserved for future use"/>
     </enums>
 
     <enums namespace="EGL" start="0x8F70" end="0x8F7F" vendor="HI" comment="For Mark Callow, Khronos bug 4055. Shared with GL.">
@@ -2091,6 +2099,13 @@
             </require>
         </extension>
         <extension name="EGL_KHR_client_get_all_proc_addresses" supported="egl" comment="Alias of EGL_KHR_get_all_proc_addresses"/>
+        <extension name="EGL_KHR_context_flush_control" supported="egl">
+            <require>
+                <enum name="EGL_CONTEXT_RELEASE_BEHAVIOR_NONE_KHR"/>
+                <enum name="EGL_CONTEXT_RELEASE_BEHAVIOR_KHR"/>
+                <enum name="EGL_CONTEXT_RELEASE_BEHAVIOR_FLUSH_KHR"/>
+            </require>
+        </extension>
         <extension name="EGL_KHR_create_context" supported="egl">
             <require>
                 <enum name="EGL_CONTEXT_MAJOR_VERSION_KHR"/>
