@@ -771,7 +771,17 @@
             <unused start="0x333C" end="0x333E"/>
         <enum value="0x333F" name="EGL_GL_COLORSPACE_BT2020_LINEAR_EXT"/>
         <enum value="0x3340" name="EGL_GL_COLORSPACE_BT2020_PQ_EXT"/>
-            <unused start="0x3341" end="0x334B"/>
+        <enum value="0x3341" name="EGL_SMPTE2086_DISPLAY_PRIMARY_RX_EXT"/>
+        <enum value="0x3342" name="EGL_SMPTE2086_DISPLAY_PRIMARY_RY_EXT"/>
+        <enum value="0x3343" name="EGL_SMPTE2086_DISPLAY_PRIMARY_GX_EXT"/>
+        <enum value="0x3344" name="EGL_SMPTE2086_DISPLAY_PRIMARY_GY_EXT"/>
+        <enum value="0x3345" name="EGL_SMPTE2086_DISPLAY_PRIMARY_BX_EXT"/>
+        <enum value="0x3346" name="EGL_SMPTE2086_DISPLAY_PRIMARY_BY_EXT"/>
+        <enum value="0x3347" name="EGL_SMPTE2086_WHITE_POINT_X_EXT"/>
+        <enum value="0x3348" name="EGL_SMPTE2086_WHITE_POINT_Y_EXT"/>
+        <enum value="0x3349" name="EGL_SMPTE2086_MAX_LUMINANCE_EXT"/>
+        <enum value="0x334A" name="EGL_SMPTE2086_MIN_LUMINANCE_EXT"/>
+            <unused start="0x334B"/>
         <enum value="0x334C" name="EGL_GENERATE_RESET_ON_VIDEO_MEMORY_PURGE_NV"/>
         <enum value="0x334D" name="EGL_STREAM_CROSS_OBJECT_NV"/>
         <enum value="0x334E" name="EGL_STREAM_CROSS_DISPLAY_NV"/>
@@ -2163,7 +2173,7 @@
                 <command name="eglStreamConsumerOutputEXT"/>
             </require>
         </extension>
-        <extension name="EGL_EXT_surface_SMPTE2086_metadata" supported="disabled">
+        <extension name="EGL_EXT_surface_SMPTE2086_metadata" supported="egl">
             <require>
                 <enum name="EGL_SMPTE2086_DISPLAY_PRIMARY_RX_EXT"/>
                 <enum name="EGL_SMPTE2086_DISPLAY_PRIMARY_RY_EXT"/>
